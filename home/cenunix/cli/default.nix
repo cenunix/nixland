@@ -7,9 +7,9 @@
   ...
 }: {
   imports = [
-    ./editors
     ./misc
     ./terminals
+    ./shell
     ./tools
   ];
 }

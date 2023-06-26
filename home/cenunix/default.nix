@@ -18,7 +18,7 @@
     ./cli
     ./gui
     ./wms
-    ./shell
+    ./editors
     ./packages.nix
   ];
 }
