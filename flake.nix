@@ -95,6 +95,7 @@
           ./modules/home-manager.nix
           ./modules/core
           ./modules/core/bootloaders/x13s-boot.nix
+          agenix
         ];
       };
       europa = nixpkgs.lib.nixosSystem {

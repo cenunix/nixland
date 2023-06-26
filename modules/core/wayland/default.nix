@@ -4,11 +4,12 @@
   lib,
   config,
   pkgs,
-  osConfig,
   ...
 }:
 with lib; let
   env = config.modules.usrEnv;
+  device = config.modules.device;
+  acceptedTypes = ["desktop" "laptop"];
 in {
   imports = [./fonts.nix ./services.nix];
 
@@ -50,15 +51,19 @@ in {
     };
 
     hardware = {
-      opengl = {
-        enable = true;
-        driSupport = true;
-        driSupport32Bit = true;
-        extraPackages = with pkgs; [
-          vaapiVdpau
-          libvdpau-va-gl
-        ];
-      };
+      opengl = mkMerge [
+        {
+          enable = true;
+          driSupport = true;
+          extraPackages = with pkgs; [
+            vaapiVdpau
+            libvdpau-va-gl
+          ];
+        }
+        (mkIf (builtins.elem device.type acceptedTypes) {
+          driSupport32Bit = true;
+        })
+      ];
       pulseaudio.support32Bit = true;
     };
 
