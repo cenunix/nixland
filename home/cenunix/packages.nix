@@ -22,6 +22,6 @@ in {
       inputs.agenix.packages.${pkgs.system}.default
     ]
     ++ optionals (builtins.elem device.type ["armlaptop"]) [
-      armcord
+      # additional packages for arm laptop (x13s as of now) machines that use home-manager
     ];
 }

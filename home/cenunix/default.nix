@@ -15,10 +15,11 @@
   imports = [
     # Hyprland home-manager module
     inputs.hyprland.homeManagerModules.default
-    ./cli
-    ./gui
-    ./wms
     ./editors
+    ./graphical
     ./packages.nix
+    ./services
+    ./terminal
+    ./theme
   ];
 }

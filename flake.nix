@@ -34,6 +34,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+    # use NotAShelf's arrpc-flake to provide arRPC package
+    arrpc = {
+      url = "github:NotAShelf/arrpc-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # Shameless plug: looking for a way to nixify your themes and make
     # everything match nicely? Try nix-colors!

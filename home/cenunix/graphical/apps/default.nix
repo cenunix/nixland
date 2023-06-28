@@ -7,10 +7,8 @@
   ...
 }: {
   imports = [
-    ./anyrun
-    ./dunst
-    ./gtk
     ./nheko
     ./spotify
+    ./webcord
   ];
 }

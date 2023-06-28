@@ -8,7 +8,7 @@
 }: {
   imports = [
     ./misc
-    ./terminals
+    ./emulators
     ./shell
     ./tools
   ];

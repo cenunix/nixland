@@ -1,5 +1,11 @@
-{ inputs, outputs, lib, config, pkgs, ... }: 
- let
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}: let
   inherit (inputs.anyrun.packages.${pkgs.system}) anyrun;
 in {
   home.packages = [anyrun];
