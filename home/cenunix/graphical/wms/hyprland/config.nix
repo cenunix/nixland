@@ -6,7 +6,12 @@
   pkgs,
   osConfig,
   ...
-}: {
+}:
+with lib; let
+  monitors = osConfig.modules.device.monitors;
+  device = osConfig.modules.device;
+  env = osConfig.modules.usrEnv;
+in {
   wayland.windowManager.hyprland.extraConfig = ''
     # Cursor size
     env = XCURSOR_SIZE,16

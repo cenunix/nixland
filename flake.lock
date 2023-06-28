@@ -44,6 +44,26 @@
         "type": "github"
       }
     },
+    "arrpc": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1683545835,
+        "narHash": "sha256-GfsXWlidRkQG/eB/iwWrUAvB2v2uYrQr1LKRAToId/s=",
+        "owner": "NotAShelf",
+        "repo": "arrpc-flake",
+        "rev": "b29476f08795519fdac720fb4caf46dbe756823b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NotAShelf",
+        "repo": "arrpc-flake",
+        "type": "github"
+      }
+    },
     "darwin": {
       "inputs": {
         "nixpkgs": [
@@ -255,6 +275,7 @@
       "inputs": {
         "agenix": "agenix",
         "anyrun": "anyrun",
+        "arrpc": "arrpc",
         "hardware": "hardware",
         "home-manager": "home-manager",
         "hyprland": "hyprland",

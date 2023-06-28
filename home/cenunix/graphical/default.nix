@@ -7,10 +7,8 @@
   ...
 }: {
   imports = [
-    ./dunst
-    ./gtk
-    ./nheko
-    ./spotify
+    ./apps
     ./launchers
+    ./wms
   ];
 }
