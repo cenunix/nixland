@@ -22,7 +22,7 @@ in {
       system = {
         video.enable = true;
         sound.enable = true;
-        bluetooth.enable = false;
+        bluetooth.enable = true;
       };
       usrEnv = {
         isWayland = true;
