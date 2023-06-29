@@ -16,6 +16,13 @@ in {
         monitors = [
           ",preferred,auto,1"
         ];
+        hasBluetooth = true;
+        hasSound = true;
+      };
+      system = {
+        video.enable = true;
+        sound.enable = true;
+        bluetooth.enable = false;
       };
       usrEnv = {
         isWayland = true;

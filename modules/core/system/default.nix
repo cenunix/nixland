@@ -7,8 +7,7 @@
   ...
 }: {
   imports = [
-    ./usrEnv.nix
-    ./device.nix
+    ./module
     ./hardware
   ];
 }
