@@ -28,14 +28,14 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This configuration suits my specific use case, that being multiple machines however running on different architectures. I use the thinkpad x13s as a daily laptop with an ARM processor, however my desktop runs with an AMD processor.
+This configuration suits my specific use case, that being multiple machines however running on different architectures. I use the thinkpad x13s as a daily laptop with an ARM processor, while my desktop runs with an AMD processor.
 
 This Config provides:
 * A similar home environment for all of my machines
 * Various bootloaders for each machine
 * A highly extensible configuration using modules and flakes which allows for easy customization and additions
 
-Feel free to open a pull request or submit an issue if you see any glaring issues, I am by no means an expert in nix or NixOS.
+Feel free to open a pull request or submit an issue if you see any glaring problems, I am by no means an expert in nix or NixOS.
 
 <!-- CONTACT -->
 ## Contact
