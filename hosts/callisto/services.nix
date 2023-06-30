@@ -31,7 +31,7 @@
     bt-address = {
       serviceConfig = {
         ExecStart = "${pkgs.bluez5-experimental}/bin/btmgmt public-addr F4:A8:0D:30:A3:47";
-        Restart = "always";
+        Type = "oneshot";
       };
       wantedBy = [ "multi-user.target" ];
     };
