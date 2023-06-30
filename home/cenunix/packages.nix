@@ -14,12 +14,16 @@ in {
   nixpkgs.config.allowUnsupportedSystem = true;
   home.packages = with pkgs;
     [
+      # Shared Packages between all systems
       firefox
       networkmanagerapplet
       git
       gh
       nitch
       inputs.agenix.packages.${pkgs.system}.default
+    ]
+    ++ optionals (builtins.elem device.type ["desktop" "laptop"]) [
+      lunatask
     ]
     ++ optionals (builtins.elem device.type ["armlaptop"]) [
       # additional packages for arm laptop (x13s as of now) machines that use home-manager

@@ -164,7 +164,8 @@ in {
           scroll-step = 5;
           tooltip = false;
           format = "{icon} {volume}%";
-          format-icons = {default = ["" "" "墳"];};
+          format-bluetooth = "󰂯{icon} {volume}%";
+          format-icons = {default = ["" "" "󰕾 "];};
           on-click = "${pkgs.killall}/bin/killall pavucontrol || ${pkgs.pavucontrol}/bin/pavucontrol";
         };
       };
