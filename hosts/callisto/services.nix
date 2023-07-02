@@ -31,14 +31,18 @@
     };
     bt-address = {
       unitConfig = {
-        After = "bluetooth.target";
+        After = "network-online.target";
       };
       serviceConfig = {
         Type = "simple";
-        ExecStart = "${pkgs.bluez5-experimental}/bin/btmgmt public-addr F4:A8:0D:30:A3:47";
+        # ExecStart = "${pkgs.bluez5-experimental}/bin/btmgmt public-addr F4:A8:0D:30:A3:47";
+        RemainAfterExit = "yes";
         User = "root";
       };
-      wantedBy = ["multi-user.target"];
+      script = ''
+        ${pkgs.bluez5-experimental}/bin/btmgmt public-addr F4:A8:0D:30:A3:47
+      '';
+      wantedBy = ["network-online.target"];
     };
   };
 }
