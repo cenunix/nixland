@@ -1,9 +1,10 @@
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, ...
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
 }:
 #Services for x13s battery-sound etc. functionality, relies on firmware
 {
@@ -26,14 +27,18 @@
         ExecStart = "${pkgs.qrtr}/bin/qrtr-ns -f 1";
         Restart = "always";
       };
-      wantedBy = [ "multi-user.target" ];
+      wantedBy = ["multi-user.target"];
     };
     bt-address = {
-      serviceConfig = {
-        ExecStart = "${pkgs.bluez5-experimental}/bin/btmgmt public-addr F4:A8:0D:30:A3:47";
-        Type = "oneshot";
+      unitConfig = {
+        After = "bluetooth.target";
       };
-      wantedBy = [ "multi-user.target" ];
+      serviceConfig = {
+        Type = "simple";
+        ExecStart = "${pkgs.bluez5-experimental}/bin/btmgmt public-addr F4:A8:0D:30:A3:47";
+        User = "root";
+      };
+      wantedBy = ["multi-user.target"];
     };
   };
 }

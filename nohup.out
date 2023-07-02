@@ -1,0 +1,20 @@
+[2023-06-30 01:46:22.808] [info] Using configuration file /home/cenunix/.config/waybar/config
+[2023-06-30 01:46:22.808] [info] Using CSS file /home/cenunix/.config/waybar/style.css
+[2023-06-30 01:46:23.003] [warning] Requested height: 40 is less than the minimum height: 47 required by the modules
+[2023-06-30 01:46:23.003] [info] Bar configured (width: 1920, height: 47) for output: eDP-1
+[2023-06-30 01:46:29.570] [info] Quitting.
+[2023-06-30 01:46:58.153] [info] Using configuration file /home/cenunix/.config/waybar/config
+[2023-06-30 01:46:58.154] [info] Using CSS file /home/cenunix/.config/waybar/style.css
+[2023-06-30 01:46:58.362] [warning] Requested height: 40 is less than the minimum height: 47 required by the modules
+[2023-06-30 01:46:58.362] [info] Bar configured (width: 1920, height: 47) for output: eDP-1
+[2023-06-30 01:47:27.993] [info] Quitting.
+[2023-06-30 01:48:21.614] [info] Using configuration file /home/cenunix/.config/waybar/config
+[2023-06-30 01:48:21.615] [info] Using CSS file /home/cenunix/.config/waybar/style.css
+[2023-06-30 01:48:21.810] [warning] Requested height: 40 is less than the minimum height: 47 required by the modules
+[2023-06-30 01:48:21.810] [info] Bar configured (width: 1920, height: 47) for output: eDP-1
+[2023-06-30 02:20:23.242] [info] Quitting.
+[2023-06-30 02:20:26.486] [info] Using configuration file /home/cenunix/.config/waybar/config
+[2023-06-30 02:20:26.487] [info] Using CSS file /home/cenunix/.config/waybar/style.css
+[2023-06-30 02:20:26.701] [warning] Requested height: 40 is less than the minimum height: 47 required by the modules
+[2023-06-30 02:20:26.701] [info] Bar configured (width: 1920, height: 47) for output: eDP-1
+Gdk-Message: 03:10:30.580: Error reading events from display: Broken pipe

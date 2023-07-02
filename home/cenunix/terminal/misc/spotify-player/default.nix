@@ -5,20 +5,16 @@
   config,
   pkgs,
   ...
-}: {
+}:
+with lib; let
+  pass = "${pkgs.coreutils}/bin/head -1 /run/agenix/spotify-player";
+in {
   home.packages = with pkgs; [
     # spotify command line interface
     spotify-player
   ];
-  age.secrets.spotify-player = {
-    file = ../../../../../secrets/spotify-player.age;
-    owner = "cenunix";
-    mode = "700";
-    group = "users";
-  };
-  client_id = "${pkgs.coreutils}/bin/head -1 /run/agenix/spotify-player";
-  home.file.".config/spotify-player/app.toml".text = ''
-    client_id = ${client_id}
+  xdg.configFile."spotify-player/app.toml".text = ''
+    client_id = "545909c803cb4b1ba7e439a768cd636f"
     app_refresh_duration_in_ms = 32
     playback_refresh_duration_in_ms = 0
     cover_image_refresh_duration_in_ms = 2000

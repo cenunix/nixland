@@ -192,6 +192,7 @@ in {
     bind=SUPER,N,exec,~/.local/bin/nvim-gui
     bind=SUPER,I,exec,mylock
     bind=SUPER,D,exec,anyrun
+    bind=SUPER,S,exec,rofi-rbw
 
 
 

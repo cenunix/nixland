@@ -6,6 +6,7 @@
   lib,
   config,
   pkgs,
+  agenix,
   ...
 }: {
   config.home.stateVersion = "23.05";
