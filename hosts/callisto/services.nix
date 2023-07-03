@@ -45,4 +45,7 @@
       wantedBy = ["network-online.target"];
     };
   };
+  sound.extraConfig = ''
+
+  '';
 }
