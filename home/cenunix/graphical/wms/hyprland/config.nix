@@ -205,16 +205,16 @@ in {
     bindl=, XF86AudioLowerVolume, exec, volume -d 5
     bindl=, XF86AudioMute, exec, volume -t
 
-    bind=SUPER,left,movefocus,l
-    bind=SUPER,right,movefocus,r
-    bind=SUPER,up,movefocus,u
-    bind=SUPER,down,movefocus,d
+    bind=SUPER,h,movefocus,l
+    bind=SUPER,l,movefocus,r
+    bind=SUPER,k,movefocus,u
+    bind=SUPER,j,movefocus,d
 
 
-    bind=SUPER_SHIFT,left,movewindow,l
-    bind=SUPER_SHIFT,right,movewindow,r
-    bind=SUPER_SHIFT,up,movewindow,u
-    bind=SUPER_SHIFT,down,movewindow,d
+    bind=SUPER_SHIFT,h,movewindow,l
+    bind=SUPER_SHIFT,l,movewindow,r
+    bind=SUPER_SHIFT,k,movewindow,u
+    bind=SUPER_SHIFT,j,movewindow,d
     bind=SUPER,B,movecurrentworkspacetomonitor,DP-1
     bind=SUPER_SHIFT,B,movecurrentworkspacetomonitor,DP-2
 
