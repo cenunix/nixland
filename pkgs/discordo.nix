@@ -14,11 +14,11 @@ buildGoModule rec {
   src = fetchFromGitHub {
     owner = "ayn2op";
     repo = pname;
-    rev = "f8c58057945b1ded2f78dc0956ea25aa281a0b31";
-    hash = "sha256-FUSPQK4rB0J89s+I7yhF8SQ/Q9uygQSCF9o6ltYxOk4=";
+    rev = "c8a9c6ecdd1ca25f33c3e09de85048d1b7dd0271";
+    hash = "sha256-oHvynN4P6DqSkD+JHSu9Ds5IiCOC0K484xyb4KpdhDA=";
   };
 
-  vendorHash = "sha256-fLhyyIChqh+eEzht3CSLPfx6glw0YhiTb9PsbWJafWQ=";
+  vendorHash = "sha256-YIQVdG7WXrNIMy8NVpgzL7SaEFWrfNJDm+MeG0/ITfg=";
 
   CGO_ENABLED = 0;
 
