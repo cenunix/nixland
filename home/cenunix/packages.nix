@@ -21,6 +21,7 @@ in {
       gh
       nitch
       inputs.agenix.packages.${pkgs.system}.default
+      discordo
     ]
     ++ optionals (builtins.elem device.type ["desktop" "laptop"]) [
       lunatask

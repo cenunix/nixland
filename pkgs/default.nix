@@ -9,5 +9,6 @@
   catppuccin-cursors = pkgs.callPackage ./catppuccin-cursors.nix {};
   catppuccin-folders = pkgs.callPackage ./catppuccin-folders.nix {};
   grimblast = pkgs.callPackage ./grimblast/default.nix {};
-  air-status = pkgs.callPackage ./air-status/default.nix {};
+  air-status = pkgs.callPackage ./air-status.nix {};
+  discordo = pkgs.callPackage ./discordo.nix {};
 }
