@@ -49,6 +49,7 @@ in {
       # pngquant
       cliphist
       grimblast
+      air-status
     ];
 
     # services.wlsunset = {
