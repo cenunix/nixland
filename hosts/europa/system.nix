@@ -19,6 +19,13 @@ in {
           "DP-1,2560x1440@240,auto,1"
           "DP-2,1920x1080@240,auto,1"
         ];
+        hasBluetooth = true;
+        hasSound = true;
+      };
+      system = {
+        video.enable = true;
+        sound.enable = true;
+        bluetooth.enable = true;
       };
       usrEnv = {
         isWayland = true;
