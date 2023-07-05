@@ -1,21 +1,21 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
 }:
 with lib; let
   sys = config.modules.system.bluetooth;
-in {
+in
+{
   config = mkIf (sys.enable) {
     hardware.bluetooth = {
       enable = true;
       package = pkgs.bluez5-experimental;
       #hsphfpd.enable = true;
       powerOnBoot = true;
-      disabledPlugins = ["sap"];
+      disabledPlugins = [ "sap" ];
       settings = {
         General = {
           JustWorksRepairing = "always";

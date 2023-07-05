@@ -29,34 +29,19 @@
       };
       wantedBy = ["multi-user.target"];
     };
-    # bt-address = {
-    #   unitConfig = {
-    #     After = "network-online.target";
-    #   };
-    #   serviceConfig = {
-    #     Type = "simple";
-    #     # ExecStart = "${pkgs.bluez5-experimental}/bin/btmgmt public-addr F4:A8:0D:30:A3:47";
-    #     RemainAfterExit = "yes";
-    #     User = "root";1
-    #   };
-    #   script = ''
-    #     ${pkgs.bluez5-experimental}/bin/btmgmt public-addr F4:A8:0D:30:A3:47
-    #   '';
-    #   wantedBy = ["network-online.target"];
-    # };
-  };
-  systemd.services.bluetooth = {
-    serviceConfig = {
-      ExecStartPre = [
-        ""
-        "${pkgs.util-linux}/bin/rfkill block bluetooth"
-        "${pkgs.bluez5-experimental}/bin/btmgmt public-addr F4:A8:0D:30:A3:47"
-        "${pkgs.util-linux}/bin/rfkill unblock bluetooth"
-      ];
-      ExecStart = [
-        ""
-        "${pkgs.bluez}/libexec/bluetooth/bluetoothd -f /etc/bluetooth/main.conf --noplugin=sap"
-      ];
+    bluetooth = {
+      serviceConfig = {
+        ExecStartPre = [
+          ""
+          "${pkgs.util-linux}/bin/rfkill block bluetooth"
+          "${pkgs.bluez5-experimental}/bin/btmgmt public-addr F4:A8:0D:30:A3:47"
+          "${pkgs.util-linux}/bin/rfkill unblock bluetooth"
+        ];
+        ExecStart = [
+          ""
+          "${pkgs.bluez}/libexec/bluetooth/bluetoothd -f /etc/bluetooth/main.conf --noplugin=sap"
+        ];
+      };
     };
   };
 }

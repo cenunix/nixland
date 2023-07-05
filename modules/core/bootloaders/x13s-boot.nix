@@ -68,6 +68,4 @@ in {
       ];
     };
   };
-  hardware.enableAllFirmware = true;
-  hardware.firmware = [pkgs.linux-firmware pkgs.x13s-firmware];
 }

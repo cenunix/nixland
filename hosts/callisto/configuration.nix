@@ -1,12 +1,11 @@
 # This is your system's configuration file.
 # Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
 }: {
   # You can import other NixOS modules here
   imports = [
@@ -22,6 +21,7 @@
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
+    ./x13s-firmware.nix
     ./system.nix
     ./services.nix
   ];
@@ -44,8 +44,8 @@
       #   });
       # })
       (final: prev: {
-        qrtr = prev.callPackage ../../pkgs/qrtr.nix {};
-        pd-mapper = final.callPackage ../../pkgs/pd-mapper.nix {inherit (final) qrtr;};
+        qrtr = prev.callPackage ../../pkgs/qrtr.nix { };
+        pd-mapper = final.callPackage ../../pkgs/pd-mapper.nix { inherit (final) qrtr; };
       })
       # (final: prev: {
       #   alsa-ucm-conf = prev.callPackage ../../pkgs/alsa-ucm-conf-x13s.nix {};
@@ -113,8 +113,8 @@
     # libqrtr-glib
     # alsa-ucm-conf
     # (callPackage ../../pkgs/x13s-firmware.nix {})
-    (callPackage ../../pkgs/qrtr.nix {})
-    (callPackage ../../pkgs/pd-mapper.nix {})
+    (callPackage ../../pkgs/qrtr.nix { })
+    (callPackage ../../pkgs/pd-mapper.nix { })
     alsa-ucm-conf-x13s
     # (callPackage ../../pkgs/alsa-ucm-conf-x13s.nix {})
     # (callPackage ../../pkgs/alsa-lib.nix {})
