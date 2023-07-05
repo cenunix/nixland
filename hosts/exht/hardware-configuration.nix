@@ -19,7 +19,7 @@
     fsType = "ext4";
   };
 
-  fileSystems."/boot" = {
+  fileSystems."/boot/efi" = {
     device = "/dev/disk/by-uuid/05D7-CD16";
     fsType = "vfat";
   };
