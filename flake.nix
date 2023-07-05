@@ -119,6 +119,17 @@
           agenix
         ];
       };
+      exht = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          # > Our main nixos configuration file <
+          ./hosts/exht
+          ./modules/home-manager.nix
+          ./modules/core
+          ./modules/core/bootloaders/systemd.nix
+          agenix
+        ];
+      };
     };
 
     # Standalone home-manager configuration entrypoint
