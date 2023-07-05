@@ -16,8 +16,7 @@ in {
         cpu = "intel";
         gpu = "intel";
         monitors = [
-          "DP-1,2560x1440@240,auto,1"
-          "DP-2,1920x1080@240,auto,1"
+          ",preferred,auto,1"
         ];
         hasBluetooth = true;
         hasSound = true;
