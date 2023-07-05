@@ -12,8 +12,8 @@ stdenv.mkDerivation {
   src = fetchFromGitHub {
     owner = "cenunix";
     repo = "pd-mapper";
-    rev = "63bf07ce75c23396bad9bb0391c3a60fad81a9bc";
-    sha256 = "sha256-/doESH6TL9CyA7bCr8LVwkGe8dikfvaGTmxtszXvDQ8=";
+    rev = "8db3b693572016f986639eb2e2976b5ab3766409";
+    sha256 = "sha256-wWIGXWrZ9ajvcW4JR3MBq4jYWNwGKf7s9GarYYvrXzQ=";
   };
 
   nativeBuildInputs = [pkg-config];
