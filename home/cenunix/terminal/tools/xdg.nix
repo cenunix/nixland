@@ -1,4 +1,11 @@
-{config, ...}: let
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}: let
   browser = ["firefox.desktop"];
   zathura = ["org.pwmt.zathura.desktop.desktop"];
   filemanager = ["dolphin.desktop"];

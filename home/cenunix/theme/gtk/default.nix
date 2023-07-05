@@ -51,6 +51,7 @@
   home.sessionVariables = {
     # XCURSOR_SIZE = lib.mkOverride "16";
     XCURSOR_SIZE = "16";
+    GTK_USE_PORTAL = "1";
   };
 
   # credits: bruhvko
