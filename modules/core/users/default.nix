@@ -8,5 +8,6 @@
 }: {
   imports = [
     ./cenunix.nix
+    ./exht.nix
   ];
 }
