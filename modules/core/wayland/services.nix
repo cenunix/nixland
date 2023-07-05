@@ -8,6 +8,10 @@
   ...
 }:
 with lib; let
+  usr =
+    if (config.modules.system.username == null)
+    then "cenunix"
+    else "${config.modules.system.username}";
   env = config.modules.usrEnv;
 in {
   config = mkIf (env.isWayland) {
@@ -31,7 +35,7 @@ in {
         settings = rec {
           initial_session = {
             command = "Hyprland";
-            user = "cenunix";
+            user = "${usr}";
           };
           default_session = initial_session;
         };
