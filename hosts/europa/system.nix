@@ -23,6 +23,7 @@ in {
         hasSound = true;
       };
       system = {
+        username = "cenunix";
         video.enable = true;
         sound.enable = true;
         bluetooth.enable = true;
