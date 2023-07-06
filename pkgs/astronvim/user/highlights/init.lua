@@ -10,6 +10,8 @@ return {
   -- NeoTree(explorer)
   NeoTreeNormal = { bg = "NONE" },
   NeoTreeNormalNC = { bg = "NONE" },
+  NeoTreeTabSeparatorInactive = { bg = "NONE", fg = "NONE" },
+      NeoTreeTabSeparatorActive = { bg = "NONE", fg = "NONE" },
   -- Telescope menus
   TelescopeNormal = { bg = "NONE" },
   TelescopePromptNormal = { bg = "NONE" },

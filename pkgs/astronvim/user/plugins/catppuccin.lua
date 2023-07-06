@@ -19,8 +19,7 @@ return {
       which_key = true,
     },
     custom_highlights = {
-      NeoTreeNormal = { bg = "NONE", fg = "NONE" },
-      NeoTreeNormalNC = { bg = "NONE", fg = "NONE" },
+
     },
   },
 }
