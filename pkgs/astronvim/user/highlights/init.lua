@@ -1,5 +1,5 @@
 return {
-        NormalFloat = { bg = "NONE" },
+  NormalFloat = { bg = "NONE" },
   NormalSB = { bg = "NONE" },
   FloatTitle = { bg = "NONE" },
   FloatBorder = { bg = "NONE" },
@@ -11,7 +11,7 @@ return {
   NeoTreeNormal = { bg = "NONE" },
   NeoTreeNormalNC = { bg = "NONE" },
   NeoTreeTabSeparatorInactive = { bg = "NONE", fg = "NONE" },
-      NeoTreeTabSeparatorActive = { bg = "NONE", fg = "NONE" },
+  NeoTreeTabSeparatorActive = { bg = "NONE", fg = "NONE" },
   -- Telescope menus
   TelescopeNormal = { bg = "NONE" },
   TelescopePromptNormal = { bg = "NONE" },
@@ -45,4 +45,3 @@ return {
   NotifyTRACEBorder = { bg = "NONE" },
   NotifyBackground = { bg = "#000000" },
 }
-
