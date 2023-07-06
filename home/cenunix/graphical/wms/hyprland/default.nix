@@ -66,7 +66,7 @@ in {
         Unit.Description = "Wallpaper chooser";
         Service = {
           ExecStart = "${lib.getExe pkgs.swaybg} -i ${./space_background.jpg}";
-          Restart = "always";
+          Restart = "never";
         };
       };
       cliphist = mkService {
