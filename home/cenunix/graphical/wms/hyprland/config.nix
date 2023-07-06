@@ -60,8 +60,8 @@ in {
     }
     decoration {
         blur_new_optimizations = true
-        active_opacity = 1.0
-        inactive_opacity = 1.0
+        active_opacity = 0.7
+        inactive_opacity = 0.7
         #fullscreen_opacity = 1.0
         drop_shadow=true
         shadow_range=20
