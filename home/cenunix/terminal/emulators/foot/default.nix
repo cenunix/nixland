@@ -16,7 +16,7 @@
     settings = {
       main = {
         term = "xterm-256color";
-        font = "monospace:size=18";
+        font = "monospace:size=16";
         pad = "24x24";
         dpi-aware = "no";
       };

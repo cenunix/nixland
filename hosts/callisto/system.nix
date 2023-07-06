@@ -1,14 +1,14 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
 }:
 with lib; let
   device = config.modules.device;
-in {
+in
+{
   config = {
     modules = {
       device = {
