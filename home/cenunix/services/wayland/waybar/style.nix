@@ -29,11 +29,11 @@ in ''
 
   #custom-vpn,
   #network {
-    color: #c6a0f6;
+    color: #8aadf4;
   }
 
   #cpu {
-    color: #f5a97f;
+    color: #8aadf4;
   }
 
   #workspaces button {
@@ -52,7 +52,7 @@ in ''
   }
 
   #custom-power {
-      color: #ed8796;
+      color: #8aadf4;
       margin: 7px;
       font-size: 24px;
   }

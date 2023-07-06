@@ -20,7 +20,7 @@ in {
         hasSound = true;
       };
       system = {
-        username = "callisto";
+        username = "cenunix";
         video.enable = true;
         sound.enable = true;
         bluetooth.enable = true;
