@@ -18,11 +18,9 @@ return {
       telescope = true,
       which_key = true,
     },
-    custom_highlights = function(colors)
-      return {
-        NeoTreeTabSeparatorInactive = { bg = "NONE", fg = "NONE" },
-        NeoTreeTabSeparatorActive = { bg = "NONE", fg = "NONE" },
-      }
-    end,
+    custom_highlights = {
+      NeoTreeNormal = { bg = "NONE", fg = "NONE" },
+      NeoTreeNormalNC = { bg = "NONE", fg = "NONE" },
+    },
   },
 }
