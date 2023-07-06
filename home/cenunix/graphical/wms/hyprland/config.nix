@@ -1,17 +1,17 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  osConfig,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, osConfig
+, ...
 }:
 with lib; let
   monitors = osConfig.modules.device.monitors;
   device = osConfig.modules.device;
   env = osConfig.modules.usrEnv;
-in {
+in
+{
   wayland.windowManager.hyprland.extraConfig = ''
     # Cursor size
     env = XCURSOR_SIZE,16
@@ -60,8 +60,8 @@ in {
     }
     decoration {
         blur_new_optimizations = true
-        active_opacity = 0.8
-        inactive_opacity = 0.8
+        active_opacity = 1.0
+        inactive_opacity = 1.0
         #fullscreen_opacity = 1.0
         drop_shadow=true
         shadow_range=20

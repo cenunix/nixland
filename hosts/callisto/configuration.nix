@@ -1,12 +1,11 @@
 # This is your system's configuration file.
 # Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
 }: {
   # You can import other NixOS modules here
   imports = [
@@ -44,36 +43,11 @@
       #   });
       # })
       (final: prev: {
-        qrtr = prev.callPackage ../../pkgs/qrtr.nix {};
-        pd-mapper = final.callPackage ../../pkgs/pd-mapper.nix {inherit (final) qrtr;};
+        qrtr = prev.callPackage ../../pkgs/qrtr.nix { };
+        pd-mapper = final.callPackage ../../pkgs/pd-mapper.nix { inherit (final) qrtr; };
         compressFirmwareXz = lib.id;
       })
-      # (final: prev: {
-      #   alsa-ucm-conf = prev.callPackage ../../pkgs/alsa-ucm-conf-x13s.nix {};
-      #   alsa-lib = final.callPackage ../../pkgs/alsa-lib.nix {inherit (final) alsa-ucm-conf;};
-      # })
-      # (final: prev: {
-      #   alsa-ucm-conf-x13s = final.alsa-ucm-conf.overrideAttrs (oldAttrs: {
-      #     src = pkgs.fetchFromGitHub {
-      #       owner = "cenunix";
-      #       repo = "alsa-ucm-conf";
-      #       rev = "c30fda1f8549a18c30fe283b97a6228acb27978d";
-      #       # rev = "32b0a008a96a3dd04675659e45a676b639236a98";
-      #       # sha256 = "sha256-s/nnGUGFgJ+gpMAOO3hYJ6PrX/qti6U1wyB6PzTiNtM=";
-      #       sha256 = "sha256-3jgU9Hg+CzU28VMSRnH2ky0VDpntCHkclK/caSCZYRE=";
-      #     };
-      #   });
-      # })
-      # pkgs.alsa-lib.override
-      # {
-      #   alsa-ucm-conf =
-      #     pkgs.callPackage ../../pkgs/alsa-ucm-conf-x13s.nix {};
-      # }
-      # (final: prev: {
-      #   alsa-lib = prev.alsa-lib.override {
-      #     alsa-ucm-conf = pkgs.alsa-ucm-conf-x13s;
-      #   };
-      # })
+
     ];
     # Configure your nixpkgs instance
     config = {
@@ -107,21 +81,11 @@
   # hardware.enableAllFirmware = true;
   # hardware.firmware = [ pkgs.linux-firmware pkgs.x13s-firmware ];
 
-  # services.xserver.enable = true;
-  # services.xserver.displayManager.sddm.enable = true;
-  # services.xserver.desktopManager.plasma5.enable = true;
-  environment.systemPackages = with pkgs; [
-    # libqrtr-glib
-    # alsa-ucm-conf
-    # (callPackage ../../pkgs/x13s-firmware.nix {})
-    (callPackage ../../pkgs/qrtr.nix {})
-    (callPackage ../../pkgs/pd-mapper.nix {})
-    alsa-ucm-conf-x13s
-    # (callPackage ../../pkgs/alsa-ucm-conf-x13s.nix {})
-    # (callPackage ../../pkgs/alsa-lib.nix {})
 
-    # (callPackage ../../pkgs/alsa-ucm-conf-x13s.nix {})
-    # coreutils-full
+  environment.systemPackages = with pkgs; [
+    (callPackage ../../pkgs/qrtr.nix { })
+    (callPackage ../../pkgs/pd-mapper.nix { })
+    alsa-ucm-conf-x13s
   ];
 
   time = {

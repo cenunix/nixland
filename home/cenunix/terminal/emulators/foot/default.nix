@@ -1,10 +1,9 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
 }: {
   home.packages = with pkgs; [
     libsixel
@@ -17,7 +16,7 @@
     settings = {
       main = {
         term = "xterm-256color";
-        font = "monospace:size=14";
+        font = "monospace:size=18";
         pad = "24x24";
         dpi-aware = "no";
       };

@@ -1,11 +1,11 @@
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, ...
-}:
-let
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}: let
   inherit (lib) concatStringsSep optional;
   inherit (config.lib.file) mkOutOfStoreSymlink;
   populateEnv = ./populate-nvim-env.py;
@@ -15,8 +15,7 @@ let
     ${pkgs.python39}/bin/python ${populateEnv} -o ${config.xdg.dataHome}/nvim/site/plugin
   '';
   # }}}
-in
-{
+in {
   # Neovim
   # https://rycee.gitlab.io/home-manager/options.html#opt-programs.neovim.enable
   programs.neovim.enable = true;
@@ -32,6 +31,7 @@ in
 
   home.packages = with pkgs; [
     astronvim
+    neovide # neovim gui
     (pkgs.writeShellScriptBin "update-nvim-env" ''
       #
       # update-nvim-env
@@ -41,7 +41,7 @@ in
     '')
   ];
 
-  home.activation.neovim = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+  home.activation.neovim = lib.hm.dag.entryAfter ["writeBoundary"] ''
     echo "Populating neovim env..."
     ${populateEnvScript}
   '';
@@ -58,7 +58,6 @@ in
 
   programs.neovim = {
     extraPackages = with pkgs; [
-      neovide # neovim gui
       lazygit # git TUI
       #Lua
       lua-language-server # lua lsp
@@ -68,6 +67,7 @@ in
       gcc
       cpplint # C
       clang-tools
+      gnumake
 
       #Shell stuffs
       shfmt # shell
@@ -80,6 +80,7 @@ in
       deadnix # remove unused nix
 
       # GoLang
+      go
       gopls # go
       revive # go formatter
       asmfmt # go formatter 2

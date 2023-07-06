@@ -7,7 +7,7 @@ return {
     spell = false,       -- sets vim.opt.spell
     signcolumn = "auto", -- sets vim.opt.signcolumn to auto
     wrap = false,        -- sets vim.opt.wrap
-    guifont = "Iosevka:h12",
+    guifont = "monospace:h10",
   },
   g = {
     mapleader = " ",                 -- sets vim.g.mapleader
@@ -19,8 +19,8 @@ return {
     icons_enabled = true,            -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
     ui_notifications_enabled = true, -- disable notifications when toggling UI elements
 
-    neovide_transparency = 1.0,
-    neovide_refresh_rate = 240,
+    neovide_transparency = 0.7,
+    neovide_refresh_rate = 60,
     neovide_refresh_rate_idle = 5,
     neovide_cursor_animation_length = 0.10,
     neovide_cursor_trail_size = 0.5,
