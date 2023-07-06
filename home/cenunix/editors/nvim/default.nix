@@ -1,11 +1,11 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: let
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
+}:
+let
   inherit (lib) concatStringsSep optional;
   inherit (config.lib.file) mkOutOfStoreSymlink;
   populateEnv = ./populate-nvim-env.py;
@@ -15,7 +15,8 @@
     ${pkgs.python39}/bin/python ${populateEnv} -o ${config.xdg.dataHome}/nvim/site/plugin
   '';
   # }}}
-in {
+in
+{
   # Neovim
   # https://rycee.gitlab.io/home-manager/options.html#opt-programs.neovim.enable
   programs.neovim.enable = true;
@@ -40,7 +41,7 @@ in {
     '')
   ];
 
-  home.activation.neovim = lib.hm.dag.entryAfter ["writeBoundary"] ''
+  home.activation.neovim = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     echo "Populating neovim env..."
     ${populateEnvScript}
   '';
@@ -57,6 +58,7 @@ in {
 
   programs.neovim = {
     extraPackages = with pkgs; [
+      neovide # neovim gui
       lazygit # git TUI
       #Lua
       lua-language-server # lua lsp

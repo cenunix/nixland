@@ -22,7 +22,7 @@ in {
     extraSpecialArgs = {inherit inputs outputs pkgs;};
     users = {
       # Import your home-manager configuration
-      ${usr} = ../home/${usr};
+      ${usr} = ../home/cenunix;
     };
   };
 }

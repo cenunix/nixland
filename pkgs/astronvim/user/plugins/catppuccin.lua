@@ -35,7 +35,7 @@ return {
     --   },
     -- },
     flavour = "macchiato", -- latte, frappe, macchiato, mocha
-    transparent_background = false,
+    transparent_background = true,
     dim_inactive = { enabled = false, percentage = 0.25 },
     integrations = {
       nvimtree = true,
