@@ -115,6 +115,11 @@ with lib; {
     };
 
     server = {
+      enable = mkOption {
+        type = types.bool;
+        default = false;
+        description = "Enable server";
+      };
       mediaServer = mkOption {
         type = types.bool;
         default = false;
