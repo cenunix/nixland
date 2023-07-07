@@ -7,8 +7,8 @@
   ...
 }: {
   imports = [
-    # Alternative bitwarden command line interface
-    ./rbw
+    # ./git
+    ./rbw # Alternative bitwarden command line interface
     ./xdg.nix
   ];
 }
