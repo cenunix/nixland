@@ -8,7 +8,7 @@ with lib; let
   programs = osConfig.modules.programs;
   device = osConfig.modules.device;
 
-  acceptedTypes = ["laptop" "desktop" "lite"];
+  acceptedTypes = ["laptop" "desktop" "armlaptop"];
 in {
   imports = [
     ./minecraft
@@ -18,14 +18,12 @@ in {
     home = {
       packages = with pkgs;
         [
-          mangohud
-          lutris
           dolphin-emu # cool emulator
           mgba # GBA emulation
         ]
         ++ optionals (programs.gaming.steam.enable) [
           gamescope
-          legendary-gl
+          mangohud # nice fps/temp overlay
           winetricks
           lutris
         ];

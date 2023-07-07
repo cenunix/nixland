@@ -30,22 +30,22 @@ with lib; let
     zulu
   ];
 in {
-  # config = mkIf ((builtins.elem device.type acceptedTypes) && (programs.gaming.enable) && (programs.minecraft.enable)) {
-  #   home = {
-  #     # copy the catppuccin theme to the themes directory of PrismLauncher
-  #     file.".local/share/PrismLauncher/themes/mocha" = {
-  #       source = catppuccin-mocha;
-  #       recursive = true;
-  #     };
+  config = mkIf ((builtins.elem device.type acceptedTypes) && (programs.gaming.enable) && (programs.gaming.minecraft.enable)) {
+    home = {
+      # copy the catppuccin theme to the themes directory of PrismLauncher
+      file.".local/share/PrismLauncher/themes/mocha" = {
+        source = catppuccin-mocha;
+        recursive = true;
+      };
 
-  #     packages = with pkgs; [
-  #       # the successor to polyMC, which is now mostly abandoned
-  #       (pkgs.prismlauncher.override {
-  #         # get java versions required by various minecraft versions
-  #         # "write once run everywhere" my ass
-  #         jdks = javaPackages;
-  #       })
-  #     ];
-  #   };
-  # };
+      packages = with pkgs; [
+        # the successor to polyMC, which is now mostly abandoned
+        (pkgs.prismlauncher.override {
+          # get java versions required by various minecraft versions
+          # "write once run everywhere" my ass
+          jdks = javaPackages;
+        })
+      ];
+    };
+  };
 }

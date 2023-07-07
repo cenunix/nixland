@@ -39,8 +39,12 @@ in {
           enable = true;
           steam.enable = true;
           chess.enable = true;
+          minecraft.enable = true;
         };
         override = {};
+      };
+      server = {
+        mediaserver.enable = true;
       };
       usrEnv = {
         isWayland = true;
