@@ -1,12 +1,11 @@
 {
-  inputs,
-  outputs,
-  lib,
   config,
   pkgs,
+  lib,
   ...
 }: {
   imports = [
-    ./network.nix
+    ./gamemode.nix
+    ./chess.nix
   ];
 }

@@ -7,6 +7,6 @@
   ...
 }: {
   imports = [
-    ./network.nix
+    ./gui.nix
   ];
 }

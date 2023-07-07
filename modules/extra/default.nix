@@ -7,6 +7,7 @@
   ...
 }: {
   imports = [
-    ./network.nix
+    ./desktop
+    ./virtualization
   ];
 }

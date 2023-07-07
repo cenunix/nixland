@@ -7,6 +7,8 @@
   ...
 }: {
   imports = [
-    ./network.nix
+    ./programs
+    ./services
+    ./fonts.nix
   ];
 }

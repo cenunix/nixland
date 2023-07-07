@@ -4,13 +4,13 @@
   lib,
   config,
   pkgs,
-  osConfig,
   ...
 }:
 with lib; let
-  env = config.modules.usrEnv;
+  device = config.modules.device;
+  acceptedTypes = ["server" "desktop" "laptop" "armlaptop" "hybrid" "lite"];
 in {
-  config = mkIf (env.isWayland) {
+  config = mkIf (builtins.elem device.type acceptedTypes) {
     fonts = {
       fonts = with pkgs; [
         material-icons
