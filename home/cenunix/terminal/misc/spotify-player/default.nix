@@ -5,13 +5,9 @@
   config,
   pkgs,
   ...
-}:
-with lib; let
-  pass = "${pkgs.coreutils}/bin/head -1 /run/agenix/spotify-player";
-in {
+}: {
   home.packages = with pkgs; [
-    # spotify command line interface
-    spotify-player
+    spotify-player # spotify command line interface
   ];
   xdg.configFile."spotify-player/app.toml".text = ''
     client_id = "545909c803cb4b1ba7e439a768cd636f"

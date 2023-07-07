@@ -33,7 +33,7 @@
   boot.initrd.luks.devices."luks-34400745-6670-4ef8-b5cd-6f3028679645".keyFile = "/crypto_keyfile.bin";
   boot.binfmt.emulatedSystems = ["aarch64-linux"];
 
-  fileSystems."/boot/efi" = {
+  fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/D5CE-0673";
     fsType = "vfat";
   };

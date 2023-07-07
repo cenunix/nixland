@@ -5,7 +5,7 @@
   ...
 }:
 with lib; let
-  cfg = config.modules.server;
+  cfg = config.modules.system.server;
 in {
   config = mkIf (cfg.pihole) {
     virtualisation = {

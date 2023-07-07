@@ -30,6 +30,10 @@ in {
         video.enable = true;
         sound.enable = true;
         bluetooth.enable = true;
+        server = {
+          enable = true;
+          mediaServer = true;
+        };
       };
       programs = {
         cli.enable = true;
@@ -42,9 +46,6 @@ in {
           minecraft.enable = true;
         };
         override = {};
-      };
-      server = {
-        mediaserver.enable = true;
       };
       usrEnv = {
         isWayland = true;
