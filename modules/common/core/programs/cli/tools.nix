@@ -16,5 +16,6 @@
     fzf
     p7zip
     grex
+    lm_sensors
   ];
 }
