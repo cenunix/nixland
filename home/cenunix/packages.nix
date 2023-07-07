@@ -17,8 +17,6 @@ in {
       # Shared Packages between all systems
       firefox
       networkmanagerapplet
-      git
-      gh
       nitch
       inputs.agenix.packages.${pkgs.system}.default
       discordo

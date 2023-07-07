@@ -5,9 +5,7 @@
   config,
   pkgs,
   ...
-}: let
-  cfg = osConfig.modules.programs.git;
-in {
+}: {
   home.packages = with pkgs; [
     gist # manage github gists
     act # local github actions
@@ -34,8 +32,8 @@ in {
     git = {
       enable = true;
       package = pkgs.gitAndTools.gitFull;
-      userName = "NotAShelf";
-      userEmail = "raf@notashelf.dev";
+      userName = "cenunix";
+      userEmail = "user555596@protonmail.com";
       ignores = [
         ".cache/"
         ".idea/"
@@ -51,7 +49,7 @@ in {
       extraConfig = {
         init.defaultBranch = "main";
 
-        delta = with colorscheme.colors; {
+        delta = {
           enable = true;
           line-numbers = true;
           options.navigate = true;
