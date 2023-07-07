@@ -7,7 +7,7 @@
   ...
 }: {
   imports = [
-    # spotify command line interface
-    ./spotify-player
+    ./cava # Audio visualizer
+    ./spotify-player # Spotify command line interface
   ];
 }
