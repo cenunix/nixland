@@ -9,6 +9,7 @@
   imports = [
     ./common
     ./extra
+    ./shared
     ./home-manager.nix
   ];
 }

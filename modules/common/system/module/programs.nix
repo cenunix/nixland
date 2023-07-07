@@ -44,15 +44,17 @@ with lib; {
       };
 
       gaming = {
-        enable = mkEnableOption "Enable packages required for the device to be gaming-ready";
+        enable = mkEnableOption "Enable packages required for the device to be gaming-ready" // {default = false;};
 
-        steam.enable = mkEnableOption "Chess programs and engines";
+        steam.enable = mkEnableOption "Enable steam" // {default = false;};
 
-        emulation.enable = mkEnableOption "Enable programs required to emulate other platforms";
+        minecraft.enable = mkEnableOption "Enable mincecraft" // {default = false;};
 
-        chess.enable = mkEnableOption "Chess programs and engines";
+        emulation.enable = mkEnableOption "Enable programs required to emulate other platforms" // {default = false;};
 
-        gamescope.enable = mkEnableOption "Gamescope compositing manager" // {default = true;};
+        chess.enable = mkEnableOption "Chess programs and engines" // {default = false;};
+
+        gamescope.enable = mkEnableOption "Gamescope compositing manager" // {default = false;};
       };
 
       git = {

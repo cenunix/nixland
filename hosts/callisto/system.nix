@@ -35,6 +35,7 @@ in {
         gaming = {
           enable = true;
           chess.enable = true;
+          steam.enable = false;
         };
         override = {};
       };
