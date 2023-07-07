@@ -67,7 +67,7 @@ with lib; {
 
       # the bootloader that should be used
       loader = mkOption {
-        type = types.enum ["none" "grub" "systemd-boot"];
+        type = types.enum ["none" "grub" "systemd-boot" "x13s-boot"];
         default = "none";
         description = "The bootloader that should be used for the device.";
       };
@@ -111,6 +111,19 @@ with lib; {
 
       tor = {
         enable = mkEnableOption "Tor daemon" // {default = true;};
+      };
+    };
+
+    server = {
+      mediaServer = mkOption {
+        type = types.bool;
+        default = false;
+        description = "Enable mediaserver";
+      };
+      pihole = mkOption {
+        type = types.bool;
+        default = false;
+        description = "Enable pihole";
       };
     };
   };

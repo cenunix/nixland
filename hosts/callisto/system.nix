@@ -1,14 +1,14 @@
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, ...
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
 }:
 with lib; let
   device = config.modules.device;
-in
-{
+in {
   config = {
     modules = {
       device = {
@@ -21,6 +21,9 @@ in
       };
       system = {
         username = "cenunix";
+        boot = {
+          loader = "x13s-boot";
+        };
         video.enable = true;
         sound.enable = true;
         bluetooth.enable = true;

@@ -7,7 +7,7 @@
   ...
 }: {
   imports = [
-    ./module
-    ./hardware
+    ./systemd.nix
+    ./x13s-boot.nix
   ];
 }
