@@ -134,6 +134,18 @@
           ];
         };
       };
+        io = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [
+            # > Our main nixos configuration file <
+            ./hosts/io
+            ./modules/home-manager.nix
+            ./modules/core
+            ./modules/core/bootloaders/systemd.nix
+            agenix
+          ];
+        };
+      };
 
       # Standalone home-manager configuration entrypoint
       # Available through 'home-manager --flake .#your-username@your-hostname'
