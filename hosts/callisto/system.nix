@@ -28,6 +28,16 @@ in {
         sound.enable = true;
         bluetooth.enable = true;
       };
+      programs = {
+        cli.enable = true;
+        gui.enable = true;
+
+        gaming = {
+          enable = true;
+          chess.enable = true;
+        };
+        override = {};
+      };
       usrEnv = {
         isWayland = true;
         desktop = "Hyprland";

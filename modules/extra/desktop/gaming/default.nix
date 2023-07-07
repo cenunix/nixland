@@ -5,7 +5,8 @@
   ...
 }: {
   imports = [
-    ./gamemode.nix
     ./chess.nix
+    ./gamemode.nix
+    ./steam.nix
   ];
 }

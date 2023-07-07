@@ -26,8 +26,6 @@
 
     # registry for linux, thanks to gnome
     dconf.enable = true;
-    # enable polkit for privilege escalation
-    security.polkit.enable = true;
 
     # network inspection utility
     wireshark.enable = true;

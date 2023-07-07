@@ -1,4 +1,4 @@
-{ lib, ... }:
+{lib, ...}:
 with lib; {
   # this module provides overrides for certain defaults and lets you set
   # default programs for referencing in other config files.
@@ -46,11 +46,13 @@ with lib; {
       gaming = {
         enable = mkEnableOption "Enable packages required for the device to be gaming-ready";
 
+        steam.enable = mkEnableOption "Chess programs and engines";
+
         emulation.enable = mkEnableOption "Enable programs required to emulate other platforms";
 
         chess.enable = mkEnableOption "Chess programs and engines";
 
-        gamescope.enable = mkEnableOption "Gamescope compositing manager" // { default = true; };
+        gamescope.enable = mkEnableOption "Gamescope compositing manager" // {default = true;};
       };
 
       git = {
@@ -67,27 +69,27 @@ with lib; {
         # do note this is NOT the command, but just the name. i.e setting footclient will
         # not work because the program name will be references as "foot" in the rest of the config
         terminal = mkOption {
-          type = types.enum [ "foot" "kitty" "wezterm" ];
+          type = types.enum ["foot" "kitty" "wezterm"];
           default = "kitty";
         };
 
         fileManager = mkOption {
-          type = types.enum [ "thunar" "dolphin" "nemo" ];
+          type = types.enum ["thunar" "dolphin" "nemo"];
           default = "dolphin";
         };
 
         browser = mkOption {
-          type = types.enum [ "firefox" "librewolf" "chromium" ];
+          type = types.enum ["firefox" "librewolf" "chromium"];
           default = "firefox";
         };
 
         editor = mkOption {
-          type = types.enum [ "neovim" "helix" "emacs" ];
+          type = types.enum ["neovim" "helix" "emacs"];
           default = "neovim";
         };
 
         launcher = mkOption {
-          type = types.enum [ "rofi" "wofi" "anyrun" ];
+          type = types.enum ["rofi" "wofi" "anyrun"];
           default = "rofi";
         };
       };

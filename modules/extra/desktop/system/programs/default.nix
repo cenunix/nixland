@@ -7,6 +7,7 @@
   ...
 }: {
   imports = [
+    ./xdg-ninja
     ./gui.nix
   ];
 }

@@ -24,9 +24,23 @@ in {
       };
       system = {
         username = "cenunix";
+        boot = {
+          loader = "systemd-boot";
+        };
         video.enable = true;
         sound.enable = true;
         bluetooth.enable = true;
+      };
+      programs = {
+        cli.enable = true;
+        gui.enable = true;
+
+        gaming = {
+          enable = true;
+          steam.enable = true;
+          chess.enable = true;
+        };
+        override = {};
       };
       usrEnv = {
         isWayland = true;

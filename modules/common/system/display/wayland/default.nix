@@ -11,7 +11,7 @@ with lib; let
   device = config.modules.device;
   acceptedTypes = ["desktop" "laptop"];
 in {
-  imports = [./fonts.nix ./services.nix];
+  imports = [./services.nix];
 
   config = mkIf (env.isWayland) {
     # nixpkgs.overlays = with inputs; [nixpkgs-wayland.overlay];

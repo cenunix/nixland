@@ -9,6 +9,8 @@ with lib; let
   acceptedTypes = ["desktop" "laptop" "hybrid" "lite" "armlaptop"];
 in {
   config = mkIf (builtins.elem device.type acceptedTypes) {
+    # enable polkit for privilege escalation
+    security.polkit.enable = true;
     services = {
       lorri.enable = true;
       udisks2.enable = true;

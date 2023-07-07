@@ -8,6 +8,7 @@
 }: {
   imports = [
     ./apps
+    ./games
     ./launchers
     ./wms
   ];
