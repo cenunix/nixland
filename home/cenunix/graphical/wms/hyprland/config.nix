@@ -1,17 +1,17 @@
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, osConfig
-, ...
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  osConfig,
+  ...
 }:
 with lib; let
   monitors = osConfig.modules.device.monitors;
   device = osConfig.modules.device;
   env = osConfig.modules.usrEnv;
-in
-{
+in {
   wayland.windowManager.hyprland.extraConfig = ''
     # Cursor size
     env = XCURSOR_SIZE,16
@@ -188,6 +188,8 @@ in
     bind=SUPER,P,exec,grimblast --notify copysave output
     bind=SUPER_SHIFT,P,exec,grimblast --notify copysave area
     bind=SUPER_ALT,P,exec,grimblast --notify copysave active
+    bind=SUPER_SHIFT,C,exec,ocr
+
 
     bind=SUPER,N,exec,~/.local/bin/nvim-gui
     bind=SUPER,I,exec,mylock

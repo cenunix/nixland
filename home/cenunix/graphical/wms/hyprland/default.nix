@@ -20,7 +20,7 @@ with lib; let
 
   ocr = pkgs.writeShellScriptBin "ocr" ''
     #!/bin/bash
-    grim -g "$(slurp -w 0 -b eebebed2)" /tmp/ocr.png && tesseract /tmp/ocr.png /tmp/ocr-output && wl-copy < /tmp/ocr-output.txt && notify-send "OCR" "Text copied!" && rm /tmp/ocr-output.txt -f
+    grimblast --notify copysave area /tmp/ocr.png && tesseract /tmp/ocr.png /tmp/ocr-output && wl-copy < /tmp/ocr-output.txt && notify-send "OCR" "Text copied!" && rm /tmp/ocr-output.txt -f
   '';
   screenshot = pkgs.writeShellScriptBin "screenshot" ''
     #!/bin/bash
@@ -40,9 +40,9 @@ in {
       pamixer
       catppuccin-cursors
       # python39Packages.requests
-      # tesseract5
+      tesseract5
       # swappy
-      # ocr
+      ocr
       # screenshot
       # mylock
       wl-clipboard

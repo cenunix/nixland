@@ -25,6 +25,8 @@ with lib; let
     # Java 17
     temurin-jre-bin-17
     graalvm17-ce
+    # Java 18
+    temurin-jre-bin-18
     # Latest
     temurin-jre-bin
     zulu
