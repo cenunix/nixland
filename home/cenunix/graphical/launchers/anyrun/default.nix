@@ -61,7 +61,7 @@ in {
     "anyrun/style.css".text = ''
       * {
         transition: 200ms ease-out;
-        font-family: Lexend;
+        font-family: monospace;
         font-size: 1.1rem;
       }
 

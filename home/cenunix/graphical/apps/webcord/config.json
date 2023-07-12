@@ -2,10 +2,10 @@
     "settings": {
         "general": {
             "menuBar": {
-                "hide": true
+                "hide": false
             },
             "tray": {
-                "disable": true
+                "disable": false
             },
             "taskbar": {
                 "flash": true
@@ -23,7 +23,7 @@
             },
             "permissions": {
                 "video": null,
-                "audio": null,
+                "audio": true,
                 "fullscreen": true,
                 "notifications": null,
                 "display-capture": true,
@@ -32,7 +32,7 @@
         },
         "advanced": {
             "csp": {
-                "enabled": true
+                "enabled": false
             },
             "cspThirdParty": {
                 "spotify": true,
@@ -42,9 +42,9 @@
                 "twitter": true,
                 "twitch": true,
                 "streamable": true,
-                "vimeo": false,
+                "vimeo": true,
                 "soundcloud": true,
-                "paypal": false,
+                "paypal": true,
                 "audius": true,
                 "algolia": true,
                 "reddit": true,
@@ -60,13 +60,13 @@
                 "warn": true
             },
             "optimize": {
-                "gpu": true
+                "gpu": false
             },
             "webApi": {
                 "webGl": true
             },
             "unix": {
-                "autoscroll": true
+                "autoscroll": false
             }
         }
     },
