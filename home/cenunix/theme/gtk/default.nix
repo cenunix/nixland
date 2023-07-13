@@ -22,8 +22,8 @@
       name = "Papirus";
     };
     font = {
-      package = pkgs.lexend;
-      name = "lexend";
+      package = pkgs.fira;
+      name = "Fira Sans Condensed";
       size = 13;
     };
     gtk3.extraConfig = {
