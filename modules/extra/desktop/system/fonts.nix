@@ -11,10 +11,10 @@ with lib; let
   acceptedTypes = ["server" "desktop" "laptop" "armlaptop" "hybrid" "lite"];
 in {
   config = mkIf (builtins.elem device.type acceptedTypes) {
+    nixpkgs.config.joypixels.acceptLicense = true;
+
     fonts = {
       fonts = with pkgs; [
-        material-icons
-        material-design-icons
         # roboto
         # work-sans
         # comic-neue
@@ -26,13 +26,19 @@ in {
         # lexend
         # jost
         # dejavu_fonts
+        material-icons
+        material-design-icons
+        joypixels
+        gg-sans
         iosevka-bin
         noto-fonts
         noto-fonts-cjk
         noto-fonts-emoji
         font-awesome
         jetbrains-mono
-        (nerdfonts.override {fonts = ["JetBrainsMono"];})
+        fira
+        fira-code
+        (nerdfonts.override {fonts = ["JetBrainsMono" "FiraCode"];})
       ];
 
       enableDefaultFonts = false;
@@ -41,16 +47,16 @@ in {
       fontconfig = {
         defaultFonts = {
           monospace = [
-            "JetBrainsMono"
-            "JetBrainsMono Nerd Font"
+            "FiraCode"
+            "FiraCode Nerd Font"
             # "Iosevka Term"
             # "Iosevka Term Nerd Font Complete Mono"
             # "Iosevka Nerd Font"
-            "Noto Color Emoji"
+            "JoyPixels"
           ];
-          sansSerif = ["Lexend" "Noto Color Emoji"];
-          serif = ["Noto Serif" "Noto Color Emoji"];
-          emoji = ["Noto Color Emoji"];
+          sansSerif = ["Fira Sans Condensed" "JoyPixels"];
+          serif = ["Noto Serif" "JoyPixels"];
+          emoji = ["JoyPixels"];
         };
       };
     };

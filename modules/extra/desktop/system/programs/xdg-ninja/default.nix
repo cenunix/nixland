@@ -1,6 +1,8 @@
-{...}: let
+{ ... }:
+let
   template = import ./template.nix "nixos";
-in {
+in
+{
   environment = {
     variables = template.glEnv;
     sessionVariables = template.sysEnv;
