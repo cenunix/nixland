@@ -30,29 +30,52 @@ with lib; let
     #!/bin/bash
     gtklock -m "${pkgs.gtklock-userinfo-module}/lib/gtklock/userinfo-module.so" -m "${pkgs.gtklock-powerbar-module}/lib/gtklock/powerbar-module.so" -m "${self.packages.${pkgs.system}.gtklock-runshell-module}/lib/gtklock/runshell-module.so"
   '';
+  shadertoggle = pkgs.writeShellScriptBin "shadertoggle" ''
+    #!/bin/bash
+    set -e
+
+    cfg=~/.config/hypr/shaders
+
+    blank="blank_shader.glsl"
+    alt="bluelight.glsl"
+
+    current="$(hyprctl getoption decoration:screen_shader -j | ${pkgs.gojq}/bin/gojq -r '.str')"
+
+    if [[ "$current" =~ (blank|EMPTY) ]] || [[ "$current" == "" ]]; then
+        hyprctl keyword decoration:screen_shader "$cfg/$alt"
+        echo set $alt
+    else
+        hyprctl keyword decoration:screen_shader "$cfg/$blank"
+        echo set $blank
+    fi
+  '';
 in {
   imports = [./config.nix];
   config = mkIf (env.isWayland && (env.desktop == "Hyprland")) {
-    xdg.configFile."hypr".source = ./shaders;
+    xdg.configFile."hypr/shaders".source = ./shaders;
 
-    home.packages = with pkgs; [
-      libnotify
-      wf-recorder
-      brightnessctl
-      pamixer
-      catppuccin-cursors
-      # python39Packages.requests
-      tesseract5
-      # swappy
-      ocr
-      # screenshot
-      # mylock
-      wl-clipboard
-      # pngquant
-      cliphist
-      grimblast
-      air-status
-    ];
+    home.packages = with pkgs;
+      [
+        libnotify
+        wf-recorder
+        brightnessctl
+        pamixer
+        catppuccin-cursors
+        python39Packages.requests
+        tesseract5
+        # swappy
+        ocr
+        # screenshot
+        # mylock
+        wl-clipboard
+        cliphist
+        grimblast
+        air-status
+      ]
+      ++ optionals (device.gpu == "nvidia") [
+        shadertoggle
+        gojq
+      ];
 
     services.wlsunset = {
       enable = true;

@@ -19,7 +19,7 @@
         term = "xterm-256color";
         font = "monospace:size=13.5";
         pad = "24x24";
-        dpi-aware = "yes";
+        dpi-aware = "no";
       };
       colors = {
         alpha = "0.70";
