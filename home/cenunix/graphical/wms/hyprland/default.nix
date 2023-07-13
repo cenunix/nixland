@@ -1,10 +1,11 @@
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, osConfig
-, ...
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  osConfig,
+  ...
 }:
 with lib; let
   monitors = osConfig.modules.device.monitors;
@@ -12,9 +13,9 @@ with lib; let
   env = osConfig.modules.usrEnv;
 
   mkService = lib.recursiveUpdate {
-    Unit.PartOf = [ "graphical-session.target" ];
-    Unit.After = [ "graphical-session.target" ];
-    Install.WantedBy = [ "graphical-session.target" ];
+    Unit.PartOf = ["graphical-session.target"];
+    Unit.After = ["graphical-session.target"];
+    Install.WantedBy = ["graphical-session.target"];
   };
 
   ocr = pkgs.writeShellScriptBin "ocr" ''
@@ -29,10 +30,11 @@ with lib; let
     #!/bin/bash
     gtklock -m "${pkgs.gtklock-userinfo-module}/lib/gtklock/userinfo-module.so" -m "${pkgs.gtklock-powerbar-module}/lib/gtklock/powerbar-module.so" -m "${self.packages.${pkgs.system}.gtklock-runshell-module}/lib/gtklock/runshell-module.so"
   '';
-in
-{
-  imports = [ ./config.nix ];
+in {
+  imports = [./config.nix];
   config = mkIf (env.isWayland && (env.desktop == "Hyprland")) {
+    xdg.configFile."hypr/bluelight.glsl".source = "./bluelight.glsl";
+
     home.packages = with pkgs; [
       libnotify
       wf-recorder
@@ -82,7 +84,7 @@ in
     systemd.user.targets.tray = {
       Unit = {
         Description = "Home Manager System Tray";
-        Requires = [ "graphical-session-pre.target" ];
+        Requires = ["graphical-session-pre.target"];
       };
     };
 
