@@ -8,6 +8,7 @@
 }: {
   imports = [
     ./nheko
+    ./schizofox
     ./spotify
     ./webcord
   ];

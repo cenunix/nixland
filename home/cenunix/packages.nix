@@ -15,7 +15,7 @@ in {
   home.packages = with pkgs;
     [
       # Shared Packages between all systems
-      firefox
+      # firefox
       networkmanagerapplet
       nitch
       inputs.agenix.packages.${pkgs.system}.default
