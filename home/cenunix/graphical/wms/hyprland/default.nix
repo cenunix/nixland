@@ -33,7 +33,7 @@ with lib; let
 in {
   imports = [./config.nix];
   config = mkIf (env.isWayland && (env.desktop == "Hyprland")) {
-    xdg.configFile."hypr/bluelight.glsl".source = "./bluelight.glsl";
+    xdg.configFile."hypr".source = ./shaders;
 
     home.packages = with pkgs; [
       libnotify
