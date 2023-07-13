@@ -9,7 +9,19 @@ with lib; let
   cfg = config.programs.schizofox;
 
   device = osConfig.modules.device;
-  acceptedTypes = ["desktop" "laptop" "hybrid"];
+  acceptedTypes = ["desktop" "laptop" "armlaptop"];
+  programs.firefox = let
+    background = "/home/cenunix/.config/hypr/hyprland/nixos.png";
+    userChrome = pkgs.substituteAll {
+      src = ./userChrome.css;
+    };
+    startpage = pkgs.substituteAll {
+      src = ./startpage.html;
+      inherit background;
+    };
+    # userContent = pkgs.substituteAll {
+    #   src = ./chrome/userContent.css;
+    # };
 in {
   options.programs.schizofox = {
     enable = mkEnableOption "Schizo firefox esr setup with vim bindings, discord screenshare works tho. Inspired by ArkenFox.";
@@ -180,7 +192,7 @@ in {
               "{531906d3-e22f-4a6c-a102-8057b88a1a63}".install_url = "https://addons.mozilla.org/firefox/downloads/latest/single-file/latest.xpi";
               "{c607c8df-14a7-4f28-894f-29e8722976af}".install_url = "https://addons.mozilla.org/firefox/downloads/latest/temporary-containers/latest.xpi";
               "skipredirect@sblask".install_url = "https://addons.mozilla.org/firefox/downloads/latest/skip-redirect/latest.xpi";
-              "{b6129aa9-e45d-4280-aac8-3654e9d89d21}".install_url = "https://github.com/catppuccin/firefox/releases/download/old/catppuccin_frappe_pink.xpi";
+              # "{b6129aa9-e45d-4280-aac8-3654e9d89d21}".install_url = "https://github.com/catppuccin/firefox/releases/download/old/catppuccin_frappe_pink.xpi";
               "smart-referer@meh.paranoid.pk".install_url = "https://github.com/catppuccin/firefox/releases/download/old/smart-referer.xpi";
               "sponsorBlocker@ajay.app".install_url = "https://addons.mozilla.org/firefox/downloads/latest/sponsorblock/latest.xpi";
               "7esoorv3@alefvanoon.anonaddy.me".install_url = "https://addons.mozilla.org/firefox/downloads/latest/libredirect/latest.xpi";
