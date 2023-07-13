@@ -46,7 +46,7 @@ in {
       };
     });
     iconTheme = {
-      package = pkgs.catppuccin-folders;
+      package = pkgs.catppuccin-papirus-folders;
       name = "Papirus";
     };
     settings = {
