@@ -9,16 +9,17 @@
   gtk = {
     enable = true;
     theme = {
-      name = "Catppuccin-Macchiato-Compact-Blue-Dark";
+      name = "Catppuccin-Macchiato-Compact-Blue-dark";
       package = pkgs.catppuccin-gtk.override {
         accents = ["blue"];
+        tweaks = ["rimless"];
         size = "compact";
         variant = "macchiato";
       };
     };
     iconTheme = {
-      package = pkgs.zafiro-icons;
-      name = "Zafiro-Icons-Dark";
+      package = pkgs.catppuccin-papirus-folders;
+      name = "Papirus";
     };
     font = {
       package = pkgs.lexend;
