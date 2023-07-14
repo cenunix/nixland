@@ -29,7 +29,7 @@ in
       description = "AstroNvim";
       homepage = "https://github.com/AstroNvim/AstroNvim";
       platforms = platforms.all;
-      maintainers = [maintainers.rayandrew];
+      maintainers = [maintainers.cenunix];
       license = licenses.gpl3;
     };
   }
