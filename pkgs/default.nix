@@ -11,4 +11,5 @@
   air-status = pkgs.callPackage ./air-status.nix {};
   discordo = pkgs.callPackage ./discordo.nix {};
   gg-sans = pkgs.callPackage ./gg-sans {};
+  lazyvim = pkgs.callPackage ./lazyvim/default.nix {};
 }
