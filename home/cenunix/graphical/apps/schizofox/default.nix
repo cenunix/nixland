@@ -41,7 +41,7 @@ in {
 
     package = with pkgs;
       wrapFirefox
-      firefox-beta-bin-unwrapped {
+      firefox-esr-115-unwrapped {
         # see https://github.com/mozilla/policy-templates/blob/master/README.md
         extraPolicies = {
           ExtensionSettings = let

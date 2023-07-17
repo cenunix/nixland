@@ -7,7 +7,7 @@
   ...
 }: {
   imports = [
-    ./brave
+    # ./brave
     ./nheko
     ./schizofox
     ./spotify
