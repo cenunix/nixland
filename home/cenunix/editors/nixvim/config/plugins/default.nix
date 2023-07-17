@@ -9,6 +9,7 @@
   imports = [
     ./colorscheme.nix
     ./lsp.nix
+    ./formatting.nix
     ./lualine.nix
     ./neotree.nix
     ./telescope.nix

@@ -13,5 +13,9 @@
 in {
   home.packages = [
     nvim
+    # Golang stuff
+    pkgs.go
+    pkgs.gofumpt
+    pkgs.gotools
   ];
 }

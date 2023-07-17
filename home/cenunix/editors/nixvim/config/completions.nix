@@ -12,6 +12,16 @@
     plugins = {
       ##comment
       luasnip.enable = true;
+      copilot-lua = {
+        enable = true;
+        suggestion = {
+          enabled = false;
+        };
+        panel = {
+          enabled = false;
+        };
+      };
+      copilot-cmp.enable = true;
 
       lspkind = {
         enable = true;
@@ -19,6 +29,7 @@
         cmp = {
           enable = true;
           menu = {
+            copilot = "[Copilot]";
             nvim_lsp = "[LSP]";
             nvim_lua = "[api]";
             path = "[path]";
@@ -52,9 +63,9 @@
         };
 
         sources = [
+          {name = "copilot";}
           {name = "path";}
           {name = "nvim_lsp";}
-          #   {name = "cmp_tabnine";}
           {name = "luasnip";}
           {
             name = "buffer";
