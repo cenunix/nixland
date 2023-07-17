@@ -17,7 +17,7 @@ in {
       spotifyPackage = pkgs.spotify;
       enable = true;
       theme = spicePkgs.themes.catppuccin-macchiato;
-      colorScheme = "flamingo";
+      colorScheme = "blue";
 
       enabledExtensions = with spicePkgs.extensions; [
         fullAppDisplay

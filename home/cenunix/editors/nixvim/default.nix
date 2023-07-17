@@ -6,10 +6,12 @@
   pkgs,
   ...
 }: let
-  config = import.config;
-in {
-  nixvim = inputs.nixvim.makeNixvimWithModule {
+  nvim = inputs.nixvim.legacyPackages."${pkgs.system}".makeNixvimWithModule {
     inherit pkgs;
-    module = config;
+    module = import ./config;
   };
+in {
+  home.packages = [
+    nvim
+  ];
 }

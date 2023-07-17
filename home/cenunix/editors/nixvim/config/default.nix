@@ -6,5 +6,11 @@
   pkgs,
   ...
 }: {
-  programs.nixvim.enable = true;
+  config = {
+    colorschemes.gruvbox.enable = true;
+    options = {
+      number = true;
+      relativenumber = true;
+    };
+  };
 }
