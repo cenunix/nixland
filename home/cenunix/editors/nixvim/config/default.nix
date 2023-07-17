@@ -6,7 +6,10 @@
   pkgs,
   ...
 }: {
-  imports = [./colorscheme.nix];
+  imports = [
+    ./plugins
+    ./keymaps.nix
+  ];
   config = {
     options = {
       number = true;
