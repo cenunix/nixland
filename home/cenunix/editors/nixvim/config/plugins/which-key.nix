@@ -7,14 +7,9 @@
   ...
 }: {
   config = {
-    maps.normal."<leader>n" = {
-      action = ":Neotree action=focus reveal toggle<CR>";
-      silent = true;
-    };
     plugins = {
-      neo-tree = {
+      which-key = {
         enable = true;
-        closeIfLastWindow = true;
       };
     };
   };
