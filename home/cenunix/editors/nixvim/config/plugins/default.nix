@@ -8,6 +8,7 @@
 }: {
   imports = [
     ./colorscheme.nix
+    ./lualine.nix
     ./neotree.nix
     ./which-key.nix
   ];
