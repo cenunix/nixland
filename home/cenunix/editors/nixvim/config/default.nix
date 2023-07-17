@@ -7,6 +7,7 @@
   ...
 }: {
   imports = [
+    ./completions.nix
     ./plugins
     ./keymaps.nix
   ];
@@ -14,6 +15,7 @@
     options = {
       number = true;
       relativenumber = true;
+      timeoutlen = 0;
     };
   };
 }
