@@ -11,6 +11,8 @@
     ./lsp.nix
     ./lualine.nix
     ./neotree.nix
+    ./telescope.nix
+    ./treesitter.nix
     ./which-key.nix
   ];
   config = {

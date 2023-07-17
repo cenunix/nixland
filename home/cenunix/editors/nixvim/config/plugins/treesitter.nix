@@ -13,10 +13,10 @@
 
         nixvimInjections = true;
 
-        folding = true;
+        folding = false;
         indent = true;
 
-        grammarPackages = with config.programs.nixvim.plugins.treesitter.package.builtGrammars; [
+        grammarPackages = with config.plugins.treesitter.package.builtGrammars; [
           bash
           c
           html
@@ -32,7 +32,7 @@
       };
 
       treesitter-refactor = {
-        enable = true;
+        enable = false;
         highlightDefinitions.enable = true;
       };
     };
