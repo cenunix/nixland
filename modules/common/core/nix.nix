@@ -37,6 +37,7 @@
         "https://nix-gaming.cachix.org" # nix-gaming
         "https://anyrun.cachix.org"
         "https://nixpkgs-unfree.cachix.org"
+        "https://nixvim.cachix.org"
       ];
 
       trusted-public-keys = [
@@ -48,6 +49,7 @@
         "nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="
         "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
         "nixpkgs-unfree.cachix.org-1:hqvoInulhbV4nJ9yJOEr+4wxhDV4xq2d1DK7S6Nj6rs="
+        "nixvim.cachix.org-1:8xrm/43sWNaE3sqFYil49+3wO5LqCbS4FHGhMCuPNNA="
       ];
     };
   };
