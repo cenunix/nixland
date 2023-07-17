@@ -10,6 +10,7 @@
     options.completeopt = ["menu" "menuone" "noselect"];
 
     plugins = {
+      ##comment
       luasnip.enable = true;
 
       lspkind = {
@@ -24,7 +25,7 @@
             luasnip = "[snip]";
             buffer = "[buffer]";
             # neorg = "[neorg]";
-            cmp_tabnine = "[TabNine]";
+            # cmp_tabnine = "[TabNine]";
           };
         };
       };
@@ -53,7 +54,7 @@
         sources = [
           {name = "path";}
           {name = "nvim_lsp";}
-          {name = "cmp_tabnine";}
+          #   {name = "cmp_tabnine";}
           {name = "luasnip";}
           {
             name = "buffer";

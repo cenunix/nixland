@@ -28,6 +28,7 @@
           python
           rust
           vimdoc
+          go
         ];
       };
 
