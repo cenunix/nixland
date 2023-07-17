@@ -6,8 +6,5 @@
   pkgs,
   ...
 }: {
-  imports = [
-    ./vscode
-    ./nixvim
-  ];
+  programs.nixvim.enable = true;
 }

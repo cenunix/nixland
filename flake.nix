@@ -34,6 +34,7 @@
       url = "github:fufexan/nix-gaming";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    inputs.nixvim.url = "github:nix-community/nixvim";
   };
 
   outputs = {

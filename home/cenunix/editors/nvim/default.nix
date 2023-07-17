@@ -26,11 +26,11 @@ in {
   # Config and plugins ------------------------------------------------------------------------- {{{
 
   xdg.configFile."nvim" = {
-    source = "${pkgs.lazyvim}";
+    source = "${pkgs.astronvim}";
   };
 
   home.packages = with pkgs; [
-    lazyvim
+    astronvim
     neovide # neovim gui
     (pkgs.writeShellScriptBin "update-nvim-env" ''
       #

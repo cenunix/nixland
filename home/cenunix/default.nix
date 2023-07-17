@@ -15,7 +15,6 @@
   # my-module = import ./my-module.nix;
   imports = [
     # Hyprland home-manager module
-    inputs.hyprland.homeManagerModules.default
     ./editors
     ./graphical
     ./packages.nix
