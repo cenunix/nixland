@@ -6,8 +6,8 @@
   pkgs,
   ...
 }: {
+  imports = [./colorscheme.nix];
   config = {
-    colorschemes.gruvbox.enable = true;
     options = {
       number = true;
       relativenumber = true;
