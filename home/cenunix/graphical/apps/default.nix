@@ -9,6 +9,7 @@
   imports = [
     # ./brave
     ./nheko
+    ./obsidian
     ./schizofox
     ./spotify
     ./webcord

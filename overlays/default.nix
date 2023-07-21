@@ -10,6 +10,29 @@
     # example = prev.example.overrideAttrs (oldAttrs: rec {
     # ...
     # });
+    # mesa =
+    #   (prev.mesa.override
+    #     {
+    #       galliumDrivers = ["swrast" "freedreno" "zink"];
+    #       vulkanDrivers = ["swrast" "freedreno"];
+    #       enableGalliumNine = false;
+    #       enableOSMesa = false;
+    #       enableOpenCL = false;
+    #     })
+    #   .overrideAttrs (oldAttrs: rec {
+    #     mesonFlags =
+    #       oldAttrs.mesonFlags
+    #       ++ [
+    #         "-Dgallium-vdpau=false"
+    #         "-Dgallium-va=false"
+    #         "-Dandroid-libbacktrace=disabled"
+    #       ];
+    #     patches =
+    #       oldAttrs.patches
+    #       ++ [
+    #         ../pkgs/mesa-a690/0001-reallocate-on-unshared-export.patch
+    #       ];
+    #   });
   };
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will

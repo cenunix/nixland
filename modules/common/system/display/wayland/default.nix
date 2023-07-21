@@ -63,6 +63,9 @@ in {
         (mkIf (builtins.elem device.type acceptedTypes) {
           driSupport32Bit = true;
         })
+        (mkIf (device.type == "armlaptop") {
+          package = pkgs.mesa;
+        })
       ];
       pulseaudio.support32Bit = true;
     };
