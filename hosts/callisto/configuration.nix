@@ -1,11 +1,12 @@
 # This is your system's configuration file.
 # Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, ...
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
 }: {
   # You can import other NixOS modules here
   imports = [
@@ -24,6 +25,25 @@
     ./system.nix
     ./services.nix
   ];
+  nix.buildMachines = [
+    {
+      hostName = "europa";
+      systems = ["x86_64-linux" "aarch64-linux"];
+      protocol = "ssh-ng";
+      # if the builder supports building for multiple architectures,
+      # replace the previous line by, e.g.,
+      # systems = ["x86_64-linux" "aarch64-linux"];
+      maxJobs = 8;
+      speedFactor = 2;
+      supportedFeatures = ["nixos-test" "benchmark" "big-parallel" "kvm"];
+      mandatoryFeatures = [];
+    }
+  ];
+  nix.distributedBuilds = true;
+  # optional, useful when the builder has a faster internet connection than yours
+  nix.extraOptions = ''
+    builders-use-substitutes = true
+  '';
 
   nixpkgs = {
     # You can add overlays here
@@ -43,11 +63,10 @@
       #   });
       # })
       (final: prev: {
-        qrtr = prev.callPackage ../../pkgs/qrtr.nix { };
-        pd-mapper = final.callPackage ../../pkgs/pd-mapper.nix { inherit (final) qrtr; };
+        qrtr = prev.callPackage ../../pkgs/qrtr.nix {};
+        pd-mapper = final.callPackage ../../pkgs/pd-mapper.nix {inherit (final) qrtr;};
         compressFirmwareXz = lib.id;
       })
-
     ];
     # Configure your nixpkgs instance
     config = {
@@ -81,10 +100,9 @@
   # hardware.enableAllFirmware = true;
   # hardware.firmware = [ pkgs.linux-firmware pkgs.x13s-firmware ];
 
-
   environment.systemPackages = with pkgs; [
-    (callPackage ../../pkgs/qrtr.nix { })
-    (callPackage ../../pkgs/pd-mapper.nix { })
+    (callPackage ../../pkgs/qrtr.nix {})
+    (callPackage ../../pkgs/pd-mapper.nix {})
     alsa-ucm-conf-x13s
   ];
 
