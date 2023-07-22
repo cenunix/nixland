@@ -1,9 +1,10 @@
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, ...
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
 }: {
   config = {
     maps.normal."<S-h>" = {
@@ -23,7 +24,7 @@
     };
 
     plugins = {
-      barbar.enable = true;
+      bufferline.enable = true;
     };
   };
 }

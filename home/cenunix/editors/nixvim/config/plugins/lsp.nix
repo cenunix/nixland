@@ -30,12 +30,18 @@
         };
 
         servers = {
-	  html.enable = true;
-	  ccls.enable = true;
+          tailwindcss.enable = true;
+          tsserver.enable = true;
+          html.enable = true;
+          ccls.enable = true;
+          jsonls.enable = true;
           bashls.enable = true;
           clangd.enable = true;
           nil_ls.enable = true;
           lua-ls.enable = true;
+          rust-analyzer.enable = true;
+          yamlls.enable = true;
+          pyright.enable = true;
           gopls = {
             enable = true;
             filetypes = [

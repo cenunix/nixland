@@ -1,13 +1,14 @@
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, ...
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
 }: {
   imports = [
     ./autopairs.nix
-    ./barbar.nix
+    ./bufferline.nix
     ./colorscheme.nix
     ./lsp.nix
     ./formatting.nix
