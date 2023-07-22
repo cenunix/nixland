@@ -1,18 +1,20 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
 }: {
   imports = [
+    ./autopairs.nix
+    ./barbar.nix
     ./colorscheme.nix
     ./lsp.nix
     ./formatting.nix
     ./lualine.nix
     ./neotree.nix
     ./telescope.nix
+    ./terminal.nix
     ./treesitter.nix
     ./which-key.nix
   ];

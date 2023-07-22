@@ -6,9 +6,8 @@
 , ...
 }: {
   config = {
-    globals = {
-      mapleader = " ";
-      maplocalleader = " ";
+    plugins = {
+      nvim-autopairs.enable = true;
     };
   };
 }

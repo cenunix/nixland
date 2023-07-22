@@ -1,10 +1,9 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
 }: {
   config = {
     maps.normal."<leader>ff" = {
@@ -18,7 +17,7 @@
       desc = "Grep Files";
     };
     maps.normal."<leader>fb" = {
-      action = ":Telescope buggers<CR>";
+      action = ":Telescope buffers<CR>";
       silent = true;
       desc = "Grep Buffers";
     };

@@ -17,6 +17,6 @@ in {
     pkgs.go
     pkgs.gofumpt
     pkgs.gotools
-    pkgs.nixpkgs_fmt
+    pkgs.nixpkgs-fmt
   ];
 }
