@@ -18,5 +18,14 @@
         closeIfLastWindow = true;
       };
     };
+    extraConfigLua = ''
+      require("neo-tree").setup({
+      		window = {
+      		 mappings = {
+      		  ["<space>"] = false,
+      		 },
+      		},
+      		})
+    '';
   };
 }
