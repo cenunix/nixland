@@ -30,6 +30,7 @@
         };
 
         servers = {
+	  ccls.enable = true;
           bashls.enable = true;
           clangd.enable = true;
           nil_ls.enable = true;

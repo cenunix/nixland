@@ -31,7 +31,7 @@
     startWhenNeeded = false;
     settings = {
       PermitRootLogin = lib.mkForce "no";
-      PasswordAuthentication = false;
+      PasswordAuthentication = true;
       KbdInteractiveAuthentication = lib.mkDefault false;
       UseDns = false;
       X11Forwarding = false;
