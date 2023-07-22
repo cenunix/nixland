@@ -8,6 +8,7 @@
 }: {
   imports = [
     ./completions.nix
+    ./core.nix
     ./plugins
     ./keymaps.nix
   ];

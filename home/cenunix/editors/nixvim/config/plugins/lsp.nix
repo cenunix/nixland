@@ -30,6 +30,7 @@
         };
 
         servers = {
+	  html.enable = true;
 	  ccls.enable = true;
           bashls.enable = true;
           clangd.enable = true;

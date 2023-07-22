@@ -13,15 +13,16 @@
       ##comment
       luasnip.enable = true;
       copilot-lua = {
-        enable = true;
+        enable = false;
         suggestion = {
           enabled = false;
         };
         panel = {
           enabled = false;
         };
+	
       };
-      copilot-cmp.enable = true;
+      #copilot-cmp.enable = true;
 
       lspkind = {
         enable = true;
@@ -29,7 +30,7 @@
         cmp = {
           enable = true;
           menu = {
-            copilot = "[Copilot]";
+            #copilot = "[Copilot]";
             nvim_lsp = "[LSP]";
             nvim_lua = "[api]";
             path = "[path]";
@@ -63,7 +64,7 @@
         };
 
         sources = [
-          {name = "copilot";}
+          #{name = "copilot";}
           {name = "path";}
           {name = "nvim_lsp";}
           {name = "luasnip";}

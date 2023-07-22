@@ -21,6 +21,7 @@
               require("null-ls").builtins.formatting.prettier,
               require("null-ls").builtins.formatting.gofumpt,
               require("null-ls").builtins.formatting.goimports,
+	      require("null-ls").builtins.formatting.nixpkgs_fmt,
           },
           -- you can reuse a shared lspconfig on_attach callback here
           on_attach = function(client, bufnr)
