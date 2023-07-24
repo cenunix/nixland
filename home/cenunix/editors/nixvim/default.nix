@@ -18,5 +18,7 @@ in {
     pkgs.gofumpt
     pkgs.gotools
     pkgs.nixpkgs-fmt
+    pkgs.nodePackages_latest.prettier
+    pkgs.ripgrep
   ];
 }

@@ -1,10 +1,9 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
 }: {
   networking = {
     # dns
@@ -16,8 +15,8 @@
       enable = true;
       # if your minecraft server is not worky
       # this is probably why
-      allowedTCPPorts = [443 80 22 7000 8080 5432 32400 9117];
-      allowedUDPPorts = [443 80 44857 8080];
+      allowedTCPPorts = [ 443 80 22 7000 8080 5432 32400 9117 ];
+      allowedUDPPorts = [ 443 80 44857 8080 ];
       allowPing = false;
       logReversePathDrops = true;
     };
@@ -31,7 +30,7 @@
     startWhenNeeded = false;
     settings = {
       PermitRootLogin = lib.mkForce "no";
-      PasswordAuthentication = true;
+      PasswordAuthentication = false;
       KbdInteractiveAuthentication = lib.mkDefault false;
       UseDns = false;
       X11Forwarding = false;
@@ -39,7 +38,7 @@
 
     # the ssh port(s) should be automatically passed to the firewall's allowedTCPports
     openFirewall = true;
-    ports = [2317];
+    ports = [ 2317 ];
 
     hostKeys = [
       {

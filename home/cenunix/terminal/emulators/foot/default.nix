@@ -1,10 +1,9 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
 }: {
   home.packages = with pkgs; [
     libsixel
@@ -22,7 +21,7 @@
         dpi-aware = "no";
       };
       colors = {
-        alpha = "0.70";
+        alpha = "= 1.00";
         foreground = "cad3f5"; # Text
         background = "24273a"; # Base
         regular0 = "494d64"; # Surface 1

@@ -1,9 +1,10 @@
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, ...
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
 }: {
   config = {
     plugins = {
@@ -14,7 +15,10 @@
 
         folding = false;
         indent = true;
-
+        moduleConfig.autotag = {
+          enable = true;
+          filetypes = ["html" "xml" "astro" "javascriptreact" "typescriptreact" "svelte" "vue"];
+        };
         grammarPackages = with config.plugins.treesitter.package.builtGrammars; [
           bash
           c
@@ -27,6 +31,10 @@
           python
           rust
           vimdoc
+          vim
+          regex
+          markdown
+          markdown_inline
           go
         ];
       };

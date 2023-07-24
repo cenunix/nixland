@@ -1,9 +1,10 @@
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, ...
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
 }: {
   config = {
     plugins = {
@@ -21,8 +22,11 @@
               f = {
                   name = "Telescope",
               },
-              h = {
-                  name = "+git",
+              g = {
+                  name = "Git",
+              },
+              t = {
+                name = "Terminal",
               },
           },
       }
