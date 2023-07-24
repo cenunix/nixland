@@ -8,20 +8,30 @@
 }: {
   config = {
     plugins = {
-      null-ls.enable = true;
+      null-ls = {
+        enable = true;
+        sources = {
+          formatting = {
+            prettier = {
+              enable = true;
+            };
+            nixpkgs_fmt = {
+              enable = true;
+            };
+          };
+        };
+      };
     };
     extraPlugins = with pkgs; [
-      
     ];
 
     extraConfigLuaPre = ''
       local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
       require("null-ls").setup({
           sources = {
-              require("null-ls").builtins.formatting.prettier,
-              require("null-ls").builtins.formatting.gofumpt,
-              require("null-ls").builtins.formatting.goimports,
-	      require("null-ls").builtins.formatting.nixpkgs_fmt,
+            require("null-ls").builtins.formatting.gofumpt,
+            require("null-ls").builtins.formatting.goimports,
+            require("null-ls").builtins.formatting.clang_format,
           },
           -- you can reuse a shared lspconfig on_attach callback here
           on_attach = function(client, bufnr)

@@ -22,6 +22,7 @@
         grammarPackages = with config.plugins.treesitter.package.builtGrammars; [
           bash
           c
+          cpp
           html
           javascript
           latex

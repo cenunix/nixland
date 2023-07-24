@@ -39,6 +39,7 @@
     };
     extraPlugins = [
       pkgs.vimPlugins.luasnip
+      pkgs.vimPlugins.vim-clang-format
     ];
   };
 }
