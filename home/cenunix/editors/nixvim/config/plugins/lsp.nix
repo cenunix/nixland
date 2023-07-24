@@ -10,6 +10,7 @@
     plugins = {
       clangd-extensions = {
         enable = true;
+        enableOffsetEncodingWorkaround = true;
       };
       nix.enable = true;
       lspsaga.enable = true;
@@ -20,8 +21,8 @@
           silent = true;
           diagnostic = {
             # Navigate in diagnostics
-            "<leader>k" = "goto_prev";
-            "<leader>j" = "goto_next";
+            # "<leader>k" = "goto_prev";
+            # "<leader>j" = "goto_next";
           };
 
           # lspBuf = {
@@ -38,7 +39,7 @@
         servers = {
           tailwindcss.enable = true;
           html.enable = true;
-          ccls.enable = true;
+          # ccls.enable = true;
           jsonls.enable = true;
           bashls.enable = true;
 
@@ -49,14 +50,6 @@
           pyright.enable = true;
           clangd = {
             enable = true;
-            extraOptions = {
-              __raw = ''
-                cmd = {
-                  "clangd",
-                  "--offset-encoding=utf-16",
-                },
-              '';
-            };
           };
           tsserver = {
             enable = true;

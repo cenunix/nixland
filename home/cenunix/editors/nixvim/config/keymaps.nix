@@ -112,11 +112,79 @@
       silent = true;
       desc = "View Git diff";
     };
+    maps.normal."<leader>lD" = {
+      action = "<cmd>Telescope diagnostics<CR>";
+      silent = true;
+      desc = "Search Diagnostics";
+    };
+    maps.normal."<leader>li" = {
+      action = "<cmd>LspInfo<CR>";
+      silent = true;
+      desc = "LSP Information";
+    };
+    maps.normal."<leader>lI" = {
+      action = "<cmd>NullLsInfo<CR>";
+      silent = true;
+      desc = "Null-ls Information";
+    };
+    maps.normal."<leader>la" = {
+      action = "<cmd>lua vim.lsp.buf.code_action()<CR>";
+      silent = true;
+      desc = "LSP Code Action";
+    };
+    maps.normal."<leader>ll" = {
+      action = "<cmd>lua vim.lsp.codelens.refresh()<CR>";
+      silent = true;
+      desc = "LSP CodeLens Refresh";
+    };
+    maps.normal."<leader>lL" = {
+      action = "<cmd>lua vim.lsp.codelens.run()<CR>";
+      silent = true;
+      desc = "LSP CodeLens run";
+    };
     maps.normal."gd" = {
-      action = ''<cmd>Telescope lsp_definitions{ reuse_win = true }<CR>'';
+      action = '':Telescope lsp_definitions<CR>'';
       silent = true;
       desc = "Goto Definition";
     };
+    maps.normal."gI" = {
+      action = '':Telescope lsp_implementations<CR>'';
+      silent = true;
+      desc = "Goto Definition";
+    };
+    maps.normal."gl" = {
+      action = ''<cmd>lua vim.diagnostic.open_float()<CR>'';
+      silent = true;
+      desc = "Hover Diagnostics";
+    };
+    maps.normal."[d" = {
+      action = ''<cmd>lua vim.diagnostic.goto_prev()<CR>'';
+      silent = true;
+      desc = "Previous Diagnostic";
+    };
+    maps.normal."]d" = {
+      action = ''<cmd>lua vim.diagnostic.goto_next()<CR>'';
+      silent = true;
+      desc = "Next Diagnostic";
+    };
+    maps.normal."K" = {
+      action = ''<cmd>lua vim.lsp.buf.hover()<CR>'';
+      silent = true;
+      desc = "Hover symbol details";
+    };
+
+    # maps.normal."gD" = {
+    #   action = "<cmd>lua vim.lsp.buf.declaration()<CR>";
+    #   desc = "Goto Declaration";
+    # };
+    # maps.normal."gd" = "<cmd>lua vim.lsp.buf.definition()<CR>";
+    maps.normal."gi" = "<cmd>lua vim.lsp.buf.implementation()<CR>";
+    # maps.normal."<C-k>" = "<cmd>lua vim.lsp.buf.signature_help()<CR>";
+    maps.normal."gr" = "<cmd>lua vim.lsp.buf.references()<CR>";
+    maps.normal."<leader>ck" = "<cmd>lua vim.diagnostic.open_float()<CR>";
+    maps.normal."<leader>ca" = "<cmd>lua vim.lsp.buf.code_action()<CR>";
+    maps.normal."<leader>cf" = "<cmd>lua vim.lsp.buf.format()<CR>";
+
     # maps.normal."<leader>w" = {
     #   action = "<cmd>w<CR>";
     #   silent = true;

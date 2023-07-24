@@ -1,17 +1,17 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  osConfig,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, osConfig
+, ...
 }:
 with lib; let
   monitors = osConfig.modules.device.monitors;
   device = osConfig.modules.device;
   env = osConfig.modules.usrEnv;
-in {
+in
+{
   wayland.windowManager.hyprland.extraConfig = ''
     # Cursor size
     env = XCURSOR_SIZE,16
@@ -87,12 +87,12 @@ in {
         bezier=pace,0.46, 1, 0.29, 0.99
         bezier=overshot,0.13,0.99,0.29,1.1
         bezier = md3_decel, 0.05, 0.7, 0.1, 1
-        animation=windowsIn,1,4,md3_decel,slide
-        animation=windowsOut,1,4,md3_decel,slide
-        animation=windowsMove,1,4,md3_decel,slide
-        animation=fade,1,7,md3_decel
-        animation=workspaces,1,5,md3_decel
-        animation=specialWorkspace,1,8,md3_decel,slide
+        animation=windowsIn,1,3,md3_decel,slide
+        animation=windowsOut,1,3,md3_decel,slide
+        animation=windowsMove,1,3,md3_decel,slide
+        animation=fade,1,3,md3_decel
+        animation=workspaces,1,3,md3_decel
+        animation=specialWorkspace,1,3,md3_decel,slide
         #animation=border,0,3,md3_decel
     }
 

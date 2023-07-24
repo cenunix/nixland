@@ -7,6 +7,11 @@
   ...
 }: {
   config = {
+    extraPlugins = with pkgs.vimPlugins; [
+      nvim-ts-rainbow # treesitter color brackets
+      nvim-ts-autotag
+      nvim-ts-context-commentstring
+    ];
     plugins.telescope = {
       enable = true;
       extensions.fzf-native = {

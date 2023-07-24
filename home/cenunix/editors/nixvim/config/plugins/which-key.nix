@@ -28,6 +28,9 @@
               t = {
                 name = "Terminal",
               },
+              l = {
+                name = "LSP",
+              },
           },
       }
     '';

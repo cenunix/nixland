@@ -8,17 +8,17 @@
 }: {
   config = {
     maps.normal."<S-h>" = {
-      action = ":BufferPrevious<CR>";
+      action = ":bprevious<CR>";
       silent = true;
       desc = "Previous Buffer";
     };
     maps.normal."<S-l>" = {
-      action = ":BufferNext<CR>";
+      action = ":bnext<CR>";
       silent = true;
       desc = "Next Buffer";
     };
     maps.normal."<leader>c" = {
-      action = ":BufferClose<CR>";
+      action = ":bdelete!<CR>";
       silent = true;
       desc = "Close Buffer";
     };
