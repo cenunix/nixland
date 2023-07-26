@@ -41,6 +41,8 @@
       pkgs.vimPlugins.luasnip
       pkgs.vimPlugins.vim-clang-format
       pkgs.vimPlugins.presence-nvim
+      pkgs.nodePackages_latest.live-server
+      pkgs.clang-tools
     ];
     extraConfigLua = ''
       -- Description of each option can be found in https://github.com/andweeb/presence.nvim
@@ -64,7 +66,7 @@
           git_commit_text     = "Prolly debugging  (っ⇀__↼ ς)",
           plugin_manager_text = "Prolly debugging  (っ⇀__↼ ς)",
           reading_text        = "Prolly debugging  (っ⇀__↼ ς)",
-          workspace_text      = "Prolly debugging  (っ⇀__↼ ς)",
+          workspace_text      = "Working on %s",
           line_number_text    = "Prolly debugging  (っ⇀__↼ ς)",
       })
     '';

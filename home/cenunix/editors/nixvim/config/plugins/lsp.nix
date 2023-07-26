@@ -11,11 +11,41 @@
       clangd-extensions = {
         enable = true;
         enableOffsetEncodingWorkaround = true;
+        server = {
+          extraOptions = {
+            # keys = {__raw = ''{ "<leader>cR", "<cmd>ClangdSwitchSourceHeader<cr>", desc = "Switch Source/Header (C/C++)" }'';};
+            cmd = [
+              ''${pkgs.clang-tools}/bin/clangd''
+              "--offset-encoding=utf-16"
+              ''--background-index''
+              ''--clang-tidy''
+              ''--header-insertion=iwyu''
+              ''--completion-style=detailed''
+              ''--function-arg-placeholders=false''
+              ''--fallback-style=llvm''
+            ];
+            # root_dir = "require 'lspconfig.util'.root_pattern('Makefile','CMakeLists.txt','configure.ac','configure.in','config.h.in','meson.build','meson_options.txt','build.ninja')";
+
+            # capabilities = {
+            #   __raw = '''';
+            #   # require("cmp_nvim_lsp")'';
+            # };
+            single_file_support = true;
+            # init_options = {
+            #   usePlaceholders = true;
+            #   completeUnimported = true;
+            #   clangdFileStatus = true;
+            # };
+          };
+        };
       };
       nix.enable = true;
       lspsaga.enable = true;
       lsp = {
         enable = true;
+        # preConfig = ''
+        #   capabilities = require("cmp_nvim_lsp").default_capabilities()
+        # '';
 
         keymaps = {
           silent = true;
@@ -39,7 +69,6 @@
         servers = {
           tailwindcss.enable = true;
           html.enable = true;
-          # ccls.enable = true;
           jsonls.enable = true;
           bashls.enable = true;
 
@@ -55,7 +84,7 @@
             enable = true;
             extraOptions = {
               root_dir = {__raw = ''require("lspconfig.util").root_pattern("tsconfig.json")'';};
-              single_file_support = false;
+              single_file_support = true;
             };
           };
           gopls = {
@@ -66,8 +95,9 @@
               "gowork"
               "gotmpl"
             ];
-            rootDir = "require 'lspconfig.util'.root_pattern('go.work', 'go.mod', '.git')";
-            extraOptions.settings = {
+            extraOptions = {
+              single_file_support = true;
+              rootDir = {__raw = ''require 'lspconfig.util'.root_pattern('go.work', 'go.mod', '.git')'';};
               completeUnimported = true;
               usePlaceholders = true;
               analyses = {
@@ -78,7 +108,7 @@
         };
       };
     };
-    extraConfigLua = ''
+    extraConfigLuaPre = ''
       local cmp_nvim_lsp = require "cmp_nvim_lsp"
         require("lspconfig").clangd.setup{
           on_attach = on_attach,

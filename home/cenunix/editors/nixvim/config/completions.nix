@@ -8,21 +8,28 @@
 }: {
   config = {
     plugins.indent-blankline.enable = true;
-    plugins.lspkind = {
-      enable = true;
-      cmp = {
-        enable = true;
-      };
-    };
+    # plugins.lspkind = {
+    #   enable = true;
+    #   cmp = {
+    #     enable = true;
+    #     menu = {
+    #       nvim_lsp = "[LSP]";
+    #       nvim_lua = "[api]";
+    #       path = "[path]";
+    #       luasnip = "[snip]";
+    #       buffer = "[buffer]";
+    #     };
+    #   };
+    # };
     plugins.luasnip = {
       enable = true;
 
       fromVscode = [
         {
-          lazyLoad = true;
+          lazyLoad = false;
         }
         {
-          lazyLoad = true;
+          lazyLoad = false;
           paths = [
             ./snippets
           ];
@@ -33,6 +40,7 @@
     extraPlugins = with pkgs.vimPlugins; [
       friendly-snippets
     ];
+    plugins.cmp-nvim-lsp.enable = true;
 
     plugins.nvim-cmp = {
       enable = true;
@@ -98,11 +106,10 @@
       #     end
       #   '';
       # };
-
       sources = [
         # { name = "copilot"; }
-        {name = "luasnip";} #-- For luasnip users.
         {name = "nvim_lsp";}
+        {name = "luasnip";} #-- For luasnip users.
         {name = "path";}
         {name = "buffer";}
       ];

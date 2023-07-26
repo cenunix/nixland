@@ -24,7 +24,31 @@
     };
 
     plugins = {
-      bufferline.enable = true;
+      bufferline = {
+        enable = true;
+        offsets = [
+          {
+            filetype = "neo-tree";
+            text = " ( ◎ ﹏ ◎ ) ";
+            # highlight = "Directory";
+            text_align = "center";
+          }
+        ];
+      };
     };
+    # extraConfigLua = ''
+    #   require('bufferline').setup{
+    #     options =
+    #      offsets = {
+    #             {
+    #                 filetype = "NvimTree",
+    #                 text = "File Explorer" | function ,
+    #                 text_align = "left" | "center" | "right"
+    #                 separator = true
+    #             }
+    #         },
+    #     }
+    #   }
+    # '';
   };
 }
