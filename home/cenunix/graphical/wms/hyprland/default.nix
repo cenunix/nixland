@@ -90,7 +90,7 @@ in {
       swaybg = mkService {
         Unit.Description = "Wallpaper chooser";
         Service = {
-          ExecStart = "${lib.getExe pkgs.swaybg} -i ${./space_background.jpg}";
+          ExecStart = "${lib.getExe pkgs.swaybg} -i ${./catpuccino-4k.png}";
           Restart = "always";
         };
       };
