@@ -17,6 +17,5 @@ in {
     pkgs.go
     pkgs.gofumpt
     pkgs.gotools
-    pkgs.ripgrep
   ];
 }

@@ -17,5 +17,6 @@
     p7zip
     grex
     lm_sensors
+    dua
   ];
 }
