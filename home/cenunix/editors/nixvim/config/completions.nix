@@ -26,10 +26,10 @@
 
       fromVscode = [
         {
-          lazyLoad = false;
+          lazyLoad = true;
         }
         {
-          lazyLoad = false;
+          lazyLoad = true;
           paths = [
             ./snippets
           ];
@@ -40,11 +40,14 @@
     extraPlugins = with pkgs.vimPlugins; [
       friendly-snippets
     ];
-    plugins.cmp-nvim-lsp.enable = true;
+    # plugins.cmp-nvim-lsp.enable = true;
 
     plugins.nvim-cmp = {
       enable = true;
-      # preselect = "None";
+      performance = {
+        debounce = 150;
+      };
+      preselect = "None";
       snippet.expand = "luasnip";
       mappingPresets = ["insert" "cmdline"];
       mapping = {

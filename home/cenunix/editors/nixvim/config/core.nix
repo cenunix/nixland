@@ -12,6 +12,7 @@
       illuminate.enable = true;
       gitsigns.enable = true;
       nvim-ufo.enable = true;
+      comment-nvim.enable = true;
       noice = {
         enable = true;
         presets = {

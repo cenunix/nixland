@@ -367,7 +367,6 @@ return {
           "svelte",
           "html",
           "java",
-          "help",
           "nix",
           "markdown",
           "markdown_inline",

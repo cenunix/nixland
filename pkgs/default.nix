@@ -12,4 +12,5 @@
   discordo = pkgs.callPackage ./discordo.nix {};
   gg-sans = pkgs.callPackage ./gg-sans {};
   lazyvim = pkgs.callPackage ./lazyvim/default.nix {};
+  nvchad = pkgs.callPackage ./nvchad/default.nix {};
 }

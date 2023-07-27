@@ -1,109 +1,106 @@
 {
-  inputs,
-  outputs,
-  lib,
+  flake,
   config,
   pkgs,
+  lib,
   ...
-}: let
+}:
+# some configurations are taken from
+# https://github.com/NvChad/NvChad
+let
   inherit (lib) concatStringsSep optional;
   inherit (config.lib.file) mkOutOfStoreSymlink;
+
+  cfg = config.programs.neovim;
+
+  home = config.home.homeDirectory;
   populateEnv = ./populate-nvim-env.py;
 
   populateEnvScript = ''
     mkdir -p ${config.xdg.dataHome}/nvim/site/plugin
     ${pkgs.python39}/bin/python ${populateEnv} -o ${config.xdg.dataHome}/nvim/site/plugin
   '';
-  # }}}
 in {
   # Neovim
+
   # https://rycee.gitlab.io/home-manager/options.html#opt-programs.neovim.enable
-  programs.neovim.enable = true;
-
-  programs.neovim.viAlias = true;
-  programs.neovim.vimAlias = true;
-
-  # Config and plugins ------------------------------------------------------------------------- {{{
+  programs.neovim = {
+    enable = true;
+    viAlias = true;
+    vimAlias = true;
+    defaultEditor = true;
+  };
 
   xdg.configFile."nvim" = {
-    source = "${pkgs.astronvim}";
+    source = "${pkgs.nvchad}";
+    # recursive = true;
   };
 
   home.packages = with pkgs; [
-    astronvim
-    neovide # neovim gui
+    lua-language-server
+    stylua
+    shfmt
+
+    # python
+    python311Packages.flake8
+    python311Packages.black
+    python311Packages.python-lsp-server
+
+    # web stuff
+    nodePackages_latest.prettier
+    nodePackages_latest.eslint_d
+    nodePackages_latest.vscode-langservers-extracted
+    nodePackages_latest.typescript-language-server
+
+    # rust
+    rust-analyzer
+    rustfmt
+
+    # config
+    taplo
+
+    # nix
+    nixpkgs-fmt
+    rnix-lsp
+
     (pkgs.writeShellScriptBin "update-nvim-env" ''
-      #
-      # update-nvim-env
-      #
-      # Update neovim env such that it can be used in neovide or other GUIs.
       ${populateEnvScript}
+    '')
+    (pkgs.writeShellScriptBin "clean-nvim-all" ''
+      rm -rf ${config.xdg.dataHome}/nvim
+      rm -rf ${config.xdg.cacheHome}/nvim
+      rm -rf ${config.xdg.stateHome}/nvim
+      rm -rf ${config.xdg.configHome}/nvim
+    '')
+    (pkgs.writeShellScriptBin "clean-nvim" ''
+      rm -rf ${config.xdg.dataHome}/nvim
+      rm -rf ${config.xdg.stateHome}/nvim
+      rm -rf ${config.xdg.cacheHome}/nvim
     '')
   ];
 
   home.activation.neovim = lib.hm.dag.entryAfter ["writeBoundary"] ''
     echo "Populating neovim env..."
-    ${populateEnvScript}
-  '';
+    ${populateEnvScript}'';
 
-  programs.bash.initExtra = lib.mkAfter ''
-    export EDITOR="${config.programs.neovim.package}/bin/nvim"
-  '';
+  programs.zsh.initExtra = lib.mkIf cfg.enable (lib.mkAfter ''
+    alias n="${pkgs.neovim}/bin/nvim"
+  '');
 
-  programs.zsh.initExtra = lib.mkAfter ''
-    export EDITOR="${config.programs.neovim.package}/bin/nvim"
-  '';
-
-  # Required packages -------------------------------------------------------------------------- {{{
-
-  programs.neovim = {
-    extraPackages = with pkgs; [
-      lazygit # git TUI
-      #Lua
-      lua-language-server # lua lsp
-      stylua # lua linter
-
-      # C/C++
-      gcc
-      cpplint # C
-      clang-tools
-      gnumake
-
-      #Shell stuffs
-      shfmt # shell
-      shellcheck # bash
-
-      # nix shit
-      nil # nix language server
-      nixpkgs-fmt # nix package formatter
-      statix # nix linter and suggestions
-      deadnix # remove unused nix
-
-      # GoLang
-      go
-      gopls # go
-      revive # go formatter
-      asmfmt # go formatter 2
-      gofumpt # go formattter 3
-
-      black # python
-      nodejs # take a guess
-      marksman # markdown language server
-      nodePackages.pyright
-      nodePackages.prettier
-      nodePackages.stylelint
-      nodePackages.jsonlint # JSON
-      nodePackages.typescript-language-server # Typescript
-      nodePackages.vscode-langservers-extracted # HTML, CSS, JavaScript
-      nodePackages.yarn
-      nodePackages.bash-language-server
-      nodePackages.node2nix # node and tix, we game
-      vimPlugins.nvim-treesitter.withAllGrammars
-      nodePackages_latest.live-server # for web dev
-    ];
-    plugins = with pkgs; [
-      vimPlugins.clangd_extensions-nvim
-    ];
-  };
-  # }}}
+  # sops = {
+  #   age.keyFile = "${home}/.config/sops/age/keys.txt";
+  #   age.generateKey = true;
+  #   secrets = {
+  #     openapi-key = {
+  #       # owner = "rayandrew";
+  #       mode = "0440";
+  #       sopsFile = ../../secrets.yaml;
+  #       # path = "%r/openapi-key.txt";
+  #       path = "${config.home.homeDirectory}/.openai_api_key";
+  #       # neededForUsers = true;
+  #     };
+  #   };
+  # };
 }
+# vim: foldmethod=marker
+

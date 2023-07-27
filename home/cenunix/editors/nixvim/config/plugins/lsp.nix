@@ -16,7 +16,7 @@
             # keys = {__raw = ''{ "<leader>cR", "<cmd>ClangdSwitchSourceHeader<cr>", desc = "Switch Source/Header (C/C++)" }'';};
             cmd = [
               ''${pkgs.clang-tools}/bin/clangd''
-              "--offset-encoding=utf-16"
+              ''--offset-encoding=utf-16''
               ''--background-index''
               ''--clang-tidy''
               ''--header-insertion=iwyu''
@@ -109,15 +109,13 @@
       };
     };
     extraConfigLuaPre = ''
-      local cmp_nvim_lsp = require "cmp_nvim_lsp"
-        require("lspconfig").clangd.setup{
-          on_attach = on_attach,
-          capabilities = cmp_nvim_lsp.default_capabilities(),
-          cmd = {
-            "clangd",
-            "--offset-encoding=utf-16",
-          },
-        }
+      -- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
+      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+      -- The following example advertise capabilities to `clangd`.
+      require'lspconfig'.clangd.setup {
+        capabilities = capabilities,
+      }
     '';
   };
 }
