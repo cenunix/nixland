@@ -19,7 +19,7 @@
       # Enable flakes and new 'nix' command
       experimental-features = "nix-command flakes";
       # Deduplicate and optimize nix store
-      auto-optimise-store = false;
+      auto-optimise-store = true;
       # use binary cache, its not gentoo
       builders-use-substitutes = true;
       # allow sudo users to mark the following values as trusted
