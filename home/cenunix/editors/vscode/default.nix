@@ -29,17 +29,10 @@ in {
           golang.go
           ibm.output-colorizer
           kamadorueda.alejandra
-          ms-azuretools.vscode-docker
-          ms-python.python
-          ms-python.vscode-pylance
-          ms-vscode-remote.remote-ssh
           ms-vscode.cpptools
           naumovs.color-highlight
-          svelte.svelte-vscode
-          ms-vsliveshare.vsliveshare
           oderwat.indent-rainbow
           pkief.material-icon-theme
-          rust-lang.rust-analyzer
           shardulm94.trailing-spaces
           sumneko.lua
           timonwong.shellcheck
@@ -67,12 +60,6 @@ in {
             publisher = "vue";
             version = "1.0.12";
             sha256 = "sha256-WiL+gc9+U861ubLlY/acR+ZcrFT7TdIDR0K1XNNidX8=";
-          }
-          {
-            name = "decay";
-            publisher = "decaycs";
-            version = "1.0.6";
-            sha256 = "sha256-Jtxj6LmHgF7UNaXtXxHkq881BbuPtIJGxR7kdhKr0Uo=";
           }
           {
             name = "vscode-typescript-next";

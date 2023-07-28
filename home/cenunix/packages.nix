@@ -20,6 +20,7 @@ in {
       nitch
       inputs.agenix.packages.${pkgs.system}.default
       discordo
+      chromium 
     ]
     ++ optionals (builtins.elem device.type ["desktop" "laptop"]) [
       lunatask

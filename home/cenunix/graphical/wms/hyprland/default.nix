@@ -78,7 +78,7 @@ in {
       ];
 
     services.wlsunset = {
-      enable = true;
+      enable = (device.gpu != "nvidia");
       latitude = "47.0";
       longitude = "-122.0";
       temperature = {

@@ -7,7 +7,6 @@
   ...
 }: {
   imports = [
-    ./vscode
-    ./nixvim
+    ./helix
   ];
 }
