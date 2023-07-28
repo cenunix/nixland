@@ -1,15 +1,14 @@
-{
-  pkgs,
-  lib,
-  inputs,
-  ...
+{ pkgs
+, lib
+, inputs
+, ...
 }: {
   programs.helix = {
     enable = true;
     package = inputs.helix.packages.${pkgs.hostPlatform.system}.default.overrideAttrs (self: {
       makeWrapperArgs = with pkgs;
         self.makeWrapperArgs
-        or []
+          or [ ]
         ++ [
           "--suffix"
           "PATH"
@@ -26,7 +25,7 @@
             rustfmt
             rust-analyzer
             black
-            alejandra
+            nixpkgs-fmt
             shellcheck
           ])
         ];
@@ -38,7 +37,7 @@
         "{" = "goto_prev_paragraph";
         "}" = "goto_next_paragraph";
         "X" = "extend_line_above";
-        "esc" = ["collapse_selection" "keep_primary_selection"];
+        "esc" = [ "collapse_selection" "keep_primary_selection" ];
         space.space = "file_picker";
         space.w = ":w";
         space.q = ":bc";
@@ -64,7 +63,6 @@
         cursor-word = true;
         bufferline = "always";
         true-color = true;
-        rulers = [80];
         soft-wrap.enable = true;
         indent-guides = {
           render = true;
@@ -74,13 +72,13 @@
           display-messages = true;
           display-inlay-hints = true;
         };
-        gutters = ["diagnostics" "line-numbers" "spacer" "diff"];
+        gutters = [ "diagnostics" "line-numbers" "spacer" "diff" ];
         statusline = {
           mode-separator = "";
           separator = "";
-          left = ["mode" "selections" "spinner" "file-name" "total-line-numbers"];
-          center = [];
-          right = ["diagnostics" "file-encoding" "file-line-ending" "file-type" "position-percentage" "position"];
+          left = [ "mode" "selections" "spinner" "file-name" "total-line-numbers" ];
+          center = [ ];
+          right = [ "diagnostics" "file-encoding" "file-line-ending" "file-type" "position-percentage" "position" ];
           mode = {
             normal = "NORMAL";
             insert = "INSERT";
@@ -112,39 +110,43 @@
           auto-format = true;
           formatter = {
             command = "${pkgs.shfmt}/bin/shfmt";
-            args = ["-i" "2" "-"];
+            args = [ "-i" "2" "-" ];
           };
         }
         {
           name = "html";
-          file-types = ["html" "tera"];
+          file-types = [ "html" "tera" ];
         }
         {
           name = "clojure";
           injection-regex = "(clojure|clj|edn|boot|yuck)";
-          file-types = ["clj" "cljs" "cljc" "clje" "cljr" "cljx" "edn" "boot" "yuck"];
+          file-types = [ "clj" "cljs" "cljc" "clje" "cljr" "cljx" "edn" "boot" "yuck" ];
+        }
+        {
+          name = "nix";
+          auto-format = true;
         }
       ];
 
       language-server = {
         bash-language-server = {
           command = "${pkgs.nodePackages.bash-language-server}/bin/bash-language-server";
-          args = ["start"];
+          args = [ "start" ];
         };
 
         clangd = {
           command = "${pkgs.clang-tools}/bin/clangd";
-          clangd.fallbackFlags = ["-std=c++2b"];
+          clangd.fallbackFlags = [ "-std=c++2b" ];
         };
 
         nil = {
           command = lib.getExe pkgs.nil;
-          config.nil.formatting.command = ["${lib.getExe pkgs.alejandra}" "-q"];
+          config.nil.formatting.command = [ "${lib.getExe pkgs.nixpkgs-fmt}" ];
         };
 
         vscode-css-language-server = {
           command = "${pkgs.nodePackages.vscode-css-languageserver-bin}/bin/css-languageserver";
-          args = ["--stdio"];
+          args = [ "--stdio" ];
         };
       };
     };
@@ -168,7 +170,7 @@
     gcc
     uncrustify
     black
-    alejandra
+    nixpkgs-fmt
     shellcheck
     gawk
     haskellPackages.haskell-language-server
