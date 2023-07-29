@@ -1,16 +1,16 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  osConfig,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, osConfig
+, ...
 }:
 with lib; let
   device = osConfig.modules.device;
-  acceptedTypes = ["desktop" "laptop" "armlaptop"];
-in {
+  acceptedTypes = [ "desktop" "laptop" "armlaptop" ];
+in
+{
   config = mkIf (builtins.elem device.type acceptedTypes) {
     programs.vscode = {
       enable = true;
@@ -43,8 +43,8 @@ in {
           github.vscode-pull-request-github
           github.codespaces
           WakaTime.vscode-wakatime
-          asvetliakov.vscode-neovim
           b4dm4n.vscode-nixpkgs-fmt
+          github.copilot
         ]
         ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
           {
