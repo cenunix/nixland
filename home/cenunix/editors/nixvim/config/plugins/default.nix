@@ -12,7 +12,7 @@
     ./lsp.nix
     ./formatting.nix
     ./lualine.nix
-    ./neo-tree.nix
+    ./neotree.nix
     ./telescope.nix
     ./terminal.nix
     ./treesitter.nix

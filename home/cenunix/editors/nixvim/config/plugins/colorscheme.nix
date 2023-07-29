@@ -12,7 +12,7 @@
         flavour = "macchiato";
         transparentBackground = false;
         integrations = {
-          nvimtree = true;
+          neotree = true;
           which_key = true;
           notify = true;
           noice = true;

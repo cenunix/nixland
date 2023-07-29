@@ -14,7 +14,7 @@
           extraOptions = {
             # keys = {__raw = ''{ "<leader>cR", "<cmd>ClangdSwitchSourceHeader<cr>", desc = "Switch Source/Header (C/C++)" }'';};
             cmd = [
-              ''${pkgs.clang-tools}/bin/clangd''
+              ''${pkgs.clang-tools_16}/bin/clangd''
               ''--offset-encoding=utf-16''
               ''--background-index''
               ''--clang-tidy''
@@ -23,7 +23,7 @@
               ''--function-arg-placeholders=false''
               ''--fallback-style=llvm''
             ];
-            root_dir = "require 'lspconfig.util'.root_pattern('Makefile','CMakeLists.txt','configure.ac','configure.in','config.h.in','meson.build','meson_options.txt','build.ninja')";
+            root_dir = { __raw = ''require("lspconfig.util").root_pattern("Makefile","CMakeLists.txt","configure.ac","configure.in","config.h.in","meson.build","meson_options.txt","build.ninja")''; };
             single_file_support = true;
             init_options = {
               usePlaceholders = true;
@@ -43,29 +43,14 @@
 
         keymaps = {
           silent = true;
-          diagnostic = {
-            # Navigate in diagnostics
-            # "<leader>k" = "goto_prev";
-            # "<leader>j" = "goto_next";
-          };
-
-          # lspBuf = {
-          #   gd = "definition";
-          #   gr = "Telescope lsp_references";
-          #   gD = "declaration";
-          #   gt = "type_definition";
-          #   gi = "implementation";
-          #   K = "hover";
-          #   "<F2>" = "rename";
-          # };
         };
 
         servers = {
-          tailwindcss.enable = true;
+          # tailwindcss.enable = true;
           html.enable = true;
+          cssls.enable = true;
           jsonls.enable = true;
           bashls.enable = true;
-
           nil_ls.enable = true;
           lua-ls.enable = true;
           rust-analyzer.enable = true;

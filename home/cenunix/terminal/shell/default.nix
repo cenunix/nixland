@@ -1,11 +1,11 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: let
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
+}:
+let
   apply-hm-env = pkgs.writeShellScript "apply-hm-env" ''
     ${lib.optionalString (config.home.sessionPath != []) ''
       export PATH=${builtins.concatStringsSep ":" config.home.sessionPath}:$PATH
@@ -27,8 +27,9 @@
       --wait \
       bash -lc "exec ${apply-hm-env} $@"
   '';
-in {
-  home.packages = [run-as-service];
+in
+{
+  home.packages = [ run-as-service ];
   home.sessionVariables.STARSHIP_CACHE = "${config.xdg.cacheHome}/starship";
   programs = {
     exa.enable = true;
@@ -53,7 +54,7 @@ in {
           vicmd_symbol = "[󰊠](bold yellow)";
           format = "$symbol [|](bold bright-black) ";
         };
-        git_commit = {commit_hash_length = 4;};
+        git_commit = { commit_hash_length = 4; };
         line_break.disabled = false;
         lua.symbol = "[](blue) ";
         python.symbol = "[](blue) ";
@@ -74,7 +75,6 @@ in {
         LC_ALL = "en_US.UTF-8";
         ZSH_AUTOSUGGEST_USE_ASYNC = "true";
         SSH_AUTH_SOCK = "/run/user/1000/keyring/ssh";
-        GOPATH = "/home/cenunix/Personal";
       };
       completionInit = ''
         autoload -U compinit
@@ -181,13 +181,14 @@ in {
         media = "/run/media/$USER";
       };
 
-      shellAliases = let
-        # for setting up license in new projects
-        gpl3 = pkgs.fetchurl {
-          url = "https://www.gnu.org/licenses/gpl-3.0.txt";
-          sha256 = "OXLcl0T2SZ8Pmy2/dmlvKuetivmyPd5m1q+Gyd+zaYY=";
-        };
-      in
+      shellAliases =
+        let
+          # for setting up license in new projects
+          gpl3 = pkgs.fetchurl {
+            url = "https://www.gnu.org/licenses/gpl-3.0.txt";
+            sha256 = "OXLcl0T2SZ8Pmy2/dmlvKuetivmyPd5m1q+Gyd+zaYY=";
+          };
+        in
         with pkgs; {
           rebuild = "doas nix-store --verify; pushd ~dotfiles && doas nixos-rebuild switch --flake .# && notify-send \"Done\"&& bat cache --build; popd";
           cleanup = "doas nix-collect-garbage --delete-older-than 7d";

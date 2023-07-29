@@ -10,6 +10,19 @@
       null-ls = {
         enable = true;
         sources = {
+          code_actions = {
+            eslint = {
+              enable = true;
+            };
+            statix = {
+              enable = true;
+            };
+          };
+          diagnostics = {
+            eslint = {
+              enable = true;
+            };
+          };
           formatting = {
             prettier = {
               enable = true;
@@ -25,12 +38,12 @@
     ];
 
     extraConfigLuaPre = ''
-      local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
       require("null-ls").setup({
-          sources = {
-            require("null-ls").builtins.formatting.gofumpt,
-            require("null-ls").builtins.formatting.goimports,
-          },
+        sources = {
+          require("null-ls").builtins.formatting.gofumpt,
+          require("null-ls").builtins.formatting.goimports,
+          require("null-ls").builtins.formatting.clang_format,
+        }
       })
     '';
   };

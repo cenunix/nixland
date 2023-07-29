@@ -1,10 +1,9 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
 }: {
   imports = [
     ./completions.nix
@@ -42,7 +41,7 @@
       pkgs.vimPlugins.vim-clang-format
       pkgs.vimPlugins.presence-nvim
       pkgs.nodePackages_latest.live-server
-      pkgs.clang-tools
+      pkgs.clang-tools_16
     ];
     extraConfigLua = ''
       -- Description of each option can be found in https://github.com/andweeb/presence.nvim
