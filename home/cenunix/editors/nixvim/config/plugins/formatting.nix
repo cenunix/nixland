@@ -37,7 +37,7 @@
     extraPlugins = with pkgs; [
     ];
 
-    extraConfigLuaPre = ''
+    extraConfigLuaPost = ''
       require("null-ls").setup({
         sources = {
           require("null-ls").builtins.formatting.gofumpt,

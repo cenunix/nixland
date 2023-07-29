@@ -46,7 +46,7 @@
         };
 
         servers = {
-          # tailwindcss.enable = true;
+          tailwindcss.enable = true;
           html.enable = true;
           cssls.enable = true;
           jsonls.enable = true;
