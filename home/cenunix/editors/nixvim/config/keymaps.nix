@@ -17,9 +17,9 @@
       desc = "Quit";
     };
     maps.normal."<leader>e" = {
-      action = ":NvimTreeToggle<CR>";
+      action = ":Neotree action=focus reveal toggle<CR>";
       silent = true;
-      desc = "Toggle Nvim-Tree";
+      desc = "Toggle Neotree";
     };
     maps.normal."<leader>ff" = {
       action = ":Telescope find_files<CR>";

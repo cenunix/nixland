@@ -23,12 +23,7 @@
               ''--function-arg-placeholders=false''
               ''--fallback-style=llvm''
             ];
-            # root_dir = "require 'lspconfig.util'.root_pattern('Makefile','CMakeLists.txt','configure.ac','configure.in','config.h.in','meson.build','meson_options.txt','build.ninja')";
-
-            # capabilities = {
-            #   __raw = '''';
-            #   # require("cmp_nvim_lsp")'';
-            # };
+            root_dir = "require 'lspconfig.util'.root_pattern('Makefile','CMakeLists.txt','configure.ac','configure.in','config.h.in','meson.build','meson_options.txt','build.ninja')";
             single_file_support = true;
             init_options = {
               usePlaceholders = true;
@@ -76,9 +71,6 @@
           rust-analyzer.enable = true;
           yamlls.enable = true;
           pyright.enable = true;
-          clangd = {
-            enable = true;
-          };
           tsserver = {
             enable = true;
             extraOptions = {

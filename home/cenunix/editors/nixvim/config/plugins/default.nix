@@ -1,10 +1,9 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
 }: {
   imports = [
     ./autopairs.nix
@@ -13,7 +12,7 @@
     ./lsp.nix
     ./formatting.nix
     ./lualine.nix
-    ./neotree.nix
+    ./neo-tree.nix
     ./telescope.nix
     ./terminal.nix
     ./treesitter.nix

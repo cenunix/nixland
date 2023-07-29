@@ -1,10 +1,9 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
 }: {
   config = {
     colorschemes = {
@@ -13,7 +12,7 @@
         flavour = "macchiato";
         transparentBackground = false;
         integrations = {
-          neotree = true;
+          nvimtree = true;
           which_key = true;
           notify = true;
           noice = true;
