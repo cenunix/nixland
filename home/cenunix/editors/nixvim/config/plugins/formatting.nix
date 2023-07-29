@@ -22,6 +22,9 @@
             eslint = {
               enable = true;
             };
+            deadnix = {
+              enable = true;
+            };
           };
           formatting = {
             prettier = {
