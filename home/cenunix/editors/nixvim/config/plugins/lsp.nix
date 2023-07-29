@@ -1,10 +1,9 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
 }: {
   config = {
     plugins = {
@@ -31,11 +30,11 @@
             #   # require("cmp_nvim_lsp")'';
             # };
             single_file_support = true;
-            # init_options = {
-            #   usePlaceholders = true;
-            #   completeUnimported = true;
-            #   clangdFileStatus = true;
-            # };
+            init_options = {
+              usePlaceholders = true;
+              completeUnimported = true;
+              clangdFileStatus = true;
+            };
           };
         };
       };
@@ -83,7 +82,7 @@
           tsserver = {
             enable = true;
             extraOptions = {
-              root_dir = {__raw = ''require("lspconfig.util").root_pattern("tsconfig.json")'';};
+              root_dir = { __raw = ''require("lspconfig.util").root_pattern("tsconfig.json")''; };
               single_file_support = true;
             };
           };
@@ -97,7 +96,7 @@
             ];
             extraOptions = {
               single_file_support = true;
-              rootDir = {__raw = ''require 'lspconfig.util'.root_pattern('go.work', 'go.mod', '.git')'';};
+              rootDir = { __raw = ''require 'lspconfig.util'.root_pattern('go.work', 'go.mod', '.git')''; };
               completeUnimported = true;
               usePlaceholders = true;
               analyses = {
@@ -108,14 +107,5 @@
         };
       };
     };
-    extraConfigLuaPre = ''
-      -- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
-      local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
-      -- The following example advertise capabilities to `clangd`.
-      require'lspconfig'.clangd.setup {
-        capabilities = capabilities,
-      }
-    '';
   };
 }

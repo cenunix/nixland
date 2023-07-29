@@ -1,10 +1,9 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
 }: {
   config = {
     maps.normal."<leader>w" = {
@@ -18,9 +17,9 @@
       desc = "Quit";
     };
     maps.normal."<leader>e" = {
-      action = ":Neotree action=focus reveal toggle<CR>";
+      action = ":NvimTreeToggle<CR>";
       silent = true;
-      desc = "Toggle Neotree";
+      desc = "Toggle Nvim-Tree";
     };
     maps.normal."<leader>ff" = {
       action = ":Telescope find_files<CR>";
