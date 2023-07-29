@@ -28,7 +28,6 @@ in {
           formulahendry.code-runner
           golang.go
           ibm.output-colorizer
-          kamadorueda.alejandra
           ms-vscode.cpptools
           naumovs.color-highlight
           oderwat.indent-rainbow
@@ -39,14 +38,13 @@ in {
           usernamehw.errorlens
           xaver.clang-format
           yzhang.markdown-all-in-one
-          james-yu.latex-workshop
           redhat.vscode-yaml
-          ms-azuretools.vscode-docker
           irongeek.vscode-env
           github.vscode-pull-request-github
           github.codespaces
-          astro-build.astro-vscode
           WakaTime.vscode-wakatime
+          asvetliakov.vscode-neovim
+          b4dm4n.vscode-nixpkgs-fmt
         ]
         ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
           {
