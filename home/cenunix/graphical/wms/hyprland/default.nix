@@ -1,11 +1,10 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  osConfig,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, osConfig
+, ...
 }:
 with lib; let
   monitors = osConfig.modules.device.monitors;
@@ -13,9 +12,9 @@ with lib; let
   env = osConfig.modules.usrEnv;
 
   mkService = lib.recursiveUpdate {
-    Unit.PartOf = ["graphical-session.target"];
-    Unit.After = ["graphical-session.target"];
-    Install.WantedBy = ["graphical-session.target"];
+    Unit.PartOf = [ "graphical-session.target" ];
+    Unit.After = [ "graphical-session.target" ];
+    Install.WantedBy = [ "graphical-session.target" ];
   };
 
   ocr = pkgs.writeShellScriptBin "ocr" ''
@@ -49,8 +48,9 @@ with lib; let
         echo set $blank
     fi
   '';
-in {
-  imports = [./config.nix];
+in
+{
+  imports = [ ./config.nix ];
   config = mkIf (env.isWayland && (env.desktop == "Hyprland")) {
     xdg.configFile."hypr/shaders".source = ./shaders;
 
@@ -107,7 +107,7 @@ in {
     systemd.user.targets.tray = {
       Unit = {
         Description = "Home Manager System Tray";
-        Requires = ["graphical-session-pre.target"];
+        Requires = [ "graphical-session-pre.target" ];
       };
     };
 

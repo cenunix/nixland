@@ -1,17 +1,35 @@
-{
-  inputs,
-  config,
-  lib,
-  pkgs,
-  ...
+{ inputs
+, config
+, lib
+, pkgs
+, ...
 }:
 with lib; let
   cfg = config.modules.programs;
   device = config.modules.device;
-  acceptedTypes = ["laptop" "desktop" "hybrid" "lite" "armlaptop"];
-in {
+  acceptedTypes = [ "laptop" "desktop" "hybrid" "lite" "armlaptop" ];
+in
+{
   config = mkIf ((cfg.gaming.steam.enable) && (builtins.elem device.type acceptedTypes)) {
     # enable steam
+    nixpkgs.config.packageOverrides = pkgs: {
+      steam = pkgs.steam.override {
+        extraPkgs = pkgs:
+          with pkgs; [
+            libgdiplus
+            keyutils
+            libkrb5
+            libpng
+            libpulseaudio
+            libvorbis
+            stdenv.cc.cc.lib
+            xorg.libXcursor
+            xorg.libXi
+            xorg.libXinerama
+            xorg.libXScrnSaver
+          ];
+      };
+    };
     programs = {
       steam = {
         enable = true;

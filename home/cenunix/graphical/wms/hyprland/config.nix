@@ -83,7 +83,7 @@ in
     }
 
     animations {
-        enabled=1
+        enabled=0
         bezier=pace,0.46, 1, 0.29, 0.99
         bezier=overshot,0.13,0.99,0.29,1.1
         bezier = md3_decel, 0.05, 0.7, 0.1, 1
@@ -113,6 +113,11 @@ in
         disable_splash_rendering=true
         mouse_move_enables_dpms=true
         key_press_enables_dpms=true
+        vfr=false
+        vrr=1
+    }
+    debug {
+        overlay = false
     }
     # example window rules
     # for windows named/classed as abc and xyz
