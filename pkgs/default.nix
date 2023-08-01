@@ -13,4 +13,5 @@
   gg-sans = pkgs.callPackage ./gg-sans {};
   lazyvim = pkgs.callPackage ./lazyvim/default.nix {};
   nvchad = pkgs.callPackage ./nvchad/default.nix {};
+  linux_x13s_pkg = pkgs.callPackage ./linux-x13s/default.nix {};
 }
