@@ -1,20 +1,20 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
 }:
 with lib; let
   device = config.modules.device;
-  acceptedTypes = ["server" "desktop" "laptop" "armlaptop" "hybrid" "lite"];
-in {
+  acceptedTypes = [ "server" "desktop" "laptop" "armlaptop" "hybrid" "lite" ];
+in
+{
   config = mkIf (builtins.elem device.type acceptedTypes) {
     nixpkgs.config.joypixels.acceptLicense = true;
 
     fonts = {
-      fonts = with pkgs; [
+      packages = with pkgs; [
         # roboto
         # work-sans
         # comic-neue
@@ -38,10 +38,10 @@ in {
         jetbrains-mono
         fira
         fira-code
-        (nerdfonts.override {fonts = ["JetBrainsMono" "FiraCode"];})
+        (nerdfonts.override { fonts = [ "JetBrainsMono" "FiraCode" ]; })
       ];
 
-      enableDefaultFonts = false;
+      enableDefaultPackages = false;
 
       # this fixes emoji stuff
       fontconfig = {
@@ -54,9 +54,9 @@ in {
             # "Iosevka Nerd Font"
             "JoyPixels"
           ];
-          sansSerif = ["Fira Sans Condensed" "JoyPixels"];
-          serif = ["Noto Serif" "JoyPixels"];
-          emoji = ["JoyPixels"];
+          sansSerif = [ "Fira Sans Condensed" "JoyPixels" ];
+          serif = [ "Noto Serif" "JoyPixels" ];
+          emoji = [ "JoyPixels" ];
         };
       };
     };

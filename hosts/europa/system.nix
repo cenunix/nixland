@@ -49,7 +49,7 @@ in
       };
       usrEnv = {
         isWayland = true;
-        desktop = "sway";
+        desktop = "Hyprland";
         useHomeManager = true;
         autologin = true;
       };
