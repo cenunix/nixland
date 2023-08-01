@@ -38,9 +38,7 @@
     };
     extraPlugins = [
       pkgs.vimPlugins.luasnip
-      pkgs.vimPlugins.vim-clang-format
       pkgs.vimPlugins.presence-nvim
-      pkgs.nodePackages_latest.live-server
       pkgs.clang-tools_16
     ];
     extraConfigLua = ''

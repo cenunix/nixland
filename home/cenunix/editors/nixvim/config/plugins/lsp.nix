@@ -4,7 +4,8 @@
 , config
 , pkgs
 , ...
-}: {
+}:
+{
   config = {
     plugins = {
       clangd-extensions = {
@@ -44,7 +45,7 @@
         keymaps = {
           silent = true;
         };
-
+        # onAttach = on-attach;
         servers = {
           tailwindcss.enable = true;
           html.enable = true;

@@ -74,7 +74,7 @@ in
         rounding=2
         multisample_edges=true
         blur_ignore_opacity=true
-        blur=true
+        blur=false
         blur_size=6 # minimum 1
         blur_passes=2 # minimum 1, more passes = more resource intensive.
         # Your blur "amount" is blur_size * blur_passes, but high blur_size (over around 5-ish) will produce artifacts.

@@ -1,10 +1,9 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
 }:
 with lib; {
   options.modules.usrEnv = {
@@ -20,7 +19,7 @@ with lib; {
     # the system will use
     # TODO: make this a list
     desktop = mkOption {
-      type = types.enum ["Hyprland" "awesome" "i3"];
+      type = types.enum [ "Hyprland" "i3" "sway" ];
       default = "Hyprland";
     };
 

@@ -14,8 +14,6 @@ in
 {
   home.packages = [
     nvim
-    # Golang stuff
-    pkgs.gofumpt
-    pkgs.gotools
+    pkgs.nodePackages_latest.live-server
   ];
 }
