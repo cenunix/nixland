@@ -6,11 +6,7 @@
   pkgs,
   ...
 }: let
-  linux_x13s = pkgs.callPackage linux_x13s_pkg {
-    defconfig = "laptop_defconfig";
-  };
-
-  linuxPackages_x13s = pkgs.linuxPackagesFor linux_x13s;
+  linuxPackages_x13s = pkgs.linuxPackagesFor pkgs.linux_x13s_pkg;
   dtbname = "sc8280xp-lenovo-thinkpad-x13s.dtb";
   inherit (lib) mkDefault mkIf;
 
