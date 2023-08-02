@@ -1,15 +1,15 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  osConfig,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, osConfig
+, ...
 }:
 with lib; let
   device = osConfig.modules.device;
-in {
+in
+{
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnsupportedSystem = true;
   home.packages = with pkgs;
@@ -19,13 +19,12 @@ in {
       networkmanagerapplet
       nitch
       inputs.agenix.packages.${pkgs.system}.default
-      discordo
-      chromium 
+      chromium
     ]
-    ++ optionals (builtins.elem device.type ["desktop" "laptop"]) [
+    ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [
       lunatask
     ]
-    ++ optionals (builtins.elem device.type ["armlaptop"]) [
+    ++ optionals (builtins.elem device.type [ "armlaptop" ]) [
       # additional packages for arm laptop (x13s as of now) machines that use home-manager
     ];
 }
