@@ -1,14 +1,14 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
 }:
 with lib; let
   device = config.modules.device;
-in {
+in
+{
   config = {
     modules = {
       device = {
@@ -36,11 +36,11 @@ in {
 
         gaming = {
           enable = true;
-          steam.enable = true;
+          steam.enable = false;
           chess.enable = true;
           minecraft.enable = true;
         };
-        override = {};
+        override = { };
       };
       usrEnv = {
         isWayland = true;

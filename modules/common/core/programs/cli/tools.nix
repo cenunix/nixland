@@ -1,10 +1,9 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
 }: {
   environment.systemPackages = with pkgs; [
     unzip
@@ -18,5 +17,6 @@
     grex
     lm_sensors
     dua
+    gparted
   ];
 }

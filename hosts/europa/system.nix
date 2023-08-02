@@ -41,7 +41,7 @@ in
 
         gaming = {
           enable = true;
-          steam.enable = true;
+          steam.enable = false;
           chess.enable = true;
           minecraft.enable = true;
         };
