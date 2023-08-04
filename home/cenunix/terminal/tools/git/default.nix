@@ -1,10 +1,9 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
 }: {
   home.packages = with pkgs; [
     gist # manage github gists
@@ -17,7 +16,7 @@
     # a command-line tool for github
     gh = {
       enable = true;
-      enableGitCredentialHelper = false;
+      enableGitCredentialHelper = true;
       extensions = with pkgs; [
         gh-dash # dashboard with pull requests and issues
         gh-eco # explore the ecosystem

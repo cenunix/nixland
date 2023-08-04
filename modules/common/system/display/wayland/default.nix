@@ -1,17 +1,17 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
 }:
 with lib; let
   env = config.modules.usrEnv;
   device = config.modules.device;
-  acceptedTypes = ["desktop" "laptop"];
-in {
-  imports = [./services.nix];
+  acceptedTypes = [ "desktop" "laptop" ];
+in
+{
+  imports = [ ./services.nix ];
 
   config = mkIf (env.isWayland) {
     # nixpkgs.overlays = with inputs; [nixpkgs-wayland.overlay];
@@ -70,7 +70,7 @@ in {
       pulseaudio.support32Bit = true;
     };
 
-    xdg.portal = {
+    xdg.portal = mkIf (env.windowManager) {
       enable = true;
       wlr.enable = false;
       extraPortals = [
@@ -84,7 +84,7 @@ in {
       mediaKeys.enable = true;
     };
 
-    environment.systemPackages = with pkgs; [
+    environment.systemPackages = with pkgs; mkIf (env.windowManager) [
       gnome3.adwaita-icon-theme
       xdg-utils
       libsForQt5.qt5.qtwayland

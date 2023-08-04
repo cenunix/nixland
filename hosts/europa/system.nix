@@ -49,7 +49,7 @@ in
       };
       usrEnv = {
         isWayland = true;
-        desktop = "Hyprland";
+        desktop = "KDE";
         useHomeManager = true;
         autologin = true;
       };

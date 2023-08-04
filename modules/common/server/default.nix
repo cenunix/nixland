@@ -1,15 +1,15 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  osConfig,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, osConfig
+, ...
 }:
 with lib; let
   cfg = config.modules.system.server;
-in {
+in
+{
   imports = [
     # ./pihole
     ./mediaserver

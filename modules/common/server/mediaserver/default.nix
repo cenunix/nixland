@@ -1,28 +1,29 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  osConfig,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, osConfig
+, ...
 }:
 with lib; let
   cfg = config.modules.system.server;
-in {
+in
+{
   config = mkIf (cfg.mediaServer) {
     systemd.services.foo = {
       script = ''
-
         if ${pkgs.docker}/bin/docker run --rm -i -v=realdebrid:/tmp/myvolume busybox find /tmp/myvolume | grep -q '/tmp/myvolume'; then
           systemctl stop docker-plex
+          mkdir -p /var/lib/docker-plugins/rclone/config
+          mkdir -p /var/lib/docker-plugins/rclone/cache
           ${pkgs.docker}/bin/docker volume prune -f
           ${pkgs.docker}/bin/docker plugin inspect rclone >/dev/null 2>&1 || ${pkgs.docker}/bin/docker plugin install itstoggle/docker-volume-rclone_rd:amd64 args="-v" --alias rclone --grant-all-permissions config=/var/lib/docker-plugins/rclone/config cache=/var/lib/docker-plugins/rclone/cache
           ${pkgs.docker}/bin/docker volume inspect realdebrid >/dev/null 2>&1 || ${pkgs.docker}/bin/docker volume create realdebrid -d rclone -o type=realdebrid -o allow-other=true -o dir-cache-time=10s -o realdebrid-api_key=${builtins.readFile config.age.secrets.mediaserver.path}
           systemctl start docker-plex
         fi
       '';
-      wantedBy = ["graphical.target"];
+      wantedBy = [ "graphical.target" ];
       serviceConfig = {
         Type = "oneshot";
       };
@@ -54,7 +55,7 @@ in {
             VERSION = "docker";
           };
           volumes = [
-            "/home/cenunix/Videos:/config"
+            "/home/cenunix/Videos/mediaserver:/config"
             "realdebrid:/torrents"
           ];
         };
@@ -75,7 +76,7 @@ in {
             "9117:9117"
           ];
           volumes = [
-            "/home/cenunix/Videos:/config"
+            "/home/cenunix/Videos/mediaserver:/config"
             "/dev/null:/downloads"
           ];
           # extraOptions = [ "--pull=always" ];
