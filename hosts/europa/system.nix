@@ -41,7 +41,7 @@ in
 
         gaming = {
           enable = true;
-          steam.enable = false;
+          steam.enable = true;
           chess.enable = true;
           minecraft.enable = true;
         };
@@ -49,7 +49,7 @@ in
       };
       usrEnv = {
         isWayland = true;
-        desktop = "KDE";
+        desktop = "Hyprland";
         useHomeManager = true;
         autologin = true;
       };

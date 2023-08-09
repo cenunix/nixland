@@ -15,11 +15,9 @@ in
   home.packages = with pkgs;
     [
       # Shared Packages between all systems
-      # firefox
       networkmanagerapplet
       nitch
       inputs.agenix.packages.${pkgs.system}.default
-      chromium
     ]
     ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [
       lunatask

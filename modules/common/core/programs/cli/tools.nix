@@ -17,6 +17,6 @@
     grex
     lm_sensors
     dua
-    gparted
+    vim
   ];
 }
