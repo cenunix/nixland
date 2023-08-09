@@ -25,7 +25,8 @@ in
     exec-once = killall ironbar && ironbar
     exec-once = hyprctl setcursor "Bibata-Modern-Ice" 16
     exec-once = run-as-service 'foot --server'
-    exec-once = run-as-service waybar
+    #exec-once = run-as-service waybar
+    #exec-once = ags
 
     # Keyboard and mouse
     input {
