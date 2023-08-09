@@ -16,6 +16,7 @@
       watershot
       imagemagick
       wl-gammactl
+      socat
     ];
   };
 }
