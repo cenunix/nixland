@@ -1,18 +1,17 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
 }: {
   gtk = {
     enable = true;
     theme = {
       name = "Catppuccin-Macchiato-Compact-Blue-dark";
       package = pkgs.catppuccin-gtk.override {
-        accents = ["blue"];
-        tweaks = ["rimless"];
+        accents = [ "blue" ];
+        tweaks = [ "rimless" ];
         size = "compact";
         variant = "macchiato";
       };
@@ -52,12 +51,12 @@
   home.sessionVariables = {
     # XCURSOR_SIZE = lib.mkOverride "16";
     XCURSOR_SIZE = "16";
-    GTK_USE_PORTAL = "1";
+    # GTK_USE_PORTAL = "1";
   };
 
   # credits: bruhvko
   # catppuccin theme for qt-apps
-  home.packages = with pkgs; [libsForQt5.qtstyleplugin-kvantum];
+  home.packages = with pkgs; [ libsForQt5.qtstyleplugin-kvantum ];
 
   xdg.configFile."Kvantum/catppuccin/catppuccin.kvconfig".source = builtins.fetchurl {
     url = "https://raw.githubusercontent.com/catppuccin/Kvantum/main/src/Catppuccin-Macchiato-Pink/Catppuccin-Macchiato-Pink.kvconfig";

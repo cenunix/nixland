@@ -6,7 +6,7 @@
 , ...
 }: {
   home = {
-    file.".config/ags".source = ./config;
+    file.".confignew/ags".source = ./config;
     packages = with pkgs; [
       inputs.ags.packages.${pkgs.system}.default
       sassc

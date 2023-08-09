@@ -63,7 +63,7 @@ in
     ${lib.optionalString (device.gpu == "nvidia") ''
       screen_shader = ~/.config/hypr/shaders/bluelight.glsl
     ''}
-        blur_new_optimizations = true
+        #blur_new_optimizations = true
         active_opacity = 1.0
         inactive_opacity = 1.0
         #fullscreen_opacity = 1.0
@@ -74,10 +74,10 @@ in
         col.shadow_inactive=rgb(3c4252)
         rounding=2
         multisample_edges=true
-        blur_ignore_opacity=true
-        blur=false
-        blur_size=6 # minimum 1
-        blur_passes=2 # minimum 1, more passes = more resource intensive.
+        #blur_ignore_opacity=true
+        #blur=false
+        #blur_size=6 # minimum 1
+        #blur_passes=2 # minimum 1, more passes = more resource intensive.
         # Your blur "amount" is blur_size * blur_passes, but high blur_size (over around 5-ish) will produce artifacts.
         # if you want heavy blur, you need to up the blur_passes.
         # the more passes, the more you can up the blur_size without noticing artifacts.
