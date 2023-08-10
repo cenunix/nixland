@@ -6,7 +6,7 @@
 , ...
 }: {
   home = {
-    file.".config/ags".source = ./confignew;
+    file.".config/ags".source = ./config;
     packages = with pkgs; [
       inputs.ags.packages.${pkgs.system}.default
       sassc
@@ -17,6 +17,9 @@
       imagemagick
       wl-gammactl
       socat
+      upower
+      gnome.gnome-bluetooth
+      glib
     ];
   };
 }
