@@ -27,6 +27,7 @@ return {
     saturation = 0.9,
     brightness = 0.8,
   },
+  enable_wayland = false,
 
   window_background_opacity = 1.0,
   text_background_opacity = 1.0,
