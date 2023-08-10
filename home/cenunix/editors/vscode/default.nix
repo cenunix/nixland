@@ -74,7 +74,7 @@ in
         ];
       userSettings = {
         "workbench.iconTheme" = "material-icon-theme";
-        "workbench.colorTheme" = "Catppuccin Macchiato";
+        "workbench.colorTheme" = "Catppuccin Mocha";
         "catppuccin.accentColor" = "mauve";
         "editor.fontFamily" = "JetBrainsMono Nerd Font, Material Design Icons, 'monospace', monospace";
         "editor.fontSize" = 16;

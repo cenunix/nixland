@@ -8,12 +8,12 @@
   gtk = {
     enable = true;
     theme = {
-      name = "Catppuccin-Macchiato-Compact-Blue-dark";
+      name = "Catppuccin-Mocha-Compact-Blue-dark";
       package = pkgs.catppuccin-gtk.override {
         accents = [ "blue" ];
         tweaks = [ "rimless" ];
         size = "compact";
-        variant = "macchiato";
+        variant = "mocha";
       };
     };
     iconTheme = {

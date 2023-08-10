@@ -9,7 +9,7 @@
     colorschemes = {
       catppuccin = {
         enable = true;
-        flavour = "macchiato";
+        flavour = "mocha";
         transparentBackground = false;
         integrations = {
           neotree = true;

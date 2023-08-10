@@ -2,13 +2,13 @@ local wezterm = require 'wezterm'
 require('events')
 
 return {
-  colors = require('theme'),
+  colors = require('myppuccin'),
   window_frame = {
     active_titlebar_bg = '#333333',
     inactive_titlebar_bg = '#333333',
   },
   use_fancy_tab_bar = true,
-  font = wezterm.font 'CaskaydiaCove NF',
+  font = wezterm.font 'monospace',
   default_cursor_style = 'BlinkingBar',
 
   default_prog = { 'zsh' },
