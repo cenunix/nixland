@@ -20,6 +20,7 @@
       upower
       gnome.gnome-bluetooth
       glib
+      pavucontrol
     ];
   };
 }
