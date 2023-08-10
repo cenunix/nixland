@@ -7,6 +7,6 @@
 }: {
   programs.wezterm.enable = true;
   home = {
-    file.".config/ags".source = ./config;
+    file.".config/wezterm".source = ./config;
   };
 }
