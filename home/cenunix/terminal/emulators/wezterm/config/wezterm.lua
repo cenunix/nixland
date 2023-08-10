@@ -27,7 +27,8 @@ return {
     saturation = 0.9,
     brightness = 0.8,
   },
-  enable_wayland = false,
+  enable_wayland = true,
+  front_end = "OpenGL",
 
   window_background_opacity = 1.0,
   text_background_opacity = 1.0,
