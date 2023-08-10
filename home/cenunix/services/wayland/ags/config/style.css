@@ -2,43 +2,43 @@ window {
   background-color: transparent; }
 
 .notifications-popup-list .notification.critical > box {
-  box-shadow: inset 0 0 0.5em 0 #e67090; }
+  box-shadow: inset 0 0 0.5em 0 #f38ba8; }
 
 .notifications-popup-list .notification > box {
   border-radius: 4.5px;
   padding: 9px; }
 
 .notifications-popup-list .notification:hover .close-button {
-  box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-  background-color: rgba(238, 238, 238, 0.154);
-  color: #f1f1f1;
-  background-color: rgba(230, 112, 144, 0.5); }
+  box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+  background-color: rgba(205, 214, 244, 0.154);
+  color: #b4befe;
+  background-color: rgba(243, 139, 168, 0.5); }
 
 .notifications-popup-list .notification .title {
   margin-right: 9px;
-  color: #eee;
+  color: #cdd6f4;
   font-size: 1.1em; }
 
 .notifications-popup-list .notification .time {
-  color: rgba(238, 238, 238, 0.8); }
+  color: rgba(205, 214, 244, 0.8); }
 
 .notifications-popup-list .notification .description {
   font-size: .9em;
-  color: rgba(238, 238, 238, 0.8); }
+  color: rgba(205, 214, 244, 0.8); }
 
 .notifications-popup-list .notification .icon {
   border-radius: 7.2px;
   margin-right: 9px; }
   .notifications-popup-list .notification .icon.img {
-    border: 1px solid rgba(238, 238, 238, 0.03); }
+    border: 1px solid rgba(205, 214, 244, 0.03); }
 
 .notifications-popup-list .notification .actions button {
   all: unset;
   transition: 200ms;
   border-radius: 9px;
-  color: #eee;
-  background-color: rgba(238, 238, 238, 0.06);
-  box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
+  color: #cdd6f4;
+  background-color: rgba(205, 214, 244, 0.06);
+  box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
   border-radius: 7.2px;
   font-size: 1.2em;
   padding: 4.5px 9px;
@@ -47,24 +47,24 @@ window {
     font-size: 15px;
     font-family: "Ubuntu Nerd Font", sans-serif; }
   .notifications-popup-list .notification .actions button:focus {
-    box-shadow: inset 0 0 0 1px #51a4e7;
-    background-color: rgba(238, 238, 238, 0.154);
-    color: #f1f1f1; }
+    box-shadow: inset 0 0 0 1px #89b4fa;
+    background-color: rgba(205, 214, 244, 0.154);
+    color: #b4befe; }
   .notifications-popup-list .notification .actions button:hover {
-    box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-    background-color: rgba(238, 238, 238, 0.154);
-    color: #f1f1f1; }
+    box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+    background-color: rgba(205, 214, 244, 0.154);
+    color: #b4befe; }
   .notifications-popup-list .notification .actions button:active, .notifications-popup-list .notification .actions button.on, .notifications-popup-list .notification .actions button.active, .notifications-popup-list .notification .actions button:checked {
-    box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-    background-image: linear-gradient(to right, #51a4e7, #6cb2eb);
-    background-color: #51a4e7;
+    box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+    background-image: linear-gradient(to right, #89b4fa, #a6c7fb);
+    background-color: #89b4fa;
     color: #141414; }
     .notifications-popup-list .notification .actions button:active:hover, .notifications-popup-list .notification .actions button.on:hover, .notifications-popup-list .notification .actions button.active:hover, .notifications-popup-list .notification .actions button:checked:hover {
-      box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03), inset 0 0 0 99px rgba(238, 238, 238, 0.154); }
+      box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03), inset 0 0 0 99px rgba(205, 214, 244, 0.154); }
   .notifications-popup-list .notification .actions button:disabled {
     box-shadow: none;
     background-color: transparent;
-    color: rgba(238, 238, 238, 0.3); }
+    color: rgba(205, 214, 244, 0.3); }
   .notifications-popup-list .notification .actions button:first-child {
     margin-left: 0; }
   .notifications-popup-list .notification .actions button:last-child {
@@ -74,7 +74,7 @@ window {
   all: unset;
   transition: 200ms;
   border-radius: 9px;
-  color: #eee;
+  color: #cdd6f4;
   background-color: transparent;
   background-image: none;
   box-shadow: none;
@@ -86,37 +86,37 @@ window {
     font-size: 15px;
     font-family: "Ubuntu Nerd Font", sans-serif; }
   .notifications-popup-list .notification button.close-button:focus {
-    box-shadow: inset 0 0 0 1px #51a4e7;
-    background-color: rgba(238, 238, 238, 0.154);
-    color: #f1f1f1; }
+    box-shadow: inset 0 0 0 1px #89b4fa;
+    background-color: rgba(205, 214, 244, 0.154);
+    color: #b4befe; }
   .notifications-popup-list .notification button.close-button:hover {
-    box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-    background-color: rgba(238, 238, 238, 0.154);
-    color: #f1f1f1; }
+    box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+    background-color: rgba(205, 214, 244, 0.154);
+    color: #b4befe; }
   .notifications-popup-list .notification button.close-button:active, .notifications-popup-list .notification button.close-button.on, .notifications-popup-list .notification button.close-button.active, .notifications-popup-list .notification button.close-button:checked {
-    box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-    background-image: linear-gradient(to right, #51a4e7, #6cb2eb);
-    background-color: #51a4e7;
+    box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+    background-image: linear-gradient(to right, #89b4fa, #a6c7fb);
+    background-color: #89b4fa;
     color: #141414; }
     .notifications-popup-list .notification button.close-button:active:hover, .notifications-popup-list .notification button.close-button.on:hover, .notifications-popup-list .notification button.close-button.active:hover, .notifications-popup-list .notification button.close-button:checked:hover {
-      box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03), inset 0 0 0 99px rgba(238, 238, 238, 0.154); }
+      box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03), inset 0 0 0 99px rgba(205, 214, 244, 0.154); }
   .notifications-popup-list .notification button.close-button:disabled {
     box-shadow: none;
     background-color: transparent;
-    color: rgba(238, 238, 238, 0.3); }
+    color: rgba(205, 214, 244, 0.3); }
   .notifications-popup-list .notification button.close-button:hover {
-    background-color: rgba(230, 112, 144, 0.5); }
+    background-color: rgba(243, 139, 168, 0.5); }
   .notifications-popup-list .notification button.close-button:active {
-    background-image: linear-gradient(#e67090, #e67090); }
+    background-image: linear-gradient(#f38ba8, #f38ba8); }
 
 .notifications-popup-list .notification > box {
   all: unset;
   box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.6);
   margin: 9px;
-  border: 1px solid rgba(238, 238, 238, 0.04);
+  border: 1px solid rgba(205, 214, 244, 0.04);
   border-radius: 15.3px;
-  background-color: #171717;
-  color: #eee;
+  background-color: #11111b;
+  color: #cdd6f4;
   padding: 16.2px;
   border-radius: 9px; }
   .notifications-popup-list .notification > box * {
@@ -130,10 +130,10 @@ window#datemenu .datemenu {
   all: unset;
   box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.6);
   margin: 9px;
-  border: 1px solid rgba(238, 238, 238, 0.04);
+  border: 1px solid rgba(205, 214, 244, 0.04);
   border-radius: 15.3px;
-  background-color: #171717;
-  color: #eee;
+  background-color: #11111b;
+  color: #cdd6f4;
   padding: 16.2px; }
   window#datemenu .datemenu * {
     font-size: 15px;
@@ -142,13 +142,13 @@ window#datemenu .datemenu {
     font-size: 5em; }
   window#datemenu .datemenu .uptime {
     font-size: 2em;
-    color: rgba(238, 238, 238, 0.8); }
+    color: rgba(205, 214, 244, 0.8); }
   window#datemenu .datemenu .calendar {
     all: unset;
     border-radius: 9px;
-    color: #eee;
-    background-color: rgba(238, 238, 238, 0.06);
-    border: 1px solid rgba(238, 238, 238, 0.03);
+    color: #cdd6f4;
+    background-color: rgba(205, 214, 244, 0.06);
+    border: 1px solid rgba(205, 214, 244, 0.03);
     padding: 18px 18px 0;
     margin-top: 18px; }
     window#datemenu .datemenu .calendar * {
@@ -162,7 +162,7 @@ window#datemenu .datemenu {
         all: unset;
         transition: 200ms;
         border-radius: 9px;
-        color: #eee;
+        color: #cdd6f4;
         background-color: transparent;
         background-image: none;
         box-shadow: none;
@@ -171,50 +171,50 @@ window#datemenu .datemenu {
           font-size: 15px;
           font-family: "Ubuntu Nerd Font", sans-serif; }
         window#datemenu .datemenu .calendar calendar.button:focus {
-          box-shadow: inset 0 0 0 1px #51a4e7;
-          background-color: rgba(238, 238, 238, 0.154);
-          color: #f1f1f1; }
+          box-shadow: inset 0 0 0 1px #89b4fa;
+          background-color: rgba(205, 214, 244, 0.154);
+          color: #b4befe; }
         window#datemenu .datemenu .calendar calendar.button:hover {
-          box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-          background-color: rgba(238, 238, 238, 0.154);
-          color: #f1f1f1; }
+          box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+          background-color: rgba(205, 214, 244, 0.154);
+          color: #b4befe; }
         window#datemenu .datemenu .calendar calendar.button:active, window#datemenu .datemenu .calendar calendar.button.on, window#datemenu .datemenu .calendar calendar.button.active, window#datemenu .datemenu .calendar calendar.button:checked {
-          box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-          background-image: linear-gradient(to right, #51a4e7, #6cb2eb);
-          background-color: #51a4e7;
+          box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+          background-image: linear-gradient(to right, #89b4fa, #a6c7fb);
+          background-color: #89b4fa;
           color: #141414; }
           window#datemenu .datemenu .calendar calendar.button:active:hover, window#datemenu .datemenu .calendar calendar.button.on:hover, window#datemenu .datemenu .calendar calendar.button.active:hover, window#datemenu .datemenu .calendar calendar.button:checked:hover {
-            box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03), inset 0 0 0 99px rgba(238, 238, 238, 0.154); }
+            box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03), inset 0 0 0 99px rgba(205, 214, 244, 0.154); }
         window#datemenu .datemenu .calendar calendar.button:disabled {
           box-shadow: none;
           background-color: transparent;
-          color: rgba(238, 238, 238, 0.3); }
+          color: rgba(205, 214, 244, 0.3); }
       window#datemenu .datemenu .calendar calendar:selected {
-        box-shadow: inset 0 -8px 0 0 rgba(81, 164, 231, 0.5), inset 0 0 0 1px #51a4e7;
+        box-shadow: inset 0 -8px 0 0 rgba(137, 180, 250, 0.5), inset 0 0 0 1px #89b4fa;
         border-radius: 5.4px; }
       window#datemenu .datemenu .calendar calendar.header {
         background-color: transparent;
         border: none;
-        color: rgba(238, 238, 238, 0.5); }
+        color: rgba(205, 214, 244, 0.5); }
       window#datemenu .datemenu .calendar calendar.highlight {
         background-color: transparent;
-        color: rgba(81, 164, 231, 0.5); }
+        color: rgba(137, 180, 250, 0.5); }
       window#datemenu .datemenu .calendar calendar:indeterminate {
-        color: rgba(238, 238, 238, 0.1); }
+        color: rgba(205, 214, 244, 0.1); }
 
 .floating-dock .dock {
   all: unset;
   box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.6);
   margin: 9px;
-  border: 1px solid rgba(238, 238, 238, 0.04);
+  border: 1px solid rgba(205, 214, 244, 0.04);
   border-radius: 15.3px;
-  background-color: #171717;
-  color: #eee;
+  background-color: #11111b;
+  color: #cdd6f4;
   padding: 16.2px;
   padding: 4.5px; }
   .floating-dock .dock .separator {
     border-radius: 9px;
-    background-color: rgba(238, 238, 238, 0.2);
+    background-color: rgba(205, 214, 244, 0.2);
     margin: 0 6.3px; }
   .floating-dock .dock.horizontal .separator {
     min-width: 2px;
@@ -230,59 +230,59 @@ window#datemenu .datemenu {
     all: unset;
     transition: 200ms;
     border-radius: 9px;
-    color: #eee;
+    color: #cdd6f4;
     background-color: transparent;
     background-image: none;
     box-shadow: none;
-    color: #eee; }
+    color: #cdd6f4; }
     .floating-dock .dock button * {
       font-size: 15px;
       font-family: "Ubuntu Nerd Font", sans-serif; }
     .floating-dock .dock button:disabled {
       box-shadow: none;
       background-color: transparent;
-      color: rgba(238, 238, 238, 0.3); }
+      color: rgba(205, 214, 244, 0.3); }
     .floating-dock .dock button > * {
       border-radius: 9px;
       transition: 200ms;
       background-color: transparent;
       box-shadow: none; }
     .floating-dock .dock button:focus > *, .floating-dock .dock button.focused > * {
-      box-shadow: inset 0 0 0 1px #51a4e7;
-      background-color: rgba(238, 238, 238, 0.154);
-      color: #f1f1f1; }
+      box-shadow: inset 0 0 0 1px #89b4fa;
+      background-color: rgba(205, 214, 244, 0.154);
+      color: #b4befe; }
     .floating-dock .dock button:hover > * {
-      box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-      background-color: rgba(238, 238, 238, 0.154);
-      color: #f1f1f1; }
+      box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+      background-color: rgba(205, 214, 244, 0.154);
+      color: #b4befe; }
     .floating-dock .dock button:active > *, .floating-dock .dock button.active > *, .floating-dock .dock button.on > *, .floating-dock .dock button:checked > * {
-      box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-      background-image: linear-gradient(to right, #51a4e7, #6cb2eb);
-      background-color: #51a4e7;
+      box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+      background-image: linear-gradient(to right, #89b4fa, #a6c7fb);
+      background-color: #89b4fa;
       color: #141414; }
     .floating-dock .dock button:active:hover > *, .floating-dock .dock button.active:hover > *, .floating-dock .dock button.on:hover > *, .floating-dock .dock button:checked:hover > * {
-      box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03), inset 0 0 0 99px rgba(238, 238, 238, 0.154); }
+      box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03), inset 0 0 0 99px rgba(205, 214, 244, 0.154); }
     .floating-dock .dock button image, .floating-dock .dock button > * {
       margin: 6.3px; }
     .floating-dock .dock button .indicator {
       min-width: 6px;
       min-height: 6px;
-      background-color: #eee;
+      background-color: #cdd6f4;
       border-radius: 9px;
       margin-bottom: 2px; }
     .floating-dock .dock button.single .indicator, .floating-dock .dock button.nonrunning .indicator {
       background-color: transparent; }
     .floating-dock .dock button.focused .indicator {
-      background-image: linear-gradient(to right, #51a4e7, #6cb2eb); }
+      background-image: linear-gradient(to right, #89b4fa, #a6c7fb); }
   .floating-dock .dock * {
     font-size: 15px;
     font-family: "Ubuntu Nerd Font", sans-serif; }
 
 .dock.vertical {
-  background-color: #171717; }
+  background-color: #11111b; }
   .dock.vertical .separator {
     border-radius: 9px;
-    background-color: rgba(238, 238, 238, 0.2);
+    background-color: rgba(205, 214, 244, 0.2);
     margin: 0 6.3px; }
   .dock.vertical.horizontal .separator {
     min-width: 2px;
@@ -298,62 +298,62 @@ window#datemenu .datemenu {
     all: unset;
     transition: 200ms;
     border-radius: 9px;
-    color: #eee;
+    color: #cdd6f4;
     background-color: transparent;
     background-image: none;
     box-shadow: none;
-    color: #eee; }
+    color: #cdd6f4; }
     .dock.vertical button * {
       font-size: 15px;
       font-family: "Ubuntu Nerd Font", sans-serif; }
     .dock.vertical button:disabled {
       box-shadow: none;
       background-color: transparent;
-      color: rgba(238, 238, 238, 0.3); }
+      color: rgba(205, 214, 244, 0.3); }
     .dock.vertical button > * {
       border-radius: 9px;
       transition: 200ms;
       background-color: transparent;
       box-shadow: none; }
     .dock.vertical button:focus > *, .dock.vertical button.focused > * {
-      box-shadow: inset 0 0 0 1px #51a4e7;
-      background-color: rgba(238, 238, 238, 0.154);
-      color: #f1f1f1; }
+      box-shadow: inset 0 0 0 1px #89b4fa;
+      background-color: rgba(205, 214, 244, 0.154);
+      color: #b4befe; }
     .dock.vertical button:hover > * {
-      box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-      background-color: rgba(238, 238, 238, 0.154);
-      color: #f1f1f1; }
+      box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+      background-color: rgba(205, 214, 244, 0.154);
+      color: #b4befe; }
     .dock.vertical button:active > *, .dock.vertical button.active > *, .dock.vertical button.on > *, .dock.vertical button:checked > * {
-      box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-      background-image: linear-gradient(to right, #51a4e7, #6cb2eb);
-      background-color: #51a4e7;
+      box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+      background-image: linear-gradient(to right, #89b4fa, #a6c7fb);
+      background-color: #89b4fa;
       color: #141414; }
     .dock.vertical button:active:hover > *, .dock.vertical button.active:hover > *, .dock.vertical button.on:hover > *, .dock.vertical button:checked:hover > * {
-      box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03), inset 0 0 0 99px rgba(238, 238, 238, 0.154); }
+      box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03), inset 0 0 0 99px rgba(205, 214, 244, 0.154); }
     .dock.vertical button image, .dock.vertical button > * {
       margin: 6.3px; }
     .dock.vertical button .indicator {
       min-width: 6px;
       min-height: 6px;
-      background-color: #eee;
+      background-color: #cdd6f4;
       border-radius: 9px;
       margin-bottom: 2px; }
     .dock.vertical button.single .indicator, .dock.vertical button.nonrunning .indicator {
       background-color: transparent; }
     .dock.vertical button.focused .indicator {
-      background-image: linear-gradient(to right, #51a4e7, #6cb2eb); }
+      background-image: linear-gradient(to right, #89b4fa, #a6c7fb); }
   .dock.vertical .launcher .distro-icon {
     margin: 4.5px;
-    color: #51a4e7; }
+    color: #89b4fa; }
 
 window#applauncher .applauncher {
   all: unset;
   box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.6);
   margin: 9px;
-  border: 1px solid rgba(238, 238, 238, 0.04);
+  border: 1px solid rgba(205, 214, 244, 0.04);
   border-radius: 15.3px;
-  background-color: #171717;
-  color: #eee;
+  background-color: #11111b;
+  color: #cdd6f4;
   padding: 16.2px; }
   window#applauncher .applauncher * {
     font-size: 15px;
@@ -363,17 +363,17 @@ window#applauncher .applauncher {
     margin-bottom: 0;
     padding: 9px;
     border-radius: 9px;
-    box-shadow: 0 0 0 1px rgba(238, 238, 238, 0.03), inset 0 0 9px 0 rgba(0, 0, 0, 0.6); }
+    box-shadow: 0 0 0 1px rgba(205, 214, 244, 0.03), inset 0 0 9px 0 rgba(0, 0, 0, 0.6); }
     window#applauncher .applauncher .search.wallpaper .entry {
       padding: 30px; }
       window#applauncher .applauncher .search.wallpaper .entry image {
         all: unset;
         border-radius: 9px;
-        color: #eee;
-        background-color: rgba(238, 238, 238, 0.06);
-        border: 1px solid rgba(238, 238, 238, 0.03);
+        color: #cdd6f4;
+        background-color: rgba(205, 214, 244, 0.06);
+        border: 1px solid rgba(205, 214, 244, 0.03);
         border-radius: 4.5px;
-        background-color: rgba(23, 23, 23, 0.6);
+        background-color: rgba(17, 17, 27, 0.6);
         padding: 4.5px;
         margin-right: 9px;
         -gtk-icon-transform: scale(0.8); }
@@ -383,11 +383,11 @@ window#applauncher .applauncher {
       window#applauncher .applauncher .search.wallpaper .entry entry {
         all: unset;
         border-radius: 9px;
-        color: #eee;
-        background-color: rgba(238, 238, 238, 0.06);
-        border: 1px solid rgba(238, 238, 238, 0.03);
+        color: #cdd6f4;
+        background-color: rgba(205, 214, 244, 0.06);
+        border: 1px solid rgba(205, 214, 244, 0.03);
         border-radius: 4.5px;
-        background-color: rgba(23, 23, 23, 0.6);
+        background-color: rgba(17, 17, 27, 0.6);
         transition: 200ms;
         padding: 4.5px; }
         window#applauncher .applauncher .search.wallpaper .entry entry * {
@@ -395,7 +395,7 @@ window#applauncher .applauncher {
           font-family: "Ubuntu Nerd Font", sans-serif; }
   window#applauncher .applauncher .separator {
     min-height: 1px;
-    background-color: rgba(238, 238, 238, 0.154);
+    background-color: rgba(205, 214, 244, 0.154);
     margin: 4.5px; }
   window#applauncher .applauncher scrolledwindow {
     padding: 16.2px;
@@ -404,13 +404,13 @@ window#applauncher .applauncher {
     window#applauncher .applauncher scrolledwindow scrollbar, window#applauncher .applauncher scrolledwindow scrollbar * {
       all: unset; }
     window#applauncher .applauncher scrolledwindow scrollbar.vertical slider {
-      background: rgba(238, 238, 238, 0.06);
+      background: rgba(205, 214, 244, 0.06);
       border-radius: 9px;
       min-width: .6em;
       min-height: 2em;
       transition: 200ms; }
       window#applauncher .applauncher scrolledwindow scrollbar.vertical slider:hover {
-        background-color: rgba(238, 238, 238, 0.4);
+        background-color: rgba(205, 214, 244, 0.4);
         min-width: .8em; }
   window#applauncher .applauncher .app {
     all: unset;
@@ -420,31 +420,31 @@ window#applauncher .applauncher {
       transition: 200ms;
       min-width: 450px; }
       window#applauncher .applauncher .app label.title {
-        color: #eee; }
+        color: #cdd6f4; }
       window#applauncher .applauncher .app label.description {
-        color: rgba(238, 238, 238, 0.7); }
+        color: rgba(205, 214, 244, 0.7); }
     window#applauncher .applauncher .app image {
       transition: 200ms;
       margin-right: 9px; }
     window#applauncher .applauncher .app:hover .title, window#applauncher .applauncher .app:focus .title {
-      color: #51a4e7; }
+      color: #89b4fa; }
     window#applauncher .applauncher .app:hover image, window#applauncher .applauncher .app:focus image {
-      -gtk-icon-shadow: 2px 2px #51a4e7; }
+      -gtk-icon-shadow: 2px 2px #89b4fa; }
     window#applauncher .applauncher .app:active {
-      background-color: rgba(81, 164, 231, 0.5);
+      background-color: rgba(137, 180, 250, 0.5);
       border-radius: 9px;
-      box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03); }
+      box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03); }
       window#applauncher .applauncher .app:active .title {
-        color: #eee; }
+        color: #cdd6f4; }
 
 window#quicksettings .quicksettings {
   all: unset;
   box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.6);
   margin: 9px;
-  border: 1px solid rgba(238, 238, 238, 0.04);
+  border: 1px solid rgba(205, 214, 244, 0.04);
   border-radius: 15.3px;
-  background-color: #171717;
-  color: #eee;
+  background-color: #11111b;
+  color: #cdd6f4;
   padding: 16.2px; }
   window#quicksettings .quicksettings * {
     font-size: 15px;
@@ -452,9 +452,9 @@ window#quicksettings .quicksettings {
   window#quicksettings .quicksettings .header > box:last-child {
     all: unset;
     border-radius: 9px;
-    color: #eee;
-    background-color: rgba(238, 238, 238, 0.06);
-    border: 1px solid rgba(238, 238, 238, 0.03);
+    color: #cdd6f4;
+    background-color: rgba(205, 214, 244, 0.06);
+    border: 1px solid rgba(205, 214, 244, 0.03);
     padding: 9px; }
     window#quicksettings .quicksettings .header > box:last-child * {
       font-size: 15px;
@@ -462,9 +462,9 @@ window#quicksettings .quicksettings {
   window#quicksettings .quicksettings .header .avatar {
     all: unset;
     border-radius: 9px;
-    color: #eee;
-    background-color: rgba(238, 238, 238, 0.06);
-    border: 1px solid rgba(238, 238, 238, 0.03);
+    color: #cdd6f4;
+    background-color: rgba(205, 214, 244, 0.06);
+    border: 1px solid rgba(205, 214, 244, 0.03);
     margin-right: 9px;
     min-width: 101px; }
     window#quicksettings .quicksettings .header .avatar * {
@@ -475,7 +475,7 @@ window#quicksettings .quicksettings {
     window#quicksettings .quicksettings .header .avatar .shader {
       all: unset;
       border-radius: 8px;
-      box-shadow: inset 0 0 3em 1em rgba(23, 23, 23, 0.7);
+      box-shadow: inset 0 0 3em 1em rgba(17, 17, 27, 0.7);
       border-radius: 8px; }
       window#quicksettings .quicksettings .header .avatar .shader * {
         font-size: 15px;
@@ -485,7 +485,7 @@ window#quicksettings .quicksettings {
         text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6); }
   window#quicksettings .quicksettings .header .user {
     font-size: 1.2em;
-    color: rgba(238, 238, 238, 0.8);
+    color: rgba(205, 214, 244, 0.8);
     margin: 4.5px; }
   window#quicksettings .quicksettings .header .battery-progress progressbar {
     all: unset;
@@ -498,13 +498,13 @@ window#quicksettings .quicksettings {
     window#quicksettings .quicksettings .header .battery-progress progressbar trough {
       transition: 200ms;
       border-radius: 9px;
-      border: 1px solid rgba(238, 238, 238, 0.03);
-      background-color: rgba(238, 238, 238, 0.06);
+      border: 1px solid rgba(205, 214, 244, 0.03);
+      background-color: rgba(205, 214, 244, 0.06);
       min-height: 30.6px;
       min-width: 30.6px; }
       window#quicksettings .quicksettings .header .battery-progress progressbar trough highlight, window#quicksettings .quicksettings .header .battery-progress progressbar trough progress {
         border-radius: 8px;
-        background-image: linear-gradient(to right, #51a4e7, #6cb2eb);
+        background-image: linear-gradient(to right, #89b4fa, #a6c7fb);
         min-height: 30.6px;
         min-width: 30.6px; }
     window#quicksettings .quicksettings .header .battery-progress progressbar slider {
@@ -517,36 +517,36 @@ window#quicksettings .quicksettings {
       min-width: 30.6px;
       margin: -0.5em; }
     window#quicksettings .quicksettings .header .battery-progress progressbar:hover trough {
-      background-color: rgba(238, 238, 238, 0.154); }
+      background-color: rgba(205, 214, 244, 0.154); }
     window#quicksettings .quicksettings .header .battery-progress progressbar:hover slider {
-      background-color: #eee;
-      border-color: rgba(238, 238, 238, 0.03);
+      background-color: #cdd6f4;
+      border-color: rgba(205, 214, 244, 0.03);
       box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.6); }
     window#quicksettings .quicksettings .header .battery-progress progressbar:disabled highlight, window#quicksettings .quicksettings .header .battery-progress progressbar:disabled progress {
-      background-color: rgba(238, 238, 238, 0.6);
+      background-color: rgba(205, 214, 244, 0.6);
       background-image: none; }
     window#quicksettings .quicksettings .header .battery-progress progressbar:disabled slider {
-      background-color: rgba(238, 238, 238, 0.5); }
+      background-color: rgba(205, 214, 244, 0.5); }
     window#quicksettings .quicksettings .header .battery-progress progressbar trough:focus {
-      background-color: rgba(238, 238, 238, 0.154);
-      box-shadow: inset 0 0 0 1px #51a4e7; }
+      background-color: rgba(205, 214, 244, 0.154);
+      box-shadow: inset 0 0 0 1px #89b4fa; }
       window#quicksettings .quicksettings .header .battery-progress progressbar trough:focus slider {
-        background-color: #eee;
-        box-shadow: inset 0 0 0 1px #51a4e7; }
+        background-color: #cdd6f4;
+        box-shadow: inset 0 0 0 1px #89b4fa; }
   window#quicksettings .quicksettings .header .battery-progress label {
     margin-top: 9px;
     color: #141414;
     font-size: 18px;
     font-weight: bold; }
   window#quicksettings .quicksettings .header .battery-progress.half label {
-    color: #eee; }
+    color: #cdd6f4; }
   window#quicksettings .quicksettings .header .system button, window#quicksettings .quicksettings .header .system .uptime {
     all: unset;
     transition: 200ms;
     border-radius: 9px;
-    color: #eee;
-    background-color: rgba(238, 238, 238, 0.06);
-    box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
+    color: #cdd6f4;
+    background-color: rgba(205, 214, 244, 0.06);
+    box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
     padding: 9px;
     margin-left: 9px;
     font-weight: bold; }
@@ -554,32 +554,32 @@ window#quicksettings .quicksettings {
       font-size: 15px;
       font-family: "Ubuntu Nerd Font", sans-serif; }
     window#quicksettings .quicksettings .header .system button:focus, window#quicksettings .quicksettings .header .system .uptime:focus {
-      box-shadow: inset 0 0 0 1px #51a4e7;
-      background-color: rgba(238, 238, 238, 0.154);
-      color: #f1f1f1; }
+      box-shadow: inset 0 0 0 1px #89b4fa;
+      background-color: rgba(205, 214, 244, 0.154);
+      color: #b4befe; }
     window#quicksettings .quicksettings .header .system button:hover, window#quicksettings .quicksettings .header .system .uptime:hover {
-      box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-      background-color: rgba(238, 238, 238, 0.154);
-      color: #f1f1f1; }
+      box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+      background-color: rgba(205, 214, 244, 0.154);
+      color: #b4befe; }
     window#quicksettings .quicksettings .header .system button:active, window#quicksettings .quicksettings .header .system button.on, window#quicksettings .quicksettings .header .system button.active, window#quicksettings .quicksettings .header .system button:checked, window#quicksettings .quicksettings .header .system .uptime:active, window#quicksettings .quicksettings .header .system .uptime.on, window#quicksettings .quicksettings .header .system .uptime.active, window#quicksettings .quicksettings .header .system .uptime:checked {
-      box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-      background-image: linear-gradient(to right, #51a4e7, #6cb2eb);
-      background-color: #51a4e7;
+      box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+      background-image: linear-gradient(to right, #89b4fa, #a6c7fb);
+      background-color: #89b4fa;
       color: #141414; }
       window#quicksettings .quicksettings .header .system button:active:hover, window#quicksettings .quicksettings .header .system button.on:hover, window#quicksettings .quicksettings .header .system button.active:hover, window#quicksettings .quicksettings .header .system button:checked:hover, window#quicksettings .quicksettings .header .system .uptime:active:hover, window#quicksettings .quicksettings .header .system .uptime.on:hover, window#quicksettings .quicksettings .header .system .uptime.active:hover, window#quicksettings .quicksettings .header .system .uptime:checked:hover {
-        box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03), inset 0 0 0 99px rgba(238, 238, 238, 0.154); }
+        box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03), inset 0 0 0 99px rgba(205, 214, 244, 0.154); }
     window#quicksettings .quicksettings .header .system button:disabled, window#quicksettings .quicksettings .header .system .uptime:disabled {
       box-shadow: none;
       background-color: transparent;
-      color: rgba(238, 238, 238, 0.3); }
+      color: rgba(205, 214, 244, 0.3); }
     window#quicksettings .quicksettings .header .system button:first-child, window#quicksettings .quicksettings .header .system .uptime:first-child {
       margin-left: 0; }
   window#quicksettings .quicksettings .volume-box {
     all: unset;
     border-radius: 9px;
-    color: #eee;
-    background-color: rgba(238, 238, 238, 0.06);
-    border: 1px solid rgba(238, 238, 238, 0.03);
+    color: #cdd6f4;
+    background-color: rgba(205, 214, 244, 0.06);
+    border: 1px solid rgba(205, 214, 244, 0.03);
     margin-top: 9px; }
     window#quicksettings .quicksettings .volume-box * {
       font-size: 15px;
@@ -595,13 +595,13 @@ window#quicksettings .quicksettings {
       window#quicksettings .quicksettings .volume-box .volume .slider trough {
         transition: 200ms;
         border-radius: 9px;
-        border: 1px solid rgba(238, 238, 238, 0.03);
-        background-color: rgba(238, 238, 238, 0.06);
+        border: 1px solid rgba(205, 214, 244, 0.03);
+        background-color: rgba(205, 214, 244, 0.06);
         min-height: 0.7em;
         min-width: 0.7em; }
         window#quicksettings .quicksettings .volume-box .volume .slider trough highlight, window#quicksettings .quicksettings .volume-box .volume .slider trough progress {
           border-radius: 8px;
-          background-image: linear-gradient(to right, #51a4e7, #6cb2eb);
+          background-image: linear-gradient(to right, #89b4fa, #a6c7fb);
           min-height: 0.7em;
           min-width: 0.7em; }
       window#quicksettings .quicksettings .volume-box .volume .slider slider {
@@ -614,27 +614,27 @@ window#quicksettings .quicksettings {
         min-width: 0.7em;
         margin: -0.5em; }
       window#quicksettings .quicksettings .volume-box .volume .slider:hover trough {
-        background-color: rgba(238, 238, 238, 0.154); }
+        background-color: rgba(205, 214, 244, 0.154); }
       window#quicksettings .quicksettings .volume-box .volume .slider:hover slider {
-        background-color: #eee;
-        border-color: rgba(238, 238, 238, 0.03);
+        background-color: #cdd6f4;
+        border-color: rgba(205, 214, 244, 0.03);
         box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.6); }
       window#quicksettings .quicksettings .volume-box .volume .slider:disabled highlight, window#quicksettings .quicksettings .volume-box .volume .slider:disabled progress {
-        background-color: rgba(238, 238, 238, 0.6);
+        background-color: rgba(205, 214, 244, 0.6);
         background-image: none; }
       window#quicksettings .quicksettings .volume-box .volume .slider:disabled slider {
-        background-color: rgba(238, 238, 238, 0.5); }
+        background-color: rgba(205, 214, 244, 0.5); }
       window#quicksettings .quicksettings .volume-box .volume .slider trough:focus {
-        background-color: rgba(238, 238, 238, 0.154);
-        box-shadow: inset 0 0 0 1px #51a4e7; }
+        background-color: rgba(205, 214, 244, 0.154);
+        box-shadow: inset 0 0 0 1px #89b4fa; }
         window#quicksettings .quicksettings .volume-box .volume .slider trough:focus slider {
-          background-color: #eee;
-          box-shadow: inset 0 0 0 1px #51a4e7; }
+          background-color: #cdd6f4;
+          box-shadow: inset 0 0 0 1px #89b4fa; }
     window#quicksettings .quicksettings .volume-box .volume button {
       all: unset;
       transition: 200ms;
       border-radius: 9px;
-      color: #eee;
+      color: #cdd6f4;
       background-color: transparent;
       background-image: none;
       box-shadow: none;
@@ -644,37 +644,37 @@ window#quicksettings .quicksettings {
         font-size: 15px;
         font-family: "Ubuntu Nerd Font", sans-serif; }
       window#quicksettings .quicksettings .volume-box .volume button:focus {
-        box-shadow: inset 0 0 0 1px #51a4e7;
-        background-color: rgba(238, 238, 238, 0.154);
-        color: #f1f1f1; }
+        box-shadow: inset 0 0 0 1px #89b4fa;
+        background-color: rgba(205, 214, 244, 0.154);
+        color: #b4befe; }
       window#quicksettings .quicksettings .volume-box .volume button:hover {
-        box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-        background-color: rgba(238, 238, 238, 0.154);
-        color: #f1f1f1; }
+        box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+        background-color: rgba(205, 214, 244, 0.154);
+        color: #b4befe; }
       window#quicksettings .quicksettings .volume-box .volume button:active, window#quicksettings .quicksettings .volume-box .volume button.on, window#quicksettings .quicksettings .volume-box .volume button.active, window#quicksettings .quicksettings .volume-box .volume button:checked {
-        box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-        background-image: linear-gradient(to right, #51a4e7, #6cb2eb);
-        background-color: #51a4e7;
+        box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+        background-image: linear-gradient(to right, #89b4fa, #a6c7fb);
+        background-color: #89b4fa;
         color: #141414; }
         window#quicksettings .quicksettings .volume-box .volume button:active:hover, window#quicksettings .quicksettings .volume-box .volume button.on:hover, window#quicksettings .quicksettings .volume-box .volume button.active:hover, window#quicksettings .quicksettings .volume-box .volume button:checked:hover {
-          box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03), inset 0 0 0 99px rgba(238, 238, 238, 0.154); }
+          box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03), inset 0 0 0 99px rgba(205, 214, 244, 0.154); }
       window#quicksettings .quicksettings .volume-box .volume button:disabled {
         box-shadow: none;
         background-color: transparent;
-        color: rgba(238, 238, 238, 0.3); }
+        color: rgba(205, 214, 244, 0.3); }
     window#quicksettings .quicksettings .volume-box .menu {
       all: unset;
-      border-top: 1px solid rgba(238, 238, 238, 0.06);
+      border-top: 1px solid rgba(205, 214, 244, 0.06);
       padding: 9px; }
       window#quicksettings .quicksettings .volume-box .menu .separator {
         min-height: 1px;
         margin: 4.5px 0;
-        background-color: rgba(238, 238, 238, 0.06); }
+        background-color: rgba(205, 214, 244, 0.06); }
       window#quicksettings .quicksettings .volume-box .menu button {
         all: unset;
         transition: 200ms;
         border-radius: 9px;
-        color: #eee;
+        color: #cdd6f4;
         background-color: transparent;
         background-image: none;
         box-shadow: none;
@@ -685,24 +685,24 @@ window#quicksettings .quicksettings {
           font-size: 15px;
           font-family: "Ubuntu Nerd Font", sans-serif; }
         window#quicksettings .quicksettings .volume-box .menu button:focus {
-          box-shadow: inset 0 0 0 1px #51a4e7;
-          background-color: rgba(238, 238, 238, 0.154);
-          color: #f1f1f1; }
+          box-shadow: inset 0 0 0 1px #89b4fa;
+          background-color: rgba(205, 214, 244, 0.154);
+          color: #b4befe; }
         window#quicksettings .quicksettings .volume-box .menu button:hover {
-          box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-          background-color: rgba(238, 238, 238, 0.154);
-          color: #f1f1f1; }
+          box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+          background-color: rgba(205, 214, 244, 0.154);
+          color: #b4befe; }
         window#quicksettings .quicksettings .volume-box .menu button:active, window#quicksettings .quicksettings .volume-box .menu button.on, window#quicksettings .quicksettings .volume-box .menu button.active, window#quicksettings .quicksettings .volume-box .menu button:checked {
-          box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-          background-image: linear-gradient(to right, #51a4e7, #6cb2eb);
-          background-color: #51a4e7;
+          box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+          background-image: linear-gradient(to right, #89b4fa, #a6c7fb);
+          background-color: #89b4fa;
           color: #141414; }
           window#quicksettings .quicksettings .volume-box .menu button:active:hover, window#quicksettings .quicksettings .volume-box .menu button.on:hover, window#quicksettings .quicksettings .volume-box .menu button.active:hover, window#quicksettings .quicksettings .volume-box .menu button:checked:hover {
-            box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03), inset 0 0 0 99px rgba(238, 238, 238, 0.154); }
+            box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03), inset 0 0 0 99px rgba(205, 214, 244, 0.154); }
         window#quicksettings .quicksettings .volume-box .menu button:disabled {
           box-shadow: none;
           background-color: transparent;
-          color: rgba(238, 238, 238, 0.3); }
+          color: rgba(205, 214, 244, 0.3); }
         window#quicksettings .quicksettings .volume-box .menu button:first-child {
           margin-top: 0; }
         window#quicksettings .quicksettings .volume-box .menu button image {
@@ -710,9 +710,9 @@ window#quicksettings .quicksettings {
   window#quicksettings .quicksettings .brightness {
     all: unset;
     border-radius: 9px;
-    color: #eee;
-    background-color: rgba(238, 238, 238, 0.06);
-    border: 1px solid rgba(238, 238, 238, 0.03);
+    color: #cdd6f4;
+    background-color: rgba(205, 214, 244, 0.06);
+    border: 1px solid rgba(205, 214, 244, 0.03);
     margin-top: 9px;
     padding-right: 9px; }
     window#quicksettings .quicksettings .brightness * {
@@ -730,13 +730,13 @@ window#quicksettings .quicksettings {
       window#quicksettings .quicksettings .brightness .slider trough {
         transition: 200ms;
         border-radius: 9px;
-        border: 1px solid rgba(238, 238, 238, 0.03);
-        background-color: rgba(238, 238, 238, 0.06);
+        border: 1px solid rgba(205, 214, 244, 0.03);
+        background-color: rgba(205, 214, 244, 0.06);
         min-height: 0.7em;
         min-width: 0.7em; }
         window#quicksettings .quicksettings .brightness .slider trough highlight, window#quicksettings .quicksettings .brightness .slider trough progress {
           border-radius: 8px;
-          background-image: linear-gradient(to right, #51a4e7, #6cb2eb);
+          background-image: linear-gradient(to right, #89b4fa, #a6c7fb);
           min-height: 0.7em;
           min-width: 0.7em; }
       window#quicksettings .quicksettings .brightness .slider slider {
@@ -749,27 +749,27 @@ window#quicksettings .quicksettings {
         min-width: 0.7em;
         margin: -0.5em; }
       window#quicksettings .quicksettings .brightness .slider:hover trough {
-        background-color: rgba(238, 238, 238, 0.154); }
+        background-color: rgba(205, 214, 244, 0.154); }
       window#quicksettings .quicksettings .brightness .slider:hover slider {
-        background-color: #eee;
-        border-color: rgba(238, 238, 238, 0.03);
+        background-color: #cdd6f4;
+        border-color: rgba(205, 214, 244, 0.03);
         box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.6); }
       window#quicksettings .quicksettings .brightness .slider:disabled highlight, window#quicksettings .quicksettings .brightness .slider:disabled progress {
-        background-color: rgba(238, 238, 238, 0.6);
+        background-color: rgba(205, 214, 244, 0.6);
         background-image: none; }
       window#quicksettings .quicksettings .brightness .slider:disabled slider {
-        background-color: rgba(238, 238, 238, 0.5); }
+        background-color: rgba(205, 214, 244, 0.5); }
       window#quicksettings .quicksettings .brightness .slider trough:focus {
-        background-color: rgba(238, 238, 238, 0.154);
-        box-shadow: inset 0 0 0 1px #51a4e7; }
+        background-color: rgba(205, 214, 244, 0.154);
+        box-shadow: inset 0 0 0 1px #89b4fa; }
         window#quicksettings .quicksettings .brightness .slider trough:focus slider {
-          background-color: #eee;
-          box-shadow: inset 0 0 0 1px #51a4e7; }
+          background-color: #cdd6f4;
+          box-shadow: inset 0 0 0 1px #89b4fa; }
     window#quicksettings .quicksettings .brightness button {
       all: unset;
       transition: 200ms;
       border-radius: 9px;
-      color: #eee;
+      color: #cdd6f4;
       background-color: transparent;
       background-image: none;
       box-shadow: none;
@@ -779,32 +779,32 @@ window#quicksettings .quicksettings {
         font-size: 15px;
         font-family: "Ubuntu Nerd Font", sans-serif; }
       window#quicksettings .quicksettings .brightness button:focus {
-        box-shadow: inset 0 0 0 1px #51a4e7;
-        background-color: rgba(238, 238, 238, 0.154);
-        color: #f1f1f1; }
+        box-shadow: inset 0 0 0 1px #89b4fa;
+        background-color: rgba(205, 214, 244, 0.154);
+        color: #b4befe; }
       window#quicksettings .quicksettings .brightness button:hover {
-        box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-        background-color: rgba(238, 238, 238, 0.154);
-        color: #f1f1f1; }
+        box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+        background-color: rgba(205, 214, 244, 0.154);
+        color: #b4befe; }
       window#quicksettings .quicksettings .brightness button:active, window#quicksettings .quicksettings .brightness button.on, window#quicksettings .quicksettings .brightness button.active, window#quicksettings .quicksettings .brightness button:checked {
-        box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-        background-image: linear-gradient(to right, #51a4e7, #6cb2eb);
-        background-color: #51a4e7;
+        box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+        background-image: linear-gradient(to right, #89b4fa, #a6c7fb);
+        background-color: #89b4fa;
         color: #141414; }
         window#quicksettings .quicksettings .brightness button:active:hover, window#quicksettings .quicksettings .brightness button.on:hover, window#quicksettings .quicksettings .brightness button.active:hover, window#quicksettings .quicksettings .brightness button:checked:hover {
-          box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03), inset 0 0 0 99px rgba(238, 238, 238, 0.154); }
+          box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03), inset 0 0 0 99px rgba(205, 214, 244, 0.154); }
       window#quicksettings .quicksettings .brightness button:disabled {
         box-shadow: none;
         background-color: transparent;
-        color: rgba(238, 238, 238, 0.3); }
+        color: rgba(205, 214, 244, 0.3); }
   window#quicksettings .quicksettings .toggles-box {
     margin-top: 9px; }
     window#quicksettings .quicksettings .toggles-box .small-toggles {
       all: unset;
       border-radius: 9px;
-      color: #eee;
-      background-color: rgba(238, 238, 238, 0.06);
-      border: 1px solid rgba(238, 238, 238, 0.03);
+      color: #cdd6f4;
+      background-color: rgba(205, 214, 244, 0.06);
+      border: 1px solid rgba(205, 214, 244, 0.03);
       padding: 4.5px; }
       window#quicksettings .quicksettings .toggles-box .small-toggles * {
         font-size: 15px;
@@ -813,39 +813,39 @@ window#quicksettings .quicksettings {
         all: unset;
         transition: 200ms;
         border-radius: 9px;
-        color: #eee;
-        background-color: rgba(238, 238, 238, 0.06);
-        box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
+        color: #cdd6f4;
+        background-color: rgba(205, 214, 244, 0.06);
+        box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
         margin: 4.5px;
         padding: 9px; }
         window#quicksettings .quicksettings .toggles-box .small-toggles .toggle * {
           font-size: 15px;
           font-family: "Ubuntu Nerd Font", sans-serif; }
         window#quicksettings .quicksettings .toggles-box .small-toggles .toggle:focus {
-          box-shadow: inset 0 0 0 1px #51a4e7;
-          background-color: rgba(238, 238, 238, 0.154);
-          color: #f1f1f1; }
+          box-shadow: inset 0 0 0 1px #89b4fa;
+          background-color: rgba(205, 214, 244, 0.154);
+          color: #b4befe; }
         window#quicksettings .quicksettings .toggles-box .small-toggles .toggle:hover {
-          box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-          background-color: rgba(238, 238, 238, 0.154);
-          color: #f1f1f1; }
+          box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+          background-color: rgba(205, 214, 244, 0.154);
+          color: #b4befe; }
         window#quicksettings .quicksettings .toggles-box .small-toggles .toggle:active, window#quicksettings .quicksettings .toggles-box .small-toggles .toggle.on, window#quicksettings .quicksettings .toggles-box .small-toggles .toggle.active, window#quicksettings .quicksettings .toggles-box .small-toggles .toggle:checked {
-          box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-          background-image: linear-gradient(to right, #51a4e7, #6cb2eb);
-          background-color: #51a4e7;
+          box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+          background-image: linear-gradient(to right, #89b4fa, #a6c7fb);
+          background-color: #89b4fa;
           color: #141414; }
           window#quicksettings .quicksettings .toggles-box .small-toggles .toggle:active:hover, window#quicksettings .quicksettings .toggles-box .small-toggles .toggle.on:hover, window#quicksettings .quicksettings .toggles-box .small-toggles .toggle.active:hover, window#quicksettings .quicksettings .toggles-box .small-toggles .toggle:checked:hover {
-            box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03), inset 0 0 0 99px rgba(238, 238, 238, 0.154); }
+            box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03), inset 0 0 0 99px rgba(205, 214, 244, 0.154); }
         window#quicksettings .quicksettings .toggles-box .small-toggles .toggle:disabled {
           box-shadow: none;
           background-color: transparent;
-          color: rgba(238, 238, 238, 0.3); }
+          color: rgba(205, 214, 244, 0.3); }
     window#quicksettings .quicksettings .toggles-box .arrow-toggles {
       all: unset;
       border-radius: 9px;
-      color: #eee;
-      background-color: rgba(238, 238, 238, 0.06);
-      border: 1px solid rgba(238, 238, 238, 0.03);
+      color: #cdd6f4;
+      background-color: rgba(205, 214, 244, 0.06);
+      border: 1px solid rgba(205, 214, 244, 0.03);
       padding: 4.5px;
       margin-right: 9px; }
       window#quicksettings .quicksettings .toggles-box .arrow-toggles * {
@@ -855,32 +855,32 @@ window#quicksettings .quicksettings {
         all: unset;
         transition: 200ms;
         border-radius: 9px;
-        color: #eee;
-        background-color: rgba(238, 238, 238, 0.06);
-        box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
+        color: #cdd6f4;
+        background-color: rgba(205, 214, 244, 0.06);
+        box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
         margin: 4.5px; }
         window#quicksettings .quicksettings .toggles-box .arrow-toggles .toggle.arrow * {
           font-size: 15px;
           font-family: "Ubuntu Nerd Font", sans-serif; }
         window#quicksettings .quicksettings .toggles-box .arrow-toggles .toggle.arrow:focus {
-          box-shadow: inset 0 0 0 1px #51a4e7;
-          background-color: rgba(238, 238, 238, 0.154);
-          color: #f1f1f1; }
+          box-shadow: inset 0 0 0 1px #89b4fa;
+          background-color: rgba(205, 214, 244, 0.154);
+          color: #b4befe; }
         window#quicksettings .quicksettings .toggles-box .arrow-toggles .toggle.arrow:hover {
-          box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-          background-color: rgba(238, 238, 238, 0.154);
-          color: #f1f1f1; }
+          box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+          background-color: rgba(205, 214, 244, 0.154);
+          color: #b4befe; }
         window#quicksettings .quicksettings .toggles-box .arrow-toggles .toggle.arrow:active, window#quicksettings .quicksettings .toggles-box .arrow-toggles .toggle.arrow.on, window#quicksettings .quicksettings .toggles-box .arrow-toggles .toggle.arrow.active, window#quicksettings .quicksettings .toggles-box .arrow-toggles .toggle.arrow:checked {
-          box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-          background-image: linear-gradient(to right, #51a4e7, #6cb2eb);
-          background-color: #51a4e7;
+          box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+          background-image: linear-gradient(to right, #89b4fa, #a6c7fb);
+          background-color: #89b4fa;
           color: #141414; }
           window#quicksettings .quicksettings .toggles-box .arrow-toggles .toggle.arrow:active:hover, window#quicksettings .quicksettings .toggles-box .arrow-toggles .toggle.arrow.on:hover, window#quicksettings .quicksettings .toggles-box .arrow-toggles .toggle.arrow.active:hover, window#quicksettings .quicksettings .toggles-box .arrow-toggles .toggle.arrow:checked:hover {
-            box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03), inset 0 0 0 99px rgba(238, 238, 238, 0.154); }
+            box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03), inset 0 0 0 99px rgba(205, 214, 244, 0.154); }
         window#quicksettings .quicksettings .toggles-box .arrow-toggles .toggle.arrow:disabled {
           box-shadow: none;
           background-color: transparent;
-          color: rgba(238, 238, 238, 0.3); }
+          color: rgba(205, 214, 244, 0.3); }
         window#quicksettings .quicksettings .toggles-box .arrow-toggles .toggle.arrow label {
           margin-left: 4.5px;
           font-weight: bold; }
@@ -888,7 +888,7 @@ window#quicksettings .quicksettings {
           all: unset;
           transition: 200ms;
           border-radius: 9px;
-          color: #eee;
+          color: #cdd6f4;
           background-color: transparent;
           background-image: none;
           box-shadow: none;
@@ -897,24 +897,24 @@ window#quicksettings .quicksettings {
             font-size: 15px;
             font-family: "Ubuntu Nerd Font", sans-serif; }
           window#quicksettings .quicksettings .toggles-box .arrow-toggles .toggle.arrow button:focus {
-            box-shadow: inset 0 0 0 1px #51a4e7;
-            background-color: rgba(238, 238, 238, 0.154);
-            color: #f1f1f1; }
+            box-shadow: inset 0 0 0 1px #89b4fa;
+            background-color: rgba(205, 214, 244, 0.154);
+            color: #b4befe; }
           window#quicksettings .quicksettings .toggles-box .arrow-toggles .toggle.arrow button:hover {
-            box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-            background-color: rgba(238, 238, 238, 0.154);
-            color: #f1f1f1; }
+            box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+            background-color: rgba(205, 214, 244, 0.154);
+            color: #b4befe; }
           window#quicksettings .quicksettings .toggles-box .arrow-toggles .toggle.arrow button:active, window#quicksettings .quicksettings .toggles-box .arrow-toggles .toggle.arrow button.on, window#quicksettings .quicksettings .toggles-box .arrow-toggles .toggle.arrow button.active, window#quicksettings .quicksettings .toggles-box .arrow-toggles .toggle.arrow button:checked {
-            box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-            background-image: linear-gradient(to right, #51a4e7, #6cb2eb);
-            background-color: #51a4e7;
+            box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+            background-image: linear-gradient(to right, #89b4fa, #a6c7fb);
+            background-color: #89b4fa;
             color: #141414; }
             window#quicksettings .quicksettings .toggles-box .arrow-toggles .toggle.arrow button:active:hover, window#quicksettings .quicksettings .toggles-box .arrow-toggles .toggle.arrow button.on:hover, window#quicksettings .quicksettings .toggles-box .arrow-toggles .toggle.arrow button.active:hover, window#quicksettings .quicksettings .toggles-box .arrow-toggles .toggle.arrow button:checked:hover {
-              box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03), inset 0 0 0 99px rgba(238, 238, 238, 0.154); }
+              box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03), inset 0 0 0 99px rgba(205, 214, 244, 0.154); }
           window#quicksettings .quicksettings .toggles-box .arrow-toggles .toggle.arrow button:disabled {
             box-shadow: none;
             background-color: transparent;
-            color: rgba(238, 238, 238, 0.3); }
+            color: rgba(205, 214, 244, 0.3); }
           window#quicksettings .quicksettings .toggles-box .arrow-toggles .toggle.arrow button:first-child {
             border-top-right-radius: 0;
             border-bottom-right-radius: 0; }
@@ -922,15 +922,15 @@ window#quicksettings .quicksettings {
             border-top-left-radius: 0;
             border-bottom-left-radius: 0; }
         window#quicksettings .quicksettings .toggles-box .arrow-toggles .toggle.arrow.active {
-          background-color: #51a4e7; }
+          background-color: #89b4fa; }
           window#quicksettings .quicksettings .toggles-box .arrow-toggles .toggle.arrow.active label, window#quicksettings .quicksettings .toggles-box .arrow-toggles .toggle.arrow.active image {
             color: #141414; }
   window#quicksettings .quicksettings .submenu {
     all: unset;
     border-radius: 9px;
-    color: #eee;
-    background-color: rgba(238, 238, 238, 0.06);
-    border: 1px solid rgba(238, 238, 238, 0.03);
+    color: #cdd6f4;
+    background-color: rgba(205, 214, 244, 0.06);
+    border: 1px solid rgba(205, 214, 244, 0.03);
     margin-top: 9px; }
     window#quicksettings .quicksettings .submenu * {
       font-size: 15px;
@@ -941,7 +941,7 @@ window#quicksettings .quicksettings {
       font-weight: bold;
       font-size: 1.2em; }
     window#quicksettings .quicksettings .submenu .content {
-      border-top: 1px solid rgba(238, 238, 238, 0.06);
+      border-top: 1px solid rgba(205, 214, 244, 0.06);
       padding: 9px; }
     window#quicksettings .quicksettings .submenu.app-mixer .content scale {
       all: unset; }
@@ -953,13 +953,13 @@ window#quicksettings .quicksettings {
       window#quicksettings .quicksettings .submenu.app-mixer .content scale trough {
         transition: 200ms;
         border-radius: 9px;
-        border: 1px solid rgba(238, 238, 238, 0.03);
-        background-color: rgba(238, 238, 238, 0.06);
+        border: 1px solid rgba(205, 214, 244, 0.03);
+        background-color: rgba(205, 214, 244, 0.06);
         min-height: 0.7em;
         min-width: 0.7em; }
         window#quicksettings .quicksettings .submenu.app-mixer .content scale trough highlight, window#quicksettings .quicksettings .submenu.app-mixer .content scale trough progress {
           border-radius: 8px;
-          background-image: linear-gradient(to right, #51a4e7, #6cb2eb);
+          background-image: linear-gradient(to right, #89b4fa, #a6c7fb);
           min-height: 0.7em;
           min-width: 0.7em; }
       window#quicksettings .quicksettings .submenu.app-mixer .content scale slider {
@@ -972,22 +972,22 @@ window#quicksettings .quicksettings {
         min-width: 0.7em;
         margin: -0.5em; }
       window#quicksettings .quicksettings .submenu.app-mixer .content scale:hover trough {
-        background-color: rgba(238, 238, 238, 0.154); }
+        background-color: rgba(205, 214, 244, 0.154); }
       window#quicksettings .quicksettings .submenu.app-mixer .content scale:hover slider {
-        background-color: #eee;
-        border-color: rgba(238, 238, 238, 0.03);
+        background-color: #cdd6f4;
+        border-color: rgba(205, 214, 244, 0.03);
         box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.6); }
       window#quicksettings .quicksettings .submenu.app-mixer .content scale:disabled highlight, window#quicksettings .quicksettings .submenu.app-mixer .content scale:disabled progress {
-        background-color: rgba(238, 238, 238, 0.6);
+        background-color: rgba(205, 214, 244, 0.6);
         background-image: none; }
       window#quicksettings .quicksettings .submenu.app-mixer .content scale:disabled slider {
-        background-color: rgba(238, 238, 238, 0.5); }
+        background-color: rgba(205, 214, 244, 0.5); }
       window#quicksettings .quicksettings .submenu.app-mixer .content scale trough:focus {
-        background-color: rgba(238, 238, 238, 0.154);
-        box-shadow: inset 0 0 0 1px #51a4e7; }
+        background-color: rgba(205, 214, 244, 0.154);
+        box-shadow: inset 0 0 0 1px #89b4fa; }
         window#quicksettings .quicksettings .submenu.app-mixer .content scale trough:focus slider {
-          background-color: #eee;
-          box-shadow: inset 0 0 0 1px #51a4e7; }
+          background-color: #cdd6f4;
+          box-shadow: inset 0 0 0 1px #89b4fa; }
     window#quicksettings .quicksettings .submenu.app-mixer .content > box {
       padding: 9px; }
     window#quicksettings .quicksettings .submenu.app-mixer .content label:last-child {
@@ -998,7 +998,7 @@ window#quicksettings .quicksettings {
       all: unset;
       transition: 200ms;
       border-radius: 9px;
-      color: #eee;
+      color: #cdd6f4;
       background-color: transparent;
       background-image: none;
       box-shadow: none;
@@ -1009,24 +1009,24 @@ window#quicksettings .quicksettings {
         font-size: 15px;
         font-family: "Ubuntu Nerd Font", sans-serif; }
       window#quicksettings .quicksettings .submenu.network .content button:focus, window#quicksettings .quicksettings .submenu.theme button:focus, window#quicksettings .quicksettings .submenu .content button:focus {
-        box-shadow: inset 0 0 0 1px #51a4e7;
-        background-color: rgba(238, 238, 238, 0.154);
-        color: #f1f1f1; }
+        box-shadow: inset 0 0 0 1px #89b4fa;
+        background-color: rgba(205, 214, 244, 0.154);
+        color: #b4befe; }
       window#quicksettings .quicksettings .submenu.network .content button:hover, window#quicksettings .quicksettings .submenu.theme button:hover, window#quicksettings .quicksettings .submenu .content button:hover {
-        box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-        background-color: rgba(238, 238, 238, 0.154);
-        color: #f1f1f1; }
+        box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+        background-color: rgba(205, 214, 244, 0.154);
+        color: #b4befe; }
       window#quicksettings .quicksettings .submenu.network .content button:active, window#quicksettings .quicksettings .submenu.network .content button.on, window#quicksettings .quicksettings .submenu.network .content button.active, window#quicksettings .quicksettings .submenu.network .content button:checked, window#quicksettings .quicksettings .submenu.theme button:active, window#quicksettings .quicksettings .submenu.theme button.on, window#quicksettings .quicksettings .submenu.theme button.active, window#quicksettings .quicksettings .submenu.theme button:checked, window#quicksettings .quicksettings .submenu .content button:active, window#quicksettings .quicksettings .submenu .content button.on, window#quicksettings .quicksettings .submenu .content button.active, window#quicksettings .quicksettings .submenu .content button:checked {
-        box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-        background-image: linear-gradient(to right, #51a4e7, #6cb2eb);
-        background-color: #51a4e7;
+        box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+        background-image: linear-gradient(to right, #89b4fa, #a6c7fb);
+        background-color: #89b4fa;
         color: #141414; }
         window#quicksettings .quicksettings .submenu.network .content button:active:hover, window#quicksettings .quicksettings .submenu.network .content button.on:hover, window#quicksettings .quicksettings .submenu.network .content button.active:hover, window#quicksettings .quicksettings .submenu.network .content button:checked:hover, window#quicksettings .quicksettings .submenu.theme button:active:hover, window#quicksettings .quicksettings .submenu.theme button.on:hover, window#quicksettings .quicksettings .submenu.theme button.active:hover, window#quicksettings .quicksettings .submenu.theme button:checked:hover, window#quicksettings .quicksettings .submenu .content button:active:hover, window#quicksettings .quicksettings .submenu .content button.on:hover, window#quicksettings .quicksettings .submenu .content button.active:hover, window#quicksettings .quicksettings .submenu .content button:checked:hover {
-          box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03), inset 0 0 0 99px rgba(238, 238, 238, 0.154); }
+          box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03), inset 0 0 0 99px rgba(205, 214, 244, 0.154); }
       window#quicksettings .quicksettings .submenu.network .content button:disabled, window#quicksettings .quicksettings .submenu.theme button:disabled, window#quicksettings .quicksettings .submenu .content button:disabled {
         box-shadow: none;
         background-color: transparent;
-        color: rgba(238, 238, 238, 0.3); }
+        color: rgba(205, 214, 244, 0.3); }
       window#quicksettings .quicksettings .submenu.network .content button:first-child, window#quicksettings .quicksettings .submenu.theme button:first-child, window#quicksettings .quicksettings .submenu .content button:first-child {
         margin-top: 0; }
     window#quicksettings .quicksettings .submenu.network .content image, window#quicksettings .quicksettings .submenu.theme image, window#quicksettings .quicksettings .submenu .content image {
@@ -1037,33 +1037,33 @@ window#quicksettings .quicksettings {
       all: unset;
       transition: 200ms;
       border-radius: 9px;
-      color: #eee;
-      background-color: rgba(238, 238, 238, 0.06);
-      box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03); }
+      color: #cdd6f4;
+      background-color: rgba(205, 214, 244, 0.06);
+      box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03); }
       window#quicksettings .quicksettings .submenu.bluetooth .content switch * {
         font-size: 15px;
         font-family: "Ubuntu Nerd Font", sans-serif; }
       window#quicksettings .quicksettings .submenu.bluetooth .content switch:focus {
-        box-shadow: inset 0 0 0 1px #51a4e7;
-        background-color: rgba(238, 238, 238, 0.154);
-        color: #f1f1f1; }
+        box-shadow: inset 0 0 0 1px #89b4fa;
+        background-color: rgba(205, 214, 244, 0.154);
+        color: #b4befe; }
       window#quicksettings .quicksettings .submenu.bluetooth .content switch:hover {
-        box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-        background-color: rgba(238, 238, 238, 0.154);
-        color: #f1f1f1; }
+        box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+        background-color: rgba(205, 214, 244, 0.154);
+        color: #b4befe; }
       window#quicksettings .quicksettings .submenu.bluetooth .content switch:active, window#quicksettings .quicksettings .submenu.bluetooth .content switch.on, window#quicksettings .quicksettings .submenu.bluetooth .content switch.active, window#quicksettings .quicksettings .submenu.bluetooth .content switch:checked {
-        box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-        background-image: linear-gradient(to right, #51a4e7, #6cb2eb);
-        background-color: #51a4e7;
+        box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+        background-image: linear-gradient(to right, #89b4fa, #a6c7fb);
+        background-color: #89b4fa;
         color: #141414; }
         window#quicksettings .quicksettings .submenu.bluetooth .content switch:active:hover, window#quicksettings .quicksettings .submenu.bluetooth .content switch.on:hover, window#quicksettings .quicksettings .submenu.bluetooth .content switch.active:hover, window#quicksettings .quicksettings .submenu.bluetooth .content switch:checked:hover {
-          box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03), inset 0 0 0 99px rgba(238, 238, 238, 0.154); }
+          box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03), inset 0 0 0 99px rgba(205, 214, 244, 0.154); }
       window#quicksettings .quicksettings .submenu.bluetooth .content switch:disabled {
         box-shadow: none;
         background-color: transparent;
-        color: rgba(238, 238, 238, 0.3); }
+        color: rgba(205, 214, 244, 0.3); }
       window#quicksettings .quicksettings .submenu.bluetooth .content switch slider {
-        background-color: #eee;
+        background-color: #cdd6f4;
         border-radius: 9px;
         min-width: 24px;
         min-height: 24px; }
@@ -1072,9 +1072,9 @@ window#quicksettings .quicksettings {
   window#quicksettings .quicksettings .media .mediabox {
     all: unset;
     border-radius: 9px;
-    color: #eee;
-    background-color: rgba(238, 238, 238, 0.06);
-    border: 1px solid rgba(238, 238, 238, 0.03);
+    color: #cdd6f4;
+    background-color: rgba(205, 214, 244, 0.06);
+    border: 1px solid rgba(205, 214, 244, 0.03);
     margin-top: 9px; }
     window#quicksettings .quicksettings .media .mediabox * {
       font-size: 15px;
@@ -1085,7 +1085,7 @@ window#quicksettings .quicksettings {
     window#quicksettings .quicksettings .media .mediabox .shader {
       all: unset;
       border-radius: 8px;
-      box-shadow: inset 0 0 3em 1em rgba(23, 23, 23, 0.7); }
+      box-shadow: inset 0 0 3em 1em rgba(17, 17, 27, 0.7); }
       window#quicksettings .quicksettings .media .mediabox .shader * {
         font-size: 15px;
         font-family: "Ubuntu Nerd Font", sans-serif; }
@@ -1102,7 +1102,7 @@ window#quicksettings .quicksettings {
       window#quicksettings .quicksettings .media .mediabox .cover-art .shader {
         background-color: transparent;
         border-radius: 6.2px;
-        box-shadow: inset 0 0 0 999px rgba(23, 23, 23, 0.2); }
+        box-shadow: inset 0 0 0 999px rgba(17, 17, 27, 0.2); }
     window#quicksettings .quicksettings .media .mediabox .cover-art-bg, window#quicksettings .quicksettings .media .mediabox .cover-art {
       background-size: cover;
       background-position: center; }
@@ -1124,8 +1124,8 @@ window#quicksettings .quicksettings {
       window#quicksettings .quicksettings .media .mediabox .position-slider trough {
         transition: 200ms;
         border-radius: 0;
-        border: 1px solid rgba(238, 238, 238, 0.03);
-        background-color: rgba(238, 238, 238, 0.06);
+        border: 1px solid rgba(205, 214, 244, 0.03);
+        background-color: rgba(205, 214, 244, 0.06);
         min-height: 0.4em;
         min-width: 0.4em; }
         window#quicksettings .quicksettings .media .mediabox .position-slider trough highlight, window#quicksettings .quicksettings .media .mediabox .position-slider trough progress {
@@ -1143,13 +1143,13 @@ window#quicksettings .quicksettings {
         min-width: 0.4em;
         margin: -0.5em; }
       window#quicksettings .quicksettings .media .mediabox .position-slider:hover trough {
-        background-color: rgba(238, 238, 238, 0.154); }
+        background-color: rgba(205, 214, 244, 0.154); }
       window#quicksettings .quicksettings .media .mediabox .position-slider:disabled highlight, window#quicksettings .quicksettings .media .mediabox .position-slider:disabled progress {
-        background-color: rgba(238, 238, 238, 0.6);
+        background-color: rgba(205, 214, 244, 0.6);
         background-image: none; }
       window#quicksettings .quicksettings .media .mediabox .position-slider trough:focus {
-        background-color: rgba(238, 238, 238, 0.154);
-        box-shadow: inset 0 0 0 1px #51a4e7; }
+        background-color: rgba(205, 214, 244, 0.154);
+        box-shadow: inset 0 0 0 1px #89b4fa; }
       window#quicksettings .quicksettings .media .mediabox .position-slider trough {
         border: none;
         background-color: rgba(255, 255, 255, 0.3); }
@@ -1170,29 +1170,29 @@ window#quicksettings .quicksettings {
       window#quicksettings .quicksettings .media .mediabox .controls button:active label {
         color: white; }
     window#quicksettings .quicksettings .media .mediabox.spotify button .shuffle.enabled {
-      color: #43c383; }
+      color: #a6e3a1; }
     window#quicksettings .quicksettings .media .mediabox.spotify button .loop.playlist, window#quicksettings .quicksettings .media .mediabox.spotify button .loop.track {
-      color: #43c383; }
+      color: #a6e3a1; }
     window#quicksettings .quicksettings .media .mediabox.spotify button:active label {
-      color: #43c383; }
+      color: #a6e3a1; }
     window#quicksettings .quicksettings .media .mediabox.spotify .position-slider:hover trough {
-      background-color: rgba(67, 195, 131, 0.5); }
+      background-color: rgba(166, 227, 161, 0.5); }
     window#quicksettings .quicksettings .media .mediabox.firefox button .shuffle.enabled {
-      color: #E79E64; }
+      color: #fab387; }
     window#quicksettings .quicksettings .media .mediabox.firefox button .loop.playlist, window#quicksettings .quicksettings .media .mediabox.firefox button .loop.track {
-      color: #E79E64; }
+      color: #fab387; }
     window#quicksettings .quicksettings .media .mediabox.firefox button:active label {
-      color: #E79E64; }
+      color: #fab387; }
     window#quicksettings .quicksettings .media .mediabox.firefox .position-slider:hover trough {
-      background-color: rgba(231, 158, 100, 0.5); }
+      background-color: rgba(250, 179, 135, 0.5); }
     window#quicksettings .quicksettings .media .mediabox.mpv button .shuffle.enabled {
-      color: #9077e7; }
+      color: #cba6f7; }
     window#quicksettings .quicksettings .media .mediabox.mpv button .loop.playlist, window#quicksettings .quicksettings .media .mediabox.mpv button .loop.track {
-      color: #9077e7; }
+      color: #cba6f7; }
     window#quicksettings .quicksettings .media .mediabox.mpv button:active label {
-      color: #9077e7; }
+      color: #cba6f7; }
     window#quicksettings .quicksettings .media .mediabox.mpv .position-slider:hover trough {
-      background-color: rgba(144, 119, 231, 0.5); }
+      background-color: rgba(203, 166, 247, 0.5); }
     window#quicksettings .quicksettings .media .mediabox.firefox .footer-box {
       margin-top: -18px; }
     window#quicksettings .quicksettings .media .mediabox .cover-art-bg {
@@ -1209,10 +1209,10 @@ window#verification .verification {
   all: unset;
   box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.6);
   margin: 9px;
-  border: 1px solid rgba(238, 238, 238, 0.04);
+  border: 1px solid rgba(205, 214, 244, 0.04);
   border-radius: 15.3px;
-  background-color: #171717;
-  color: #eee;
+  background-color: #11111b;
+  color: #cdd6f4;
   padding: 16.2px;
   padding: 19.44px;
   min-width: 300px;
@@ -1223,7 +1223,7 @@ window#verification .verification {
   window#verification .verification .title {
     font-size: 1.7em; }
   window#verification .verification .desc {
-    color: rgba(238, 238, 238, 0.9);
+    color: rgba(205, 214, 244, 0.9);
     font-size: 1.2em; }
   window#verification .verification .buttons {
     margin-top: 18px; }
@@ -1231,9 +1231,9 @@ window#verification .verification {
       all: unset;
       transition: 200ms;
       border-radius: 9px;
-      color: #eee;
-      background-color: rgba(238, 238, 238, 0.06);
-      box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
+      color: #cdd6f4;
+      background-color: rgba(205, 214, 244, 0.06);
+      box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
       font-size: 1.6em;
       padding: 9px;
       margin: 0 9.72px; }
@@ -1241,24 +1241,24 @@ window#verification .verification {
         font-size: 15px;
         font-family: "Ubuntu Nerd Font", sans-serif; }
       window#verification .verification .buttons button:focus {
-        box-shadow: inset 0 0 0 1px #51a4e7;
-        background-color: rgba(238, 238, 238, 0.154);
-        color: #f1f1f1; }
+        box-shadow: inset 0 0 0 1px #89b4fa;
+        background-color: rgba(205, 214, 244, 0.154);
+        color: #b4befe; }
       window#verification .verification .buttons button:hover {
-        box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-        background-color: rgba(238, 238, 238, 0.154);
-        color: #f1f1f1; }
+        box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+        background-color: rgba(205, 214, 244, 0.154);
+        color: #b4befe; }
       window#verification .verification .buttons button:active, window#verification .verification .buttons button.on, window#verification .verification .buttons button.active, window#verification .verification .buttons button:checked {
-        box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-        background-image: linear-gradient(to right, #51a4e7, #6cb2eb);
-        background-color: #51a4e7;
+        box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+        background-image: linear-gradient(to right, #89b4fa, #a6c7fb);
+        background-color: #89b4fa;
         color: #141414; }
         window#verification .verification .buttons button:active:hover, window#verification .verification .buttons button.on:hover, window#verification .verification .buttons button.active:hover, window#verification .verification .buttons button:checked:hover {
-          box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03), inset 0 0 0 99px rgba(238, 238, 238, 0.154); }
+          box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03), inset 0 0 0 99px rgba(205, 214, 244, 0.154); }
       window#verification .verification .buttons button:disabled {
         box-shadow: none;
         background-color: transparent;
-        color: rgba(238, 238, 238, 0.3); }
+        color: rgba(205, 214, 244, 0.3); }
       window#verification .verification .buttons button:first-child {
         margin-left: 0; }
       window#verification .verification .buttons button:last-child {
@@ -1268,10 +1268,10 @@ window#powermenu .powermenu {
   all: unset;
   box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.6);
   margin: 9px;
-  border: 1px solid rgba(238, 238, 238, 0.04);
+  border: 1px solid rgba(205, 214, 244, 0.04);
   border-radius: 15.3px;
-  background-color: #171717;
-  color: #eee;
+  background-color: #11111b;
+  color: #cdd6f4;
   padding: 16.2px;
   padding: 16.2px;
   border-radius: 27px; }
@@ -1287,9 +1287,9 @@ window#powermenu .powermenu {
       all: unset;
       transition: 200ms;
       border-radius: 9px;
-      color: #eee;
-      background-color: rgba(238, 238, 238, 0.06);
-      box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
+      color: #cdd6f4;
+      background-color: rgba(205, 214, 244, 0.06);
+      box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
       margin: 16.2px;
       margin-bottom: 8.1px;
       border-radius: 18px;
@@ -1299,52 +1299,52 @@ window#powermenu .powermenu {
         font-size: 15px;
         font-family: "Ubuntu Nerd Font", sans-serif; }
       window#powermenu .powermenu button .icon:focus {
-        box-shadow: inset 0 0 0 1px #51a4e7;
-        background-color: rgba(238, 238, 238, 0.154);
-        color: #f1f1f1; }
+        box-shadow: inset 0 0 0 1px #89b4fa;
+        background-color: rgba(205, 214, 244, 0.154);
+        color: #b4befe; }
       window#powermenu .powermenu button .icon:hover {
-        box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-        background-color: rgba(238, 238, 238, 0.154);
-        color: #f1f1f1; }
+        box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+        background-color: rgba(205, 214, 244, 0.154);
+        color: #b4befe; }
       window#powermenu .powermenu button .icon:active, window#powermenu .powermenu button .icon.on, window#powermenu .powermenu button .icon.active, window#powermenu .powermenu button .icon:checked {
-        box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-        background-image: linear-gradient(to right, #51a4e7, #6cb2eb);
-        background-color: #51a4e7;
+        box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+        background-image: linear-gradient(to right, #89b4fa, #a6c7fb);
+        background-color: #89b4fa;
         color: #141414; }
         window#powermenu .powermenu button .icon:active:hover, window#powermenu .powermenu button .icon.on:hover, window#powermenu .powermenu button .icon.active:hover, window#powermenu .powermenu button .icon:checked:hover {
-          box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03), inset 0 0 0 99px rgba(238, 238, 238, 0.154); }
+          box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03), inset 0 0 0 99px rgba(205, 214, 244, 0.154); }
       window#powermenu .powermenu button .icon:disabled {
         box-shadow: none;
         background-color: transparent;
-        color: rgba(238, 238, 238, 0.3); }
+        color: rgba(205, 214, 244, 0.3); }
     window#powermenu .powermenu button label, window#powermenu .powermenu button .icon {
-      color: rgba(238, 238, 238, 0.9); }
+      color: rgba(205, 214, 244, 0.9); }
     window#powermenu .powermenu button:hover .icon {
-      box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-      background-color: rgba(238, 238, 238, 0.154);
-      color: #f1f1f1; }
+      box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+      background-color: rgba(205, 214, 244, 0.154);
+      color: #b4befe; }
     window#powermenu .powermenu button:hover label {
-      color: #eee; }
+      color: #cdd6f4; }
     window#powermenu .powermenu button:focus .icon {
-      box-shadow: inset 0 0 0 1px #51a4e7;
-      background-color: rgba(238, 238, 238, 0.154);
-      color: #f1f1f1; }
+      box-shadow: inset 0 0 0 1px #89b4fa;
+      background-color: rgba(205, 214, 244, 0.154);
+      color: #b4befe; }
     window#powermenu .powermenu button:active .icon {
-      box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-      background-image: linear-gradient(to right, #51a4e7, #6cb2eb);
-      background-color: #51a4e7;
+      box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+      background-image: linear-gradient(to right, #89b4fa, #a6c7fb);
+      background-color: #89b4fa;
       color: #141414; }
     window#powermenu .powermenu button:focus label, window#powermenu .powermenu button:active label {
-      color: #51a4e7; }
+      color: #89b4fa; }
 
 window#overview .overview {
   all: unset;
   box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.6);
   margin: 9px;
-  border: 1px solid rgba(238, 238, 238, 0.04);
+  border: 1px solid rgba(205, 214, 244, 0.04);
   border-radius: 15.3px;
-  background-color: #171717;
-  color: #eee;
+  background-color: #11111b;
+  color: #cdd6f4;
   padding: 16.2px; }
   window#overview .overview * {
     font-size: 15px;
@@ -1356,52 +1356,52 @@ window#overview .overview {
     window#overview .overview .workspace:first-child {
       margin-left: 0; }
     window#overview .overview .workspace.active > widget {
-      border-color: #51a4e7; }
+      border-color: #89b4fa; }
     window#overview .overview .workspace > widget {
       all: unset;
       border-radius: 9px;
-      color: #eee;
-      background-color: rgba(238, 238, 238, 0.06);
-      border: 1px solid rgba(238, 238, 238, 0.03); }
+      color: #cdd6f4;
+      background-color: rgba(205, 214, 244, 0.06);
+      border: 1px solid rgba(205, 214, 244, 0.03); }
       window#overview .overview .workspace > widget * {
         font-size: 15px;
         font-family: "Ubuntu Nerd Font", sans-serif; }
       window#overview .overview .workspace > widget:drop(active) {
-        border-color: #51a4e7; }
+        border-color: #89b4fa; }
   window#overview .overview .client {
     all: unset;
     transition: 200ms;
     border-radius: 9px;
-    color: #eee;
-    background-color: rgba(238, 238, 238, 0.06);
-    box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
+    color: #cdd6f4;
+    background-color: rgba(205, 214, 244, 0.06);
+    box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
     border-radius: 7.2px;
     margin: 9px; }
     window#overview .overview .client * {
       font-size: 15px;
       font-family: "Ubuntu Nerd Font", sans-serif; }
     window#overview .overview .client:focus {
-      box-shadow: inset 0 0 0 1px #51a4e7;
-      background-color: rgba(238, 238, 238, 0.154);
-      color: #f1f1f1; }
+      box-shadow: inset 0 0 0 1px #89b4fa;
+      background-color: rgba(205, 214, 244, 0.154);
+      color: #b4befe; }
     window#overview .overview .client:hover {
-      box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-      background-color: rgba(238, 238, 238, 0.154);
-      color: #f1f1f1; }
+      box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+      background-color: rgba(205, 214, 244, 0.154);
+      color: #b4befe; }
     window#overview .overview .client:active, window#overview .overview .client.on, window#overview .overview .client.active, window#overview .overview .client:checked {
-      box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-      background-image: linear-gradient(to right, #51a4e7, #6cb2eb);
-      background-color: #51a4e7;
+      box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+      background-image: linear-gradient(to right, #89b4fa, #a6c7fb);
+      background-color: #89b4fa;
       color: #141414; }
       window#overview .overview .client:active:hover, window#overview .overview .client.on:hover, window#overview .overview .client.active:hover, window#overview .overview .client:checked:hover {
-        box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03), inset 0 0 0 99px rgba(238, 238, 238, 0.154); }
+        box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03), inset 0 0 0 99px rgba(205, 214, 244, 0.154); }
     window#overview .overview .client:disabled {
       box-shadow: none;
       background-color: transparent;
-      color: rgba(238, 238, 238, 0.3); }
+      color: rgba(205, 214, 244, 0.3); }
 
 .corners .corner {
-  background-color: #171717;
+  background-color: #11111b;
   border-radius: 18px; }
 
 .desktop {
@@ -1438,10 +1438,10 @@ window.indicator .progress {
   all: unset;
   box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.6);
   margin: 9px;
-  border: 1px solid rgba(238, 238, 238, 0.04);
+  border: 1px solid rgba(205, 214, 244, 0.04);
   border-radius: 15.3px;
-  background-color: #171717;
-  color: #eee;
+  background-color: #11111b;
+  color: #cdd6f4;
   padding: 16.2px;
   padding: 4.5px; }
   window.indicator .progress * {
@@ -1449,7 +1449,7 @@ window.indicator .progress {
     font-family: "Ubuntu Nerd Font", sans-serif; }
   window.indicator .progress .fill {
     border-radius: 10.8px;
-    background-color: #51a4e7;
+    background-color: #89b4fa;
     color: #141414; }
     window.indicator .progress .fill image {
       -gtk-icon-transform: scale(0.7); }
@@ -1461,10 +1461,10 @@ window#dashboard .dashboard {
   all: unset;
   box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.6);
   margin: 9px;
-  border: 1px solid rgba(238, 238, 238, 0.04);
+  border: 1px solid rgba(205, 214, 244, 0.04);
   border-radius: 15.3px;
-  background-color: #171717;
-  color: #eee;
+  background-color: #11111b;
+  color: #cdd6f4;
   padding: 16.2px; }
   window#dashboard .dashboard * {
     font-size: 15px;
@@ -1477,76 +1477,76 @@ window#dashboard .dashboard {
       all: unset;
       transition: 200ms;
       border-radius: 9px;
-      color: #eee;
-      background-color: rgba(238, 238, 238, 0.06);
-      box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
+      color: #cdd6f4;
+      background-color: rgba(205, 214, 244, 0.06);
+      box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
       padding: 4.5px 9px; }
       window#dashboard .dashboard .notifications .header button * {
         font-size: 15px;
         font-family: "Ubuntu Nerd Font", sans-serif; }
       window#dashboard .dashboard .notifications .header button:focus {
-        box-shadow: inset 0 0 0 1px #51a4e7;
-        background-color: rgba(238, 238, 238, 0.154);
-        color: #f1f1f1; }
+        box-shadow: inset 0 0 0 1px #89b4fa;
+        background-color: rgba(205, 214, 244, 0.154);
+        color: #b4befe; }
       window#dashboard .dashboard .notifications .header button:hover {
-        box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-        background-color: rgba(238, 238, 238, 0.154);
-        color: #f1f1f1; }
+        box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+        background-color: rgba(205, 214, 244, 0.154);
+        color: #b4befe; }
       window#dashboard .dashboard .notifications .header button:active, window#dashboard .dashboard .notifications .header button.on, window#dashboard .dashboard .notifications .header button.active, window#dashboard .dashboard .notifications .header button:checked {
-        box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-        background-image: linear-gradient(to right, #51a4e7, #6cb2eb);
-        background-color: #51a4e7;
+        box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+        background-image: linear-gradient(to right, #89b4fa, #a6c7fb);
+        background-color: #89b4fa;
         color: #141414; }
         window#dashboard .dashboard .notifications .header button:active:hover, window#dashboard .dashboard .notifications .header button.on:hover, window#dashboard .dashboard .notifications .header button.active:hover, window#dashboard .dashboard .notifications .header button:checked:hover {
-          box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03), inset 0 0 0 99px rgba(238, 238, 238, 0.154); }
+          box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03), inset 0 0 0 99px rgba(205, 214, 244, 0.154); }
       window#dashboard .dashboard .notifications .header button:disabled {
         box-shadow: none;
         background-color: transparent;
-        color: rgba(238, 238, 238, 0.3); }
+        color: rgba(205, 214, 244, 0.3); }
       window#dashboard .dashboard .notifications .header button label {
         font-size: 1.2em; }
     window#dashboard .dashboard .notifications .notification-list scrollbar, window#dashboard .dashboard .notifications .notification-list scrollbar * {
       all: unset; }
     window#dashboard .dashboard .notifications .notification-list scrollbar.vertical slider {
-      background: rgba(238, 238, 238, 0.06);
+      background: rgba(205, 214, 244, 0.06);
       border-radius: 9px;
       min-width: .6em;
       min-height: 2em;
       transition: 200ms; }
       window#dashboard .dashboard .notifications .notification-list scrollbar.vertical slider:hover {
-        background-color: rgba(238, 238, 238, 0.4);
+        background-color: rgba(205, 214, 244, 0.4);
         min-width: .8em; }
     window#dashboard .dashboard .notifications .notification-list .notification.critical > box {
-      box-shadow: inset 0 0 0.5em 0 #e67090; }
+      box-shadow: inset 0 0 0.5em 0 #f38ba8; }
     window#dashboard .dashboard .notifications .notification-list .notification > box {
       border-radius: 4.5px;
       padding: 9px; }
     window#dashboard .dashboard .notifications .notification-list .notification:hover .close-button {
-      box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-      background-color: rgba(238, 238, 238, 0.154);
-      color: #f1f1f1;
-      background-color: rgba(230, 112, 144, 0.5); }
+      box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+      background-color: rgba(205, 214, 244, 0.154);
+      color: #b4befe;
+      background-color: rgba(243, 139, 168, 0.5); }
     window#dashboard .dashboard .notifications .notification-list .notification .title {
       margin-right: 9px;
-      color: #eee;
+      color: #cdd6f4;
       font-size: 1.1em; }
     window#dashboard .dashboard .notifications .notification-list .notification .time {
-      color: rgba(238, 238, 238, 0.8); }
+      color: rgba(205, 214, 244, 0.8); }
     window#dashboard .dashboard .notifications .notification-list .notification .description {
       font-size: .9em;
-      color: rgba(238, 238, 238, 0.8); }
+      color: rgba(205, 214, 244, 0.8); }
     window#dashboard .dashboard .notifications .notification-list .notification .icon {
       border-radius: 7.2px;
       margin-right: 9px; }
       window#dashboard .dashboard .notifications .notification-list .notification .icon.img {
-        border: 1px solid rgba(238, 238, 238, 0.03); }
+        border: 1px solid rgba(205, 214, 244, 0.03); }
     window#dashboard .dashboard .notifications .notification-list .notification .actions button {
       all: unset;
       transition: 200ms;
       border-radius: 9px;
-      color: #eee;
-      background-color: rgba(238, 238, 238, 0.06);
-      box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
+      color: #cdd6f4;
+      background-color: rgba(205, 214, 244, 0.06);
+      box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
       border-radius: 7.2px;
       font-size: 1.2em;
       padding: 4.5px 9px;
@@ -1555,24 +1555,24 @@ window#dashboard .dashboard {
         font-size: 15px;
         font-family: "Ubuntu Nerd Font", sans-serif; }
       window#dashboard .dashboard .notifications .notification-list .notification .actions button:focus {
-        box-shadow: inset 0 0 0 1px #51a4e7;
-        background-color: rgba(238, 238, 238, 0.154);
-        color: #f1f1f1; }
+        box-shadow: inset 0 0 0 1px #89b4fa;
+        background-color: rgba(205, 214, 244, 0.154);
+        color: #b4befe; }
       window#dashboard .dashboard .notifications .notification-list .notification .actions button:hover {
-        box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-        background-color: rgba(238, 238, 238, 0.154);
-        color: #f1f1f1; }
+        box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+        background-color: rgba(205, 214, 244, 0.154);
+        color: #b4befe; }
       window#dashboard .dashboard .notifications .notification-list .notification .actions button:active, window#dashboard .dashboard .notifications .notification-list .notification .actions button.on, window#dashboard .dashboard .notifications .notification-list .notification .actions button.active, window#dashboard .dashboard .notifications .notification-list .notification .actions button:checked {
-        box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-        background-image: linear-gradient(to right, #51a4e7, #6cb2eb);
-        background-color: #51a4e7;
+        box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+        background-image: linear-gradient(to right, #89b4fa, #a6c7fb);
+        background-color: #89b4fa;
         color: #141414; }
         window#dashboard .dashboard .notifications .notification-list .notification .actions button:active:hover, window#dashboard .dashboard .notifications .notification-list .notification .actions button.on:hover, window#dashboard .dashboard .notifications .notification-list .notification .actions button.active:hover, window#dashboard .dashboard .notifications .notification-list .notification .actions button:checked:hover {
-          box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03), inset 0 0 0 99px rgba(238, 238, 238, 0.154); }
+          box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03), inset 0 0 0 99px rgba(205, 214, 244, 0.154); }
       window#dashboard .dashboard .notifications .notification-list .notification .actions button:disabled {
         box-shadow: none;
         background-color: transparent;
-        color: rgba(238, 238, 238, 0.3); }
+        color: rgba(205, 214, 244, 0.3); }
       window#dashboard .dashboard .notifications .notification-list .notification .actions button:first-child {
         margin-left: 0; }
       window#dashboard .dashboard .notifications .notification-list .notification .actions button:last-child {
@@ -1581,7 +1581,7 @@ window#dashboard .dashboard {
       all: unset;
       transition: 200ms;
       border-radius: 9px;
-      color: #eee;
+      color: #cdd6f4;
       background-color: transparent;
       background-image: none;
       box-shadow: none;
@@ -1593,37 +1593,37 @@ window#dashboard .dashboard {
         font-size: 15px;
         font-family: "Ubuntu Nerd Font", sans-serif; }
       window#dashboard .dashboard .notifications .notification-list .notification button.close-button:focus {
-        box-shadow: inset 0 0 0 1px #51a4e7;
-        background-color: rgba(238, 238, 238, 0.154);
-        color: #f1f1f1; }
+        box-shadow: inset 0 0 0 1px #89b4fa;
+        background-color: rgba(205, 214, 244, 0.154);
+        color: #b4befe; }
       window#dashboard .dashboard .notifications .notification-list .notification button.close-button:hover {
-        box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-        background-color: rgba(238, 238, 238, 0.154);
-        color: #f1f1f1; }
+        box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+        background-color: rgba(205, 214, 244, 0.154);
+        color: #b4befe; }
       window#dashboard .dashboard .notifications .notification-list .notification button.close-button:active, window#dashboard .dashboard .notifications .notification-list .notification button.close-button.on, window#dashboard .dashboard .notifications .notification-list .notification button.close-button.active, window#dashboard .dashboard .notifications .notification-list .notification button.close-button:checked {
-        box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-        background-image: linear-gradient(to right, #51a4e7, #6cb2eb);
-        background-color: #51a4e7;
+        box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+        background-image: linear-gradient(to right, #89b4fa, #a6c7fb);
+        background-color: #89b4fa;
         color: #141414; }
         window#dashboard .dashboard .notifications .notification-list .notification button.close-button:active:hover, window#dashboard .dashboard .notifications .notification-list .notification button.close-button.on:hover, window#dashboard .dashboard .notifications .notification-list .notification button.close-button.active:hover, window#dashboard .dashboard .notifications .notification-list .notification button.close-button:checked:hover {
-          box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03), inset 0 0 0 99px rgba(238, 238, 238, 0.154); }
+          box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03), inset 0 0 0 99px rgba(205, 214, 244, 0.154); }
       window#dashboard .dashboard .notifications .notification-list .notification button.close-button:disabled {
         box-shadow: none;
         background-color: transparent;
-        color: rgba(238, 238, 238, 0.3); }
+        color: rgba(205, 214, 244, 0.3); }
       window#dashboard .dashboard .notifications .notification-list .notification button.close-button:hover {
-        background-color: rgba(230, 112, 144, 0.5); }
+        background-color: rgba(243, 139, 168, 0.5); }
       window#dashboard .dashboard .notifications .notification-list .notification button.close-button:active {
-        background-image: linear-gradient(#e67090, #e67090); }
+        background-image: linear-gradient(#f38ba8, #f38ba8); }
     window#dashboard .dashboard .notifications .header {
       padding-left: .3em;
       margin-bottom: 9px; }
     window#dashboard .dashboard .notifications .notification-list-box {
       all: unset;
       border-radius: 9px;
-      color: #eee;
-      background-color: rgba(238, 238, 238, 0.06);
-      border: 1px solid rgba(238, 238, 238, 0.03); }
+      color: #cdd6f4;
+      background-color: rgba(205, 214, 244, 0.06);
+      border: 1px solid rgba(205, 214, 244, 0.03); }
       window#dashboard .dashboard .notifications .notification-list-box * {
         font-size: 15px;
         font-family: "Ubuntu Nerd Font", sans-serif; }
@@ -1637,10 +1637,10 @@ window#dashboard .dashboard {
       all: unset;
       box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.6);
       margin: 9px;
-      border: 1px solid rgba(238, 238, 238, 0.04);
+      border: 1px solid rgba(205, 214, 244, 0.04);
       border-radius: 15.3px;
-      background-color: #171717;
-      color: #eee;
+      background-color: #11111b;
+      color: #cdd6f4;
       padding: 16.2px;
       border-radius: 9px;
       padding: 9px;
@@ -1655,7 +1655,7 @@ window#dashboard .dashboard {
       window#dashboard .dashboard .notifications .placeholder label {
         text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6); }
   window#dashboard .dashboard .separator {
-    background-color: rgba(238, 238, 238, 0.06);
+    background-color: rgba(205, 214, 244, 0.06);
     min-width: 2px;
     border-radius: 9px;
     margin: 0 9px; }
@@ -1663,13 +1663,13 @@ window#dashboard .dashboard {
     font-size: 5em; }
   window#dashboard .dashboard .datemenu .uptime {
     font-size: 2em;
-    color: rgba(238, 238, 238, 0.8); }
+    color: rgba(205, 214, 244, 0.8); }
   window#dashboard .dashboard .datemenu .calendar {
     all: unset;
     border-radius: 9px;
-    color: #eee;
-    background-color: rgba(238, 238, 238, 0.06);
-    border: 1px solid rgba(238, 238, 238, 0.03);
+    color: #cdd6f4;
+    background-color: rgba(205, 214, 244, 0.06);
+    border: 1px solid rgba(205, 214, 244, 0.03);
     padding: 18px 18px 0;
     margin-top: 18px; }
     window#dashboard .dashboard .datemenu .calendar * {
@@ -1683,7 +1683,7 @@ window#dashboard .dashboard {
         all: unset;
         transition: 200ms;
         border-radius: 9px;
-        color: #eee;
+        color: #cdd6f4;
         background-color: transparent;
         background-image: none;
         box-shadow: none;
@@ -1692,42 +1692,42 @@ window#dashboard .dashboard {
           font-size: 15px;
           font-family: "Ubuntu Nerd Font", sans-serif; }
         window#dashboard .dashboard .datemenu .calendar calendar.button:focus {
-          box-shadow: inset 0 0 0 1px #51a4e7;
-          background-color: rgba(238, 238, 238, 0.154);
-          color: #f1f1f1; }
+          box-shadow: inset 0 0 0 1px #89b4fa;
+          background-color: rgba(205, 214, 244, 0.154);
+          color: #b4befe; }
         window#dashboard .dashboard .datemenu .calendar calendar.button:hover {
-          box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-          background-color: rgba(238, 238, 238, 0.154);
-          color: #f1f1f1; }
+          box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+          background-color: rgba(205, 214, 244, 0.154);
+          color: #b4befe; }
         window#dashboard .dashboard .datemenu .calendar calendar.button:active, window#dashboard .dashboard .datemenu .calendar calendar.button.on, window#dashboard .dashboard .datemenu .calendar calendar.button.active, window#dashboard .dashboard .datemenu .calendar calendar.button:checked {
-          box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-          background-image: linear-gradient(to right, #51a4e7, #6cb2eb);
-          background-color: #51a4e7;
+          box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+          background-image: linear-gradient(to right, #89b4fa, #a6c7fb);
+          background-color: #89b4fa;
           color: #141414; }
           window#dashboard .dashboard .datemenu .calendar calendar.button:active:hover, window#dashboard .dashboard .datemenu .calendar calendar.button.on:hover, window#dashboard .dashboard .datemenu .calendar calendar.button.active:hover, window#dashboard .dashboard .datemenu .calendar calendar.button:checked:hover {
-            box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03), inset 0 0 0 99px rgba(238, 238, 238, 0.154); }
+            box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03), inset 0 0 0 99px rgba(205, 214, 244, 0.154); }
         window#dashboard .dashboard .datemenu .calendar calendar.button:disabled {
           box-shadow: none;
           background-color: transparent;
-          color: rgba(238, 238, 238, 0.3); }
+          color: rgba(205, 214, 244, 0.3); }
       window#dashboard .dashboard .datemenu .calendar calendar:selected {
-        box-shadow: inset 0 -8px 0 0 rgba(81, 164, 231, 0.5), inset 0 0 0 1px #51a4e7;
+        box-shadow: inset 0 -8px 0 0 rgba(137, 180, 250, 0.5), inset 0 0 0 1px #89b4fa;
         border-radius: 5.4px; }
       window#dashboard .dashboard .datemenu .calendar calendar.header {
         background-color: transparent;
         border: none;
-        color: rgba(238, 238, 238, 0.5); }
+        color: rgba(205, 214, 244, 0.5); }
       window#dashboard .dashboard .datemenu .calendar calendar.highlight {
         background-color: transparent;
-        color: rgba(81, 164, 231, 0.5); }
+        color: rgba(137, 180, 250, 0.5); }
       window#dashboard .dashboard .datemenu .calendar calendar:indeterminate {
-        color: rgba(238, 238, 238, 0.1); }
+        color: rgba(205, 214, 244, 0.1); }
   window#dashboard .dashboard .mediabox {
     all: unset;
     border-radius: 9px;
-    color: #eee;
-    background-color: rgba(238, 238, 238, 0.06);
-    border: 1px solid rgba(238, 238, 238, 0.03);
+    color: #cdd6f4;
+    background-color: rgba(205, 214, 244, 0.06);
+    border: 1px solid rgba(205, 214, 244, 0.03);
     min-height: 140px;
     margin-top: 9px; }
     window#dashboard .dashboard .mediabox * {
@@ -1739,7 +1739,7 @@ window#dashboard .dashboard {
     window#dashboard .dashboard .mediabox .shader {
       all: unset;
       border-radius: 8px;
-      box-shadow: inset 0 0 3em 1em rgba(23, 23, 23, 0.7); }
+      box-shadow: inset 0 0 3em 1em rgba(17, 17, 27, 0.7); }
       window#dashboard .dashboard .mediabox .shader * {
         font-size: 15px;
         font-family: "Ubuntu Nerd Font", sans-serif; }
@@ -1756,7 +1756,7 @@ window#dashboard .dashboard {
       window#dashboard .dashboard .mediabox .cover-art .shader {
         background-color: transparent;
         border-radius: 6.2px;
-        box-shadow: inset 0 0 0 999px rgba(23, 23, 23, 0.2); }
+        box-shadow: inset 0 0 0 999px rgba(17, 17, 27, 0.2); }
     window#dashboard .dashboard .mediabox .cover-art-bg, window#dashboard .dashboard .mediabox .cover-art {
       background-size: cover;
       background-position: center; }
@@ -1778,8 +1778,8 @@ window#dashboard .dashboard {
       window#dashboard .dashboard .mediabox .position-slider trough {
         transition: 200ms;
         border-radius: 0;
-        border: 1px solid rgba(238, 238, 238, 0.03);
-        background-color: rgba(238, 238, 238, 0.06);
+        border: 1px solid rgba(205, 214, 244, 0.03);
+        background-color: rgba(205, 214, 244, 0.06);
         min-height: 0.4em;
         min-width: 0.4em; }
         window#dashboard .dashboard .mediabox .position-slider trough highlight, window#dashboard .dashboard .mediabox .position-slider trough progress {
@@ -1797,13 +1797,13 @@ window#dashboard .dashboard {
         min-width: 0.4em;
         margin: -0.5em; }
       window#dashboard .dashboard .mediabox .position-slider:hover trough {
-        background-color: rgba(238, 238, 238, 0.154); }
+        background-color: rgba(205, 214, 244, 0.154); }
       window#dashboard .dashboard .mediabox .position-slider:disabled highlight, window#dashboard .dashboard .mediabox .position-slider:disabled progress {
-        background-color: rgba(238, 238, 238, 0.6);
+        background-color: rgba(205, 214, 244, 0.6);
         background-image: none; }
       window#dashboard .dashboard .mediabox .position-slider trough:focus {
-        background-color: rgba(238, 238, 238, 0.154);
-        box-shadow: inset 0 0 0 1px #51a4e7; }
+        background-color: rgba(205, 214, 244, 0.154);
+        box-shadow: inset 0 0 0 1px #89b4fa; }
       window#dashboard .dashboard .mediabox .position-slider trough {
         border: none;
         background-color: rgba(255, 255, 255, 0.3); }
@@ -1824,71 +1824,71 @@ window#dashboard .dashboard {
       window#dashboard .dashboard .mediabox .controls button:active label {
         color: white; }
     window#dashboard .dashboard .mediabox.spotify button .shuffle.enabled {
-      color: #43c383; }
+      color: #a6e3a1; }
     window#dashboard .dashboard .mediabox.spotify button .loop.playlist, window#dashboard .dashboard .mediabox.spotify button .loop.track {
-      color: #43c383; }
+      color: #a6e3a1; }
     window#dashboard .dashboard .mediabox.spotify button:active label {
-      color: #43c383; }
+      color: #a6e3a1; }
     window#dashboard .dashboard .mediabox.spotify .position-slider:hover trough {
-      background-color: rgba(67, 195, 131, 0.5); }
+      background-color: rgba(166, 227, 161, 0.5); }
     window#dashboard .dashboard .mediabox.firefox button .shuffle.enabled {
-      color: #E79E64; }
+      color: #fab387; }
     window#dashboard .dashboard .mediabox.firefox button .loop.playlist, window#dashboard .dashboard .mediabox.firefox button .loop.track {
-      color: #E79E64; }
+      color: #fab387; }
     window#dashboard .dashboard .mediabox.firefox button:active label {
-      color: #E79E64; }
+      color: #fab387; }
     window#dashboard .dashboard .mediabox.firefox .position-slider:hover trough {
-      background-color: rgba(231, 158, 100, 0.5); }
+      background-color: rgba(250, 179, 135, 0.5); }
     window#dashboard .dashboard .mediabox.mpv button .shuffle.enabled {
-      color: #9077e7; }
+      color: #cba6f7; }
     window#dashboard .dashboard .mediabox.mpv button .loop.playlist, window#dashboard .dashboard .mediabox.mpv button .loop.track {
-      color: #9077e7; }
+      color: #cba6f7; }
     window#dashboard .dashboard .mediabox.mpv button:active label {
-      color: #9077e7; }
+      color: #cba6f7; }
     window#dashboard .dashboard .mediabox.mpv .position-slider:hover trough {
-      background-color: rgba(144, 119, 231, 0.5); }
+      background-color: rgba(203, 166, 247, 0.5); }
     window#dashboard .dashboard .mediabox.firefox .footer-box {
       margin-top: -18px; }
 
 .panel {
-  background-color: #171717; }
+  background-color: #11111b; }
   .panel .panel-button {
     all: unset;
     all: unset;
     transition: 200ms;
     border-radius: 9px;
-    color: #eee;
+    color: #cdd6f4;
     background-color: transparent;
     background-image: none;
     box-shadow: none;
-    color: #eee; }
+    color: #cdd6f4; }
     .panel .panel-button * {
       font-size: 15px;
       font-family: "Ubuntu Nerd Font", sans-serif; }
     .panel .panel-button:disabled {
       box-shadow: none;
       background-color: transparent;
-      color: rgba(238, 238, 238, 0.3); }
+      color: rgba(205, 214, 244, 0.3); }
     .panel .panel-button > * {
       border-radius: 9px;
       transition: 200ms;
       background-color: transparent;
       box-shadow: none; }
     .panel .panel-button:focus > *, .panel .panel-button.focused > * {
-      box-shadow: inset 0 0 0 1px #51a4e7;
-      background-color: rgba(238, 238, 238, 0.154);
-      color: #f1f1f1; }
+      box-shadow: inset 0 0 0 1px #89b4fa;
+      background-color: rgba(205, 214, 244, 0.154);
+      color: #b4befe; }
     .panel .panel-button:hover > * {
-      box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-      background-color: rgba(238, 238, 238, 0.154);
-      color: #f1f1f1; }
+      box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+      background-color: rgba(205, 214, 244, 0.154);
+      color: #b4befe; }
     .panel .panel-button:active > *, .panel .panel-button.active > *, .panel .panel-button.on > *, .panel .panel-button:checked > * {
-      box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-      background-image: linear-gradient(to right, #51a4e7, #6cb2eb);
-      background-color: #51a4e7;
+      box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+      background-image: linear-gradient(to right, #89b4fa, #a6c7fb);
+      background-color: #89b4fa;
       color: #141414; }
     .panel .panel-button:active:hover > *, .panel .panel-button.active:hover > *, .panel .panel-button.on:hover > *, .panel .panel-button:checked:hover > * {
-      box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03), inset 0 0 0 99px rgba(238, 238, 238, 0.154); }
+      box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03), inset 0 0 0 99px rgba(205, 214, 244, 0.154); }
     .panel .panel-button > * {
       margin: 5px; }
     .panel .panel-button label {
@@ -1902,26 +1902,26 @@ window#dashboard .dashboard {
     .panel .quicksettings > box > *:first-child {
       margin-left: 0; }
   .panel .separator {
-    background-color: rgba(238, 238, 238, 0.3);
+    background-color: rgba(205, 214, 244, 0.3);
     border-radius: 9px;
     min-height: 5px;
     min-width: 5px; }
   .panel .launcher label {
-    color: rgba(81, 164, 231, 0.8); }
+    color: rgba(137, 180, 250, 0.8); }
   .panel .launcher:hover label {
-    color: #51a4e7; }
+    color: #89b4fa; }
   .panel .launcher:active label, .panel .launcher.active label {
     color: #141414; }
   .panel .powermenu image, .panel .recorder image {
-    color: rgba(230, 112, 144, 0.7); }
+    color: rgba(243, 139, 168, 0.7); }
   .panel .powermenu:hover image, .panel .recorder:hover image {
-    color: rgba(230, 112, 144, 0.85); }
+    color: rgba(243, 139, 168, 0.85); }
   .panel .powermenu:active image, .panel .recorder:active image {
-    color: #e67090; }
+    color: #f38ba8; }
   .panel .quicksettings:not(.active) .battery.low {
-    color: #e67090; }
+    color: #f38ba8; }
   .panel .quicksettings:not(.active) .battery.charged, .panel .quicksettings:not(.active) .battery.charging {
-    color: #43c383; }
+    color: #a6e3a1; }
   .panel .workspaces > * {
     padding: 0; }
   .panel .workspaces .eventbox {
@@ -1929,31 +1929,31 @@ window#dashboard .dashboard {
     all: unset;
     transition: 200ms;
     border-radius: 9px;
-    color: #eee;
-    background-color: rgba(238, 238, 238, 0.06);
-    box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03); }
+    color: #cdd6f4;
+    background-color: rgba(205, 214, 244, 0.06);
+    box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03); }
     .panel .workspaces .eventbox * {
       font-size: 15px;
       font-family: "Ubuntu Nerd Font", sans-serif; }
     .panel .workspaces .eventbox:focus {
-      box-shadow: inset 0 0 0 1px #51a4e7;
-      background-color: rgba(238, 238, 238, 0.154);
-      color: #f1f1f1; }
+      box-shadow: inset 0 0 0 1px #89b4fa;
+      background-color: rgba(205, 214, 244, 0.154);
+      color: #b4befe; }
     .panel .workspaces .eventbox:hover {
-      box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-      background-color: rgba(238, 238, 238, 0.154);
-      color: #f1f1f1; }
+      box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+      background-color: rgba(205, 214, 244, 0.154);
+      color: #b4befe; }
     .panel .workspaces .eventbox:active, .panel .workspaces .eventbox.on, .panel .workspaces .eventbox.active, .panel .workspaces .eventbox:checked {
-      box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-      background-image: linear-gradient(to right, #51a4e7, #6cb2eb);
-      background-color: #51a4e7;
+      box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+      background-image: linear-gradient(to right, #89b4fa, #a6c7fb);
+      background-color: #89b4fa;
       color: #141414; }
       .panel .workspaces .eventbox:active:hover, .panel .workspaces .eventbox.on:hover, .panel .workspaces .eventbox.active:hover, .panel .workspaces .eventbox:checked:hover {
-        box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03), inset 0 0 0 99px rgba(238, 238, 238, 0.154); }
+        box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03), inset 0 0 0 99px rgba(205, 214, 244, 0.154); }
     .panel .workspaces .eventbox:disabled {
       box-shadow: none;
       background-color: transparent;
-      color: rgba(238, 238, 238, 0.3); }
+      color: rgba(205, 214, 244, 0.3); }
   .panel .workspaces button {
     all: unset; }
     .panel .workspaces button .indicator {
@@ -1974,32 +1974,32 @@ window#dashboard .dashboard {
     .panel .workspaces button:first-child .indicator {
       margin-left: 9px; }
     .panel .workspaces button.empty .indicator {
-      border-color: rgba(238, 238, 238, 0.7); }
+      border-color: rgba(205, 214, 244, 0.7); }
     .panel .workspaces button.occupied .indicator {
-      border-color: rgba(238, 238, 238, 0.9); }
+      border-color: rgba(205, 214, 244, 0.9); }
       .panel .workspaces button.occupied .indicator .fill {
-        background-color: rgba(238, 238, 238, 0.9); }
+        background-color: rgba(205, 214, 244, 0.9); }
     .panel .workspaces button:hover .indicator {
-      border-color: rgba(81, 164, 231, 0.8); }
+      border-color: rgba(137, 180, 250, 0.8); }
       .panel .workspaces button:hover .indicator .fill {
-        background-color: rgba(81, 164, 231, 0.8); }
+        background-color: rgba(137, 180, 250, 0.8); }
     .panel .workspaces button.active .indicator, .panel .workspaces button:active .indicator {
-      border-color: #51a4e7; }
+      border-color: #89b4fa; }
       .panel .workspaces button.active .indicator .fill, .panel .workspaces button:active .indicator .fill {
-        background-color: #51a4e7; }
+        background-color: #89b4fa; }
     .panel .workspaces button.empty .indicator .fill {
       background-color: transparent; }
   .panel .media.spotify .icon {
-    color: #43c383; }
+    color: #a6e3a1; }
   .panel .media.firefox .icon {
-    color: #E79E64; }
+    color: #fab387; }
   .panel .media.mpv .icon {
-    color: #9077e7; }
+    color: #cba6f7; }
   .panel .dock {
     margin: 0; }
     .panel .dock .separator {
       border-radius: 9px;
-      background-color: rgba(238, 238, 238, 0.2);
+      background-color: rgba(205, 214, 244, 0.2);
       margin: 0 5px; }
     .panel .dock.horizontal .separator {
       min-width: 2px;
@@ -2015,78 +2015,78 @@ window#dashboard .dashboard {
       all: unset;
       transition: 200ms;
       border-radius: 9px;
-      color: #eee;
+      color: #cdd6f4;
       background-color: transparent;
       background-image: none;
       box-shadow: none;
-      color: #eee; }
+      color: #cdd6f4; }
       .panel .dock button * {
         font-size: 15px;
         font-family: "Ubuntu Nerd Font", sans-serif; }
       .panel .dock button:disabled {
         box-shadow: none;
         background-color: transparent;
-        color: rgba(238, 238, 238, 0.3); }
+        color: rgba(205, 214, 244, 0.3); }
       .panel .dock button > * {
         border-radius: 9px;
         transition: 200ms;
         background-color: transparent;
         box-shadow: none; }
       .panel .dock button:focus > *, .panel .dock button.focused > * {
-        box-shadow: inset 0 0 0 1px #51a4e7;
-        background-color: rgba(238, 238, 238, 0.154);
-        color: #f1f1f1; }
+        box-shadow: inset 0 0 0 1px #89b4fa;
+        background-color: rgba(205, 214, 244, 0.154);
+        color: #b4befe; }
       .panel .dock button:hover > * {
-        box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-        background-color: rgba(238, 238, 238, 0.154);
-        color: #f1f1f1; }
+        box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+        background-color: rgba(205, 214, 244, 0.154);
+        color: #b4befe; }
       .panel .dock button:active > *, .panel .dock button.active > *, .panel .dock button.on > *, .panel .dock button:checked > * {
-        box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-        background-image: linear-gradient(to right, #51a4e7, #6cb2eb);
-        background-color: #51a4e7;
+        box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+        background-image: linear-gradient(to right, #89b4fa, #a6c7fb);
+        background-color: #89b4fa;
         color: #141414; }
       .panel .dock button:active:hover > *, .panel .dock button.active:hover > *, .panel .dock button.on:hover > *, .panel .dock button:checked:hover > * {
-        box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03), inset 0 0 0 99px rgba(238, 238, 238, 0.154); }
+        box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03), inset 0 0 0 99px rgba(205, 214, 244, 0.154); }
       .panel .dock button image, .panel .dock button > * {
         margin: 5px; }
       .panel .dock button .indicator {
         min-width: 6px;
         min-height: 6px;
-        background-color: #eee;
+        background-color: #cdd6f4;
         border-radius: 9px;
         margin-bottom: 2px; }
       .panel .dock button.single .indicator, .panel .dock button.nonrunning .indicator {
         background-color: transparent; }
       .panel .dock button.focused .indicator {
-        background-image: linear-gradient(to right, #51a4e7, #6cb2eb); }
+        background-image: linear-gradient(to right, #89b4fa, #a6c7fb); }
     .panel .dock button > * {
       margin: 0 5px; }
 
 window#settings {
-  background-color: #171717;
-  color: #eee; }
+  background-color: #11111b;
+  color: #cdd6f4; }
   window#settings scrolledwindow scrollbar, window#settings scrolledwindow scrollbar * {
     all: unset; }
   window#settings scrolledwindow scrollbar.vertical slider {
-    background: rgba(238, 238, 238, 0.06);
+    background: rgba(205, 214, 244, 0.06);
     border-radius: 9px;
     min-width: .6em;
     min-height: 2em;
     transition: 200ms; }
     window#settings scrolledwindow scrollbar.vertical slider:hover {
-      background-color: rgba(238, 238, 238, 0.4);
+      background-color: rgba(205, 214, 244, 0.4);
       min-width: .8em; }
   window#settings .settings .content {
     padding: 16.2px; }
   window#settings .settings .headerbar {
-    background-color: rgba(238, 238, 238, 0.06);
+    background-color: rgba(205, 214, 244, 0.06);
     padding: 4.5px;
-    border-bottom: 1px solid rgba(238, 238, 238, 0.03); }
+    border-bottom: 1px solid rgba(205, 214, 244, 0.03); }
   window#settings .settings .tab {
     all: unset;
     transition: 200ms;
     border-radius: 9px;
-    color: #eee;
+    color: #cdd6f4;
     background-color: transparent;
     background-image: none;
     box-shadow: none;
@@ -2096,87 +2096,87 @@ window#settings {
       font-size: 15px;
       font-family: "Ubuntu Nerd Font", sans-serif; }
     window#settings .settings .tab:focus {
-      box-shadow: inset 0 0 0 1px #51a4e7;
-      background-color: rgba(238, 238, 238, 0.154);
-      color: #f1f1f1; }
+      box-shadow: inset 0 0 0 1px #89b4fa;
+      background-color: rgba(205, 214, 244, 0.154);
+      color: #b4befe; }
     window#settings .settings .tab:hover {
-      box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-      background-color: rgba(238, 238, 238, 0.154);
-      color: #f1f1f1; }
+      box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+      background-color: rgba(205, 214, 244, 0.154);
+      color: #b4befe; }
     window#settings .settings .tab:active, window#settings .settings .tab.on, window#settings .settings .tab.active, window#settings .settings .tab:checked {
-      box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-      background-image: linear-gradient(to right, #51a4e7, #6cb2eb);
-      background-color: #51a4e7;
+      box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+      background-image: linear-gradient(to right, #89b4fa, #a6c7fb);
+      background-color: #89b4fa;
       color: #141414; }
       window#settings .settings .tab:active:hover, window#settings .settings .tab.on:hover, window#settings .settings .tab.active:hover, window#settings .settings .tab:checked:hover {
-        box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03), inset 0 0 0 99px rgba(238, 238, 238, 0.154); }
+        box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03), inset 0 0 0 99px rgba(205, 214, 244, 0.154); }
     window#settings .settings .tab:disabled {
       box-shadow: none;
       background-color: transparent;
-      color: rgba(238, 238, 238, 0.3); }
+      color: rgba(205, 214, 244, 0.3); }
   window#settings .settings .wallpaper {
     border-radius: 8px;
     background-position: center;
-    border: 1px solid rgba(238, 238, 238, 0.03); }
+    border: 1px solid rgba(205, 214, 244, 0.03); }
   window#settings .settings button, window#settings .settings entry {
     all: unset;
     transition: 200ms;
     border-radius: 9px;
-    color: #eee;
-    background-color: rgba(238, 238, 238, 0.06);
-    box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
+    color: #cdd6f4;
+    background-color: rgba(205, 214, 244, 0.06);
+    box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
     padding: 6.3px; }
     window#settings .settings button *, window#settings .settings entry * {
       font-size: 15px;
       font-family: "Ubuntu Nerd Font", sans-serif; }
     window#settings .settings button:focus, window#settings .settings entry:focus {
-      box-shadow: inset 0 0 0 1px #51a4e7;
-      background-color: rgba(238, 238, 238, 0.154);
-      color: #f1f1f1; }
+      box-shadow: inset 0 0 0 1px #89b4fa;
+      background-color: rgba(205, 214, 244, 0.154);
+      color: #b4befe; }
     window#settings .settings button:hover, window#settings .settings entry:hover {
-      box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-      background-color: rgba(238, 238, 238, 0.154);
-      color: #f1f1f1; }
+      box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+      background-color: rgba(205, 214, 244, 0.154);
+      color: #b4befe; }
     window#settings .settings button:active, window#settings .settings button.on, window#settings .settings button.active, window#settings .settings button:checked, window#settings .settings entry:active, window#settings .settings entry.on, window#settings .settings entry.active, window#settings .settings entry:checked {
-      box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-      background-image: linear-gradient(to right, #51a4e7, #6cb2eb);
-      background-color: #51a4e7;
+      box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+      background-image: linear-gradient(to right, #89b4fa, #a6c7fb);
+      background-color: #89b4fa;
       color: #141414; }
       window#settings .settings button:active:hover, window#settings .settings button.on:hover, window#settings .settings button.active:hover, window#settings .settings button:checked:hover, window#settings .settings entry:active:hover, window#settings .settings entry.on:hover, window#settings .settings entry.active:hover, window#settings .settings entry:checked:hover {
-        box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03), inset 0 0 0 99px rgba(238, 238, 238, 0.154); }
+        box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03), inset 0 0 0 99px rgba(205, 214, 244, 0.154); }
     window#settings .settings button:disabled, window#settings .settings entry:disabled {
       box-shadow: none;
       background-color: transparent;
-      color: rgba(238, 238, 238, 0.3); }
+      color: rgba(205, 214, 244, 0.3); }
   window#settings .settings spinbutton, window#settings .settings spinbutton:focus {
     all: unset;
     transition: 200ms;
     border-radius: 9px;
-    color: #eee;
-    background-color: rgba(238, 238, 238, 0.06);
-    box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03); }
+    color: #cdd6f4;
+    background-color: rgba(205, 214, 244, 0.06);
+    box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03); }
     window#settings .settings spinbutton *, window#settings .settings spinbutton:focus * {
       font-size: 15px;
       font-family: "Ubuntu Nerd Font", sans-serif; }
     window#settings .settings spinbutton:focus, window#settings .settings spinbutton:focus:focus {
-      box-shadow: inset 0 0 0 1px #51a4e7;
-      background-color: rgba(238, 238, 238, 0.154);
-      color: #f1f1f1; }
+      box-shadow: inset 0 0 0 1px #89b4fa;
+      background-color: rgba(205, 214, 244, 0.154);
+      color: #b4befe; }
     window#settings .settings spinbutton:hover, window#settings .settings spinbutton:focus:hover {
-      box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-      background-color: rgba(238, 238, 238, 0.154);
-      color: #f1f1f1; }
+      box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+      background-color: rgba(205, 214, 244, 0.154);
+      color: #b4befe; }
     window#settings .settings spinbutton:active, window#settings .settings spinbutton.on, window#settings .settings spinbutton.active, window#settings .settings spinbutton:checked, window#settings .settings spinbutton:focus:active, window#settings .settings spinbutton:focus.on, window#settings .settings spinbutton:focus.active, window#settings .settings spinbutton:focus:checked {
-      box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-      background-image: linear-gradient(to right, #51a4e7, #6cb2eb);
-      background-color: #51a4e7;
+      box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+      background-image: linear-gradient(to right, #89b4fa, #a6c7fb);
+      background-color: #89b4fa;
       color: #141414; }
       window#settings .settings spinbutton:active:hover, window#settings .settings spinbutton.on:hover, window#settings .settings spinbutton.active:hover, window#settings .settings spinbutton:checked:hover, window#settings .settings spinbutton:focus:active:hover, window#settings .settings spinbutton:focus.on:hover, window#settings .settings spinbutton:focus.active:hover, window#settings .settings spinbutton:focus:checked:hover {
-        box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03), inset 0 0 0 99px rgba(238, 238, 238, 0.154); }
+        box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03), inset 0 0 0 99px rgba(205, 214, 244, 0.154); }
     window#settings .settings spinbutton:disabled, window#settings .settings spinbutton:focus:disabled {
       box-shadow: none;
       background-color: transparent;
-      color: rgba(238, 238, 238, 0.3); }
+      color: rgba(205, 214, 244, 0.3); }
     window#settings .settings spinbutton button, window#settings .settings spinbutton entry, window#settings .settings spinbutton:focus button, window#settings .settings spinbutton:focus entry {
       all: unset;
       padding: 6.3px; }
@@ -2189,33 +2189,33 @@ window#settings {
     all: unset;
     transition: 200ms;
     border-radius: 9px;
-    color: #eee;
-    background-color: rgba(238, 238, 238, 0.06);
-    box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03); }
+    color: #cdd6f4;
+    background-color: rgba(205, 214, 244, 0.06);
+    box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03); }
     window#settings .settings switch * {
       font-size: 15px;
       font-family: "Ubuntu Nerd Font", sans-serif; }
     window#settings .settings switch:focus {
-      box-shadow: inset 0 0 0 1px #51a4e7;
-      background-color: rgba(238, 238, 238, 0.154);
-      color: #f1f1f1; }
+      box-shadow: inset 0 0 0 1px #89b4fa;
+      background-color: rgba(205, 214, 244, 0.154);
+      color: #b4befe; }
     window#settings .settings switch:hover {
-      box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-      background-color: rgba(238, 238, 238, 0.154);
-      color: #f1f1f1; }
+      box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+      background-color: rgba(205, 214, 244, 0.154);
+      color: #b4befe; }
     window#settings .settings switch:active, window#settings .settings switch.on, window#settings .settings switch.active, window#settings .settings switch:checked {
-      box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-      background-image: linear-gradient(to right, #51a4e7, #6cb2eb);
-      background-color: #51a4e7;
+      box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+      background-image: linear-gradient(to right, #89b4fa, #a6c7fb);
+      background-color: #89b4fa;
       color: #141414; }
       window#settings .settings switch:active:hover, window#settings .settings switch.on:hover, window#settings .settings switch.active:hover, window#settings .settings switch:checked:hover {
-        box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03), inset 0 0 0 99px rgba(238, 238, 238, 0.154); }
+        box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03), inset 0 0 0 99px rgba(205, 214, 244, 0.154); }
     window#settings .settings switch:disabled {
       box-shadow: none;
       background-color: transparent;
-      color: rgba(238, 238, 238, 0.3); }
+      color: rgba(205, 214, 244, 0.3); }
     window#settings .settings switch slider {
-      background-color: #eee;
+      background-color: #cdd6f4;
       border-radius: 9px;
       min-width: 24px;
       min-height: 24px; }
@@ -2235,9 +2235,9 @@ window#settings {
     window#settings .settings .row .text-spin {
       all: unset;
       border-radius: 9px;
-      color: #eee;
-      background-color: rgba(238, 238, 238, 0.06);
-      border: 1px solid rgba(238, 238, 238, 0.03); }
+      color: #cdd6f4;
+      background-color: rgba(205, 214, 244, 0.06);
+      border: 1px solid rgba(205, 214, 244, 0.03); }
       window#settings .settings .row .text-spin * {
         font-size: 15px;
         font-family: "Ubuntu Nerd Font", sans-serif; }
@@ -2245,7 +2245,7 @@ window#settings {
         all: unset;
         transition: 200ms;
         border-radius: 9px;
-        color: #eee;
+        color: #cdd6f4;
         background-color: transparent;
         background-image: none;
         box-shadow: none;
@@ -2256,24 +2256,24 @@ window#settings {
           font-size: 15px;
           font-family: "Ubuntu Nerd Font", sans-serif; }
         window#settings .settings .row .text-spin button:focus {
-          box-shadow: inset 0 0 0 1px #51a4e7;
-          background-color: rgba(238, 238, 238, 0.154);
-          color: #f1f1f1; }
+          box-shadow: inset 0 0 0 1px #89b4fa;
+          background-color: rgba(205, 214, 244, 0.154);
+          color: #b4befe; }
         window#settings .settings .row .text-spin button:hover {
-          box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-          background-color: rgba(238, 238, 238, 0.154);
-          color: #f1f1f1; }
+          box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+          background-color: rgba(205, 214, 244, 0.154);
+          color: #b4befe; }
         window#settings .settings .row .text-spin button:active, window#settings .settings .row .text-spin button.on, window#settings .settings .row .text-spin button.active, window#settings .settings .row .text-spin button:checked {
-          box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03);
-          background-image: linear-gradient(to right, #51a4e7, #6cb2eb);
-          background-color: #51a4e7;
+          box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+          background-image: linear-gradient(to right, #89b4fa, #a6c7fb);
+          background-color: #89b4fa;
           color: #141414; }
           window#settings .settings .row .text-spin button:active:hover, window#settings .settings .row .text-spin button.on:hover, window#settings .settings .row .text-spin button.active:hover, window#settings .settings .row .text-spin button:checked:hover {
-            box-shadow: inset 0 0 0 1px rgba(238, 238, 238, 0.03), inset 0 0 0 99px rgba(238, 238, 238, 0.154); }
+            box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03), inset 0 0 0 99px rgba(205, 214, 244, 0.154); }
         window#settings .settings .row .text-spin button:disabled {
           box-shadow: none;
           background-color: transparent;
-          color: rgba(238, 238, 238, 0.3); }
+          color: rgba(205, 214, 244, 0.3); }
         window#settings .settings .row .text-spin button:last-child {
           border-radius: 0 9px 9px 0; }
       window#settings .settings .row .text-spin label {
@@ -2281,7 +2281,7 @@ window#settings {
   window#settings .settings .disclaimer {
     padding: 9px;
     padding-top: 0;
-    color: rgba(238, 238, 238, 0.5); }
+    color: rgba(205, 214, 244, 0.5); }
 
 tooltip {
   all: unset;
@@ -2291,10 +2291,10 @@ tooltip {
     font-size: 15px;
     font-family: "Ubuntu Nerd Font", sans-serif; }
   tooltip > * > * {
-    background-color: #171717;
+    background-color: #11111b;
     border-radius: 9px;
-    border: 1px solid rgba(238, 238, 238, 0.04);
-    color: #eee;
+    border: 1px solid rgba(205, 214, 244, 0.04);
+    color: #cdd6f4;
     padding: 8px;
     margin: 4px;
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.6); }

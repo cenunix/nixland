@@ -57,6 +57,7 @@
     , nixpkgs
     , ...
     } @ inputs:
+
     let
       inherit (self) outputs;
       forAllSystems = nixpkgs.lib.genAttrs [
@@ -87,7 +88,6 @@
       );
 
       overlays = import ./overlays { inherit inputs; }; # Your custom packages and modifications, exported as overlays
-
       nixosModules = import ./modules/nixos; # Reusable nixos modules you might want to export
       homeManagerModules = import ./modules/home-manager; # These are usually stuff you would upstream into nixpkgs
 
@@ -105,7 +105,7 @@
           ];
         };
         europa = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs outputs; };
+          specialArgs = { inherit inputs outputs self; };
           modules = [
             ./hosts/europa
             ./modules

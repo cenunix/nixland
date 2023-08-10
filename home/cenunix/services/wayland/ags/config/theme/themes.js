@@ -18,20 +18,20 @@ const gnome = {
 };
 
 const charm = {
-    red: '#e67090',
-    green: '#43c383',
-    yellow: '#d8e77b',
-    blue: '#51a4e7',
-    magenta: '#9077e7',
-    teal: '#51e6e6',
-    orange: '#E79E64',
+    red: '#f38ba8',
+    green: '#a6e3a1',
+    yellow: '#f9e2af',
+    blue: '#89b4fa',
+    magenta: '#cba6f7',
+    teal: '#94e2d5',
+    orange: '#fab387',
 };
 
 const dark = {
     color_scheme: 'dark',
-    bg_color: '#171717',
-    fg_color: '#eee',
-    hover_fg: '#f1f1f1',
+    bg_color: '#11111b',
+    fg_color: '#cdd6f4',
+    hover_fg: '#b4befe',
     ...charm,
 };
 

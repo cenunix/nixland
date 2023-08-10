@@ -1,23 +1,25 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  osConfig,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, osConfig
+, self
+, ...
 }:
 with lib; let
-  catppuccin-macchiato = pkgs.fetchFromGitHub {
+  catppuccin-mocha = pkgs.fetchFromGitHub {
     owner = "catppuccin";
     repo = "discord";
     rev = "0f2c393b11dd8174002803835ef7640635100ca3";
     hash = "sha256-iUnLLAQVMXFLyoB3wgYqUTx5SafLkvtOXK6C8EHK/nI=";
   };
-
+  project-path = builtins.getEnv "PWD";
+  webcord-path = "${project-path}";
   device = osConfig.modules.device;
-  acceptedTypes = ["desktop" "laptop" "armlaptop"];
-in {
+  acceptedTypes = [ "desktop" "laptop" "armlaptop" ];
+in
+{
   imports = [
     inputs.arrpc.homeManagerModules.default
   ];
@@ -28,12 +30,12 @@ in {
     ];
 
     xdg.configFile = {
-      "WebCord/Themes/macchiato" = {
-        source = "${catppuccin-macchiato}/themes/macchiato.theme.css";
+      "WebCord/Themes/mocha" = {
+        source = "${catppuccin-mocha}/themes/mocha.theme.css";
       };
 
       # share my webcord configuration across devices
-      # "WebCord/config.json".source = config.lib.file.mkOutOfStoreSymlink "${self}/home/notashelf/graphical/apps/webcord/config.json";
+      "WebCord/config.json".source = config.lib.file.mkOutOfStoreSymlink "/home/cenunix/Personal/nicks/home/cenunix/graphical/apps/webcord/config.json";
     };
 
     services.arrpc.enable = true;
