@@ -28,7 +28,7 @@ return {
     brightness = 0.8,
   },
   enable_wayland = true,
-  front_end = "OpenGL",
+  front_end = "Software",
 
   window_background_opacity = 1.0,
   text_background_opacity = 1.0,
