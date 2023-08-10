@@ -1,22 +1,22 @@
-{
-  lib,
-  osConfig,
-  inputs,
-  pkgs,
-  ...
+{ lib
+, osConfig
+, inputs
+, pkgs
+, ...
 }:
 with lib; let
   device = osConfig.modules.device;
   override = osConfig.modules.programs.override.program;
-  acceptedTypes = ["laptop" "desktop"];
+  acceptedTypes = [ "laptop" "desktop" ];
   spicePkgs = inputs.spicetify.packages.${pkgs.system}.default;
-in {
-  imports = [inputs.spicetify.homeManagerModule];
+in
+{
+  imports = [ inputs.spicetify.homeManagerModule ];
   config = mkIf (builtins.elem device.type acceptedTypes) {
     programs.spicetify = {
       spotifyPackage = pkgs.spotify;
       enable = true;
-      theme = spicePkgs.themes.catppuccin-macchiato;
+      theme = spicePkgs.themes.catppuccin-mocha;
       colorScheme = "blue";
 
       enabledExtensions = with spicePkgs.extensions; [
