@@ -50,6 +50,7 @@ in
       usrEnv = {
         isWayland = true;
         desktop = "Hyprland";
+        windowManager = true;
         useHomeManager = true;
         autologin = true;
       };

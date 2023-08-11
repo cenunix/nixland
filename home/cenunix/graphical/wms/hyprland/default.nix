@@ -119,7 +119,7 @@ in
       plugins = [
         inputs.hyprland-plugins.packages.${pkgs.system}.csgo-vulkan-fix
       ];
-      systemdIntegration = true;
+      systemdIntegration = false;
     };
   };
 }

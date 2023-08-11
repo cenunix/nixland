@@ -18,6 +18,7 @@ in
       networkmanagerapplet
       nitch
       inputs.agenix.packages.${pkgs.system}.default
+      linuxKernel.packages.linux_zen.cpupower
     ]
     ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [
       lunatask

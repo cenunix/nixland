@@ -58,6 +58,9 @@ in
         (mkIf (env.isWayland) {
           WLR_NO_HARDWARE_CURSORS = "1";
           __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+          MESA_DISK_CACHE_SINGLE_FILE = "1";
+          __GL_SHADER_DISK_CACHE_SKIP_CLEANUP = "1";
+          DXVK_STATE_CACHE = "1";
           GBM_BACKEND = "nvidia-drm"; # breaks firefox apparently
         })
 
@@ -92,7 +95,7 @@ in
         open = mkDefault true;
         nvidiaSettings = false; # add nvidia-settings to pkgs, useless on nixos
         nvidiaPersistenced = true;
-        forceFullCompositionPipeline = true;
+        # forceFullCompositionPipeline = true;
       };
 
       opengl = {

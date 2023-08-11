@@ -31,8 +31,8 @@ in
         QT_AUTO_SCREEN_SCALE_FACTOR = "1";
         QT_QPA_PLATFORM = "wayland";
         QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
-        QT_QPA_PLATFORMTHEME = "qt5ct";
-        QT_STYLE_OVERRIDE = "kvantum";
+        QT_QPA_PLATFORMTHEME = lib.mkForce "qt5ct";
+        QT_STYLE_OVERRIDE = lib.mkForce "kvantum";
         MOZ_ENABLE_WAYLAND = "1";
         # WLR_BACKEND = "vulkan";
         # WLR_RENDERER = "vulkan";
@@ -74,7 +74,7 @@ in
       enable = true;
       wlr.enable = false;
       extraPortals = [
-        pkgs.xdg-desktop-portal-gtk
+        # pkgs.xdg-desktop-portal-gtk
         inputs.xdg-portal-hyprland.packages.${pkgs.system}.default
       ];
     };

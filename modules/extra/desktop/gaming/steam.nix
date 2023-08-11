@@ -28,6 +28,7 @@ in
             xorg.libXinerama
             xorg.libXScrnSaver
             SDL2
+            dxvk
           ];
       };
     };
