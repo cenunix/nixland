@@ -64,9 +64,9 @@ in
       screen_shader = ~/.config/hypr/shaders/bluelight.glsl
     ''}
         #blur_new_optimizations = true
-        active_opacity = 1.0
-        inactive_opacity = 1.0
-        #fullscreen_opacity = 1.0
+        #active_opacity = 0.8
+        #inactive_opacity = 0.8
+        #fullscreen_opacity = 0.8
         drop_shadow=true
         shadow_range=20
         shadow_render_power=3
@@ -77,6 +77,12 @@ in
         #blur_ignore_opacity=true
         #blur=false
         #blur_size=6 # minimum 1
+        blur {
+            enabled=true
+            ignore_opacity=true
+            size=6
+            passes=2
+        }
         #blur_passes=2 # minimum 1, more passes = more resource intensive.
         # Your blur "amount" is blur_size * blur_passes, but high blur_size (over around 5-ish) will produce artifacts.
         # if you want heavy blur, you need to up the blur_passes.
@@ -84,7 +90,7 @@ in
     }
 
     animations {
-        enabled=0
+        enabled=1
         bezier=pace,0.46, 1, 0.29, 0.99
         bezier=overshot,0.13,0.99,0.29,1.1
         bezier = md3_decel, 0.05, 0.7, 0.1, 1

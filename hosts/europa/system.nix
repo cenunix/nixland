@@ -16,7 +16,7 @@ in
         cpu = "amd";
         gpu = "nvidia";
         monitors = [
-          "DP-1,2560x1440@240,auto,1"
+          "DP-1,2560x1440@239.970001,auto,1"
           "DP-2,1920x1080@240,auto,1"
         ];
         hasBluetooth = true;

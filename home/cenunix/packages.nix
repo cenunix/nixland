@@ -22,7 +22,7 @@ in
       youtube-dl
       vlc
       ffmpeg
-      mpvpaper
+      my-mpvpaper
       mpv
     ]
     ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [

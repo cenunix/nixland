@@ -18,13 +18,13 @@
 
 stdenv.mkDerivation rec {
   pname = "mpvpaper";
-  version = "1.3";
+  version = "f65700a3ecc9ecd8ca501e18a807ee18845f9441";
 
   src = fetchFromGitHub {
     owner = "GhostNaN";
     repo = pname;
     rev = "f65700a3ecc9ecd8ca501e18a807ee18845f9441";
-    sha256 = "sha256-0LjIwOY2hBUb0nziD3HLP2Ek5+8v3ntssRFD9eQgWkc=";
+    sha256 = "sha256-h+YJ4YGVGGgInVgm3NbXQIbrxkMOD/HtBnCzkTcRXH8=";
   };
 
   strictDeps = true;
