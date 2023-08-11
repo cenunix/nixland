@@ -17,7 +17,7 @@
       main = {
         term = "xterm-256color";
         font = "monospace:size=13.5";
-        pad = "8x8";
+        pad = "12x12";
         dpi-aware = "no";
       };
       colors = {

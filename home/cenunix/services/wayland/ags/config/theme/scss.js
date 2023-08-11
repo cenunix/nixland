@@ -56,9 +56,9 @@ $layout: ${t.layout};`;
 /* exported setupScss */
 async function setupScss(theme) {
     try {
-        // await writeFile(generated(scss(theme)), `${CONFIG_DIR}/scss/generated.scss`);
-        // await writeFile(generated(theme.additional_scss || ''), `${CONFIG_DIR}/scss/additional.scss`);
-        // await execAsync(['sassc', `${CONFIG_DIR}/scss/main.scss`, `${CONFIG_DIR}/style.css`]);
+        await writeFile(generated(scss(theme)), `${CONFIG_DIR}/scss/generated.scss`);
+        await writeFile(generated(theme.additional_scss || ''), `${CONFIG_DIR}/scss/additional.scss`);
+        await execAsync(['sassc', `${CONFIG_DIR}/scss/main.scss`, `${CONFIG_DIR}/style.css`]);
         ags.App.resetCss();
         ags.App.applyCss(`${CONFIG_DIR}/style.css`);
     } catch (error) {

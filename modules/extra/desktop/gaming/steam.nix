@@ -27,6 +27,7 @@ in
             xorg.libXi
             xorg.libXinerama
             xorg.libXScrnSaver
+            SDL2
           ];
       };
     };

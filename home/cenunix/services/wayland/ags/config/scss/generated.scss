@@ -9,13 +9,13 @@ $magenta: #cba6f7;
 $teal: #94e2d5;
 $orange: #fab387;
 
-$bg_color: #11111b;
+$bg_color: #1e1e2e;
 $fg_color: #cdd6f4;
 $hover_fg: #b4befe;
 
-$wm_gaps: 22px;
-$radii: 9px;
-$spacing: 9px;
+$wm_gaps: 18px;
+$radii: 12px;
+$spacing: 12px;
 
 $accent: $blue;
 $accent_fg: #141414;
@@ -32,9 +32,9 @@ $shadow: rgba(0, 0, 0, .6);
 $text_shadow: 2px 2px 2px $shadow;
 $icon_shadow: 2px 2px $shadow;
 
-$popover_radius: 15.299999999999999px;
+$popover_radius: 20.4px;
 $popover_border_color: transparentize($fg_color, 0.96);
-$popover_padding: 16.2px;
+$popover_padding: 21.6px;
 $drop_shadow: true;
 
 $transition: 200ms;

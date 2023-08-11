@@ -29,7 +29,7 @@ const charm = {
 
 const dark = {
     color_scheme: 'dark',
-    bg_color: '#11111b',
+    bg_color: '#1e1e2e',
     fg_color: '#cdd6f4',
     hover_fg: '#b4befe',
     ...charm,

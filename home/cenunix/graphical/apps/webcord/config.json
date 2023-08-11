@@ -2,7 +2,7 @@
     "settings": {
         "general": {
             "menuBar": {
-                "hide": false
+                "hide": true
             },
             "tray": {
                 "disable": false
