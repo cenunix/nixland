@@ -65,7 +65,7 @@ const panel = bar({
 /* exported windows */
 var windows = [
     ...ags.Service.Hyprland.HyprctlGet('monitors').map(({ id }) => ([
-        dock(id),
+        // dock(id),
         notifications(id),
         desktop(id),
         ...corners(id),

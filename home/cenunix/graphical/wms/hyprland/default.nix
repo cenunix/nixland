@@ -58,6 +58,7 @@ in
       [
         libnotify
         wf-recorder
+        wlr-randr
         brightnessctl
         pamixer
         catppuccin-cursors

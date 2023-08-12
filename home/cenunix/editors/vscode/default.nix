@@ -110,6 +110,18 @@ in
         "security.workspace.trust.enabled" = false;
         "explorer.confirmDelete" = false;
         "breadcrumbs.enabled" = true;
+        "workbench.colorCustomizations" = {
+          "editor.background" = "#11111b";
+          "editorGutter.background" = "#11111b";
+          "editorRuler.background" = "#11111b";
+          "activityBar.background" = "#11111b";
+          "sideBar.background" = "#11111b";
+          "sideBarSectionHeader.background" = "#11111b";
+          "editorGroupHeader.tabsBackground" = "#11111b";
+          "tab.activeBackground" = "#11111b";
+          "tab.inactiveBackground" = "#11111b";
+          "tab.unfocusedActiveBackground" = "#11111b";
+        };
       };
     };
   };

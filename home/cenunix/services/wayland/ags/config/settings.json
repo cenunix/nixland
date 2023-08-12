@@ -1,6 +1,7 @@
 {
   "spacing": 12,
   "radii": 12,
-  "wm_gaps": 18,
-  "wallpaper": "/home/cenunix/Downloads/869923.gif"
+  "wm_gaps": 8,
+  "wallpaper": "/home/cenunix/Media/Pictures/Wallpapers/alonetogether.png",
+  "bar_style": "separated"
 }

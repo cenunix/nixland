@@ -45,7 +45,7 @@ window {
   margin: 12px 6px 0; }
   .notifications-popup-list .notification .actions button * {
     font-size: 15px;
-    font-family: "Ubuntu Nerd Font", sans-serif; }
+    font-family: "FiraCode Nerd Font", sans-serif; }
   .notifications-popup-list .notification .actions button:focus {
     box-shadow: inset 0 0 0 1px #89b4fa;
     background-color: rgba(205, 214, 244, 0.154);
@@ -84,7 +84,7 @@ window {
   min-height: 1.2em; }
   .notifications-popup-list .notification button.close-button * {
     font-size: 15px;
-    font-family: "Ubuntu Nerd Font", sans-serif; }
+    font-family: "FiraCode Nerd Font", sans-serif; }
   .notifications-popup-list .notification button.close-button:focus {
     box-shadow: inset 0 0 0 1px #89b4fa;
     background-color: rgba(205, 214, 244, 0.154);
@@ -115,13 +115,13 @@ window {
   margin: 12px;
   border: 1px solid rgba(205, 214, 244, 0.04);
   border-radius: 20.4px;
-  background-color: #1e1e2e;
+  background-color: #11111b;
   color: #cdd6f4;
   padding: 21.6px;
   border-radius: 12px; }
   .notifications-popup-list .notification > box * {
     font-size: 15px;
-    font-family: "Ubuntu Nerd Font", sans-serif; }
+    font-family: "FiraCode Nerd Font", sans-serif; }
 
 .notifications-popup-list .notification .description {
   min-width: 350px; }
@@ -132,12 +132,12 @@ window#datemenu .datemenu {
   margin: 12px;
   border: 1px solid rgba(205, 214, 244, 0.04);
   border-radius: 20.4px;
-  background-color: #1e1e2e;
+  background-color: #11111b;
   color: #cdd6f4;
   padding: 21.6px; }
   window#datemenu .datemenu * {
     font-size: 15px;
-    font-family: "Ubuntu Nerd Font", sans-serif; }
+    font-family: "FiraCode Nerd Font", sans-serif; }
   window#datemenu .datemenu .clock {
     font-size: 5em; }
   window#datemenu .datemenu .uptime {
@@ -153,7 +153,7 @@ window#datemenu .datemenu {
     margin-top: 24px; }
     window#datemenu .datemenu .calendar * {
       font-size: 15px;
-      font-family: "Ubuntu Nerd Font", sans-serif; }
+      font-family: "FiraCode Nerd Font", sans-serif; }
     window#datemenu .datemenu .calendar calendar {
       all: unset;
       font-size: 1.1em;
@@ -169,7 +169,7 @@ window#datemenu .datemenu {
         margin: 1em; }
         window#datemenu .datemenu .calendar calendar.button * {
           font-size: 15px;
-          font-family: "Ubuntu Nerd Font", sans-serif; }
+          font-family: "FiraCode Nerd Font", sans-serif; }
         window#datemenu .datemenu .calendar calendar.button:focus {
           box-shadow: inset 0 0 0 1px #89b4fa;
           background-color: rgba(205, 214, 244, 0.154);
@@ -208,7 +208,7 @@ window#datemenu .datemenu {
   margin: 12px;
   border: 1px solid rgba(205, 214, 244, 0.04);
   border-radius: 20.4px;
-  background-color: #1e1e2e;
+  background-color: #11111b;
   color: #cdd6f4;
   padding: 21.6px;
   padding: 6px; }
@@ -237,7 +237,7 @@ window#datemenu .datemenu {
     color: #cdd6f4; }
     .floating-dock .dock button * {
       font-size: 15px;
-      font-family: "Ubuntu Nerd Font", sans-serif; }
+      font-family: "FiraCode Nerd Font", sans-serif; }
     .floating-dock .dock button:disabled {
       box-shadow: none;
       background-color: transparent;
@@ -276,10 +276,10 @@ window#datemenu .datemenu {
       background-image: linear-gradient(to right, #89b4fa, #a6c7fb); }
   .floating-dock .dock * {
     font-size: 15px;
-    font-family: "Ubuntu Nerd Font", sans-serif; }
+    font-family: "FiraCode Nerd Font", sans-serif; }
 
 .dock.vertical {
-  background-color: #1e1e2e; }
+  background-color: #11111b; }
   .dock.vertical .separator {
     border-radius: 12px;
     background-color: rgba(205, 214, 244, 0.2);
@@ -305,7 +305,7 @@ window#datemenu .datemenu {
     color: #cdd6f4; }
     .dock.vertical button * {
       font-size: 15px;
-      font-family: "Ubuntu Nerd Font", sans-serif; }
+      font-family: "FiraCode Nerd Font", sans-serif; }
     .dock.vertical button:disabled {
       box-shadow: none;
       background-color: transparent;
@@ -352,12 +352,12 @@ window#applauncher .applauncher {
   margin: 12px;
   border: 1px solid rgba(205, 214, 244, 0.04);
   border-radius: 20.4px;
-  background-color: #1e1e2e;
+  background-color: #11111b;
   color: #cdd6f4;
   padding: 21.6px; }
   window#applauncher .applauncher * {
     font-size: 15px;
-    font-family: "Ubuntu Nerd Font", sans-serif; }
+    font-family: "FiraCode Nerd Font", sans-serif; }
   window#applauncher .applauncher .search.wallpaper {
     margin: 21.6px;
     margin-bottom: 0;
@@ -373,13 +373,13 @@ window#applauncher .applauncher {
         background-color: rgba(205, 214, 244, 0.06);
         border: 1px solid rgba(205, 214, 244, 0.03);
         border-radius: 6px;
-        background-color: rgba(30, 30, 46, 0.6);
+        background-color: rgba(17, 17, 27, 0.6);
         padding: 6px;
         margin-right: 12px;
         -gtk-icon-transform: scale(0.8); }
         window#applauncher .applauncher .search.wallpaper .entry image * {
           font-size: 15px;
-          font-family: "Ubuntu Nerd Font", sans-serif; }
+          font-family: "FiraCode Nerd Font", sans-serif; }
       window#applauncher .applauncher .search.wallpaper .entry entry {
         all: unset;
         border-radius: 12px;
@@ -387,12 +387,12 @@ window#applauncher .applauncher {
         background-color: rgba(205, 214, 244, 0.06);
         border: 1px solid rgba(205, 214, 244, 0.03);
         border-radius: 6px;
-        background-color: rgba(30, 30, 46, 0.6);
+        background-color: rgba(17, 17, 27, 0.6);
         transition: 200ms;
         padding: 6px; }
         window#applauncher .applauncher .search.wallpaper .entry entry * {
           font-size: 15px;
-          font-family: "Ubuntu Nerd Font", sans-serif; }
+          font-family: "FiraCode Nerd Font", sans-serif; }
   window#applauncher .applauncher .separator {
     min-height: 1px;
     background-color: rgba(205, 214, 244, 0.154);
@@ -443,12 +443,12 @@ window#quicksettings .quicksettings {
   margin: 12px;
   border: 1px solid rgba(205, 214, 244, 0.04);
   border-radius: 20.4px;
-  background-color: #1e1e2e;
+  background-color: #11111b;
   color: #cdd6f4;
   padding: 21.6px; }
   window#quicksettings .quicksettings * {
     font-size: 15px;
-    font-family: "Ubuntu Nerd Font", sans-serif; }
+    font-family: "FiraCode Nerd Font", sans-serif; }
   window#quicksettings .quicksettings .header > box:last-child {
     all: unset;
     border-radius: 12px;
@@ -458,7 +458,7 @@ window#quicksettings .quicksettings {
     padding: 12px; }
     window#quicksettings .quicksettings .header > box:last-child * {
       font-size: 15px;
-      font-family: "Ubuntu Nerd Font", sans-serif; }
+      font-family: "FiraCode Nerd Font", sans-serif; }
   window#quicksettings .quicksettings .header .avatar {
     all: unset;
     border-radius: 12px;
@@ -469,17 +469,17 @@ window#quicksettings .quicksettings {
     min-width: 122px; }
     window#quicksettings .quicksettings .header .avatar * {
       font-size: 15px;
-      font-family: "Ubuntu Nerd Font", sans-serif; }
+      font-family: "FiraCode Nerd Font", sans-serif; }
     window#quicksettings .quicksettings .header .avatar .image {
       border-radius: 11px; }
     window#quicksettings .quicksettings .header .avatar .shader {
       all: unset;
       border-radius: 11px;
-      box-shadow: inset 0 0 3em 1em rgba(30, 30, 46, 0.7);
+      box-shadow: inset 0 0 3em 1em rgba(17, 17, 27, 0.7);
       border-radius: 11px; }
       window#quicksettings .quicksettings .header .avatar .shader * {
         font-size: 15px;
-        font-family: "Ubuntu Nerd Font", sans-serif; }
+        font-family: "FiraCode Nerd Font", sans-serif; }
       window#quicksettings .quicksettings .header .avatar .shader label {
         color: white;
         text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6); }
@@ -492,7 +492,7 @@ window#quicksettings .quicksettings {
     margin-top: 12px; }
     window#quicksettings .quicksettings .header .battery-progress progressbar * {
       font-size: 15px;
-      font-family: "Ubuntu Nerd Font", sans-serif; }
+      font-family: "FiraCode Nerd Font", sans-serif; }
     window#quicksettings .quicksettings .header .battery-progress progressbar * {
       all: unset; }
     window#quicksettings .quicksettings .header .battery-progress progressbar trough {
@@ -552,7 +552,7 @@ window#quicksettings .quicksettings {
     font-weight: bold; }
     window#quicksettings .quicksettings .header .system button *, window#quicksettings .quicksettings .header .system .uptime * {
       font-size: 15px;
-      font-family: "Ubuntu Nerd Font", sans-serif; }
+      font-family: "FiraCode Nerd Font", sans-serif; }
     window#quicksettings .quicksettings .header .system button:focus, window#quicksettings .quicksettings .header .system .uptime:focus {
       box-shadow: inset 0 0 0 1px #89b4fa;
       background-color: rgba(205, 214, 244, 0.154);
@@ -583,13 +583,13 @@ window#quicksettings .quicksettings {
     margin-top: 12px; }
     window#quicksettings .quicksettings .volume-box * {
       font-size: 15px;
-      font-family: "Ubuntu Nerd Font", sans-serif; }
+      font-family: "FiraCode Nerd Font", sans-serif; }
     window#quicksettings .quicksettings .volume-box .volume .slider {
       all: unset;
       margin-right: 12px; }
       window#quicksettings .quicksettings .volume-box .volume .slider * {
         font-size: 15px;
-        font-family: "Ubuntu Nerd Font", sans-serif; }
+        font-family: "FiraCode Nerd Font", sans-serif; }
       window#quicksettings .quicksettings .volume-box .volume .slider * {
         all: unset; }
       window#quicksettings .quicksettings .volume-box .volume .slider trough {
@@ -642,7 +642,7 @@ window#quicksettings .quicksettings {
       margin: 6px; }
       window#quicksettings .quicksettings .volume-box .volume button * {
         font-size: 15px;
-        font-family: "Ubuntu Nerd Font", sans-serif; }
+        font-family: "FiraCode Nerd Font", sans-serif; }
       window#quicksettings .quicksettings .volume-box .volume button:focus {
         box-shadow: inset 0 0 0 1px #89b4fa;
         background-color: rgba(205, 214, 244, 0.154);
@@ -683,7 +683,7 @@ window#quicksettings .quicksettings {
         margin-top: 6px; }
         window#quicksettings .quicksettings .volume-box .menu button * {
           font-size: 15px;
-          font-family: "Ubuntu Nerd Font", sans-serif; }
+          font-family: "FiraCode Nerd Font", sans-serif; }
         window#quicksettings .quicksettings .volume-box .menu button:focus {
           box-shadow: inset 0 0 0 1px #89b4fa;
           background-color: rgba(205, 214, 244, 0.154);
@@ -717,14 +717,14 @@ window#quicksettings .quicksettings {
     padding-right: 12px; }
     window#quicksettings .quicksettings .brightness * {
       font-size: 15px;
-      font-family: "Ubuntu Nerd Font", sans-serif; }
+      font-family: "FiraCode Nerd Font", sans-serif; }
     window#quicksettings .quicksettings .brightness .slider {
       all: unset;
       margin: 0 12px;
       margin-left: 0; }
       window#quicksettings .quicksettings .brightness .slider * {
         font-size: 15px;
-        font-family: "Ubuntu Nerd Font", sans-serif; }
+        font-family: "FiraCode Nerd Font", sans-serif; }
       window#quicksettings .quicksettings .brightness .slider * {
         all: unset; }
       window#quicksettings .quicksettings .brightness .slider trough {
@@ -777,7 +777,7 @@ window#quicksettings .quicksettings {
       margin: 6px; }
       window#quicksettings .quicksettings .brightness button * {
         font-size: 15px;
-        font-family: "Ubuntu Nerd Font", sans-serif; }
+        font-family: "FiraCode Nerd Font", sans-serif; }
       window#quicksettings .quicksettings .brightness button:focus {
         box-shadow: inset 0 0 0 1px #89b4fa;
         background-color: rgba(205, 214, 244, 0.154);
@@ -808,7 +808,7 @@ window#quicksettings .quicksettings {
       padding: 6px; }
       window#quicksettings .quicksettings .toggles-box .small-toggles * {
         font-size: 15px;
-        font-family: "Ubuntu Nerd Font", sans-serif; }
+        font-family: "FiraCode Nerd Font", sans-serif; }
       window#quicksettings .quicksettings .toggles-box .small-toggles .toggle {
         all: unset;
         transition: 200ms;
@@ -820,7 +820,7 @@ window#quicksettings .quicksettings {
         padding: 12px; }
         window#quicksettings .quicksettings .toggles-box .small-toggles .toggle * {
           font-size: 15px;
-          font-family: "Ubuntu Nerd Font", sans-serif; }
+          font-family: "FiraCode Nerd Font", sans-serif; }
         window#quicksettings .quicksettings .toggles-box .small-toggles .toggle:focus {
           box-shadow: inset 0 0 0 1px #89b4fa;
           background-color: rgba(205, 214, 244, 0.154);
@@ -850,7 +850,7 @@ window#quicksettings .quicksettings {
       margin-right: 12px; }
       window#quicksettings .quicksettings .toggles-box .arrow-toggles * {
         font-size: 15px;
-        font-family: "Ubuntu Nerd Font", sans-serif; }
+        font-family: "FiraCode Nerd Font", sans-serif; }
       window#quicksettings .quicksettings .toggles-box .arrow-toggles .toggle.arrow {
         all: unset;
         transition: 200ms;
@@ -861,7 +861,7 @@ window#quicksettings .quicksettings {
         margin: 6px; }
         window#quicksettings .quicksettings .toggles-box .arrow-toggles .toggle.arrow * {
           font-size: 15px;
-          font-family: "Ubuntu Nerd Font", sans-serif; }
+          font-family: "FiraCode Nerd Font", sans-serif; }
         window#quicksettings .quicksettings .toggles-box .arrow-toggles .toggle.arrow:focus {
           box-shadow: inset 0 0 0 1px #89b4fa;
           background-color: rgba(205, 214, 244, 0.154);
@@ -895,7 +895,7 @@ window#quicksettings .quicksettings {
           padding: 12px; }
           window#quicksettings .quicksettings .toggles-box .arrow-toggles .toggle.arrow button * {
             font-size: 15px;
-            font-family: "Ubuntu Nerd Font", sans-serif; }
+            font-family: "FiraCode Nerd Font", sans-serif; }
           window#quicksettings .quicksettings .toggles-box .arrow-toggles .toggle.arrow button:focus {
             box-shadow: inset 0 0 0 1px #89b4fa;
             background-color: rgba(205, 214, 244, 0.154);
@@ -934,7 +934,7 @@ window#quicksettings .quicksettings {
     margin-top: 12px; }
     window#quicksettings .quicksettings .submenu * {
       font-size: 15px;
-      font-family: "Ubuntu Nerd Font", sans-serif; }
+      font-family: "FiraCode Nerd Font", sans-serif; }
     window#quicksettings .quicksettings .submenu .title > *:first-child {
       margin: 12px; }
     window#quicksettings .quicksettings .submenu .title label {
@@ -947,7 +947,7 @@ window#quicksettings .quicksettings {
       all: unset; }
       window#quicksettings .quicksettings .submenu.app-mixer .content scale * {
         font-size: 15px;
-        font-family: "Ubuntu Nerd Font", sans-serif; }
+        font-family: "FiraCode Nerd Font", sans-serif; }
       window#quicksettings .quicksettings .submenu.app-mixer .content scale * {
         all: unset; }
       window#quicksettings .quicksettings .submenu.app-mixer .content scale trough {
@@ -1007,7 +1007,7 @@ window#quicksettings .quicksettings {
       margin-top: 6px; }
       window#quicksettings .quicksettings .submenu.network .content button *, window#quicksettings .quicksettings .submenu.theme button *, window#quicksettings .quicksettings .submenu .content button * {
         font-size: 15px;
-        font-family: "Ubuntu Nerd Font", sans-serif; }
+        font-family: "FiraCode Nerd Font", sans-serif; }
       window#quicksettings .quicksettings .submenu.network .content button:focus, window#quicksettings .quicksettings .submenu.theme button:focus, window#quicksettings .quicksettings .submenu .content button:focus {
         box-shadow: inset 0 0 0 1px #89b4fa;
         background-color: rgba(205, 214, 244, 0.154);
@@ -1042,7 +1042,7 @@ window#quicksettings .quicksettings {
       box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03); }
       window#quicksettings .quicksettings .submenu.bluetooth .content switch * {
         font-size: 15px;
-        font-family: "Ubuntu Nerd Font", sans-serif; }
+        font-family: "FiraCode Nerd Font", sans-serif; }
       window#quicksettings .quicksettings .submenu.bluetooth .content switch:focus {
         box-shadow: inset 0 0 0 1px #89b4fa;
         background-color: rgba(205, 214, 244, 0.154);
@@ -1078,17 +1078,17 @@ window#quicksettings .quicksettings {
     margin-top: 12px; }
     window#quicksettings .quicksettings .media .mediabox * {
       font-size: 15px;
-      font-family: "Ubuntu Nerd Font", sans-serif; }
+      font-family: "FiraCode Nerd Font", sans-serif; }
     window#quicksettings .quicksettings .media .mediabox label {
       color: white;
       text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6); }
     window#quicksettings .quicksettings .media .mediabox .shader {
       all: unset;
       border-radius: 11px;
-      box-shadow: inset 0 0 3em 1em rgba(30, 30, 46, 0.7); }
+      box-shadow: inset 0 0 3em 1em rgba(17, 17, 27, 0.7); }
       window#quicksettings .quicksettings .media .mediabox .shader * {
         font-size: 15px;
-        font-family: "Ubuntu Nerd Font", sans-serif; }
+        font-family: "FiraCode Nerd Font", sans-serif; }
       window#quicksettings .quicksettings .media .mediabox .shader label {
         color: white;
         text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6); }
@@ -1102,7 +1102,7 @@ window#quicksettings .quicksettings {
       window#quicksettings .quicksettings .media .mediabox .cover-art .shader {
         background-color: transparent;
         border-radius: 8.6px;
-        box-shadow: inset 0 0 0 999px rgba(30, 30, 46, 0.2); }
+        box-shadow: inset 0 0 0 999px rgba(17, 17, 27, 0.2); }
     window#quicksettings .quicksettings .media .mediabox .cover-art-bg, window#quicksettings .quicksettings .media .mediabox .cover-art {
       background-size: cover;
       background-position: center; }
@@ -1118,7 +1118,7 @@ window#quicksettings .quicksettings {
       margin: 12px 0; }
       window#quicksettings .quicksettings .media .mediabox .position-slider * {
         font-size: 15px;
-        font-family: "Ubuntu Nerd Font", sans-serif; }
+        font-family: "FiraCode Nerd Font", sans-serif; }
       window#quicksettings .quicksettings .media .mediabox .position-slider * {
         all: unset; }
       window#quicksettings .quicksettings .media .mediabox .position-slider trough {
@@ -1211,7 +1211,7 @@ window#verification .verification {
   margin: 12px;
   border: 1px solid rgba(205, 214, 244, 0.04);
   border-radius: 20.4px;
-  background-color: #1e1e2e;
+  background-color: #11111b;
   color: #cdd6f4;
   padding: 21.6px;
   padding: 25.92px;
@@ -1219,7 +1219,7 @@ window#verification .verification {
   min-height: 100px; }
   window#verification .verification * {
     font-size: 15px;
-    font-family: "Ubuntu Nerd Font", sans-serif; }
+    font-family: "FiraCode Nerd Font", sans-serif; }
   window#verification .verification .title {
     font-size: 1.7em; }
   window#verification .verification .desc {
@@ -1239,7 +1239,7 @@ window#verification .verification {
       margin: 0 12.96px; }
       window#verification .verification .buttons button * {
         font-size: 15px;
-        font-family: "Ubuntu Nerd Font", sans-serif; }
+        font-family: "FiraCode Nerd Font", sans-serif; }
       window#verification .verification .buttons button:focus {
         box-shadow: inset 0 0 0 1px #89b4fa;
         background-color: rgba(205, 214, 244, 0.154);
@@ -1270,19 +1270,19 @@ window#powermenu .powermenu {
   margin: 12px;
   border: 1px solid rgba(205, 214, 244, 0.04);
   border-radius: 20.4px;
-  background-color: #1e1e2e;
+  background-color: #11111b;
   color: #cdd6f4;
   padding: 21.6px;
   padding: 21.6px;
   border-radius: 36px; }
   window#powermenu .powermenu * {
     font-size: 15px;
-    font-family: "Ubuntu Nerd Font", sans-serif; }
+    font-family: "FiraCode Nerd Font", sans-serif; }
   window#powermenu .powermenu button {
     all: unset; }
     window#powermenu .powermenu button * {
       font-size: 15px;
-      font-family: "Ubuntu Nerd Font", sans-serif; }
+      font-family: "FiraCode Nerd Font", sans-serif; }
     window#powermenu .powermenu button .icon {
       all: unset;
       transition: 200ms;
@@ -1297,7 +1297,7 @@ window#powermenu .powermenu {
       min-height: 120px; }
       window#powermenu .powermenu button .icon * {
         font-size: 15px;
-        font-family: "Ubuntu Nerd Font", sans-serif; }
+        font-family: "FiraCode Nerd Font", sans-serif; }
       window#powermenu .powermenu button .icon:focus {
         box-shadow: inset 0 0 0 1px #89b4fa;
         background-color: rgba(205, 214, 244, 0.154);
@@ -1343,12 +1343,12 @@ window#overview .overview {
   margin: 12px;
   border: 1px solid rgba(205, 214, 244, 0.04);
   border-radius: 20.4px;
-  background-color: #1e1e2e;
+  background-color: #11111b;
   color: #cdd6f4;
   padding: 21.6px; }
   window#overview .overview * {
     font-size: 15px;
-    font-family: "Ubuntu Nerd Font", sans-serif; }
+    font-family: "FiraCode Nerd Font", sans-serif; }
   window#overview .overview .workspace {
     margin: 0 12px; }
     window#overview .overview .workspace:last-child {
@@ -1365,7 +1365,7 @@ window#overview .overview {
       border: 1px solid rgba(205, 214, 244, 0.03); }
       window#overview .overview .workspace > widget * {
         font-size: 15px;
-        font-family: "Ubuntu Nerd Font", sans-serif; }
+        font-family: "FiraCode Nerd Font", sans-serif; }
       window#overview .overview .workspace > widget:drop(active) {
         border-color: #89b4fa; }
   window#overview .overview .client {
@@ -1379,7 +1379,7 @@ window#overview .overview {
     margin: 12px; }
     window#overview .overview .client * {
       font-size: 15px;
-      font-family: "Ubuntu Nerd Font", sans-serif; }
+      font-family: "FiraCode Nerd Font", sans-serif; }
     window#overview .overview .client:focus {
       box-shadow: inset 0 0 0 1px #89b4fa;
       background-color: rgba(205, 214, 244, 0.154);
@@ -1401,38 +1401,39 @@ window#overview .overview {
       color: rgba(205, 214, 244, 0.3); }
 
 .corners .corner {
-  background-color: #1e1e2e;
+  background-color: transparent;
   border-radius: 24px; }
 
-.desktop {
-  border-radius: 20.4px;
-  box-shadow: inset 0 0 12px 0 rgba(0, 0, 0, 0.6); }
-  .desktop .clock-box-shadow {
-    border: 5px solid white;
-    border-radius: 12px; }
-    .desktop .clock-box-shadow .clock-box {
-      border-radius: 7px;
-      padding: 0 14px; }
-      .desktop .clock-box-shadow .clock-box .clock {
-        color: white;
-        font-size: 140px;
-        font-family: "Mononoki Nerd Font", monospace; }
-      .desktop .clock-box-shadow .clock-box .separator-box {
-        padding: 24px 12px; }
-        .desktop .clock-box-shadow .clock-box .separator-box .separator {
-          border-radius: 12px;
-          min-width: 16px;
-          min-height: 16px;
-          background-color: white; }
-  .desktop .date {
-    color: white;
-    font-size: 48px; }
-  .desktop .clock-box-shadow, .desktop .separator {
-    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.6); }
-  .desktop .clock-box {
-    box-shadow: inset 2px 2px 2px 0 rgba(0, 0, 0, 0.6); }
-  .desktop label {
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6); }
+.desktop .clock-box-shadow {
+  border: 5px solid white;
+  border-radius: 12px; }
+  .desktop .clock-box-shadow .clock-box {
+    border-radius: 7px;
+    padding: 0 14px; }
+    .desktop .clock-box-shadow .clock-box .clock {
+      color: white;
+      font-size: 140px;
+      font-family: "FiraCode Nerd Font", monospace; }
+    .desktop .clock-box-shadow .clock-box .separator-box {
+      padding: 24px 12px; }
+      .desktop .clock-box-shadow .clock-box .separator-box .separator {
+        border-radius: 12px;
+        min-width: 16px;
+        min-height: 16px;
+        background-color: white; }
+
+.desktop .date {
+  color: white;
+  font-size: 48px; }
+
+.desktop .clock-box-shadow, .desktop .separator {
+  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.6); }
+
+.desktop .clock-box {
+  box-shadow: inset 2px 2px 2px 0 rgba(0, 0, 0, 0.6); }
+
+.desktop label {
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6); }
 
 window.indicator .progress {
   all: unset;
@@ -1440,13 +1441,13 @@ window.indicator .progress {
   margin: 12px;
   border: 1px solid rgba(205, 214, 244, 0.04);
   border-radius: 20.4px;
-  background-color: #1e1e2e;
+  background-color: #11111b;
   color: #cdd6f4;
   padding: 21.6px;
   padding: 6px; }
   window.indicator .progress * {
     font-size: 15px;
-    font-family: "Ubuntu Nerd Font", sans-serif; }
+    font-family: "FiraCode Nerd Font", sans-serif; }
   window.indicator .progress .fill {
     border-radius: 14.4px;
     background-color: #89b4fa;
@@ -1463,12 +1464,12 @@ window#dashboard .dashboard {
   margin: 12px;
   border: 1px solid rgba(205, 214, 244, 0.04);
   border-radius: 20.4px;
-  background-color: #1e1e2e;
+  background-color: #11111b;
   color: #cdd6f4;
   padding: 21.6px; }
   window#dashboard .dashboard * {
     font-size: 15px;
-    font-family: "Ubuntu Nerd Font", sans-serif; }
+    font-family: "FiraCode Nerd Font", sans-serif; }
   window#dashboard .dashboard .notifications {
     min-width: 450px; }
     window#dashboard .dashboard .notifications .header label {
@@ -1483,7 +1484,7 @@ window#dashboard .dashboard {
       padding: 6px 12px; }
       window#dashboard .dashboard .notifications .header button * {
         font-size: 15px;
-        font-family: "Ubuntu Nerd Font", sans-serif; }
+        font-family: "FiraCode Nerd Font", sans-serif; }
       window#dashboard .dashboard .notifications .header button:focus {
         box-shadow: inset 0 0 0 1px #89b4fa;
         background-color: rgba(205, 214, 244, 0.154);
@@ -1553,7 +1554,7 @@ window#dashboard .dashboard {
       margin: 12px 6px 0; }
       window#dashboard .dashboard .notifications .notification-list .notification .actions button * {
         font-size: 15px;
-        font-family: "Ubuntu Nerd Font", sans-serif; }
+        font-family: "FiraCode Nerd Font", sans-serif; }
       window#dashboard .dashboard .notifications .notification-list .notification .actions button:focus {
         box-shadow: inset 0 0 0 1px #89b4fa;
         background-color: rgba(205, 214, 244, 0.154);
@@ -1591,7 +1592,7 @@ window#dashboard .dashboard {
       min-height: 1.2em; }
       window#dashboard .dashboard .notifications .notification-list .notification button.close-button * {
         font-size: 15px;
-        font-family: "Ubuntu Nerd Font", sans-serif; }
+        font-family: "FiraCode Nerd Font", sans-serif; }
       window#dashboard .dashboard .notifications .notification-list .notification button.close-button:focus {
         box-shadow: inset 0 0 0 1px #89b4fa;
         background-color: rgba(205, 214, 244, 0.154);
@@ -1626,7 +1627,7 @@ window#dashboard .dashboard {
       border: 1px solid rgba(205, 214, 244, 0.03); }
       window#dashboard .dashboard .notifications .notification-list-box * {
         font-size: 15px;
-        font-family: "Ubuntu Nerd Font", sans-serif; }
+        font-family: "FiraCode Nerd Font", sans-serif; }
       window#dashboard .dashboard .notifications .notification-list-box .wallpaper {
         border-radius: 11px;
         background-position: bottom right;
@@ -1639,7 +1640,7 @@ window#dashboard .dashboard {
       margin: 12px;
       border: 1px solid rgba(205, 214, 244, 0.04);
       border-radius: 20.4px;
-      background-color: #1e1e2e;
+      background-color: #11111b;
       color: #cdd6f4;
       padding: 21.6px;
       border-radius: 12px;
@@ -1647,7 +1648,7 @@ window#dashboard .dashboard {
       margin: 6px; }
       window#dashboard .dashboard .notifications .notification-list .notification > box * {
         font-size: 15px;
-        font-family: "Ubuntu Nerd Font", sans-serif; }
+        font-family: "FiraCode Nerd Font", sans-serif; }
     window#dashboard .dashboard .notifications .placeholder {
       color: white; }
       window#dashboard .dashboard .notifications .placeholder .icon {
@@ -1674,7 +1675,7 @@ window#dashboard .dashboard {
     margin-top: 24px; }
     window#dashboard .dashboard .datemenu .calendar * {
       font-size: 15px;
-      font-family: "Ubuntu Nerd Font", sans-serif; }
+      font-family: "FiraCode Nerd Font", sans-serif; }
     window#dashboard .dashboard .datemenu .calendar calendar {
       all: unset;
       font-size: 1.1em;
@@ -1690,7 +1691,7 @@ window#dashboard .dashboard {
         margin: 1em; }
         window#dashboard .dashboard .datemenu .calendar calendar.button * {
           font-size: 15px;
-          font-family: "Ubuntu Nerd Font", sans-serif; }
+          font-family: "FiraCode Nerd Font", sans-serif; }
         window#dashboard .dashboard .datemenu .calendar calendar.button:focus {
           box-shadow: inset 0 0 0 1px #89b4fa;
           background-color: rgba(205, 214, 244, 0.154);
@@ -1732,17 +1733,17 @@ window#dashboard .dashboard {
     margin-top: 12px; }
     window#dashboard .dashboard .mediabox * {
       font-size: 15px;
-      font-family: "Ubuntu Nerd Font", sans-serif; }
+      font-family: "FiraCode Nerd Font", sans-serif; }
     window#dashboard .dashboard .mediabox label {
       color: white;
       text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6); }
     window#dashboard .dashboard .mediabox .shader {
       all: unset;
       border-radius: 11px;
-      box-shadow: inset 0 0 3em 1em rgba(30, 30, 46, 0.7); }
+      box-shadow: inset 0 0 3em 1em rgba(17, 17, 27, 0.7); }
       window#dashboard .dashboard .mediabox .shader * {
         font-size: 15px;
-        font-family: "Ubuntu Nerd Font", sans-serif; }
+        font-family: "FiraCode Nerd Font", sans-serif; }
       window#dashboard .dashboard .mediabox .shader label {
         color: white;
         text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6); }
@@ -1756,7 +1757,7 @@ window#dashboard .dashboard {
       window#dashboard .dashboard .mediabox .cover-art .shader {
         background-color: transparent;
         border-radius: 8.6px;
-        box-shadow: inset 0 0 0 999px rgba(30, 30, 46, 0.2); }
+        box-shadow: inset 0 0 0 999px rgba(17, 17, 27, 0.2); }
     window#dashboard .dashboard .mediabox .cover-art-bg, window#dashboard .dashboard .mediabox .cover-art {
       background-size: cover;
       background-position: center; }
@@ -1772,7 +1773,7 @@ window#dashboard .dashboard {
       margin: 12px 0; }
       window#dashboard .dashboard .mediabox .position-slider * {
         font-size: 15px;
-        font-family: "Ubuntu Nerd Font", sans-serif; }
+        font-family: "FiraCode Nerd Font", sans-serif; }
       window#dashboard .dashboard .mediabox .position-slider * {
         all: unset; }
       window#dashboard .dashboard .mediabox .position-slider trough {
@@ -1850,220 +1851,204 @@ window#dashboard .dashboard {
     window#dashboard .dashboard .mediabox.firefox .footer-box {
       margin-top: -24px; }
 
-.panel {
-  background-color: #1e1e2e; }
-  .panel .panel-button {
+.panel > .end button:last-child > * {
+  margin-right: 8px; }
+
+.panel > .start button:first-child > * {
+  margin-left: 8px; }
+
+.panel .panel-button {
+  all: unset;
+  transition: 200ms; }
+  .panel .panel-button > * {
     all: unset;
-    all: unset;
-    transition: 200ms;
-    border-radius: 12px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.6);
+    margin: 12px;
+    border: 1px solid rgba(205, 214, 244, 0.04);
+    border-radius: 20.4px;
+    background-color: #11111b;
     color: #cdd6f4;
-    background-color: transparent;
-    background-image: none;
-    box-shadow: none;
-    color: #cdd6f4; }
-    .panel .panel-button * {
+    padding: 21.6px;
+    border-radius: 12px;
+    margin: 8px 5px;
+    transition: 200ms; }
+    .panel .panel-button > * * {
       font-size: 15px;
-      font-family: "Ubuntu Nerd Font", sans-serif; }
-    .panel .panel-button:disabled {
-      box-shadow: none;
-      background-color: transparent;
-      color: rgba(205, 214, 244, 0.3); }
-    .panel .panel-button > * {
-      border-radius: 12px;
-      transition: 200ms;
-      background-color: transparent;
-      box-shadow: none; }
-    .panel .panel-button:focus > *, .panel .panel-button.focused > * {
-      box-shadow: inset 0 0 0 1px #89b4fa;
-      background-color: rgba(205, 214, 244, 0.154);
-      color: #b4befe; }
-    .panel .panel-button:hover > * {
-      box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
-      background-color: rgba(205, 214, 244, 0.154);
-      color: #b4befe; }
-    .panel .panel-button:active > *, .panel .panel-button.active > *, .panel .panel-button.on > *, .panel .panel-button:checked > * {
-      box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
-      background-image: linear-gradient(to right, #89b4fa, #a6c7fb);
-      background-color: #89b4fa;
+      font-family: "FiraCode Nerd Font", sans-serif; }
+  .panel .panel-button:hover > * {
+    color: #b4befe;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.6), inset 0 0 0 99px rgba(205, 214, 244, 0.154); }
+  .panel .panel-button:active > *, .panel .panel-button.active > * {
+    background-image: linear-gradient(to right, #89b4fa, #a6c7fb);
+    background-color: #89b4fa; }
+    .panel .panel-button:active > * label, .panel .panel-button:active > * image, .panel .panel-button.active > * label, .panel .panel-button.active > * image {
       color: #141414; }
-    .panel .panel-button:active:hover > *, .panel .panel-button.active:hover > *, .panel .panel-button.on:hover > *, .panel .panel-button:checked:hover > * {
-      box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03), inset 0 0 0 99px rgba(205, 214, 244, 0.154); }
-    .panel .panel-button > * {
-      margin: 5px; }
-    .panel .panel-button label {
-      font-weight: bold; }
-    .panel .panel-button > * {
-      padding: .3em .5em; }
-  .panel .quicksettings > box > * {
+  .panel .panel-button label {
+    font-weight: bold; }
+  .panel .panel-button > * {
+    padding: .3em .5em; }
+
+.panel .quicksettings > box > * {
+  margin: 0 6px; }
+  .panel .quicksettings > box > *:last-child {
+    margin-right: 0; }
+  .panel .quicksettings > box > *:first-child {
+    margin-left: 0; }
+
+.panel .separator {
+  background-color: rgba(205, 214, 244, 0.3);
+  border-radius: 12px;
+  min-height: 5px;
+  min-width: 5px; }
+
+.panel .launcher label {
+  color: rgba(137, 180, 250, 0.8); }
+
+.panel .launcher:hover label {
+  color: #89b4fa; }
+
+.panel .launcher:active label, .panel .launcher.active label {
+  color: #141414; }
+
+.panel .powermenu image, .panel .recorder image {
+  color: rgba(243, 139, 168, 0.7); }
+
+.panel .powermenu:hover image, .panel .recorder:hover image {
+  color: rgba(243, 139, 168, 0.85); }
+
+.panel .powermenu:active image, .panel .recorder:active image {
+  color: #f38ba8; }
+
+.panel .quicksettings:not(.active) .battery.low {
+  color: #f38ba8; }
+
+.panel .quicksettings:not(.active) .battery.charged, .panel .quicksettings:not(.active) .battery.charging {
+  color: #a6e3a1; }
+
+.panel .workspaces > * {
+  padding: 0; }
+
+.panel .workspaces .eventbox {
+  transition: 200ms;
+  border-radius: 11px; }
+  .panel .workspaces .eventbox:hover {
+    background-color: rgba(205, 214, 244, 0.154); }
+
+.panel .workspaces button {
+  all: unset; }
+  .panel .workspaces button .indicator {
+    min-width: 10px;
+    min-height: 10px;
+    border-radius: 7.2px;
+    border: 2px solid transparent;
+    transition: border-color 200ms;
     margin: 0 6px; }
-    .panel .quicksettings > box > *:last-child {
-      margin-right: 0; }
-    .panel .quicksettings > box > *:first-child {
-      margin-left: 0; }
-  .panel .separator {
-    background-color: rgba(205, 214, 244, 0.3);
+    .panel .workspaces button .indicator .fill {
+      transition: background-color 200ms;
+      margin: 2px;
+      min-width: 6px;
+      min-height: 6px;
+      border-radius: 4.4px; }
+  .panel .workspaces button:last-child .indicator {
+    margin-right: 12px; }
+  .panel .workspaces button:first-child .indicator {
+    margin-left: 12px; }
+  .panel .workspaces button.empty .indicator {
+    border-color: rgba(205, 214, 244, 0.7); }
+  .panel .workspaces button.occupied .indicator {
+    border-color: rgba(205, 214, 244, 0.9); }
+    .panel .workspaces button.occupied .indicator .fill {
+      background-color: rgba(205, 214, 244, 0.9); }
+  .panel .workspaces button:hover .indicator {
+    border-color: rgba(137, 180, 250, 0.8); }
+    .panel .workspaces button:hover .indicator .fill {
+      background-color: rgba(137, 180, 250, 0.8); }
+  .panel .workspaces button.active .indicator, .panel .workspaces button:active .indicator {
+    border-color: #89b4fa; }
+    .panel .workspaces button.active .indicator .fill, .panel .workspaces button:active .indicator .fill {
+      background-color: #89b4fa; }
+  .panel .workspaces button.empty .indicator .fill {
+    background-color: transparent; }
+
+.panel .media.spotify .icon {
+  color: #a6e3a1; }
+
+.panel .media.firefox .icon {
+  color: #fab387; }
+
+.panel .media.mpv .icon {
+  color: #cba6f7; }
+
+.panel .dock .separator {
+  border-radius: 12px;
+  background-color: rgba(205, 214, 244, 0.2);
+  margin: 0 5px; }
+
+.panel .dock.horizontal .separator {
+  min-width: 2px;
+  min-height: 2em; }
+
+.panel .dock.horizontal button.focused .indicator {
+  min-width: 18px; }
+
+.panel .dock.vertical .separator {
+  min-width: 2em;
+  min-height: 2px; }
+
+.panel .dock.vertical button.focused .indicator {
+  min-height: 18px; }
+
+.panel .dock button {
+  all: unset;
+  transition: 200ms;
+  border-radius: 12px;
+  color: #cdd6f4;
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+  color: #cdd6f4; }
+  .panel .dock button * {
+    font-size: 15px;
+    font-family: "FiraCode Nerd Font", sans-serif; }
+  .panel .dock button:disabled {
+    box-shadow: none;
+    background-color: transparent;
+    color: rgba(205, 214, 244, 0.3); }
+  .panel .dock button > * {
     border-radius: 12px;
-    min-height: 5px;
-    min-width: 5px; }
-  .panel .launcher label {
-    color: rgba(137, 180, 250, 0.8); }
-  .panel .launcher:hover label {
-    color: #89b4fa; }
-  .panel .launcher:active label, .panel .launcher.active label {
+    transition: 200ms;
+    background-color: transparent;
+    box-shadow: none; }
+  .panel .dock button:focus > *, .panel .dock button.focused > * {
+    box-shadow: inset 0 0 0 1px #89b4fa;
+    background-color: rgba(205, 214, 244, 0.154);
+    color: #b4befe; }
+  .panel .dock button:hover > * {
+    box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+    background-color: rgba(205, 214, 244, 0.154);
+    color: #b4befe; }
+  .panel .dock button:active > *, .panel .dock button.active > *, .panel .dock button.on > *, .panel .dock button:checked > * {
+    box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
+    background-image: linear-gradient(to right, #89b4fa, #a6c7fb);
+    background-color: #89b4fa;
     color: #141414; }
-  .panel .powermenu image, .panel .recorder image {
-    color: rgba(243, 139, 168, 0.7); }
-  .panel .powermenu:hover image, .panel .recorder:hover image {
-    color: rgba(243, 139, 168, 0.85); }
-  .panel .powermenu:active image, .panel .recorder:active image {
-    color: #f38ba8; }
-  .panel .quicksettings:not(.active) .battery.low {
-    color: #f38ba8; }
-  .panel .quicksettings:not(.active) .battery.charged, .panel .quicksettings:not(.active) .battery.charging {
-    color: #a6e3a1; }
-  .panel .workspaces > * {
-    padding: 0; }
-  .panel .workspaces .eventbox {
-    transition: 200ms;
-    all: unset;
-    transition: 200ms;
+  .panel .dock button:active:hover > *, .panel .dock button.active:hover > *, .panel .dock button.on:hover > *, .panel .dock button:checked:hover > * {
+    box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03), inset 0 0 0 99px rgba(205, 214, 244, 0.154); }
+  .panel .dock button image, .panel .dock button > * {
+    margin: 5px; }
+  .panel .dock button .indicator {
+    min-width: 6px;
+    min-height: 6px;
+    background-color: #cdd6f4;
     border-radius: 12px;
-    color: #cdd6f4;
-    background-color: rgba(205, 214, 244, 0.06);
-    box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03); }
-    .panel .workspaces .eventbox * {
-      font-size: 15px;
-      font-family: "Ubuntu Nerd Font", sans-serif; }
-    .panel .workspaces .eventbox:focus {
-      box-shadow: inset 0 0 0 1px #89b4fa;
-      background-color: rgba(205, 214, 244, 0.154);
-      color: #b4befe; }
-    .panel .workspaces .eventbox:hover {
-      box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
-      background-color: rgba(205, 214, 244, 0.154);
-      color: #b4befe; }
-    .panel .workspaces .eventbox:active, .panel .workspaces .eventbox.on, .panel .workspaces .eventbox.active, .panel .workspaces .eventbox:checked {
-      box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
-      background-image: linear-gradient(to right, #89b4fa, #a6c7fb);
-      background-color: #89b4fa;
-      color: #141414; }
-      .panel .workspaces .eventbox:active:hover, .panel .workspaces .eventbox.on:hover, .panel .workspaces .eventbox.active:hover, .panel .workspaces .eventbox:checked:hover {
-        box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03), inset 0 0 0 99px rgba(205, 214, 244, 0.154); }
-    .panel .workspaces .eventbox:disabled {
-      box-shadow: none;
-      background-color: transparent;
-      color: rgba(205, 214, 244, 0.3); }
-  .panel .workspaces button {
-    all: unset; }
-    .panel .workspaces button .indicator {
-      min-width: 10px;
-      min-height: 10px;
-      border-radius: 7.2px;
-      border: 2px solid transparent;
-      transition: border-color 200ms;
-      margin: 0 6px; }
-      .panel .workspaces button .indicator .fill {
-        transition: background-color 200ms;
-        margin: 2px;
-        min-width: 6px;
-        min-height: 6px;
-        border-radius: 4.4px; }
-    .panel .workspaces button:last-child .indicator {
-      margin-right: 12px; }
-    .panel .workspaces button:first-child .indicator {
-      margin-left: 12px; }
-    .panel .workspaces button.empty .indicator {
-      border-color: rgba(205, 214, 244, 0.7); }
-    .panel .workspaces button.occupied .indicator {
-      border-color: rgba(205, 214, 244, 0.9); }
-      .panel .workspaces button.occupied .indicator .fill {
-        background-color: rgba(205, 214, 244, 0.9); }
-    .panel .workspaces button:hover .indicator {
-      border-color: rgba(137, 180, 250, 0.8); }
-      .panel .workspaces button:hover .indicator .fill {
-        background-color: rgba(137, 180, 250, 0.8); }
-    .panel .workspaces button.active .indicator, .panel .workspaces button:active .indicator {
-      border-color: #89b4fa; }
-      .panel .workspaces button.active .indicator .fill, .panel .workspaces button:active .indicator .fill {
-        background-color: #89b4fa; }
-    .panel .workspaces button.empty .indicator .fill {
-      background-color: transparent; }
-  .panel .media.spotify .icon {
-    color: #a6e3a1; }
-  .panel .media.firefox .icon {
-    color: #fab387; }
-  .panel .media.mpv .icon {
-    color: #cba6f7; }
-  .panel .dock {
-    margin: 0; }
-    .panel .dock .separator {
-      border-radius: 12px;
-      background-color: rgba(205, 214, 244, 0.2);
-      margin: 0 5px; }
-    .panel .dock.horizontal .separator {
-      min-width: 2px;
-      min-height: 2em; }
-    .panel .dock.horizontal button.focused .indicator {
-      min-width: 18px; }
-    .panel .dock.vertical .separator {
-      min-width: 2em;
-      min-height: 2px; }
-    .panel .dock.vertical button.focused .indicator {
-      min-height: 18px; }
-    .panel .dock button {
-      all: unset;
-      transition: 200ms;
-      border-radius: 12px;
-      color: #cdd6f4;
-      background-color: transparent;
-      background-image: none;
-      box-shadow: none;
-      color: #cdd6f4; }
-      .panel .dock button * {
-        font-size: 15px;
-        font-family: "Ubuntu Nerd Font", sans-serif; }
-      .panel .dock button:disabled {
-        box-shadow: none;
-        background-color: transparent;
-        color: rgba(205, 214, 244, 0.3); }
-      .panel .dock button > * {
-        border-radius: 12px;
-        transition: 200ms;
-        background-color: transparent;
-        box-shadow: none; }
-      .panel .dock button:focus > *, .panel .dock button.focused > * {
-        box-shadow: inset 0 0 0 1px #89b4fa;
-        background-color: rgba(205, 214, 244, 0.154);
-        color: #b4befe; }
-      .panel .dock button:hover > * {
-        box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
-        background-color: rgba(205, 214, 244, 0.154);
-        color: #b4befe; }
-      .panel .dock button:active > *, .panel .dock button.active > *, .panel .dock button.on > *, .panel .dock button:checked > * {
-        box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03);
-        background-image: linear-gradient(to right, #89b4fa, #a6c7fb);
-        background-color: #89b4fa;
-        color: #141414; }
-      .panel .dock button:active:hover > *, .panel .dock button.active:hover > *, .panel .dock button.on:hover > *, .panel .dock button:checked:hover > * {
-        box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03), inset 0 0 0 99px rgba(205, 214, 244, 0.154); }
-      .panel .dock button image, .panel .dock button > * {
-        margin: 5px; }
-      .panel .dock button .indicator {
-        min-width: 6px;
-        min-height: 6px;
-        background-color: #cdd6f4;
-        border-radius: 12px;
-        margin-bottom: 2px; }
-      .panel .dock button.single .indicator, .panel .dock button.nonrunning .indicator {
-        background-color: transparent; }
-      .panel .dock button.focused .indicator {
-        background-image: linear-gradient(to right, #89b4fa, #a6c7fb); }
-    .panel .dock button > * {
-      margin: 0 5px; }
+    margin-bottom: 2px; }
+  .panel .dock button.single .indicator, .panel .dock button.nonrunning .indicator {
+    background-color: transparent; }
+  .panel .dock button.focused .indicator {
+    background-image: linear-gradient(to right, #89b4fa, #a6c7fb); }
 
 window#settings {
-  background-color: #1e1e2e;
+  background-color: #11111b;
   color: #cdd6f4; }
   window#settings scrolledwindow scrollbar, window#settings scrolledwindow scrollbar * {
     all: unset; }
@@ -2094,7 +2079,7 @@ window#settings {
     padding: 6px; }
     window#settings .settings .tab * {
       font-size: 15px;
-      font-family: "Ubuntu Nerd Font", sans-serif; }
+      font-family: "FiraCode Nerd Font", sans-serif; }
     window#settings .settings .tab:focus {
       box-shadow: inset 0 0 0 1px #89b4fa;
       background-color: rgba(205, 214, 244, 0.154);
@@ -2128,7 +2113,7 @@ window#settings {
     padding: 8.4px; }
     window#settings .settings button *, window#settings .settings entry * {
       font-size: 15px;
-      font-family: "Ubuntu Nerd Font", sans-serif; }
+      font-family: "FiraCode Nerd Font", sans-serif; }
     window#settings .settings button:focus, window#settings .settings entry:focus {
       box-shadow: inset 0 0 0 1px #89b4fa;
       background-color: rgba(205, 214, 244, 0.154);
@@ -2157,7 +2142,7 @@ window#settings {
     box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03); }
     window#settings .settings spinbutton *, window#settings .settings spinbutton:focus * {
       font-size: 15px;
-      font-family: "Ubuntu Nerd Font", sans-serif; }
+      font-family: "FiraCode Nerd Font", sans-serif; }
     window#settings .settings spinbutton:focus, window#settings .settings spinbutton:focus:focus {
       box-shadow: inset 0 0 0 1px #89b4fa;
       background-color: rgba(205, 214, 244, 0.154);
@@ -2194,7 +2179,7 @@ window#settings {
     box-shadow: inset 0 0 0 1px rgba(205, 214, 244, 0.03); }
     window#settings .settings switch * {
       font-size: 15px;
-      font-family: "Ubuntu Nerd Font", sans-serif; }
+      font-family: "FiraCode Nerd Font", sans-serif; }
     window#settings .settings switch:focus {
       box-shadow: inset 0 0 0 1px #89b4fa;
       background-color: rgba(205, 214, 244, 0.154);
@@ -2240,7 +2225,7 @@ window#settings {
       border: 1px solid rgba(205, 214, 244, 0.03); }
       window#settings .settings .row .text-spin * {
         font-size: 15px;
-        font-family: "Ubuntu Nerd Font", sans-serif; }
+        font-family: "FiraCode Nerd Font", sans-serif; }
       window#settings .settings .row .text-spin button {
         all: unset;
         transition: 200ms;
@@ -2254,7 +2239,7 @@ window#settings {
         margin: -1px; }
         window#settings .settings .row .text-spin button * {
           font-size: 15px;
-          font-family: "Ubuntu Nerd Font", sans-serif; }
+          font-family: "FiraCode Nerd Font", sans-serif; }
         window#settings .settings .row .text-spin button:focus {
           box-shadow: inset 0 0 0 1px #89b4fa;
           background-color: rgba(205, 214, 244, 0.154);
@@ -2289,9 +2274,9 @@ tooltip {
   border: none; }
   tooltip * {
     font-size: 15px;
-    font-family: "Ubuntu Nerd Font", sans-serif; }
+    font-family: "FiraCode Nerd Font", sans-serif; }
   tooltip > * > * {
-    background-color: #1e1e2e;
+    background-color: #11111b;
     border-radius: 12px;
     border: 1px solid rgba(205, 214, 244, 0.04);
     color: #cdd6f4;

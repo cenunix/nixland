@@ -59,7 +59,7 @@
       fsType = "vfat";
     };
 
-  swapDevices = [ { device = "/dev/disk/by-uuid/582e058c-69cb-4e5d-ac63-6fef6835d9cd"; } ];
+  swapDevices = [{ device = "/dev/disk/by-uuid/582e058c-69cb-4e5d-ac63-6fef6835d9cd"; }];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
@@ -70,7 +70,6 @@
   # networking.interfaces.enp10s0.useDHCP = lib.mkDefault true;
   # networking.interfaces.vethedf7ced.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp8s0.useDHCP = lib.mkDefault true;
-
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

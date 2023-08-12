@@ -9,11 +9,11 @@ $magenta: #cba6f7;
 $teal: #94e2d5;
 $orange: #fab387;
 
-$bg_color: #1e1e2e;
+$bg_color: #11111b;
 $fg_color: #cdd6f4;
 $hover_fg: #b4befe;
 
-$wm_gaps: 18px;
+$wm_gaps: 8px;
 $radii: 12px;
 $spacing: 12px;
 
@@ -40,11 +40,11 @@ $drop_shadow: true;
 $transition: 200ms;
 
 $font_size: 15px;
-$font: 'Ubuntu Nerd Font';
-$mono_font: 'Mononoki Nerd Font', monospace;
+$font: 'FiraCode Nerd Font';
+$mono_font: 'FiraCode Nerd Font', monospace;
 $wallpaper_fg: white;
 $shader_fg: white;
 
-$screen_corners: true;
-$bar_style: normal;
+$screen_corners: false;
+$bar_style: separated;
 $layout: topbar;

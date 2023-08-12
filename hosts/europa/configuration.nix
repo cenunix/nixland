@@ -1,12 +1,11 @@
 # This is your system's configuration file.
 # Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
 }: {
   # You can import other NixOS modules here
   imports = [
@@ -59,13 +58,26 @@
       qemu = {
         package = pkgs.qemu_kvm;
         ovmf.enable = true;
-        ovmf.packages = [pkgs.OVMFFull];
+        ovmf.packages = [ pkgs.OVMFFull ];
         swtpm.enable = true;
       };
     };
   };
+  boot.binfmt = {
+    emulatedSystems = [ "aarch64-linux" "i686-linux" ];
+    registrations = {
+      aarch64-linux = {
+        interpreter = lib.mkForce "${pkgs.qemu}/bin/qemu-aarch64";
+      };
 
-  environment.systemPackages = with pkgs; [virt-manager win-virtio virt-viewer];
+      i686-linux = {
+        interpreter = "${pkgs.qemu}/bin/qemu-i686";
+      };
+    };
+  };
+  nix.settings.extra-sandbox-paths = [ "/run/binfmt" "${pkgs.qemu}" ];
+
+  environment.systemPackages = with pkgs; [ virt-manager win-virtio virt-viewer ];
 
   # Basic Networking and TimeZone
 

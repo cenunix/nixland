@@ -10,7 +10,7 @@
       catppuccin = {
         enable = true;
         flavour = "mocha";
-        transparentBackground = false;
+        transparentBackground = true;
         integrations = {
           neotree = true;
           which_key = true;

@@ -23,7 +23,7 @@
       colors = {
         alpha = "0.80";
         foreground = "cdd6f4"; # Text
-        background = "1e1e2e"; # Base
+        background = "11111b"; # Base
         regular0 = "45475a"; # Surface 1
         regular1 = "f38ba8"; # red
         regular2 = "a6e3a1"; # green

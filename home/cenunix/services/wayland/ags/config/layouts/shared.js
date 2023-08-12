@@ -46,9 +46,9 @@ var launcher = (size = ags.Utils.getConfig()?.baseIconSize || 16) => ({
     type: 'button',
     className: 'launcher panel-button',
     connections: [[ags.App, (btn, win, visible) => {
-        btn.toggleClassName('active', win === 'overview' && visible);
+        btn.toggleClassName('active', win === 'applauncher' && visible);
     }]],
-    onClick: () => ags.App.toggleWindow('overview'),
+    onClick: () => ags.App.toggleWindow('applauncher'),
     child: { type: 'distro-icon', size },
 });
 

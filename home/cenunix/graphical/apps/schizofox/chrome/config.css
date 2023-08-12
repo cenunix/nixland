@@ -20,13 +20,13 @@
   --ap-secondary-d: 70%;
   --ap-secondary: hsl(var(--ap-secondary-h), var(--ap-secondary-s), var(--ap-secondary-l));
   --ap-base1-h: 240;
-  --ap-base1-s: 21%;
-  --ap-base1-l: 15%;
+  --ap-base1-s: 23%;
+  --ap-base1-l: 9%;
   --ap-base1-d: 10%;
   --ap-base0: hsl(var(--ap-base0-h), var(--ap-base0-s), var(--ap-base0-l));
   --ap-base0-h: 240;
-  --ap-base0-s: 21%;
-  --ap-base0-l: 15%;
+  --ap-base0-s: 23%;
+  --ap-base0-l: 9%;
   --ap-base0-d: 13%;
   --ap-base1: hsl(var(--ap-base1-h), var(--ap-base1-s), var(--ap-base1-l));
   --ap-red: #f38ba8;
@@ -39,7 +39,7 @@
   --ap-color-strong: #eba0ac;
   --ap-color-quote: #eba0ac;
   --ap-color-italic: #eba0ac;
-  --ap-color-tag-background: #1e1e2e;
+  --ap-color-tag-background: #11111b;
   --ap-color-tag-text: #cdd6f4;
   --ap-code-gray-1: #45475a;
   --ap-code-gray-2: #313244;
@@ -118,10 +118,10 @@ one that stays (static)
   --yellow: var(--ap-yellow);
   --green: var(--ap-green);
   --red: var(--ap-red);
-  /* expanded width of the sidebar. 
+  /* expanded width of the sidebar.
     used for userChrome-static, and hover */
   --sidebar-width: 250px;
-  /* initial width of the sidebar. 
+  /* initial width of the sidebar.
     advised not to change since tst css relies on this value*/
   --sidebar-collapsed-width: 60px;
   --dividers: 2px;

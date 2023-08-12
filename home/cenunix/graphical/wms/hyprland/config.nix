@@ -120,8 +120,8 @@ in
         disable_splash_rendering=true
         mouse_move_enables_dpms=true
         key_press_enables_dpms=true
-        vfr=false
-        vrr=1
+        vfr=true
+        vrr=0
     }
     debug {
         overlay = false

@@ -44,8 +44,8 @@ $drop_shadow: ${t.drop_shadow};
 $transition: ${t.transition}ms;
 
 $font_size: 15px;
-$font: 'Ubuntu Nerd Font';
-$mono_font: 'Mononoki Nerd Font', monospace;
+$font: 'FiraCode Nerd Font';
+$mono_font: 'FiraCode Nerd Font', monospace;
 $wallpaper_fg: ${t.wallpaper_fg};
 $shader_fg: white;
 
