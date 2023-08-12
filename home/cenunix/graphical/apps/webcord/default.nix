@@ -31,7 +31,7 @@ in
 
     xdg.configFile = {
       "WebCord/Themes/mocha" = {
-        source = "./mocha.theme.css";
+        source = ./mocha.theme.css;
       };
 
       # share my webcord configuration across devices

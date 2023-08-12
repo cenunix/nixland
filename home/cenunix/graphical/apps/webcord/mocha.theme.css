@@ -73,14 +73,14 @@ html {
     --text-danger: #f38ba8;
     --text-brand: #89b4fa;
     --background-primary: #11111b;
-    --background-secondary: #181825;
+    --background-secondary: #11111b;
     --background-secondary-alt: #14141f;
     --background-tertiary: #11111b;
     --background-accent: #89b4fa;
     --background-floating: #0d0d15;
-    --background-nested-floating: #181825;
+    --background-nested-floating: #11111b;
     --background-mobile-primary: #11111b;
-    --background-mobile-secondary: #181825;
+    --background-mobile-secondary: #11111b;
     --chat-background: #11111b;
     --chat-border: #11111b;
     --chat-input-container-background: #11111b;
@@ -205,7 +205,7 @@ html {
     --channels-default: #969ebe;
     --channel-icon: #969ebe;
     --channel-text-area-placeholder: rgba(205, 214, 244, 0.5);
-    --channeltextarea-background: #181825;
+    --channeltextarea-background: #11111b;
     --activity-card-background: #11111b;
     --textbox-markdown-syntax: #6c7086;
     --spoiler-revealed-background: #313244;
@@ -220,7 +220,7 @@ html {
     --deprecated-text-input-bg: #11111b;
     --deprecated-text-input-border: rgba(17, 17, 27, 0.3);
     --deprecated-text-input-border-hover: #07070b;
-    --deprecated-text-input-border-disabled: #181825;
+    --deprecated-text-input-border-disabled: #11111b;
     --deprecated-text-input-prefix: #a6adc8;
     --focus-primary: #89b4fa;
     --interactive-normal: #cdd6f4;
@@ -696,7 +696,7 @@ div[class|=contentRegion] #billing-tab [class*=paymentText-] {
 }
 
 div[class|=contentRegion] #billing-tab div[class|=codeRedemptionRedirect] {
-    background-color: #181825;
+    background-color: #11111b;
     color: #cdd6f4;
     border-color: #313244;
 }
@@ -729,7 +729,7 @@ div[class|=contentRegion] #game-activity-tab input[class|=gameName] {
 
 div[class|=contentRegion] #game-activity-tab input[class*=gameNameInput-]:hover,
 div[class|=contentRegion] #game-activity-tab input[class*=gameNameInput-]:focus {
-    background-color: #181825;
+    background-color: #11111b;
     border-color: rgba(24, 24, 37, 0.3);
     color: #cdd6f4;
 }
@@ -817,7 +817,7 @@ div[class|=contentRegion] #guild_premium-tab div[class|=tierHeaderLocked] svg[cl
 
 div[class|=contentRegion] #guild_premium-tab div[class|=tierBody] {
     color: #bac2de;
-    background-color: #181825;
+    background-color: #11111b;
 }
 
 div[class|=contentRegion] svg[class|=activeCircle] {
@@ -850,7 +850,7 @@ div[class|=contentRegion] #stickers-tab div[class*=tierHeaderContent] {
 }
 
 div[class|=contentRegion] #stickers-tab div[class*=tierBody] {
-    background-color: #181825;
+    background-color: #11111b;
 }
 
 div[class|=contentRegion] #roles-tab div[class*=previewContainer-] .theme-light img[class*=roleIcon-] {
@@ -903,7 +903,7 @@ div[class|=perksModal] {
 }
 
 div[class|=perksModal] li[class|=perk] {
-    background-color: #181825;
+    background-color: #11111b;
 }
 
 div[class|=perksModal] li[class|=perk] svg {
@@ -982,7 +982,7 @@ div[class|=pageWrapper] {
 }
 
 div[class|=pageWrapper] div[class*=searchBox-] {
-    background-color: #181825;
+    background-color: #11111b;
 }
 
 div[class|=pageWrapper] div[class*=searchBox-] svg[class*=clearIcon] path {
@@ -1019,7 +1019,7 @@ div[class*=directoryModal-] {
 }
 
 div[class*=directoryModal-] [class*=searchBox] {
-    background-color: #181825 !important;
+    background-color: #11111b !important;
 }
 
 div[class*=directoryModal-] [class*=searchBox] [name=search]::placeholder {
@@ -1334,11 +1334,11 @@ div[class|=cooldownWrapper] {
 }
 
 div[class*=autocomplete-] {
-    background-color: #181825 !important;
+    background-color: #11111b !important;
 }
 
 div[class*=autocomplete-] div[class*=categoryHeader] {
-    background-color: #181825 !important;
+    background-color: #11111b !important;
 }
 
 div[class*=autocomplete-] div[class*=autocompleteRowSubheading] {
@@ -1412,7 +1412,7 @@ div[class|=sidebar]>section[class|=panels] div[class*=buttonContents] {
 }
 
 [data-list-id|=forum-channel-list] div[class|=body]>div[class|=tags] div[class*=pill] {
-    background-color: #181825;
+    background-color: #11111b;
 }
 
 [data-list-id|=forum-channel-list] button[class|=submitButton][class*=colorBrand] {
@@ -1549,7 +1549,7 @@ div[class|=callContainer] div[class|=videoControls] [class*=colorable-][class*=w
 }
 
 div[class*=giftCodeContainer] [class*=tile] {
-    background-color: #181825;
+    background-color: #11111b;
 }
 
 div[class*=giftCodeContainer] [class*=tile]>[class*=description] {
@@ -1557,15 +1557,15 @@ div[class*=giftCodeContainer] [class*=tile]>[class*=description] {
 }
 
 div[class*=chat-] section[class*=header-] {
-    background-color: #181825;
+    background-color: #11111b;
 }
 
 div[class*=chat-] div[class*=content-][class*=container-] {
-    background-color: #181825;
+    background-color: #11111b;
 }
 
 div[class*=chat-] div[class*=content-][class*=container-] div[class*=container] {
-    background-color: #181825;
+    background-color: #11111b;
 }
 
 div[class*=chat-] div[class*=content-][class*=container-] div[class*=search-] {
@@ -1581,7 +1581,7 @@ div[class*=chat-] div[class*=content-][class*=container-] div[class*=browser] di
 }
 
 div[class*=chat-] div[class*=content-][class*=container-] div[class*=scrollerContainer-] {
-    background-color: #181825;
+    background-color: #11111b;
 }
 
 div[class*=chat-] div[class*=content-][class*=container-] div[class*=scrollerContainer-] div[class*=checkIcon-][style*="opacity: 1;"]>svg>path {
@@ -1589,7 +1589,7 @@ div[class*=chat-] div[class*=content-][class*=container-] div[class*=scrollerCon
 }
 
 div[class*=chat-] div[class*=content-][class*=container-] div[role=tablist] {
-    background-color: #181825;
+    background-color: #11111b;
     border-bottom: 2px solid #313244;
 }
 
@@ -1741,7 +1741,7 @@ div[class|=layerContainer] [role=menu] #user-context-user-volume div[class*=slid
 .theme-dark div[class|=layerContainer] div[id|=popout_]>div[class*=didRender-] div[class*=container] header,
 .theme-light div[class|=layerContainer] div[id|=popout_]>div[class*=didRender-] div[class*=container] div[class*=autocompleteArrow-],
 .theme-light div[class|=layerContainer] div[id|=popout_]>div[class*=didRender-] div[class*=container] header {
-    background-color: #181825;
+    background-color: #11111b;
 }
 
 .theme-dark div[class|=layerContainer] div[id|=popout_]>div[class*=didRender-] div[class*=container] header>input::placeholder,
@@ -1905,7 +1905,7 @@ div[class|=layerContainer] div[id|=user-context] {
 }
 
 div[class|=layerContainer]>div[class*=layer] div[role=listbox] {
-    background-color: #181825;
+    background-color: #11111b;
 }
 
 div[class|=layerContainer]>div[class*=layer] div[role=listbox] div[role=option][aria-selected=true] {
@@ -1928,7 +1928,7 @@ div[class|=layerContainer]>div[class*=layer] div[class|=focusLock] div[class|=mo
 div[class|=layerContainer]>div[class*=layer] div[class|=focusLock] div[class|=modalSize],
 div[class|=layerContainer]>div[class*=layer] div[class|=focusLock] div[class|=uploadModal],
 div[class|=layerContainer]>div[class*=layer] div[class|=focusLock] div[class|=contentWrapper] {
-    background-color: #181825;
+    background-color: #11111b;
 }
 
 div[class|=layerContainer]>div[class*=layer] div[class|=focusLock] div[class|=modal] li,
@@ -1993,11 +1993,11 @@ div[class|=layerContainer]>div[class*=layer] div[class|=focusLock][aria-label=Ac
 }
 
 div[class|=layerContainer]>div[class*=layer] div[class|=focusLock][aria-label="Manage Accounts"] div[class*=navRow-] {
-    background-color: #181825;
+    background-color: #11111b;
 }
 
 div[class|=layerContainer] div[class|=addGamePopout] {
-    background-color: #181825;
+    background-color: #11111b;
 }
 
 div[class|=layerContainer] div[class*=searchOption-]::after,
@@ -2059,7 +2059,7 @@ div[class*=cardWarning-] div[class*=warning-] {
 }
 
 div[class*=keyboardShortcutsModal-] {
-    background-color: #181825 !important;
+    background-color: #11111b !important;
 }
 
 div[class*=keyboardShortcutsModal-] div[class|=keybindShortcut] span[class|=key] {
@@ -2072,7 +2072,7 @@ div[class*=keyboardShortcutsModal-] div[class|=keybindShortcut] span[class|=key]
 
 .react-datepicker,
 .react-datepicker__header {
-    background-color: #181825 !important;
+    background-color: #11111b !important;
 }
 
 .react-datepicker__day {

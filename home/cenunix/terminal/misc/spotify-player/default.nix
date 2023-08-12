@@ -1,16 +1,16 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
 }: {
   home.packages = with pkgs; [
     spotify-player # spotify command line interface
   ];
   xdg.configFile."spotify-player/app.toml".text = ''
     client_id = "545909c803cb4b1ba7e439a768cd636f"
+    theme = "Catppuccin-mocha"
     app_refresh_duration_in_ms = 32
     playback_refresh_duration_in_ms = 0
     cover_image_refresh_duration_in_ms = 2000
