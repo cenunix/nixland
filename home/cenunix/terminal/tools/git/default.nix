@@ -16,7 +16,7 @@
     # a command-line tool for github
     gh = {
       enable = true;
-      enableGitCredentialHelper = true;
+      gitCredentialHelper.enable = true;
       extensions = with pkgs; [
         gh-dash # dashboard with pull requests and issues
         gh-eco # explore the ecosystem
