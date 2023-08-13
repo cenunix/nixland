@@ -1,13 +1,14 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: let
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
+}:
+let
   ifTheyExist = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
-in {
+in
+{
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
     # FIXME: Replace with your username
@@ -34,7 +35,7 @@ in {
           "kvm"
           "qemu-libvirtd"
         ];
-      openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMnF0E4TddhnSUdsHWaTwTv2x7onGOkWhL7BtcKGQgx4 cenunix@europa"];
+      openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINhMaC2Hg0H3VjCiFyOlQmn8OWRuKSR05LIP1jdp5zpu cenunix@europa" ];
     };
   };
 }

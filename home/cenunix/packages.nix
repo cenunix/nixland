@@ -19,11 +19,11 @@ in
       nitch
       inputs.agenix.packages.${pkgs.system}.default
       linuxKernel.packages.linux_zen.cpupower
-      youtube-dl
-      vlc
-      ffmpeg
-      my-mpvpaper
-      mpv
+      gparted
+      polkit
+      libsForQt5.polkit-kde-agent
+      polkit_gnome
+      xorg.xhost
     ]
     ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [
       lunatask
