@@ -8,9 +8,24 @@
 }:
 with lib; let
   cfg = config.modules.system.server;
+  service-name = "${config.virtualisation.oci-containers.backend}-debrid";
 in
 {
+
   config = mkIf (cfg.mediaServer) {
+    systemd.services.${service-name} = {
+      preStart = ''sleep 30'';
+      serviceConfig = {
+        Restart = "always";
+        TimeoutStartSec = lib.mkForce 35;
+        TimeoutStopSec = lib.mkForce 15;
+      };
+      wantedBy = [ "graphical.target" ];
+      # partOf = [
+      #   "docker-plex.service"
+      #   "docker-jackett.service"
+      # ];
+    };
     systemd.services.foo = {
       script = ''
         if ${pkgs.docker}/bin/docker run --rm -i -v=realdebrid:/tmp/myvolume busybox find /tmp/myvolume | grep -q '/tmp/myvolume'; then
@@ -28,6 +43,26 @@ in
         Type = "oneshot";
       };
     };
+    systemd.extraConfig = ''
+      DefaultTimeoutStopSec=10s
+    '';
+    # systemd.services.plex_debrid = {
+    #   script = ''
+    #     if [ ! "$(${pkgs.docker}/bin/docker ps -a -q -f name=debrid)" ]; then
+    #       if [ "$(${pkgs.docker}/bin/docker ps -aq -f status=exited -f name=debrid)" ]; then
+    #         # cleanup
+    #         ${pkgs.docker}/bin/docker rm debrid
+    #       fi
+    #       # run your container
+    #       ${pkgs.docker}/bin/docker run -v /home/cenunix/Videos/mediaserver/plex_debrid:/config --name debrid --net host -t itstoggle/plex_debrid
+    #     fi
+    #   '';
+    #   serviceConfig = {
+    #     Type = "oneshot";
+    #   };
+    #   wantedBy = [ "graphical.target" ];
+    #   after = [ "foo.service" ];
+    # };
 
     virtualisation = {
       docker = {
@@ -59,6 +94,28 @@ in
             "realdebrid:/torrents"
           ];
         };
+        containers.debrid = {
+          image = "itstoggle/plex_debrid";
+          autoStart = true;
+          # cmd = [
+          #   "--volume-driver=rclone"
+          # ];
+          extraOptions = [
+            "--network=host"
+            "--interactive"
+            # "--pull=always"
+          ];
+          environment = {
+            TZ = "America/Los_Angeles";
+            PUID = "1000";
+            PGID = "1000";
+            AUTO_UPDATE = "true";
+            VERSION = "docker";
+          };
+          volumes = [
+            "/home/cenunix/Videos/mediaserver/plex_debrid:/config"
+          ];
+        };
         containers.jackett = {
           image = "lscr.io/linuxserver/jackett:latest";
           autoStart = true;
@@ -81,23 +138,6 @@ in
           ];
           # extraOptions = [ "--pull=always" ];
         };
-        # containers.debrid = {
-        #   image = "itstoggle/plex_debrid";
-        #   autoStart = false;
-        #   environment = {
-        #     TZ = "America/Los_Angeles";
-        #     PUID = "1000";
-        #     PGID = "1000";
-        #     VERSION = "docker";
-        #   };
-        #   extraOptions = [
-        #   "--network=host"
-        #   "--interactive"
-        #   ];
-        #   volumes = [
-        #     "/home/cenunix/repos/plex_debrid:/config"
-        #   ];
-        # };
       };
     };
   };
