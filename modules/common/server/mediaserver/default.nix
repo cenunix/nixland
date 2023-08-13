@@ -21,10 +21,6 @@ in
         TimeoutStopSec = lib.mkForce 15;
       };
       wantedBy = [ "graphical.target" ];
-      # partOf = [
-      #   "docker-plex.service"
-      #   "docker-jackett.service"
-      # ];
     };
     systemd.services.foo = {
       script = ''
@@ -46,24 +42,6 @@ in
     systemd.extraConfig = ''
       DefaultTimeoutStopSec=10s
     '';
-    # systemd.services.plex_debrid = {
-    #   script = ''
-    #     if [ ! "$(${pkgs.docker}/bin/docker ps -a -q -f name=debrid)" ]; then
-    #       if [ "$(${pkgs.docker}/bin/docker ps -aq -f status=exited -f name=debrid)" ]; then
-    #         # cleanup
-    #         ${pkgs.docker}/bin/docker rm debrid
-    #       fi
-    #       # run your container
-    #       ${pkgs.docker}/bin/docker run -v /home/cenunix/Videos/mediaserver/plex_debrid:/config --name debrid --net host -t itstoggle/plex_debrid
-    #     fi
-    #   '';
-    #   serviceConfig = {
-    #     Type = "oneshot";
-    #   };
-    #   wantedBy = [ "graphical.target" ];
-    #   after = [ "foo.service" ];
-    # };
-
     virtualisation = {
       docker = {
         enable = true;
@@ -75,9 +53,6 @@ in
         containers.plex = {
           image = "lscr.io/linuxserver/plex:latest";
           autoStart = true;
-          # cmd = [
-          #   "--volume-driver=rclone"
-          # ];
           extraOptions = [
             "--network=host"
             # "--pull=always"
@@ -97,9 +72,6 @@ in
         containers.debrid = {
           image = "itstoggle/plex_debrid";
           autoStart = true;
-          # cmd = [
-          #   "--volume-driver=rclone"
-          # ];
           extraOptions = [
             "--network=host"
             "--interactive"
