@@ -9,7 +9,7 @@
     spotify-player # spotify command line interface
   ];
   xdg.configFile."spotify-player/app.toml".text = ''
-    client_id = "545909c803cb4b1ba7e439a768cd636f"
+    client_id = "86219ab6f46749139e77111ee8158d2fsudo"
     theme = "Catppuccin-mocha"
     app_refresh_duration_in_ms = 32
     playback_refresh_duration_in_ms = 0
