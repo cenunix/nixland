@@ -1,7 +1,6 @@
-{
-  lib,
-  pkgs,
-  ...
+{ lib
+, pkgs
+, ...
 }:
 with lib; {
   options.modules.system = {
@@ -20,8 +19,8 @@ with lib; {
     # a list of filesystems available on the system
     # it will enable services based on what strings are found in the list
     fs = mkOption {
-      type = types.listOf types.string;
-      default = ["vfat" "ext4" "btrfs"]; # TODO: zfs, ntfs
+      type = types.listOf types.str;
+      default = [ "vfat" "ext4" "btrfs" ]; # TODO: zfs, ntfs
     };
 
     # should we enable emulation for additional architechtures?
@@ -67,7 +66,7 @@ with lib; {
 
       # the bootloader that should be used
       loader = mkOption {
-        type = types.enum ["none" "grub" "systemd-boot" "x13s-boot"];
+        type = types.enum [ "none" "grub" "systemd-boot" "x13s-boot" ];
         default = "none";
         description = "The bootloader that should be used for the device.";
       };
@@ -76,9 +75,9 @@ with lib; {
     # should virtualization (docker, qemu, podman etc.) be enabled
     virtualization = {
       enable = mkEnableOption "virtualization";
-      docker = {enable = mkEnableOption "docker";};
-      podman = {enable = mkEnableOption "podman";};
-      qemu = {enable = mkEnableOption "qemu";};
+      docker = { enable = mkEnableOption "docker"; };
+      podman = { enable = mkEnableOption "podman"; };
+      qemu = { enable = mkEnableOption "qemu"; };
     };
 
     # should we optimize tcp networking
@@ -110,7 +109,7 @@ with lib; {
       };
 
       tor = {
-        enable = mkEnableOption "Tor daemon" // {default = true;};
+        enable = mkEnableOption "Tor daemon" // { default = true; };
       };
     };
 
