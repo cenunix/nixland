@@ -1,20 +1,20 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
 }:
 with lib; let
   device = config.modules.device;
-in {
+in
+{
   config = {
     modules = {
       device = {
         type = "armlaptop";
         monitors = [
-          ",preferred,auto,1"
+          ",preferred,auto,1.1"
         ];
         hasBluetooth = true;
         hasSound = true;
@@ -37,7 +37,7 @@ in {
           chess.enable = true;
           steam.enable = false;
         };
-        override = {};
+        override = { };
       };
       usrEnv = {
         isWayland = true;

@@ -1,12 +1,11 @@
 # This is your system's configuration file.
 # Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
 }: {
   # You can import other NixOS modules here
   imports = [
@@ -25,6 +24,7 @@
     ./system.nix
     ./services.nix
   ];
+  services.upower.enable = true;
   # nix.buildMachines = [
   #   {
   #     hostName = "europa";
@@ -63,8 +63,8 @@
       #   });
       # })
       (final: prev: {
-        qrtr = prev.callPackage ../../pkgs/qrtr.nix {};
-        pd-mapper = final.callPackage ../../pkgs/pd-mapper.nix {inherit (final) qrtr;};
+        qrtr = prev.callPackage ../../pkgs/qrtr.nix { };
+        pd-mapper = final.callPackage ../../pkgs/pd-mapper.nix { inherit (final) qrtr; };
         compressFirmwareXz = lib.id;
       })
     ];
@@ -101,8 +101,8 @@
   # hardware.firmware = [ pkgs.linux-firmware pkgs.x13s-firmware ];
 
   environment.systemPackages = with pkgs; [
-    (callPackage ../../pkgs/qrtr.nix {})
-    (callPackage ../../pkgs/pd-mapper.nix {})
+    (callPackage ../../pkgs/qrtr.nix { })
+    (callPackage ../../pkgs/pd-mapper.nix { })
     alsa-ucm-conf-x13s
   ];
 

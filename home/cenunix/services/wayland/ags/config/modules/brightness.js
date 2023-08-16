@@ -3,7 +3,7 @@ const { exec, execAsync } = ags.Utils;
 
 // Change this to whatever keyboard you have
 // you can check with brightnessctl --list
-const KBD = 'asus::kbd_backlight';
+const KBD = 'backlight::backlight';
 
 class BrightnessService extends Service {
     static { Service.register(this); }

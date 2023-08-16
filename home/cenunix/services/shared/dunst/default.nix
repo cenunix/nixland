@@ -1,15 +1,16 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: let
-  volume = let
-    pamixer = lib.getExe pkgs.pamixer;
-    notify-send = pkgs.libnotify + "/bin/notify-send";
-  in
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
+}:
+let
+  volume =
+    let
+      pamixer = lib.getExe pkgs.pamixer;
+      notify-send = pkgs.libnotify + "/bin/notify-send";
+    in
     pkgs.writeShellScriptBin "volume" ''
       #!/bin/sh
 
@@ -33,10 +34,11 @@
               -u low
       fi
     '';
-in {
-  home.packages = [volume];
+in
+{
+  home.packages = [ volume ];
   services.dunst = {
-    enable = true;
+    enable = false;
     package = pkgs.dunst.overrideAttrs (oldAttrs: {
       src = pkgs.fetchFromGitHub {
         owner = "sioodmy";

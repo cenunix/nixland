@@ -55,7 +55,7 @@ Widget.widgets['battery/indicator'] = ({
 Widget.widgets['battery/level-label'] = props => Widget({
     ...props,
     type: 'label',
-    connections: [[Battery, label => label.label = `${Battery.percent}%`]],
+    connections: [[Battery, label => label.label = `${Battery.percent.toFixed(0)}%`]],
 });
 
 Widget.widgets['battery/progress'] = props => Widget({
@@ -83,7 +83,7 @@ Widget.widgets['battery/progress'] = props => Widget({
                 connections: [[Battery, l => {
                     l.label = Battery.charging || Battery.charged
                         ? '󱐋'
-                        : `${Battery.percent}%`;
+                        : `${Battery.percent.toFixed(0)}%`;
                 }]],
             },
         ],
