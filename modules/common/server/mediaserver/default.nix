@@ -45,7 +45,7 @@ in
     virtualisation = {
       docker = {
         enable = true;
-        enableNvidia = true;
+        # enableNvidia = true;
       };
       oci-containers = {
         backend = "docker";
@@ -55,6 +55,7 @@ in
           autoStart = true;
           extraOptions = [
             "--network=host"
+            "--device=/dev/dri:/dev/dri"
             # "--pull=always"
           ];
           environment = {
