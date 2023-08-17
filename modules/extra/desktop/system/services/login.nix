@@ -65,14 +65,20 @@ in
         gnome-keyring.enable = true;
       };
 
-      logind = {
-        lidSwitch = "suspend-then-hibernate";
-        lidSwitchExternalPower = "lock";
-        extraConfig = ''
-          HandlePowerKey=suspend-then-hibernate
-          HibernateDelaySec=3600
-        '';
-      };
+      logind =
+        if (sys.server.enable)
+        then {
+          lidSwitch = "ignore";
+          lidSwitchExternalPower = "ignore";
+        }
+        else {
+          lidSwitch = "suspend-then-hibernate";
+          lidSwitchExternalPower = "lock";
+          extraConfig = ''
+            HandlePowerKey=suspend-then-hibernate
+            HibernateDelaySec=3600
+          '';
+        };
     };
   };
 }

@@ -29,6 +29,10 @@ in
         sound.enable = true;
         bluetooth.enable = true;
         username = "cenunix";
+        server = {
+          enable = true;
+          mediaServer = true;
+        };
       };
       programs = {
         cli.enable = true;
@@ -45,6 +49,7 @@ in
       usrEnv = {
         isWayland = true;
         desktop = "Hyprland";
+        windowManager = true;
         useHomeManager = true;
         autologin = true;
       };

@@ -65,7 +65,7 @@ in
             VERSION = "docker";
           };
           volumes = [
-            "/home/cenunix/Videos/mediaserver:/config"
+            "/home/cenunix/mediaserver:/config"
             "realdebrid:/torrents"
           ];
         };
@@ -85,7 +85,7 @@ in
             VERSION = "docker";
           };
           volumes = [
-            "/home/cenunix/Videos/mediaserver/plex_debrid:/config"
+            "/home/cenunix/mediaserver/plex_debrid:/config"
           ];
         };
         containers.jackett = {
@@ -105,7 +105,7 @@ in
             "9117:9117"
           ];
           volumes = [
-            "/home/cenunix/Videos/mediaserver:/config"
+            "/home/cenunix/mediaserver:/config"
             "/dev/null:/downloads"
           ];
           # extraOptions = [ "--pull=always" ];
