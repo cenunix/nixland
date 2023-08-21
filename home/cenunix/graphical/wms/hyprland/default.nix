@@ -88,13 +88,6 @@ in
       };
     };
     systemd.user.services = {
-      # swaybg = mkService {
-      #   Unit.Description = "Wallpaper chooser";
-      #   Service = {
-      #     ExecStart = "${lib.getBin pkgs.swaybg} -i ${./catpuccino-4k.png}";
-      #     Restart = "always";
-      #   };
-      # };
       cliphist = mkService {
         Unit.Description = "Clipboard history";
         Service = {
@@ -115,11 +108,11 @@ in
     wayland.windowManager.hyprland = {
       enable = true;
       package = inputs.hyprland.packages.${pkgs.system}.default.override {
-        nvidiaPatches = (device.gpu == "nvidia") || (device.gpu == "hybrid-nv");
+        enableNvidiaPatches = (device.gpu == "nvidia") || (device.gpu == "hybrid-nv");
       };
       xwayland = {
         enable = true;
-        hidpi = true;
+        # hidpi = true;
       };
       plugins = [
         inputs.hyprland-plugins.packages.${pkgs.system}.csgo-vulkan-fix
