@@ -6,6 +6,6 @@
 , ...
 }: {
   imports = [
-    # ./dunst
+    ./dunst
   ];
 }

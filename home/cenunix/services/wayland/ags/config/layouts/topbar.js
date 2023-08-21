@@ -67,7 +67,7 @@ var windows = [
     ...ags.Service.Hyprland.HyprctlGet('monitors').map(({ id }) => ([
         // dock(id),
         notifications(id),
-        desktop(id),
+        // desktop(id),
         ...corners(id),
         panel(id),
     ])).flat(),
