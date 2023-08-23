@@ -12,6 +12,7 @@
         enable = true;
         enableOffsetEncodingWorkaround = true;
         server = {
+          package = pkgs.clang-tools_16;
           extraOptions = {
             # keys = {__raw = ''{ "<leader>cR", "<cmd>ClangdSwitchSourceHeader<cr>", desc = "Switch Source/Header (C/C++)" }'';};
             cmd = [
@@ -35,7 +36,7 @@
         };
       };
       nix.enable = true;
-      # lspsaga.enable = true;
+      lspsaga.enable = true;
       lsp = {
         enable = true;
         # preConfig = ''
@@ -57,6 +58,7 @@
           rust-analyzer.enable = true;
           yamlls.enable = true;
           pyright.enable = true;
+          # clangd.enable = true;
           tsserver = {
             enable = true;
             extraOptions = {
@@ -66,6 +68,7 @@
           };
           gopls = {
             enable = true;
+            autostart = true;
             filetypes = [
               "go"
               "gomod"

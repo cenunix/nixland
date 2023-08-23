@@ -1,13 +1,12 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
 }: {
   config = {
-    plugins.indent-blankline.enable = true;
+    # plugins.indent-blankline.enable = true;
     # plugins.lspkind = {
     #   enable = true;
     #   cmp = {
@@ -49,7 +48,7 @@
       };
       preselect = "None";
       snippet.expand = "luasnip";
-      mappingPresets = ["insert" "cmdline"];
+      mappingPresets = [ "insert" "cmdline" ];
       mapping = {
         "<C-u>" = ''cmp.mapping.scroll_docs(-4)'';
         "<C-d>" = ''cmp.mapping.scroll_docs(4)'';
@@ -57,7 +56,7 @@
         "<C-e>" = "cmp.mapping.abort()";
         "<CR>" = "cmp.mapping.confirm({ select = false })";
         "<Tab>" = {
-          modes = ["i" "s"];
+          modes = [ "i" "s" ];
           action = ''
               function(fallback)
                 if cmp.visible() then
@@ -73,7 +72,7 @@
           '';
         };
         "<S-Tab>" = {
-          modes = ["i" "s"];
+          modes = [ "i" "s" ];
           action = ''
             function(fallback)
               if cmp.visible() then
@@ -111,10 +110,10 @@
       # };
       sources = [
         # { name = "copilot"; }
-        {name = "nvim_lsp";}
-        {name = "luasnip";} #-- For luasnip users.
-        {name = "path";}
-        {name = "buffer";}
+        { name = "nvim_lsp"; }
+        { name = "luasnip"; } #-- For luasnip users.
+        { name = "path"; }
+        { name = "buffer"; }
       ];
     };
 
