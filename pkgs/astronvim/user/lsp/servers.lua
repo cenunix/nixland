@@ -2,7 +2,6 @@
 return {
 	"pyright",
 	"nil_ls",
-	"rust_analyzer",
 	"tsserver",
 	"gopls",
 	"bashls",
@@ -12,4 +11,6 @@ return {
 	"dartls",
 	"lua_ls",
 	"clangd",
+	"yamlls",
+	"gopls",
 }

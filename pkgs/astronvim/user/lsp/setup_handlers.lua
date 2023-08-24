@@ -6,13 +6,6 @@ local function fallback_setup(plugin, server, opts)
 end
 
 return {
-  tsserver = function(...)
-    fallback_setup("typescript", ...)
-  end,
-  clangd = function(...) fallback_setup("clangd_extensions", ...) end,
-  rust_analyzer = function(...)
-    fallback_setup("rust-tools", ...)
-  end,
 }
 
 -- local function lsp_plugin_setup(plugin, server, opts)

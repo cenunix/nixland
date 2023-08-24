@@ -1,100 +1,121 @@
-/* exported notifications, desktop, corners, indicator, dock, separator,
-            launcher bar applauncher, overview, powermenu, verification*/
+const { Window, CenterBox, Box, Button } = ags.Widget;
+import { Corner } from '../modules/corner.js';
+import { OnScreenIndicator } from '../modules/onscreenindicator.js';
+import { FloatingDock } from './widgets/dock.js';
+import { Applauncher } from '../modules/applauncher.js';
+import { Overview } from './widgets/overview.js';
+import { PopupLayout } from './widgets/popuplayout.js';
+import { Desktop as DesktopWidget } from './widgets/desktop.js';
+import * as dashboard from './widgets/dashboard.js';
+import * as quicksettings from './widgets/quicksettings.js';
+import * as powermenu from './widgets/powermenu.js';
+import * as notifications from '../modules/notifications.js';
+
+// bar
+export const Launcher = ({ child }) => Button({
+    className: 'launcher panel-button',
+    connections: [[ags.App, (btn, win, visible) => {
+        btn.toggleClassName('active', win === 'overview' && visible);
+    }]],
+    onClicked: () => ags.App.toggleWindow('overview'),
+    child: Box({ children: [child] }),
+});
+
+export const Bar = ({ start, center, end, anchor, monitor }) => Window({
+    name: `bar${monitor}`,
+    exclusive: true,
+    monitor,
+    anchor,
+    child: CenterBox({
+        className: 'panel',
+        startWidget: Box({ children: start, className: 'start' }),
+        centerWidget: Box({ children: center, className: 'center' }),
+        endWidget: Box({ children: end, className: 'end' }),
+    }),
+});
 
 // static
-var notifications = (monitor, transition, anchor) => ({
+export const Notifications = (monitor, transition, anchor) => Window({
     monitor,
     name: `notifications${monitor}`,
     anchor,
-    child: { type: 'notifications/popup-list', transition },
+    child: notifications.PopupList({ transition }),
 });
 
-var desktop = monitor => ({
+export const Desktop = monitor => Window({
     monitor,
     name: `desktop${monitor}`,
+    className: 'desktop',
     anchor: ['top', 'bottom', 'left', 'right'],
-    child: { type: 'desktop' },
+    child: DesktopWidget(),
     layer: 'background',
 });
 
-var corners = (monitor, places = ['topleft', 'topright', 'bottomleft', 'bottomright']) => places.map(place => ({
+export const Corners = (
     monitor,
+    places = ['topleft', 'topright', 'bottomleft', 'bottomright'],
+) => places.map(place => Window({
     name: `corner${monitor}${place}`,
-    className: 'corners',
+    monitor,
+    className: 'corner',
     anchor: [place.includes('top') ? 'top' : 'bottom', place.includes('right') ? 'right' : 'left'],
-    child: { type: 'corner', place },
+    child: Corner(place),
 }));
 
-var indicator = monitor => ({
-    monitor,
+export const OSDIndicator = monitor => Window({
     name: `indicator${monitor}`,
+    monitor,
     className: 'indicator',
     layer: 'overlay',
     anchor: ['right'],
-    child: { type: 'on-screen-indicator' },
+    child: OnScreenIndicator(),
 });
 
-var dock = monitor => ({
+export const Dock = monitor => Window({
     monitor,
     name: `dock${monitor}`,
     anchor: ['bottom'],
-    child: { type: 'floating-dock' },
-});
-
-// bar
-var launcher = (size = ags.Utils.getConfig()?.baseIconSize || 16) => ({
-    type: 'button',
-    className: 'launcher panel-button',
-    connections: [[ags.App, (btn, win, visible) => {
-        btn.toggleClassName('active', win === 'applauncher' && visible);
-    }]],
-    onClick: () => ags.App.toggleWindow('applauncher'),
-    child: { type: 'distro-icon', size },
-});
-
-var bar = ({ anchor, start, center, end }) => monitor => ({
-    name: `bar${monitor}`,
-    monitor,
-    anchor,
-    exclusive: true,
-    child: {
-        type: 'centerbox',
-        className: 'panel',
-        children: [
-            { className: 'start', type: 'box', children: start },
-            { className: 'center', type: 'box', children: center },
-            { className: 'end', type: 'box', children: end },
-        ],
-    },
+    child: FloatingDock(),
 });
 
 //popups
-const popup = (name, child) => ({
+const Popup = (name, child) => Window({
     name,
     popup: true,
     focusable: true,
     layer: 'overlay',
-    child: {
-        type: 'layout',
+    child: PopupLayout({
         layout: 'center',
         window: name,
-        child,
-    },
+        child: child(),
+    }),
 });
 
-var applauncher = popup('applauncher', {
-    type: 'applauncher',
-    className: 'applauncher',
+export const ApplauncherPopup = () => Popup('applauncher', Applauncher);
+export const OverviewPopup = () => Popup('overview', Overview);
+export const PowermenuPopup = () => Popup('powermenu', powermenu.PopupContent);
+export const VerificationPopup = () => Popup('verification', powermenu.Verification);
+
+export const Dashboard = ({ position }) => Window({
+    name: 'dashboard',
+    popup: true,
+    focusable: true,
+    anchor: position,
+    child: PopupLayout({
+        layout: position,
+        window: 'dashboard',
+        child: dashboard.PopupContent(),
+    }),
 });
 
-var overview = popup('overview', {
-    type: 'overview',
-});
-
-var powermenu = popup('powermenu', {
-    type: 'powermenu/popup-content',
-});
-
-var verification = popup('verification', {
-    type: 'powermenu/verification',
+export const Quicksettings = ({ position }) => Window({
+    name: 'quicksettings',
+    popup: true,
+    focusable: true,
+    anchor: position,
+    child: PopupLayout({
+        layout: position,
+        window: 'quicksettings',
+        child: quicksettings.PopupContent(),
+    }),
 });

@@ -6,7 +6,6 @@ return {
     -- overrides `require("mason-lspconfig").setup(...)`
     opts = {
       ensure_installed = {
-        -- "clangd",
       },
     },
   },
@@ -15,14 +14,15 @@ return {
     "jay-babu/mason-null-ls.nvim",
     -- overrides `require("mason-null-ls").setup(...)`
     opts = {
-      ensure_installed = {},
+      ensure_installed = {
+      },
     },
   },
   {
     "jay-babu/mason-nvim-dap.nvim",
     -- overrides `require("mason-nvim-dap").setup(...)`
     opts = {
-      ensure_installed = { "dart" },
+      ensure_installed = { "dart", "codelldb", },
     },
   },
 }

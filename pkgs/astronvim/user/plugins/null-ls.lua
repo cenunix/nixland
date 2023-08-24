@@ -12,18 +12,21 @@ return {
       null_ls.builtins.formatting.gofumpt,
       null_ls.builtins.formatting.black,
       null_ls.builtins.formatting.shfmt,
-      null_ls.builtins.formatting.prettier,
+      null_ls.builtins.formatting.prettierd,
       null_ls.builtins.formatting.stylelint,
       null_ls.builtins.formatting.stylua,
       null_ls.builtins.formatting.nixpkgs_fmt,
-
+      null_ls.builtins.formatting.clang_format,
+      null_ls.builtins.formatting.rustfmt,
+      -- Code Actions
+      null_ls.builtins.code_actions.eslint_d,
+      null_ls.builtins.code_actions.statix,
       -- Diagnostics
       null_ls.builtins.diagnostics.statix,
+      null_ls.builtins.diagnostics.eslint_d,
       null_ls.builtins.diagnostics.deadnix,
       null_ls.builtins.diagnostics.jsonlint,
-      null_ls.builtins.diagnostics.cpplint.with({
-        args = { "--filter=-legal", "$FILENAME" },
-      }),
+      null_ls.builtins.diagnostics.clang_check,
     }
     return config -- return final config table
   end,

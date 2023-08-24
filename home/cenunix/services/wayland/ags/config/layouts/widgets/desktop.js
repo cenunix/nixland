@@ -1,13 +1,54 @@
-const { Widget } = ags;
-const { Theme } = ags.Service;
+import { Clock } from '../../modules/clock.js';
+import { Separator } from '../../modules/misc.js';
+const { Theme, System } = ags.Service;
+const { MenuItem, Menu, Box, Label, Icon, EventBox, CenterBox } = ags.Widget;
 
-Widget.widgets['desktop'] = props => Widget({
+const Item = (label, icon, onActivate) => MenuItem({
+    onActivate,
+    child: Box({
+        children: [
+            Icon(icon),
+            Label({
+                label,
+                hexpand: true,
+                xalign: 0,
+            }),
+        ],
+    }),
+});
+
+export const Desktop = props => EventBox({
     ...props,
-    type: 'box',
-    className: 'desktop',
-    children: [{
-        type: 'box',
-        orientation: 'vertical',
+    onSecondaryClick: (_, event) => Menu({
+        className: 'desktop',
+        children: [
+            MenuItem({
+                child: Box({
+                    children: [
+                        Icon('system-shutdown-symbolic'),
+                        Label({
+                            label: 'System',
+                            hexpand: true,
+                            xalign: 0,
+                        }),
+                    ],
+                }),
+                submenu: Menu({
+                    children: [
+                        Item('Shutdown', 'system-shutdown-symbolic', () => System.action('Shutdown')),
+                        Item('Log Out', 'system-log-out-symbolic', () => System.action('Log Out')),
+                        Item('Reboot', 'system-reboot-symbolic', () => System.action('Log Out')),
+                        Item('Sleep', 'weather-clear-night-symbolic', () => System.action('Log Out')),
+                    ],
+                }),
+            }),
+            MenuItem({ className: 'separator' }),
+            Item('Settings', 'org.gnome.Settings-symbolic', Theme.openSettings),
+        ],
+    }).popup_at_pointer(event),
+    onMiddleClick: print,
+    child: Box({
+        vertical: true,
         vexpand: true,
         hexpand: true,
         connections: [[Theme, box => {
@@ -19,44 +60,35 @@ Widget.widgets['desktop'] = props => Widget({
             box.setStyle(`margin: ${Number(offset)}px;`);
         }]],
         children: [
-            {
-                type: 'box',
-                className: 'clock-box-shadow',
-                children: [{
-                    type: 'centerbox',
-                    className: 'clock-box',
-                    children: [
-                        {
-                            type: 'clock',
-                            className: 'clock',
-                            halign: 'center',
-                            format: '%H',
-                        },
-                        {
-                            type: 'box',
-                            className: 'separator-box',
-                            orientation: 'vertical',
-                            hexpand: true,
-                            halign: 'center',
-                            children: [
-                                { type: 'separator', valign: 'center', vexpand: true },
-                                { type: 'separator', valign: 'center', vexpand: true },
-                            ],
-                        },
-                        {
-                            type: 'clock',
-                            halign: 'center',
-                            className: 'clock',
-                            format: '%M',
-                        },
-                    ],
-                }],
-            },
-            {
-                type: 'clock',
-                className: 'date',
-                format: '%B %e. %A',
-            },
+            // Box({
+            //     className: 'clock-box-shadow',
+            //     children: [CenterBox({
+            //         className: 'clock-box',
+            //         children: [
+            //             Clock({
+            //                 className: 'clock',
+            //                 halign: 'center',
+            //                 format: '%H',
+            //             }),
+            //             Box({
+            //                 className: 'separator-box',
+            //                 vertical: true,
+            //                 hexpand: true,
+            //                 halign: 'center',
+            //                 children: [
+            //                     Separator({ valign: 'center', vexpand: true }),
+            //                     Separator({ valign: 'center', vexpand: true }),
+            //                 ],
+            //             }),
+            //             Clock({
+            //                 className: 'clock',
+            //                 halign: 'center',
+            //                 format: '%M',
+            //             }),
+            //         ],
+            //     })],
+            // }),
+            // Clock({ format: '%B %e. %A', className: 'date' }),
         ],
-    }],
+    }),
 });

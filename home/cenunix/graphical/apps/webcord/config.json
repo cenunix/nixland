@@ -25,7 +25,7 @@
                 "video": null,
                 "audio": true,
                 "fullscreen": true,
-                "notifications": null,
+                "notifications": true,
                 "display-capture": true,
                 "background-sync": false
             }

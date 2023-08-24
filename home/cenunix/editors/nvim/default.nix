@@ -1,12 +1,11 @@
-{
-  flake,
-  config,
-  pkgs,
-  lib,
-  ...
+{ flake
+, config
+, pkgs
+, lib
+, ...
 }:
 # some configurations are taken from
-# https://github.com/NvChad/NvChad
+# https://github.com/astronvim/astronvim
 let
   inherit (lib) concatStringsSep optional;
   inherit (config.lib.file) mkOutOfStoreSymlink;
@@ -20,7 +19,8 @@ let
     mkdir -p ${config.xdg.dataHome}/nvim/site/plugin
     ${pkgs.python39}/bin/python ${populateEnv} -o ${config.xdg.dataHome}/nvim/site/plugin
   '';
-in {
+in
+{
   # Neovim
 
   # https://rycee.gitlab.io/home-manager/options.html#opt-programs.neovim.enable
@@ -32,11 +32,13 @@ in {
   };
 
   xdg.configFile."nvim" = {
-    source = "${pkgs.nvchad}";
+    source = "${pkgs.astronvim}";
     # recursive = true;
   };
 
   home.packages = with pkgs; [
+
+    gcc
     lua-language-server
     stylua
     shfmt
@@ -45,23 +47,35 @@ in {
     python311Packages.flake8
     python311Packages.black
     python311Packages.python-lsp-server
+    nodePackages_latest.pyright
 
     # web stuff
-    nodePackages_latest.prettier
-    nodePackages_latest.eslint_d
-    nodePackages_latest.vscode-langservers-extracted
+    prettierd
+    eslint_d
+    nodejs-slim
+    vscode-langservers-extracted
     nodePackages_latest.typescript-language-server
-
+    nodePackages_latest.stylelint
+    nodePackages_latest.yaml-language-server
+    nodePackages_latest.npm
+    nodePackages_latest.live-server
+    #C/C++
+    clang-tools_16
+    #go
+    go
+    gopls
+    gofumpt
     # rust
+    cargo
     rust-analyzer
     rustfmt
-
     # config
     taplo
-
     # nix
+    nil
+    deadnix
+    statix
     nixpkgs-fmt
-    rnix-lsp
 
     (pkgs.writeShellScriptBin "update-nvim-env" ''
       ${populateEnvScript}
@@ -79,7 +93,7 @@ in {
     '')
   ];
 
-  home.activation.neovim = lib.hm.dag.entryAfter ["writeBoundary"] ''
+  home.activation.neovim = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     echo "Populating neovim env..."
     ${populateEnvScript}'';
 
@@ -103,4 +117,3 @@ in {
   # };
 }
 # vim: foldmethod=marker
-

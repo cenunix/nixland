@@ -173,3 +173,7 @@ var cherry = {
   radii: 13,
   bg_color: "transparentize(#171717, 0.3)",
 };
+
+export default [
+    kitty_dark,
+];

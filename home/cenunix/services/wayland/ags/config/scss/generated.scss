@@ -13,9 +13,9 @@ $bg_color: #11111b;
 $fg_color: #cdd6f4;
 $hover_fg: #b4befe;
 
-$wm_gaps: 8px;
-$radii: 12px;
-$spacing: 12px;
+$wm_gaps: 22px;
+$radii: 9px;
+$spacing: 9px;
 
 $accent: $blue;
 $accent_fg: #141414;
@@ -32,19 +32,19 @@ $shadow: rgba(0, 0, 0, .6);
 $text_shadow: 2px 2px 2px $shadow;
 $icon_shadow: 2px 2px $shadow;
 
-$popover_radius: 20.4px;
+$popover_radius: 15.299999999999999px;
 $popover_border_color: transparentize($fg_color, 0.96);
-$popover_padding: 21.6px;
+$popover_padding: 16.2px;
 $drop_shadow: true;
 
 $transition: 200ms;
 
-$font_size: 15px;
+$font_size: 16px;
 $font: 'FiraCode Nerd Font';
-$mono_font: 'FiraCode Nerd Font', monospace;
+$mono_font: 'FiraCode Nerd Font Mono', monospace;
 $wallpaper_fg: white;
 $shader_fg: white;
 
-$screen_corners: false;
-$bar_style: separated;
+$screen_corners: true;
+$bar_style: normal;
 $layout: topbar;
