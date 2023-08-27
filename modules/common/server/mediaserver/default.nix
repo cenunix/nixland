@@ -22,6 +22,12 @@ in
       };
       wantedBy = [ "graphical.target" ];
     };
+    systemd.services.docker-net = {
+      script = ''
+        docker network inspect mynet123 >/dev/null 2>&1 || \
+        docker network create --subnet=172.18.0.0/16 mynet123
+      '';
+    };
     systemd.services.foo = {
       script = ''
         if ${pkgs.docker}/bin/docker run --rm -i -v=realdebrid:/tmp/myvolume busybox find /tmp/myvolume | grep -q '/tmp/myvolume'; then
@@ -117,7 +123,8 @@ in
           image = "sctx/overseerr:latest";
           autoStart = true;
           extraOptions = [
-            "--network=host"
+            "--network=mynet123"
+            "--ip=172.18.0.22"
           ];
           environment = {
             TZ = "America/Los_Angeles";
