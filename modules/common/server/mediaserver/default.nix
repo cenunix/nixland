@@ -135,6 +135,19 @@ in
           ];
           # extraOptions = [ "--pull=always" ];
         };
+        containers.nginx-pm = {
+          image = "jc21/nginx-proxy-manager:latest";
+          autoStart = true;
+          ports = [
+            "80:80"
+            "443:443"
+            "81:81"
+          ];
+          volumes = [
+            "./data:/data"
+            "./letsencrypt:/etc/letsencrypt"
+          ];
+        };
       };
     };
   };
