@@ -126,6 +126,7 @@ in
             AUTO_UPDATE = "true";
             VERSION = "docker";
             LOG_LEVEL = "debug";
+            PORT = "5055"; #optional
           };
           ports = [
             "5055:5055"
