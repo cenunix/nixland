@@ -131,7 +131,7 @@ in
             "5055:5055"
           ];
           volumes = [
-            "/home/cenunix/mediaserver:/config"
+            "/home/cenunix/mediaserver:/app/config"
           ];
           # extraOptions = [ "--pull=always" ];
         };
