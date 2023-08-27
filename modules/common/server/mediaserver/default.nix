@@ -144,8 +144,8 @@ in
             "81:81"
           ];
           volumes = [
-            "./data:/data"
-            "./letsencrypt:/etc/letsencrypt"
+            "/home/cenunix/mediaserver/nginx-pm/data:/data"
+            "/home/cenunix/mediaserver/nginx-pm/letsencrypt:/etc/letsencrypt"
           ];
         };
       };
