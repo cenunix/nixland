@@ -24,6 +24,8 @@ in
       libsForQt5.polkit-kde-agent
       polkit_gnome
       xorg.xhost
+      mission-center
+      nvtop
     ]
     ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [
       lunatask
