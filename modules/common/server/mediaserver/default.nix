@@ -150,6 +150,10 @@ in
         containers.nginx-pm = {
           image = "jc21/nginx-proxy-manager:latest";
           autoStart = true;
+          extraOptions = [
+            "--network=mynet123"
+            "--ip=172.18.0.23"
+          ];
           ports = [
             "80:80"
             "443:443"
