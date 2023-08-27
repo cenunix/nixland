@@ -56,7 +56,7 @@ in
           extraOptions = [
             "--network=host"
             "--device=/dev/dri:/dev/dri"
-            "--restart=unless-stopped"
+            # "--restart=unless-stopped"
             # "--pull=always"
           ];
           environment = {
@@ -77,7 +77,7 @@ in
           extraOptions = [
             "--network=host"
             "--interactive"
-            "--restart=unless-stopped"
+            # "--restart=unless-stopped"
             # "--pull=always"
           ];
           environment = {
@@ -94,9 +94,9 @@ in
         containers.jackett = {
           image = "lscr.io/linuxserver/jackett:latest";
           autoStart = true;
-          extraOptions = [
-            "--restart=unless-stopped"
-          ];
+          # extraOptions = [
+          #   "--restart=unless-stopped"
+          # ];
           environment = {
             TZ = "America/Los_Angeles";
             PUID = "1000";
@@ -116,9 +116,9 @@ in
         containers.overseerr = {
           image = "sctx/overseerr:latest";
           autoStart = true;
-          extraOptions = [
-            "--restart=unless-stopped"
-          ];
+          # extraOptions = [
+          #   "--restart=unless-stopped"
+          # ];
           environment = {
             TZ = "America/Los_Angeles";
             PUID = "1000";
