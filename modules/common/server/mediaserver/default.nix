@@ -56,6 +56,7 @@ in
           extraOptions = [
             "--network=host"
             "--device=/dev/dri:/dev/dri"
+            "--restart=unless-stopped"
             # "--pull=always"
           ];
           environment = {
@@ -76,6 +77,7 @@ in
           extraOptions = [
             "--network=host"
             "--interactive"
+            "--restart=unless-stopped"
             # "--pull=always"
           ];
           environment = {
@@ -92,9 +94,9 @@ in
         containers.jackett = {
           image = "lscr.io/linuxserver/jackett:latest";
           autoStart = true;
-          # extraOptions = [
-          # "--restart=unless-stopped"
-          # ];
+          extraOptions = [
+            "--restart=unless-stopped"
+          ];
           environment = {
             TZ = "America/Los_Angeles";
             PUID = "1000";
@@ -108,6 +110,28 @@ in
           volumes = [
             "/home/cenunix/mediaserver:/config"
             "/dev/null:/downloads"
+          ];
+          # extraOptions = [ "--pull=always" ];
+        };
+        containers.overseerr = {
+          image = "sctx/overseerr:latest";
+          autoStart = true;
+          extraOptions = [
+            "--restart=unless-stopped"
+          ];
+          environment = {
+            TZ = "America/Los_Angeles";
+            PUID = "1000";
+            PGID = "1000";
+            AUTO_UPDATE = "true";
+            VERSION = "docker";
+            LOG_LEVEL = "debug";
+          };
+          ports = [
+            "5055:5055"
+          ];
+          volumes = [
+            "/home/cenunix/mediaserver:/config"
           ];
           # extraOptions = [ "--pull=always" ];
         };

@@ -25,7 +25,6 @@ in
       polkit_gnome
       xorg.xhost
       mission-center
-      nvtop
     ]
     ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [
       lunatask
