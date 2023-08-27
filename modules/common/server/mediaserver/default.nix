@@ -116,9 +116,9 @@ in
         containers.overseerr = {
           image = "sctx/overseerr:latest";
           autoStart = true;
-          extraOptions = [
-            "--network=host"
-          ];
+          # extraOptions = [
+          #   "--restart=unless-stopped"
+          # ];
           environment = {
             TZ = "America/Los_Angeles";
             PUID = "1000";
