@@ -215,7 +215,7 @@ in
           gpl3init = "cp ${gpl3} LICENSE";
           preshort = "nix-shell -p nix-prefetch-github";
           nvim-gui = "WINIT_UNIX_BACKEND=x11 neovide";
-          plex-debrid-run = "docker run -v /home/cenunix/Videos/mediaserver/plex_debrid:/config --name plex_debrid --net host -ti itstoggle/plex_debrid";
+          plex-debrid-run = "docker run -v /home/cenunix/mediaserver/plex_debrid:/config --name plex_debrid --net host -ti itstoggle/plex_debrid";
           ".." = "cd ..";
           "..." = "cd ../../";
           "...." = "cd ../../../";
