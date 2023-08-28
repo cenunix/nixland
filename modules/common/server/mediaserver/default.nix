@@ -43,6 +43,7 @@ in
         ${pkgs.rclone_rd}/bin/rclone mount plex: /home/cenunix/mount --dir-cache-time 10s --vfs-cache-mode full --vfs-cache-max-size 60G --vfs-cache-max-age 4h --allow-other --allow-non-empty --config /home/cenunix/.config/rclone/rclone.conf
       '';
       wantedBy = [ "graphical.target" ];
+      bindsTo = [ "docker-debrid.service" "docker-plex.service" "docker-jackett.service" "docker-overseerr.service" ];
       serviceConfig = {
         Type = "simple";
       };
