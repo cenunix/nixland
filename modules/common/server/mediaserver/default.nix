@@ -8,14 +8,14 @@
 }:
 with lib; let
   cfg = config.modules.system.server;
-  service-name = "${config.virtualisation.oci-containers.backend}-debrid";
+  service-name = "${config.virtualisation.oci-containers.backend}";
 in
 {
   config = mkIf (cfg.mediaServer) {
     environment.systemPackages = with pkgs; [
       rclone_rd
     ];
-    systemd.services.${service-name} = {
+    systemd.services."${service-name}-debrid" = {
       preStart = ''sleep 30'';
       serviceConfig = {
         Restart = "always";
@@ -23,6 +23,10 @@ in
         TimeoutStopSec = lib.mkForce 15;
       };
       wantedBy = [ "graphical.target" ];
+    };
+
+    systemd.services."${service-name}-nginx-pm" = {
+      preStart = ''sleep 15'';
     };
     systemd.services.docker-net = {
       script = ''
@@ -36,7 +40,7 @@ in
     };
     systemd.services.rclone-linux = {
       script = ''
-        ${pkgs.rclone_rd}/bin/rclone-linux mount plex: /home/cenunix/Media/rclone --dir-cache-time 10s --allow-non-empty --config /home/cenunix/.config/rclone/rclone.conf
+        ${pkgs.rclone_rd}/bin/rclone mount plex: /home/cenunix/mount --dir-cache-time 10s --allow-other --allow-non-empty --config /home/cenunix/.config/rclone/rclone.conf
       '';
       wantedBy = [ "graphical.target" ];
       serviceConfig = {
@@ -89,8 +93,8 @@ in
           };
           volumes = [
             "/home/cenunix/mediaserver:/config"
-            "/home/cenunix/Media/rclone/movies:/movies"
-            "/home/cenunix/Media/rclone/shows:/shows"
+            "/home/cenunix/mount/movies:/movies"
+            "/home/cenunix/mount/shows:/shows"
           ];
         };
         containers.debrid = {
