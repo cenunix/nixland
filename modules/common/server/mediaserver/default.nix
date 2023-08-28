@@ -164,6 +164,16 @@ in
             "/home/cenunix/mediaserver/nginx-pm/letsencrypt:/etc/letsencrypt"
           ];
         };
+        containers.plex-metam = {
+          image = "meisnate12/plex-meta-manager";
+          autoStart = true;
+          environment = {
+            TZ = "America/Los_Angeles";
+          };
+          volumes = [
+            "/home/cenunix/mediaserver/plex-meta-manager:/config"
+          ];
+        };
       };
     };
   };
