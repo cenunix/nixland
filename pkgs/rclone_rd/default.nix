@@ -16,7 +16,6 @@ stdenv.mkDerivation {
   buildInputs = [
     fuse3
   ];
-  phases = [ "buildPhase" "installPhase" "patchPhase" ];
   installPhase = ''
     mkdir -p $out/bin
     cp $src $out/bin/rclone-linux
