@@ -11,11 +11,10 @@ with lib; let
   service-name = "${config.virtualisation.oci-containers.backend}-debrid";
 in
 {
-  environment.systemPackages = with pkgs; [
-    rclone_rd
-  ];
-
   config = mkIf (cfg.mediaServer) {
+    environment.systemPackages = with pkgs; [
+      rclone_rd
+    ];
     systemd.services.${service-name} = {
       preStart = ''sleep 30'';
       serviceConfig = {
