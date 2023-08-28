@@ -165,9 +165,11 @@ in
           ];
         };
         containers.plex-metam = {
-          image = "meisnate12/plex-meta-manager";
-          autoStart = false;
+          image = "lscr.io/linuxserver/plex-meta-manager:latest";
+          autoStart = true;
           environment = {
+            PUID = "1000";
+            PGID = "1000";
             TZ = "America/Los_Angeles";
           };
           volumes = [
