@@ -15,4 +15,5 @@
   nvchad = pkgs.callPackage ./nvchad/default.nix { };
   linux_x13s_pkg = pkgs.callPackage ./linux-x13s/default.nix { };
   my-mpvpaper = pkgs.callPackage ./mpvpaper/default.nix { };
+  rclone_rd = pkgs.callPackage ./rclone_rd/default.nix { };
 }

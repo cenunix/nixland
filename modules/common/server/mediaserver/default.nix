@@ -11,6 +11,9 @@ with lib; let
   service-name = "${config.virtualisation.oci-containers.backend}-debrid";
 in
 {
+  environment.systemPackages = with pkgs; [
+    rclone_rd
+  ];
 
   config = mkIf (cfg.mediaServer) {
     systemd.services.${service-name} = {
@@ -32,6 +35,15 @@ in
         Type = "oneshot";
       };
     };
+    # systemd.services.rclone-linux = {
+    #   script = ''
+    #     ${pkgs.rclone_rd}/bin/rclone-linux
+    #   '';
+    #   wantedBy = [ "graphical.target" ];
+    #   serviceConfig = {
+    #     Type = "oneshot";
+    #   };
+    # };
     systemd.services.foo = {
       script = ''
         if ${pkgs.docker}/bin/docker run --rm -i -v=realdebrid:/tmp/myvolume busybox find /tmp/myvolume | grep -q '/tmp/myvolume'; then
