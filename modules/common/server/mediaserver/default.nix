@@ -166,7 +166,7 @@ in
         };
         containers.plex-metam = {
           image = "meisnate12/plex-meta-manager";
-          autoStart = true;
+          autoStart = false;
           environment = {
             TZ = "America/Los_Angeles";
           };
