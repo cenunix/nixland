@@ -45,6 +45,7 @@ in
       wantedBy = [ "graphical.target" ];
       bindsTo = [ "docker-debrid.service" "docker-plex.service" "docker-jackett.service" "docker-overseerr.service" ];
       serviceConfig = {
+        ExecStop = "umount /home/cenunix/mount";
         Type = "simple";
       };
     };
