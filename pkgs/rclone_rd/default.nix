@@ -7,7 +7,7 @@
 }:
 stdenv.mkDerivation {
   pname = "rclone_rd";
-  version = "1.0";
+  version = "v1.58.1-rd.2.2";
 
   src = fetchurl {
     url = "https://github.com/itsToggle/rclone_RD/releases/download/v1.58.1-rd.2.2/z-rclone-as-beta-linux";
