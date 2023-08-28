@@ -14,6 +14,7 @@ in
   config = mkIf (cfg.mediaServer) {
     environment.systemPackages = with pkgs; [
       rclone_rd
+      fuse3
     ];
     systemd.services.${service-name} = {
       preStart = ''sleep 30'';
@@ -36,7 +37,7 @@ in
     };
     systemd.services.rclone-linux = {
       script = ''
-        ${pkgs.rclone_rd}/bin/rclone-linux mount plex: /home/cenunix/Media/rclone --dir-cache-time 10s --config /home/cenunix/.config/rclone/rclone.conf
+        ${pkgs.rclone_rd}/bin/rclone-linux mount plex: /home/cenunix/Media/rclone --dir-cache-time 10s --allow-non-empty --config /home/cenunix/.config/rclone/rclone.conf
       '';
       wantedBy = [ "graphical.target" ];
       serviceConfig = {
