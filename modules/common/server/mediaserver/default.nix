@@ -36,7 +36,7 @@ in
     };
     systemd.services.rclone-linux = {
       script = ''
-        ${pkgs.rclone_rd}/bin/rclone-linux mount plex: /home/cenunix/Media/rclone --dir-cache-time 10s
+        ${pkgs.rclone_rd}/bin/rclone-linux mount plex: /home/cenunix/Media/rclone --dir-cache-time 10s --config /home/cenunix/.config/rclone/rclone.conf
       '';
       wantedBy = [ "graphical.target" ];
       serviceConfig = {
