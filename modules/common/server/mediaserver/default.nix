@@ -14,7 +14,6 @@ in
   config = mkIf (cfg.mediaServer) {
     environment.systemPackages = with pkgs; [
       rclone_rd
-      fuse3
     ];
     systemd.services.${service-name} = {
       preStart = ''sleep 30'';
