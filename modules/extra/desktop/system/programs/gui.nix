@@ -1,7 +1,6 @@
-{
-  pkgs,
-  inputs,
-  ...
+{ pkgs
+, inputs
+, ...
 }: {
   environment = {
     systemPackages = with pkgs; [
@@ -10,9 +9,13 @@
       libgsf # odf files
       ffmpegthumbnailer
       ark # GUI archiver for thunar archive plugin
+      sshfs # FUSE-based filesystem that allows remote filesystems to be mounted over SSH
+      samba
+      fuse
     ];
   };
-
+  services.gvfs.enable = true; # Mount, trash, and other functionalities
+  services.samba.enable = true;
   programs = {
     # the thunar file manager
     # we enable thunar here and add plugins instead of in systemPackages
@@ -26,7 +29,6 @@
 
     # registry for linux, thanks to gnome
     dconf.enable = true;
-
     # network inspection utility
     wireshark.enable = true;
 

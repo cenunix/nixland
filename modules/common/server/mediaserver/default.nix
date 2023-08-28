@@ -34,32 +34,32 @@ in
         Type = "oneshot";
       };
     };
-    # systemd.services.rclone-linux = {
-    #   script = ''
-    #     ${pkgs.rclone_rd}/bin/rclone-linux
-    #   '';
-    #   wantedBy = [ "graphical.target" ];
-    #   serviceConfig = {
-    #     Type = "oneshot";
-    #   };
-    # };
-    systemd.services.foo = {
+    systemd.services.rclone-linux = {
       script = ''
-        if ${pkgs.docker}/bin/docker run --rm -i -v=realdebrid:/tmp/myvolume busybox find /tmp/myvolume | grep -q '/tmp/myvolume'; then
-          systemctl stop docker-plex
-          mkdir -p /var/lib/docker-plugins/rclone/config
-          mkdir -p /var/lib/docker-plugins/rclone/cache
-          ${pkgs.docker}/bin/docker volume prune -f
-          ${pkgs.docker}/bin/docker plugin inspect rclone >/dev/null 2>&1 || ${pkgs.docker}/bin/docker plugin install itstoggle/docker-volume-rclone_rd:amd64 args="-v" --alias rclone --grant-all-permissions config=/var/lib/docker-plugins/rclone/config cache=/var/lib/docker-plugins/rclone/cache
-          ${pkgs.docker}/bin/docker volume inspect realdebrid >/dev/null 2>&1 || ${pkgs.docker}/bin/docker volume create realdebrid -d rclone -o type=realdebrid -o allow-other=true -o dir-cache-time=10s -o realdebrid-api_key=${builtins.readFile config.age.secrets.mediaserver.path}
-          systemctl start docker-plex
-        fi
+        ${pkgs.rclone_rd}/bin/rclone-linux
       '';
       wantedBy = [ "graphical.target" ];
       serviceConfig = {
         Type = "oneshot";
       };
     };
+    # systemd.services.foo = {
+    #   script = ''
+    #     if ${pkgs.docker}/bin/docker run --rm -i -v=realdebrid:/tmp/myvolume busybox find /tmp/myvolume | grep -q '/tmp/myvolume'; then
+    #       systemctl stop docker-plex
+    #       mkdir -p /var/lib/docker-plugins/rclone/config
+    #       mkdir -p /var/lib/docker-plugins/rclone/cache
+    #       ${pkgs.docker}/bin/docker volume prune -f
+    #       ${pkgs.docker}/bin/docker plugin inspect rclone >/dev/null 2>&1 || ${pkgs.docker}/bin/docker plugin install itstoggle/docker-volume-rclone_rd:amd64 args="-v" --alias rclone --grant-all-permissions config=/var/lib/docker-plugins/rclone/config cache=/var/lib/docker-plugins/rclone/cache
+    #       ${pkgs.docker}/bin/docker volume inspect realdebrid >/dev/null 2>&1 || ${pkgs.docker}/bin/docker volume create realdebrid -d rclone -o type=realdebrid -o allow-other=true -o dir-cache-time=10s -o realdebrid-api_key=${builtins.readFile config.age.secrets.mediaserver.path}
+    #       systemctl start docker-plex
+    #     fi
+    #   '';
+    #   wantedBy = [ "graphical.target" ];
+    #   serviceConfig = {
+    #     Type = "oneshot";
+    #   };
+    # };
     systemd.extraConfig = ''
       DefaultTimeoutStopSec=10s
     '';
@@ -89,7 +89,8 @@ in
           };
           volumes = [
             "/home/cenunix/mediaserver:/config"
-            "realdebrid:/torrents"
+            "/home/cenunix/Media/rclone/movies:/movies"
+            "/home/cenunix/Media/rclone/shows:/shows"
           ];
         };
         containers.debrid = {
