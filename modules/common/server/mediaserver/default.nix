@@ -24,8 +24,8 @@ in
     };
     systemd.services.docker-net = {
       script = ''
-        docker network inspect mynet123 >/dev/null 2>&1 || \
-        docker network create --subnet=172.18.0.0/16 mynet123
+        ${pkgs.docker}/bin/docker network inspect mynet123 >/dev/null 2>&1 || \
+        ${pkgs.docker}/bin/docker network create --subnet=172.18.0.0/16 mynet123
       '';
       wantedBy = [ "graphical.target" ];
       serviceConfig = {
