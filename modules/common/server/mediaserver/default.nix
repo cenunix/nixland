@@ -43,7 +43,7 @@ in
     };
 
     systemd.services."${service-name}-nginx-pm" = {
-      preStart = ''sleep 15'';
+      after = [ "docker-plex.service" ];
       partOf = [ "docker-plex.service" ];
     };
     systemd.services.docker-net = {
@@ -56,15 +56,15 @@ in
         Type = "oneshot";
       };
     };
-    systemd.services.rclone-linux = {
-      wantedBy = [ "graphical.target" ];
-      serviceConfig = {
-        ExecStart = "${pkgs.rclone_rd}/bin/rclone mount plex: /home/cenunix/mount --dir-cache-time 10s --vfs-cache-mode full --vfs-cache-max-size 60G --vfs-cache-max-age 4h --allow-other --allow-non-empty --config /home/cenunix/.config/rclone/rclone.conf";
-        Type = "simple";
-        Restart = "always";
-        RestartSec = "5";
-      };
-    };
+    # systemd.services.rclone-linux = {
+    #   wantedBy = [ "graphical.target" ];
+    #   serviceConfig = {
+    #     ExecStart = "${pkgs.rclone_rd}/bin/rclone mount plex: /home/cenunix/mount --dir-cache-time 10s --vfs-cache-mode full --vfs-cache-max-size 60G --vfs-cache-max-age 4h --allow-other --allow-non-empty --config /home/cenunix/.config/rclone/rclone.conf";
+    #     Type = "simple";
+    #     Restart = "always";
+    #     RestartSec = "5";
+    #   };
+    # };
     systemd.extraConfig = ''
       DefaultTimeoutStopSec=10s
     '';
