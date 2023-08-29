@@ -183,6 +183,19 @@ in
             "/home/cenunix/mediaserver/plex-meta-manager:/config"
           ];
         };
+        containers.plex-trakt-sync = {
+          image = "ghcr.io/taxel/plextraktsync";
+          cmd = [ "sync" ];
+          autoStart = true;
+          environment = {
+            PUID = "1000";
+            PGID = "1000";
+            TZ = "America/Los_Angeles";
+          };
+          volumes = [
+            "/home/cenunix/mediaserver/plex-trakt-sync:/config"
+          ];
+        };
       };
     };
   };
