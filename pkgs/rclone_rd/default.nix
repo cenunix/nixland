@@ -14,16 +14,16 @@
 
 buildGoModule rec {
   pname = "rclone_RD";
-  version = "1.63.1";
+  version = "1.58.1-rd.2.2";
 
   src = fetchFromGitHub {
     owner = "itsToggle";
     repo = pname;
-    rev = "869702c7dd46a0a152d397d800a374ce07330e25";
-    hash = "sha256-VJPts3cPxofDcPOTuR5dISN/oGjDiDJVy8MkwPnBKTw=";
+    rev = "v${version}";
+    hash = "sha256-1jsYSdysNFy1zgu/hqhPKYxPGcz6QbuiMbl59qfYDv0=";
   };
 
-  vendorHash = "sha256-YdRuSpwVOOk7TYPNUWc3jDcZmCxi7m3J8mVnM0L6sWc=";
+  vendorHash = "sha256-GmBi8SbMPObMsCcx2Jdha5bx1i4rYZFS2wT893Ue+64=";
 
   subPackages = [ "." ];
 

@@ -27,6 +27,7 @@ in
 
     systemd.services."${service-name}-nginx-pm" = {
       preStart = ''sleep 15'';
+      partOf = [ "docker-plex.service" ];
     };
     systemd.services.docker-net = {
       script = ''
@@ -39,33 +40,14 @@ in
       };
     };
     systemd.services.rclone-linux = {
-      script = ''
-        ${pkgs.rclone_rd}/bin/rclone mount plex: /home/cenunix/mount --dir-cache-time 10s --vfs-cache-mode full --vfs-cache-max-size 60G --vfs-cache-max-age 4h --allow-other --allow-non-empty --config /home/cenunix/.config/rclone/rclone.conf
-      '';
       wantedBy = [ "graphical.target" ];
-      bindsTo = [ "docker-debrid.service" "docker-plex.service" "docker-jackett.service" "docker-overseerr.service" ];
       serviceConfig = {
-        ExecStop = "umount /home/cenunix/mount";
+        ExecStart = "${pkgs.rclone_rd}/bin/rclone mount plex: /home/cenunix/mount --dir-cache-time 10s --vfs-cache-mode full --vfs-cache-max-size 60G --vfs-cache-max-age 4h --allow-other --allow-non-empty --config /home/cenunix/.config/rclone/rclone.conf";
         Type = "simple";
+        Restart = "always";
+        RestartSec = "5";
       };
     };
-    # systemd.services.foo = {
-    #   script = ''
-    #     if ${pkgs.docker}/bin/docker run --rm -i -v=realdebrid:/tmp/myvolume busybox find /tmp/myvolume | grep -q '/tmp/myvolume'; then
-    #       systemctl stop docker-plex
-    #       mkdir -p /var/lib/docker-plugins/rclone/config
-    #       mkdir -p /var/lib/docker-plugins/rclone/cache
-    #       ${pkgs.docker}/bin/docker volume prune -f
-    #       ${pkgs.docker}/bin/docker plugin inspect rclone >/dev/null 2>&1 || ${pkgs.docker}/bin/docker plugin install itstoggle/docker-volume-rclone_rd:amd64 args="-v" --alias rclone --grant-all-permissions config=/var/lib/docker-plugins/rclone/config cache=/var/lib/docker-plugins/rclone/cache
-    #       ${pkgs.docker}/bin/docker volume inspect realdebrid >/dev/null 2>&1 || ${pkgs.docker}/bin/docker volume create realdebrid -d rclone -o type=realdebrid -o allow-other=true -o dir-cache-time=10s -o realdebrid-api_key=${builtins.readFile config.age.secrets.mediaserver.path}
-    #       systemctl start docker-plex
-    #     fi
-    #   '';
-    #   wantedBy = [ "graphical.target" ];
-    #   serviceConfig = {
-    #     Type = "oneshot";
-    #   };
-    # };
     systemd.extraConfig = ''
       DefaultTimeoutStopSec=10s
     '';
@@ -83,8 +65,6 @@ in
           extraOptions = [
             "--network=host"
             "--device=/dev/dri:/dev/dri"
-            # "--restart=unless-stopped"
-            # "--pull=always"
           ];
           environment = {
             TZ = "America/Los_Angeles";
@@ -105,8 +85,6 @@ in
           extraOptions = [
             "--network=host"
             "--interactive"
-            # "--restart=unless-stopped"
-            # "--pull=always"
           ];
           environment = {
             TZ = "America/Los_Angeles";
@@ -122,9 +100,6 @@ in
         containers.jackett = {
           image = "lscr.io/linuxserver/jackett:latest";
           autoStart = true;
-          # extraOptions = [
-          #   "--restart=unless-stopped"
-          # ];
           environment = {
             TZ = "America/Los_Angeles";
             PUID = "1000";
@@ -139,7 +114,6 @@ in
             "/home/cenunix/mediaserver:/config"
             "/dev/null:/downloads"
           ];
-          # extraOptions = [ "--pull=always" ];
         };
         containers.overseerr = {
           image = "sctx/overseerr:latest";
@@ -163,7 +137,6 @@ in
           volumes = [
             "/home/cenunix/mediaserver:/app/config"
           ];
-          # extraOptions = [ "--pull=always" ];
         };
         containers.nginx-pm = {
           image = "jc21/nginx-proxy-manager:latest";
