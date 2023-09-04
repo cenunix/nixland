@@ -174,7 +174,7 @@ in
             "/home/cenunix/mediaserver/plex-meta-manager:/config"
           ];
         };
-        containers.tautulli {
+        containers.tautulli = {
           image = "ghcr.io/tautulli/tautulli";
           autoStart = true;
           environment = {
