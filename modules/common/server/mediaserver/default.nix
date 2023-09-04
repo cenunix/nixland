@@ -44,7 +44,6 @@ in
 
     systemd.services."${service-name}-nginx-pm" = {
       after = [ "docker-plex.service" ];
-      partOf = [ "docker-plex.service" ];
     };
     systemd.services.docker-net = {
       script = ''
@@ -56,15 +55,6 @@ in
         Type = "oneshot";
       };
     };
-    # systemd.services.rclone-linux = {
-    #   wantedBy = [ "graphical.target" ];
-    #   serviceConfig = {
-    #     ExecStart = "${pkgs.rclone_rd}/bin/rclone mount plex: /home/cenunix/mount --dir-cache-time 10s --vfs-cache-mode full --vfs-cache-max-size 60G --vfs-cache-max-age 4h --allow-other --allow-non-empty --config /home/cenunix/.config/rclone/rclone.conf";
-    #     Type = "simple";
-    #     Restart = "always";
-    #     RestartSec = "5";
-    #   };
-    # };
     systemd.extraConfig = ''
       DefaultTimeoutStopSec=10s
     '';
@@ -80,8 +70,9 @@ in
           image = "lscr.io/linuxserver/plex:latest";
           autoStart = true;
           extraOptions = [
-            "--network=host"
+            "--network=mynet123"
             "--device=/dev/dri:/dev/dri"
+            "--ip=172.18.0.24"
           ];
           environment = {
             TZ = "America/Los_Angeles";
@@ -184,16 +175,23 @@ in
           ];
         };
         containers.plex-trakt-sync = {
-          image = "ghcr.io/taxel/plextraktsync";
+          image = "ghcr.io/taxel/plextraktsync:0.26.11";
           cmd = [ "sync" ];
+          extraOptions = [
+          "--interactive"
+          "--network=mynet123"
+          "--ip=172.18.0.25"
+          "--rm"
+          ];
           autoStart = true;
           environment = {
             PUID = "1000";
             PGID = "1000";
             TZ = "America/Los_Angeles";
+            PLEXAPI_PLEXAPI_TIMEOUT = "300";
           };
           volumes = [
-            "/home/cenunix/mediaserver/plex-trakt-sync:/config"
+            "/home/cenunix/mediaserver/plex-trakt-sync/config:/app/config"
           ];
         };
       };
