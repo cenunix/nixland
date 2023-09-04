@@ -13,7 +13,9 @@ in
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnsupportedSystem = true;
   home.packages = with pkgs;
-    [
+    # exclude server device type
+    [ ]
+    ++ optionals (builtins.elem device.type [ "desktop" "laptop" "armlaptop" ]) [
       # Shared Packages between all systems
       networkmanagerapplet
       nitch

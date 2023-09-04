@@ -12,7 +12,7 @@ in
   config = {
     modules = {
       device = {
-        type = "laptop";
+        type = "server";
         cpu = "intel";
         gpu = "intel";
         monitors = [
