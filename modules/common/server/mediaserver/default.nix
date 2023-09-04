@@ -189,7 +189,6 @@ in
             "/home/cenunix/mediaserver/tautulli:/config"
           ];
         };
-        }
         containers.plex-trakt-sync = {
           image = "ghcr.io/taxel/plextraktsync:0.26.11";
           cmd = [ "sync" ];
