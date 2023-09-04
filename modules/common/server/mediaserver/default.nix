@@ -12,7 +12,6 @@ with lib; let
 in
 {
   config = mkIf (cfg.mediaServer) {
-    hardware.opengl.enable = true;
     systemd.services.foo = {
       script = ''
         if ${pkgs.docker}/bin/docker run --rm -i -v=realdebrid:/tmp/myvolume busybox find /tmp/myvolume | grep -q '/tmp/myvolume'; then
@@ -20,8 +19,8 @@ in
           mkdir -p /var/lib/docker-plugins/rclone/config
           mkdir -p /var/lib/docker-plugins/rclone/cache
           ${pkgs.docker}/bin/docker volume prune -f
-          ${pkgs.docker}/bin/docker plugin inspect rclone >/dev/null 2>&1 || ${pkgs.docker}/bin/docker plugin install itstoggle/docker-volume-rclone_rd:amd64 args="-v" --alias rclone --grant-all-permissions config=/var/lib/docker-plugins/rclone/config cache=/var/lib/docker-plugins/rclone/cache
-          ${pkgs.docker}/bin/docker volume inspect realdebrid >/dev/null 2>&1 || ${pkgs.docker}/bin/docker volume create realdebrid -d rclone -o type=realdebrid -o allow-other=true -o dir-cache-time=10s -o vfs-cache-mode=full -o vfs-cache-max-age=5h -o vfs-cache-max-size=100G -o realdebrid-api_key=${builtins.readFile config.age.secrets.mediaserver.path}
+          ${pkgs.docker}/bin/docker plugin inspect rclone >/dev/null 2>&1 || ${pkgs.docker}/bin/docker plugin install itstoggle/docker-volume-rclone_rd:amd64 args="--network-mode --transfers=8 --buffer-size=128M -v" --alias rclone --grant-all-permissions config=/var/lib/docker-plugins/rclone/config cache=/var/lib/docker-plugins/rclone/cache
+          ${pkgs.docker}/bin/docker volume inspect realdebrid >/dev/null 2>&1 || ${pkgs.docker}/bin/docker volume create realdebrid - d rclone - o type=realdebrid -o allow-other=true -o dir-cache-time=10s -o vfs-read-chunk-size=64M -o vfs-read-chunk-size-limit=2G -o vfs-cache-mode=full -o vfs-cache-max-age=5h -o vfs-cache-max-size=150G -o realdebrid-api_key=${builtins.readFile config.age.secrets.mediaserver.path}
           systemctl start docker-plex
         fi
       '';
@@ -45,6 +44,7 @@ in
 
     systemd.services."${service-name}-nginx-pm" = {
       after = [ "docker-plex.service" ];
+      partOf = [ "docker-plex.service" ];
     };
     systemd.services.docker-net = {
       script = ''
@@ -78,11 +78,10 @@ in
 
         containers.plex = {
           image = "lscr.io/linuxserver/plex:latest";
-          autoStart = false;
+          autoStart = true;
           extraOptions = [
-            "--network=mynet123"
+            "--network=host"
             "--device=/dev/dri:/dev/dri"
-            "--ip=172.18.0.24"
           ];
           environment = {
             TZ = "America/Los_Angeles";
@@ -185,23 +184,16 @@ in
           ];
         };
         containers.plex-trakt-sync = {
-          image = "ghcr.io/taxel/plextraktsync:0.26.11";
+          image = "ghcr.io/taxel/plextraktsync";
           cmd = [ "sync" ];
-          extraOptions = [
-            "--interactive"
-            "--network=mynet123"
-            "--ip=172.18.0.25"
-            "--rm"
-          ];
           autoStart = true;
           environment = {
             PUID = "1000";
             PGID = "1000";
             TZ = "America/Los_Angeles";
-            PLEXAPI_PLEXAPI_TIMEOUT = "300";
           };
           volumes = [
-            "/home/cenunix/mediaserver/plex-trakt-sync/config:/app/config"
+            "/home/cenunix/mediaserver/plex-trakt-sync:/config"
           ];
         };
       };

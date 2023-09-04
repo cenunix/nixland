@@ -18,5 +18,6 @@
     lm_sensors
     dua
     vim
+    woeusb
   ];
 }
