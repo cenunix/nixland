@@ -177,6 +177,9 @@ in
         containers.tautulli = {
           image = "ghcr.io/tautulli/tautulli";
           autoStart = true;
+          extraOptions = [
+          "--network=mynet123"
+          ];
           environment = {
             PUID = "1000";
             PGID = "1000";
