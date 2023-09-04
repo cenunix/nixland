@@ -39,19 +39,19 @@ in
         gui.enable = true;
 
         gaming = {
-          enable = true;
+          enable = false;
           steam.enable = false;
-          chess.enable = true;
-          minecraft.enable = true;
+          chess.enable = false;
+          minecraft.enable = false;
         };
         override = { };
       };
       usrEnv = {
-        isWayland = true;
-        desktop = "Hyprland";
-        windowManager = true;
+        isWayland = false;
+        # desktop = "Hyprland";
+        windowManager = false;
         useHomeManager = true;
-        autologin = true;
+        autologin = false;
       };
     };
   };
