@@ -174,6 +174,22 @@ in
             "/home/cenunix/mediaserver/plex-meta-manager:/config"
           ];
         };
+        containers.tautulli {
+          image = "ghcr.io/tautulli/tautulli";
+          autoStart = true;
+          environment = {
+            PUID = "1000";
+            PGID = "1000";
+            TZ = "America/Los_Angeles";
+          };
+          ports = [
+            "8181:8181"
+          ];
+          volumes = [
+            "/home/cenunix/mediaserver/tautulli:/config"
+          ];
+        };
+        }
         containers.plex-trakt-sync = {
           image = "ghcr.io/taxel/plextraktsync:0.26.11";
           cmd = [ "sync" ];
