@@ -68,7 +68,7 @@ in
 
         containers.plex = {
           image = "lscr.io/linuxserver/plex:latest";
-          autoStart = true;
+          autoStart = false;
           extraOptions = [
             "--network=mynet123"
             "--device=/dev/dri:/dev/dri"
@@ -178,7 +178,7 @@ in
           image = "ghcr.io/tautulli/tautulli";
           autoStart = true;
           extraOptions = [
-          "--network=mynet123"
+            "--network=mynet123"
           ];
           environment = {
             PUID = "1000";
@@ -196,10 +196,10 @@ in
           image = "ghcr.io/taxel/plextraktsync:0.26.11";
           cmd = [ "sync" ];
           extraOptions = [
-          "--interactive"
-          "--network=mynet123"
-          "--ip=172.18.0.25"
-          "--rm"
+            "--interactive"
+            "--network=mynet123"
+            "--ip=172.18.0.25"
+            "--rm"
           ];
           autoStart = true;
           environment = {
