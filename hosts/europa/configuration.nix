@@ -78,7 +78,7 @@
   };
   nix.settings.extra-sandbox-paths = [ "/run/binfmt" "${pkgs.qemu}" ];
 
-  environment.systemPackages = with pkgs; [ virt-manager win-virtio virt-viewer ];
+  environment.systemPackages = with pkgs; [ virt-manager win-virtio virt-viewer gnome.gnome-boxes ];
 
   # Basic Networking and TimeZone
 
