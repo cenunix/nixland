@@ -29,7 +29,7 @@
     enable = true;
     startWhenNeeded = false;
     settings = {
-      PermitRootLogin = lib.mkForce "no";
+      PermitRootLogin = lib.mkForce "yes";
       PasswordAuthentication = false;
       KbdInteractiveAuthentication = lib.mkDefault false;
       UseDns = false;
