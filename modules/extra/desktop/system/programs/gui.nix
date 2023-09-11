@@ -12,6 +12,9 @@
       sshfs # FUSE-based filesystem that allows remote filesystems to be mounted over SSH
       samba
       fuse
+      libsForQt5.dolphin
+      gnome.nautilus
+      libsForQt5.kio-extras
     ];
   };
   services.gvfs.enable = true; # Mount, trash, and other functionalities

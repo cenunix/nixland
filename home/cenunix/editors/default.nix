@@ -6,7 +6,7 @@
 , ...
 }: {
   imports = [
-    ./nvim
     ./vscode
+    ./helix
   ];
 }

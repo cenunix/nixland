@@ -64,7 +64,7 @@ in
 
     # credits: bruhvko
     # catppuccin theme for qt-apps
-    home.packages = with pkgs; [ libsForQt5.qtstyleplugin-kvantum ];
+    home.packages = with pkgs; [ libsForQt5.qtstyleplugin-kvantum libsForQt5.qt5ct ];
 
     xdg.configFile."Kvantum/catppuccin/catppuccin.kvconfig".source = builtins.fetchurl {
       url = "https://raw.githubusercontent.com/catppuccin/Kvantum/main/src/Catppuccin-Macchiato-Pink/Catppuccin-Macchiato-Pink.kvconfig";

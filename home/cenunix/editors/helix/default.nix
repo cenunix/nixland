@@ -118,11 +118,6 @@
           file-types = [ "html" "tera" ];
         }
         {
-          name = "clojure";
-          injection-regex = "(clojure|clj|edn|boot|yuck)";
-          file-types = [ "clj" "cljs" "cljc" "clje" "cljr" "cljx" "edn" "boot" "yuck" ];
-        }
-        {
           name = "nix";
           auto-format = true;
         }
@@ -138,6 +133,12 @@
           command = "${pkgs.clang-tools}/bin/clangd";
           clangd.fallbackFlags = [ "-std=c++2b" ];
         };
+
+        typescript-language-server = with pkgs.nodePackages; {
+          command = "${typescript-language-server}/bin/typescript-language-server";
+          args = [ "--stdio" "--tsserver-path=${typescript}/lib/node_modules/typescript/lib" ];
+        };
+
 
         nil = {
           command = lib.getExe pkgs.nil;

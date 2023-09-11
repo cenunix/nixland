@@ -19,6 +19,9 @@ in
           mkdir -p /var/lib/docker-plugins/rclone/config
           mkdir -p /var/lib/docker-plugins/rclone/cache
           ${pkgs.docker}/bin/docker volume prune -f
+          docker plugin install neatness9988/docker-volume-rclone_rd:amd64-latest args="--network-mode --transfers=8 --buffer-size=128M -v" --alias rclone --grant-all-permissions config=/var/lib/docker-plugins/rclone/config cache=/var/lib/docker-plugins/rclone/cache
+
+
           ${pkgs.docker}/bin/docker plugin inspect rclone >/dev/null 2>&1 || ${pkgs.docker}/bin/docker plugin install itstoggle/docker-volume-rclone_rd:amd64 args="--network-mode --transfers=8 --buffer-size=128M -v" --alias rclone --grant-all-permissions config=/var/lib/docker-plugins/rclone/config cache=/var/lib/docker-plugins/rclone/cache
           ${pkgs.docker}/bin/docker volume inspect realdebrid >/dev/null 2>&1 || ${pkgs.docker}/bin/docker volume create realdebrid -d rclone -o type=realdebrid -o allow-other=true -o dir-cache-time=10s -o --vfs-read-ahead=2048M -o vfs-read-chunk-size=128M -o vfs-read-chunk-size-limit=2G -o vfs-cache-mode=full -o vfs-cache-max-age=5h -o vfs-cache-max-size=150G -o realdebrid-api_key=${builtins.readFile config.age.secrets.mediaserver.path}
           systemctl start docker-plex

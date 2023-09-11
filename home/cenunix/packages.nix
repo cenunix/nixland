@@ -27,6 +27,7 @@ in
       polkit_gnome
       xorg.xhost
       mission-center
+      mpv
     ]
     ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [
       lunatask
