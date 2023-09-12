@@ -6,6 +6,12 @@
 , ...
 }: {
   imports = [
+<<<<<<< Updated upstream
+||||||| Stash base
+    ./nixvim
+=======
+    ./nvim
+>>>>>>> Stashed changes
     ./vscode
     ./helix
   ];
