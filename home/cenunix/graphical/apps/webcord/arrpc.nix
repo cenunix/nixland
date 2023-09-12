@@ -12,7 +12,7 @@ let
 in
 {
   systemd.user.services = {
-    arRPC = mkService {
+    arRPC = {
       Unit.PartOf = [ "graphical-session.target" ];
       Unit.After = [ "graphical-session.target" ];
       Install.WantedBy = [ "graphical-session.target" ];
@@ -24,5 +24,4 @@ in
       };
     };
   };
-};
 }

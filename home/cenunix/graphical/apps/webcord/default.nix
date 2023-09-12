@@ -18,8 +18,6 @@ with lib; let
   webcord-path = "${project-path}";
   device = osConfig.modules.device;
   acceptedTypes = [ "desktop" "laptop" "armlaptop" ];
-  arRPC = inputs.arrpc.packages.${pkgs.system}.arrpc;
-
 in
 {
   imports = [
@@ -31,19 +29,6 @@ in
     home.packages = with pkgs; [
       webcord-vencord # webcord with vencord extension installed
     ];
-    systemd.user.services = {
-      arRPC = lib.mkService {
-        Unit.PartOf = ["graphical-session.target"];
-        Unit.After = ["graphical-session.target"];
-        Install.WantedBy = ["graphical-session.target"];
-
-      Unit.Description = "Discord Rich Presence for browsers, and some custom clients";
-        Service = {
-          ExecStart = "${lib.getExe arRPC}";
-          Restart = "always";
-        };
-      };
-    };
 
     xdg.configFile = {
       "WebCord/Themes/mocha" = {
