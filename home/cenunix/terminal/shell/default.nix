@@ -32,7 +32,7 @@ in
   home.packages = [ run-as-service ];
   home.sessionVariables.STARSHIP_CACHE = "${config.xdg.cacheHome}/starship";
   programs = {
-    exa.enable = true;
+    eza.enable = true;
     zoxide = {
       enable = true;
       enableZshIntegration = true;
@@ -104,7 +104,7 @@ in
         zstyle ':fzf-tab:complete:*:*' fzf-preview 'preview.sh $realpath'
         zstyle ":completion:*:git-checkout:*" sort false
         zstyle ':completion:*' file-sort modification
-        zstyle ':completion:*:exa' sort false
+        zstyle ':completion:*:eza' sort false
         zstyle ':completion:files' sort false
 
         zmodload zsh/complist
@@ -201,12 +201,12 @@ in
           ps = lib.getExe procs;
           m = "mkdir -p";
           fcd = "cd $(find -type d | fzf)";
-          ls = "${lib.getExe exa} -h --git --icons --color=auto --group-directories-first -s extension";
+          ls = "${lib.getExe eza} -h --git --icons --color=auto --group-directories-first -s extension";
           l = "ls -lF --time-style=long-iso --icons";
           sc = "sudo systemctl";
           scu = "systemctl --user ";
-          la = "${lib.getExe exa} -lah --tree";
-          tree = "${lib.getExe exa} --tree --icons --tree";
+          la = "${lib.getExe eza} -lah --tree";
+          tree = "${lib.getExe eza} --tree --icons --tree";
           http = "${lib.getExe python3} -m http.server";
           burn = "pkill -9";
           diff = "diff --color=auto";
