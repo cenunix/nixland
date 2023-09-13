@@ -8,6 +8,5 @@
   imports = [
     ./nvim
     ./vscode
-    ./helix
   ];
 }
