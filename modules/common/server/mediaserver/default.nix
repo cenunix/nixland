@@ -71,7 +71,7 @@ in
 
         containers.plex = {
           image = "lscr.io/linuxserver/plex:latest";
-          autoStart = true;
+          autoStart = false;
           extraOptions = [
             "--network=mynet123"
             "--device=/dev/dri:/dev/dri"
