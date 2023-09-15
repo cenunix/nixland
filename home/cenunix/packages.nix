@@ -28,6 +28,8 @@ in
       xorg.xhost
       mission-center
       mpv
+      stremio
+      hexchat
     ]
     ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [
       lunatask
