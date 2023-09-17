@@ -12,9 +12,7 @@
       sshfs # FUSE-based filesystem that allows remote filesystems to be mounted over SSH
       samba
       fuse
-      libsForQt5.dolphin
       gnome.nautilus
-      libsForQt5.kio-extras
     ];
   };
   services.gvfs.enable = true; # Mount, trash, and other functionalities
@@ -29,15 +27,12 @@
         thunar-media-tags-plugin
       ];
     };
-
     # registry for linux, thanks to gnome
     dconf.enable = true;
     # network inspection utility
     wireshark.enable = true;
-
     # gnome's keyring manager
     seahorse.enable = true;
-
     # networkmanager tray uility
     nm-applet.enable = true;
   };

@@ -10,8 +10,12 @@ with lib; let
   device = osConfig.modules.device;
 in
 {
-  nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.allowUnsupportedSystem = true;
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      allowUnsupportedSystem = true;
+    };
+  };
   home.packages = with pkgs;
     # exclude server device type
     [ ]
@@ -28,9 +32,7 @@ in
       xorg.xhost
       mission-center
       mpv
-      stremio
       hexchat
-      obs-studio
     ]
     ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [
       lunatask

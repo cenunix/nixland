@@ -200,7 +200,7 @@ in
     #bind=SUPER,P,pseudo,
     # Screenshots
 
-    bind=SUPER,P,exec,grimblast --notify copysave output
+    bind=SUPER,P,exec,~/.local/bin/screensht output
     bind=SUPER_SHIFT,P,exec,grimblast --notify copysave area
     bind=SUPER_ALT,P,exec,grimblast --notify copysave active
     bind=SUPER_SHIFT,C,exec,ocr

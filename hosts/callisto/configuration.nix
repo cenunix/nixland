@@ -52,6 +52,7 @@
       outputs.overlays.additions
       outputs.overlays.modifications
       outputs.overlays.unstable-packages
+      outputs.overlays.stable-packages
 
       # You can also add overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default
@@ -75,36 +76,6 @@
       allowUnfree = true;
     };
   };
-
-  # nix = {
-  #   # This will add each flake input as a registry
-  #   # To make nix3 commands consistent with your flake
-  #   registry = lib.mapAttrs (_: value: { flake = value; }) inputs;
-
-  #   # This will additionally add your inputs to the system's legacy channels
-  #   # Making legacy nix commands consistent as well, awesome!
-  #   nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
-
-  #   settings = {
-  #     # Enable flakes and new 'nix' command
-  #     experimental-features = "nix-command flakes";
-  #     # Deduplicate and optimize nix store
-  #     auto-optimise-store = false;
-  #   };
-  # };
-
-  # FIXME: Add the rest of your current configuration
-
-  # TODO: This is just an example, be sure to use whatever bootloader you prefer
-
-  # hardware.enableAllFirmware = true;
-  # hardware.firmware = [ pkgs.linux-firmware pkgs.x13s-firmware ];
-
-  environment.systemPackages = with pkgs; [
-    (callPackage ../../pkgs/qrtr.nix { })
-    (callPackage ../../pkgs/pd-mapper.nix { })
-    alsa-ucm-conf-x13s
-  ];
 
   time = {
     timeZone = "America/Los_Angeles";
