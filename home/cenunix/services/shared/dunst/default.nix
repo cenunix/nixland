@@ -43,7 +43,7 @@ in
 
     home.packages = [ volume ];
     services.dunst = {
-      enable = false;
+      enable = true;
       package = pkgs.dunst.overrideAttrs (oldAttrs: {
         src = pkgs.fetchFromGitHub {
           owner = "sioodmy";

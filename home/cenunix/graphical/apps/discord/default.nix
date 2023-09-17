@@ -27,12 +27,12 @@ in
       })
     ];
     xdg.configFile = {
-      "Vencord/themes/mocha" = {
+      "Vencord/themes/mocha.theme.css" = {
         source = ./mocha.theme.css;
       };
 
       # share my webcord configuration across devices
-      "Vencord/settings.json".source = config.lib.file.mkOutOfStoreSymlink "/home/cenunix/Personal/nicks/home/cenunix/graphical/apps/discord/settings.json";
+      "Vencord/settings/settings.json".source = config.lib.file.mkOutOfStoreSymlink "/home/cenunix/Personal/nicks/home/cenunix/graphical/apps/discord/settings.json";
     };
   };
 }

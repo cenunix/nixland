@@ -13,6 +13,7 @@
     ./formatting.nix
     ./lualine.nix
     ./neotree.nix
+    ./presence.nix
     ./telescope.nix
     ./terminal.nix
     ./treesitter.nix

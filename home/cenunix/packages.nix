@@ -30,6 +30,7 @@ in
       mpv
       stremio
       hexchat
+      obs-studio
     ]
     ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [
       lunatask

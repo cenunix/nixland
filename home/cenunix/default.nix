@@ -10,11 +10,7 @@
 , ...
 }: {
   config.home.stateVersion = "23.05";
-
-  # List your module files here
-  # my-module = import ./my-module.nix;
   imports = [
-    # Hyprland home-manager module
     ./editors
     ./graphical
     ./packages.nix

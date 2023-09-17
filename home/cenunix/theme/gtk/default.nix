@@ -7,8 +7,8 @@
 , ...
 }:
 with lib; let
-device = osConfig.modules.device;
-acceptedTypes = [ "desktop" "laptop" "armlaptop" ];
+  device = osConfig.modules.device;
+  acceptedTypes = [ "desktop" "laptop" "armlaptop" ];
 in
 {
   config = mkIf (builtins.elem device.type acceptedTypes) {
@@ -59,7 +59,7 @@ in
     home.sessionVariables = {
       # XCURSOR_SIZE = lib.mkOverride "16";
       XCURSOR_SIZE = "16";
-      # GTK_USE_PORTAL = "1";
+      GTK_USE_PORTAL = "1";
     };
 
     # credits: bruhvko

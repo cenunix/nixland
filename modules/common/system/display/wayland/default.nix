@@ -63,9 +63,6 @@ in
         (mkIf (builtins.elem device.type acceptedTypes) {
           driSupport32Bit = true;
         })
-        # (mkIf (device.type == "armlaptop") {
-        #   package = pkgs.mesa;
-        # })
       ];
       pulseaudio.support32Bit = true;
     };
@@ -84,7 +81,9 @@ in
         };
       };
     };
-
+    # programs.hyprland = mkIf (env.desktop == "Hyprland") {
+    #   enable = true;
+    # };
     xdg.portal = mkIf (env.windowManager) {
       enable = true;
       wlr.enable = false;

@@ -41,7 +41,7 @@ in
 
     xdg.configFile."waybar/style.css".text = import ./style.nix;
     programs.waybar = {
-      enable = false;
+      enable = true;
       package = pkgs.waybar.overrideAttrs (oldAttrs: {
         mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
         patchPhase = ''

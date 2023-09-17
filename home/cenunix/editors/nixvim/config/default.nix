@@ -38,34 +38,7 @@
     };
     extraPlugins = [
       pkgs.vimPlugins.luasnip
-      pkgs.vimPlugins.presence-nvim
       pkgs.clang-tools_16
     ];
-    extraConfigLua = ''
-      -- Description of each option can be found in https://github.com/andweeb/presence.nvim
-      require("presence").setup({
-          -- General options
-          auto_update         = true,
-          neovim_image_text   = "How do i exit this thing (⚈₋₍⚈)",
-          main_image          = "neovim",
-          client_id           = "793271441293967371",
-          log_level           = nil,
-          debounce_timeout    = 10,
-          enable_line_number  = false,
-          blacklist           = {},
-          buttons             = true,
-          file_assets         = {},
-          show_time           = true,
-
-          -- Rich Presence text options
-          editing_text        = "Prolly debugging  (っ⇀__↼ ς)",
-          file_explorer_text  = "Prolly debugging  (っ⇀__↼ ς)",
-          git_commit_text     = "Prolly debugging  (っ⇀__↼ ς)",
-          plugin_manager_text = "Prolly debugging  (っ⇀__↼ ς)",
-          reading_text        = "Prolly debugging  (っ⇀__↼ ς)",
-          workspace_text      = "Working on %s",
-          line_number_text    = "Prolly debugging  (っ⇀__↼ ς)",
-      })
-    '';
   };
 }
