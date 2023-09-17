@@ -53,7 +53,10 @@ in
   imports = [ ./config.nix ];
   config = mkIf (env.isWayland && (env.desktop == "Hyprland")) {
     xdg.configFile."hypr/shaders".source = ./shaders;
-
+    home.file.".config/hypr/scripts/screensht" = {
+      source = ./scripts/screensht;
+      executable = true;
+    };
     home.packages = with pkgs;
       [
         libnotify
@@ -65,6 +68,8 @@ in
         python39Packages.requests
         tesseract5
         # swappy
+        imagemagick
+        colord
         ocr
         # screenshot
         # mylock

@@ -22,10 +22,9 @@ in
 
     # Autostart
     exec-once=/etc/polkit-kde-agent/agent
-    exec-once = killall ironbar && ironbar
     exec-once = hyprctl setcursor "Bibata-Modern-Ice" 16
     exec-once = run-as-service 'foot --server'
-    #exec-once = run-as-service waybar
+    exec-once = run-as-service waybar
     exec-once = ags
 
     # Keyboard and mouse
@@ -200,9 +199,9 @@ in
     #bind=SUPER,P,pseudo,
     # Screenshots
 
-    bind=SUPER,P,exec,~/.local/bin/screensht output
-    bind=SUPER_SHIFT,P,exec,grimblast --notify copysave area
-    bind=SUPER_ALT,P,exec,grimblast --notify copysave active
+    bind=SUPER,P,exec,~/.config/hypr/scripts/screensht output
+    bind=SUPER_SHIFT,P,exec,~/.config/hypr/scripts/screensht area
+    bind=SUPER_ALT,P,exec,~/.config/hypr/scripts/screensht active
     bind=SUPER_SHIFT,C,exec,ocr
 
 

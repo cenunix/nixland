@@ -17,7 +17,7 @@
     grex
     lm_sensors
     dua
-    stable.vim
+    vim
     woeusb
   ];
 }

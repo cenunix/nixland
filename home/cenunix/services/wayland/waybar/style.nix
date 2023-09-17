@@ -4,7 +4,8 @@ let
     url = "https://raw.githubusercontent.com/NixOS/nixos-artwork/master/logo/nix-snowflake.svg";
     sha256 = "14mbpw8jv1w2c5wvfvj8clmjw0fi956bq5xf9s2q3my14far0as8";
   };
-in ''
+in
+''
   * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: Material Design Icons, Iosevka Nerd Font;
@@ -83,7 +84,7 @@ in ''
   #volume,
   #pulseaudio {
     border-radius: 15px;
-    background-color: #363a4f;
+    background-color: #11111b;
     padding: 0px 10px 0px 10px;
     margin: 5px 0px 5px 0px;
   }
