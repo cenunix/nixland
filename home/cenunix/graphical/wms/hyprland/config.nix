@@ -199,7 +199,7 @@ in
     #bind=SUPER,P,pseudo,
     # Screenshots
 
-    bind=SUPER,P,exec,~/.config/hypr/scripts/screensht output
+    bind=SUPER,P,exec,~/.config/hypr/scripts/screensht full
     bind=SUPER_SHIFT,P,exec,~/.config/hypr/scripts/screensht area
     bind=SUPER_ALT,P,exec,~/.config/hypr/scripts/screensht active
     bind=SUPER_SHIFT,C,exec,ocr
