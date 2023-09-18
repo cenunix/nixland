@@ -48,7 +48,7 @@ in
       };
       usrEnv = {
         isWayland = false;
-        # desktop = "Hyprland";
+        desktop = "Gnome";
         windowManager = false;
         useHomeManager = true;
         autologin = false;

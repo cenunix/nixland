@@ -33,7 +33,6 @@ in
       mission-center
       mpv
       hexchat
-      filebot
     ]
     ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [
       lunatask

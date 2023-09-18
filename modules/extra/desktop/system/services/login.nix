@@ -27,7 +27,7 @@ in
     };
 
     services = {
-      greetd = {
+      greetd = mkIf env.windowManager {
         enable = true;
         vt = 2;
         restart = !env.autologin;

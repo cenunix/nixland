@@ -26,8 +26,8 @@ stdenv.mkDerivation (finalAttrs: {
   version = "5.1.1";
 
   src = fetchurl {
-    url = "https://web.archive.org/web/20230418205553/https://get.filebot.net/filebot/FileBot_${finalAttrs.version}/FileBot_${finalAttrs.version}-portable.tar.xz";
-    hash = "";
+    url = "https://web.archive.org/web/20230917142929/https://get.filebot.net/filebot/FileBot_${finalAttrs.version}/FileBot_${finalAttrs.version}-portable.tar.xz";
+    hash = "sha256-BCsZBRtT2Ka7WZw7WFnagwoJwIO1L3qpFk/6nlGdpmQ=";
   };
 
   unpackPhase = "tar xvf $src";

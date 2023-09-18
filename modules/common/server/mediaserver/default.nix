@@ -34,6 +34,7 @@ in
     };
     environment.systemPackages = with pkgs; [
       rclone_rd
+      filebot
     ];
     systemd.services."${service-name}-debrid" = {
       preStart = ''sleep 30'';
