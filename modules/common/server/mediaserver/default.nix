@@ -89,6 +89,20 @@ in
             "realdebrid:/torrents"
           ];
         };
+        containers.jellyfin = {
+          image = "jellyfin/jellyfin";
+          autoStart = true;
+          extraOptions = [
+            "--network=host"
+            "--device=/dev/dri:/dev/dri"
+            "--group-add='303'"
+          ];
+          volumes = [
+            "/home/cenunix/mediaserver/jellyfin/config:/config"
+            "/home/cenunix/mediaserver/jellyfin/cache:/cache"
+            "realdebrid:/media"
+          ];
+        };
         containers.debrid = {
           image = "itstoggle/plex_debrid";
           autoStart = true;
