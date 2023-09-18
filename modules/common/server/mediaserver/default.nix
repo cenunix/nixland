@@ -34,7 +34,6 @@ in
     };
     environment.systemPackages = with pkgs; [
       rclone_rd
-      filebot
     ];
     systemd.services."${service-name}-debrid" = {
       preStart = ''sleep 30'';
@@ -72,7 +71,7 @@ in
 
         containers.plex = {
           image = "lscr.io/linuxserver/plex:latest";
-          autoStart = true;
+          autoStart = false;
           extraOptions = [
             "--network=mynet123"
             "--device=/dev/dri:/dev/dri"
@@ -90,20 +89,20 @@ in
             "realdebrid:/torrents"
           ];
         };
-        containers.jellyfin = {
-          image = "jellyfin/jellyfin";
-          autoStart = true;
-          extraOptions = [
-            "--network=host"
-            "--device=/dev/dri:/dev/dri"
-            "--group-add='303'"
-          ];
-          volumes = [
-            "/home/cenunix/mediaserver/jellyfin/config:/config"
-            "/home/cenunix/mediaserver/jellyfin/cache:/cache"
-            "realdebrid:/media"
-          ];
-        };
+        # containers.jellyfin = {
+        #   image = "jellyfin/jellyfin";
+        #   autoStart = true;
+        #   extraOptions = [
+        #     "--network=host"
+        #     "--device=/dev/dri:/dev/dri"
+        #     "--group-add=303"
+        #   ];
+        #   volumes = [
+        #     "/home/cenunix/mediaserver/jellyfin/config:/config"
+        #     "/home/cenunix/mediaserver/jellyfin/cache:/cache"
+        #     "realdebrid:/media"
+        #   ];
+        # };
         containers.debrid = {
           image = "itstoggle/plex_debrid";
           autoStart = true;

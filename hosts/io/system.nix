@@ -48,7 +48,6 @@ in
       };
       usrEnv = {
         isWayland = false;
-        desktop = "Gnome";
         windowManager = false;
         useHomeManager = true;
         autologin = false;
