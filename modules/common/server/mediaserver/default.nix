@@ -31,6 +31,7 @@ in
     };
     environment.systemPackages = with pkgs; [
       rclone_rd
+      filebot
     ];
     systemd.services."${service-name}-debrid" = {
       preStart = ''sleep 30'';
@@ -102,6 +103,27 @@ in
           };
           volumes = [
             "/home/cenunix/mediaserver/plex_debrid:/config"
+          ];
+        };
+        containers.filebot = {
+          image = "rednoah/filebot:node";
+          autoStart = true;
+          extraOptions = [
+            "--network=host"
+          ];
+          environment = {
+            TZ = "America/Los_Angeles";
+            PUID = "1000";
+            PGID = "1000";
+            AUTO_UPDATE = "true";
+            VERSION = "docker";
+          };
+          ports = [
+            "5452:5452"
+          ];
+          volumes = [
+            "/home/cenunix/mediaserver/filebot:/data"
+            "realdebrid:/volume1"
           ];
         };
         containers.jackett = {
