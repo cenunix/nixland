@@ -33,6 +33,8 @@ in
       mission-center
       mpv
       hexchat
+      stremio
+      nodejs_20
     ]
     ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [
       lunatask
