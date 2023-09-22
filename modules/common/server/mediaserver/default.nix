@@ -19,8 +19,8 @@ in
           mkdir -p /var/lib/docker-plugins/rclone/config
           mkdir -p /var/lib/docker-plugins/rclone/cache
           ${pkgs.docker}/bin/docker volume prune -f
-          ${pkgs.docker}/bin/docker plugin inspect rclone >/dev/null 2>&1 || ${pkgs.docker}/bin/docker plugin install neatness9988/docker-volume-rclone_rd:amd64-latest args="--network-mode --transfers=8 --buffer-size=128M -v" --alias rclone --grant-all-permissions config=/var/lib/docker-plugins/rclone/config cache=/var/lib/docker-plugins/rclone/cache
-          ${pkgs.docker}/bin/docker volume inspect realdebrid >/dev/null 2>&1 || ${pkgs.docker}/bin/docker volume create realdebrid -d rclone -o type=realdebrid -o allow-other=true -o dir-cache-time=10s -o --vfs-read-ahead=512M -o vfs-read-chunk-size=128M -o vfs-read-chunk-size-limit=2G -o vfs-cache-mode=full -o vfs-cache-max-age=5h -o vfs-cache-max-size=150G -o realdebrid-api_key=${builtins.readFile config.age.secrets.mediaserver.path}
+          ${pkgs.docker}/bin/docker plugin inspect rclone >/dev/null 2>&1 || ${pkgs.docker}/bin/docker plugin install itstoggle/docker-volume-rclone_rd:amd64 args="--network-mode --transfers=8 --buffer-size=128M -v" --alias rclone --grant-all-permissions config=/var/lib/docker-plugins/rclone/config cache=/var/lib/docker-plugins/rclone/cache
+          ${pkgs.docker}/bin/docker volume inspect realdebrid >/dev/null 2>&1 || ${pkgs.docker}/bin/docker volume create realdebrid -d rclone -o type=realdebrid -o allow-other=true -o dir-cache-time=60s -o --vfs-read-ahead=512M -o vfs-read-chunk-size=128M -o vfs-read-chunk-size-limit=2G -o vfs-cache-mode=full -o vfs-cache-max-age=5h -o vfs-cache-max-size=150G -o realdebrid-api_key=${builtins.readFile config.age.secrets.mediaserver.path}
           systemctl start docker-plex
         fi
       '';
@@ -29,9 +29,14 @@ in
         Type = "oneshot";
       };
     };
+    # services.jellyfin = {
+    #   enable = true;
+    #   openFirewall = true;
+    # };
     environment.systemPackages = with pkgs; [
       rclone_rd
       filebot
+      nodejs_20
     ];
     systemd.services."${service-name}-debrid" = {
       preStart = ''sleep 30'';
@@ -62,13 +67,14 @@ in
     virtualisation = {
       docker = {
         enable = true;
+        liveRestore = false;
         # enableNvidia = true;
       };
       oci-containers = {
         backend = "docker";
 
         containers.plex = {
-          image = "lscr.io/linuxserver/plex:latest";
+          image = "plexinc/pms-docker";
           autoStart = false;
           extraOptions = [
             "--network=mynet123"
@@ -84,7 +90,58 @@ in
           };
           volumes = [
             "/home/cenunix/mediaserver:/config"
-            "realdebrid:/torrents"
+            "/home/cenunix/Media/organized:/organized"
+            "realdebrid:/rclone_RD"
+          ];
+        };
+        containers.jellyfin = {
+          image = "jellyfin/jellyfin";
+          autoStart = false;
+          extraOptions = [
+            "--network=mynet123"
+            "--ip=172.18.0.27"
+            "--device=/dev/dri:/dev/dri"
+            "--group-add=303"
+          ];
+          environment = {
+            TZ = "America/Los_Angeles";
+            PUID = "1000";
+            PGID = "1000";
+          };
+          volumes = [
+            "/home/cenunix/mediaserver/jellyfin/config:/config"
+            "/home/cenunix/mediaserver/jellyfin/cache:/cache"
+            "/home/cenunix/Media/organized:/organized"
+            "realdebrid:/rclone_RD"
+          ];
+          ports = [
+            "8096:8096"
+          ];
+        };
+        containers.emby = {
+          image = "emby/embyserver";
+          autoStart = false;
+          extraOptions = [
+            "--network=mynet123"
+            "--device=/dev/dri:/dev/dri"
+            "--ip=172.18.0.28"
+          ];
+          environment = {
+            TZ = "America/Los_Angeles";
+            PUID = "1000";
+            PGID = "1000";
+            AUTO_UPDATE = "true";
+            VERSION = "docker";
+          };
+          ports = [
+            "8096:8096"
+            "8097:8097"
+            "8920:8920"
+          ];
+          volumes = [
+            "/home/cenunix/mediaserver:/config"
+            "/home/cenunix/Media/organized:/organized"
+            "realdebrid:/rclone_RD"
           ];
         };
         containers.debrid = {
@@ -107,7 +164,7 @@ in
         };
         containers.filebot = {
           image = "rednoah/filebot:node";
-          autoStart = true;
+          autoStart = false;
           extraOptions = [
             "--network=host"
           ];
@@ -117,13 +174,15 @@ in
             PGID = "1000";
             AUTO_UPDATE = "true";
             VERSION = "docker";
+            XPRA_AUTH = "none";
           };
           ports = [
             "5452:5452"
           ];
           volumes = [
             "/home/cenunix/mediaserver/filebot:/data"
-            "realdebrid:/volume1"
+            "/home/cenunix/Media/organized:/organized"
+            "realdebrid:/rclone_RD"
           ];
         };
         containers.jackett = {
@@ -184,56 +243,56 @@ in
             "/home/cenunix/mediaserver/nginx-pm/letsencrypt:/etc/letsencrypt"
           ];
         };
-        containers.plex-metam = {
-          image = "lscr.io/linuxserver/plex-meta-manager:latest";
-          autoStart = true;
-          environment = {
-            PUID = "1000";
-            PGID = "1000";
-            TZ = "America/Los_Angeles";
-          };
-          volumes = [
-            "/home/cenunix/mediaserver/plex-meta-manager:/config"
-          ];
-        };
-        containers.tautulli = {
-          image = "ghcr.io/tautulli/tautulli";
-          autoStart = true;
-          extraOptions = [
-            "--network=mynet123"
-          ];
-          environment = {
-            PUID = "1000";
-            PGID = "1000";
-            TZ = "America/Los_Angeles";
-          };
-          ports = [
-            "8181:8181"
-          ];
-          volumes = [
-            "/home/cenunix/mediaserver/tautulli:/config"
-          ];
-        };
-        containers.plex-trakt-sync = {
-          image = "ghcr.io/taxel/plextraktsync:0.26.11";
-          cmd = [ "sync" ];
-          extraOptions = [
-            "--interactive"
-            "--network=mynet123"
-            "--ip=172.18.0.25"
-            "--rm"
-          ];
-          autoStart = true;
-          environment = {
-            PUID = "1000";
-            PGID = "1000";
-            TZ = "America/Los_Angeles";
-            PLEXAPI_PLEXAPI_TIMEOUT = "300";
-          };
-          volumes = [
-            "/home/cenunix/mediaserver/plex-trakt-sync/config:/app/config"
-          ];
-        };
+        # containers.plex-metam = {
+        #   image = "lscr.io/linuxserver/plex-meta-manager:latest";
+        #   autoStart = true;
+        #   environment = {
+        #     PUID = "1000";
+        #     PGID = "1000";
+        #     TZ = "America/Los_Angeles";
+        #   };
+        #   volumes = [
+        #     "/home/cenunix/mediaserver/plex-meta-manager:/config"
+        #   ];
+        # };
+        # containers.tautulli = {
+        #   image = "ghcr.io/tautulli/tautulli";
+        #   autoStart = true;
+        #   extraOptions = [
+        #     "--network=mynet123"
+        #   ];
+        #   environment = {
+        #     PUID = "1000";
+        #     PGID = "1000";
+        #     TZ = "America/Los_Angeles";
+        #   };
+        #   ports = [
+        #     "8181:8181"
+        #   ];
+        #   volumes = [
+        #     "/home/cenunix/mediaserver/tautulli:/config"
+        #   ];
+        # };
+        # containers.plex-trakt-sync = {
+        #   image = "ghcr.io/taxel/plextraktsync:0.26.11";
+        #   cmd = [ "sync" ];
+        #   extraOptions = [
+        #     "--interactive"
+        #     "--network=mynet123"
+        #     "--ip=172.18.0.25"
+        #     "--rm"
+        #   ];
+        #   autoStart = true;
+        #   environment = {
+        #     PUID = "1000";
+        #     PGID = "1000";
+        #     TZ = "America/Los_Angeles";
+        #     PLEXAPI_PLEXAPI_TIMEOUT = "300";
+        #   };
+        #   volumes = [
+        #     "/home/cenunix/mediaserver/plex-trakt-sync/config:/app/config"
+        #   ];
+        # };
       };
     };
   };
