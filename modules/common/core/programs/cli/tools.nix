@@ -19,5 +19,8 @@
     dua
     vim
     woeusb
+    cargo
+    rustc
+    gcc
   ];
 }
