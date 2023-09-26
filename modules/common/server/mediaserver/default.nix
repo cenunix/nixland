@@ -37,6 +37,7 @@ in
       rclone
       filebot
       nodejs_20
+      rd_api_py
     ];
     systemd.timers."filebot-timer" = {
       wantedBy = [ "timers.target" ];
