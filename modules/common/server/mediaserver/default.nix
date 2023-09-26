@@ -34,10 +34,29 @@ in
     #   openFirewall = true;
     # };
     environment.systemPackages = with pkgs; [
-      rclone_rd
+      rclone
       filebot
       nodejs_20
     ];
+    systemd.timers."filebot-timer" = {
+      wantedBy = [ "timers.target" ];
+      timerConfig = {
+        OnBootSec = "5m";
+        OnUnitActiveSec = "5m";
+        Unit = "filebot-timer.service";
+      };
+    };
+
+    systemd.services."filebot-timer" = {
+      script = ''
+        set -eu
+        ${pkgs.curl}/bin/curl "http://io:5452/task?id=0"
+      '';
+      serviceConfig = {
+        Type = "oneshot";
+        User = "root";
+      };
+    };
     systemd.services."${service-name}-debrid" = {
       preStart = ''sleep 30'';
       serviceConfig = {
@@ -146,7 +165,7 @@ in
         };
         containers.debrid = {
           image = "itstoggle/plex_debrid";
-          autoStart = true;
+          autoStart = false;
           extraOptions = [
             "--network=host"
             "--interactive"
@@ -175,6 +194,7 @@ in
             AUTO_UPDATE = "true";
             VERSION = "docker";
             XPRA_AUTH = "none";
+            FILEBOT_OPTS = "-DuseExtendedFileAttributes=false";
           };
           ports = [
             "5452:5452"
@@ -243,56 +263,56 @@ in
             "/home/cenunix/mediaserver/nginx-pm/letsencrypt:/etc/letsencrypt"
           ];
         };
-        # containers.plex-metam = {
-        #   image = "lscr.io/linuxserver/plex-meta-manager:latest";
-        #   autoStart = true;
-        #   environment = {
-        #     PUID = "1000";
-        #     PGID = "1000";
-        #     TZ = "America/Los_Angeles";
-        #   };
-        #   volumes = [
-        #     "/home/cenunix/mediaserver/plex-meta-manager:/config"
-        #   ];
-        # };
-        # containers.tautulli = {
-        #   image = "ghcr.io/tautulli/tautulli";
-        #   autoStart = true;
-        #   extraOptions = [
-        #     "--network=mynet123"
-        #   ];
-        #   environment = {
-        #     PUID = "1000";
-        #     PGID = "1000";
-        #     TZ = "America/Los_Angeles";
-        #   };
-        #   ports = [
-        #     "8181:8181"
-        #   ];
-        #   volumes = [
-        #     "/home/cenunix/mediaserver/tautulli:/config"
-        #   ];
-        # };
-        # containers.plex-trakt-sync = {
-        #   image = "ghcr.io/taxel/plextraktsync:0.26.11";
-        #   cmd = [ "sync" ];
-        #   extraOptions = [
-        #     "--interactive"
-        #     "--network=mynet123"
-        #     "--ip=172.18.0.25"
-        #     "--rm"
-        #   ];
-        #   autoStart = true;
-        #   environment = {
-        #     PUID = "1000";
-        #     PGID = "1000";
-        #     TZ = "America/Los_Angeles";
-        #     PLEXAPI_PLEXAPI_TIMEOUT = "300";
-        #   };
-        #   volumes = [
-        #     "/home/cenunix/mediaserver/plex-trakt-sync/config:/app/config"
-        #   ];
-        # };
+        containers.plex-metam = {
+          image = "lscr.io/linuxserver/plex-meta-manager:latest";
+          autoStart = true;
+          environment = {
+            PUID = "1000";
+            PGID = "1000";
+            TZ = "America/Los_Angeles";
+          };
+          volumes = [
+            "/home/cenunix/mediaserver/plex-meta-manager:/config"
+          ];
+        };
+        containers.tautulli = {
+          image = "ghcr.io/tautulli/tautulli";
+          autoStart = true;
+          extraOptions = [
+            "--network=mynet123"
+          ];
+          environment = {
+            PUID = "1000";
+            PGID = "1000";
+            TZ = "America/Los_Angeles";
+          };
+          ports = [
+            "8181:8181"
+          ];
+          volumes = [
+            "/home/cenunix/mediaserver/tautulli:/config"
+          ];
+        };
+        containers.plex-trakt-sync = {
+          image = "ghcr.io/taxel/plextraktsync:0.26.11";
+          cmd = [ "sync" ];
+          extraOptions = [
+            "--interactive"
+            "--network=mynet123"
+            "--ip=172.18.0.25"
+            "--rm"
+          ];
+          autoStart = true;
+          environment = {
+            PUID = "1000";
+            PGID = "1000";
+            TZ = "America/Los_Angeles";
+            PLEXAPI_PLEXAPI_TIMEOUT = "300";
+          };
+          volumes = [
+            "/home/cenunix/mediaserver/plex-trakt-sync/config:/app/config"
+          ];
+        };
       };
     };
   };
