@@ -79,6 +79,16 @@ in
                 ExtensionRecommendations = false;
                 SkipOnboarding = true;
               };
+              SanitizeOnShutdown = {
+                Cache = true;
+                History = true;
+                Cookies = true;
+                Downloads = true;
+                FormData = true;
+                Sessions = true;
+                OfflineApps = true;
+              };
+
 
               Preferences = {
                 # "browser.toolbars.bookmarks.visibility" = "never";

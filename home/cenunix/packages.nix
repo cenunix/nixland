@@ -35,6 +35,7 @@ in
       hexchat
       stremio
       nodejs_20
+      vlc
     ]
     ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [
       lunatask

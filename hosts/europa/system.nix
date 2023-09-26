@@ -31,8 +31,8 @@ in
         sound.enable = true;
         bluetooth.enable = true;
         server = {
-          enable = false;
-          mediaServer = false;
+          enable = true;
+          mediaServer = true;
         };
       };
       programs = {

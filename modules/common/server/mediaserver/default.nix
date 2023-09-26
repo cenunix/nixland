@@ -248,7 +248,7 @@ in
         };
         containers.nginx-pm = {
           image = "jc21/nginx-proxy-manager:latest";
-          autoStart = true;
+          autoStart = false;
           extraOptions = [
             "--network=mynet123"
             "--ip=172.18.0.23"
