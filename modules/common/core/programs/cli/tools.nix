@@ -21,5 +21,7 @@
     cargo
     rustc
     gcc
+    python311
+    python311Packages.pip
   ];
 }

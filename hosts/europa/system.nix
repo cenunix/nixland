@@ -31,8 +31,8 @@ in
         sound.enable = true;
         bluetooth.enable = true;
         server = {
-          enable = true;
-          mediaServer = true;
+          enable = false;
+          mediaServer = false;
         };
       };
       programs = {
@@ -40,10 +40,10 @@ in
         gui.enable = true;
 
         gaming = {
-          enable = true;
-          steam.enable = true;
-          chess.enable = true;
-          minecraft.enable = true;
+          enable = false;
+          steam.enable = false;
+          chess.enable = false;
+          minecraft.enable = false;
         };
         override = { };
       };
