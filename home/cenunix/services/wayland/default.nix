@@ -7,6 +7,6 @@
 , ...
 }: {
   imports = [
-    ./ags
+    ./gBar
   ];
 }

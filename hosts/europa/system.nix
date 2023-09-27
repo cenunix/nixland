@@ -40,10 +40,10 @@ in
         gui.enable = true;
 
         gaming = {
-          enable = false;
-          steam.enable = false;
-          chess.enable = false;
-          minecraft.enable = false;
+          enable = true;
+          steam.enable = true;
+          chess.enable = true;
+          minecraft.enable = true;
         };
         override = { };
       };

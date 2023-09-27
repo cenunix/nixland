@@ -14,6 +14,7 @@
       url = "github:hyprwm/Hyprland/";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    gBar.url = "github:scorpion-26/gBar";
     ags = {
       url = "github:Aylur/ags";
       inputs.nixpkgs.follows = "nixpkgs";
