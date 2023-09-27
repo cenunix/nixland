@@ -14,7 +14,7 @@ in
       device = {
         type = "armlaptop";
         monitors = [
-          ",preferred,auto,1.1"
+          ",preferred,auto,1.3"
         ];
         hasBluetooth = true;
         hasSound = true;
@@ -41,6 +41,7 @@ in
       };
       usrEnv = {
         isWayland = true;
+        windowManager = true;
         desktop = "Hyprland";
         useHomeManager = true;
         autologin = true;

@@ -1,13 +1,13 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
+{ config
+, pkgs
+, lib
+, ...
 }:
 with lib; let
   device = config.modules.device;
-  acceptedTypes = ["desktop" "laptop" "hybrid" "lite" "armlaptop"];
-in {
+  acceptedTypes = [ "desktop" "laptop" "hybrid" "lite" "armlaptop" ];
+in
+{
   config = mkIf (builtins.elem device.type acceptedTypes) {
     # enable polkit for privilege escalation
     security.polkit.enable = true;
@@ -16,9 +16,9 @@ in {
       udisks2.enable = true;
       printing.enable = true;
       fstrim.enable = true;
-
+      flatpak.enable = true;
       dbus = {
-        packages = with pkgs; [dconf gcr udisks2];
+        packages = with pkgs; [ dconf gcr udisks2 ];
         enable = true;
       };
     };
