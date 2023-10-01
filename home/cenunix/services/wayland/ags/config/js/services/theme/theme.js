@@ -9,7 +9,7 @@ const THEME_CACHE = CACHE_DIR + '/theme-overrides.json';
 class ThemeService extends Service {
     static { Service.register(this); }
 
-    _defaultAvatar = `/home/${USER}/Pictures/avatars/donna.jpg`;
+    _defaultAvatar = `/home/${USER}/Pictures/avatars/blue-rose.jpg`;
     _defaultTheme = themes[0].name;
 
     constructor() {

@@ -28,7 +28,7 @@ export default {
         forMonitors(TopBar),
         forMonitors(ScreenCorners),
         forMonitors(OSD),
-        forMonitors(FloatingDock),
+        // forMonitors(FloatingDock),
         forMonitors(Desktop),
         forMonitors(Notifications),
         forMonitors(Lockscreen),

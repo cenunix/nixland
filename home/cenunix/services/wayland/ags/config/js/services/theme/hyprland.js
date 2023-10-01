@@ -4,7 +4,7 @@ const { execAsync } = ags.Utils;
 
 const noAlphaignore = ['verification', 'powermenu', 'lockscreen'];
 
-export default function({
+export default function ({
     wm_gaps,
     border_width,
     hypr_active_border,
@@ -47,13 +47,13 @@ export default function({
             }
         });
 
-        execAsync(`hyprctl keyword general:border_size ${border_width}`);
-        execAsync(`hyprctl keyword general:gaps_out ${wm_gaps}`);
-        execAsync(`hyprctl keyword general:gaps_in ${wm_gaps / 2}`);
-        execAsync(`hyprctl keyword general:col.active_border ${hypr_active_border}`);
-        execAsync(`hyprctl keyword general:col.inactive_border ${hypr_inactive_border}`);
-        execAsync(`hyprctl keyword decoration:rounding ${radii}`);
-        execAsync(`hyprctl keyword decoration:drop_shadow ${drop_shadow ? 'yes' : 'no'}`);
+        // execAsync(`hyprctl keyword general:border_size ${border_width}`);
+        // execAsync(`hyprctl keyword general:gaps_out ${wm_gaps}`);
+        // execAsync(`hyprctl keyword general:gaps_in ${wm_gaps / 2}`);
+        // execAsync(`hyprctl keyword general:col.active_border ${hypr_active_border}`);
+        // execAsync(`hyprctl keyword general:col.inactive_border ${hypr_inactive_border}`);
+        // execAsync(`hyprctl keyword decoration:rounding ${radii}`);
+        // execAsync(`hyprctl keyword decoration:drop_shadow ${drop_shadow ? 'yes' : 'no'}`);
     } catch (error) {
         console.error(error);
     }

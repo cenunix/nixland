@@ -8,6 +8,7 @@ export default ({ shader = true, ...props } = {}) => Box({
         box.setStyle(`
             background-image: url('${Theme.getSetting('avatar')}');
             background-size: cover;
+            background-repeat: repeat-y;
         `);
     }]],
     children: [

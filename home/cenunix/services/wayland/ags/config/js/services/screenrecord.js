@@ -1,5 +1,5 @@
 const { Service } = ags;
-const { execAsync, interval, ensureDirectory } = ags.Utils;
+const { execAsync, interval, ensureDirectory, USER } = ags.Utils;
 const { GLib } = imports.gi;
 const now = () => GLib.DateTime.new_now_local().format('%Y-%m-%d_%H-%M-%S');
 
@@ -8,10 +8,18 @@ class RecorderService extends Service {
         Service.register(this, { 'timer': ['int'] });
     }
 
-    _path = GLib.get_home_dir() + '/Videos/Screencasting';
+    _path = `/home/${USER}/Videos/Screencasting`;
     _timer = 0;
     _recording = false;
     _screenshotting = false;
+
+    check() {
+        if (this._recording) {
+            this.stop();
+        } else {
+            this.start();
+        }
+    }
 
     start() {
         if (this._recording)
@@ -38,8 +46,9 @@ class RecorderService extends Service {
         if (!this._recording)
             return;
 
-        execAsync('killall -INT wf-recorder').catch(print);
+        execAsync('kill -INT wf-recorder').catch(print);
         this._recording = false;
+        this.emit('timer', 0);
         this.emit('changed');
         GLib.source_remove(this._interval);
         execAsync([
@@ -102,6 +111,7 @@ export default class Recorder {
     static instance = new RecorderService();
     static start() { Recorder.instance.start(); }
     static stop() { Recorder.instance.stop(); }
+    static check() { Recorder.instance.check(); }
     static screenshot(full) { Recorder.instance.screenshot(full); }
     static get recording() { return Recorder.instance._recording; }
 }

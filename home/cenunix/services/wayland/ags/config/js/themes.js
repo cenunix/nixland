@@ -1,4 +1,4 @@
-const WP = `/home/${ags.Utils.USER}/Pictures/Wallpapers/`;
+const WP = `/home/${ags.Utils.USER}/Personal/Nicks/home/cenunix/graphical/wms/hyprland`;
 
 const editScheme = (scheme, edit) => {
     const obj = {};
@@ -71,7 +71,7 @@ const colors = {
 
 // themes
 const kitty_dark = {
-    wallpaper: WP + 'kitty.jpeg',
+    wallpaper: WP + 'mandelbrot_side_blue.png',
     name: 'kitty_dark',
     icon: '󰄛',
     ...dark,

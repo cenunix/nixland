@@ -7,6 +7,6 @@ export default () => PanelButton({
     connections: [[ags.App, (btn, win, visible) => {
         btn.toggleClassName('active', win === 'overview' && visible);
     }]],
-    onClicked: () => ags.App.toggleWindow('overview'),
+    onClicked: () => ags.App.toggleWindow('applauncher'),
     content: FontIcon(distroIcon),
 });

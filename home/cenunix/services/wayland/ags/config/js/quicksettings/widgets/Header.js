@@ -37,7 +37,6 @@ export const BatteryProgress = () => Box({
 export default () => Box({
     className: 'header',
     children: [
-        Avatar(),
         Box({
             className: 'system-box',
             vertical: true,
@@ -45,11 +44,6 @@ export default () => Box({
             children: [
                 Box({
                     children: [
-                        Button({
-                            valign: 'center',
-                            onClicked: Theme.openSettings,
-                            child: Icon(icons.settings),
-                        }),
                         Label({
                             className: 'uptime',
                             hexpand: true,
@@ -70,7 +64,6 @@ export default () => Box({
                         }),
                     ],
                 }),
-                BatteryProgress(),
             ],
         }),
     ],
