@@ -14,7 +14,6 @@
       url = "github:hyprwm/Hyprland/";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    gBar.url = "github:scorpion-26/gBar";
     ags = {
       url = "github:Aylur/ags";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -51,11 +50,6 @@
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-    helix = {
-      url = "github:SoraTenshi/helix/new-daily-driver";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.rust-overlay.follows = "rust-overlay";
     };
     rust-overlay = {
       url = "github:oxalica/rust-overlay";

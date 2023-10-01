@@ -72,7 +72,6 @@ in
         col.shadow=rgb(3c4252)
         col.shadow_inactive=rgb(3c4252)
         rounding=2
-        multisample_edges=true
         #blur_ignore_opacity=true
         #blur=false
         #blur_size=6 # minimum 1
