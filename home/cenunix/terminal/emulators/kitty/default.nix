@@ -8,7 +8,7 @@
   programs.kitty = {
     enable = true;
     font.name = "monospace";
-    font.size = 15;
+    font.size = 14;
     settings = {
       italic_font = "auto";
       bold_italic_font = "auto";
@@ -18,8 +18,8 @@
       url_style = "dotted";
       #Close the terminal =  without confirmation;
       confirm_os_window_close = 0;
-      background_opacity = "0.6";
-      window_padding_width = 30;
+      background_opacity = "0.8";
+      window_padding_width = 10;
     };
     extraConfig = ''
       # The basic colors

@@ -9,6 +9,7 @@
     # ./brave
     ./discord
     ./nheko
+    ./obs
     ./obsidian
     ./schizofox
     ./spotify
