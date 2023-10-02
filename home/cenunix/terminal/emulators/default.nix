@@ -7,5 +7,6 @@
 }: {
   imports = [
     ./foot
+    ./kitty
   ];
 }
