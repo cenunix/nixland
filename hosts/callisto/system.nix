@@ -33,8 +33,8 @@ in
         gui.enable = true;
 
         gaming = {
-          enable = true;
-          chess.enable = true;
+          enable = false;
+          chess.enable = false;
           steam.enable = false;
         };
         override = { };

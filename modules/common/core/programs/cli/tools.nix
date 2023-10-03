@@ -17,6 +17,7 @@
     grex
     lm_sensors
     dua
+    unrar
     vim
     cargo
     rustc
