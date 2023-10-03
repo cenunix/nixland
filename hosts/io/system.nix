@@ -47,10 +47,11 @@ in
         override = { };
       };
       usrEnv = {
-        isWayland = false;
-        windowManager = false;
+        isWayland = true;
+        windowManager = true;
+        desktop = "Hyprland";
         useHomeManager = true;
-        autologin = false;
+        autologin = true;
       };
     };
   };

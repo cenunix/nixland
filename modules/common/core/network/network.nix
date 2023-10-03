@@ -15,7 +15,7 @@
       enable = true;
       # if your minecraft server is not worky
       # this is probably why
-      allowedTCPPorts = [ 443 80 22 7000 8080 8096 8097 8920 5452 5432 5433 5454 32400 9117 ];
+      allowedTCPPorts = [ 443 80 22 7000 8080 8096 8097 8112 8920 5452 5432 5433 5454 32400 9117 ];
       allowedUDPPorts = [ 443 80 44857 8080 ];
       allowPing = false;
       logReversePathDrops = true;

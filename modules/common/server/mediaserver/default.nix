@@ -12,32 +12,30 @@ with lib; let
 in
 {
   config = mkIf (cfg.mediaServer) {
-    systemd.services.foo = {
-      script = ''
-        if ${pkgs.docker}/bin/docker run --rm -i -v=realdebrid:/tmp/myvolume busybox find /tmp/myvolume | grep -q '/tmp/myvolume'; then
-          systemctl stop docker-plex
-          mkdir -p /var/lib/docker-plugins/rclone/config
-          mkdir -p /var/lib/docker-plugins/rclone/cache
-          ${pkgs.docker}/bin/docker volume prune -f
-          ${pkgs.docker}/bin/docker plugin inspect rclone >/dev/null 2>&1 || ${pkgs.docker}/bin/docker plugin install itstoggle/docker-volume-rclone_rd:amd64 args="--network-mode --transfers=8 --buffer-size=128M -v" --alias rclone --grant-all-permissions config=/var/lib/docker-plugins/rclone/config cache=/var/lib/docker-plugins/rclone/cache
-          ${pkgs.docker}/bin/docker volume inspect realdebrid >/dev/null 2>&1 || ${pkgs.docker}/bin/docker volume create realdebrid -d rclone -o type=realdebrid -o allow-other=true -o dir-cache-time=60s -o --vfs-read-ahead=512M -o vfs-read-chunk-size=128M -o vfs-read-chunk-size-limit=2G -o vfs-cache-mode=full -o vfs-cache-max-age=5h -o vfs-cache-max-size=150G -o realdebrid-api_key=${builtins.readFile config.age.secrets.mediaserver.path}
-          systemctl start docker-plex
-        fi
-      '';
-      wantedBy = [ "graphical.target" ];
-      serviceConfig = {
-        Type = "oneshot";
-      };
-    };
-    # services.jellyfin = {
+    # systemd.services.foo = {
+    #   script = ''
+    #     if ${pkgs.docker}/bin/docker run --rm -i -v=realdebrid:/tmp/myvolume busybox find /tmp/myvolume | grep -q '/tmp/myvolume'; then
+    #       systemctl stop docker-plex
+    #       mkdir -p /var/lib/docker-plugins/rclone/config
+    #       mkdir -p /var/lib/docker-plugins/rclone/cache
+    #       ${pkgs.docker}/bin/docker volume prune -f
+    #       ${pkgs.docker}/bin/docker plugin inspect rclone >/dev/null 2>&1 || ${pkgs.docker}/bin/docker plugin install itstoggle/docker-volume-rclone_rd:amd64 args="--network-mode --transfers=8 --buffer-size=128M -v" --alias rclone --grant-all-permissions config=/var/lib/docker-plugins/rclone/config cache=/var/lib/docker-plugins/rclone/cache
+    #       ${pkgs.docker}/bin/docker volume inspect realdebrid >/dev/null 2>&1 || ${pkgs.docker}/bin/docker volume create realdebrid -d rclone -o type=realdebrid -o allow-other=true -o dir-cache-time=60s -o --vfs-read-ahead=512M -o vfs-read-chunk-size=128M -o vfs-read-chunk-size-limit=2G -o vfs-cache-mode=full -o vfs-cache-max-age=5h -o vfs-cache-max-size=150G -o realdebrid-api_key=${builtins.readFile config.age.secrets.mediaserver.path}
+    #       systemctl start docker-plex
+    #     fi
+    #   '';
+    #   wantedBy = [ "graphical.target" ];
+    #   serviceConfig = {
+    #     Type = "oneshot";
+    #   };
+    # };
+    # services.deluge = {
     #   enable = true;
     #   openFirewall = true;
+    #   group = "users";
+    #   web.enable = true;
     # };
     environment.systemPackages = with pkgs; [
-      rclone
-      filebot
-      nodejs_20
-      rd_api_py
     ];
     systemd.timers."filebot-timer" = {
       wantedBy = [ "timers.target" ];
@@ -95,7 +93,7 @@ in
 
         containers.plex = {
           image = "plexinc/pms-docker";
-          autoStart = false;
+          autoStart = true;
           extraOptions = [
             "--network=mynet123"
             "--device=/dev/dri:/dev/dri"
@@ -110,8 +108,27 @@ in
           };
           volumes = [
             "/home/cenunix/mediaserver:/config"
-            "/home/cenunix/Media/organized:/organized"
-            "realdebrid:/rclone_RD"
+            "/home/cenunix/deluge/downloads:/Personal"
+          ];
+        };
+        containers.deluge = {
+          image = "lscr.io/linuxserver/deluge:latest";
+          autoStart = false;
+
+          environment = {
+            TZ = "America/Los_Angeles";
+            PUID = "1000";
+            PGID = "1000";
+            AUTO_UPDATE = "true";
+            VERSION = "docker";
+          };
+          ports = [
+            "8112:8112"
+            "6881:6881"
+          ];
+          volumes = [
+            "/home/cenunix/deluge/downloads:/downloads"
+            "/home/cenunix/deluge/config:/config"
           ];
         };
         containers.jellyfin = {
