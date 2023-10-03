@@ -16,8 +16,8 @@ in
         cpu = "amd";
         gpu = "nvidia";
         monitors = [
-          "DP-1,2560x1440@239.970001,auto,1"
-          "DP-2,1920x1080@240,auto,1"
+          "DP-1,2560x1440@239.970001,auto,1,bitdepth,10"
+          "DP-2,1920x1080@240,auto,1,bitdepth,10"
         ];
         hasBluetooth = true;
         hasSound = true;
@@ -40,10 +40,10 @@ in
         gui.enable = true;
 
         gaming = {
-          enable = true;
-          steam.enable = true;
-          chess.enable = true;
-          minecraft.enable = true;
+          enable = false;
+          steam.enable = false;
+          chess.enable = false;
+          minecraft.enable = false;
         };
         override = { };
       };

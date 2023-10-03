@@ -115,14 +115,6 @@ in
       package = inputs.hyprland.packages.${pkgs.system}.default.override {
         enableNvidiaPatches = (device.gpu == "nvidia") || (device.gpu == "hybrid-nv");
       };
-      xwayland = {
-        enable = true;
-        # hidpi = true;
-      };
-      plugins = [
-        inputs.hyprland-plugins.packages.${pkgs.system}.csgo-vulkan-fix
-      ];
-      systemdIntegration = false;
     };
   };
 }

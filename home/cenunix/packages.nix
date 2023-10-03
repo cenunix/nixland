@@ -36,6 +36,7 @@ in
       stremio
       nodejs_20
       vlc
+      lame
     ]
     ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [
       lunatask
