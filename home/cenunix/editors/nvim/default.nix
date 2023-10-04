@@ -34,8 +34,8 @@
         }
 
         {
-          plugin = gruvbox-nvim;
-          config = "colorscheme gruvbox";
+          plugin = catppuccin-nvim;
+          config = "toLuaFile ./nvim/plugin/catppuccin.lua";
         }
 
         neodev-nvim
