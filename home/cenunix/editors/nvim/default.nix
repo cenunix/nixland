@@ -1,4 +1,10 @@
-{ config, pkgs, inputs, ... }:
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
+}:
 
 {
   programs.neovim =
@@ -16,6 +22,7 @@
       extraPackages = with pkgs; [
         luajitPackages.lua-lsp
         rnix-lsp
+        nodePackages_latest.typescript-language-server
 
         xclip
         wl-clipboard
@@ -35,12 +42,11 @@
 
         {
           plugin = catppuccin-nvim;
-          config = "toLuaFile ./nvim/plugin/catppuccin.lua";
+          config = toLuaFile ./nvim/plugin/catppuccin.lua;
         }
 
         neodev-nvim
 
-        nvim-cmp
         {
           plugin = nvim-cmp;
           config = toLuaFile ./nvim/plugin/cmp.lua;
@@ -96,6 +102,4 @@
       #   ${builtins.readFile ./nvim/plugin/other.lua}
       # '';
     };
-
-  programs.home-manager.enable = true;
 }

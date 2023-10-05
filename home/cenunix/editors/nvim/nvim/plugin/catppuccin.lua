@@ -1,4 +1,5 @@
 require("catppuccin").setup {
+    transparent_background = true, -- disables setting the background color.
     color_overrides = {
         all = {
             text = "#ffffff",
@@ -13,4 +14,5 @@ require("catppuccin").setup {
         },
     }
 }
-colorscheme catppuccin-mocha
+vim.cmd("colorscheme catppuccin-mocha")
+

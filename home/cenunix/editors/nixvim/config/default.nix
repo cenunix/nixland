@@ -19,10 +19,12 @@
       # fileencoding = "utf-8"; # File content encoding for the bufferf
       timeoutlen = 300;
       tabstop = 2;
+      softtabstop = 2;
       shiftwidth = 2;
       scrolloff = 2; # keeps lines above and below
-      breakindent = true; # Wrap indent to match  line start
-      preserveindent = true; # Preserve indent structure as much as possible
+      smartindent = true;
+      # breakindent = true; # Wrap indent to match  line start
+      # preserveindent = true; # Preserve indent structure as much as possible
       expandtab = true;
       copyindent = true; # Copy the previous indentation on autoindenting
       wrap = false;

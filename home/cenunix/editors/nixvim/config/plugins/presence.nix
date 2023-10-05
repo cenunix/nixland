@@ -8,7 +8,7 @@
   config = {
     plugins = {
       presence-nvim = {
-        enable = true;
+        enable = false;
       };
     };
   };
