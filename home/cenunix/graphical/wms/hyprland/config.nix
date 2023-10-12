@@ -23,7 +23,7 @@ in
     # Autostart
     exec-once=/etc/polkit-kde-agent/agent
     exec-once = hyprctl setcursor "Bibata-Modern-Ice" 16
-    # exec-once = run-as-service 'foot --server'
+    exec-once = run-as-service 'foot --server'
     exec-once = run-as-service waybar
     exec-once = ags
 
@@ -190,7 +190,7 @@ in
 
 
     # Keybinds
-    bind=SUPER,RETURN,exec,kitty
+    bind=SUPER,RETURN,exec,run-as-service footclient
     bind=SUPER,Q,killactive,
     bind=SUPER,M,exit,
     bind=SUPER,E,exec,thunar
