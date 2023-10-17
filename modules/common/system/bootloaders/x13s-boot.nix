@@ -17,9 +17,9 @@ in
     boot = {
       loader.grub = {
         enable = true;
-        loader.grub.efiSupport = true;
-        loader.grub.efiInstallAsRemovable = true;
-        loader.grub.device = "nodev";
+        efiSupport = true;
+        efiInstallAsRemovable = true;
+        device = "nodev";
         extraFiles = {
           "devicetree.dtb" = "${config.boot.kernelPackages.kernel}/dtbs/qcom/sc8280xp-lenovo-thinkpad-x13s.dtb";
         };
