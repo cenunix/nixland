@@ -1,14 +1,13 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
 }: {
   imports = [
     ./programs
     ./services
-    ./fonts.nix
+    # ./fonts.nix
   ];
 }

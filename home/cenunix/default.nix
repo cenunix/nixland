@@ -15,7 +15,7 @@
     # ./graphical
     # ./packages.nix
     # ./services
-    ./terminal
+    # ./terminal
     # ./theme
   ];
 }

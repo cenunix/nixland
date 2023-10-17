@@ -16,7 +16,6 @@ in
       udisks2.enable = true;
       printing.enable = true;
       fstrim.enable = true;
-      flatpak.enable = true;
       dbus = {
         packages = with pkgs; [ dconf gcr udisks2 ];
         enable = true;

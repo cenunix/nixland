@@ -19,8 +19,8 @@
     dua
     unrar
     vim
-    cargo
-    rustc
-    gcc
+    # cargo
+    # rustc
+    # gcc
   ];
 }
