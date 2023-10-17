@@ -29,7 +29,7 @@ in
       #loader.efi.canTouchEfiVariables = true;
       loader.efi.efiSysMountPoint = "/boot";
 
-      kernelPackages = linuxPackages_x13s;
+      kernelPackages = pkgs.linuxPackages_latest;
       kernelParams = [
         "efi=noruntime"
         "clk_ignore_unused"
