@@ -1,14 +1,13 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
 }: {
   imports = [
-    ./misc
-    ./emulators
+    # ./misc
+    # ./emulators
     ./shell
     ./tools
   ];

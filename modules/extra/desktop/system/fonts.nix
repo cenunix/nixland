@@ -28,8 +28,6 @@ in
         # dejavu_fonts
         material-icons
         material-design-icons
-        joypixels
-        gg-sans
         iosevka-bin
         noto-fonts
         noto-fonts-cjk
