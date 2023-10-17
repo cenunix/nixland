@@ -1,18 +1,17 @@
 import Theme from '../services/theme/theme.js';
-const { Box } = ags.Widget;
+import { Widget } from '../imports.js';
 
-export default ({ shader = true, ...props } = {}) => Box({
+export default ({ shader = true, ...props } = {}) => Widget.Box({
     ...props,
     className: 'avatar',
     connections: [[Theme, box => {
         box.setStyle(`
             background-image: url('${Theme.getSetting('avatar')}');
             background-size: cover;
-            background-repeat: repeat-y;
         `);
     }]],
     children: [
-        shader && Box({
+        shader && Widget.Box({
             className: 'shader',
             vexpand: true,
             hexpand: true,

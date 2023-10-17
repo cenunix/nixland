@@ -87,7 +87,7 @@
         import ./pkgs { inherit pkgs; }
       );
       install-iso = nixos-generators.nixosGenerate {
-        system = "x86_64-linux";
+        system = "aarch64-linux";
         modules = [
           # you can include your own nixos configuration here, i.e.
           # ./configuration.nix

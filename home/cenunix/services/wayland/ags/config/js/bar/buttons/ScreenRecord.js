@@ -1,26 +1,21 @@
 import PanelButton from '../PanelButton.js';
 import Recorder from '../../services/screenrecord.js';
 import icons from '../../icons.js';
-const { Box, Icon, Label } = ags.Widget;
+import { Widget } from '../../imports.js';
 
 export default () => PanelButton({
     className: 'recorder',
-    onClicked: Recorder.check,
-    // binds: [['visible', Recorder, 'recording']],
-    child: Box({
+    onClicked: () => Recorder.stop(),
+    binds: [['visible', Recorder, 'recording']],
+    child: Widget.Box({
         children: [
-            Icon(icons.recorder.recording),
-            Label({
-                connections: [[Recorder, (label, time) => {
-                    if (isNaN(time) || time == 0) {
-                        label.label = "Not recording"
-                    } else {
-                        const sec = time % 60;
-                        const min = Math.floor(time / 60);
-                        label.label = `${min}:${sec < 10 ? '0' + sec : sec}`;
-                    }
-
-                }, 'timer']],
+            Widget.Icon(icons.recorder.recording),
+            Widget.Label({
+                binds: [['label', Recorder, 'timer', time => {
+                    const sec = time % 60;
+                    const min = Math.floor(time / 60);
+                    return `${min}:${sec < 10 ? '0' + sec : sec}`;
+                }]],
             }),
         ],
     }),

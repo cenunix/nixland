@@ -1,98 +1,84 @@
 { config
 , lib
 , pkgs
+, modulesPath
 , ...
-}: {
-  systemd.services = {
-    pd-mapper = {
-      unitConfig = {
-        Requires = "qrtr-ns.service";
-        After = "qrtr-ns.service";
-      };
-      serviceConfig = {
-        Restart = "always";
-        ExecStart = "${pkgs.pd-mapper}/bin/pd-mapper";
-      };
-      wantedBy = [
-        "multi-user.target"
-      ];
-    };
-    qrtr-ns = {
-      serviceConfig = {
-        ExecStart = "${pkgs.qrtr}/bin/qrtr-ns -f 1";
-        Restart = "always";
-      };
-      wantedBy = [ "multi-user.target" ];
-    };
-    bluetooth = {
-      serviceConfig = {
-        ExecStartPre = [
-          ""
-          "${pkgs.util-linux}/bin/rfkill block bluetooth"
-          "${pkgs.bluez5-experimental}/bin/btmgmt public-addr F4:A8:0D:30:A3:47"
-          "${pkgs.util-linux}/bin/rfkill unblock bluetooth"
-        ];
-        ExecStart = [
-          ""
-          "${pkgs.bluez}/libexec/bluetooth/bluetoothd -f /etc/bluetooth/main.conf --noplugin=sap"
-        ];
-      };
-    };
-  };
-
-  #Feel free to change to desired username passwd etc.
+}:
+{
+  imports = [ "${toString modulesPath}/installer/cd-dvd/installation-cd-graphical-gnome.nix" ];
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
-    loader = {
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
+    kernelParams = [
+      "efi=noruntime"
+      "clk_ignore_unused"
+      "pd_ignore_unused"
+      "arm64.nopauth"
+      # "iommu.passthrough=0"
+      # "iommu.strict=0"
+      # "pcie_aspm.policy=powersupersave"
+    ];
+    blacklistedKernelModules = [
+      "qcom_q6v5_pas"
+    ];
+    supportedFilesystems = lib.mkForce [
+      "btrfs"
+      "reiserfs"
+      "vfat"
+      "f2fs"
+      "xfs"
+      "ntfs"
+      "cifs"
+      "exfat"
+      "fat8"
+      "fat16"
+      "fat32"
+      "ext2"
+      "ext3"
+      "ext4"
+    ];
+    initrd = {
+      availableKernelModules = [
+        "nvme"
+        "phy_qcom_qmp_pcie"
+        # "pcie_qcom"
+        "phy_qcom_qmp_ufs"
+        "ufs_qcom"
+        "i2c_hid_of"
+        "i2c_qcom_geni"
+        "leds_qcom_lpg"
+        "pwm_bl"
+        "qrtr"
+        "pmic_glink_altmode"
+        "gpio_sbu_mux"
+        "phy_qcom_qmp_combo"
+        "panel-edp"
+        "msm"
+        "phy_qcom_edp"
+      ];
     };
+    loader.efi.efiSysMountPoint = "/boot";
   };
-  users.users.cenunix = {
-    isNormalUser = true;
-    initialPassword = "changeme";
-    home = "/home/cenunix";
-    extraGroups = [ "wheel" "networkManager" ];
-  };
-
-  networking.networkmanager.enable = true;
-  networking.hostName = "nixos-x13s";
-
   nixpkgs = {
-    config = {
-      allowUnfree = true;
-    };
     overlays = [
       (final: prev: {
-        qrtr = prev.callPackage ./qrtr.nix { };
-        pd-mapper = final.callPackage ./pd-mapper.nix { inherit (final) qrtr; }; # i use a fork of pd-mapper because I changed the firmware path
-        compressFirmwareXz = lib.id; #this leaves all firmware uncompressed :) for pd-mapper
+        linux-firmware = prev.linux-firmware.overrideAttrs (old: {
+          postInstall = ''
+            rm $out/lib/firmware/qcom/sc8280xp/LENOVO/21BX/qcadsp8280.mbn.xz
+            rm $out/lib/firmware/qcom/sc8280xp/LENOVO/21BX/qcadsp8280.mbn
+          '';
+        });
       })
     ];
+    config = {
+      allowUnsupportedSystem = true;
+      allowUnfree = true;
+    };
   };
 
-  #GNOME for default DE, see in services.nix
-  #The rest of these packages are just some essentials I like to have
-
   environment.systemPackages = with pkgs; [
-    (callPackage ../pkgs/qrtr.nix { })
-    (callPackage ../pkgs/pd-mapper.nix { }) #required for battery and sound, forked pd-mapper and changed path of firmware, leave firmware uncompressed using overlay.
-    alsa-ucm-conf #>1.2.9 required for audio on x13s
-    alsa-utils
+    linux-firmware
     neovim
-    networkmanagerapplet
     git
-    firefox
-    nheko
-    webcord
-    gh
-    neofetch
-    (vscode-with-extensions.override {
-      vscodeExtensions = with vscode-extensions; [
-        bbenoist.nix
-      ];
-    })
   ];
-
   system.stateVersion = "23.05";
 }

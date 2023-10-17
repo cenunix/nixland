@@ -1,4 +1,5 @@
-const WP = `/home/${ags.Utils.USER}/Personal/Nicks/home/cenunix/graphical/wms/hyprland`;
+import { Utils } from './imports.js';
+const WP = `/home/${Utils.USER}/Pictures/Wallpapers/`;
 
 const editScheme = (scheme, edit) => {
     const obj = {};
@@ -7,13 +8,13 @@ const editScheme = (scheme, edit) => {
 };
 
 const gnome = {
-    red: '#f38ba8',
-    green: '#a6e3a1',
-    yellow: '#f9e2af',
-    blue: '#89b4fa',
-    magenta: '#cba6f7',
-    teal: '#94e2d5',
-    orange: '#fab387',
+    red: '#f66151',
+    green: '#57e389',
+    yellow: '#f6d32d',
+    blue: '#62a0ea',
+    magenta: '#c061cb',
+    teal: '#5bc8aF',
+    orange: '#ffa348',
 };
 
 const charm = {
@@ -53,6 +54,9 @@ const misc = {
     bar_style: 'normal',
     layout: 'topbar',
     desktop_clock: 'center center',
+    font: 'Ubuntu Nerd Font',
+    mono_font: 'Mononoki Nerd Font',
+    font_size: 16,
 };
 
 const colors = {
@@ -71,7 +75,7 @@ const colors = {
 
 // themes
 const kitty_dark = {
-    wallpaper: WP + 'mandelbrot_side_blue.png',
+    wallpaper: WP + 'kitty.jpeg',
     name: 'kitty_dark',
     icon: '󰄛',
     ...dark,

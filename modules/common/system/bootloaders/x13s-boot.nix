@@ -1,24 +1,31 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: let
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
+}:
+let
   linuxPackages_x13s = pkgs.linuxPackagesFor pkgs.linux_x13s_pkg;
   dtbname = "sc8280xp-lenovo-thinkpad-x13s.dtb";
   inherit (lib) mkDefault mkIf;
 
   cfg = config.modules.system;
-in {
+in
+{
   config = mkIf (cfg.boot.loader == "x13s-boot") {
     boot = {
-      loader.grub.enable = true;
-      loader.grub.efiSupport = true;
-      loader.grub.efiInstallAsRemovable = true;
-      loader.grub.device = "nodev";
-      loader.grub.configurationLimit = 20;
+      loader.grub = {
+        enable = true;
+        extraFiles = {
+          "devicetree.dtb" = "${config.boot.kernelPackages.kernel}/dtbs/qcom/sc8280xp-lenovo-thinkpad-x13s.dtb";
+        };
+        extraPerEntryConfig = "devicetree ($drive1)//devicetree.dtb";
+        extraConfig = ''
+          terminal_input console
+          terminal_output gfxterm
+        '';
+      };
       #loader.efi.canTouchEfiVariables = true;
       loader.efi.efiSysMountPoint = "/boot";
 
@@ -27,6 +34,10 @@ in {
         "efi=noruntime"
         "clk_ignore_unused"
         "pd_ignore_unused"
+        "arm64.nopauth"
+        "iommu.passthrough=0"
+        "iommu.strict=0"
+        "pcie_aspm.policy=powersupersave"
         "root=PARTUUID=89578242-4aef-8e4f-8ecc-99829a0611c8"
         #"dtb=${config.boot.kernelPackages.kernel}/dtbs/qcom/${dtbname}"
       ];
@@ -50,6 +61,9 @@ in {
         ];
       };
     };
-    hardware.firmware = [pkgs.x13s-firmware];
+    hardware = {
+      firmware = [ pkgs.x13s-firmware ];
+      deviceTree.enable = true;
+    };
   };
 }

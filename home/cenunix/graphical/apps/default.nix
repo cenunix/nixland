@@ -7,7 +7,7 @@
 }: {
   imports = [
     # ./brave
-    # ./discord
+    ./discord
     ./nheko
     ./obs
     ./obsidian
