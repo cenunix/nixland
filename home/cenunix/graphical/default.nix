@@ -1,15 +1,14 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
 }: {
   imports = [
-    ./apps
+    # ./apps
     ./games
-    ./launchers
+    # ./launchers
     ./wms
   ];
 }
