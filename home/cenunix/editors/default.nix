@@ -6,7 +6,7 @@
 , ...
 }: {
   imports = [
-    # ./nixvim
+    ./nixvim
     # ./nvim
     # ./vscode
   ];

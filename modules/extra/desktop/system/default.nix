@@ -8,6 +8,6 @@
   imports = [
     ./programs
     ./services
-    # ./fonts.nix
+    ./fonts.nix
   ];
 }

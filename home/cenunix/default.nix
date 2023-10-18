@@ -11,11 +11,11 @@
 }: {
   config.home.stateVersion = "23.05";
   imports = [
-    # ./editors
-    # ./graphical
-    # ./packages.nix
-    # ./services
-    # ./terminal
-    # ./theme
+    ./editors
+    ./graphical
+    ./packages.nix
+    ./services
+    ./terminal
+    ./theme
   ];
 }

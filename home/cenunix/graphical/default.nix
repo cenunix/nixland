@@ -6,9 +6,9 @@
 , ...
 }: {
   imports = [
-    # ./apps
+    ./apps
     ./games
-    # ./launchers
+    ./launchers
     ./wms
   ];
 }

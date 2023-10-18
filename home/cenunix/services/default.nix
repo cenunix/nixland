@@ -6,7 +6,7 @@
 , ...
 }: {
   imports = [
-    # ./shared
-    # ./wayland
+    ./shared
+    ./wayland
   ];
 }
