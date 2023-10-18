@@ -6,8 +6,7 @@
 , ...
 }:
 let
-  linuxPackages_x13s = pkgs.linuxPackagesFor pkgs.linux_x13s_pkg;
-  dtbname = "sc8280xp-lenovo-thinkpad-x13s.dtb";
+  firmware = pkgs.callPackages ./firmware { };
   inherit (lib) mkDefault mkIf;
 
   cfg = config.modules.system;
@@ -65,7 +64,9 @@ in
       };
     };
     hardware = {
-      firmware = [ pkgs.x13s-firmware ];
+      enableAllFirmware = false;
+      enableRedistributableFirmware = false;
+      firmware = [ firmware.linux-firmware-modified ];
       deviceTree.enable = true;
     };
   };

@@ -1,19 +1,12 @@
-{
-  lib,
-  stdenv,
-  fetchFromGitHub,
-}:
-stdenv.mkDerivation rec {
-  pname = "alsa-ucm-conf-x13s";
-  version = "1.2.9";
+{ lib, stdenv, fetchurl }:
 
-  src = fetchFromGitHub {
-    owner = "cenunix";
-    repo = "alsa-ucm-conf";
-    rev = "c30fda1f8549a18c30fe283b97a6228acb27978d";
-    # rev = "32b0a008a96a3dd04675659e45a676b639236a98";
-    # sha256 = "sha256-s/nnGUGFgJ+gpMAOO3hYJ6PrX/qti6U1wyB6PzTiNtM=";
-    sha256 = "sha256-3jgU9Hg+CzU28VMSRnH2ky0VDpntCHkclK/caSCZYRE=";
+stdenv.mkDerivation rec {
+  pname = "alsa-ucm-conf";
+  version = "1.2.10";
+
+  src = fetchurl {
+    url = "mirror://alsa/lib/${pname}-${version}.tar.bz2";
+    hash = "sha256-nCHj8B/wC6p1jfF+hnzTbiTrtBpr7ElzfpkQXhbyrpc=";
   };
 
   dontBuild = true;
@@ -37,7 +30,7 @@ stdenv.mkDerivation rec {
     '';
 
     license = licenses.bsd3;
-    maintainers = [maintainers.roastiek];
+    maintainers = [ maintainers.roastiek ];
     platforms = platforms.linux;
   };
 }

@@ -1,18 +1,23 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
 }:
 with lib; let
   cfg = config.modules.system.sound;
   device = config.modules.device;
-in {
+in
+{
   environment.systemPackages = with pkgs; [
     alsa-utils
     pavucontrol
+
+  ]
+  ++ optionals (builtins.elem device.type [ "armlaptop" ]) [
+    # additional packages for arm laptop (x13s)
+    alsa-ucm-conf-x13s
   ];
   services = {
     pipewire = {
