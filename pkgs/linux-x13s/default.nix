@@ -1,24 +1,20 @@
-{
-  buildLinux,
-  fetchFromGitHub,
-  lib,
-  ...
+{ pkgs
+, ...
 } @ args:
-with lib;
-  buildLinux (args
-    // rec {
-      version = "6.3.5";
-      modDirVersion = "6.3.8";
+pkgs.pinned.buildLinux (args
+  // rec {
+  version = "6.5.5";
+  modDirVersion = version;
 
-      kernelPatches = [];
-      extraMeta.branch = "lenovo-x13s-linux-6.3.y";
+  kernelPatches = [ ];
+  extraMeta.branch = "lenovo-x13s-linux-6.3.y";
 
-      src = fetchFromGitHub {
-        owner = "steev";
-        repo = "linux";
-        rev = "ab87d34f0b5ddd78093b8aa906939ae91984b2ab";
-        sha256 = "sha256-aZMahaEi5wZr62sMlCF92pECXlQBZmurN1r8iouLMso=";
-      };
-      defconfig = "laptop_defconfig";
-    }
-    // (args.argsOverride or {}))
+  src = pkgs.pinned.fetchFromGitHub {
+    owner = "steev";
+    repo = "linux";
+    rev = "4f960402118224ab18a45f4a4e698f69b024b6af";
+    sha256 = "wTLnqLbJ1tCzyyDq0peFCHolN5oj6aL0Wb2dEZY7zwQ=";
+  };
+  defconfig = "laptop_defconfig";
+}
+  // (args.argsOverride or { }))

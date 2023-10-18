@@ -3,6 +3,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-pinned.url = "github:nixos/nixpkgs/6f18106ea5b07e0242d7156728ed0864da593e28";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.05";
     hardware.url = "github:nixos/nixos-hardware";
     nixos-generators = {
@@ -63,7 +64,6 @@
   outputs =
     { self
     , nixpkgs
-    , nixos-generators
     , ...
     } @ inputs:
 
@@ -84,28 +84,10 @@
         let
           pkgs = nixpkgs.legacyPackages.${system};
         in
-        import ./pkgs { inherit pkgs; }
+        import ./pkgs {
+          inherit pkgs;
+        }
       );
-      install-iso = nixos-generators.nixosGenerate {
-        system = "aarch64-linux";
-        modules = [
-          # you can include your own nixos configuration here, i.e.
-          # ./configuration.nix
-        ];
-        format = "install-iso";
-
-        # optional arguments:
-        # explicit nixpkgs and lib:
-        # pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        # lib = nixpkgs.legacyPackages.x86_64-linux.lib;
-        # additional arguments to pass to modules:
-        # specialArgs = { myExtraArg = "foobar"; };
-
-        # you can also define your own custom formats
-        # customFormats = { "myFormat" = <myFormatModule>; ... };
-        # format = "myFormat";
-      };
-
 
       devShells = forAllSystems (
         # Devshell for bootstrapping Acessible through 'nix develop' or 'nix-shell' (legacy)

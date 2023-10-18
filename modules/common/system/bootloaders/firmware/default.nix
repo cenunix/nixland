@@ -66,12 +66,6 @@ in
 
       # Install gpu firmware for X13s
       cp ${x13s-alarm-firmware}/a690_gmu.bin $out/lib/firmware/qcom
-
-      # Install sound firmware for X13s
-      cp ${x13s-alarm-firmware}/audioreach-tplg.bin $out/lib/firmware/qcom/sc8280xp/LENOVO/21BX
-
-      # Wifi
-      cp ${x13s-alarm-firmware}/board-2.bin $out/lib/firmware/ath11k/WCN6855/hw2.0/
     '';
   };
 }

@@ -6,6 +6,7 @@
 , ...
 }:
 let
+  linuxPackages_x13s = pkgs.linuxPackagesFor pkgs.linux_x13s_pkg;
   firmware = pkgs.callPackages ./firmware { };
   inherit (lib) mkDefault mkIf;
 
@@ -31,9 +32,9 @@ in
       #loader.efi.canTouchEfiVariables = true;
       loader.efi.efiSysMountPoint = "/boot";
 
-      kernelPackages = pkgs.linuxPackages_latest;
+      kernelPackages = linuxPackages_x13s;
       kernelParams = [
-        "efi=noruntime"
+        "efi=novamap,noruntime"
         "clk_ignore_unused"
         "pd_ignore_unused"
         "arm64.nopauth"
@@ -48,7 +49,7 @@ in
         availableKernelModules = [
           "nvme"
           "phy_qcom_qmp_pcie"
-          # "pcie_qcom"
+          "pcie_qcom"
           "i2c_hid_of"
           "i2c_qcom_geni"
           "leds_qcom_lpg"
@@ -64,9 +65,8 @@ in
       };
     };
     hardware = {
-      enableAllFirmware = false;
-      enableRedistributableFirmware = false;
-      firmware = [ firmware.linux-firmware-modified ];
+      enableRedistributableFirmware = true;
+      firmware = [ pkgs.linux-firmware firmware.linux-firmware-modified ];
       deviceTree.enable = true;
     };
   };
