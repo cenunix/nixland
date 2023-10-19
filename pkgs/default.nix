@@ -15,6 +15,6 @@
   rclone_rd = pkgs.callPackage ./rclone_rd/default.nix { };
   filebot = pkgs.callPackage ./filebot/default.nix { };
   rd_api_py = pkgs.callPackage ./rd_api_py/default.nix { };
-  myswayosd = pkgs.callPackage ./swayosd.nix { };
+  myswayosd = pkgs.callPackage ./swayosd/default.nix { };
 
 }
