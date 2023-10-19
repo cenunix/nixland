@@ -21,7 +21,7 @@
         dpi-aware = "no";
       };
       colors = {
-        alpha = "0.80";
+        alpha = "1.00";
         foreground = "cdd6f4"; # Text
         background = "11111b"; # Base
         regular0 = "45475a"; # Surface 1

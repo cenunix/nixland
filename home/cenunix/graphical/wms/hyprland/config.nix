@@ -24,8 +24,8 @@ in
     exec-once=/etc/polkit-kde-agent/agent
     exec-once = hyprctl setcursor "Bibata-Modern-Ice" 16
     exec-once = run-as-service 'foot --server'
-    exec-once = run-as-service waybar
-    exec-once = ags
+    exec-once = run-as-service avizo-service
+    exec-once = run-as-service ags
 
     # Keyboard and mouse
     input {
@@ -76,7 +76,7 @@ in
         #blur=false
         #blur_size=6 # minimum 1
         blur {
-            enabled=true
+            enabled=false
             ignore_opacity=true
             size=6
             passes=2
@@ -214,11 +214,11 @@ in
     bind=,Print,exec,wscreenshot -sf
 
 
-    bind=,XF86MonBrightnessUp,exec,brightnessctl set +5%
-    bind=,XF86MonBrightnessDown,exec,brightnessctl set 5%-
-    binde=, XF86AudioRaiseVolume, exec, swayosd-client --output-volume raise
-    bindl=, XF86AudioLowerVolume, exec, volume -d 5
-    bindl=, XF86AudioMute, exec, volume -t
+    bind=,XF86MonBrightnessUp,exec,lightctl up
+    bind=,XF86MonBrightnessDown,exec,lightctl down
+    binde=, XF86AudioRaiseVolume, exec, volumectl -u up
+    bindl=, XF86AudioLowerVolume, exec, volumectl -u down
+    bindl=, XF86AudioMute, exec, volumectl toggle-mute
 
     bind=SUPER,h,movefocus,l
     bind=SUPER,l,movefocus,r

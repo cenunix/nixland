@@ -2,7 +2,7 @@
   description = "Cenunix NixOS configuration";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-master.url = "github:nixos/nixpkgs/master";
     nixpkgs-pinned.url = "github:nixos/nixpkgs/6f18106ea5b07e0242d7156728ed0864da593e28";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.05";
     hardware.url = "github:nixos/nixos-hardware";

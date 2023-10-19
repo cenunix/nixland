@@ -27,7 +27,7 @@ in
 
   config = mkIf (builtins.elem device.type acceptedTypes) {
     home.packages = with pkgs; [
-      webcord-vencord # webcord with vencord extension installed
+      my-webcord # webcord with vencord extension installed
     ];
 
     xdg.configFile = {
