@@ -28,6 +28,7 @@ in
         [
           "wheel"
           "networkManager"
+          "video"
         ]
         ++ ifTheyExist [
           "docker"

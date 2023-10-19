@@ -3,17 +3,15 @@
 } @ args:
 pkgs.pinned.buildLinux (args
   // rec {
-  version = "6.5.5";
-  modDirVersion = version;
+  version = "6.6.0";
+  modDirVersion = "6.6.0-rc5";
 
   kernelPatches = [ ];
-  extraMeta.branch = "lenovo-x13s-linux-6.3.y";
-
   src = pkgs.pinned.fetchFromGitHub {
     owner = "steev";
     repo = "linux";
-    rev = "4f960402118224ab18a45f4a4e698f69b024b6af";
-    sha256 = "wTLnqLbJ1tCzyyDq0peFCHolN5oj6aL0Wb2dEZY7zwQ=";
+    rev = "f407eddf8f89860256c17f85550631263581079b";
+    sha256 = "sha256-B9WtrWg7F6Rm72rgA36W6OWKLGo4cug7Sy3WOvols2Q=";
   };
   defconfig = "laptop_defconfig";
 }

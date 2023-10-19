@@ -27,15 +27,15 @@ let
     src = fetchFromGitHub {
       owner = "ironrobin";
       repo = "x13s-alarm";
-      rev = "31282f7a3a6c196b9a05f4b481f7a1298aaed969";
-      sha256 = "8LJ7Z3oijU95Y7tupSf93FdxjIIhWeJQFil77kGOcG0=";
+      rev = "ab5b7ace34aac2ead4c006875fc9b2f85c39422d";
+      sha256 = "sha256-MkuqxpzsSHzEOZHc4QyWA5XGauz0jsotJwdWDUBq/N0=";
     };
 
     dontFixup = true;
     dontBuild = true;
 
     installPhase = ''
-      for i in a690_gmu.bin  audioreach-tplg.bin  board-2.bin  hpnv21.b8c  qcvss8280.mbn  SC8280XP-LENOVO-X13S-tplg.bin;
+      for i in a690_gmu.bin hpnv21.b8c  qcvss8280.mbn;
       do
         install -D -m644 x13s-firmware/$i $out/$i
       done
@@ -63,6 +63,8 @@ in
 
       # Install bluetooth firmware for X13s
       cp ${x13s-alarm-firmware}/hpnv21.b8c $out/lib/firmware/qca
+      # rm $out/lib/firmware/qcom/sc8280xp/SC8280XP-LENOVO-X13S-tplg.bin
+      # ln -s ${pkgs.linux-firmware}/lib/qcom/sc8280xp/LENOVO/21BX/audioreach-tplg.bin $out/lib/firmware/qcom/sc8280xp/SC8280XP-LENOVO-X13S-tplg.bin
 
       # Install gpu firmware for X13s
       cp ${x13s-alarm-firmware}/a690_gmu.bin $out/lib/firmware/qcom

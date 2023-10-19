@@ -1,12 +1,17 @@
-{ lib, stdenv, fetchurl }:
-
+{ lib
+, stdenv
+, fetchFromGitHub
+,
+}:
 stdenv.mkDerivation rec {
   pname = "alsa-ucm-conf";
   version = "1.2.10";
 
-  src = fetchurl {
-    url = "mirror://alsa/lib/${pname}-${version}.tar.bz2";
-    hash = "sha256-nCHj8B/wC6p1jfF+hnzTbiTrtBpr7ElzfpkQXhbyrpc=";
+  src = fetchFromGitHub {
+    owner = "Srinivas-Kandagatla";
+    repo = "alsa-ucm-conf";
+    rev = "e8c3e7792336e9f68aa560db8ad19ba06ba786bb";
+    sha256 = "sha256-4fIvgHIkTyGApM3uvucFPSYMMGYR5vjHOz6KQ26Kg7A=";
   };
 
   dontBuild = true;
@@ -15,7 +20,7 @@ stdenv.mkDerivation rec {
     runHook preInstall
 
     mkdir -p $out/share/alsa
-    cp -r ucm ucm2 $out/share/alsa
+    cp -av ucm2 $out/share/alsa
 
     runHook postInstall
   '';

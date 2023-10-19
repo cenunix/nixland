@@ -216,7 +216,7 @@ in
 
     bind=,XF86MonBrightnessUp,exec,brightnessctl set +5%
     bind=,XF86MonBrightnessDown,exec,brightnessctl set 5%-
-    binde=, XF86AudioRaiseVolume, exec, volume -i 5
+    binde=, XF86AudioRaiseVolume, exec, swayosd-client --output-volume raise
     bindl=, XF86AudioLowerVolume, exec, volume -d 5
     bindl=, XF86AudioMute, exec, volume -t
 

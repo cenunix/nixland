@@ -10,15 +10,16 @@ with lib; let
   device = config.modules.device;
 in
 {
+  hardware.pulseaudio.enable = false;
   environment.systemPackages = with pkgs; [
     alsa-utils
     pavucontrol
-
-  ]
-  ++ optionals (builtins.elem device.type [ "armlaptop" ]) [
-    # additional packages for arm laptop (x13s)
     alsa-ucm-conf-x13s
+    helvum
   ];
+  # ++ optionals (builtins.elem device.type [ "armlaptop" ]) [
+  #   # additional packages for arm laptop (x13s)
+  # ];
   services = {
     pipewire = {
       enable = true;

@@ -48,10 +48,10 @@ const Desktop = () => Widget.EventBox({
             box.valign = imports.gi.Gtk.Align[valign.toUpperCase()];
             box.setStyle(`margin: ${Number(offset)}px;`);
         }]],
-        children: [
-            DesktopClock(),
-            Clock({ format: '%B %e. %A', className: 'date' }),
-        ],
+        // children: [
+        //     DesktopClock(),
+        //     Clock({ format: '%B %e. %A', className: 'date' }),
+        // ],
     }),
 });
 

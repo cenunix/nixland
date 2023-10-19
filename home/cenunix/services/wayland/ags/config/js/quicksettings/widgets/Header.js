@@ -27,7 +27,7 @@ export const BatteryProgress = () => Widget.Box({
             connections: [[Battery, l => {
                 l.label = Battery.charging || Battery.charged
                     ? icons.battery.charging
-                    : `${Battery.percent}%`;
+                    : `${Battery.percent.toString().substring(0, 2)}%`;
             }]],
         })],
     }),

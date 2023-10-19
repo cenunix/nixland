@@ -1,10 +1,9 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
 }:
 #Services for x13s battery-sound etc. functionality, relies on firmware
 {
@@ -27,7 +26,7 @@
         ExecStart = "${pkgs.qrtr}/bin/qrtr-ns -f 1";
         Restart = "always";
       };
-      wantedBy = ["multi-user.target"];
+      wantedBy = [ "multi-user.target" ];
     };
     bluetooth = {
       serviceConfig = {
