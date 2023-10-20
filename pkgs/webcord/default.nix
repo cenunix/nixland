@@ -6,10 +6,11 @@
 , pipewire
 , libpulseaudio
 , xdg-utils
-, electron_27
+, electron_27-bin
 , makeDesktopItem
 , nix-update-script
 , vencord-web-extension
+, substituteAll
 ,
 }:
 
@@ -30,7 +31,7 @@ buildNpmPackage rec {
     copyDesktopItems
     python3
   ];
-  patches = (old.patches or [ ]) ++ [
+  patches = [
     (substituteAll {
       src = ./webcord-vencord/add-extension.patch;
       vencord = vencord-web-extension;
@@ -67,7 +68,7 @@ buildNpmPackage rec {
       install -Dm644 sources/assets/icons/app.png $out/share/icons/hicolor/256x256/apps/webcord.png
 
       # Add xdg-utils to path via suffix, per PR #181171
-      makeWrapper '${lib.getExe electron_27}' $out/bin/webcord \
+      makeWrapper '${lib.getExe electron_27-bin}' $out/bin/webcord \
         --prefix LD_LIBRARY_PATH : ${libPath}:$out/opt/webcord \
         --suffix PATH : "${binPath}" \
         --add-flags "--ozone-platform-hint=auto" \
