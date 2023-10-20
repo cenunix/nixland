@@ -7,17 +7,9 @@
 with lib; let
   device = osConfig.modules.device;
   acceptedTypes = [ "desktop" "laptop" "armlaptop" ];
-  # programs.firefox = with lib; let
-  #   background = "/home/cenunix/.config/hypr/hyprland/nixos.png";
-  #   userChrome = pkgs.substituteAll {
-  #     src = ./userChrome.css;
-  #   };
   startpage = pkgs.substituteAll {
     src = ./startpage.html;
   };
-  #   # userContent = pkgs.substituteAll {
-  #   #   src = ./chrome/userContent.css;
-  #   # };
   user = osConfig.modules.system.username;
 in
 {
@@ -39,7 +31,6 @@ in
           "media.av1.enabled" = true;
           "gfx.x11-egl.force-enabled" = true;
         };
-        # userContent = builtins.readFile userContent;
       };
 
       package = with pkgs;
@@ -66,7 +57,7 @@ in
                   "skipredirect@sblask".install_url = "https://addons.mozilla.org/firefox/downloads/latest/skip-redirect/latest.xpi";
                   "{446900e4-71c2-419f-a6a7-df9c091e268b}".install_url = "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi";
                   "vimium-c@gdh1995.cn".install_url = "https://addons.mozilla.org/firefox/downloads/latest/vimium-c/latest.xpi";
-                  # "{47bf427e-c83d-457d-9b3d-3db4118574bd}".install_url = "https://addons.mozilla.org/firefox/downloads/latest/nighttab/latest.xpi";
+                  "{47bf427e-c83d-457d-9b3d-3db4118574bd}".install_url = "https://addons.mozilla.org/firefox/downloads/latest/nighttab/latest.xpi";
                 };
 
               FirefoxHome = {
