@@ -25,8 +25,6 @@ in
           rink
           symbols
           dictionary
-          translate
-          websearch
         ];
 
         hidePluginInfo = true;

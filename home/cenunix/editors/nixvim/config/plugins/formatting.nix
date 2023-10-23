@@ -5,7 +5,7 @@
 {
   config = {
     plugins = {
-      null-ls = {
+      none-ls = {
         enable = true;
       };
     };

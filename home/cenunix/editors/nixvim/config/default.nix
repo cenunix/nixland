@@ -40,7 +40,6 @@
     };
     extraPlugins = [
       pkgs.vimPlugins.luasnip
-      pkgs.clang-tools_16
     ];
   };
 }
