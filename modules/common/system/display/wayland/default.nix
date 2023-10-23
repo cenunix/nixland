@@ -41,7 +41,7 @@ in
         # SDL_VIDEODRIVER = "wayland";
         CLUTTER_BACKEND = "wayland";
         BROWSER = "firefox";
-        # WLR_DRM_DEVICES = "/dev/dri/card1:/dev/dri/card0";
+        WLR_DRM_DEVICES = "/dev/dri/card1:/dev/dri/card0";
       };
       loginShellInit = ''
         dbus-update-activation-environment --systemd DISPLAY
