@@ -32,7 +32,6 @@ in
         gnome.gnome-bluetooth
         glib
         pavucontrol
-        wayshot
         swappy
         inotify-tools
       ];

@@ -19,7 +19,7 @@ const PercentLabel = () => Widget.Stack({
     transition: 'slide_right',
     // revealChild: options.battaryBar.showPercentage,
     child: Widget.Label({
-        binds: [['label', Battery, 'percent', p => `${p.toString().substring(0, 2)}%`]],
+        binds: [['label', Battery, 'percent', p => `${p.toString().substring(0, 4)}%`]],
     }),
 });
 

@@ -14,7 +14,7 @@ in
       device = {
         type = "armlaptop";
         monitors = [
-          ",preferred,auto,1"
+          ",preferred,auto,1.2"
         ];
         hasBluetooth = true;
         hasSound = true;

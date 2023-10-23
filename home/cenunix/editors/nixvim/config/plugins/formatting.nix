@@ -20,8 +20,6 @@
       pkgs.nodePackages.eslint
       pkgs.prettierd
       pkgs.nodePackages.eslint_d
-      # C / C++
-      pkgs.vimPlugins.vim-clang-format
       # nix related
       pkgs.deadnix
       pkgs.statix
@@ -33,8 +31,6 @@
         sources = {
           require("null-ls").builtins.formatting.goimports,
           require("null-ls").builtins.formatting.gofumpt,
-          require("null-ls").builtins.diagnostics.clang_check,
-          require("null-ls").builtins.formatting.clang_format,
           require("null-ls").builtins.diagnostics.tidy,
           require("null-ls").builtins.formatting.prettierd,
           -- require("null-ls").builtins.formatting.eslint_d,

@@ -65,7 +65,6 @@ in
         brightnessctl
         pamixer
         catppuccin-cursors
-        python39Packages.requests
         tesseract5
         # swappy
         imagemagick
@@ -74,9 +73,7 @@ in
         # screenshot
         # mylock
         wl-clipboard
-        cliphist
         grimblast
-        air-status
       ]
       ++ optionals (device.gpu == "nvidia") [
         shadertoggle

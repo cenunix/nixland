@@ -12,7 +12,6 @@ in
     # enable polkit for privilege escalation
     security.polkit.enable = true;
     services = {
-      lorri.enable = true;
       udisks2.enable = true;
       printing.enable = true;
       fstrim.enable = true;

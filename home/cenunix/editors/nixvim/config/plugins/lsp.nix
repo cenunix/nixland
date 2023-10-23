@@ -26,34 +26,7 @@
           bashls.enable = true;
           nil_ls.enable = true;
           lua-ls.enable = true;
-          rust-analyzer.enable = true;
           yamlls.enable = true;
-          pyright.enable = true;
-          clangd = {
-            enable = true;
-            package = pkgs.clang-tools_16;
-            rootDir = ''require("lspconfig.util").root_pattern("Makefile","CMakeLists.txt","configure.ac","configure.in","config.h.in","meson.build","meson_options.txt","build.ninja")'';
-            cmd = [
-              ''${pkgs.clang-tools_16}/bin/clangd''
-              ''--offset-encoding=utf-16''
-              ''--background-index''
-              ''--clang-tidy''
-              ''--header-insertion=iwyu''
-              ''--completion-style=detailed''
-              ''--function-arg-placeholders=false''
-              ''--fallback-style=llvm''
-            ];
-            extraOptions = {
-              # keys = {__raw = ''{ "<leader>cR", "<cmd>ClangdSwitchSourceHeader<cr>", desc = "Switch Source/Header (C/C++)" }'';};
-
-              single_file_support = true;
-              init_options = {
-                usePlaceholders = true;
-                completeUnimported = true;
-                clangdFileStatus = true;
-              };
-            };
-          };
           tsserver = {
             enable = true;
             extraOptions = {

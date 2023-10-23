@@ -6,7 +6,6 @@
 , ...
 }: {
   imports = [
-    ./shared
     ./wayland
   ];
 }

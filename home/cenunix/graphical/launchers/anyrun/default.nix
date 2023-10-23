@@ -25,10 +25,8 @@ in
           rink
           symbols
           dictionary
-          kidex
-          stdin
-          shell
           translate
+          websearch
         ];
 
         hidePluginInfo = true;
