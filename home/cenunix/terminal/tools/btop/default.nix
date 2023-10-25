@@ -5,7 +5,7 @@
 , pkgs
 , ...
 }: {
-  xdg.configFile."btop/catppuccin_mocha.theme".source = ./catppuccin_mocha.theme;
+  xdg.configFile."btop/".source = ./config;
   home.packages = with pkgs; [
     btop
   ];
