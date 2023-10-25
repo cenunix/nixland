@@ -39,6 +39,6 @@ in
       "WebCord/config.json".source = config.lib.file.mkOutOfStoreSymlink "/home/cenunix/Personal/nicks/home/cenunix/graphical/apps/webcord/config.json";
     };
 
-    services.arrpc.enable = true;
+    services.arrpc.enable = (device.type == "desktop");
   };
 }

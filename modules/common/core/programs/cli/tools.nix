@@ -19,5 +19,6 @@
     dua
     unrar
     vim
+    powertop
   ];
 }

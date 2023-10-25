@@ -90,7 +90,7 @@ in
 
                 "media.hardware-video-decoding.force-enabled" = true;
                 "general.smoothScroll.msdPhysics.enabled" = true;
-                "layout.frame_rate" = 240;
+                "layout.frame_rate" = 60;
                 "layout.css.backdrop-filter.enabled" = true;
 
                 "layout.css.devPixelsPerPx" = "-1.0";

@@ -23,14 +23,13 @@ in
       # Shared Packages between all systems
       networkmanagerapplet
       nitch
-      inputs.agenix.packages.${pkgs.system}.default
-      linuxKernel.packages.linux_zen.cpupower
       polkit
       polkit_gnome
       mpv
       hexchat
       stremio
       lame
+      libva
     ]
     ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [
       lunatask

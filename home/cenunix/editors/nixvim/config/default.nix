@@ -15,6 +15,7 @@
     options = {
       number = true;
       relativenumber = true;
+      signcolumn = "yes";
       clipboard = "unnamedplus"; # Connection to the system clipboard
       # fileencoding = "utf-8"; # File content encoding for the bufferf
       timeoutlen = 300;
@@ -36,7 +37,7 @@
       foldenable = true; # enable fold for nvim-ufo
       foldlevel = 99; # set high foldlevel for nvim-ufo
       foldlevelstart = 99; # start with all code unfolded
-      foldcolumn = "1"; # show foldcolumn in nvim 0.9
+      # foldcolumn = "1"; # show foldcolumn in nvim 0.9
     };
     extraPlugins = [
       pkgs.vimPlugins.luasnip
