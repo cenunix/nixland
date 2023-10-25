@@ -5,8 +5,10 @@
 , pkgs
 , ...
 }: {
-  xdg.configFile."btop/".source = ./config;
-  home.packages = with pkgs; [
-    btop
-  ];
+  xdg.configFile = {
+    "btop/themes/catppuccin_mocha.theme".source = ./config/themes/catppuccin_mocha.theme;
+    "btop/btop.conf".source = ./config/btop.conf;
+
+  };
+  home.packages = with pkgs;[ btop ];
 }
