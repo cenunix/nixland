@@ -29,7 +29,6 @@ in
       hexchat
       stremio
       lame
-      libva
     ]
     ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [
       lunatask
