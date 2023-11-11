@@ -13,7 +13,15 @@ in
     security.polkit.enable = true;
     services = {
       udisks2.enable = true;
-      printing.enable = true;
+      printing = {
+        enable = true;
+        drivers = [
+          pkgs.gutenprint
+          pkgs.brlaser
+          pkgs.brgenml1lpr
+          pkgs.brgenml1cupswrapper
+        ];
+      };
       fstrim.enable = true;
       dbus = {
         packages = with pkgs; [ dconf gcr udisks2 ];
