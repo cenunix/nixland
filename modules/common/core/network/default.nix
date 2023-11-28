@@ -7,6 +7,5 @@
 }: {
   imports = [
     ./network.nix
-    ./torrent.nix
   ];
 }

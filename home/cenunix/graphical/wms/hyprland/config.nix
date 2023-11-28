@@ -153,6 +153,7 @@ in
     #bind = SUPER, R, exec, hyprctl --batch keyword "general:col.active_border $yellow;"
     #bind = SUPER, R, exec, hyprctl --batch keyword "general:col.group_border_active $peach;"
     bind = SUPER, R, submap, re(locate/Size)
+    bind=,mouse:276,pass,^(discord)$
     submap = re(locate/Size)
     binde = , l , moveactive, 20 0
     binde = , h , moveactive, -20 0

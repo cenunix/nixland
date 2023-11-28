@@ -10,7 +10,9 @@
     networkmanager = {
       enable = true;
     };
-
+    nameservers = [
+      "1.1.1.1"
+    ];
     firewall = {
       enable = true;
       # if your minecraft server is not worky

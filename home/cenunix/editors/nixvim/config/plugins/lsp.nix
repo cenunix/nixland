@@ -8,9 +8,9 @@
 {
   config = {
     plugins = {
-      clangd-extensions = {
-        enable = true;
-      };
+      # clangd-extensions = {
+      #   enable = true;
+      # };
       nix.enable = true;
       lspsaga.enable = true;
       lsp = {
@@ -19,7 +19,7 @@
           silent = true;
         };
         servers = {
-          tailwindcss.enable = true;
+          # tailwindcss.enable = true;
           html.enable = true;
           cssls.enable = true;
           jsonls.enable = true;

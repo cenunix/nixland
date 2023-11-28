@@ -8,11 +8,11 @@
   imports = [
     # ./brave
     ./discord
-    ./nheko
-    ./obs
-    ./obsidian
+    # ./nheko
+    # ./obs
+    # ./obsidian
     ./schizofox
-    # ./spotify
-    ./webcord
+    ./spotify
+    # ./webcord
   ];
 }

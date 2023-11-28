@@ -16,7 +16,7 @@
           which_key = true;
           notify = true;
           noice = true;
-          illuminate = true;
+          illuminate.enabled = true;
           cmp = true;
         };
       };

@@ -42,15 +42,15 @@ in
         gaming = {
           enable = true;
           steam.enable = true;
-          chess.enable = true;
+          chess.enable = false;
           minecraft.enable = false;
         };
         override = { };
       };
       usrEnv = {
         isWayland = true;
-        desktop = "Hyprland";
-        windowManager = true;
+        desktop = "Gnome";
+        windowManager = false;
         useHomeManager = true;
         autologin = true;
       };

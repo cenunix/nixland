@@ -6,6 +6,6 @@
 , ...
 }: {
   imports = [
-    ./spotify-player # Spotify command line interface
+    # ./spotify-player # Spotify command line interface
   ];
 }

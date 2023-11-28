@@ -16,8 +16,8 @@ in
     programs.spicetify = {
       spotifyPackage = pkgs.spotify;
       enable = true;
-      theme = spicePkgs.themes.catppuccin-mocha;
-      colorScheme = "blue";
+      theme = spicePkgs.themes.catppuccin;
+      colorScheme = "mocha";
 
       enabledExtensions = with spicePkgs.extensions; [
         fullAppDisplay

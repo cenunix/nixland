@@ -6,8 +6,8 @@
 , ...
 }: {
   imports = [
-    inputs.hyprland.homeManagerModules.default
-    ./hyprland
-    ./sway
+    # inputs.hyprland.homeManagerModules.default
+    # ./hyprland
+    # ./sway
   ];
 }

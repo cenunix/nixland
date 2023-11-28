@@ -86,7 +86,7 @@ in
     # };
     xdg.portal = mkIf (env.windowManager) {
       enable = true;
-      extraPortals = [
+      configPackages = [
         pkgs.xdg-desktop-portal-gtk
         pkgs.xdg-desktop-portal-hyprland
       ];

@@ -26,12 +26,12 @@ in
         # lexend
         # jost
         # dejavu_fonts
-        material-icons
-        material-design-icons
+        # material-icons
+        # material-design-icons
         iosevka-bin
-        noto-fonts
-        noto-fonts-cjk
-        noto-fonts-emoji
+        # noto-fonts
+        # noto-fonts-cjk
+        # noto-fonts-emoji
         font-awesome
         jetbrains-mono
         fira

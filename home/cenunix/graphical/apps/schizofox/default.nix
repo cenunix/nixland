@@ -65,9 +65,9 @@ in
                 Snippets = false;
               };
               PasswordManagerEnabled = false;
-              PromptForDownloadLocation = true;
+              # PromptForDownloadLocation = false;
               UserMessaging = {
-                ExtensionRecommendations = false;
+                ExtensionRecommendations = true;
                 SkipOnboarding = true;
               };
               # SanitizeOnShutdown = {

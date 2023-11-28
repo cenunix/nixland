@@ -11,6 +11,7 @@ in
   config = mkIf (builtins.elem device.type acceptedTypes) {
     # enable polkit for privilege escalation
     security.polkit.enable = true;
+    programs.gnome-disks.enable = true;
     services = {
       udisks2.enable = true;
       printing = {

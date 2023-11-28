@@ -1,10 +1,9 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
 }: {
   config = {
     plugins = {
@@ -17,7 +16,7 @@
         indent = true;
         moduleConfig.autotag = {
           enable = true;
-          filetypes = ["html" "xml" "astro" "javascriptreact" "typescriptreact" "svelte" "vue"];
+          filetypes = [ "html" "xml" "astro" "javascriptreact" "typescriptreact" "svelte" "vue" ];
         };
         grammarPackages = with config.plugins.treesitter.package.builtGrammars; [
           bash
@@ -25,7 +24,6 @@
           cpp
           html
           javascript
-          latex
           lua
           nix
           norg

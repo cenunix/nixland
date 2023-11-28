@@ -13,6 +13,7 @@ in
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
   };
+  services.flatpak.enable = true;
   hardware = mkIf (env.desktop == "Gnome") {
     pulseaudio.enable = false;
   };
@@ -27,7 +28,6 @@ in
         sshfs # FUSE-based filesystem that allows remote filesystems to be mounted over SSH
         samba
         fuse
-        gnome.nautilus
       ];
   };
   services.gvfs.enable = true; # Mount, trash, and other functionalities
