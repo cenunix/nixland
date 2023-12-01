@@ -6,6 +6,6 @@
 , ...
 }: {
   imports = [
-    # ./anyrun
+    ./anyrun
   ];
 }

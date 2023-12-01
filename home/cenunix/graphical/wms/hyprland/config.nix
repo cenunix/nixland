@@ -191,7 +191,7 @@ in
 
 
     # Keybinds
-    bind=SUPER,RETURN,exec,run-as-service footclient
+    bind=SUPER,RETURN,exec,kitty 
     bind=SUPER,Q,killactive,
     bind=SUPER,M,exit,
     bind=SUPER,E,exec,thunar

@@ -109,9 +109,9 @@ in
 
     wayland.windowManager.hyprland = {
       enable = true;
-      package = inputs.hyprland.packages.${pkgs.system}.default.override {
-        enableNvidiaPatches = (device.gpu == "nvidia") || (device.gpu == "hybrid-nv");
-      };
+      # package = inputs.hyprland.packages.${pkgs.system}.default.override {
+      # enableNvidiaPatches = (device.gpu == "nvidia") || (device.gpu == "hybrid-nv");
+      # };
     };
   };
 }

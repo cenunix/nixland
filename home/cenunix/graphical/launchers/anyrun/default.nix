@@ -23,8 +23,8 @@ in
         plugins = with anyrunPkgs; [
           applications
           rink
-          symbols
-          dictionary
+          # symbols
+          # dictionary
         ];
 
         hidePluginInfo = true;

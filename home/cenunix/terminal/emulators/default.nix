@@ -7,6 +7,6 @@
 }: {
   imports = [
     # ./foot
-    # ./kitty
+    ./kitty
   ];
 }
