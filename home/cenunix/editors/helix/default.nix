@@ -17,7 +17,6 @@
             clang-tools
             nil
             luajitPackages.lua-lsp
-            typst-lsp
             nodePackages.bash-language-server
             nodePackages.vscode-css-languageserver-bin
             nodePackages.vscode-langservers-extracted
@@ -56,20 +55,20 @@
         idle-timeout = 1;
         line-number = "relative";
         scrolloff = 5;
-        rainbow-brackets = true;
+        # rainbow-brackets = true;
         completion-replace = true;
-        cursor-word = true;
+        # cursor-word = true;
         bufferline = "always";
         true-color = true;
-        rulers = [ 80 ];
+        # rulers = [ 80 ];
         soft-wrap.enable = true;
         indent-guides = {
           render = true;
         };
-        sticky-context = {
-          enable = false;
-          indicator = false;
-        };
+        # sticky-context = {
+        #   enable = false;
+        #   indicator = false;
+        # };
         lsp = {
           display-messages = true;
           display-inlay-hints = true;
@@ -129,11 +128,6 @@
           name = "html";
           file-types = [ "html" "tera" ];
         }
-        {
-          name = "clojure";
-          injection-regex = "(clojure|clj|edn|boot|yuck)";
-          file-types = [ "clj" "cljs" "cljc" "clje" "cljr" "cljx" "edn" "boot" "yuck" ];
-        }
       ];
 
       language-server = {
@@ -162,29 +156,16 @@
 
   home.packages = with pkgs; [
     # some other lsp related packages / dev tools
-    typst
-    typst-lsp
     shellcheck
     lldb
     gopls
     rust-analyzer
     clang-tools
     nodejs
-    guile
-    nim
-    zig
-    texlab
-    zls
-    jre8
     gcc
     uncrustify
-    black
     alejandra
     shellcheck
-    gawk
-    haskellPackages.haskell-language-server
-    java-language-server
-    kotlin-language-server
     nodePackages.vls
     nodePackages.jsonlint
     nodePackages.yarn

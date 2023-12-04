@@ -32,7 +32,7 @@
     };
     helix = {
       # Fork of SoraTenshi's helix fork with typst support and some other "features"
-      url = "github:sioodmy/helix";
+      url = "github:helix-editor/helix";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         rust-overlay.follows = "rust-overlay";
