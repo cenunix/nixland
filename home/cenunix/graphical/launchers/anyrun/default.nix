@@ -22,7 +22,7 @@ in
       config = {
         plugins = with anyrunPkgs; [
           applications
-          rink
+          # rink
           # symbols
           # dictionary
         ];

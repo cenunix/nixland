@@ -13,8 +13,6 @@ let
 in
 {
   home.packages = [
-    pkgs.go
     nvim
-    pkgs.nodePackages_latest.live-server
   ];
 }

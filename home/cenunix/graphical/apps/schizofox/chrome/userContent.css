@@ -1,8 +1,13 @@
-@-moz-document url("https://duckduckgo.com/") {
-    #logo_homepage_link { background-image: url(icons/nix-snowflake.svg) !important; }
-    .header__logo.js-logo-ddg { background-image: url(icons/nix-snowflake.svg) !important; }
+@-moz-document url("https://duckduckgo.com/")
+{
+  #logo_homepage_link {
+    background-image: url(icons/nix-snowflake.svg) !important;
+  }
+  .header__logo.js-logo-ddg {
+    background-image: url(icons/nix-snowflake.svg) !important;
+  }
 }
 
-*{
-    scrollbar-width: 3px !important;
+* {
+  scrollbar-width: 3px !important;
 }

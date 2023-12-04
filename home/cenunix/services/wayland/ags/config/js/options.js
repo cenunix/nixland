@@ -63,7 +63,7 @@ export default {
       title: "Color Scheme",
       scss: "color-scheme",
     }),
-    bg: Option("#11111b", {
+    bg: Option("#1e1e2e", {
       title: "Background Color",
       scss: "bg-color",
     }),

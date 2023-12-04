@@ -40,8 +40,8 @@ in
         gui.enable = true;
 
         gaming = {
-          enable = false;
-          steam.enable = false;
+          enable = true;
+          steam.enable = true;
           chess.enable = false;
           minecraft.enable = false;
         };

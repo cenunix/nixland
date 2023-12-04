@@ -8,16 +8,16 @@
 
 .tab-background .tab-line,
 .tab-background .tab-bottom-line {
-  background-color: var(--dark-base) ;
+  background-color: var(--dark-base);
   display: none;
 }
 
 tab[selected="true"] > .tab-stack > .tab-background {
-  background: var(--arrowpanel-dimmed-further) !important;
+  background: #1e1e2e !important;
 }
 
 tab:not([selected="true"]) > .tab-stack:hover > .tab-background {
-  background: var(--arrowpanel-dimmed-further) !important;
+  background: #11111b !important;
 }
 
 .tab-stack {
@@ -29,11 +29,7 @@ tab:not([selected="true"]) > .tab-stack:hover > .tab-background {
 .tab-stack .tab-icon-image,
 .tab-stack .tab-label-container {
   transform: translateX(0px);
-  transition: all var(--tl-animation-duration) var(--ease-out) !important;
-}
-
-.tab-stack .tab-icon-image {
-  transition-duration: calc(var(--tl-animation-duration) * 2) !important;
+  transition: all 200ms cubic-bezier(0.22, 1, 0.36, 1) !important;
 }
 
 tab:not([pinned="true"]) .tab-stack:hover .tab-icon-image {
@@ -100,18 +96,14 @@ tab:not([selected="true"]).identity-color-pink > .tab-stack > .tab-background {
 .tab-stack .tab-close-button {
   border-radius: 50%;
   margin-left: -20px !important;
-  background: var(--lwt-text-color);
-  fill: var(--lwt-accent-color) !important;
-  transform: translateX(30px) !important;
-  transition: all var(--tl-animation-duration) var(--ease-out) !important;
+  background: #11111b;
+  fill: #cdd6f4 !important;
 }
 
-.tab-stack:hover .tab-close-button {
-  transform: translateX(0px) !important;
-}
 #TabsToolbar {
-  background-color: var(--dark-base) !important;
+  background-color: #11111b !important;
 }
+
 #tabbrowser-tabs[closebuttons="activetab"]
   > #tabbrowser-arrowscrollbox
   > .tabbrowser-tab
@@ -119,4 +111,35 @@ tab:not([selected="true"]).identity-color-pink > .tab-stack > .tab-background {
   > .tab-content
   > .tab-close-button:not([selected="true"]) {
   display: block !important;
+}
+
+.tab-stack .tab-close-button {
+  border-radius: 50%;
+  margin-left: -20px !important;
+  background: #11111b;
+  fill: #cdd6f4 !important;
+  transform: translateX(30px) !important;
+  transition: all 200ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+.tab-stack:hover .tab-close-button {
+  transform: translateX(0px) !important;
+}
+
+#TabsToolbar {
+  background-color: #11111b !important;
+}
+
+#tabbrowser-tabs[closebuttons="activetab"]
+  > #tabbrowser-arrowscrollbox
+  > .tabbrowser-tab
+  > .tab-stack
+  > .tab-content
+  > .tab-close-button:not([selected="true"]) {
+  display: block !important;
+}
+
+.tab-stack .tab-icon-image {
+  display: none;
+  transition-duration: calc(200ms * 2) !important;
 }
