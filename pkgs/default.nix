@@ -6,7 +6,6 @@
   alsa-ucm-conf-x13s = pkgs.callPackage ./alsa-ucm-conf-x13s.nix {};
   linux_x13s_pkg = pkgs.callPackage ./linux-x13s/default.nix {};
   # other various packages
-  neovim = pkgs.callPackage ./nvim {};
   catppuccin-cursors = pkgs.callPackage ./catppuccin-cursors.nix {};
   grimblast = pkgs.callPackage ./grimblast/default.nix {};
   air-status = pkgs.callPackage ./air-status.nix {};
