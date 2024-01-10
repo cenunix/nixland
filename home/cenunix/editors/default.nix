@@ -1,12 +1,13 @@
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, ...
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
 }: {
   imports = [
-    ./nixvim
+    # ./nixvim
     ./vscode
     ./helix
   ];

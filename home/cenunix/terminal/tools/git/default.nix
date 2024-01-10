@@ -1,9 +1,10 @@
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, ...
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
 }: {
   home.packages = with pkgs; [
     gist # manage github gists
@@ -23,6 +24,7 @@
         gh-cal # contributions calender terminal viewer
       ];
       settings = {
+        version = 1;
         git_protocol = "ssh";
         prompt = "enabled";
       };
