@@ -6,7 +6,7 @@
 , ...
 }: {
   imports = [
-    # ./foot
+    ./foot
     ./kitty
   ];
 }

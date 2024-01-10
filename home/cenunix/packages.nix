@@ -23,9 +23,13 @@ in
       # Shared Packages between all systems
       mpv
       hexchat
+      brave
+      mktorrent
+      postman
     ]
     ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [
       lunatask
+      plexamp
     ]
     ++ optionals (builtins.elem device.type [ "armlaptop" ]) [
       # additional packages for arm laptop (x13s as of now) machines that use home-manager

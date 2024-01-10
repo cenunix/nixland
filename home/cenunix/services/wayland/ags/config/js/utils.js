@@ -58,12 +58,7 @@ export function getAudioTypeIcon(icon) {
         ['audio-card-analog-pci', icons.audio.type.card],
     ];
 
-    for (const [from, to] of substitues) {
-        if (from === icon)
-            return to;
-    }
-
-    return icon;
+    return substitute(substitues, icon);
 }
 
 
@@ -71,4 +66,17 @@ export function getAudioTypeIcon(icon) {
 export function launchApp(app) {
     Utils.execAsync(['hyprctl', 'dispatch', 'exec', `sh -c ${app.executable}`]);
     app.frequency += 1;
+}
+
+/** @param {Array<string>} bins */
+export function dependencies(bins) {
+    const deps = bins.map(bin => {
+        const has = Utils.exec(`which ${bin}`);
+        if (!has)
+            print(`missing dependency: ${bin}`);
+
+        return !!has;
+    });
+
+    return deps.every(has => has);
 }

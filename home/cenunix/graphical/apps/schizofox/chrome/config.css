@@ -13,12 +13,20 @@
   --ap-primary-s: 64%;
   --ap-primary-l: 88%;
   --ap-primary-d: 80%;
-  --ap-primary: hsl(var(--ap-primary-h), var(--ap-primary-s), var(--ap-primary-l));
+  --ap-primary: hsl(
+    var(--ap-primary-h),
+    var(--ap-primary-s),
+    var(--ap-primary-l)
+  );
   --ap-secondary-h: 157;
   --ap-secondary-s: 32%;
   --ap-secondary-l: 58%;
   --ap-secondary-d: 70%;
-  --ap-secondary: hsl(var(--ap-secondary-h), var(--ap-secondary-s), var(--ap-secondary-l));
+  --ap-secondary: hsl(
+    var(--ap-secondary-h),
+    var(--ap-secondary-s),
+    var(--ap-secondary-l)
+  );
   --ap-base1-h: 240;
   --ap-base1-s: 23%;
   --ap-base1-l: 9%;
@@ -52,16 +60,56 @@
   --ap-code-orange: var(--ap-orange);
   --ap-color-dp0: hsl(var(--ap-base1-h), var(--ap-base1-s), var(--ap-base1-l));
   --ap-color-dp1: hsl(var(--ap-base0-h), var(--ap-base0-s), var(--ap-base0-l));
-  --ap-color-dp2: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 5%));
-  --ap-color-dp3: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 10%));
-  --ap-color-dp4: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 15%));
-  --ap-color-dp5: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 40%));
-  --ap-color-dp6: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 50%));
-  --ap-color-dp7: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 60%));
-  --ap-color-dp8: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 70%));
-  --ap-color-dp9: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 80%));
-  --ap-color-dp10: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 85%));
-  --ap-color-dp11: hsl(var(--ap-base0-h), var(--ap-base0-s), calc(var(--ap-base0-l) + 90%));
+  --ap-color-dp2: hsl(
+    var(--ap-base0-h),
+    var(--ap-base0-s),
+    calc(var(--ap-base0-l) + 5%)
+  );
+  --ap-color-dp3: hsl(
+    var(--ap-base0-h),
+    var(--ap-base0-s),
+    calc(var(--ap-base0-l) + 10%)
+  );
+  --ap-color-dp4: hsl(
+    var(--ap-base0-h),
+    var(--ap-base0-s),
+    calc(var(--ap-base0-l) + 15%)
+  );
+  --ap-color-dp5: hsl(
+    var(--ap-base0-h),
+    var(--ap-base0-s),
+    calc(var(--ap-base0-l) + 40%)
+  );
+  --ap-color-dp6: hsl(
+    var(--ap-base0-h),
+    var(--ap-base0-s),
+    calc(var(--ap-base0-l) + 50%)
+  );
+  --ap-color-dp7: hsl(
+    var(--ap-base0-h),
+    var(--ap-base0-s),
+    calc(var(--ap-base0-l) + 60%)
+  );
+  --ap-color-dp8: hsl(
+    var(--ap-base0-h),
+    var(--ap-base0-s),
+    calc(var(--ap-base0-l) + 70%)
+  );
+  --ap-color-dp9: hsl(
+    var(--ap-base0-h),
+    var(--ap-base0-s),
+    calc(var(--ap-base0-l) + 80%)
+  );
+  --ap-color-dp10: hsl(
+    var(--ap-base0-h),
+    var(--ap-base0-s),
+    calc(var(--ap-base0-l) + 85%)
+  );
+  --ap-color-dp11: hsl(
+    var(--ap-base0-h),
+    var(--ap-base0-s),
+    calc(var(--ap-base0-l) + 90%)
+  );
   --ap-h1: var(--ap-red);
   --ap-h2: var(--ap-purple);
   --ap-h3: var(--ap-blue);
@@ -79,12 +127,18 @@
   --ap-size-text-item: 1em;
   --ap-container-padding: 8px;
   --ap-frame-left: 10px;
-  --ap-font-text: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Ubuntu, sans-serif;
-  --ap-font-interface: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Ubuntu, sans-serif;
-  --ap-font-monospace: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Ubuntu, sans-serif;
-  --ap-font-title: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Ubuntu, sans-serif;
-  --ap-font-header: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Ubuntu, sans-serif;
-  --ap-font-hashtag: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Ubuntu, sans-serif;
+  --ap-font-text: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter,
+    Ubuntu, sans-serif;
+  --ap-font-interface: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Inter, Ubuntu, sans-serif;
+  --ap-font-monospace: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Inter, Ubuntu, sans-serif;
+  --ap-font-title: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter,
+    Ubuntu, sans-serif;
+  --ap-font-header: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter,
+    Ubuntu, sans-serif;
+  --ap-font-hashtag: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Inter, Ubuntu, sans-serif;
 }
 
 /* order of these files is important and should not be changed */
@@ -143,22 +197,23 @@ one that stays (static)
   /* set positive/smaller or negative value for right-space*/
 }
 
-:root[privatebrowsingmode=temporary] {
+:root[privatebrowsingmode="temporary"] {
   --dark-0: #303446;
   --dark-base: #303446;
   --dark-1: #51576d;
   --dark-2: #414559;
   --dark-3: #303347;
   --dark-4: #34364c;
-  --light-0: #CC6B9C;
-  --light-base: #B9407C;
-  --light-1: #AB3B73;
-  --light-2: #9C3569;
-  --light-3: #8D305E;
-  --light-4: #7D2B54;
+  --light-0: #cc6b9c;
+  --light-base: #b9407c;
+  --light-1: #ab3b73;
+  --light-2: #9c3569;
+  --light-3: #8d305e;
+  --light-4: #7d2b54;
   --accent: #b6d8e2;
   --yellow: #e2e2b6;
   --green: #99e6bf;
   --red: #e2b6b6;
-  --extension-icon-mask: grayscale(85%) invert(17%) sepia(42%) saturate(2474%) hue-rotate(241deg) brightness(94%) contrast(92%);
+  --extension-icon-mask: grayscale(85%) invert(17%) sepia(42%) saturate(2474%)
+    hue-rotate(241deg) brightness(94%) contrast(92%);
 }
