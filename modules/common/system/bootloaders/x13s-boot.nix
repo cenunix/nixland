@@ -32,7 +32,7 @@ in
       #loader.efi.canTouchEfiVariables = true;
       loader.efi.efiSysMountPoint = "/boot";
 
-      kernelPackages = linuxPackages_x13s;
+      kernelPackages = pkgs.linuxPackages_testing;
       kernelParams = [
         "efi=novamap,noruntime"
         "clk_ignore_unused"
@@ -49,7 +49,7 @@ in
         availableKernelModules = [
           "nvme"
           "phy_qcom_qmp_pcie"
-          "pcie_qcom"
+          # "pcie_qcom"
           "i2c_hid_of"
           "i2c_qcom_geni"
           "leds_qcom_lpg"
@@ -66,7 +66,7 @@ in
     };
     hardware = {
       enableRedistributableFirmware = true;
-      firmware = [ pkgs.linux-firmware firmware.linux-firmware-modified ];
+      # firmware = [ pkgs.linux-firmware firmware.linux-firmware-modified ];
       deviceTree.enable = true;
     };
   };

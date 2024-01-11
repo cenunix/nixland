@@ -13,6 +13,6 @@
     # ./obsidian
     ./schizofox
     ./spotify
-    # ./webcord
+    ./webcord
   ];
 }
