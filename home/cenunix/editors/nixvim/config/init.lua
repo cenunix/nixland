@@ -1,14 +1,14 @@
 local k = vim.keymap.set
-vim.g.mapleader = " "
-k("n", "<C-DOWN>", "<cmd>resize +2<cr>")
-k("n", "<C-UP>", "<cmd>resize -2<cr>")
-k("n", "<C-RIGHT>", "<cmd>vertical resize -2<cr>")
-k("n", "<C-LEFT>", "<cmd>vertical resize +2<cr>")
-k("n", "<S-LEFT>", "<C-w>h")
-k("n", "<S-DOWN>", "<C-w>j")
-k("n", "<S-UP>", "<C-w>k")
-k("n", "<S-RIGHT>", "<C-w>l")
-k('t', '<esc>', "<C-\\><C-n>")
+vim.g.mapleader = ' '
+k('n', '<C-DOWN>', '<cmd>resize +2<cr>')
+k('n', '<C-UP>', '<cmd>resize -2<cr>')
+k('n', '<C-RIGHT>', '<cmd>vertical resize -2<cr>')
+k('n', '<C-LEFT>', '<cmd>vertical resize +2<cr>')
+k('n', '<S-LEFT>', '<C-w>h')
+k('n', '<S-DOWN>', '<C-w>j')
+k('n', '<S-UP>', '<C-w>k')
+k('n', '<S-RIGHT>', '<C-w>l')
+k('t', '<esc>', '<C-\\><C-n>')
 vim.keymap.set('n', '<leader>w', '<cmd>w<CR>', { desc = 'Save' })
 vim.keymap.set('n', '<leader>q', '<cmd>q<CR>', { desc = 'Quit' })
 -- vim.keymap.set('n', '<leader>f/', telescope_live_grep_open_files, { desc = '[S]earch [/] in Open Files' })
@@ -25,8 +25,8 @@ vim.keymap.set('n', '<leader>q', '<cmd>q<CR>', { desc = 'Quit' })
 
 local o = vim.opt
 o.lazyredraw = true
-o.shell = "zsh"
-o.shadafile = "NONE"
+o.shell = 'zsh'
+o.shadafile = 'NONE'
 o.ttyfast = true
 o.termguicolors = true
 o.undofile = true
@@ -38,8 +38,8 @@ o.expandtab = true
 o.cursorline = true
 o.relativenumber = true
 o.number = true
-o.viminfo = ""
-o.viminfofile = "NONE"
+o.viminfo = ''
+o.viminfofile = 'NONE'
 o.wrap = false
 o.splitright = true
 o.splitbelow = true
@@ -47,13 +47,13 @@ o.laststatus = 0
 o.cmdheight = 0
 vim.o.timeout = true
 vim.o.timeoutlen = 0
-vim.api.nvim_command("autocmd TermOpen * startinsert")
-vim.api.nvim_command("autocmd TermOpen * setlocal nonumber norelativenumber")
-require("catppuccin").setup({
-    flavour = "mocha", -- latte, frappe, macchiato, mocha
+vim.api.nvim_command('autocmd TermOpen * startinsert')
+vim.api.nvim_command('autocmd TermOpen * setlocal nonumber norelativenumber')
+require('catppuccin').setup({
+    flavour = 'mocha', -- latte, frappe, macchiato, mocha
     background = { -- :h background
-        light = "latte",
-        dark = "mocha",
+        light = 'latte',
+        dark = 'mocha',
     },
     transparent_background = true, -- disables setting the background color.
     show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
@@ -62,8 +62,8 @@ require("catppuccin").setup({
     no_bold = false, -- Force no bold
     no_underline = false, -- Force no underline
     styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
-        comments = { "italic" }, -- Change the style of comments
-        conditionals = { "italic" },
+        comments = { 'italic' }, -- Change the style of comments
+        conditionals = { 'italic' },
         loops = {},
         functions = {},
         keywords = {},
@@ -85,52 +85,52 @@ require("catppuccin").setup({
         notify = true,
         mini = {
             enabled = true,
-            indentscope_color = "",
+            indentscope_color = '',
         },
         -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
     },
 })
-local mocha = require("catppuccin.palettes").get_palette "mocha"
+local mocha = require('catppuccin.palettes').get_palette 'mocha'
 -- =========================
 -- UI Elements
 -- =========================
-vim.api.nvim_set_hl(0, "Pmenu", { bg = mocha.surface0 })
-vim.api.nvim_set_hl(0, "PmenuSel", { fg = mocha.text, bg = mocha.surface1, bold = true })
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = mocha.surface0 })
+vim.api.nvim_set_hl(0, 'Pmenu', { bg = mocha.surface0 })
+vim.api.nvim_set_hl(0, 'PmenuSel', { fg = mocha.text, bg = mocha.surface1, bold = true })
+vim.api.nvim_set_hl(0, 'NormalFloat', { bg = mocha.surface0 })
 vim.cmd.colorscheme 'catppuccin'
-local wk = require("which-key")
+local wk = require('which-key')
 wk.register({
-    ["<leader>"] = {
-    w = { "<cmd>w<cr>", "Save Buffer" },
-    q = { "<cmd>q<cr>", "Quit" },
-    e = { ":Neotree action=focus reveal toggle<cr>", "Toggle Neotree" },
+    ['<leader>'] = {
+    w = { '<cmd>w<cr>', 'Save Buffer' },
+    q = { '<cmd>q<cr>', 'Quit' },
+    e = { ':Neotree action=focus reveal toggle<cr>', 'Toggle Neotree' },
     f = {
-        name = "File",
-        f = { "<cmd>Telescope find_files<cr>", "Find File" },
-        r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-        n = { "<cmd>enew<cr>", "New File" },
-        w = { "<cmd>Telescope live_grep<cr>", "Grep Files" },
-        b = { "<cmd>Telescope buffers<cr>", "Grep Buffers" },
-        h = { "<cmd>Telescope help_tags<cr>", "Grep Help Tags" },
-        d = { "<cmd>Telescope diagnostics<cr>", "Grep Diagnostics" },
-        g = { "<cmd>Telescope git_files<cr>", "Grep Git Files" },
+        name = 'File',
+        f = { '<cmd>Telescope find_files<cr>', 'Find File' },
+        r = { '<cmd>Telescope oldfiles<cr>', 'Open Recent File' },
+        n = { '<cmd>enew<cr>', 'New File' },
+        w = { '<cmd>Telescope live_grep<cr>', 'Grep Files' },
+        b = { '<cmd>Telescope buffers<cr>', 'Grep Buffers' },
+        h = { '<cmd>Telescope help_tags<cr>', 'Grep Help Tags' },
+        d = { '<cmd>Telescope diagnostics<cr>', 'Grep Diagnostics' },
+        g = { '<cmd>Telescope git_files<cr>', 'Grep Git Files' },
     },
     g = {
-        name = "Git",
-        l = { "<cmd>Gitsigns blame_line<cr>", "View Git Blame" },
-        L = { "<cmd>Gitsigns blame_line {full = true}<cr>", "View full Git Blame" },
-        p = { "<cmd>Gitsigns preview_hunk<cr>", "Preview Git Hunk" },
-        h = { "<cmd>Gitsigns reset_hunk<cr>", "Reset Git Hunk" },
-        r = { "<cmd>Gitsigns reset_buffer<cr>", "Reset Git Buffer" },
-        s = { "<cmd>Gitsigns stage_hunk<cr>", "Stage Git Hunk" },
-        S = { "<cmd>Gitsigns stage_buffer<cr>", "Stage Git Buffer" },
-        u = { "<cmd>Gitsigns undo_stage_hunk<cr>", "Unstage Git Hunk" },
-        d = { "<cmd>Gitsigns diffthis<cr>", "View Git Diff" },
+        name = 'Git',
+        l = { '<cmd>Gitsigns blame_line<cr>', 'View Git Blame' },
+        L = { '<cmd>Gitsigns blame_line {full = true}<cr>', 'View full Git Blame' },
+        p = { '<cmd>Gitsigns preview_hunk<cr>', 'Preview Git Hunk' },
+        h = { '<cmd>Gitsigns reset_hunk<cr>', 'Reset Git Hunk' },
+        r = { '<cmd>Gitsigns reset_buffer<cr>', 'Reset Git Buffer' },
+        s = { '<cmd>Gitsigns stage_hunk<cr>', 'Stage Git Hunk' },
+        S = { '<cmd>Gitsigns stage_buffer<cr>', 'Stage Git Buffer' },
+        u = { '<cmd>Gitsigns undo_stage_hunk<cr>', 'Unstage Git Hunk' },
+        d = { '<cmd>Gitsigns diffthis<cr>', 'View Git Diff' },
     },
     l = {
-        name = "Lsp",
-        i = { "<cmd>LspInfo<cr>", "LSP Information" },
-        I = { "<cmd>NullLsInfo<cr>", "Null-ls Information" },
+        name = 'Lsp',
+        i = { '<cmd>LspInfo<cr>', 'LSP Information' },
+        I = { '<cmd>NullLsInfo<cr>', 'Null-ls Information' },
     },
     },
 })
@@ -206,9 +206,9 @@ vim.defer_fn(function()
 end, 0)
 require('neo-tree').setup ({
     window = {
-    position = "float",
+    position = 'float',
     mappings = {
-        ["<space>"] = false,
+        ['<space>'] = false,
     },
     },
 })
