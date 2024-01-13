@@ -23,7 +23,7 @@ in
       # Shared Packages between all systems
       mpv
       hexchat
-      # brave
+      brave
       mktorrent
     ]
     ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [
