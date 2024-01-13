@@ -23,7 +23,6 @@ let
         ${builtins.readFile config/lsp/null-ls.lua}
         ${builtins.readFile config/gitsigns.lua}
         ${builtins.readFile config/neotree.lua}
-
       '';
       packages.myPlugins = with pkgs.vimPlugins;
         {
@@ -32,7 +31,7 @@ let
             null-ls-nvim
             neo-tree-nvim
             nvim-web-devicons
-            lualine-nvim
+            feline-nvim
             bufferline-nvim
             which-key-nvim
             telescope-nvim
@@ -48,6 +47,7 @@ in
   config = {
     home.packages = with pkgs; [
       neovim
+      neovide
       deadnix
       statix
       nil
