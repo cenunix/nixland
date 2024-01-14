@@ -15,14 +15,13 @@ let
         lua << EOF
         ${builtins.readFile config/init.lua}
         ${builtins.readFile config/theme.lua}
-        ${builtins.readFile config/utils/init.lua}
-        ${builtins.readFile config/utils/icons.lua}
         ${builtins.readFile config/treesitter.lua}
         ${builtins.readFile config/bufferline.lua}
         ${builtins.readFile config/maps.lua}
         ${builtins.readFile config/gitsigns.lua}
         ${builtins.readFile config/lualine.lua}
         ${builtins.readFile config/lsp/lsp.lua}
+        ${builtins.readFile config/lsp/completions.lua}
         ${builtins.readFile config/lsp/null-ls.lua}
         ${builtins.readFile config/neotree.lua}
       '';
@@ -30,6 +29,11 @@ let
         {
           start = [
             nvim-lspconfig
+            nvim-cmp
+            luasnip
+            cmp_luasnip
+            friendly-snippets
+            cmp-nvim-lsp
             null-ls-nvim
             neo-tree-nvim
             nvim-web-devicons
@@ -39,7 +43,7 @@ let
             telescope-nvim
             gitsigns-nvim
             catppuccin-nvim
-            (nvim-treesitter.withPlugins (p: [ p.c p.cpp p.nix ]))
+            (nvim-treesitter.withPlugins (p: [ p.c p.cpp p.nix p.lua ]))
           ];
         };
     };
@@ -53,6 +57,8 @@ in
       deadnix
       statix
       nil
+      gopls
+      clang-tools
       alejandra
     ];
   };

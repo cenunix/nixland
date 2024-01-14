@@ -1,6 +1,8 @@
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 require('lspconfig').nil_ls.setup {
     autostart = true,
-    capabilities = vim.lsp.protocol.make_client_capabilities(),
+    capabilities = capabilities,
     cmd = {'nil'},
     settings = {
     ['nil'] = {
@@ -9,4 +11,12 @@ require('lspconfig').nil_ls.setup {
         }
     }
     }
+}
+require('lspconfig').clangd.setup {
+    autostart = true,
+    capabilities = capabilities,
+}
+require('lspconfig').gopls.setup {
+    autostart = true,
+    capabilities = capabilities,
 }
