@@ -1,6 +1,6 @@
 require('neo-tree').setup ({
     window = {
-    position = 'float',
+    -- position = 'float',
     mappings = {
         ['<space>'] = false,
     },

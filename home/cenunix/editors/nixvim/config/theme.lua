@@ -5,11 +5,6 @@ require('catppuccin').setup({
         dark = 'mocha',
     },
     transparent_background = false, -- disables setting the background color.
-    show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
-    term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
-    no_italic = false, -- Force no italic
-    no_bold = false, -- Force no bold
-    no_underline = false, -- Force no underline
     styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
         comments = { 'italic' }, -- Change the style of comments
         conditionals = { 'italic' },
@@ -29,13 +24,19 @@ require('catppuccin').setup({
             base = "#11111b",
         },
     },
-    custom_highlights = {},
+    custom_highlights = {
+        -- Comment = { fg = colors.flamingo },
+        -- TabLineSel = { bg = colors.pink },
+        CmpBorder = { fg = "#11111b" },
+        Pmenu = { bg = "#11111b" },
+    },
     integrations = {
         cmp = true,
         gitsigns = true,
         nvimtree = true,
         treesitter = true,
         notify = true,
+        noice = true,
         mini = {
             enabled = true,
             indentscope_color = '',
@@ -51,3 +52,7 @@ require('catppuccin').setup({
 --vim.api.nvim_set_hl(0, 'PmenuSel', { fg = mocha.text, bg = mocha.surface1, bold = true })
 --vim.api.nvim_set_hl(0, 'NormalFloat', { bg = mocha.surface0 })
 vim.cmd.colorscheme 'catppuccin'
+-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE", ctermbg = "NONE" })
+-- vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = "NONE", ctermbg = "NONE" })
+-- vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { bg = "NONE", ctermbg = "NONE" })
+-- vim.api.nvim_set_hl(0, "Normal", { bg = "NONE", ctermbg = "NONE" })
