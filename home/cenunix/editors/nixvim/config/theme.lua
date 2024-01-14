@@ -43,11 +43,11 @@ require('catppuccin').setup({
         -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
     },
 })
-local mocha = require('catppuccin.palettes').get_palette 'mocha'
+--local mocha = require('catppuccin.palettes').get_palette 'mocha'
 -- =========================
 -- UI Elements
 -- =========================
-vim.api.nvim_set_hl(0, 'Pmenu', { bg = mocha.surface0 })
-vim.api.nvim_set_hl(0, 'PmenuSel', { fg = mocha.text, bg = mocha.surface1, bold = true })
-vim.api.nvim_set_hl(0, 'NormalFloat', { bg = mocha.surface0 })
+--vim.api.nvim_set_hl(0, 'Pmenu', { bg = mocha.surface0 })
+--vim.api.nvim_set_hl(0, 'PmenuSel', { fg = mocha.text, bg = mocha.surface1, bold = true })
+--vim.api.nvim_set_hl(0, 'NormalFloat', { bg = mocha.surface0 })
 vim.cmd.colorscheme 'catppuccin'

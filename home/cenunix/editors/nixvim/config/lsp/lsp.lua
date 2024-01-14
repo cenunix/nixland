@@ -20,3 +20,7 @@ require('lspconfig').gopls.setup {
     autostart = true,
     capabilities = capabilities,
 }
+require('lspconfig').tsserver.setup {
+    autostart = true,
+    capabilities = capabilities,
+}

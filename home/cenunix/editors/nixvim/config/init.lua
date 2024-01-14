@@ -22,12 +22,9 @@ vim.keymap.set('n', '<leader>q', '<cmd>q<CR>', { desc = 'Quit' })
 -- vim.keymap.set('n', '<leader>fd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 -- vim.keymap.set('n', '<leader>fr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
 -- vim.keymap.set('n', '<leader>e', ':Neotree action=focus reveal toggle<CR>', { desc = 'NeoTree Toggle' })
-local alpha = function()
-    return string.format("%x", math.floor(255 * vim.g.transparency or 0.8))
-end
 vim.g.neovide_transparency = 0.8
-vim.g.transparency = 0.8
-vim.g.neovide_background_color = "#11111b"
+-- vim.g.transparency = 0.8
+-- vim.g.neovide_background_color = "#11111b"
 vim.g.neovide_floating_blur_amount_x = 2.0
 vim.g.neovide_floating_blur_amount_y = 2.0
 local o = vim.opt
