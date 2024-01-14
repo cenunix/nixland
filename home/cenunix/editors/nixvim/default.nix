@@ -59,6 +59,7 @@ in
       nil
       gopls
       clang-tools
+      nodePackages.vscode-langservers-extracted
       alejandra
     ];
   };
