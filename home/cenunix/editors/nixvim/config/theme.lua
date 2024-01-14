@@ -44,9 +44,6 @@ require('catppuccin').setup({
     },
 })
 local mocha = require('catppuccin.palettes').get_palette 'mocha'
-require("feline").setup({
-    components = require("catppuccin.groups.integrations.feline").get(),
-})
 -- =========================
 -- UI Elements
 -- =========================

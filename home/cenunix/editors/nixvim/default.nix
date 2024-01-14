@@ -15,13 +15,15 @@ let
         lua << EOF
         ${builtins.readFile config/init.lua}
         ${builtins.readFile config/theme.lua}
+        ${builtins.readFile config/utils/init.lua}
+        ${builtins.readFile config/utils/icons.lua}
         ${builtins.readFile config/treesitter.lua}
         ${builtins.readFile config/bufferline.lua}
         ${builtins.readFile config/maps.lua}
+        ${builtins.readFile config/gitsigns.lua}
         ${builtins.readFile config/lualine.lua}
         ${builtins.readFile config/lsp/lsp.lua}
         ${builtins.readFile config/lsp/null-ls.lua}
-        ${builtins.readFile config/gitsigns.lua}
         ${builtins.readFile config/neotree.lua}
       '';
       packages.myPlugins = with pkgs.vimPlugins;
@@ -31,7 +33,7 @@ let
             null-ls-nvim
             neo-tree-nvim
             nvim-web-devicons
-            feline-nvim
+            lualine-nvim
             bufferline-nvim
             which-key-nvim
             telescope-nvim

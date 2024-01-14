@@ -10,11 +10,11 @@
     rofi-rbw
     rofi
   ];
-  programs.rbw = {
-    enable = true;
-    settings.email = "caden.hargrave@gmail.com";
-    settings.base_url = "https://api.bitwarden.com";
-  };
+  #   programs.rbw = {
+  #     enable = true;
+  #     settings.email = "caden.hargrave@gmail.com";
+  #     settings.base_url = "https://api.bitwarden.com";
+  #   };
   xdg.configFile."rofi/config.rasi".text = ''
         configuration{
         modi: "run,drun,window";
