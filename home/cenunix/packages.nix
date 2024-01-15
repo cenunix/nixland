@@ -23,11 +23,11 @@ in
       # Shared Packages between all systems
       mpv
       hexchat
-      brave
       mktorrent
     ]
     ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [
       lunatask
+      brave
       plexamp
     ]
     ++ optionals (builtins.elem device.type [ "armlaptop" ]) [
