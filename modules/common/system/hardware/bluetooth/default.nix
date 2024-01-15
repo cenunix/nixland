@@ -19,6 +19,7 @@ in
       settings = {
         General = {
           JustWorksRepairing = "always";
+          Experimental = true; 
           MultiProfile = "multiple";
         };
       };
