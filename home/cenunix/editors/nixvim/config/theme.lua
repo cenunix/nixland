@@ -27,13 +27,13 @@ require('catppuccin').setup({
     custom_highlights = {
         -- Comment = { fg = colors.flamingo },
         -- TabLineSel = { bg = colors.pink },
-        CmpBorder = { fg = "#11111b" },
+        -- CmpBorder = { fg = "#11111b" },
         Pmenu = { bg = "#11111b" },
     },
     integrations = {
         cmp = true,
         gitsigns = true,
-        nvimtree = true,
+        neotree = true,
         treesitter = true,
         notify = true,
         noice = true,

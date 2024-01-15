@@ -36,7 +36,7 @@ in
         jetbrains-mono
         fira
         fira-code
-        (nerdfonts.override { fonts = [ "JetBrainsMono" "FiraCode" ]; })
+        (nerdfonts.override { fonts = [ "JetBrainsMono" "FiraCode" "VictorMono" ]; })
       ];
 
       enableDefaultPackages = false;
