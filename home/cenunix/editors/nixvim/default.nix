@@ -23,6 +23,7 @@ let
         ${builtins.readFile config/lualine.lua}
         ${builtins.readFile config/telescope.lua}
         ${builtins.readFile config/ui.lua}
+        ${builtins.readFile config/comment.lua}
         ${builtins.readFile config/lsp/lsp.lua}
         ${builtins.readFile config/lsp/completions.lua}
         ${builtins.readFile config/lsp/null-ls.lua}
@@ -42,6 +43,7 @@ let
             nvim-web-devicons
             lualine-nvim
             nvim-navic
+            comment-nvim
             which-key-nvim
             telescope-nvim
             gitsigns-nvim
