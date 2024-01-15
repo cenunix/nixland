@@ -24,3 +24,11 @@ require('lspconfig').tsserver.setup {
     autostart = true,
     capabilities = capabilities,
 }
+require('lspconfig').lua_ls.setup {
+    autostart = true,
+    capabilities = capabilities,
+}
+require('lspconfig').pyright.setup {
+    autostart = true,
+    capabilities = capabilities,
+}

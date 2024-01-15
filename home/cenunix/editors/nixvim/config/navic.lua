@@ -1,32 +1,5 @@
-navic.setup {
-    icons = {
-        File          = "󰈙 ",
-        Module        = " ",
-        Namespace     = "󰌗 ",
-        Package       = " ",
-        Class         = "󰌗 ",
-        Method        = "󰆧 ",
-        Property      = " ",
-        Field         = " ",
-        Constructor   = " ",
-        Enum          = "󰕘",
-        Interface     = "󰕘",
-        Function      = "󰊕 ",
-        Variable      = "󰆧 ",
-        Constant      = "󰏿 ",
-        String        = "󰀬 ",
-        Number        = "󰎠 ",
-        Boolean       = "◩ ",
-        Array         = "󰅪 ",
-        Object        = "󰅩 ",
-        Key           = "󰌋 ",
-        Null          = "󰟢 ",
-        EnumMember    = " ",
-        Struct        = "󰌗 ",
-        Event         = " ",
-        Operator      = "󰆕 ",
-        TypeParameter = "󰊄 ",
-    },
+require("nvim-navic").setup {
+    icons = icons.kind,
     lsp = {
         auto_attach = true,
         preference = nil,
@@ -37,10 +10,8 @@ navic.setup {
     depth_limit_indicator = "..",
     safe_output = true,
     lazy_update_context = false,
-    click = false,
+    click = true,
     format_text = function(text)
         return text
     end,
 }
-require('dropbar').setup({})
-

@@ -14,6 +14,7 @@ let
       customRC = ''
         lua << EOF
         ${builtins.readFile config/init.lua}
+        ${builtins.readFile config/utils/icons.lua}
         ${builtins.readFile config/theme.lua}
         ${builtins.readFile config/treesitter.lua}
         ${builtins.readFile config/navic.lua}
@@ -40,16 +41,14 @@ let
             neo-tree-nvim
             nvim-web-devicons
             lualine-nvim
-            bufferline-nvim
-            # nvim-navic
-            dropbar-nvim
+            nvim-navic
             which-key-nvim
             telescope-nvim
             gitsigns-nvim
             noice-nvim
             nui-nvim
             catppuccin-nvim
-            (nvim-treesitter.withPlugins (p: [ p.c p.cpp p.nix p.lua ]))
+            (nvim-treesitter.withPlugins (p: [ p.c p.cpp p.nix p.lua p.go p.python ]))
           ];
         };
     };
@@ -66,9 +65,13 @@ in
       gopls
       clang-tools
       nodePackages.vscode-langservers-extracted
+      lua-language-server
       prettierd
       eslint_d
       alejandra
+      nodePackages.pyright
+      black
+      isort
     ];
   };
 }

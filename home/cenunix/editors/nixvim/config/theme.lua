@@ -36,6 +36,7 @@ require('catppuccin').setup({
         neotree = true,
         treesitter = true,
         notify = true,
+        navic = true,
         noice = true,
         mini = {
             enabled = true,
