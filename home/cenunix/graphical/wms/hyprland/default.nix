@@ -1,34 +1,22 @@
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, osConfig
-, ...
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  osConfig,
+  ...
 }:
 with lib; let
-  monitors = osConfig.modules.device.monitors;
   device = osConfig.modules.device;
   env = osConfig.modules.usrEnv;
 
   mkService = lib.recursiveUpdate {
-    Unit.PartOf = [ "graphical-session.target" ];
-    Unit.After = [ "graphical-session.target" ];
-    Install.WantedBy = [ "graphical-session.target" ];
+    Unit.PartOf = ["graphical-session.target"];
+    Unit.After = ["graphical-session.target"];
+    Install.WantedBy = ["graphical-session.target"];
   };
 
-  ocr = pkgs.writeShellScriptBin "ocr" ''
-    #!/bin/bash
-    grimblast --notify copysave area /tmp/ocr.png && tesseract /tmp/ocr.png /tmp/ocr-output && wl-copy < /tmp/ocr-output.txt && notify-send "OCR" "Text copied!" && rm /tmp/ocr-output.txt -f
-  '';
-  screenshot = pkgs.writeShellScriptBin "screenshot" ''
-    #!/bin/bash
-    hyprctl keyword animation "fadeOut,0,8,slow" && ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp -w 0 -b 5e81acd2)" - | swappy -f -; hyprctl keyword animation "fadeOut,1,8,slow"
-  '';
-  mylock = pkgs.writeShellScriptBin "mylock" ''
-    #!/bin/bash
-    gtklock -m "${pkgs.gtklock-userinfo-module}/lib/gtklock/userinfo-module.so" -m "${pkgs.gtklock-powerbar-module}/lib/gtklock/powerbar-module.so" -m "${self.packages.${pkgs.system}.gtklock-runshell-module}/lib/gtklock/runshell-module.so"
-  '';
   shadertoggle = pkgs.writeShellScriptBin "shadertoggle" ''
     #!/bin/bash
     set -e
@@ -48,9 +36,8 @@ with lib; let
         echo set $blank
     fi
   '';
-in
-{
-  imports = [ ./config.nix ];
+in {
+  imports = [./config.nix];
   config = mkIf (env.isWayland && (env.desktop == "Hyprland")) {
     xdg.configFile."hypr/shaders".source = ./shaders;
     home.file.".config/hypr/scripts/screensht" = {
@@ -66,12 +53,8 @@ in
         pamixer
         catppuccin-cursors
         tesseract5
-        # swappy
         imagemagick
         colord
-        ocr
-        # screenshot
-        # mylock
         wl-clipboard
         grimblast
       ]
@@ -103,15 +86,12 @@ in
     systemd.user.targets.tray = {
       Unit = {
         Description = "Home Manager System Tray";
-        Requires = [ "graphical-session-pre.target" ];
+        Requires = ["graphical-session-pre.target"];
       };
     };
 
     wayland.windowManager.hyprland = {
       enable = true;
-      # package = inputs.hyprland.packages.${pkgs.system}.default.override {
-      # enableNvidiaPatches = (device.gpu == "nvidia") || (device.gpu == "hybrid-nv");
-      # };
     };
   };
 }
