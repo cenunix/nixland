@@ -1,4 +1,9 @@
 local wk = require("which-key")
+wk.setup({
+  window = {
+    border = "single",
+  },
+})
 wk.register({
   ["<leader>"] = {
     w = { "<cmd>w<cr>", "Save Buffer" },
