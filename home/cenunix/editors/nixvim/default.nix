@@ -67,7 +67,9 @@ in
       gopls
       clang-tools
       nodePackages.vscode-langservers-extracted
+      nodePackages.typescript-language-server 
       lua-language-server
+      stylua
       prettierd
       eslint_d
       alejandra

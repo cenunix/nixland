@@ -14,9 +14,9 @@ export function init() {
     notificationBlacklist();
     warnOnLowBattery();
     globals();
-    tmux();
-    gsettigsColorScheme();
-    gtkFontSettings();
+    // tmux();
+    // gsettigsColorScheme();
+    // gtkFontSettings();
     scssWatcher();
     dependandOptions();
 

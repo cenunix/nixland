@@ -7,7 +7,6 @@
 , ...
 }: {
   imports = [
-    # ./ags
-    ./ags2
+    ./ags
   ];
 }
