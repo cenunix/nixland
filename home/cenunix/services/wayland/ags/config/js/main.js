@@ -20,16 +20,16 @@ import options from './options.js';
 initWallpaper();
 
 const windows = () => [
-    forMonitors(Desktop),
-    forMonitors(FloatingDock),
-    forMonitors(Lockscreen),
+    // forMonitors(Desktop),
+    // forMonitors(FloatingDock),
+    // forMonitors(Lockscreen),
     forMonitors(Notifications),
     forMonitors(OSD),
     forMonitors(ScreenCorners),
     forMonitors(TopBar),
-    Applauncher(),
+    // Applauncher(),
     Dashboard(),
-    Overview(),
+    // Overview(),
     PowerMenu(),
     QuickSettings(),
     Verification(),

@@ -14,15 +14,15 @@ export function init() {
     notificationBlacklist();
     warnOnLowBattery();
     globals();
-    tmux();
-    gsettigsColorScheme();
-    gtkFontSettings();
+    // tmux();
+    // gsettigsColorScheme();
+    // gtkFontSettings();
     scssWatcher();
     dependandOptions();
 
     reloadScss();
     hyprlandInit();
-    setupHyprland();
+    // setupHyprland();
     wallpaper();
     showAbout();
 
