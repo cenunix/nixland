@@ -1,20 +1,22 @@
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, ...
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
 }: {
   home.packages = with pkgs; [
     wtype
-    rofi-rbw
+    rofi-rbw-wayland
     rofi
   ];
-  #   programs.rbw = {
-  #     enable = true;
-  #     settings.email = "caden.hargrave@gmail.com";
-  #     settings.base_url = "https://api.bitwarden.com";
-  #   };
+  programs.rbw = {
+    enable = true;
+    settings.email = "caden.hargrave@gmail.com";
+    # settings.base_url = "https://api.bitwarden.com";
+    settings.pinentry = "gnome3";
+  };
   xdg.configFile."rofi/config.rasi".text = ''
         configuration{
         modi: "run,drun,window";
@@ -46,7 +48,7 @@
         grey: #6e738d;
 
         width: 1000;
-        font: "monospace";
+        font: "VictorMono Nerd Font 12";
     }
 
     element-text, element-icon , mode-switcher {

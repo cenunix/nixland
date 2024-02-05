@@ -1,14 +1,14 @@
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, ...
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
 }:
 with lib; let
   device = config.modules.device;
-in
-{
+in {
   config = {
     modules = {
       device = {
@@ -30,6 +30,8 @@ in
         video.enable = true;
         sound.enable = true;
         bluetooth.enable = true;
+        virtualization.enable = true;
+        virtualization.qemu.enable = true;
         server = {
           enable = false;
           mediaServer = false;
@@ -45,7 +47,7 @@ in
           chess.enable = false;
           minecraft.enable = false;
         };
-        override = { };
+        override = {};
       };
       usrEnv = {
         isWayland = true;

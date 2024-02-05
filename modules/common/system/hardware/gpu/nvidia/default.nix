@@ -61,7 +61,7 @@ in
           MESA_DISK_CACHE_SINGLE_FILE = "1";
           __GL_SHADER_DISK_CACHE_SKIP_CLEANUP = "1";
           DXVK_STATE_CACHE = "1";
-          GBM_BACKEND = "nvidia-drm"; # breaks firefox apparently
+          # GBM_BACKEND = "nvidia-drm"; # breaks firefox apparently
         })
 
         (mkIf ((env.isWayland) && (device.gpu == "hybrid-nv")) {
@@ -77,12 +77,17 @@ in
         glmark2
         libva
         libva-utils
+        xorg.libxcb
       ];
     };
+    # nixpkgs.config.packageOverrides = pkgs: {
+    #   nvidia_x11.beta = pkgs.unstable.nvidia_x11.beta;
+    # };
 
     hardware = {
       nvidia = {
-        package = mkDefault config.boot.kernelPackages.nvidiaPackages.beta;
+        # package = mkDefault config.boot.kernelPackages.nvidiaPackages.beta;
+        package = pkgs.unstable.linuxPackages_latest.nvidia_x11_beta;
         modesetting.enable = mkDefault true;
         prime.offload.enableOffloadCmd = device.gpu == "hybrid-nv";
         # powerManagement = {

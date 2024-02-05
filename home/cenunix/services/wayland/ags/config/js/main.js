@@ -20,16 +20,16 @@ import options from './options.js';
 initWallpaper();
 
 const windows = () => [
-    // forMonitors(Desktop),
-    // forMonitors(FloatingDock),
-    // forMonitors(Lockscreen),
+    forMonitors(Desktop),
+    forMonitors(FloatingDock),
+    forMonitors(Lockscreen),
     forMonitors(Notifications),
     forMonitors(OSD),
     forMonitors(ScreenCorners),
     forMonitors(TopBar),
-    // Applauncher(),
+    Applauncher(),
     Dashboard(),
-    // Overview(),
+    Overview(),
     PowerMenu(),
     QuickSettings(),
     Verification(),
@@ -39,8 +39,6 @@ const windows = () => [
 export default {
     onConfigParsed: init,
     windows: windows().flat(1),
-    maxStreamVolume: 1.05,
-    cacheNotificationActions: false,
     closeWindowDelay: {
         'quicksettings': options.transition.value,
         'dashboard': options.transition.value,

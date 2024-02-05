@@ -1,16 +1,16 @@
 local k = vim.keymap.set
-vim.g.mapleader = ' '
-k('n', '<C-DOWN>', '<cmd>resize +2<cr>')
-k('n', '<C-UP>', '<cmd>resize -2<cr>')
-k('n', '<C-RIGHT>', '<cmd>vertical resize -2<cr>')
-k('n', '<C-LEFT>', '<cmd>vertical resize +2<cr>')
-k('n', '<S-LEFT>', '<C-w>h')
-k('n', '<S-DOWN>', '<C-w>j')
-k('n', '<S-UP>', '<C-w>k')
-k('n', '<S-RIGHT>', '<C-w>l')
-k('t', '<esc>', '<C-\\><C-n>')
-vim.keymap.set('n', '<leader>w', '<cmd>w<CR>', { desc = 'Save' })
-vim.keymap.set('n', '<leader>q', '<cmd>q<CR>', { desc = 'Quit' })
+vim.g.mapleader = " "
+k("n", "<C-DOWN>", "<cmd>resize +2<cr>")
+k("n", "<C-UP>", "<cmd>resize -2<cr>")
+k("n", "<C-RIGHT>", "<cmd>vertical resize -2<cr>")
+k("n", "<C-LEFT>", "<cmd>vertical resize +2<cr>")
+k("n", "<S-LEFT>", "<C-w>h")
+k("n", "<S-DOWN>", "<C-w>j")
+k("n", "<S-UP>", "<C-w>k")
+k("n", "<S-RIGHT>", "<C-w>l")
+k("t", "<esc>", "<C-\\><C-n>")
+vim.keymap.set("n", "<leader>w", "<cmd>w<CR>", { desc = "Save" })
+vim.keymap.set("n", "<leader>q", "<cmd>q<CR>", { desc = "Quit" })
 -- vim.keymap.set('n', '<leader>f/', telescope_live_grep_open_files, { desc = '[S]earch [/] in Open Files' })
 -- vim.keymap.set('n', '<leader>ft', require('telescope.builtin').builtin, { desc = '[S]earch [S]elect Telescope' })
 -- vim.keymap.set('n', '<leader>fg', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
@@ -31,7 +31,7 @@ vim.g.neovide_floating_blur_amount_x = 5.0
 vim.g.neovide_floating_blur_amount_y = 5.0
 local o = vim.opt
 -- o.lazyredraw = false
-o.shell = 'zsh'
+o.shell = "zsh"
 -- o.shadafile = 'NONE'
 -- o.ttyfast = true
 o.guifont = "VictorMono Nerd Font:h14" -- text below applies for VimScript
@@ -45,8 +45,8 @@ o.expandtab = true
 o.cursorline = true
 o.relativenumber = true
 o.number = true
-o.viminfo = ''
-o.viminfofile = 'NONE'
+o.viminfo = ""
+o.viminfofile = "NONE"
 o.wrap = false
 o.splitright = true
 o.splitbelow = true
@@ -57,8 +57,5 @@ vim.o.timeoutlen = 0
 o.winblend = 80
 o.pumblend = 80
 vim.g.floaterm_winblend = 80
-vim.api.nvim_command('autocmd TermOpen * startinsert')
-vim.api.nvim_command('autocmd TermOpen * setlocal nonumber norelativenumber')
-
-
-
+vim.api.nvim_command("autocmd TermOpen * startinsert")
+vim.api.nvim_command("autocmd TermOpen * setlocal nonumber norelativenumber")

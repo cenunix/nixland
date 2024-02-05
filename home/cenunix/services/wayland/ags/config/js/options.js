@@ -30,13 +30,13 @@ export default {
     }),
 
     color: {
-        red: Option('#f38ba8', { 'scss': 'red' }),
-        green: Option('#a6e3a1', { 'scss': 'green' }),
-        yellow: Option('#f9e2af', { 'scss': 'yellow' }),
-        blue: Option('#89b4fa', { 'scss': 'blue' }),
-        magenta: Option('#cba6f7', { 'scss': 'magenta' }),
-        teal: Option('#94e2d5', { 'scss': 'teal' }),
-        orange: Option('#fab387', { 'scss': 'orange' }),
+        red: Option('#e55f86', { 'scss': 'red' }),
+        green: Option('#00D787', { 'scss': 'green' }),
+        yellow: Option('#EBFF71', { 'scss': 'yellow' }),
+        blue: Option('#51a4e7', { 'scss': 'blue' }),
+        magenta: Option('#9077e7', { 'scss': 'magenta' }),
+        teal: Option('#51e6e6', { 'scss': 'teal' }),
+        orange: Option('#E79E64', { 'scss': 'orange' }),
     },
 
     theme: {
@@ -57,11 +57,11 @@ export default {
             'title': 'Color Scheme',
             'scss': 'color-scheme',
         }),
-        bg: Option('#1e1e2e', {
+        bg: Option('#171717', {
             'title': 'Background Color',
             'scss': 'bg-color',
         }),
-        fg: Option('#cdd6f4', {
+        fg: Option('#eeeeee', {
             'title': 'Foreground Color',
             'scss': 'fg-color',
         }),
@@ -157,6 +157,7 @@ export default {
     applauncher: {
         width: Option(500),
         height: Option(500),
+        anchor: Option(['top']),
         icon_size: Option(52),
     },
 

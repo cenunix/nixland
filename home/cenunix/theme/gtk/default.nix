@@ -1,25 +1,24 @@
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, osConfig
-, ...
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  osConfig,
+  ...
 }:
 with lib; let
   device = osConfig.modules.device;
-  acceptedTypes = [ "desktop" "laptop" "armlaptop" ];
-in
-{
+  acceptedTypes = ["desktop" "laptop" "armlaptop"];
+in {
   config = mkIf (builtins.elem device.type acceptedTypes) {
-
     gtk = {
       enable = true;
       theme = {
         name = "Catppuccin-Mocha-Compact-Blue-Dark";
         package = pkgs.catppuccin-gtk.override {
-          accents = [ "blue" ];
-          tweaks = [ "rimless" ];
+          accents = ["blue"];
+          tweaks = ["rimless"];
           size = "compact";
           variant = "mocha";
         };
@@ -64,7 +63,7 @@ in
 
     # credits: bruhvko
     # catppuccin theme for qt-apps
-    home.packages = with pkgs; [ libsForQt5.qtstyleplugin-kvantum libsForQt5.qt5ct ];
+    home.packages = with pkgs; [libsForQt5.qtstyleplugin-kvantum qt6Packages.qtstyleplugin-kvantum libsForQt5.qt5ct];
 
     xdg.configFile."Kvantum/catppuccin/catppuccin.kvconfig".source = builtins.fetchurl {
       url = "https://raw.githubusercontent.com/catppuccin/Kvantum/main/src/Catppuccin-Macchiato-Pink/Catppuccin-Macchiato-Pink.kvconfig";
