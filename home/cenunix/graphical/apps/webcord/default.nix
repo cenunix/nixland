@@ -20,10 +20,10 @@ with lib; let
   acceptedTypes = [ "desktop" "laptop" "armlaptop" ];
 in
 {
-  imports = [
-    inputs.arrpc.homeManagerModules.default
-    ./arrpc.nix
-  ];
+  # imports = [
+  #   inputs.arrpc.homeManagerModules.default
+  #   ./arrpc.nix
+  # ];
 
   config = mkIf (builtins.elem device.type acceptedTypes) {
     home.packages = with pkgs; [

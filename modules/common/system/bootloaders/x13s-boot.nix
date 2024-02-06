@@ -32,7 +32,7 @@ in
       #loader.efi.canTouchEfiVariables = true;
       loader.efi.efiSysMountPoint = "/boot";
 
-      kernelPackages = pkgs.linuxPackages_testing;
+      kernelPackages = pkgs.linuxPackages_latest;
       kernelParams = [
         "efi=novamap,noruntime"
         "clk_ignore_unused"
