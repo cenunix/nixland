@@ -135,13 +135,13 @@
           		font-weight: bold;
       	}
       	window#waybar {
-      		    background-color: rgba(26,27,38,0);
-          		border-bottom: 1px solid rgba(26,27,38,0);
+      		    background-color: rgba(17, 17, 27,0);
+          		border-bottom: 1px solid rgba(17, 17, 27,0);
           		border-radius: 0px;
-      		    color: #11111b;
+      		    color: #07070b;
       	}
       	#workspaces {
-      		    background: linear-gradient(180deg, #11111b, #cdd6f4);
+      		    background: linear-gradient(180deg, #07070b, #cdd6f4);
           		margin: 5px;
           		padding: 0px 1px;
           		border-radius: 15px;
@@ -161,7 +161,7 @@
       	}
       	#workspaces button.active {
           		color: #cdd6f4;
-          		background: #11111b;
+          		background: #07070b;
           		border-radius: 15px;
           		min-width: 40px;
           		transition: all 0.3s ease-in-out;
@@ -169,12 +169,12 @@
       	}
       	#workspaces button:hover {
           		color: #cdd6f4;
-          		background: #11111b;
+          		background: #07070b;
           		border-radius: 15px;
           		opacity: 1.0;
       	}
       	tooltip {
-        		background: #11111b;
+        		background: #07070b;
         		border: 1px solid #cdd6f4;
         		border-radius: 10px;
       	}
@@ -183,98 +183,98 @@
       	}
       	#window {
           		color: #cdd6f4;
-          		background: #11111b;
+          		background: #07070b;
           		border-radius: 0px 15px 50px 0px;
           		margin: 5px 5px 5px 0px;
           		padding: 2px 20px;
       	}
       	#memory {
           		color: #cdd6f4;
-          		background: #11111b;
+          		background: #07070b;
           		border-radius: 15px 50px 15px 50px;
           		margin: 5px;
           		padding: 2px 20px;
       	}
       	#clock {
           		color: #cdd6f4;
-          		background: #11111b;
+          		background: #07070b;
           		border-radius: 15px 50px 15px 50px;
           		margin: 5px;
           		padding: 2px 20px;
       	}
       	#idle_inhibitor {
           		color: #cdd6f4;
-          		background: #11111b;
+          		background: #07070b;
           		border-radius: 50px 15px 50px 15px;
           		margin: 5px;
           		padding: 2px 20px;
       	}
       	#cpu {
           		color: #cdd6f4;
-          		background: #11111b;
+          		background: #07070b;
           		border-radius: 50px 15px 50px 15px;
           		margin: 5px;
           		padding: 2px 20px;
       	}
       	#disk {
           		color: #cdd6f4;
-          		background: #11111b;
+          		background: #07070b;
           		border-radius: 15px 50px 15px 50px;
           		margin: 5px;
           		padding: 2px 20px;
       	}
       	#battery {
           		color: #cdd6f4;
-          		background: #11111b;
+          		background: #07070b;
           		border-radius: 15px;
           		margin: 5px;
           		padding: 2px 20px;
       	}
       	#network {
           		color: #cdd6f4;
-          		background: #11111b;
+          		background: #07070b;
           		border-radius: 50px 15px 50px 15px;
           		margin: 5px;
           		padding: 2px 20px;
       	}
       	#tray {
           		color: #cdd6f4;
-          		background: #11111b;
+          		background: #07070b;
           		border-radius: 15px 0px 0px 50px;
           		margin: 5px 0px 5px 5px;
           		padding: 2px 20px;
       	}
       	#pulseaudio {
           		color: #cdd6f4;
-          		background: #11111b;
+          		background: #07070b;
           		border-radius: 50px 15px 50px 15px;
           		margin: 5px;
           		padding: 2px 20px;
       	}
       	#custom-notification {
           		color: #cdd6f4;
-          		background: #11111b;
+          		background: #07070b;
           		border-radius: 15px 50px 15px 50px;
           		margin: 5px;
           		padding: 2px 20px;
       	}
           #custom-themeselector {
           		color: #cdd6f4;
-          		background: #11111b;
+          		background: #07070b;
           		border-radius: 15px 50px 15px 50px;
           		margin: 5px;
           		padding: 2px 20px;
           }
       	#custom-startmenu {
           		color: #cdd6f4;
-          		background: #11111b;
+          		background: #07070b;
           		border-radius: 50px 15px 50px 15px;
           		margin: 5px;
           		padding: 2px 20px;
       	}
       	#idle_inhibitor {
           		color: #cdd6f4;
-          		background: #11111b;
+          		background: #07070b;
           		border-radius: 15px 50px 15px 50px;
           		margin: 5px;
           		padding: 2px 20px;

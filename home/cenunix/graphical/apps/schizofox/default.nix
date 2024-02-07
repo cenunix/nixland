@@ -21,9 +21,79 @@ in
       profiles.default.name = "mine";
       profiles.default.isDefault = true;
       profiles.default = {
-        # userChrome = ''
-        #   @import "/home/${user}/.config/firefoxcss/chrome/userChrome.css";
-        # '';
+        userChrome = ''
+          * {
+            --button-bgcolor: #11111b !important;
+            --lwt-accent-color: #07070b !important;
+            --arrowpanel-background: #07070b !important;
+            --input-bgcolor: #07070b !important;
+            --toolbar-field-background-color: #07070b !important;
+            --urlbarView-separator-color: #07070b !important;
+            --toolbar-field-focus-background-color: #07070b !important;
+            --toolbar-bgcolor: #07070b !important;
+            --button-primary-color: #cdd6f4 !important;
+            --button-hover-bgcolor: #11111b !important;
+            --focus-outline-color: #07070b !important;
+            --button-active-bgcolor: #1e1e2e !important;
+            --panel-separator-zap-gradient: linear-gradient(90deg, #181825 0%, #45475a 52.08%, #6c7086 100%);
+            --arrowpanel-border-color: #cdd6f4 !important;
+            --arrowpanel-color: #cdd6f4 !important;
+            --input-color: #cdd6f4 !important;
+            --toolbar-field-color: #cdd6f4 !important;
+            --lwt-text-color: #cdd6f4 !important;
+            --toolbar-color: #cdd6f4 !important;
+            --toolbar-field-focus-color: #cdd6f4 !important;
+            --newtab-text-primary-color: #cdd6f4 !important;
+            --tab-selected-textcolor: #cdd6f4 !important;
+            --tab-icon-overlay-fill: #cdd6f4 !important;
+            --toolbarbutton-icon-fill: #cdd6f4 !important;
+            --sidebar-text-color: #cdd6f4 !important;
+            --button-primary-bgcolor: #cdd6f4 !important;
+            --button-primary-hover-bgcolor: #cdd6f4 !important;
+            --button-primary-active-bgcolor: #cdd6f4 !important;
+          }
+
+          tab-close-button.close-icon {
+            display: none;
+            color: red;
+          }
+          #_c607c8df-14a7-4f28-894f-29e8722976af_-BAP {
+             color: #07070b;
+          }
+          #TabsToolbar {
+            background-color: #07070b;
+          }
+          #nav-bar {
+            background-color: #07070b;
+          }
+          #tracking-protection-icon-container {
+            background-color: #07070b;
+          }
+          #appMenu-multiView {
+            background-color: #07070b !important;
+          }
+          .urlbar-page-action {
+            background-color: #07070b;
+          }
+          .identity-box-button  {
+            background-color: #07070b;
+          }
+          .urlbar-input-box {
+            background-color: #07070b;
+          }
+          .tab-icon-image {
+            display: none;
+          }
+          tab[selected="true"] > .tab-stack > .tab-background {
+            background: #11111b !important;
+          }
+          tab:not([selected="true"]) > .tab-stack:hover > .tab-background {
+            background: #11111b !important;
+          }
+          #firefox-view-button {
+            list-style-image : url(nix-snowflake.svg) !important;
+          }
+        '';
         # userContent = ''
         #   @import "/home/${user}/.config/firefoxcss/chrome/userContent.css";
         # '';

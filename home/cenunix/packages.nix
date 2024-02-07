@@ -22,12 +22,7 @@ in
     ++ optionals (builtins.elem device.type [ "desktop" "laptop" "armlaptop" ]) [
       # Shared Packages between all systems
       mpv
-      hexchat
-      mktorrent
-      ffmpeg
       # thunderbird-bin
-      vivaldi
-      vivaldi-ffmpeg-codecs
     ]
     ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [
       lunatask

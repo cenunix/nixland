@@ -118,7 +118,7 @@ in
     .control-center .notification-row:focus,
     .control-center .notification-row:hover {
         opacity: 0.9;
-        background: #11111b
+        background: #07070b
     }
 
     .notification-row {
@@ -134,7 +134,7 @@ in
     }
 
     .notification-content {
-        background: #11111b;
+        background: #07070b;
         padding: 10px;
         border-radius: 5px;
         border: 2px solid #6c7086;
@@ -149,7 +149,7 @@ in
 
     .close-button {
         background: #585b70;
-        color: #11111b;
+        color: #07070b;
         text-shadow: none;
         padding: 0;
         border-radius: 5px;
@@ -190,12 +190,12 @@ in
 
     .notification-action:first-child {
         border-bottom-left-radius: 10px;
-        background: #11111b
+        background: #07070b
     }
 
     .notification-action:last-child {
         border-bottom-right-radius: 10px;
-        background: #11111b
+        background: #07070b
     }
 
     .inline-reply {
@@ -203,7 +203,7 @@ in
     }
 
     .inline-reply-entry {
-        background: #11111b;
+        background: #07070b;
         color: #cdd6f4;
         caret-color: #cdd6f4;
         border: 1px solid #cdd6f4;
@@ -212,7 +212,7 @@ in
 
     .inline-reply-button {
         margin-left: 4px;
-        background: #11111b;
+        background: #07070b;
         border: 1px solid #cdd6f4;
         border-radius: 5px;
         color: #cdd6f4
@@ -225,7 +225,7 @@ in
     }
 
     .inline-reply-button:hover {
-        background: #11111b
+        background: #07070b
     }
 
     .body-image {
@@ -260,7 +260,7 @@ in
     }
 
     .control-center {
-        background: #11111b;
+        background: #07070b;
         border: 2px solid #cdd6f4;
         border-radius: 5px;
     }
@@ -283,7 +283,7 @@ in
 
     .widget-title {
         color: #cdd6f4;
-        background: #11111b;
+        background: #07070b;
         padding: 5px 10px;
         margin: 10px 10px 5px 10px;
         font-size: 1.5rem;
@@ -294,18 +294,18 @@ in
         font-size: 1rem;
         color: #cdd6f4;
         text-shadow: none;
-        background: #11111b;
+        background: #07070b;
         box-shadow: none;
         border-radius: 5px;
     }
 
     .widget-title>button:hover {
         background: #cdd6f4;
-        color: #11111b;
+        color: #07070b;
     }
 
     .widget-dnd {
-        background: #11111b;
+        background: #07070b;
         padding: 5px 10px;
         margin: 10px 10px 5px 10px;
         border-radius: 5px;
@@ -325,12 +325,12 @@ in
     }
 
     .widget-dnd>switch slider {
-        background: #11111b;
+        background: #07070b;
         border-radius: 5px
     }
 
     .widget-dnd>switch:checked slider {
-        background: #11111b;
+        background: #07070b;
         border-radius: 5px
     }
 
@@ -345,7 +345,7 @@ in
 
     .widget-mpris {
         color: #cdd6f4;
-        background: #11111b;
+        background: #07070b;
         padding: 5px 10px;
         margin: 10px 10px 5px 10px;
         border-radius: 5px;
@@ -379,14 +379,14 @@ in
 
     .widget-buttons-grid>flowbox>flowboxchild>button {
         margin: 3px;
-        background: #11111b;
+        background: #07070b;
         border-radius: 5px;
         color: #cdd6f4;
     }
 
     .widget-buttons-grid>flowbox>flowboxchild>button:hover {
         background: rgba(122, 162, 247, 1);
-        color: #11111b;
+        color: #07070b;
     }
 
     .widget-menubar>box>.menu-button-bar>button {
@@ -414,7 +414,7 @@ in
     }
 
     .per-app-volume {
-        background-color: #11111b;
+        background-color: #07070b;
         padding: 4px 8px 8px;
         margin: 0 8px 8px;
         border-radius: 5px;

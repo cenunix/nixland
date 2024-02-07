@@ -1,10 +1,9 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
+{ inputs
+, outputs
+, lib
+, config
+, pkgs
+, ...
 }: {
   home.packages = with pkgs; [
     wtype
@@ -38,9 +37,9 @@
   '';
   xdg.configFile."rofi/catppuccin-macchiato.rasi".text = ''
             * {
-        bg-col:  #11111b;
+        bg-col:  #07070b;
         bg-col-light: #24273a;
-        border-col: #11111b;
+        border-col: #07070b;
         selected-col: #24273a;
         blue: #89b4fa;
         fg-col: #cdd6f4;

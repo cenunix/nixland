@@ -11,7 +11,7 @@
     # ./nheko
     # ./obs
     # ./obsidian
-    # ./schizofox
+    ./schizofox
     # ./spotify
     ./webcord
   ];
