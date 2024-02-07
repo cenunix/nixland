@@ -7,6 +7,7 @@
 , ...
 }: {
   imports = [
-    ./ags
+    ./waybar
+    ./swaync
   ];
 }
