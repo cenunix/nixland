@@ -1,17 +1,17 @@
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, ...
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
 }:
 with lib; let
   env = config.modules.usrEnv;
   device = config.modules.device;
-  acceptedTypes = [ "desktop" "laptop" ];
-in
-{
-  imports = [ ./services.nix ];
+  acceptedTypes = ["desktop" "laptop"];
+in {
+  imports = [./services.nix];
 
   config = mkIf (env.isWayland) {
     # nixpkgs.overlays = with inputs; [nixpkgs-wayland.overlay];
@@ -69,9 +69,9 @@ in
     systemd = {
       user.services.polkit-gnome-authentication-agent-1 = {
         description = "polkit-gnome-authentication-agent-1";
-        wantedBy = [ "graphical-session.target" ];
-        wants = [ "graphical-session.target" ];
-        after = [ "graphical-session.target" ];
+        wantedBy = ["graphical-session.target"];
+        wants = ["graphical-session.target"];
+        after = ["graphical-session.target"];
         serviceConfig = {
           Type = "simple";
           ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
@@ -103,12 +103,13 @@ in
       mediaKeys.enable = true;
     };
 
-    environment.systemPackages = with pkgs; mkIf (env.windowManager) [
-      gnome3.adwaita-icon-theme
-      xdg-utils
-      libsForQt5.qt5.qtwayland
-      qt6.qtwayland
-      avizo
-    ];
+    environment.systemPackages = with pkgs;
+      mkIf (env.windowManager) [
+        gnome3.adwaita-icon-theme
+        xdg-utils
+        libsForQt5.qt5.qtwayland
+        qt6.qtwayland
+        avizo
+      ];
   };
 }

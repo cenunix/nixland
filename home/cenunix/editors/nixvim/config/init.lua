@@ -48,6 +48,7 @@ o.number = true
 o.viminfo = ""
 o.viminfofile = "NONE"
 o.wrap = false
+o.clipboard = "unnamedplus"
 o.splitright = true
 o.splitbelow = true
 o.laststatus = 0
