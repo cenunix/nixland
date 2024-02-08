@@ -33,10 +33,10 @@ in
     version = "0.7.0";
 
     src = fetchFromGitHub {
-      owner = "catppuccin";
+      owner = "cenunix";
       repo = "gtk";
-      rev = "v${version}";
-      hash = "sha256-J1iLN2FF3Ml/3zmntXYlfkv6dZcwl62A9X4ruAH1ll4=";
+      rev = "21a3afb2460bed867adec283087bd4947ccf026b";
+      hash = "sha256-j9/U50WZ55eLFqKxrgVEYfzuQK8vBLci0122+yUnXe8=";
     };
 
     nativeBuildInputs = [gtk3 sassc];
