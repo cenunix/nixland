@@ -16,12 +16,13 @@ in {
       enable = true;
       theme = {
         name = "Catppuccin-Mocha-Compact-Blue-Dark";
-        package = pkgs.catppuccin-gtk.override {
-          accents = ["blue"];
-          tweaks = ["rimless"];
-          size = "compact";
-          variant = "mocha";
-        };
+        package = pkgs.custom-gtk;
+        # package = pkgs.catppuccin-gtk.override {
+        #   accents = ["blue"];
+        #   tweaks = ["rimless"];
+        #   size = "compact";
+        #   variant = "mocha";
+        # };
       };
       iconTheme = {
         package = pkgs.catppuccin-papirus-folders;
