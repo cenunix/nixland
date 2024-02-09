@@ -145,10 +145,6 @@ in {
      layerrule = blur, ^(gtk-layer-shell|anyrun)$
      layerrule = ignorezero, ^(gtk-layer-shell|anyrun)$
 
-
-
-
-
      # resize and relocate via submap
      # normal movement, shift + key for resizing
      #bind = SUPER, R, exec, hyprctl --batch keyword "general:col.active_border $yellow;"
@@ -184,12 +180,9 @@ in {
      submap = reset
      bind=SUPER,F,fullscreen
 
-
      # some nice mouse binds
      bindm=SUPER,mouse:272,movewindow
      bindm=SUPER,mouse:273,resizewindow
-
-
 
      # Keybinds
      bind=SUPER,RETURN,exec,kitty
@@ -205,16 +198,13 @@ in {
      bind=SUPER_ALT,P,exec,~/.config/hypr/scripts/screensht active
      bind=SUPER_SHIFT,C,exec,ocr
 
-
      bind=SUPER,N,exec,~/.local/bin/nvim-gui
      bind=SUPER,I,exec,mylock
      bind=SUPER,D,exec,anyrun
      bind=SUPER,S,exec,rofi-rbw
-
-
+     bind=SUPER,B,exec,rofi-bluetooth
 
      bind=,Print,exec,wscreenshot -sf
-
 
      bind=,XF86MonBrightnessUp,exec,lightctl up
      bind=,XF86MonBrightnessDown,exec,lightctl down
@@ -227,15 +217,12 @@ in {
      bind=SUPER,k,movefocus,u
      bind=SUPER,j,movefocus,d
 
-
      bind=SUPER_SHIFT,h,movewindow,l
      bind=SUPER_SHIFT,l,movewindow,r
      bind=SUPER_SHIFT,k,movewindow,u
      bind=SUPER_SHIFT,j,movewindow,d
      bind=SUPER,B,movecurrentworkspacetomonitor,DP-1
      bind=SUPER_SHIFT,B,movecurrentworkspacetomonitor,DP-2
-
-
 
      bind=SUPER,1,workspace,1
      bind=SUPER,2,workspace,2
