@@ -1,9 +1,19 @@
-{ pkgs, config, ... }:
-
-let
-  palette = config.colorScheme.palette;
-in
 {
+  pkgs,
+  config,
+  ...
+}: let
+  task-waybar =
+    pkgs.writeShellScriptBin "task-waybar"
+    ''
+      sleep 0.1
+      ${pkgs.swaynotificationcenter}/bin/swaync-client -t &
+    '';
+in {
+  home.packages = with pkgs; [
+    swaynotificationcenter
+    task-waybar
+  ];
   home.file.".config/swaync/config.json".text = ''
         {
             "$schema": "/etc/xdg/swaync/configSchema.json",

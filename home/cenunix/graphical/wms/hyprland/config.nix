@@ -24,6 +24,7 @@ in {
      exec-once=/etc/polkit-kde-agent/agent
      exec-once = hyprctl setcursor "Bibata-Modern-Ice" 16
     # exec-once = run-as-service 'foot --server'
+     exec-once = run-as-service waybar
      exec-once = run-as-service avizo-service
      exec-once = swww init
      exec-once = swww img ~/Personal/nicks/home/cenunix/graphical/wms/wall.jpg

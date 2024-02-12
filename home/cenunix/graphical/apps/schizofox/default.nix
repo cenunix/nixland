@@ -50,6 +50,7 @@ in {
             --button-primary-bgcolor: #cdd6f4 !important;
             --button-primary-hover-bgcolor: #cdd6f4 !important;
             --button-primary-active-bgcolor: #cdd6f4 !important;
+            --urlbarView-highlight-color: #cdd6f4 !important;
           }
 
 

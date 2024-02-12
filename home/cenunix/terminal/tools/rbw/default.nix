@@ -1,9 +1,10 @@
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, ...
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
 }: {
   home.packages = with pkgs; [
     wtype
@@ -58,6 +59,7 @@
     window {
         height: 500px;
         border: 3px;
+        border-radius: 6px;
         border-color: @border-col;
         background-color: @bg-col;
     }
