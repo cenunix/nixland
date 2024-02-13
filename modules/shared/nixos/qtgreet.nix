@@ -21,13 +21,15 @@ in {
       default = {
         General = {
           Backend = "GreetD";
-          Theme = "default";
+          Theme = "aerial";
           BlurBackground = "true";
+          IconTheme = "Breeze";
         };
         Overrides = {
           Background = "Theme";
           BaseColor = "Theme";
           TextColor = "Theme";
+          FontFamily = "Theme";
         };
       };
       defaultText = literalExpression ''
@@ -51,7 +53,7 @@ in {
   config = mkIf cfg.enable {
     environment.systemPackages = [cfg.package];
     services.greetd.enable = true;
-    services.greetd.settings.default_session.command = "${cfg.package}/bin/greetwl --data-path /var/lib/qtgreet";
+    services.greetd.settings.default_session.command = "${pkgs.sway}/bin/sway --unsupported-gpu --config /etc/hypr.conf";
     environment.etc."greetd/config.toml".source = greetdSettingsFormat.generate "greetd.toml" greetdCfg.settings;
     environment.etc."qtgreet/config.ini".source = settingsFormat.generate "qtgreet.ini" cfg.settings;
 

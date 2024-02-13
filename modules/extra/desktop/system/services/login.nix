@@ -19,17 +19,19 @@ in {
           storeOnly = true;
         };
       };
-
-      greetd = {
-        gnupg.enable = true;
-        enableGnomeKeyring = true;
-      };
     };
-
-    # environment.systemPackages = with pkgs; [
-    #   sddm-chili-theme
-    #   libsForQt5.qt5.qtgraphicaleffects
-    # ];
+    #   greetd = {
+    #     gnupg.enable = true;
+    #     enableGnomeKeyring = true;
+    #   };
+    # };
+    # programs.qtgreet = {
+    #   package = pkgs.qtgreet;
+    #   enable = true;
+    # };
+    environment.systemPackages = with pkgs; [
+      sddm-chili-theme
+    ];
     services = {
       #   greetd = mkIf env.windowManager {
       #     enable = true;
@@ -65,15 +67,15 @@ in {
       #     };
       #   };
 
-      # xserver = {
-      #   libinput.enable = true;
-      #   enable = true;
-      # };
+      xserver = {
+        libinput.enable = true;
+        enable = true;
+      };
       xserver.displayManager.sessionPackages = [pkgs.hyprland];
-      # xserver.displayManager.sddm = {
-      #   enable = true;
-      #   wayland.enable = true;
-      # };
+      xserver.displayManager.sddm = {
+        enable = true;
+        wayland.enable = true;
+      };
       gnome = {
         glib-networking.enable = true;
         gnome-keyring.enable = true;
