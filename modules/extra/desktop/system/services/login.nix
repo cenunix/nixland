@@ -26,50 +26,50 @@ in {
       };
     };
 
-    environment.systemPackages = with pkgs; [
-      sddm-chili-theme
-      libsForQt5.qt5.qtgraphicaleffects
-      qtgreet
-    ];
+    # environment.systemPackages = with pkgs; [
+    #   sddm-chili-theme
+    #   libsForQt5.qt5.qtgraphicaleffects
+    # ];
     services = {
-      greetd = mkIf env.windowManager {
-        enable = true;
-        vt = 2;
-        restart = !env.autologin;
-        settings = {
-          # pick up desktop variant (i.e Hyprland) and username from usrEnv
-          # this option is usually defined in host/<hostname>/system.nix
-          initial_session = mkIf env.autologin {
-            command = "${env.desktop}";
-            user = "${sys.username}";
-          };
-
-          default_session =
-            if (!env.autologin)
-            then {
-              command = lib.concatStringsSep " " [
-                (lib.getExe pkgs.qtgreet)
-                "--time"
-                "--remember"
-                "--remember-user-session"
-                "--asterisks"
-                # "--power-shutdown '${pkgs.systemd}/bin/systemctl shutdown'"
-                #"--sessions '${sessionPath}'"
-              ];
-              user = "greeter";
-            }
-            else {
-              command = "${env.desktop}";
-              user = "${sys.username}";
-            };
-        };
-      };
+      #   greetd = mkIf env.windowManager {
+      #     enable = true;
+      #     vt = 2;
+      #     restart = !env.autologin;
+      #     settings = {
+      #       # pick up desktop variant (i.e Hyprland) and username from usrEnv
+      #       # this option is usually defined in host/<hostname>/system.nix
+      #       initial_session = mkIf env.autologin {
+      #         command = "${env.desktop}";
+      #         user = "${sys.username}";
+      #       };
+      #
+      #       default_session =
+      #         if (!env.autologin)
+      #         then {
+      #           command = lib.concatStringsSep " " [
+      #             "'${pkgs.hyprland}/bin/Hyprland' --config /etc/hypr.conf"
+      #             # (lib.getExe pkgs.qtgreet)
+      #             # "--time"
+      #             # "--remember"
+      #             # "--remember-user-session"
+      #             # "--asterisks"
+      #             # "--power-shutdown '${pkgs.systemd}/bin/systemctl shutdown'"
+      #             #"--sessions '${sessionPath}'"
+      #           ];
+      #           user = "greeter";
+      #         }
+      #         else {
+      #           command = "${env.desktop}";
+      #           user = "${sys.username}";
+      #         };
+      #     };
+      #   };
 
       # xserver = {
       #   libinput.enable = true;
       #   enable = true;
       # };
-      # xserver.displayManager.sessionPackages = [pkgs.hyprland];
+      xserver.displayManager.sessionPackages = [pkgs.hyprland];
       # xserver.displayManager.sddm = {
       #   enable = true;
       #   wayland.enable = true;
