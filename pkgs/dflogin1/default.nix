@@ -15,8 +15,8 @@ stdenv.mkDerivation (finalAttrs: {
   src = fetchFromGitLab {
     owner = "desktop-frameworks";
     repo = "login1";
-    rev = "2f8335a98c3052517235303441147a1db295b609";
-    hash = "sha256-LGEyRKOAgc9wMdAxMJ4Q6Dl/a0ikyVW7f/LQte5gLJI=";
+    rev = "07a069daf1bf8af58cea220271146e21bea34321";
+    hash = "sha256-7URHVc0082LuzteSXAK1nE7vcArrsxaHG1LCV/RvTm4=";
   };
 
   nativeBuildInputs = [

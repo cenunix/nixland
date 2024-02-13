@@ -12,10 +12,11 @@
   qttools,
   wayqt,
   wayland,
-  wlroots_0_16,
+  wlroots,
   dfapplications,
   dflogin1,
   dfutils,
+  mpv,
 }:
 stdenv.mkDerivation {
   pname = "qtgreet";
@@ -25,7 +26,7 @@ stdenv.mkDerivation {
     owner = "marcusbritanicus";
     repo = "qtgreet";
     rev = "274e439dc1f2fcf39186f867a7a863269e236244";
-    hash = "";
+    hash = "sha256-Lm7OdB9/o7BltPusuxTIuPQ4w23rCIKugEsjGR5vgVg=";
   };
 
   nativeBuildInputs = [
@@ -39,13 +40,14 @@ stdenv.mkDerivation {
     dfapplications
     dflogin1
     dfutils
+    mpv
     libxkbcommon
     pixman
     qtbase
     qttools
     wayqt
     wayland
-    wlroots_0_16
+    wlroots
   ];
 
   mesonFlags = [

@@ -32,48 +32,48 @@ in {
       qtgreet
     ];
     services = {
-      # greetd = mkIf env.windowManager {
+      greetd = mkIf env.windowManager {
+        enable = true;
+        vt = 2;
+        restart = !env.autologin;
+        settings = {
+          # pick up desktop variant (i.e Hyprland) and username from usrEnv
+          # this option is usually defined in host/<hostname>/system.nix
+          initial_session = mkIf env.autologin {
+            command = "${env.desktop}";
+            user = "${sys.username}";
+          };
+
+          default_session =
+            if (!env.autologin)
+            then {
+              command = lib.concatStringsSep " " [
+                (lib.getExe pkgs.qtgreet)
+                "--time"
+                "--remember"
+                "--remember-user-session"
+                "--asterisks"
+                # "--power-shutdown '${pkgs.systemd}/bin/systemctl shutdown'"
+                #"--sessions '${sessionPath}'"
+              ];
+              user = "greeter";
+            }
+            else {
+              command = "${env.desktop}";
+              user = "${sys.username}";
+            };
+        };
+      };
+
+      # xserver = {
+      #   libinput.enable = true;
       #   enable = true;
-      #   vt = 2;
-      #   restart = !env.autologin;
-      #   settings = {
-      #     # pick up desktop variant (i.e Hyprland) and username from usrEnv
-      #     # this option is usually defined in host/<hostname>/system.nix
-      #     initial_session = mkIf env.autologin {
-      #       command = "${env.desktop}";
-      #       user = "${sys.username}";
-      #     };
-      #
-      #     default_session =
-      #       if (!env.autologin)
-      #       then {
-      #         command = lib.concatStringsSep " " [
-      #           (lib.getExe pkgs.greetd.tuigreet)
-      #           "--time"
-      #           "--remember"
-      #           "--remember-user-session"
-      #           "--asterisks"
-      #           # "--power-shutdown '${pkgs.systemd}/bin/systemctl shutdown'"
-      #           #"--sessions '${sessionPath}'"
-      #         ];
-      #         user = "greeter";
-      #       }
-      #       else {
-      #         command = "${env.desktop}";
-      #         user = "${sys.username}";
-      #       };
-      #   };
       # };
-      #
-      xserver = {
-        libinput.enable = true;
-        enable = true;
-      };
-      xserver.displayManager.sessionPackages = [pkgs.hyprland];
-      xserver.displayManager.sddm = {
-        enable = true;
-        wayland.enable = true;
-      };
+      # xserver.displayManager.sessionPackages = [pkgs.hyprland];
+      # xserver.displayManager.sddm = {
+      #   enable = true;
+      #   wayland.enable = true;
+      # };
       gnome = {
         glib-networking.enable = true;
         gnome-keyring.enable = true;

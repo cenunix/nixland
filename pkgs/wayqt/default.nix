@@ -6,18 +6,21 @@
   pkg-config,
   cmake,
   ninja,
-  qtbase,
+  libxkbcommon,
+  libGL,
+  libpng,
+  qt5,
   wayland,
 }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "wayqt";
-  version = "0.1.1";
+  version = "0.2.0";
 
   src = fetchFromGitLab {
     owner = "desktop-frameworks";
     repo = "wayqt";
-    rev = "v${finalAttrs.version}";
-    hash = "sha256-PL8XMddOtHsxgT6maDXMDvbHp2oW8CsMeKVtIAlmq7w=";
+    rev = "2f240620b9752ef58b8eba5eaa8e13396aef438b";
+    hash = "sha256-i1KZp6y8/jtLnZmXSMAT3wbYY/yuZKTX0Lk6HC1Pnio=";
   };
 
   nativeBuildInputs = [
@@ -28,7 +31,10 @@ stdenv.mkDerivation (finalAttrs: {
   ];
 
   buildInputs = [
-    qtbase
+    qt5.full
+    libGL
+    libpng
+    libxkbcommon
     wayland
   ];
 
