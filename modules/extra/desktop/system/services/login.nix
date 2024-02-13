@@ -29,6 +29,7 @@ in {
     environment.systemPackages = with pkgs; [
       sddm-chili-theme
       libsForQt5.qt5.qtgraphicaleffects
+      qtgreet
     ];
     services = {
       # greetd = mkIf env.windowManager {

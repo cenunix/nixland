@@ -6,6 +6,12 @@
 }: {
   programs.wlogout = {
     enable = true;
-    layout.logout.action = "hyprctl dispatch exit none";
+    layout = [
+      {
+        label = "logout";
+        action = "hyprctl dispatch exit none";
+        text = "Logout";
+      }
+    ];
   };
 }

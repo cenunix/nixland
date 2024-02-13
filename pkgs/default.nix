@@ -6,6 +6,10 @@
   alsa-ucm-conf-x13s = pkgs.callPackage ./alsa-ucm-conf-x13s.nix {};
   linux_x13s_pkg = pkgs.callPackage ./linux-x13s/default.nix {};
   # other various packages
+  qtgreet = pkgs.callPackage ./qtgreet {};
+  dfapplications = pkgs.callPackage ./dfapplications {};
+  dflogin1 = pkgs.callPackage ./dflogin1 {};
+  dfutils = pkgs.callPackage ./dfutils {};
   custom-gtk = pkgs.callPackage ./custom-gtk {};
   catppuccin-cursors = pkgs.callPackage ./catppuccin-cursors.nix {};
   grimblast = pkgs.callPackage ./grimblast/default.nix {};
