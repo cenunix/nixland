@@ -10,6 +10,8 @@
   dfapplications = pkgs.callPackage ./dfapplications {};
   dflogin1 = pkgs.callPackage ./dflogin1 {};
   dfutils = pkgs.callPackage ./dfutils {};
+  dfipc = pkgs.callPackage ./dfipc {};
+  wayqt = pkgs.callPackage ./wayqt {};
   custom-gtk = pkgs.callPackage ./custom-gtk {};
   catppuccin-cursors = pkgs.callPackage ./catppuccin-cursors.nix {};
   grimblast = pkgs.callPackage ./grimblast/default.nix {};
