@@ -18,5 +18,5 @@
   dfapplications = pkgs.libsForQt5.callPackage ./dfapplications {inherit dfipc;};
   qtgreet = pkgs.libsForQt5.callPackage ./qtgreet {inherit wayqt dfapplications dfutils dflogin1;};
   wayqt = pkgs.libsForQt5.callPackage ./wayqt {};
-  sddm-aerial-theme = pkgs.callPackage ./sddm-aerial {};
+  sddm-aerial-theme = pkgs.libsForQt5.callPackage ./sddm-aerial {};
 }

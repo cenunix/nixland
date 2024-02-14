@@ -3,6 +3,9 @@
   stdenv,
   fetchFromGitHub,
   qtgraphicaleffects,
+  qtmultimedia,
+  qtbase,
+  libsForQt5,
   themeConfig ? {},
 }: let
   customToString = x:
@@ -30,11 +33,14 @@ in
       owner = "3ximus";
       repo = "aerial-sddm-theme";
       rev = "74fb9d0b2cfc3b63f401606b416e908a71efc447";
-      sha256 = "";
+      sha256 = "sha256-XXYnvl2uT+u9Ikm97Opa1WwabDDNoAe7HWhUhUzOomQ=";
     };
 
     propagatedBuildInputs = [
       qtgraphicaleffects
+      qtbase
+      qtmultimedia
+      libsForQt5.full
     ];
 
     dontWrapQtApps = true;
@@ -51,6 +57,8 @@ in
       mkdir -p $out/nix-support
 
       echo ${qtgraphicaleffects} >> $out/nix-support/propagated-user-env-packages
+      echo ${qtmultimedia} >> $out/nix-support/propagated-user-env-packages
+      echo ${libsForQt5.full} >> $out/nix-support/propagated-user-env-packages
     '';
     meta = with lib; {
       license = licenses.gpl3;

@@ -30,7 +30,9 @@ in {
     #   enable = true;
     # };
     environment.systemPackages = with pkgs; [
-      sddm-chili-theme
+      libsForQt5.qt5.qtquickcontrols
+      libsForQt5.qt5.qtgraphicaleffects
+      catppuccin-sddm-corners
     ];
     services = {
       #   greetd = mkIf env.windowManager {
@@ -75,6 +77,7 @@ in {
       xserver.displayManager.sddm = {
         enable = true;
         wayland.enable = true;
+        theme = "catppuccin-sddm-corners";
       };
       gnome = {
         glib-networking.enable = true;
