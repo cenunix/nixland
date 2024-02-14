@@ -12,11 +12,5 @@
   air-status = pkgs.callPackage ./air-status.nix {};
   gg-sans = pkgs.callPackage ./gg-sans {};
   my-webcord = pkgs.callPackage ./webcord/default.nix {};
-  dfipc = pkgs.libsForQt5.callPackage ./dfipc {};
-  dflogin1 = pkgs.libsForQt5.callPackage ./dflogin1 {};
-  dfutils = pkgs.libsForQt5.callPackage ./dfutils {};
-  dfapplications = pkgs.libsForQt5.callPackage ./dfapplications {inherit dfipc;};
-  qtgreet = pkgs.libsForQt5.callPackage ./qtgreet {inherit wayqt dfapplications dfutils dflogin1;};
-  wayqt = pkgs.libsForQt5.callPackage ./wayqt {};
-  sddm-aerial-theme = pkgs.libsForQt5.callPackage ./sddm-aerial {};
+  catppuccin-sddm-corners = pkgs.callPackage ./catppuccin-sddm-corners {};
 }
