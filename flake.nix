@@ -104,6 +104,7 @@
     overlays = import ./overlays {inherit inputs;}; # Your custom packages and modifications, exported as overlays
     nixosModules = import ./modules/nixos; # Reusable nixos modules you might want to export
     homeManagerModules = import ./modules/home-manager; # These are usually stuff you would upstream into nixpkgs
+    lib = import ./lib {inherit inputs;};
 
     agenix = inputs.agenix.nixosModules.default; # secret encryption via age
 
