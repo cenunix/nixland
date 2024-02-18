@@ -120,7 +120,7 @@
         ];
       };
       europa = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs self;};
+        specialArgs = {inherit inputs outputs self lib;};
         modules = [
           ./hosts/europa
           ./modules
