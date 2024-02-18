@@ -10,8 +10,8 @@ stdenvNoCC.mkDerivation {
   src = fetchFromGitHub {
     owner = "cenunix";
     repo = "catppuccin-sddm-corners";
-    rev = "79db4dd0610e3a0b72e12e8996e1aee6b6194347";
-    hash = "sha256-xA8/wpoLGz4affdZAqsr8qnUTOabQ6m24vh+TLQi7TA=";
+    rev = "7ee8d03dedea9138ab74feae3e5c341ee2f3f9e5";
+    hash = "sha256-WF/O/sLpBMB+D1oC0XeMIodQnADIMrctXlt4LyaJi60=";
   };
 
   dontConfigure = true;

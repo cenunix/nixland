@@ -28,8 +28,8 @@ in {
         name = "Papirus";
       };
       font = {
-        package = pkgs.fira;
-        name = "Fira Sans Condensed";
+        package = pkgs.lexend;
+        name = "Lexend";
         size = 13;
       };
       gtk3.extraConfig = {

@@ -48,7 +48,7 @@
         grey: #6e738d;
 
         width: 1000;
-        font: "VictorMono Nerd Font 12";
+        font: "Maple Mono SC NF 12";
     }
 
     element-text, element-icon , mode-switcher {

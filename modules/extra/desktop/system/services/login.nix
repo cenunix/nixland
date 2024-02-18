@@ -7,6 +7,11 @@
 with lib; let
   env = config.modules.usrEnv;
   sys = config.modules.system;
+  sessionData = config.services.xserver.displayManager.sessionData.desktops;
+  sessionPath = concatStringsSep ":" [
+    "${sessionData}/share/xsessions"
+    "${sessionData}/share/wayland-sessions"
+  ];
 in {
   config = {
     # unlock GPG keyring on login
@@ -19,66 +24,54 @@ in {
           storeOnly = true;
         };
       };
+      greetd = {
+        gnupg.enable = true;
+        enableGnomeKeyring = true;
+      };
     };
-    #   greetd = {
-    #     gnupg.enable = true;
-    #     enableGnomeKeyring = true;
-    #   };
-    # };
-    # programs.qtgreet = {
-    #   package = pkgs.qtgreet;
-    #   enable = true;
-    # };
-    environment.systemPackages = with pkgs; [
-      libsForQt5.qt5.qtquickcontrols
-      libsForQt5.qt5.qtgraphicaleffects
-      catppuccin-sddm-corners
-    ];
     services = {
-      #   greetd = mkIf env.windowManager {
-      #     enable = true;
-      #     vt = 2;
-      #     restart = !env.autologin;
-      #     settings = {
-      #       # pick up desktop variant (i.e Hyprland) and username from usrEnv
-      #       # this option is usually defined in host/<hostname>/system.nix
-      #       initial_session = mkIf env.autologin {
-      #         command = "${env.desktop}";
-      #         user = "${sys.username}";
-      #       };
-      #
-      #       default_session =
-      #         if (!env.autologin)
-      #         then {
-      #           command = lib.concatStringsSep " " [
-      #             "'${pkgs.hyprland}/bin/Hyprland' --config /etc/hypr.conf"
-      #             # (lib.getExe pkgs.qtgreet)
-      #             # "--time"
-      #             # "--remember"
-      #             # "--remember-user-session"
-      #             # "--asterisks"
-      #             # "--power-shutdown '${pkgs.systemd}/bin/systemctl shutdown'"
-      #             #"--sessions '${sessionPath}'"
-      #           ];
-      #           user = "greeter";
-      #         }
-      #         else {
-      #           command = "${env.desktop}";
-      #           user = "${sys.username}";
-      #         };
-      #     };
-      #   };
+      greetd = mkIf env.windowManager {
+        enable = true;
+        vt = 2;
+        restart = !env.autologin;
+        settings = {
+          # pick up desktop variant (i.e Hyprland) and username from usrEnv
+          # this option is usually defined in host/<hostname>/system.nix
+          initial_session = mkIf env.autologin {
+            command = "${env.desktop}";
+            user = "${sys.username}";
+          };
 
-      xserver = {
-        libinput.enable = true;
-        enable = true;
+          default_session =
+            if (!env.autologin)
+            then {
+              command = lib.concatStringsSep " " [
+                "--time"
+                "--remember"
+                "--remember-user-session"
+                "--asterisks"
+                "--power-shutdown '${pkgs.systemd}/bin/systemctl shutdown'"
+                "--sessions '${sessionPath}'"
+              ];
+              user = "greeter";
+            }
+            else {
+              command = "${env.desktop}";
+              user = "${sys.username}";
+            };
+        };
       };
-      xserver.displayManager.sessionPackages = [pkgs.hyprland];
-      xserver.displayManager.sddm = {
-        enable = true;
-        wayland.enable = true;
-        theme = "catppuccin-sddm-corners";
-      };
+
+      # xserver = {
+      #   libinput.enable = true;
+      #   enable = true;
+      # };
+      # xserver.displayManager.sessionPackages = [pkgs.hyprland];
+      # xserver.displayManager.sddm = {
+      #   enable = true;
+      #   wayland.enable = true;
+      #   theme = "catppuccin-sddm-corners";
+      # };
       gnome = {
         glib-networking.enable = true;
         gnome-keyring.enable = true;

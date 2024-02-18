@@ -40,7 +40,7 @@ in {
     #       default_session = initial_session;
     #     };
     #   };
-
+    #
     #   gnome = {
     #     glib-networking.enable = true;
     #     gnome-keyring.enable = true;

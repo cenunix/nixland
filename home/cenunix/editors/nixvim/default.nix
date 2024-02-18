@@ -76,6 +76,7 @@ in {
       nodePackages.pyright
       black
       isort
+      go
     ];
   };
 }
