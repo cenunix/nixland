@@ -7,7 +7,7 @@
   ...
 }: {
   imports = [
-    ./nixvim
+    ./nvim
     ./vscode
   ];
 }

@@ -15,16 +15,14 @@ in {
 
     fonts = {
       packages = with pkgs; [
-        lexend
         iosevka-bin
         font-awesome
         jetbrains-mono
-        fira
-        fira-code
         maple-mono
         maple-mono-NF
         maple-mono-SC-NF
         lexend
+        joypixels
         (nerdfonts.override {fonts = ["JetBrainsMono" "FiraCode" "VictorMono"];})
       ];
 

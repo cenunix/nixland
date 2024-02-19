@@ -1,18 +1,19 @@
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, ...
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
 }: {
   imports = [
     # ./brave
     ./discord
     # ./nheko
-    # ./obs
-    # ./obsidian
+    ./obs
+    ./obsidian
     ./schizofox
-    # ./spotify
+    ./spotify
     ./webcord
   ];
 }

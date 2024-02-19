@@ -27,9 +27,6 @@ in {
          audible_bell = "Disabled", -- annoying
          warn_about_missing_glyphs =  false,
 
-         -- anims
-          animation_fps = 1,
-
          -- term window settings
          adjust_window_size_when_changing_font_size = false,
          window_background_opacity = 0.85,
@@ -55,14 +52,14 @@ in {
          -- font config
          font_size = 14.0,
          font = wezterm.font_with_fallback {
-          { family = "Iosevka Nerd Font", weight = "Medium" },
-          { family = "Symbols Nerd Font" }
+          { family = "Maple Mono SC NF", weight = "Medium" },
+          { family = "JoyPixels" }
          },
 
          -- perf
-         front_end = "WebGpu",
-         enable_wayland = true,
-         scrollback_lines = 10000,
+        -- front_end = "WebGpu",
+        -- enable_wayland = true,
+        -- scrollback_lines = 10000,
 
          -- colors
          -- the followSystem theme is defined in colorSchemes.nix

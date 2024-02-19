@@ -30,6 +30,15 @@ in {
       };
     };
     services = {
+      xserver.displayManager.session = [
+        {
+          manage = "desktop";
+          name = "hyprland";
+          start = ''
+            Hyprland
+          '';
+        }
+      ];
       greetd = mkIf env.windowManager {
         enable = true;
         vt = 2;
@@ -46,6 +55,7 @@ in {
             if (!env.autologin)
             then {
               command = lib.concatStringsSep " " [
+                (getExe pkgs.greetd.tuigreet)
                 "--time"
                 "--remember"
                 "--remember-user-session"
@@ -62,16 +72,6 @@ in {
         };
       };
 
-      # xserver = {
-      #   libinput.enable = true;
-      #   enable = true;
-      # };
-      # xserver.displayManager.sessionPackages = [pkgs.hyprland];
-      # xserver.displayManager.sddm = {
-      #   enable = true;
-      #   wayland.enable = true;
-      #   theme = "catppuccin-sddm-corners";
-      # };
       gnome = {
         glib-networking.enable = true;
         gnome-keyring.enable = true;

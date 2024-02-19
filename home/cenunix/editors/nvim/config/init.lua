@@ -26,9 +26,9 @@ vim.g.neovide_transparency = 0.8
 -- vim.g.transparency = 0.8
 -- vim.g.neovide_background_color = "#07070b"
 vim.g.neovide_floating_shadow = false
-vim.g.neovide_window_floating_opacity = 0
-vim.g.neovide_floating_blur_amount_x = 5.0
-vim.g.neovide_floating_blur_amount_y = 5.0
+-- vim.g.neovide_window_floating_opacity = 0
+-- vim.g.neovide_floating_blur_amount_x = 5.0
+-- vim.g.neovide_floating_blur_amount_y = 5.0
 local o = vim.opt
 -- o.lazyredraw = false
 o.shell = "zsh"
@@ -55,8 +55,8 @@ o.laststatus = 0
 o.cmdheight = 0
 vim.o.timeout = true
 vim.o.timeoutlen = 0
-o.winblend = 80
-o.pumblend = 80
+-- o.winblend = 80
+-- o.pumblend = 80
 vim.g.floaterm_winblend = 80
 vim.api.nvim_command("autocmd TermOpen * startinsert")
 vim.api.nvim_command("autocmd TermOpen * setlocal nonumber norelativenumber")
