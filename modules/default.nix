@@ -8,7 +8,6 @@
 }: {
   imports = [
     ./common
-    ./extra
     ./shared
     ./options
     ./home-manager.nix

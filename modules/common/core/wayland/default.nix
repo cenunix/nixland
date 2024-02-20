@@ -11,7 +11,10 @@ with lib; let
   device = config.modules.device;
   acceptedTypes = ["desktop" "laptop"];
 in {
-  imports = [./services.nix];
+  imports = [
+    ./services.nix
+    ./xdg-portals.nix
+  ];
 
   config = mkIf (env.isWayland) {
     # nixpkgs.overlays = with inputs; [nixpkgs-wayland.overlay];
@@ -83,23 +86,6 @@ in {
         };
       };
     };
-    # programs.hyprland = mkIf (env.desktop == "Hyprland") {
-    #   enable = true;
-    # };
-    xdg.portal = mkIf (env.windowManager) {
-      enable = true;
-      config = {
-        common = {
-          default = [
-            "hyprland"
-          ];
-        };
-      };
-      extraPortals = [
-        pkgs.xdg-desktop-portal-gtk
-      ];
-    };
-
     sound = {
       enable = true;
       mediaKeys.enable = true;

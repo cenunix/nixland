@@ -7,7 +7,6 @@
   ...
 }: {
   imports = [
-    ./xdg-portals.nix
     ./fonts.nix
   ];
 }

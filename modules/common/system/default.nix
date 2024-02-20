@@ -9,7 +9,6 @@
   imports = [
     ./bootloaders
     ./media
-    ./module
     ./hardware
     ./network
     ./virtualization

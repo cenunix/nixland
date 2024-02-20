@@ -8,10 +8,6 @@
   ...
 }:
 with lib; let
-  usr =
-    if (config.modules.system.username == null)
-    then "cenunix"
-    else "${config.modules.system.username}";
   env = config.modules.usrEnv;
 in {
   config = mkIf (env.isWayland) {
@@ -28,31 +24,5 @@ in {
         wantedBy = ["multi-user.target"];
       };
     };
-
-    # services = {
-    #   greetd = {
-    #     enable = true;
-    #     settings = rec {
-    #       initial_session = {
-    #         command = "Hyprland";
-    #         user = "${usr}";
-    #       };
-    #       default_session = initial_session;
-    #     };
-    #   };
-    #
-    #   gnome = {
-    #     glib-networking.enable = true;
-    #     gnome-keyring.enable = true;
-    #   };
-    #   logind = {
-    #     lidSwitch = "suspend-then-hibernate";
-    #     lidSwitchExternalPower = "lock";
-    #     extraConfig = ''
-    #       HandlePowerKey=suspend-then-hibernate
-    #       HibernateDelaySec=3600
-    #     '';
-    #   };
-    # };
   };
 }
