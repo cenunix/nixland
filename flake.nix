@@ -34,6 +34,10 @@
       url = "github:the-argus/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    sss = {
+      url = "github:SergioRibera/sss";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
