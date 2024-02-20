@@ -8,9 +8,12 @@
 }: {
   imports = [
     ./env
-    ./network
+    ./games
+    ./misc
     ./programs
+    ./services
     ./users
+    ./wayland
     ./nix.nix
   ];
 }

@@ -8,5 +8,6 @@
 }: {
   imports = [
     ./cli
+    ./gui
   ];
 }

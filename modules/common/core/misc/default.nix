@@ -7,7 +7,7 @@
   ...
 }: {
   imports = [
-    ./gaming
-    ./system
+    ./xdg-portals.nix
+    ./fonts.nix
   ];
 }

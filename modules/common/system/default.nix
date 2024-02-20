@@ -8,9 +8,10 @@
 }: {
   imports = [
     ./bootloaders
-    ./display
     ./media
     ./module
     ./hardware
+    ./network
+    ./virtualization
   ];
 }

@@ -23,22 +23,22 @@ in {
 
       # color definition for custom color scheme. (rosepine)
       customColorScheme = {
-        text = "ebbcba";
-        subtext = "F0F0F0";
-        sidebar-text = "e0def4";
+        text = "cdd6f4";
+        subtext = "cdd6f4";
+        sidebar-text = "cdd6f4";
         main = "07070b";
         sidebar = "07070b";
-        player = "191724";
-        card = "191724";
+        player = "1e1e2e";
+        card = "1e1e2e";
         shadow = "1f1d2e";
-        selected-row = "797979";
-        button = "31748f";
-        button-active = "31748f";
-        button-disabled = "555169";
+        selected-row = "45475a";
+        button = "b4befe";
+        button-active = "b4befe";
+        button-disabled = "313244";
         tab-active = "07070b";
-        notification = "1db954";
-        notification-error = "eb6f92";
-        misc = "6e6a86";
+        notification = "a6e3a1";
+        notification-error = "f38ba8";
+        misc = "6c7086";
       };
       enabledExtensions = with spicePkgs.extensions; [
         fullAppDisplay

@@ -7,6 +7,9 @@
 in {
   imports = [
     ./colors.nix
+    ./device
+    ./system
+    ./usrEnv
   ];
   options.modules.style = {
     forceGtk = mkEnableOption "Force GTK applications to use the GTK theme";

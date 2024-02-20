@@ -8,5 +8,6 @@
 }: {
   imports = [
     ./paths.nix
+    ./xdg-ninja
   ];
 }
