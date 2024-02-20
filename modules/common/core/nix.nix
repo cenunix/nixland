@@ -1,14 +1,15 @@
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, ...
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
 }: {
   nix = {
     # This will add each flake input as a registry
     # To make nix3 commands consistent with your flake
-    registry = lib.mapAttrs (_: value: { flake = value; }) inputs;
+    registry = lib.mapAttrs (_: value: {flake = value;}) inputs;
 
     # This will additionally add your inputs to the system's legacy channels
     # Making legacy nix commands consistent as well, awesome!
@@ -22,17 +23,38 @@
     };
 
     settings = {
-      # Enable flakes and new 'nix' command
-      experimental-features = "nix-command flakes";
+      # enable new nix command and flakes
+      # and also "unintended" recursion as well as content addresssed
+      extra-experimental-features = [
+        "flakes" # flakes
+        "nix-command" # experimental nix commands
+        "recursive-nix" # let nix invoke itself
+        "ca-derivations" # content addressed nix
+        "repl-flake" # allow passing installables to nix repl
+        "auto-allocate-uids" # allow nix to automatically pick UIDs, rather than creating nixbld* user accounts
+        "cgroups" # allow nix to execute builds inside cgroups
+      ];
       # Deduplicate and optimize nix store
       auto-optimise-store = true;
       # use binary cache, its not gentoo
       builders-use-substitutes = true;
       # allow sudo users to mark the following values as trusted
-      allowed-users = [ "@wheel" ];
+      allowed-users = ["@wheel"];
       # only allow sudo users to manage the nix store
-      trusted-users = [ "@wheel" ];
+      trusted-users = ["@wheel"];
+      # let system decide max number of jobs
       max-jobs = "auto";
+      # don't warn me that my git tree is dirty, I know
+      warn-dirty = false;
+      # maximum number of parallel TCP connections used to fetch imports and binary caches, 0 means no limit
+      http-connections = 50;
+      # whether to accept nix configuration from a flake without prompting
+      accept-flake-config = true;
+      # execute builds inside cgroups
+      use-cgroups = true;
+      # for direnv GC roots
+      keep-derivations = true;
+      keep-outputs = true;
       # use binary cache, its not gentoo
       substituters = [
         "https://cache.nixos.org"

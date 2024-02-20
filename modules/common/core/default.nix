@@ -7,6 +7,7 @@
   ...
 }: {
   imports = [
+    ./env
     ./network
     ./programs
     ./users

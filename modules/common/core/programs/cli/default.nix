@@ -7,6 +7,7 @@
   ...
 }: {
   imports = [
+    ./direnv.nix
     ./shell.nix
     ./tools.nix
   ];

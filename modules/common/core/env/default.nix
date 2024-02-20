@@ -6,6 +6,7 @@
   pkgs,
   ...
 }: {
-  environment.systemPackages = with pkgs; [
+  imports = [
+    ./paths.nix
   ];
 }

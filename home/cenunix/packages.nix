@@ -14,6 +14,9 @@ in {
     config = {
       allowUnfree = true;
       allowUnsupportedSystem = true;
+      permittedInsecurePackages = [
+        "electron-25.9.0"
+      ];
     };
   };
   home.packages = with pkgs;
@@ -22,6 +25,20 @@ in {
     ++ optionals (builtins.elem device.type ["desktop" "laptop" "armlaptop"]) [
       # Shared Packages between all systems
       mpv
+      ttyper
+      unzip
+      ripgrep
+      fd
+      xh
+      jq
+      fzf
+      p7zip
+      grex
+      lm_sensors
+      dua
+      unrar
+      vim
+      powertop
     ]
     ++ optionals (builtins.elem device.type ["desktop" "laptop"]) [
       lunatask
