@@ -1,3 +1,0 @@
-[submodule "pkgs/lazyvim/LazyVim"]
-	path = pkgs/lazyvim/LazyVim
-	url = https://github.com/cenunix/LazyVim
