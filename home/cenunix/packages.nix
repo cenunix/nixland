@@ -17,6 +17,7 @@ in {
       permittedInsecurePackages = [
         "electron-25.9.0"
       ];
+      overlays = builtins.attrValues outputs.overlays;
     };
   };
   home.packages = with pkgs;
@@ -41,7 +42,6 @@ in {
       powertop
     ]
     ++ optionals (builtins.elem device.type ["desktop" "laptop"]) [
-      lunatask
       brave
     ]
     ++ optionals (builtins.elem device.type ["armlaptop"]) [

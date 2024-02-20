@@ -57,36 +57,6 @@
       ];
     };
   };
-  # virtualisation = {
-  #   kvmgt.enable = true;
-  #   spiceUSBRedirection.enable = true;
-  #   libvirtd = {
-  #     enable = true;
-  #     qemu = {
-  #       package = pkgs.qemu_kvm;
-  #       ovmf.enable = true;
-  #       ovmf.packages = [ pkgs.OVMFFull ];
-  #       swtpm.enable = true;
-  #     };
-  #   };
-  # };
-  # boot.binfmt = {
-  #   emulatedSystems = [ "aarch64-linux" "i686-linux" ];
-  #   registrations = {
-  #     aarch64-linux = {
-  #       interpreter = lib.mkForce "${pkgs.qemu}/bin/qemu-aarch64";
-  #     };
-  #
-  #     i686-linux = {
-  #       interpreter = "${pkgs.qemu}/bin/qemu-i686";
-  #     };
-  #   };
-  # };
-  # nix.settings.extra-sandbox-paths = [ "/run/binfmt" "${pkgs.qemu}" ];
-  #
-  # environment.systemPackages = with pkgs; [ virt-manager win-virtio virt-viewer gnome.gnome-boxes ];
-
-  # Basic Networking and TimeZone
 
   time = {
     timeZone = "America/Los_Angeles";
