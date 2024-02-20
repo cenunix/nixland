@@ -1,5 +1,6 @@
 {
   config,
+  osConfig,
   inputs,
   pkgs,
   ...
@@ -9,6 +10,8 @@
 in {
   imports = [
     inputs.sss.nixosModules.home-manager
+    ./screenshot-full.nix
+    ./screenshot-area.nix
   ];
 
   programs.sss = {
@@ -17,11 +20,11 @@ in {
     # General Config
     general = {
       author = " cenunix";
-      # copy = true;
+      copy = true;
       colors = {
         background = colors.base00;
-        author = c.base05;
-        shadow = c.base01;
+        author = colors.base05;
+        shadow = colors.base01;
       };
       fonts = "Maple Mono SC NF=11.0";
       radius = 8;
