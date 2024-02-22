@@ -17,12 +17,12 @@
       exit 1
     fi
 
-    filename="$(date +%F-%H-%M-%S)-Screenshot.webp"
+    filename="$(date +%F-%H-%M-%S)-Screenshot.png"
     file_path="$screenshot_dir/$filename"
 
     sss --screen-id "$screen_id" -o raw >"$file_path"
     cat "$file_path" | wl-copy
-    notify-send "Screenshot" "Screenshot Taked: $filename" -i "$file_path"
+    notify-send "Screenshot" "Screenshot Taken: $filename" -i "$file_path"
   '';
 in {
   home.packages = [screenshot-full];

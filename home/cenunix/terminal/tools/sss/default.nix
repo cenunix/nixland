@@ -13,22 +13,24 @@ in {
     ./screenshot-full.nix
     ./screenshot-area.nix
   ];
-
+  home.packages = with pkgs; [
+    slurp
+  ];
   programs.sss = {
     enable = true;
 
     # General Config
     general = {
       author = " cenunix";
-      copy = true;
+      # copy = true;
       colors = {
-        background = colors.base00;
-        author = colors.base05;
-        shadow = colors.base01;
+        background = "#${colors.base00}";
+        author = "#${colors.base05}";
+        shadow = "#${colors.base02}";
       };
-      fonts = "Maple Mono SC NF=11.0";
-      radius = 8;
-      save-format = "webp";
+      fonts = "Maple Mono SC NF=14.0";
+      radius = 10;
+      save-format = "png";
       shadow = true;
       shadow-image = true;
     };

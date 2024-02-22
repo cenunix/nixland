@@ -16,9 +16,6 @@ in {
   config = mkIf (builtins.elem device.type acceptedTypes) {
     programs.firefox = mkDefault {
       enable = true;
-      profiles.default.id = 0;
-      profiles.default.name = "mine";
-      profiles.default.isDefault = true;
       profiles.default = {
         userChrome = ''
           * {
@@ -163,10 +160,10 @@ in {
                 "{47bf427e-c83d-457d-9b3d-3db4118574bd}".install_url = "https://addons.mozilla.org/firefox/downloads/latest/nighttab/latest.xpi";
               };
 
-            FirefoxHome = {
-              Pocket = false;
-              Snippets = false;
-            };
+            # FirefoxHome = {
+            #   Pocket = false;
+            #   Snippets = false;
+            # };
             PasswordManagerEnabled = false;
             # PromptForDownloadLocation = false;
             UserMessaging = {
