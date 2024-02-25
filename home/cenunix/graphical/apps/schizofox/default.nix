@@ -16,6 +16,7 @@ in {
   config = mkIf (builtins.elem device.type acceptedTypes) {
     programs.firefox = mkDefault {
       enable = true;
+      profiles.default.isDefault = true;
       profiles.default = {
         userChrome = ''
           * {
