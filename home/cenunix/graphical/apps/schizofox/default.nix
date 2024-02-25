@@ -48,6 +48,7 @@ in {
             --button-primary-hover-bgcolor: #cdd6f4 !important;
             --button-primary-active-bgcolor: #cdd6f4 !important;
             --urlbarView-highlight-color: #cdd6f4 !important;
+            --urlbarView-highlight-background: #585b70 !important;
           }
 
 
@@ -82,6 +83,10 @@ in {
           .tab-icon-image {
             display: none;
           }
+          .tabbrowser-tab {
+            color: #cdd6f4 !important;
+            color-scheme: unset;
+          }
           tab[selected="true"] > .tab-stack > .tab-background {
             background: #11111b !important;
           }
@@ -113,7 +118,7 @@ in {
             # "browser.startup.homepage" = "file://${startpage}";
             # "browser.newtabpage.enabled" = false;
             # Normal useragent
-            "general.useragent.override" = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36";
+            # "general.useragent.override" = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36";
 
             "toolkit.zoomManager.zoomValues" = ".8,.90,.95,1,1.1,1.2";
             "browser.uidensity" = 1;
@@ -164,12 +169,12 @@ in {
             #   Pocket = false;
             #   Snippets = false;
             # };
-            PasswordManagerEnabled = false;
+            # PasswordManagerEnabled = false;
             # PromptForDownloadLocation = false;
-            UserMessaging = {
-              ExtensionRecommendations = true;
-              SkipOnboarding = true;
-            };
+            # UserMessaging = {
+            #   ExtensionRecommendations = true;
+            #   SkipOnboarding = true;
+            # };
             # SanitizeOnShutdown = {
             #   Cache = true;
             #   History = true;

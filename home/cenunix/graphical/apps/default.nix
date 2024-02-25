@@ -9,7 +9,7 @@
   imports = [
     # ./brave
     ./discord
-    # ./nheko
+    ./nheko
     ./obs
     ./obsidian
     ./schizofox

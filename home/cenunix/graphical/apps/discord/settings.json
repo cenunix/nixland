@@ -110,9 +110,6 @@
         "CustomRPC": {
             "enabled": false
         },
-        "DisableDMCallIdle": {
-            "enabled": false
-        },
         "EmoteCloner": {
             "enabled": false
         },
@@ -423,6 +420,9 @@
             "enabled": false
         },
         "Wikisearch": {
+            "enabled": false
+        },
+        "DisableCallIdle": {
             "enabled": false
         }
     },
