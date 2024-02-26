@@ -203,7 +203,7 @@ in {
      bind=SUPER,I,exec,mylock
      bind=SUPER,D,exec,anyrun
      bind=SUPER,S,exec,rofi-rbw
-     bind=SUPER,B,exec,rofi-bluetooth
+     bind=SUPER,G,exec,rofi-bluetooth
 
      bind=,Print,exec,wscreenshot -sf
 

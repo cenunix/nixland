@@ -8,6 +8,7 @@
   ...
 }: {
   imports = [
+    ./avizo
     ./hyprlock
     ./swaync
     ./waybar
