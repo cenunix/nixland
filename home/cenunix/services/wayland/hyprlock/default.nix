@@ -12,5 +12,8 @@
   ];
   programs.hyprlock = {
     enable = true;
+    backgrounds = {
+      path = "/home/cenunix/Personal/nicks/home/cenunix/graphical/wms/hyprland/wall.png";
+    };
   };
 }
