@@ -57,6 +57,7 @@ in {
         colord
         wl-clipboard
         grimblast
+        grim
       ]
       ++ optionals (device.gpu == "nvidia") [
         shadertoggle

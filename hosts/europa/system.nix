@@ -42,8 +42,8 @@ in {
         gui.enable = true;
 
         gaming = {
-          enable = true;
-          steam.enable = true;
+          enable = false;
+          steam.enable = false;
           chess.enable = false;
           minecraft.enable = false;
         };

@@ -14,6 +14,10 @@
       url = "github:hyprwm/Hyprland/";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprlock = {
+      url = "github:hyprwm/Hyprlock/";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     anyrun = {
       url = "github:Kirottu/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";

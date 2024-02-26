@@ -8,8 +8,9 @@
   ...
 }: {
   imports = [
-    ./waybar
+    ./hyprlock
     ./swaync
+    ./waybar
     ./wlogout
   ];
 }
