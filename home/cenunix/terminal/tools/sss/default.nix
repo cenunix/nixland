@@ -15,6 +15,7 @@ in {
   ];
   home.packages = with pkgs; [
     slurp
+    wayshot
   ];
   programs.sss = {
     enable = true;

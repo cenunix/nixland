@@ -1,7 +1,8 @@
-{ config
-, pkgs
-, lib
-, ...
+{
+  config,
+  pkgs,
+  lib,
+  ...
 }:
 with lib; let
   # use the latest possible nvidia package
@@ -15,15 +16,14 @@ with lib; let
 
   device = config.modules.device;
   env = config.modules.usrEnv;
-in
-{
+in {
   config = mkIf (device.gpu == "nvidia" || device.gpu == "hybrid-nv") {
     # nvidia drivers are unfree software
     nixpkgs.config.allowUnfree = true;
 
     services.xserver = mkMerge [
       {
-        videoDrivers = [ "nvidia" ];
+        videoDrivers = ["nvidia"];
       }
 
       # xorg settings
@@ -46,7 +46,7 @@ in
     boot = {
       # blacklist nouveau module so that it does not conflict with nvidia drm stuff
       # also the nouveau performance is godawful, I'd rather run linux on a piece of paper than use nouveau
-      blacklistedKernelModules = [ "nouveau" ];
+      blacklistedKernelModules = ["nouveau"];
     };
 
     environment = {
@@ -86,8 +86,8 @@ in
 
     hardware = {
       nvidia = {
-        # package = mkDefault config.boot.kernelPackages.nvidiaPackages.beta;
-        package = pkgs.unstable.linuxPackages_latest.nvidia_x11_beta;
+        package = mkDefault config.boot.kernelPackages.nvidiaPackages.stable;
+        # package = pkgs.unstable.linuxPackages_latest.nvidia_x11_beta;
         modesetting.enable = mkDefault true;
         prime.offload.enableOffloadCmd = device.gpu == "hybrid-nv";
         # powerManagement = {
@@ -104,8 +104,8 @@ in
       };
 
       opengl = {
-        extraPackages = with pkgs; [ nvidia-vaapi-driver ];
-        extraPackages32 = with pkgs.pkgsi686Linux; [ nvidia-vaapi-driver ];
+        extraPackages = with pkgs; [nvidia-vaapi-driver];
+        extraPackages32 = with pkgs.pkgsi686Linux; [nvidia-vaapi-driver];
       };
     };
   };

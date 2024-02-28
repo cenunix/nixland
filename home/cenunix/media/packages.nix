@@ -6,9 +6,11 @@
   ...
 }: {
   home.packages = with pkgs; [
+    ffmpeg
     playerctl
     pavucontrol
     pulsemixer
+    pulseaudio
     imv
   ];
 }

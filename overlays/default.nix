@@ -1,7 +1,7 @@
 # This file defines overlays
-{ inputs, ... }: {
+{inputs, ...}: {
   # This one brings our custom packages from the 'pkgs' directory
-  additions = final: _prev: import ../pkgs { pkgs = final; };
+  additions = final: _prev: import ../pkgs {pkgs = final;};
   #When applied, the unstable nixpkgs set (declared in the flake inputs) will
   # be accessible through 'pkgs.unstable'
   unstable-packages = final: _prev: {
@@ -28,11 +28,10 @@
   # You can change versions, add patches, set compilation flags, anything really.
   # https://nixos.wiki/wiki/Overlays
   modifications = final: prev: {
-
     # example = prev.example.overrideAttrs (oldAttrs: rec {
     # ...
     # });
-    nvidia_x11 = inputs.nixpkgs-master.nvidia_x11;
+    # nvidia_x11 = inputs.nixpkgs-master.nvidia_x11;
   };
 
   #
