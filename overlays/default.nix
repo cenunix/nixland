@@ -18,12 +18,7 @@
       config.allowUnfree = true;
     };
   };
-  pinned-packages = final: _prev: {
-    pinned = import inputs.nixpkgs-pinned {
-      system = final.system;
-      config.allowUnfree = true;
-    };
-  };
+
   # This one contains whatever you want to overlay
   # You can change versions, add patches, set compilation flags, anything really.
   # https://nixos.wiki/wiki/Overlays

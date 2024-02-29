@@ -9,6 +9,6 @@
   imports = [
     ./foot
     ./kitty
-    ./wezterm
+    # ./wezterm
   ];
 }
