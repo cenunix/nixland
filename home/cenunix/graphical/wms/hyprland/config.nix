@@ -27,7 +27,7 @@ in {
      exec-once = run-as-service waybar
      exec-once = run-as-service avizo-service
      exec-once = swww init
-     exec-once = swww img ~/Personal/nicks/home/cenunix/graphical/wms/wall.jpg
+     exec-once = swww img ~/Personal/nicks/home/cenunix/graphical/wms/wall.png
 
      # Keyboard and mouse
      input {

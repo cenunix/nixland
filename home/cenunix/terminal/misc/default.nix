@@ -1,11 +1,12 @@
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, ...
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
 }: {
   imports = [
-    # ./spotify-player # Spotify command line interface
+    ./spotify-player # Spotify command line interface
   ];
 }

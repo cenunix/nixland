@@ -1,14 +1,14 @@
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, ...
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
 }:
 with lib; let
   device = config.modules.device;
-in
-{
+in {
   config = {
     modules = {
       device = {
@@ -37,14 +37,14 @@ in
           chess.enable = false;
           steam.enable = false;
         };
-        override = { };
+        override = {};
       };
       usrEnv = {
         isWayland = true;
         windowManager = true;
         desktop = "Hyprland";
         useHomeManager = true;
-        autologin = true;
+        autologin = false;
       };
     };
   };

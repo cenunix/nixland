@@ -1,11 +1,12 @@
 # This is your system's configuration file.
 # Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, ...
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
 }: {
   # You can import other NixOS modules here
   imports = [
@@ -55,7 +56,6 @@
       outputs.overlays.stable-packages
       outputs.overlays.pinned-packages
 
-
       # You can also add overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default
 
@@ -66,8 +66,8 @@
       #   });
       # })
       (final: prev: {
-        qrtr = prev.callPackage ../../pkgs/qrtr.nix { };
-        pd-mapper = final.callPackage ../../pkgs/pd-mapper.nix { inherit (final) qrtr; };
+        qrtr = prev.callPackage ../../pkgs/qrtr.nix {};
+        pd-mapper = final.callPackage ../../pkgs/pd-mapper.nix {inherit (final) qrtr;};
         compressFirmwareXz = lib.id;
       })
     ];
@@ -76,6 +76,10 @@
       # Disable if you don't want unfree packages
       allowUnsupportedSystem = true;
       allowUnfree = true;
+      permittedInsecurePackages = [
+        "electron-25.9.0"
+        "freeimage-unstable-2021-11-01"
+      ];
     };
   };
 
