@@ -80,9 +80,6 @@ in {
         xorg.libxcb
       ];
     };
-    # nixpkgs.config.packageOverrides = pkgs: {
-    #   nvidia_x11.beta = pkgs.unstable.nvidia_x11.beta;
-    # };
 
     hardware = {
       nvidia = {

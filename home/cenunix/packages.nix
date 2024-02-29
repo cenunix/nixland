@@ -26,7 +26,7 @@ in {
     []
     ++ optionals (builtins.elem device.type ["desktop" "laptop" "armlaptop"]) [
       # Shared Packages between all systems
-      mpv
+      stable.mpv
       vlc
       ttyper
       unzip

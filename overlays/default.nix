@@ -31,7 +31,6 @@
     # example = prev.example.overrideAttrs (oldAttrs: rec {
     # ...
     # });
-    # nvidia_x11 = inputs.nixpkgs-master.nvidia_x11;
   };
 
   #
