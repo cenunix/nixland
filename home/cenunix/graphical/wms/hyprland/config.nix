@@ -194,13 +194,13 @@ in {
      #bind=SUPER,P,pseudo,
      # Screenshots
 
-     bind=SUPER,P,exec,~/.config/hypr/scripts/screensht full
-     bind=SUPER_SHIFT,P,exec,~/.config/hypr/scripts/screensht area
-     bind=SUPER_ALT,P,exec,~/.config/hypr/scripts/screensht active
-     bind=SUPER_SHIFT,C,exec,ocr
+     bind=SUPER,P,exec,screenshot-full
+     bind=SUPER_SHIFT,P,exec,screenshot-area
+     # bind=SUPER_ALT,P,exec,~/.config/hypr/scripts/screensht active
+     # bind=SUPER_SHIFT,C,exec,ocr
 
      bind=SUPER,N,exec,~/.local/bin/nvim-gui
-     bind=SUPER,I,exec,mylock
+     bind=SUPER,I,exec,hyprlock
      bind=SUPER,D,exec,anyrun
      bind=SUPER,S,exec,rofi-rbw
      bind=SUPER,G,exec,rofi-bluetooth
