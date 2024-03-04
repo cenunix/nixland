@@ -10,24 +10,24 @@
 with lib; let
   device = osConfig.modules.device;
   acceptedTypes = ["desktop" "laptop" "armlaptop"];
-  spotify-player-17 = (
-    pkgs.spotify_player.overrideAttrs {
-      version = "0.17.0";
-    }
-  );
 in {
   config = mkIf (builtins.elem device.type acceptedTypes) {
     home.packages = with pkgs; [
-      (spotify-player.overrideAttrs # spotify command line interface
-        
-        (old: {
-          version = "0.17.0";
-          src =
-            fetchFromGithub {
-              rev = "";
-            }
-            + old.src;
-        }))
+      # spotify command line interface
+      (spotify-player.overrideAttrs (o: rec {
+        pname = "spotify-player";
+        version = "0.17.0";
+        src = pkgs.fetchFromGitHub {
+          owner = "aome510";
+          repo = pname;
+          rev = "refs/tags/v${version}";
+          hash = "sha256-fGDIlkTaRg+J6YcP9iBcJFuYm9F0UOA+v/26hhdg9/o=";
+        };
+        cargoDeps = pkgs.rustPlatform.importCargoLock {
+          lockFile = src + "/Cargo.lock";
+          allowBuiltinFetchGit = true;
+        };
+      }))
     ];
     xdg.configFile."spotify-player/theme.toml".source = ./theme.toml;
     xdg.configFile."spotify-player/app.toml".text = ''

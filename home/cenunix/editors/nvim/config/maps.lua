@@ -20,6 +20,36 @@ wk.register({
       "Neotree Focus",
     },
     c = { ":bdelete!<CR>", "Close Buffer" },
+    a = {
+      name = "Harpoon",
+      a = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Add File" },
+      e = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Open Quick Menu" },
+      ["1"] = {
+        function()
+          require("harpoon.ui").nav_file(1)
+        end,
+        "Nav File 1",
+      },
+      ["2"] = {
+        function()
+          require("harpoon.ui").nav_file(2)
+        end,
+        "Nav File 2",
+      },
+      ["3"] = {
+        function()
+          require("harpoon.ui").nav_file(3)
+        end,
+        "Nav File 3",
+      },
+      ["4"] = {
+        function()
+          require("harpoon.ui").nav_file(4)
+        end,
+        "Nav File 4",
+      },
+    },
+
     f = {
       name = "File",
       f = { "<cmd>Telescope find_files<cr>", "Find File" },

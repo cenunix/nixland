@@ -14,6 +14,7 @@
       customRC = ''
         lua << EOF
         ${builtins.readFile config/init.lua}
+        ${builtins.readFile config/autopairs.lua}
         ${builtins.readFile config/utils/icons.lua}
         ${builtins.readFile config/theme.lua}
         ${builtins.readFile config/treesitter.lua}
@@ -33,6 +34,7 @@
       '';
       packages.myPlugins = with pkgs.vimPlugins; {
         start = [
+          nvim-autopairs
           nvim-lspconfig
           nvim-cmp
           luasnip
@@ -44,7 +46,7 @@
           nvim-web-devicons
           lualine-nvim
           nvim-navic
-          # nvim-harpoon
+          harpoon
           comment-nvim
           which-key-nvim
           telescope-nvim
