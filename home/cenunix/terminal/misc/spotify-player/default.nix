@@ -1,19 +1,33 @@
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, osConfig
-, ...
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  osConfig,
+  ...
 }:
 with lib; let
   device = osConfig.modules.device;
-  acceptedTypes = [ "desktop" "laptop" "armlaptop" ];
-in
-{
+  acceptedTypes = ["desktop" "laptop" "armlaptop"];
+  spotify-player-17 = (
+    pkgs.spotify_player.overrideAttrs {
+      version = "0.17.0";
+    }
+  );
+in {
   config = mkIf (builtins.elem device.type acceptedTypes) {
     home.packages = with pkgs; [
-      spotify-player # spotify command line interface
+      (spotify-player.overrideAttrs # spotify command line interface
+        
+        (old: {
+          version = "0.17.0";
+          src =
+            fetchFromGithub {
+              rev = "";
+            }
+            + old.src;
+        }))
     ];
     xdg.configFile."spotify-player/theme.toml".source = ./theme.toml;
     xdg.configFile."spotify-player/app.toml".text = ''

@@ -1,11 +1,12 @@
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, osConfig
-, self
-, ...
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  osConfig,
+  self,
+  ...
 }:
 with lib; let
   catppuccin-mocha = pkgs.fetchFromGitHub {
@@ -15,9 +16,8 @@ with lib; let
     hash = "sha256-iUnLLAQVMXFLyoB3wgYqUTx5SafLkvtOXK6C8EHK/nI=";
   };
   device = osConfig.modules.device;
-  acceptedTypes = [ "desktop" "laptop" ];
-in
-{
+  acceptedTypes = ["desktop" "laptop"];
+in {
   config = mkIf (builtins.elem device.type acceptedTypes) {
     home.packages = with pkgs; [
       (pkgs.discord.override {

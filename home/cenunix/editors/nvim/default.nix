@@ -20,6 +20,7 @@
         ${builtins.readFile config/navic.lua}
         ${builtins.readFile config/maps.lua}
         ${builtins.readFile config/gitsigns.lua}
+        ${builtins.readFile config/harpoon.lua}
         ${builtins.readFile config/lualine.lua}
         ${builtins.readFile config/telescope.lua}
         ${builtins.readFile config/toggleterm.lua}
@@ -43,6 +44,7 @@
           nvim-web-devicons
           lualine-nvim
           nvim-navic
+          # nvim-harpoon
           comment-nvim
           which-key-nvim
           telescope-nvim

@@ -13,6 +13,12 @@ in {
       ++ optionals (sys.qemu.enable) [
         virt-manager
         virt-viewer
+        spice
+        spice-gtk
+        spice-protocol
+        virtio-win
+        win-spice
+        gnome.adwaita-icon-theme
       ]
       ++ optionals (sys.docker.enable) [
         podman-compose
@@ -20,6 +26,7 @@ in {
         distrobox # TODO: add a separate option for this
       ];
 
+    services.spice-vdagentd.enable = true;
     virtualisation = mkIf (sys.qemu.enable) {
       kvmgt.enable = true;
       spiceUSBRedirection.enable = true;
