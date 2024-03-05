@@ -1,48 +1,45 @@
 <h1 align="center">
-  <img src="https://camo.githubusercontent.com/8c73ac68e6db84a5c58eef328946ba571a92829b3baaa155b7ca5b3521388cc9/68747470733a2f2f692e696d6775722e636f6d2f367146436c41312e706e67" width="100px" /> <br>
+  <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/social/role_icons/lavender_dev.png" width="100px" /> <br>
 
-  Cenunix NixOS Configuration <br>
+  Cenunix's NixOS Configuration <br>
 
-<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png" width="600px" /> <br>
+<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/footers/gray0_ctp_on_line.svg" width="600px" /> <br>
 
   <div align="center">
 
   <div align="center">
    <p></p>
-   <a href="">
-      <img src="https://img.shields.io/github/issues/cenunix/nicks?color=fab387&labelColor=303446&style=for-the-badge">
-   </a>
-   <a href="https://github.com/cenunix/nicks/stargazers">
-      <img src="https://img.shields.io/github/stars/cenunix/nicks?color=ca9ee6&labelColor=303446&style=for-the-badge">
-   </a>
    <a href="https://github.com/cenunix/nicks/">
-      <img src="https://img.shields.io/github/repo-size/cenunix/nicks?color=ea999c&labelColor=303446&style=for-the-badge">
+      <img src="https://img.shields.io/github/repo-size/cenunix/nicks?color=b4befe&logoColor=ca9ee6&labelColor=313244&style=for-the-badge">
    </a>
    <a href="https://github.com/cenunix/nicks/blob/main/LICENSE">
-    <img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=GPL-3&logoColor=ca9ee6&colorA=313244&colorB=cba6f7"/>
+    <img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=GPL-3&labelColor=313244&logoColor=ca9ee6&colorA=313244&colorB=b4befe"/>
    </a>
    <br>
 </div>
 </h1>
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
+<!-- ABOUT THE Configuration -->
+## About The Configuration
 
-This configuration suits my specific use case, that being multiple machines however running on different architectures. I use the thinkpad x13s as a daily laptop with an ARM processor, while my desktop runs with an AMD processor.
+This configuration suits my specific use case, there is no guaranteed compatibility or support provided for this configuration.
 
-This Config provides:
-* A similar home environment for all of my machines
-* Various bootloaders for each machine
-* A highly extensible configuration using modules and flakes which allows for easy customization and additions
+Some features of this configuration: 
+* Home-Manager for easier management of home dir.
+* Modules to manage options per system
+* Flake for easily locking versions of inputs
+* Support for my aarch64 laptop - thinkpad x13s
 
-Feel free to open a pull request or submit an issue if you see any glaring problems, I am by no means an expert in nix or NixOS.
 
 <!-- CONTACT -->
 ## Contact
 
-cenunix - [@cenunix](https://twitter.com/cenunix) - user55596@protonmail.com
+cenunix on most platforms 
 
-
+ <a href="https://bsky.app/profile/cenunix.bsky.social">
+  <img src=".github/assets/bluesky-catppuccin.svg" width = 50rem/>
+ <a href="https://mastodon.social/@cenunix">
+  <img src=".github/assets/mastodon-catppuccin.svg" width = 50rem/>
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
