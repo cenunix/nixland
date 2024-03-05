@@ -33,7 +33,6 @@ Some features of this configuration:
 
 <!-- CONTACT -->
 ## Contact
-cenunix on most platforms 
 
  <a href="https://bsky.app/profile/cenunix.bsky.social">
   <img src=".github/assets/bluesky-catppuccin.svg" width = 50px height = 50px/>
