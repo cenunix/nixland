@@ -409,6 +409,26 @@
         "type": "github"
       }
     },
+    "quickshell": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1709561824,
+        "narHash": "sha256-7jpLdHHtZWMmENKg6yW0BkGGghk2oAhnQ/R8DBMqQSM=",
+        "owner": "outfoxxed",
+        "repo": "quickshell",
+        "rev": "e1bb5dfd3be11f3a38f7dad0f1dfdb6aae3db4b9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "outfoxxed",
+        "repo": "quickshell",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "anyrun": "anyrun",
@@ -417,6 +437,7 @@
         "hyprlock": "hyprlock",
         "nix-gaming": "nix-gaming",
         "nixpkgs": "nixpkgs",
+        "quickshell": "quickshell",
         "spicetify": "spicetify",
         "sss": "sss"
       }

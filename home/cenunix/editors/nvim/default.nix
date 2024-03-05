@@ -36,6 +36,7 @@
         start = [
           nvim-autopairs
           nvim-lspconfig
+          vim-qml
           nvim-cmp
           luasnip
           cmp_luasnip
@@ -55,7 +56,7 @@
           noice-nvim
           nui-nvim
           catppuccin-nvim
-          (nvim-treesitter.withPlugins (p: [p.c p.cpp p.nix p.lua p.go p.python]))
+          (nvim-treesitter.withPlugins (p: [p.c p.cpp p.nix p.lua p.go p.python p.qmljs p.qmldir]))
         ];
       };
     };
@@ -78,6 +79,7 @@ in {
       eslint_d
       alejandra
       nodePackages.pyright
+      qt6.qtdeclarative
       black
       isort
       go

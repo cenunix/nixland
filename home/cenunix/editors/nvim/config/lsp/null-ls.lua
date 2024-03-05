@@ -6,6 +6,9 @@ require("null-ls").setup({
     require("null-ls").builtins.formatting.prettierd,
     require("null-ls").builtins.formatting.black,
     require("null-ls").builtins.formatting.isort,
+    require("null-ls").builtins.formatting.qmlformat.with({
+      extra_args = { "-w 2" },
+    }),
     require("null-ls").builtins.diagnostics.eslint_d,
     require("null-ls").builtins.diagnostics.deadnix,
   },

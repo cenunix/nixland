@@ -32,4 +32,3 @@ require("lspconfig").pyright.setup({
   autostart = true,
   capabilities = capabilities,
 })
-

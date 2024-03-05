@@ -42,6 +42,7 @@ in {
       unrar
       vim
       powertop
+      libsForQt5.qt5.qtmultimedia
     ]
     ++ optionals (builtins.elem device.type ["desktop" "laptop"]) [
       brave
