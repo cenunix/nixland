@@ -12,5 +12,4 @@
   air-status = pkgs.callPackage ./air-status.nix {};
   gg-sans = pkgs.callPackage ./gg-sans {};
   my-webcord = pkgs.callPackage ./webcord/default.nix {};
-  catppuccin-sddm-corners = pkgs.callPackage ./catppuccin-sddm-corners {};
 }

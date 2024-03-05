@@ -26,8 +26,6 @@ in {
     []
     ++ optionals (builtins.elem device.type ["desktop" "laptop" "armlaptop"]) [
       # Shared Packages between all systems
-      mpv
-      vlc
       ttyper
       unzip
       ripgrep
@@ -42,7 +40,7 @@ in {
       unrar
       vim
       powertop
-      libsForQt5.qt5.qtmultimedia
+      air-status
     ]
     ++ optionals (builtins.elem device.type ["desktop" "laptop"]) [
       brave

@@ -10,6 +10,7 @@
   imports = [
     ./avizo
     ./hyprlock
+    ./quickshell
     ./swaync
     ./waybar
     ./wlogout

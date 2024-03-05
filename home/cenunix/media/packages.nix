@@ -6,6 +6,8 @@
   ...
 }: {
   home.packages = with pkgs; [
+    mpv
+    vlc
     ffmpeg
     playerctl
     pavucontrol

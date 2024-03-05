@@ -34,9 +34,6 @@ in {
           monospace = [
             # "Maple Mono"
             "Maple Mono SC NF"
-            # "Iosevka Term"
-            # "Iosevka Term Nerd Font Complete Mono"
-            # "Iosevka Nerd Font"
             # "JoyPixels"
           ];
           sansSerif = ["Lexend" "JoyPixels"];
