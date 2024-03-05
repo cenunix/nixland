@@ -10,10 +10,10 @@
   <div align="center">
    <p></p>
    <a href="https://github.com/cenunix/nicks/">
-      <img src="https://img.shields.io/github/repo-size/cenunix/nicks?color=b4befe&logoColor=ca9ee6&labelColor=313244&style=for-the-badge">
+      <img src="https://img.shields.io/github/repo-size/cenunix/nicks?color=b4befe&logoColor=ca9ee6&labelColor=07070b&style=for-the-badge">
    </a>
    <a href="https://github.com/cenunix/nicks/blob/main/LICENSE">
-    <img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=GPL-3&labelColor=313244&logoColor=ca9ee6&colorA=313244&colorB=b4befe"/>
+    <img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=GPL-3&labelColor=07070b&logoColor=ca9ee6&colorA=313244&colorB=b4befe"/>
    </a>
    <br>
 </div>
@@ -33,14 +33,16 @@ Some features of this configuration:
 
 <!-- CONTACT -->
 ## Contact
-
 cenunix on most platforms 
 
  <a href="https://bsky.app/profile/cenunix.bsky.social">
-  <img src=".github/assets/bluesky-catppuccin.svg" width = 50rem/>
+  <img src=".github/assets/bluesky-catppuccin.svg" width = 50px height = 50px/>
+</a>
  <a href="https://mastodon.social/@cenunix">
-  <img src=".github/assets/mastodon-catppuccin.svg" width = 50rem/>
+  <img src=".github/assets/mastodon-catppuccin.svg" width = 50px height = 50px/>
+ </a>
 
+ 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
