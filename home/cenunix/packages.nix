@@ -40,7 +40,6 @@ in {
       unrar
       vim
       powertop
-      air-status
     ]
     ++ optionals (builtins.elem device.type ["desktop" "laptop"]) [
       brave

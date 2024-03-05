@@ -8,8 +8,6 @@
   # other various packages
   custom-gtk = pkgs.callPackage ./custom-gtk {};
   catppuccin-cursors = pkgs.callPackage ./catppuccin-cursors.nix {};
-  grimblast = pkgs.callPackage ./grimblast/default.nix {};
-  air-status = pkgs.callPackage ./air-status.nix {};
   gg-sans = pkgs.callPackage ./gg-sans {};
   my-webcord = pkgs.callPackage ./webcord/default.nix {};
 }
