@@ -34,12 +34,19 @@ Some features of this configuration:
 <!-- CONTACT -->
 ## Contact
 
+ <p align="center">
  <a href="https://bsky.app/profile/cenunix.bsky.social">
-  <img src=".github/assets/bluesky-catppuccin.svg" width = 50px height = 50px/>
+   <picture>
+  <img src=".github/assets/bluesky-catppuccin.svg" width="64" height="64" />
+     </picture>
 </a>
+  <img src="https://github.com/catppuccin/catppuccin/raw/main/assets/misc/transparent.png" height="1" width="5"/>
  <a href="https://mastodon.social/@cenunix">
-  <img src=".github/assets/mastodon-catppuccin.svg" width = 50px height = 50px/>
+   <picture>
+  <img src=".github/assets/mastodon-catppuccin.svg" width="64" height="64" />
+   </picture>
  </a>
+</p>
 
  
 <!-- ACKNOWLEDGMENTS -->
