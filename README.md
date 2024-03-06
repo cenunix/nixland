@@ -1,7 +1,7 @@
 <h1 align="center">
   <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/social/role_icons/lavender_dev.png" width="100px" /> <br>
 
-  NixLand <br>
+ 死地 NixLand <br>
 
 <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/footers/gray0_ctp_on_line.svg" width="600px" /> <br>
 
@@ -12,6 +12,10 @@
    <a href="https://github.com/cenunix/nicks/">
       <img src="https://img.shields.io/github/repo-size/cenunix/nicks?color=b4befe&logoColor=ca9ee6&labelColor=07070b&style=for-the-badge">
    </a>
+     <a href="https://nixos.wiki/wiki/Flakes">
+    <img src="https://img.shields.io/static/v1?label=Nix Flake&message=check&style=for-the-badge&logo=nixos&colorA=07070b&colorB=b4befe&logoColor=CAD3F5">
+    </a>
+    <a href="https://nixos.org/"><img src="https://img.shields.io/badge/NixOS-unstable-informational.svg?style=for-the-badge&logo=nixos&logoColor=CAD3F5&colorA=07070b&colorB=b4befe"></a> 
    <a href="https://github.com/cenunix/nicks/blob/main/LICENSE">
     <img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=GPL-3&labelColor=07070b&logoColor=ca9ee6&colorA=313244&colorB=b4befe"/>
    </a>
@@ -37,7 +41,6 @@
   * **Terminal**: Kitty/Foot
   * **Launcher**: Anyrun
   * **Bar**: Waybar
-
 ## Desktop preview
 
 <details>
