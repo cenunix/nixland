@@ -24,7 +24,7 @@ in {
     general = {
       author = " Cenunix on NixLand";
       padding-x = 5;
-      padding-y = 10;
+      padding-y = 50;
       colors = {
         background = "#${colors.base00}";
         author = "#${colors.base05}";
