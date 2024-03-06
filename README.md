@@ -62,6 +62,12 @@ Show
   <img src=".github/assets/mastodon-catppuccin.svg" width="64" height="64" />
    </picture>
  </a>
+  <img src="https://github.com/catppuccin/catppuccin/raw/main/assets/misc/transparent.png" height="1" width="5"/>
+  <a href="https://discourse.nixos.org/u/cenunix/summary">
+   <picture>
+  <img src=".github/assets/nixos-catppuccin.svg" width="64" height="64" />
+   </picture>
+ </a>
 </p>
 
  
