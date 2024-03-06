@@ -31,6 +31,12 @@
 * **Flake** - Easily Lock Versions of Inputs and Maintain the Reproducible Nature of NixOS
 * **Editor** - Simple and Efficient Neovim Configuration Written In Lua For Compatibility
 * **Theming** - Dark Catppuccin Palette For Maximum Reddit Upvotes
+* **Other Software**
+  * **Browser**: Firefox
+  * **File-Manager**: Lf/Thunar
+  * **Terminal**: Kitty/Foot
+  * **Launcher**: Anyrun
+  * **Bar**: Waybar
 
 ## Desktop preview
 
