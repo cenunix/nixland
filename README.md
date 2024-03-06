@@ -31,6 +31,7 @@
 * **Flake** - Easily Lock Versions of Inputs and Maintain the Reproducible Nature of NixOS
 * **Editor** - Simple and Efficient Neovim Configuration Written In Lua For Compatibility
 * **Theming** - Dark Catppuccin Palette For Maximum Reddit Upvotes
+    * Most Programs/Software are Themed, Including Firefox and Terminal Apps
 
 <!-- CONTACT -->
 ## Contact
