@@ -22,18 +22,19 @@ in {
 
     # General Config
     general = {
-      author = " cenunix";
-      # copy = true;
+      author = " Cenunix on NixLand";
+      padding-x = 5;
+      padding-y = 10;
       colors = {
         background = "#${colors.base00}";
         author = "#${colors.base05}";
         shadow = "#${colors.base02}";
       };
-      fonts = "Maple Mono SC NF=14.0";
-      radius = 10;
+      fonts = "Maple Mono SC NF=20.0";
+      radius = 8;
       save-format = "png";
-      shadow = true;
-      shadow-image = true;
+      shadow = false;
+      shadow-image = false;
     };
     code.enable = true;
   };
