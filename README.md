@@ -1,7 +1,7 @@
 <h1 align="center">
   <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/social/role_icons/lavender_dev.png" width="100px" /> <br>
 
-  Cenunix's NixOS Configuration <br>
+  NixLand <br>
 
 <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/footers/gray0_ctp_on_line.svg" width="600px" /> <br>
 
@@ -19,17 +19,22 @@
 </div>
 </h1>
 
-<!-- ABOUT THE Configuration -->
+<!-- About The Configuration -->
 ## About The Configuration
 
-This configuration suits my specific use case, there is no guaranteed compatibility or support provided for this configuration.
-
-Some features of this configuration: 
+**Overview** 
 * Home-Manager for easier management of home dir.
-* Modules to manage options per system
+* Modules to manage options per system and reduce redundant code
 * Flake for easily locking versions of inputs
-* Support for my aarch64 laptop - thinkpad x13s
+* Extended library of functions to easily manage unique needs
+* Easily change package versions using overlays
+* Manage systems across a variety of architectures
 
+**Design**
+* Wayland focused
+* Avoid possible pitfalls of unstable packages
+* Easily adapt configuration of programs
+* Dark catppuccin palette
 
 <!-- CONTACT -->
 ## Contact
