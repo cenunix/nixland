@@ -34,7 +34,7 @@ Some features of this configuration:
 <!-- CONTACT -->
 ## Contact
 
- <p align="center">
+ <p align="left">
  <a href="https://bsky.app/profile/cenunix.bsky.social">
    <picture>
   <img src=".github/assets/bluesky-catppuccin.svg" width="64" height="64" />
