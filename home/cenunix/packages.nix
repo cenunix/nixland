@@ -40,6 +40,7 @@ in {
       unrar
       vim
       powertop
+      nh
     ]
     ++ optionals (builtins.elem device.type ["desktop" "laptop"]) [
       brave
