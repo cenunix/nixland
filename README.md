@@ -27,8 +27,9 @@
 ## Overview
 * **Home-Manager** - Manages Installation/Configuration of Hyprland (the best wayland compositor), Terminals, Graphical Apps, etc.
 * **Modules** - Manage Options Per System, Reduce Reduntant Code
-  and Quickly Change Options to Switch Program Defaults or System Options 
-* **Flake** - Easily Lock Versions of Inputs and Update the System While Maintaining the Reproducible Nature of NixOS
+  and Switch Program Defaults
+* **Flake** - Easily Lock Versions of Inputs and Maintain the Reproducible Nature of NixOS
+* **Editor** - Simple and Efficient Neovim Configuration Written In Lua For Compatibility
 * **Theming** - Dark Catppuccin Palette For Maximum Reddit Upvotes
 
 <!-- CONTACT -->
