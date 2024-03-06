@@ -18,23 +18,18 @@
    <br>
 </div>
 </h1>
+<div align="center">
+<b>A Romantic Gathering Between NixOS and Hyprland</b> 
+  <br>
+  -With Catppuccin Watching From The Closet
+</div>
 
-<!-- About The Configuration -->
-## About The Configuration
-
-**Overview** 
-* Home-Manager for easier management of home dir.
-* Modules to manage options per system and reduce redundant code
-* Flake for easily locking versions of inputs
-* Extended library of functions to easily manage unique needs
-* Easily change package versions using overlays
-* Manage systems across a variety of architectures
-
-**Design**
-* Wayland focused
-* Avoid possible pitfalls of unstable packages
-* Easily adapt configuration of programs
-* Dark catppuccin palette
+## Overview
+* **Home-Manager** - Manages Installation/Configuration of Hyprland (the best wayland compositor), Terminals, Graphical Apps, etc.
+* **Modules** - Manage Options Per System, Reduce Reduntant Code
+  and Quickly Change Options to Switch Program Defaults or System Options 
+* **Flake** - Easily Lock Versions of Inputs and Update the System While Maintaining the Reproducible Nature of NixOS
+* **Theming** - Dark Catppuccin Palette For Maximum Reddit Upvotes
 
 <!-- CONTACT -->
 ## Contact
