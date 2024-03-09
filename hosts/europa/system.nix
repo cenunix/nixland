@@ -46,6 +46,7 @@ in {
           steam.enable = true;
           chess.enable = false;
           minecraft.enable = false;
+          gamescope.enable = true;
         };
         override = {};
       };

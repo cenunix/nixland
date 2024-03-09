@@ -41,6 +41,8 @@ in {
       vim
       powertop
       nh
+      file
+      porsmo
     ]
     ++ optionals (builtins.elem device.type ["desktop" "laptop"]) [
       brave

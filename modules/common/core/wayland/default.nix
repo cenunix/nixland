@@ -18,7 +18,6 @@ in {
 
   config = mkIf (env.isWayland) {
     # nixpkgs.overlays = with inputs; [nixpkgs-wayland.overlay];
-
     environment = {
       variables = {
         NIXOS_OZONE_WL = "1";

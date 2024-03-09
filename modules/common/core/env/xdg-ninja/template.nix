@@ -1,5 +1,4 @@
-system:
-let
+system: let
   # copy paste done right
   XDG_DATA_HOME = "\$HOME/.local/share";
   XDG_CONFIG_HOME = "\$HOME/.config";
@@ -7,15 +6,14 @@ let
   XDG_STATE_HOME = "\HOME/.local/shate";
   XDG_RUNTIME_DIR = "/run/user/\${UID}";
   XDG_BIN_HOME = "\${HOME}/.local/bin";
-in
-{
+in {
   glEnv = rec {
     XDG_CACHE_HOME = "\${HOME}/.cache";
     XDG_CONFIG_HOME = "\${HOME}/.config";
     XDG_STATE_HOME = "\${HOME}/.local/state";
     XDG_DATA_HOME = "\${HOME}/.local/share";
     XDG_BIN_HOME = "\${HOME}/.local/bin";
-    PATH = [ "\${XDG_BIN_HOME}" ];
+    PATH = ["\${XDG_BIN_HOME}"];
   };
   sysEnv = {
     ANDROID_HOME = "${XDG_DATA_HOME}/android";
@@ -47,6 +45,7 @@ in
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = [
       "\${HOME}/.steam/root/compatibilitytools.d"
     ];
+    FLAKE = "\$HOME/NixLand";
   };
 
   npmrc.text = ''

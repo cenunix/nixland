@@ -1,15 +1,15 @@
-{ inputs
-, config
-, lib
-, pkgs
-, ...
+{
+  inputs,
+  config,
+  lib,
+  pkgs,
+  ...
 }:
 with lib; let
   cfg = config.modules.programs;
   device = config.modules.device;
-  acceptedTypes = [ "laptop" "desktop" "hybrid" "lite" "armlaptop" ];
-in
-{
+  acceptedTypes = ["laptop" "desktop" "hybrid" "lite" "armlaptop"];
+in {
   config = mkIf ((cfg.gaming.steam.enable) && (builtins.elem device.type acceptedTypes)) {
     # enable steam
     nixpkgs.config.packageOverrides = pkgs: {

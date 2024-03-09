@@ -247,8 +247,7 @@ in {
      bind=SUPER_SHIFT,9,movetoworkspace,9
      bind=SUPER_SHIFT,0,movetoworkspace,10
 
-     #bind=SUPER,mouse_down,workspace,e+1
-     #bind=SUPER,mouse_up,workspace,e-1
-
+     bind=SUPER,y,movetoworkspace,special
+     bind=SUPER,t,togglespecialworkspace
   '';
 }

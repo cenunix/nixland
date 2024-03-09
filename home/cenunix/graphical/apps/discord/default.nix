@@ -32,7 +32,7 @@ in {
       };
 
       # share my webcord configuration across devices
-      "Vencord/settings/settings.json".source = config.lib.file.mkOutOfStoreSymlink "/home/cenunix/Personal/nicks/home/cenunix/graphical/apps/discord/settings.json";
+      "Vencord/settings/settings.json".source = config.lib.file.mkOutOfStoreSymlink "/home/cenunix/NixLand/home/cenunix/graphical/apps/discord/settings.json";
     };
   };
 }

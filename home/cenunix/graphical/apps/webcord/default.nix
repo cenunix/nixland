@@ -1,11 +1,12 @@
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, osConfig
-, self
-, ...
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  osConfig,
+  self,
+  ...
 }:
 with lib; let
   catppuccin-mocha = pkgs.fetchFromGitHub {
@@ -17,9 +18,8 @@ with lib; let
   project-path = builtins.getEnv "PWD";
   webcord-path = "${project-path}";
   device = osConfig.modules.device;
-  acceptedTypes = [ "desktop" "laptop" "armlaptop" ];
-in
-{
+  acceptedTypes = ["desktop" "laptop" "armlaptop"];
+in {
   # imports = [
   #   inputs.arrpc.homeManagerModules.default
   #   ./arrpc.nix
@@ -36,7 +36,7 @@ in
       };
 
       # share my webcord configuration across devices
-      "WebCord/config.json".source = config.lib.file.mkOutOfStoreSymlink "/home/cenunix/Personal/nicks/home/cenunix/graphical/apps/webcord/config.json";
+      "WebCord/config.json".source = config.lib.file.mkOutOfStoreSymlink "/home/cenunix/NixLand/home/cenunix/graphical/apps/webcord/config.json";
     };
 
     # services.arrpc.enable = (device.type == "desktop");
