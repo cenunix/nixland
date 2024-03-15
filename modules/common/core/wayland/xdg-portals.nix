@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
 }: let
   sys = config.modules.system;

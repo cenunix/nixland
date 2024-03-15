@@ -31,7 +31,10 @@ in {
   home.packages = [run-as-service];
   home.sessionVariables.STARSHIP_CACHE = "${config.xdg.cacheHome}/starship";
   programs = {
-    eza.enable = true;
+    eza = {
+      enable = true;
+      enableZshIntegration = true;
+    };
     zoxide = {
       enable = true;
       enableZshIntegration = true;
@@ -189,8 +192,8 @@ in {
         };
       in
         with pkgs; {
-          rebuild = "doas nix-store --verify; pushd ~dotfiles && doas nixos-rebuild switch --flake .# && notify-send \"Done\"&& bat cache --build; popd";
-          cleanup = "doas nix-collect-garbage --delete-older-than 7d";
+          rebuild = "sudo nix-store --verify; pushd ~dotfiles && sudo nixos-rebuild switch --flake .# && notify-send \"Done\"&& bat cache --build; popd";
+          # cleanup = "sudo nix-collect-garbage --delete-older-than 7d";
           bloat = "nix path-info -Sh /run/current-system";
           ytmp3 = ''
             ${lib.getExe yt-dlp} -x --continue --add-metadata --embed-thumbnail --audio-format mp3 --audio-quality 0 --metadata-from-title="%(artist)s - %(title)s" --prefer-ffmpeg -o "%(title)s.%(ext)s"'';
@@ -200,11 +203,11 @@ in {
           ps = lib.getExe procs;
           m = "mkdir -p";
           fcd = "cd $(find -type d | fzf)";
-          ls = "${lib.getExe eza} -h --git --icons --color=auto --group-directories-first -s extension";
+          # ls = "${lib.getExe eza} -h --git --icons --color=auto --group-directories-first -s extension";
           l = "ls -lF --time-style=long-iso --icons";
           sc = "sudo systemctl";
           scu = "systemctl --user ";
-          la = "${lib.getExe eza} -lah --tree";
+          # la = "${lib.getExe eza} -lah --tree";
           tree = "${lib.getExe eza} --tree --icons --tree";
           http = "${lib.getExe python3} -m http.server";
           burn = "pkill -9";

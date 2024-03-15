@@ -6,7 +6,7 @@
 }: let
   inherit (lib) mkIf;
 
-  prg = osConfig.modules.system.programs;
+  prg = osConfig.modules.programs;
 in {
   imports = [
     ./minecraft.nix
@@ -22,7 +22,7 @@ in {
 
       # emulators
       dolphin-emu # general console
-      yuzu # switch
+      # yuzu # switch
 
       # runtime
       dotnet-runtime_6 # terraria

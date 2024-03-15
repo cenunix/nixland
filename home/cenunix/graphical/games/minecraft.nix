@@ -7,7 +7,7 @@
 }: let
   inherit (lib) mkIf;
 
-  sys = osConfig.modules.system;
+  sys = osConfig.modules;
   env = osConfig.modules.usrEnv;
   prg = sys.programs;
 
@@ -48,7 +48,7 @@
     then pkgs.glfw-wayland-minecraft
     else pkgs.glfw;
 in {
-  config = mkIf prg.gaming.enable {
+  config = mkIf prg.gaming.minecraft.enable {
     home = {
       # copy the catppuccin theme to the themes directory of PrismLauncher
       file.".local/share/PrismLauncher/themes/mocha" = {

@@ -45,7 +45,7 @@ in {
       porsmo
     ]
     ++ optionals (builtins.elem device.type ["desktop" "laptop"]) [
-      brave
+      ungoogled-chromium
     ]
     ++ optionals (builtins.elem device.type ["armlaptop"]) [
       # additional packages for arm laptop (x13s as of now) machines that use home-manager

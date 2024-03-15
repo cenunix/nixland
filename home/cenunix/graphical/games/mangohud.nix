@@ -1,19 +1,24 @@
 {
-  osConfig,
+  inputs,
+  outputs,
   lib,
+  config,
+  pkgs,
+  osConfig,
   ...
 }: let
   inherit (lib) mkIf;
   inherit (osConfig) modules;
 
-  prg = modules.system.programs;
+  prg = modules.programs;
 in {
   config = mkIf prg.gaming.enable {
     programs.mangohud = {
       enable = true;
       settings = {
-        fps_limit = "60,0";
+        fps_limit = "240,0,60,120,180";
         vsync = 1;
+        gl_vsync = 0;
         cpu_stats = true;
         cpu_temp = true;
         gpu_stats = true;
@@ -23,12 +28,14 @@ in {
         frametime = true;
         frame_timing = true;
         enableSessionWide = true;
-        font_size = 24;
+        show_fps_limit = true;
+        no_small_font = true;
+        font_size = 16;
         position = "top-left";
         engine_version = true;
         wine = true;
-        no_display = true;
-        background_alpha = "0.5";
+        no_display = false;
+        background_alpha = "0.0";
         toggle_hud = "Shift_R+F12";
         toggle_fps_limit = "Shift_R+F1";
       };
