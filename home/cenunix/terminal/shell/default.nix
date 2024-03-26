@@ -226,6 +226,7 @@ in {
 
           g = "git";
           # sudo = "doas";
+          protontricks = "flatpak run com.github.Matoking.protontricks";
         };
 
       plugins = with pkgs; [

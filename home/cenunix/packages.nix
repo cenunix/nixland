@@ -43,6 +43,8 @@ in {
       nh
       file
       porsmo
+      wget
+      gnome.zenity
     ]
     ++ optionals (builtins.elem device.type ["desktop" "laptop"]) [
       ungoogled-chromium

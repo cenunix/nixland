@@ -25,12 +25,50 @@ in {
       ffmpegthumbnailer
       ark # GUI archiver for thunar archive plugin
       sshfs # FUSE-based filesystem that allows remote filesystems to be mounted over SSH
-      samba
       fuse
     ];
   };
   services.gvfs.enable = true; # Mount, trash, and other functionalities
-  services.samba.enable = true;
+  services.samba = {
+    enable = true;
+    securityType = "user";
+    openFirewall = true;
+    extraConfig = ''
+      workgroup = WORKGROUP
+      server string = smbnix
+      netbios name = smbnix
+      security = user
+      allow insecure wide links = yes
+      #use sendfile = yes
+      #max protocol = smb2
+      # note: localhost is the ipv6 localhost ::1
+      #hosts allow = 192.168.0. 127.0.0.1 localhost
+      #hosts deny = 0.0.0.0/0
+      #guest account = nobody
+      #map to guest = bad user
+    '';
+    shares = {
+      public = {
+        path = "/home/cenunix/Games";
+        browseable = "yes";
+        public = "no";
+        writable = "yes";
+        "read only" = "no";
+        "guest ok" = "no";
+        printable = "no";
+        "force user" = "cenunix";
+        "follow symlinks" = "yes";
+        "wide links" = "yes";
+        # "force group" = "wheel";
+      };
+    };
+  };
+  services.samba-wsdd = {
+    enable = true;
+    openFirewall = true;
+    discovery = true;
+    hostname = "SMBNIX";
+  };
   programs = {
     # the thunar file manager
     # we enable thunar here and add plugins instead of in systemPackages

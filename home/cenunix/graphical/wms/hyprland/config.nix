@@ -73,7 +73,7 @@ in {
          shadow_render_power=3
          col.shadow=rgb(3c4252)
          col.shadow_inactive=rgb(3c4252)
-         rounding=2
+         rounding=4
          #blur_ignore_opacity=true
          #blur=false
          #blur_size=6 # minimum 1
@@ -142,6 +142,7 @@ in {
      windowrule=opaque,^(com.obsproject.Studio)$
      windowrule=opaque,^(firefox)$
      windowrule=fullscreen,^(csgo_linux64)$
+     windowrule=fullscreen,^(Skyrim Special Edition)$
 
      layerrule = blur, ^(gtk-layer-shell|anyrun)$
      layerrule = ignorezero, ^(gtk-layer-shell|anyrun)$
