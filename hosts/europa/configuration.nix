@@ -34,17 +34,28 @@
       # neovim-nightly-overlay.overlays.default
       (final: prev: {
         xwayland = let
-          xorgproto = prev.xorg.xorgproto.overrideAttrs (oldAttrs: {patches = oldAttrs.patches ++ [./59.patch];});
+          xorgproto = prev.xorg.xorgproto.overrideAttrs (oldAttrs: {
+            src = prev.fetchurl {
+              url = "https://gitlab.freedesktop.org/xorg/proto/xorgproto/-/archive/master/xorgproto-master.tar.gz";
+              sha256 = "sha256-9xm7NJtJ+VeNOT7E7K7G70gtKmL+AGVspsypyD7/o80=";
+            };
+          });
           wayland-protocols =
             prev.wayland-protocols.overrideAttrs
-            (oldAttrs: {patches = [./90.patch];});
+            (oldAttrs: {
+              src = prev.fetchurl {
+                url = "https://gitlab.freedesktop.org/wayland/wayland-protocols/-/archive/main/wayland-protocols-main.tar.gz";
+                sha256 = "sha256-dV5LbbYHwgsgXpqc2vZ0fuFcMQ+l+/8++5axOa/Nxrk=";
+              };
+            });
           xwayland' = prev.xwayland.override {inherit xorgproto wayland-protocols;};
         in
           xwayland'.overrideAttrs (oldAttrs: {
-            src = prev.fetchurl {
-              url = "https://gitlab.freedesktop.org/ekurzinger/xserver/-/archive/explicit-sync/xserver-explicit-sync.tar.gz";
-              sha256 = "sha256-OFLWmhbA8OTAzGiLF0ZpEPMrcUkkKbji9v3NPe+WHHM=";
-            };
+            # src = prev.fetchurl {
+            #   url = "https://gitlab.freedesktop.org/ekurzinger/xserver/-/archive/explicit-sync/xserver-explicit-sync.tar.gz";
+            #   sha256 = "sha256-OT/VfBZ+DY23bX+lLlX1hjRqFoLYaSuqa+M5C1MbcE8=";
+            # };
+            patches = oldAttrs.patches ++ [./967.patch];
 
             depsBuildBuild = oldAttrs.depsBuildBuild ++ [xorgproto wayland-protocols];
 

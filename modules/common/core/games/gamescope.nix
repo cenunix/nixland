@@ -9,6 +9,6 @@
       };
     };
 
-    programs.gamescope.enable = true;
+    programs.gamescope.enable = false;
   };
 }
