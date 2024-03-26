@@ -57,6 +57,7 @@ in {
      border_size = 2
          col.active_border = rgb(a0acc5)
      col.inactive_border= rgb(7486a9)
+     allow_tearing = true
 
          layout = hy3
      }
@@ -121,7 +122,7 @@ in {
          mouse_move_enables_dpms=true
          key_press_enables_dpms=true
          vfr=true
-         vrr=0
+         vrr=1
      }
      debug {
          overlay = false

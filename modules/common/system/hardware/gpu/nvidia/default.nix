@@ -84,7 +84,7 @@ in {
     hardware = {
       nvidia = {
         package = mkDefault config.boot.kernelPackages.nvidiaPackages.beta;
-        # package = pkgs.unstable.linuxPackages_latest.nvidia_x11_beta;
+        # package = pkgs.stable.linuxPackages_latest.nvidia_x11_production;
         modesetting.enable = mkDefault true;
         prime.offload.enableOffloadCmd = device.gpu == "hybrid-nv";
         # powerManagement = {
@@ -93,7 +93,7 @@ in {
         # };
 
         # use open source drivers by default, hosts may override this option if their gpu is
-        # not supported by the open source drivers
+        # not supported by the open source dexplicit sync.rivers
         open = mkDefault false;
         nvidiaSettings = false; # add nvidia-settings to pkgs, useless on nixos
         # nvidiaPersistenced = true;

@@ -8,6 +8,7 @@
   ...
 }: {
   imports = [
+    ./ags
     ./avizo
     ./hyprlock
     ./quickshell
