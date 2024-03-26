@@ -45,6 +45,7 @@ in {
       porsmo
       wget
       gnome.zenity
+      nix-prefetch-github
     ]
     ++ optionals (builtins.elem device.type ["desktop" "laptop"]) [
       ungoogled-chromium

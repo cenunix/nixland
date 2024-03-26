@@ -15,7 +15,7 @@
     enable = true;
     settings.email = "caden.hargrave@gmail.com";
     # settings.base_url = "https://api.bitwarden.com";
-    settings.pinentry = "gnome3";
+    settings.pinentry = pkgs.pinentry-gnome3;
   };
   xdg.configFile."rofi/config.rasi".text = ''
         configuration{

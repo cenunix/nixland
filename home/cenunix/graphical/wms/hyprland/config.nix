@@ -200,7 +200,7 @@ in {
      # bind=SUPER_ALT,P,exec,~/.config/hypr/scripts/screensht active
      # bind=SUPER_SHIFT,C,exec,ocr
 
-     bind=SUPER,N,exec,~/.local/bin/nvim-gui
+     bind=SUPER,N,exec,neovide
      bind=SUPER,I,exec,hyprlock
      bind=SUPER,D,exec,anyrun
      bind=SUPER,S,exec,rofi-rbw
