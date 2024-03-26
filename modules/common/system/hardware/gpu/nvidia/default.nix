@@ -83,7 +83,7 @@ in {
 
     hardware = {
       nvidia = {
-        package = mkDefault config.boot.kernelPackages.nvidiaPackages.production;
+        package = mkDefault config.boot.kernelPackages.nvidiaPackages.beta;
         # package = pkgs.unstable.linuxPackages_latest.nvidia_x11_beta;
         modesetting.enable = mkDefault true;
         prime.offload.enableOffloadCmd = device.gpu == "hybrid-nv";
