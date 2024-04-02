@@ -1,7 +1,7 @@
 {
   inputs,
   pkgs,
-  asztal,
+  config,
   ...
 }: {
   imports = [
@@ -10,7 +10,6 @@
   ];
 
   home.packages = with pkgs; [
-    asztal
     bun
     dart-sass
     fd
@@ -18,6 +17,7 @@
     swww
     inputs.matugen.packages.${system}.default
     slurp
+    fzf
     wf-recorder
     wl-clipboard
     wayshot
@@ -25,6 +25,7 @@
     hyprpicker
     pavucontrol
     networkmanager
+    rofi-bluetooth
     gtk3
   ];
 
@@ -34,10 +35,17 @@
       libadwaita
     ];
   };
+  xdg.configFile."ags".source = config.lib.file.mkOutOfStoreSymlink "/home/cenunix/NixLand/home/cenunix/services/wayland/ags/config";
 
+  # home.file = {
+  #   ".config/ags" = {
+  #     source = ./config;
+  #     recursive = true;
+  #   };
+  # };
   programs.ags = {
     enable = true;
-    configDir = ./config;
+    # configDir = ./config;
     # extraPackages = with pkgs; [
     #   accountsservice
     # ];

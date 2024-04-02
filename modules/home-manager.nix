@@ -5,6 +5,7 @@
   config,
   pkgs,
   osConfig,
+  self,
   ...
 }: let
   usr =
@@ -18,7 +19,9 @@ in {
   ];
 
   home-manager = {
-    extraSpecialArgs = {inherit inputs outputs pkgs;};
+    extraSpecialArgs = {
+      inherit inputs outputs pkgs;
+    };
     users = {
       # Import your home-manager configuration
       ${usr} = ../home/cenunix;

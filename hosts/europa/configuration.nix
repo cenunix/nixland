@@ -72,6 +72,7 @@
     ];
     # Configure your nixpkgs instance
     config = {
+      nvidia.acceptLicense = true;
     };
   };
 

@@ -46,6 +46,10 @@ in {
       wget
       gnome.zenity
       nix-prefetch-github
+      jellyfin-media-player
+      signal-desktop
+      signal-desktop-beta
+      telegram-desktop
     ]
     ++ optionals (builtins.elem device.type ["desktop" "laptop"]) [
       ungoogled-chromium

@@ -7,7 +7,6 @@
   home = {
     packages = with pkgs; [
       swww
-      rofi-bluetooth
     ];
   };
   programs.waybar = {

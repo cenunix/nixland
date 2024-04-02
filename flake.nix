@@ -17,6 +17,7 @@
     };
     ags.url = "github:Aylur/ags";
     astal.url = "github:Aylur/astal";
+    matugen.url = "github:InioX/matugen";
     anyrun = {
       url = "github:Kirottu/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -80,14 +81,18 @@
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
       callisto = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs self lib;};
+        specialArgs = {
+          inherit inputs outputs self lib;
+        };
         modules = [
           ./hosts/callisto
           ./modules
         ];
       };
       europa = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs self lib;};
+        specialArgs = {
+          inherit inputs outputs self lib;
+        };
         modules = [
           ./hosts/europa
           ./modules

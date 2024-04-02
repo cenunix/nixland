@@ -10,4 +10,5 @@
   catppuccin-cursors = pkgs.callPackage ./catppuccin-cursors.nix {};
   gg-sans = pkgs.callPackage ./gg-sans {};
   my-webcord = pkgs.callPackage ./webcord/default.nix {};
+  wofi-bluetooth = pkgs.callPackage ./wofi-bluetooth/default.nix {};
 }

@@ -9,11 +9,11 @@
 }: {
   imports = [
     ./ags
-    ./avizo
-    ./hyprlock
-    ./quickshell
-    ./swaync
-    ./waybar
-    ./wlogout
+    # ./avizo
+    # ./hyprlock
+    # ./quickshell
+    # ./swaync
+    # ./waybar
+    # ./wlogout
   ];
 }

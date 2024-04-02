@@ -31,35 +31,32 @@ in {
 
      # Keyboard and mouse
      input {
-         kb_file=
-         kb_layout=
-         kb_variant=
-         kb_model=
-         kb_options=
-         kb_rules=
+      kb_file=
+      kb_layout=
+      kb_variant=
+      kb_model=
+      kb_options=
+      kb_rules=
 
-         follow_mouse=1
+      follow_mouse=1
 
-         touchpad {
-                 natural_scroll=no
-         }
-         sensitivity=0 # -1.0 - 1.0, 0 means no modification.
+      touchpad {
+        natural_scroll=no
+      }
+      sensitivity=0 # -1.0 - 1.0, 0 means no modification.
      }
 
      gestures {
-         workspace_swipe = on
+      workspace_swipe = on
      }
 
-     # General, looks and animations
      general {
-         gaps_in=10
-     gaps_out=10
-     border_size = 2
-         col.active_border = rgb(a0acc5)
-     col.inactive_border= rgb(7486a9)
-     allow_tearing = true
-
-         layout = hy3
+      gaps_in=4
+      gaps_out=4
+      border_size = 2
+      col.active_border = rgb(a0acc5)
+      col.inactive_border= rgb(7486a9)
+      allow_tearing = false
      }
      decoration {
      ${lib.optionalString (device.gpu == "nvidia") ''
@@ -196,14 +193,13 @@ in {
      #bind=SUPER,P,pseudo,
      # Screenshots
 
-     bind=SUPER,P,exec,screenshot-full
-     bind=SUPER_SHIFT,P,exec,screenshot-area
-     # bind=SUPER_ALT,P,exec,~/.config/hypr/scripts/screensht active
-     # bind=SUPER_SHIFT,C,exec,ocr
+     bind=SUPER,U,exec,ags -r 'recorder.start()'
+     bind=SUPER,P,exec,ags -r 'recorder.screenshot()'
+     bind=SUPER_SHIFT,P,exec,ags -r 'recorder.screenshot(true)'
 
      bind=SUPER,N,exec,neovide
      bind=SUPER,I,exec,hyprlock
-     bind=SUPER,D,exec,anyrun
+     bind=SUPER,D,exec,ags -t launcher
      bind=SUPER,S,exec,rofi-rbw
      bind=SUPER,G,exec,rofi-bluetooth
 
@@ -211,10 +207,9 @@ in {
 
      bind=,XF86MonBrightnessUp,exec,lightctl up
      bind=,XF86MonBrightnessDown,exec,lightctl down
-     binde=, XF86AudioRaiseVolume, exec, volumectl -u up
-     bindl=, XF86AudioLowerVolume, exec, volumectl -u down
-     bindl=, XF86AudioMute, exec, volumectl toggle-mute
-
+     binde=, XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +5%
+     bindl=, XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -5%
+     bindl=, XF86AudioMute, exec, pactl set-source-mute @DEFAULT_SOURCE@ toggle
      bind=SUPER,h,movefocus,l
      bind=SUPER,l,movefocus,r
      bind=SUPER,k,movefocus,u

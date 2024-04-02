@@ -61,12 +61,13 @@ in {
           MESA_DISK_CACHE_SINGLE_FILE = "1";
           __GL_SHADER_DISK_CACHE_SKIP_CLEANUP = "1";
           DXVK_STATE_CACHE = "1";
-          # GBM_BACKEND = "nvidia-drm"; # breaks firefox apparently
+          MOZ_DISABLE_RDD_SANDBOX = "1";
+          GBM_BACKEND = "nvidia-drm"; # breaks firefox apparently
         })
 
         (mkIf ((env.isWayland) && (device.gpu == "hybrid-nv")) {
           #__NV_PRIME_RENDER_OFFLOAD = "1";
-          #WLR_DRM_DEVICES = mkDefault "/dev/dri/card1:/dev/dri/card0";
+          # WLR_DRM_DEVICES = mkDefault "/dev/dri/card1:/dev/dri/card0";
         })
       ];
       systemPackages = with pkgs; [
@@ -84,7 +85,23 @@ in {
     hardware = {
       nvidia = {
         package = mkDefault config.boot.kernelPackages.nvidiaPackages.beta;
-        # package = pkgs.stable.linuxPackages_latest.nvidia_x11_production;
+        # package = pkgs.linuxPackages_6_8.;
+        # package = let
+        #   rcu_patch = pkgs.fetchpatch {
+        #     url = "https://github.com/gentoo/gentoo/raw/c64caf53/x11-drivers/nvidia-drivers/files/nvidia-drivers-470.223.02-gpl-pfn_valid.patch";
+        #     hash = "sha256-eZiQQp2S/asE7MfGvfe6dA/kdCvek9SYa/FFGp24dVg=";
+        #   };
+        # in
+        #   config.boot.kernelPackages.nvidiaPackages.mkDriver {
+        #     version = "535.154.05";
+        #     sha256_64bit = "sha256-fpUGXKprgt6SYRDxSCemGXLrEsIA6GOinp+0eGbqqJg=";
+        #     sha256_aarch64 = "sha256-G0/GiObf/BZMkzzET8HQjdIcvCSqB1uhsinro2HLK9k=";
+        #     openSha256 = "sha256-wvRdHguGLxS0mR06P5Qi++pDJBCF8pJ8hr4T8O6TJIo=";
+        #     settingsSha256 = "sha256-9wqoDEWY4I7weWW05F4igj1Gj9wjHsREFMztfEmqm10=";
+        #     persistencedSha256 = "sha256-d0Q3Lk80JqkS1B54Mahu2yY/WocOqFFbZVBh+ToGhaE=";
+        #
+        #     patches = [rcu_patch];
+        #   };
         modesetting.enable = mkDefault true;
         prime.offload.enableOffloadCmd = device.gpu == "hybrid-nv";
         # powerManagement = {
@@ -94,7 +111,7 @@ in {
 
         # use open source drivers by default, hosts may override this option if their gpu is
         # not supported by the open source dexplicit sync.rivers
-        open = mkDefault false;
+        open = false;
         nvidiaSettings = false; # add nvidia-settings to pkgs, useless on nixos
         # nvidiaPersistenced = true;
         # forceFullCompositionPipeline = true;
