@@ -60,7 +60,7 @@ in {
           enable = true;
           driSupport = true;
           extraPackages = with pkgs; [
-            vaapiVdpau
+            # vaapiVdpau
             libvdpau-va-gl
           ];
         }

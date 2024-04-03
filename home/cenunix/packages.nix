@@ -50,6 +50,11 @@ in {
       signal-desktop
       signal-desktop-beta
       telegram-desktop
+      wofi
+      wofi-bluetooth
+    ]
+    ++ optionals (builtins.elem device.type ["desktop"]) [
+      nvtop
     ]
     ++ optionals (builtins.elem device.type ["desktop" "laptop"]) [
       ungoogled-chromium

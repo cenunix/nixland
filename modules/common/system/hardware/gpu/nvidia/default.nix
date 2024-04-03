@@ -62,7 +62,9 @@ in {
           __GL_SHADER_DISK_CACHE_SKIP_CLEANUP = "1";
           DXVK_STATE_CACHE = "1";
           MOZ_DISABLE_RDD_SANDBOX = "1";
+          NVD_BACKEND = "direct";
           GBM_BACKEND = "nvidia-drm"; # breaks firefox apparently
+          VDPAU_DRIVER = "va_gl";
         })
 
         (mkIf ((env.isWayland) && (device.gpu == "hybrid-nv")) {
@@ -118,7 +120,8 @@ in {
       };
 
       opengl = {
-        extraPackages = with pkgs; [nvidia-vaapi-driver];
+        enable = true;
+        extraPackages = with pkgs; [nvidia-vaapi-driver libvdpau-va-gl];
         extraPackages32 = with pkgs.pkgsi686Linux; [nvidia-vaapi-driver];
       };
     };

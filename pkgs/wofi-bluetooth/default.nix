@@ -30,7 +30,7 @@ stdenv.mkDerivation (finalAttrs: {
   '';
 
   meta = with lib; {
-    description = "Rofi-based interface to connect to bluetooth devices and display status info";
+    description = "Wofi-based interface to connect to bluetooth devices and display status info";
     homepage = "https://github.com/nickclyde/wofi-bluetooth";
     license = licenses.gpl3Only;
     maintainers = with maintainers; [cenunix];

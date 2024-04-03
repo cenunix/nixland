@@ -16,6 +16,7 @@
     ./graphical
     ./media
     ./services
+    ./sparrow
     ./terminal
     ./theme
     ./packages.nix
