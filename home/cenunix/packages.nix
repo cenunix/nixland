@@ -46,12 +46,12 @@ in {
       wget
       gnome.zenity
       nix-prefetch-github
-      jellyfin-media-player
       signal-desktop
       signal-desktop-beta
       telegram-desktop
       wofi
       wofi-bluetooth
+      protonmail-desktop
     ]
     ++ optionals (builtins.elem device.type ["desktop"]) [
       nvtop

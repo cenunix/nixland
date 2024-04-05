@@ -14,5 +14,8 @@
     pulsemixer
     pulseaudio
     imv
+    jellyfin-media-player
+    jellycli
+    plexamp
   ];
 }
