@@ -48,6 +48,10 @@ in {
           minecraft.enable = false;
           gamescope.enable = false;
         };
+        default = {
+          terminal = "kitty";
+          fileManager = "thunar";
+        };
         override = {};
       };
       usrEnv = {

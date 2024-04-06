@@ -16,9 +16,9 @@ in {
     monitorConfig = builtins.concatStringsSep "\n" (builtins.map (monitor: ''monitor=${monitor}'') device.monitors);
   in {
     "$mod" = "SUPER";
-    monitors = [monitorConfig];
     exec-once = [
       "hyprctl setcursor ${pointerCursor.name} ${toString pointerCursor.size}"
+      "${monitorConfig}"
     ];
     input = {
       follow_mouse = 1;
@@ -34,12 +34,12 @@ in {
       resize_on_border = true;
     };
     decoration = {
-      screen_shader = mkIf (device.gpu == "nvidia") ~/.config/hypr/shaders/bluelight.glsl;
+      screen_shader = mkIf (device.gpu == "nvidia") "${config.xdg.configHome}/hypr/shaders/bluelight.glsl";
       drop_shadow = true;
       shadow_range = 20;
       shadow_render_power = 3;
-      col.shadow = "rgb(3c4252)";
-      col.shadow_inactive = "rgb(3c4252)";
+      "col.shadow" = "rgb(3c4252)";
+      "col.shadow_inactive" = "rgb(3c4252)";
       rounding = 4;
       blur = {
         enabled = false;
@@ -50,16 +50,18 @@ in {
     };
     animations = {
       enabled = true;
+      bezier = [
+        "pace, 0.46, 1, 0.29, 0.99"
+        "overshot, 0.13, 0.99, 0.29, 1.1"
+        "md3_decel, 0.05, 0.7, 0.1, 1"
+      ];
       animation = [
-        "bezier = pace,0.46, 1, 0.29, 0.99"
-        "bezier = overshot,0.13,0.99,0.29,1.1"
-        "bezier = md3_decel, 0.05, 0.7, 0.1, 1"
-        "animation = windowsIn,1,3,md3_decel,slide"
-        "animation = windowsOut,1,3,md3_decel,slide"
-        "animation = windowsMove,1,3,md3_decel,slide"
-        "animation = fade,1,3,md3_decel"
-        "animation = workspaces,1,3,md3_decel"
-        "animation = specialWorkspace,1,3,md3_decel,slide"
+        "windowsIn, 1, 3, md3_decel, slide"
+        "windowsOut, 1, 3, md3_decel, slide"
+        "windowsMove, 1, 3, md3_decel, slide"
+        "fade, 1, 3, md3_decel"
+        "workspaces, 1, 3, md3_decel"
+        "specialWorkspace, 1, 3, md3_decel,slide"
       ];
     };
     dwindle = {

@@ -1,4 +1,6 @@
-{
+{lib, ...}: let
+  inherit (lib) mkIf;
+in {
   wayland.windowManager.hyprland.settings = {
     # layer rules
     layerrule = let
