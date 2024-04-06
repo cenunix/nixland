@@ -1,14 +1,6 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  osConfig,
-  self,
-  ...
-}:
-with lib; let
+{ inputs, outputs, lib, config, pkgs, osConfig, self, ... }:
+with lib;
+let
   catppuccin-mocha = pkgs.fetchFromGitHub {
     owner = "catppuccin";
     repo = "discord";
@@ -18,7 +10,7 @@ with lib; let
   project-path = builtins.getEnv "PWD";
   webcord-path = "${project-path}";
   device = osConfig.modules.device;
-  acceptedTypes = ["desktop" "laptop" "armlaptop"];
+  acceptedTypes = [ "desktop" "laptop" "armlaptop" ];
 in {
   # imports = [
   #   inputs.arrpc.homeManagerModules.default
@@ -26,17 +18,17 @@ in {
   # ];
 
   config = mkIf (builtins.elem device.type acceptedTypes) {
-    home.packages = with pkgs; [
-      webcord # webcord with vencord extension installed
-    ];
+    home.packages = with pkgs;
+      [
+        webcord # webcord with vencord extension installed
+      ];
 
     xdg.configFile = {
-      "WebCord/Themes/mocha" = {
-        source = ./mocha.theme.css;
-      };
+      "WebCord/Themes/mocha" = { source = ./mocha.theme.css; };
 
       # share my webcord configuration across devices
-      "WebCord/config.json".source = config.lib.file.mkOutOfStoreSymlink "/home/cenunix/NixLand/home/cenunix/graphical/apps/webcord/config.json";
+      "WebCord/config.json".source = config.lib.file.mkOutOfStoreSymlink
+        "/home/cenunix/NixLand/home/cenunix/graphical/apps/webcord/config.json";
     };
 
     # services.arrpc.enable = (device.type == "desktop");

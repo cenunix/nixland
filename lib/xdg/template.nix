@@ -1,4 +1,5 @@
-system: let
+system:
+let
   # copy paste done right
   XDG_CONFIG_HOME = "$HOME/.config";
   XDG_CACHE_HOME = "$HOME/.cache";
@@ -9,8 +10,9 @@ system: let
 in {
   # global env
   glEnv = {
-    inherit XDG_DATA_HOME XDG_CONFIG_HOME XDG_CACHE_HOME XDG_STATE_HOME XDG_RUNTIME_DIR XDG_BIN_HOME;
-    PATH = ["$XDG_BIN_HOME"];
+    inherit XDG_DATA_HOME XDG_CONFIG_HOME XDG_CACHE_HOME XDG_STATE_HOME
+      XDG_RUNTIME_DIR XDG_BIN_HOME;
+    PATH = [ "$XDG_BIN_HOME" ];
   };
 
   sysEnv = {
@@ -44,10 +46,10 @@ in {
     NPM_CONFIG_CACE = "${XDG_CACHE_HOME}/npm";
     NPM_CONFIG_TMP = "${XDG_RUNTIME_DIR}/npm";
     NPM_CONFIG_USERCONFIG = "${XDG_CONFIG_HOME}/npm/config";
-    PYTHONSTARTUP =
-      if system == "nixos"
-      then "/etc/pythonrc"
-      else "${XDG_CONFIG_HOME}/python/pythonrc";
+    PYTHONSTARTUP = if system == "nixos" then
+      "/etc/pythonrc"
+    else
+      "${XDG_CONFIG_HOME}/python/pythonrc";
   };
 
   npmrc.text = ''
@@ -57,9 +59,7 @@ in {
   '';
 
   pythonrc.text =
-    /*
-    python
-    */
+    # python
     ''
       import os
       import atexit

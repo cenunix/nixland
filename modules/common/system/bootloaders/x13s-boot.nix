@@ -1,18 +1,11 @@
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, ...
-}:
+{ inputs, outputs, lib, config, pkgs, ... }:
 let
   linuxPackages_x13s = pkgs.linuxPackagesFor pkgs.linux_x13s_pkg;
   firmware = pkgs.callPackages ./firmware { };
   inherit (lib) mkDefault mkIf;
 
   cfg = config.modules.system;
-in
-{
+in {
   config = mkIf (cfg.boot.loader == "x13s-boot") {
     boot = {
       loader.grub = {
@@ -21,7 +14,8 @@ in
         efiInstallAsRemovable = true;
         device = "nodev";
         extraFiles = {
-          "devicetree.dtb" = "${config.boot.kernelPackages.kernel}/dtbs/qcom/sc8280xp-lenovo-thinkpad-x13s.dtb";
+          "devicetree.dtb" =
+            "${config.boot.kernelPackages.kernel}/dtbs/qcom/sc8280xp-lenovo-thinkpad-x13s.dtb";
         };
         extraPerEntryConfig = "devicetree ($drive1)//devicetree.dtb";
         extraConfig = ''

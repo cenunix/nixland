@@ -1,31 +1,23 @@
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, osConfig
-, ...
-}:
-with lib; let
+{ inputs, outputs, lib, config, pkgs, osConfig, ... }:
+with lib;
+let
   device = osConfig.modules.device;
   acceptedTypes = [ "desktop" "laptop" "armlaptop" ];
   anyrunPkgs = inputs.anyrun.packages.${pkgs.system};
-in
-{
-  imports = [
-    inputs.anyrun.homeManagerModules.default
-  ];
+in {
+  imports = [ inputs.anyrun.homeManagerModules.default ];
   config = mkIf (builtins.elem device.type acceptedTypes) {
     programs.anyrun = {
       enable = true;
 
       config = {
-        plugins = with anyrunPkgs; [
-          applications
-          # rink
-          # symbols
-          # dictionary
-        ];
+        plugins = with anyrunPkgs;
+          [
+            applications
+            # rink
+            # symbols
+            # dictionary
+          ];
 
         hidePluginInfo = true;
         closeOnClick = true;

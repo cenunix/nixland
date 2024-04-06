@@ -1,10 +1,6 @@
-{
-  config,
-  lib,
-  ...
-}:
-with lib; let
-  cfg = config.programs.steam;
+{ config, lib, ... }:
+with lib;
+let cfg = config.programs.steam;
 in {
   options.programs.steam = {
     withProtonGE = mkOption {
@@ -16,7 +12,7 @@ in {
     };
     extraCompatPackages = mkOption {
       type = with types; listOf package;
-      default = [];
+      default = [ ];
       defaultText = literalExpression "[]";
       example = literalExpression ''
         with pkgs; [
@@ -33,21 +29,18 @@ in {
   };
 
   config = let
-    CompatPackages =
-      if cfg.withProtonGE
-      then cfg.extraCompatPackages ++ [inputs.nix-gaming.packages.proton-ge]
-      else cfg.extraCompatPackages;
-  in
-    mkIf cfg.enable {
-      # Steam hardware (just in case)
-      hardware.steam-hardware.enable = true;
+    CompatPackages = if cfg.withProtonGE then
+      cfg.extraCompatPackages ++ [ inputs.nix-gaming.packages.proton-ge ]
+    else
+      cfg.extraCompatPackages;
+  in mkIf cfg.enable {
+    # Steam hardware (just in case)
+    hardware.steam-hardware.enable = true;
 
-      # Append the extra compatibility packages to whatever else the env variable was populated with.
-      # For more information see https://github.com/ValveSoftware/steam-for-linux/issues/6310.
-      environment.sessionVariables = mkIf (CompatPackages != []) {
-        STEAM_EXTRA_COMPAT_TOOLS_PATHS = [
-          (makeBinPath CompatPackages)
-        ];
-      };
+    # Append the extra compatibility packages to whatever else the env variable was populated with.
+    # For more information see https://github.com/ValveSoftware/steam-for-linux/issues/6310.
+    environment.sessionVariables = mkIf (CompatPackages != [ ]) {
+      STEAM_EXTRA_COMPAT_TOOLS_PATHS = [ (makeBinPath CompatPackages) ];
     };
+  };
 }

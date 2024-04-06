@@ -1,9 +1,5 @@
-{
-  osConfig,
-  lib,
-  pkgs,
-  ...
-}: let
+{ osConfig, lib, pkgs, ... }:
+let
   inherit (lib) mkIf;
 
   cfg = osConfig.modules.programs;

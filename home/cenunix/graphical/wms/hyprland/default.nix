@@ -1,13 +1,6 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  osConfig,
-  ...
-}:
-with lib; let
+{ inputs, outputs, lib, config, pkgs, osConfig, ... }:
+with lib;
+let
   device = osConfig.modules.device;
   env = osConfig.modules.usrEnv;
 
@@ -31,21 +24,11 @@ with lib; let
     fi
   '';
 in {
-  imports = [
-    ./binds.nix
-    ./settings.nix
-    ./rules.nix
-  ];
+  imports = [ ./binds.nix ./settings.nix ./rules.nix ];
   config = mkIf (env.isWayland && (env.desktop == "Hyprland")) {
     xdg.configFile."hypr/shaders".source = ./shaders;
     home.packages = with pkgs;
-      [
-        wlr-randr
-      ]
-      ++ optionals (device.gpu == "nvidia") [
-        shadertoggle
-        gojq
-      ];
+      [ wlr-randr ] ++ optionals (device.gpu == "nvidia") [ shadertoggle gojq ];
 
     services.wlsunset = {
       enable = device.gpu != "nvidia";
@@ -61,7 +44,7 @@ in {
     systemd.user.targets.tray = {
       Unit = {
         Description = "Home Manager System Tray";
-        Requires = ["graphical-session-pre.target"];
+        Requires = [ "graphical-session-pre.target" ];
       };
     };
 
@@ -70,7 +53,7 @@ in {
       xwayland.enable = true;
       systemd = {
         enable = true;
-        variables = ["--all"];
+        variables = [ "--all" ];
       };
     };
   };

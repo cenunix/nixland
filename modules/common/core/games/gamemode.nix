@@ -1,11 +1,6 @@
-{
-  config,
-  lib,
-  pkgs,
-  inputs,
-  ...
-}:
-with lib; let
+{ config, lib, pkgs, inputs, ... }:
+with lib;
+let
   programs = makeBinPath (with pkgs; [
     inputs.hyprland.packages.${pkgs.system}.default
     gojq

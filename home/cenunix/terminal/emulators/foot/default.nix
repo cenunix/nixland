@@ -1,14 +1,9 @@
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, ...
-}: {
-  home.packages = with pkgs; [
-    libsixel
-    # for displaying images
-  ];
+{ inputs, outputs, lib, config, pkgs, ... }: {
+  home.packages = with pkgs;
+    [
+      libsixel
+      # for displaying images
+    ];
   programs.foot = {
     enable = true;
     # doesnt work properly
@@ -41,9 +36,7 @@
         bright6 = "94e2d5"; # teal
         bright7 = "a6adc8"; # Subtext 0
       };
-      mouse = {
-        hide-when-typing = "yes";
-      };
+      mouse = { hide-when-typing = "yes"; };
     };
   };
 }

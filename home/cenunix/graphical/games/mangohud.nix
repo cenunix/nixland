@@ -1,12 +1,5 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  osConfig,
-  ...
-}: let
+{ inputs, outputs, lib, config, pkgs, osConfig, ... }:
+let
   inherit (lib) mkIf;
   inherit (osConfig) modules;
 

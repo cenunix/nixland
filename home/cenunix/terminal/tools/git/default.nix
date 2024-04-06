@@ -1,11 +1,4 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
+{ inputs, outputs, lib, config, pkgs, ... }: {
   home.packages = with pkgs; [
     gist # manage github gists
     act # local github actions
@@ -104,8 +97,10 @@
         ca = "commit -am";
         co = "checkout";
         d = "diff";
-        df = "!git hist | peco | awk '{print $2}' | xargs -I {} git diff {}^ {}";
-        edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`";
+        df =
+          "!git hist | peco | awk '{print $2}' | xargs -I {} git diff {}^ {}";
+        edit-unmerged =
+          "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`";
         fuck = "commit --amend -m";
         graph = "log --all --decorate --graph";
         ps = "!git push origin $(git rev-parse --abbrev-ref HEAD)";

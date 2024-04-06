@@ -1,13 +1,8 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  osConfig,
-  ...
-}: {
-  home.packages = with pkgs;
-  # exclude server device type
-    [qbittorrent];
+{ inputs, outputs, lib, config, pkgs, osConfig, ... }:
+let
+  inherit (lib) mkIf;
+  inherit (osConfig) modules;
+  inherit (modules) device;
+in {
+  home.packages = with pkgs; mkIf (device.type != "server") [ qbittorrent ];
 }

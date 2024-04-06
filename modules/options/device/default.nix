@@ -1,6 +1,1 @@
-_: {
-  imports = [
-    ./hardware.nix
-    ./system.nix
-  ];
-}
+_: { imports = [ ./hardware.nix ./system.nix ]; }

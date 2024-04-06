@@ -1,7 +1,7 @@
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 require("null-ls").setup({
   sources = {
-    require("null-ls").builtins.formatting.alejandra,
+    require("null-ls").builtins.formatting.nixfmt,
     require("null-ls").builtins.formatting.stylua,
     require("null-ls").builtins.formatting.prettierd,
     require("null-ls").builtins.formatting.black,

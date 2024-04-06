@@ -1,8 +1,5 @@
-{
-  pkgs,
-  config,
-  ...
-}: let
+{ pkgs, config, ... }:
+let
   screenshot-area = pkgs.writeShellScriptBin "screenshot-area" ''
     screenshot_dir="${config.xdg.userDirs.pictures}/Screenshots"
 
@@ -28,6 +25,4 @@
 
     notify-send "Screenshot" "Screenshot Taken: $filename" -i "$file_path"
   '';
-in {
-  home.packages = [screenshot-area];
-}
+in { home.packages = [ screenshot-area ]; }

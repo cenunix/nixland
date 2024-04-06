@@ -1,13 +1,3 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
-  imports = [
-    ./login.nix
-    ./misc.nix
-  ];
+{ inputs, outputs, lib, config, pkgs, ... }: {
+  imports = [ ./login.nix ./misc.nix ];
 }

@@ -1,12 +1,1 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
-  imports = [
-    ./gtk
-  ];
-}
+{ inputs, outputs, lib, config, pkgs, ... }: { imports = [ ./gtk ]; }

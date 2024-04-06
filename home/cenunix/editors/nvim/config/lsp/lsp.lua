@@ -7,7 +7,7 @@ require("lspconfig").nil_ls.setup({
   settings = {
     ["nil"] = {
       formatting = {
-        command = { "alejandra", "--quiet" },
+        command = { "nixfmt", "--quiet" },
       },
     },
   },

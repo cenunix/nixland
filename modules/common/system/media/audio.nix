@@ -1,19 +1,11 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}:
-with lib; let
+{ inputs, outputs, lib, config, pkgs, ... }:
+with lib;
+let
   cfg = config.modules.system.sound;
   device = config.modules.device;
 in {
   hardware.pulseaudio.enable = false;
-  environment.systemPackages = with pkgs; [
-    alsa-utils
-  ];
+  environment.systemPackages = with pkgs; [ alsa-utils ];
   services = {
     pipewire = {
       enable = true;

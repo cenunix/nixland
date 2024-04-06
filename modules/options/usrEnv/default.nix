@@ -1,10 +1,4 @@
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, ...
-}:
+{ inputs, outputs, lib, config, pkgs, ... }:
 with lib; {
   options.modules.usrEnv = {
     # should wayland module be loaded? this will include:

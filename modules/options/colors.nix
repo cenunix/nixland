@@ -1,8 +1,5 @@
-{
-  config,
-  lib,
-  ...
-}: let
+{ config, lib, ... }:
+let
   inherit (lib.options) mkOption literalExpression;
   inherit (lib.types) str nullOr enum mkOptionType attrsOf coercedTo;
   inherit (lib.strings) removePrefix hasPrefix isString;
@@ -19,24 +16,28 @@
   colorType = attrsOf (coercedTo str (removePrefix "#") hexColorType);
 
   getPaletteFromScheme = slug:
-    if builtins.pathExists ./palettes/${slug}.nix
-    then (import ./palettes/${slug}.nix).colorscheme.palette
-    else throw "The following colorscheme was imported but not found: ${slug}";
+    if builtins.pathExists ./palettes/${slug}.nix then
+      (import ./palettes/${slug}.nix).colorscheme.palette
+    else
+      throw "The following colorscheme was imported but not found: ${slug}";
 in {
   options.modules.style = {
     # choose a colorscheme
     colorScheme = {
       # "Name Of The Scheme"
       name = mkOption {
-        type = nullOr (enum ["Catppuccin Mocha" "Tokyonight Storm" "Oxocarbon Dark"]);
-        description = "The colorscheme that should be used globally to theme your system.";
+        type = nullOr
+          (enum [ "Catppuccin Mocha" "Tokyonight Storm" "Oxocarbon Dark" ]);
+        description =
+          "The colorscheme that should be used globally to theme your system.";
         default = "Catppuccin Mocha";
       };
 
       # "name-of-the-scheme"
       slug = mkOption {
         type = str;
-        default = serializeTheme "${toString cfg.colorScheme.name}"; # toString to avoid type errors if null, returns ""
+        default = serializeTheme "${toString
+          cfg.colorScheme.name}"; # toString to avoid type errors if null, returns ""
         description = ''
           The serialized slug for the colorScheme you are using.
 
@@ -84,11 +85,12 @@ in {
       };
 
       variant = mkOption {
-        type = enum ["dark" "light"];
+        type = enum [ "dark" "light" ];
         default =
-          if builtins.substring 0 1 cfg.colorScheme.colors.base00 < "5"
-          then "dark"
-          else "light";
+          if builtins.substring 0 1 cfg.colorScheme.colors.base00 < "5" then
+            "dark"
+          else
+            "light";
         description = ''
           Whether the scheme is dark or light
         '';

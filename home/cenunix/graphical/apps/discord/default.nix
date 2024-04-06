@@ -1,14 +1,6 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  osConfig,
-  self,
-  ...
-}:
-with lib; let
+{ inputs, outputs, lib, config, pkgs, osConfig, self, ... }:
+with lib;
+let
   catppuccin-mocha = pkgs.fetchFromGitHub {
     owner = "catppuccin";
     repo = "discord";
@@ -16,23 +8,24 @@ with lib; let
     hash = "sha256-iUnLLAQVMXFLyoB3wgYqUTx5SafLkvtOXK6C8EHK/nI=";
   };
   device = osConfig.modules.device;
-  acceptedTypes = ["desktop" "laptop"];
+  acceptedTypes = [ "desktop" "laptop" ];
 in {
   config = mkIf (builtins.elem device.type acceptedTypes) {
-    home.packages = with pkgs; [
-      (pkgs.discord.override {
-        # remove any overrides that you don't want
-        withOpenASAR = true;
-        withVencord = true;
-      })
-    ];
+    home.packages = with pkgs;
+      [
+        (pkgs.discord.override {
+          # remove any overrides that you don't want
+          withOpenASAR = true;
+          withVencord = true;
+        })
+      ];
     xdg.configFile = {
-      "Vencord/themes/mocha.theme.css" = {
-        source = ./mocha.theme.css;
-      };
+      "Vencord/themes/mocha.theme.css" = { source = ./mocha.theme.css; };
 
       # share my webcord configuration across devices
-      "Vencord/settings/settings.json".source = config.lib.file.mkOutOfStoreSymlink "/home/cenunix/NixLand/home/cenunix/graphical/apps/discord/settings.json";
+      "Vencord/settings/settings.json".source =
+        config.lib.file.mkOutOfStoreSymlink
+        "/home/cenunix/NixLand/home/cenunix/graphical/apps/discord/settings.json";
     };
   };
 }

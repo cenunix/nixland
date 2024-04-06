@@ -1,14 +1,8 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: let
-  browser = ["firefox.desktop"];
-  zathura = ["org.pwmt.zathura.desktop.desktop"];
-  filemanager = ["dolphin.desktop"];
+{ inputs, outputs, lib, config, pkgs, ... }:
+let
+  browser = [ "firefox.desktop" ];
+  zathura = [ "org.pwmt.zathura.desktop.desktop" ];
+  filemanager = [ "dolphin.desktop" ];
 
   associations = {
     "text/html" = browser;
@@ -24,14 +18,14 @@
     "application/x-extension-xhtml" = browser;
     "application/x-extension-xht" = browser;
 
-    "audio/*" = ["mpv.desktop"];
-    "video/*" = ["mpv.dekstop"];
-    "image/*" = ["imv.desktop"];
+    "audio/*" = [ "mpv.desktop" ];
+    "video/*" = [ "mpv.dekstop" ];
+    "image/*" = [ "imv.desktop" ];
     "application/json" = browser;
     "application/pdf" = zathura;
-    "x-scheme-handler/tg" = ["telegramdesktop.desktop"];
-    "x-scheme-handler/spotify" = ["spotify.desktop"];
-    "x-scheme-handler/discord" = ["WebCord.desktop"];
+    "x-scheme-handler/tg" = [ "telegramdesktop.desktop" ];
+    "x-scheme-handler/spotify" = [ "spotify.desktop" ];
+    "x-scheme-handler/discord" = [ "WebCord.desktop" ];
     "inode/directory" = filemanager;
   };
 in {

@@ -1,10 +1,5 @@
-{
-  config,
-  lib,
-  pkgs,
-  inputs,
-  ...
-}: let
+{ config, lib, pkgs, inputs, ... }:
+let
   sys = config.modules.system;
   env = config.modules.usrEnv;
   inherit (lib) mkForce mkIf;
@@ -13,23 +8,18 @@ in {
     xdg.portal = {
       enable = true;
 
-      extraPortals = [
-        pkgs.xdg-desktop-portal-gtk
-      ];
+      extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
       config = {
-        common = let
-          portal =
-            if env.desktop == "Hyprland"
-            then "hyprland"
-            else "wlr";
-        in {
-          # for flameshot to work
-          # https://github.com/flameshot-org/flameshot/issues/3363#issuecomment-1753771427
-          default = "gtk";
-          "org.freedesktop.impl.portal.Screencast" = "${portal}";
-          "org.freedesktop.impl.portal.Screenshot" = "${portal}";
-        };
+        common =
+          let portal = if env.desktop == "Hyprland" then "hyprland" else "wlr";
+          in {
+            # for flameshot to work
+            # https://github.com/flameshot-org/flameshot/issues/3363#issuecomment-1753771427
+            default = "gtk";
+            "org.freedesktop.impl.portal.Screencast" = "${portal}";
+            "org.freedesktop.impl.portal.Screenshot" = "${portal}";
+          };
       };
       # xdg-desktop-wlr (this section) is no longer needed, xdg-desktop-portal-hyprland
       # will (and should) override this one

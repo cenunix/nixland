@@ -1,16 +1,5 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
-  home.packages = with pkgs; [
-    wtype
-    rofi-rbw-wayland
-    rofi
-  ];
+{ inputs, outputs, lib, config, pkgs, ... }: {
+  home.packages = with pkgs; [ wtype rofi-rbw-wayland rofi ];
   programs.rbw = {
     enable = true;
     settings.email = "caden.hargrave@gmail.com";

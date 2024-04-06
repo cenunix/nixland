@@ -7,34 +7,33 @@
 #
 #  - the addition of the function `entryBefore` indicating a
 #    "wanted by" relationship.
-{lib, ...}: let
+{ lib, ... }:
+let
   inherit (lib) mkOption filterAttrs mapAttrsToList toposort mapAttrs any types;
 
-  types' =
-    types
-    // {
-      dagOf = subType:
-        types.attrsOf (types.submodule {
-          options = {
-            data = mkOption {
-              type = subType;
-              description = "Entry value.";
-            };
-
-            before = mkOption {
-              type = types.listOf types.str;
-              default = [];
-              description = "Entries to guarantee before.";
-            };
-
-            after = mkOption {
-              type = types.listOf types.str;
-              default = [];
-              description = "Entries to guarantee after.";
-            };
+  types' = types // {
+    dagOf = subType:
+      types.attrsOf (types.submodule {
+        options = {
+          data = mkOption {
+            type = subType;
+            description = "Entry value.";
           };
-        });
-    };
+
+          before = mkOption {
+            type = types.listOf types.str;
+            default = [ ];
+            description = "Entries to guarantee before.";
+          };
+
+          after = mkOption {
+            type = types.listOf types.str;
+            default = [ ];
+            description = "Entries to guarantee after.";
+          };
+        };
+      });
+  };
 
   dag = {
     # Takes an attribute set containing entries built by
@@ -93,45 +92,41 @@
     #                ];
     #              } == {}
     #    true
-    topoSort = dag: let
-      dagBefore = dag: name:
-        mapAttrsToList (n: v: n) (
-          filterAttrs (n: v: any (a: a == name) v.before) dag
-        );
-      normalizedDag =
-        mapAttrs (n: v: {
+    topoSort = dag:
+      let
+        dagBefore = dag: name:
+          mapAttrsToList (n: v: n)
+          (filterAttrs (n: v: any (a: a == name) v.before) dag);
+        normalizedDag = mapAttrs (n: v: {
           name = n;
           data = v.data;
           after = v.after ++ dagBefore dag n;
-        })
-        dag;
-      before = a: b: any (c: a.name == c) b.after;
-      sorted = toposort before (mapAttrsToList (n: v: v) normalizedDag);
-    in
-      if sorted ? result
-      then {result = map (v: {inherit (v) name data;}) sorted.result;}
-      else sorted;
+        }) dag;
+        before = a: b: any (c: a.name == c) b.after;
+        sorted = toposort before (mapAttrsToList (n: v: v) normalizedDag);
+      in if sorted ? result then {
+        result = map (v: { inherit (v) name data; }) sorted.result;
+      } else
+        sorted;
 
     # Create a DAG entry with no particular dependency information.
     entryAnywhere = data: {
       inherit data;
-      before = [];
-      after = [];
+      before = [ ];
+      after = [ ];
     };
 
     # Ordering of after and before flipped from the original
-    entryBetween = after: before: data: {
-      inherit data before after;
-    };
+    entryBetween = after: before: data: { inherit data before after; };
 
     entryAfter = after: data: {
       inherit data after;
-      before = [];
+      before = [ ];
     };
 
     entryBefore = before: data: {
       inherit data before;
-      after = [];
+      after = [ ];
     };
   };
 in {

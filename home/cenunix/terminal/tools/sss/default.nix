@@ -1,10 +1,5 @@
-{
-  config,
-  osConfig,
-  inputs,
-  pkgs,
-  ...
-}: let
+{ config, osConfig, inputs, pkgs, ... }:
+let
   inherit (osConfig) modules;
   inherit (modules.style.colorScheme) colors;
 in {
@@ -13,10 +8,7 @@ in {
     ./screenshot-full.nix
     ./screenshot-area.nix
   ];
-  home.packages = with pkgs; [
-    slurp
-    wayshot
-  ];
+  home.packages = with pkgs; [ slurp wayshot ];
   programs.sss = {
     enable = true;
 

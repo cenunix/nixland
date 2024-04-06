@@ -1,10 +1,5 @@
-{
-  lib,
-  pkgs,
-  osConfig,
-  inputs',
-  ...
-}: let
+{ lib, pkgs, osConfig, inputs', ... }:
+let
   inherit (lib) mkIf;
 
   sys = osConfig.modules;
@@ -12,7 +7,8 @@
   prg = sys.programs;
 
   catppuccin-mocha = pkgs.fetchzip {
-    url = "https://raw.githubusercontent.com/catppuccin/prismlauncher/main/themes/Mocha/Catppuccin-Mocha.zip";
+    url =
+      "https://raw.githubusercontent.com/catppuccin/prismlauncher/main/themes/Mocha/Catppuccin-Mocha.zip";
     sha256 = "sha256-8uRqCoe9iSIwNnK13d6S4XSX945g88mVyoY+LZSPBtQ=";
   };
 
@@ -37,16 +33,9 @@
     graalvm-ce
   ];
 
-  additionalPrograms = with pkgs; [
-    gamemode
-    mangohud
-    jprofiler
-  ];
+  additionalPrograms = with pkgs; [ gamemode mangohud jprofiler ];
 
-  glfw =
-    if env.isWayland
-    then pkgs.glfw-wayland-minecraft
-    else pkgs.glfw;
+  glfw = if env.isWayland then pkgs.glfw-wayland-minecraft else pkgs.glfw;
 in {
   config = mkIf prg.gaming.minecraft.enable {
     home = {

@@ -1,16 +1,7 @@
 # Add your reusable home-manager modules to this directory, on their own file (https://nixos.wiki/wiki/Module).
 # These should be stuff you would like to share with others, not your personal configurations.
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  agenix,
-  self,
-  ...
-}: let
-  inherit (lib) mkDefault;
+{ inputs, outputs, lib, config, pkgs, agenix, self, ... }:
+let inherit (lib) mkDefault;
 in {
   imports = [
     ./editors
@@ -26,7 +17,7 @@ in {
     home = {
       username = "cenunix";
       homeDirectory = "/home/cenunix";
-      extraOutputsToInstall = ["doc" "devdoc"];
+      extraOutputsToInstall = [ "doc" "devdoc" ];
 
       #version on config init
       stateVersion = mkDefault "23.05";

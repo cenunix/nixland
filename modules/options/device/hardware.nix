@@ -22,7 +22,15 @@ with lib; {
     # TODO: make this a list
     # TODO: raspberry pi specific GPUs
     gpu = mkOption {
-      type = types.enum [ "pi" "amd" "intel" "nvidia" "hybrid-nv" "hybrid-amd" null ];
+      type = types.enum [
+        "pi"
+        "amd"
+        "intel"
+        "nvidia"
+        "hybrid-nv"
+        "hybrid-amd"
+        null
+      ];
       default = null;
       description = "the manifacturer/type of the primary system gpu";
     };
@@ -48,7 +56,8 @@ with lib; {
     hasSound = mkOption {
       type = types.bool;
       default = true;
-      description = "Whether the system has sound support (usually true except for servers)";
+      description =
+        "Whether the system has sound support (usually true except for servers)";
     };
 
     hasTPM = mkOption {

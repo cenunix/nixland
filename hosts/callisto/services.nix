@@ -1,10 +1,4 @@
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, ...
-}:
+{ inputs, outputs, lib, config, pkgs, ... }:
 #Services for x13s battery-sound etc. functionality, relies on firmware
 {
   systemd.services = {
@@ -17,9 +11,7 @@
         Restart = "always";
         ExecStart = "${pkgs.pd-mapper}/bin/pd-mapper";
       };
-      wantedBy = [
-        "multi-user.target"
-      ];
+      wantedBy = [ "multi-user.target" ];
     };
     qrtr-ns = {
       serviceConfig = {

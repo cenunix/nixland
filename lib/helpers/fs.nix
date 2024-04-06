@@ -1,5 +1,3 @@
-_: let
-  mkBtrfs = list: list + ["compress=zstd" "noatime"];
-in {
-  inherit mkBtrfs;
-}
+_:
+let mkBtrfs = list: list + [ "compress=zstd" "noatime" ];
+in { inherit mkBtrfs; }

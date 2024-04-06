@@ -1,8 +1,5 @@
-{
-  pkgs,
-  config,
-  ...
-}: let
+{ pkgs, config, ... }:
+let
   screenshot-full = pkgs.writeShellScriptBin "screenshot-full" ''
     screenshot_dir="${config.xdg.userDirs.pictures}/Screenshots"
 
@@ -24,6 +21,4 @@
     cat "$file_path" | wl-copy
     notify-send "Screenshot" "Screenshot Taken: $filename" -i "$file_path"
   '';
-in {
-  home.packages = [screenshot-full];
-}
+in { home.packages = [ screenshot-full ]; }

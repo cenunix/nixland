@@ -1,16 +1,6 @@
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, osConfig
-, self
-, ...
-}:
-let
-  arRPC = inputs.arrpc.packages.${pkgs.system}.arrpc;
-in
-{
+{ inputs, outputs, lib, config, pkgs, osConfig, self, ... }:
+let arRPC = inputs.arrpc.packages.${pkgs.system}.arrpc;
+in {
   # systemd.user.services = {
   #   arRPC = {
   #     Unit.PartOf = [ "graphical-session.target" ];

@@ -1,14 +1,8 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}:
-with lib; let
+{ inputs, outputs, lib, config, pkgs, ... }:
+with lib;
+let
   device = config.modules.device;
-  acceptedTypes = ["server" "desktop" "laptop" "armlaptop" "hybrid" "lite"];
+  acceptedTypes = [ "server" "desktop" "laptop" "armlaptop" "hybrid" "lite" ];
 in {
   config = mkIf (builtins.elem device.type acceptedTypes) {
     nixpkgs.config.joypixels.acceptLicense = true;
@@ -23,7 +17,9 @@ in {
         maple-mono-SC-NF
         lexend
         joypixels
-        (nerdfonts.override {fonts = ["JetBrainsMono" "FiraCode" "VictorMono"];})
+        (nerdfonts.override {
+          fonts = [ "JetBrainsMono" "FiraCode" "VictorMono" ];
+        })
       ];
 
       enableDefaultPackages = false;
@@ -36,9 +32,9 @@ in {
             "Maple Mono SC NF"
             # "JoyPixels"
           ];
-          sansSerif = ["Lexend" "JoyPixels"];
-          serif = ["Lexend" "JoyPixels"];
-          emoji = ["JoyPixels"];
+          sansSerif = [ "Lexend" "JoyPixels" ];
+          serif = [ "Lexend" "JoyPixels" ];
+          emoji = [ "JoyPixels" ];
         };
       };
     };

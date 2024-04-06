@@ -1,4 +1,5 @@
-_: let
+_:
+let
   # this is a forced SSL template for Nginx
   # returns the attribute set with our desired settings
   sslTemplate = {
@@ -31,6 +32,4 @@ _: let
       BWHITE='\033[1;37m'
     '';
   };
-in {
-  inherit sslTemplate common;
-}
+in { inherit sslTemplate common; }

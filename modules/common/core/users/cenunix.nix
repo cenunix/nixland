@@ -1,14 +1,8 @@
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, ...
-}:
+{ inputs, outputs, lib, config, pkgs, ... }:
 let
-  ifTheyExist = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
-in
-{
+  ifTheyExist = groups:
+    builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
+in {
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
     # FIXME: Replace with your username
@@ -24,19 +18,11 @@ in
       #   # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
       # ];
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
-      extraGroups =
-        [
-          "wheel"
-          "networkManager"
-          "video"
-        ]
-        ++ ifTheyExist [
-          "docker"
-          "libvirtd"
-          "kvm"
-          "qemu-libvirtd"
-        ];
-      openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINhMaC2Hg0H3VjCiFyOlQmn8OWRuKSR05LIP1jdp5zpu cenunix@europa" ];
+      extraGroups = [ "wheel" "networkManager" "video" ]
+        ++ ifTheyExist [ "docker" "libvirtd" "kvm" "qemu-libvirtd" ];
+      openssh.authorizedKeys.keys = [
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINhMaC2Hg0H3VjCiFyOlQmn8OWRuKSR05LIP1jdp5zpu cenunix@europa"
+      ];
     };
   };
 }

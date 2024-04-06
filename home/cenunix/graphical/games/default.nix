@@ -1,18 +1,10 @@
-{
-  lib,
-  pkgs,
-  osConfig,
-  ...
-}: let
+{ lib, pkgs, osConfig, ... }:
+let
   inherit (lib) mkIf;
 
   prg = osConfig.modules.programs;
 in {
-  imports = [
-    ./minecraft.nix
-    ./mangohud.nix
-    ./chess.nix
-  ];
+  imports = [ ./minecraft.nix ./mangohud.nix ./chess.nix ];
 
   config = mkIf prg.gaming.enable {
     home.packages = with pkgs; [

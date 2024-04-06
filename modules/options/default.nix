@@ -1,16 +1,7 @@
-{
-  pkgs,
-  lib,
-  ...
-}: let
-  inherit (lib) mkOption mkEnableOption types;
+{ pkgs, lib, ... }:
+let inherit (lib) mkOption mkEnableOption types;
 in {
-  imports = [
-    ./colors.nix
-    ./device
-    ./system
-    ./usrEnv
-  ];
+  imports = [ ./colors.nix ./device ./system ./usrEnv ];
   options.modules.style = {
     forceGtk = mkEnableOption "Force GTK applications to use the GTK theme";
     useKvantum = mkEnableOption "Use Kvantum to theme QT applications";
@@ -38,7 +29,7 @@ in {
     wallpapers = mkOption {
       type = with types; either str (listOf str);
       description = "Wallpaper or wallpapers to use";
-      default = [];
+      default = [ ];
     };
   };
 }

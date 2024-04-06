@@ -42,8 +42,7 @@ let
     '';
   };
 
-in
-{
+in {
   linux-firmware-modified = stdenvNoCC.mkDerivation rec {
     pname = "linux-firmware-modified";
     version = pkgs.linux-firmware.version;

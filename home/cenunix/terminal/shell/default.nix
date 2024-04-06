@@ -1,19 +1,20 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: let
+{ inputs, outputs, lib, config, pkgs, ... }:
+let
+  inherit (builtins) concatStringsSep mapAttrs toString;
+
+  path = lib.optionalString (config.home.sessionPath != [ ]) ''
+    export PATH=${concatStringsSep ":" config.home.sessionPath}:$PATH
+  '';
+
+  stringVariables = mapAttrs (n: v: toString v) config.home.sessionVariables;
+
+  variables = lib.concatStrings (lib.mapAttrsToList (k: v: ''
+    export ${k}="${toString v}"
+  '') stringVariables);
+
   apply-hm-env = pkgs.writeShellScript "apply-hm-env" ''
-    ${lib.optionalString (config.home.sessionPath != []) ''
-      export PATH=${builtins.concatStringsSep ":" config.home.sessionPath}:$PATH
-    ''}
-    ${builtins.concatStringsSep "\n" (lib.mapAttrsToList (k: v: ''
-        export ${k}=${v}
-      '')
-      config.home.sessionVariables)}
+    ${path}
+    ${variables}
     ${config.home.sessionVariablesExtra}
     exec "$@"
   '';
@@ -28,7 +29,7 @@
       bash -lc "exec ${apply-hm-env} $@"
   '';
 in {
-  home.packages = [run-as-service];
+  home.packages = [ run-as-service ];
   home.sessionVariables.STARSHIP_CACHE = "${config.xdg.cacheHome}/starship";
   programs = {
     eza = {
@@ -56,7 +57,7 @@ in {
           vicmd_symbol = "[󰊠](bold yellow)";
           format = "$symbol [|](bold bright-black) ";
         };
-        git_commit = {commit_hash_length = 4;};
+        git_commit = { commit_hash_length = 4; };
         line_break.disabled = false;
         lua.symbol = "[](blue) ";
         python.symbol = "[](blue) ";
@@ -190,42 +191,44 @@ in {
           url = "https://www.gnu.org/licenses/gpl-3.0.txt";
           sha256 = "OXLcl0T2SZ8Pmy2/dmlvKuetivmyPd5m1q+Gyd+zaYY=";
         };
-      in
-        with pkgs; {
-          rebuild = "sudo nix-store --verify; pushd ~dotfiles && sudo nixos-rebuild switch --flake .# && notify-send \"Done\"&& bat cache --build; popd";
-          # cleanup = "sudo nix-collect-garbage --delete-older-than 7d";
-          bloat = "nix path-info -Sh /run/current-system";
-          ytmp3 = ''
-            ${lib.getExe yt-dlp} -x --continue --add-metadata --embed-thumbnail --audio-format mp3 --audio-quality 0 --metadata-from-title="%(artist)s - %(title)s" --prefer-ffmpeg -o "%(title)s.%(ext)s"'';
-          cat = "${lib.getExe bat} --style=plain";
-          grep = lib.getExe ripgrep;
-          du = lib.getExe du-dust;
-          ps = lib.getExe procs;
-          m = "mkdir -p";
-          fcd = "cd $(find -type d | fzf)";
-          # ls = "${lib.getExe eza} -h --git --icons --color=auto --group-directories-first -s extension";
-          l = "ls -lF --time-style=long-iso --icons";
-          sc = "sudo systemctl";
-          scu = "systemctl --user ";
-          # la = "${lib.getExe eza} -lah --tree";
-          tree = "${lib.getExe eza} --tree --icons --tree";
-          http = "${lib.getExe python3} -m http.server";
-          burn = "pkill -9";
-          diff = "diff --color=auto";
-          kys = "doas shutdown now";
-          killall = "pkill";
-          gpl3init = "cp ${gpl3} LICENSE";
-          prefetch-github = "nix-shell -p nix-prefetch-github";
-          ".." = "cd ..";
-          "..." = "cd ../../";
-          "...." = "cd ../../../";
-          "....." = "cd ../../../../";
-          "......" = "cd ../../../../../";
+      in with pkgs; {
+        rebuild = ''
+          sudo nix-store --verify; pushd ~dotfiles && sudo nixos-rebuild switch --flake .# && notify-send "Done"&& bat cache --build; popd'';
+        # cleanup = "sudo nix-collect-garbage --delete-older-than 7d";
+        bloat = "nix path-info -Sh /run/current-system";
+        ytmp3 = ''
+          ${
+            lib.getExe yt-dlp
+          } -x --continue --add-metadata --embed-thumbnail --audio-format mp3 --audio-quality 0 --metadata-from-title="%(artist)s - %(title)s" --prefer-ffmpeg -o "%(title)s.%(ext)s"'';
+        cat = "${lib.getExe bat} --style=plain";
+        grep = lib.getExe ripgrep;
+        du = lib.getExe du-dust;
+        ps = lib.getExe procs;
+        m = "mkdir -p";
+        fcd = "cd $(find -type d | fzf)";
+        # ls = "${lib.getExe eza} -h --git --icons --color=auto --group-directories-first -s extension";
+        l = "ls -lF --time-style=long-iso --icons";
+        sc = "sudo systemctl";
+        scu = "systemctl --user ";
+        # la = "${lib.getExe eza} -lah --tree";
+        tree = "${lib.getExe eza} --tree --icons --tree";
+        http = "${lib.getExe python3} -m http.server";
+        burn = "pkill -9";
+        diff = "diff --color=auto";
+        kys = "doas shutdown now";
+        killall = "pkill";
+        gpl3init = "cp ${gpl3} LICENSE";
+        prefetch-github = "nix-shell -p nix-prefetch-github";
+        ".." = "cd ..";
+        "..." = "cd ../../";
+        "...." = "cd ../../../";
+        "....." = "cd ../../../../";
+        "......" = "cd ../../../../../";
 
-          g = "git";
-          # sudo = "doas";
-          protontricks = "flatpak run com.github.Matoking.protontricks";
-        };
+        g = "git";
+        # sudo = "doas";
+        protontricks = "flatpak run com.github.Matoking.protontricks";
+      };
 
       plugins = with pkgs; [
         {

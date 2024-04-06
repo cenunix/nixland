@@ -1,18 +1,11 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
+{ inputs, outputs, lib, config, pkgs, ... }: {
   xdg.configFile."lf/icons".source = ./icons;
 
   programs.lf = {
     enable = true;
     commands = {
       dragon-out = ''%${pkgs.xdragon}/bin/xdragon -a -x "$fx"'';
-      editor-open = ''$$EDITOR $f'';
+      editor-open = "$$EDITOR $f";
       mkdir = ''
         ''${{
           printf "Directory Name: "
@@ -38,7 +31,7 @@
       "g/" = "/";
 
       ee = "editor-open";
-      V = ''$${pkgs.bat}/bin/bat --paging=always --theme=gruvbox "$f"'';
+      V = ''$''${pkgs.bat}/bin/bat --paging=always --theme=gruvbox "$f"'';
 
       # ...
     };

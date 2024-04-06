@@ -1,11 +1,1 @@
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, ...
-}: {
-  imports = [
-    ./anyrun
-  ];
-}
+{ inputs, outputs, lib, config, pkgs, ... }: { imports = [ ./anyrun ]; }

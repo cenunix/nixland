@@ -1,12 +1,1 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
-  imports = [
-    ./audio.nix
-  ];
-}
+{ inputs, outputs, lib, config, pkgs, ... }: { imports = [ ./audio.nix ]; }

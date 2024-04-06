@@ -1,14 +1,6 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  osConfig,
-  ...
-}:
-with lib; let
-  env = config.modules.usrEnv;
+{ inputs, outputs, lib, config, pkgs, osConfig, ... }:
+with lib;
+let env = config.modules.usrEnv;
 in {
   config = mkIf (env.isWayland) {
     services.xserver.enable = true;
@@ -25,7 +17,7 @@ in {
           Restart = "always";
           RestartSec = "1";
         };
-        wantedBy = ["multi-user.target"];
+        wantedBy = [ "multi-user.target" ];
       };
     };
   };

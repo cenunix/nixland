@@ -1,9 +1,9 @@
-{lib, ...}: let
+{ lib, ... }:
+let
   inherit (lib) mkOptionDefault mapAttrs;
 
   hardenService = attrs:
-    attrs
-    // (mapAttrs (_: mkOptionDefault) {
+    attrs // (mapAttrs (_: mkOptionDefault) {
       AmbientCapabilities = "";
       CapabilityBoundingSet = "";
       LockPersonality = true;
@@ -23,7 +23,7 @@
       ProtectProc = "invisible";
       ProtectSystem = "strict";
       RemoveIPC = true;
-      RestrictAddressFamilies = ["AF_UNIX" "AF_INET" "AF_INET6"];
+      RestrictAddressFamilies = [ "AF_UNIX" "AF_INET" "AF_INET6" ];
       RestrictNamespaces = true;
       RestrictRealtime = true;
       RestrictSUIDSGID = true;
@@ -35,6 +35,4 @@
         "~@clock @cpu-emulation @debug @module @mount @obsolete @privileged @raw-io @reboot @swap"
       ];
     });
-in {
-  inherit hardenService;
-}
+in { inherit hardenService; }

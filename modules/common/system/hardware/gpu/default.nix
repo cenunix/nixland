@@ -1,7 +1,1 @@
-_: {
-  imports = [
-    ./intel
-    ./nvidia
-    ./amd
-  ];
-}
+_: { imports = [ ./intel ./nvidia ./amd ]; }

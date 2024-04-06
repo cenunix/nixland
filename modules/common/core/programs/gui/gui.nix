@@ -1,12 +1,6 @@
-{
-  pkgs,
-  inputs,
-  lib,
-  config,
-  ...
-}:
-with lib; let
-  env = config.modules.usrEnv;
+{ pkgs, inputs, lib, config, ... }:
+with lib;
+let env = config.modules.usrEnv;
 in {
   services.xserver = mkIf (env.desktop == "Gnome") {
     enable = true;
@@ -14,9 +8,7 @@ in {
     desktopManager.gnome.enable = true;
   };
   services.flatpak.enable = true;
-  hardware = mkIf (env.desktop == "Gnome") {
-    pulseaudio.enable = false;
-  };
+  hardware = mkIf (env.desktop == "Gnome") { pulseaudio.enable = false; };
   environment = {
     systemPackages = with pkgs; [
       # packages necessary for thunar thumbnails

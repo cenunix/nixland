@@ -1,12 +1,12 @@
-{lib, ...}: let
-  inherit (lib) mkIf;
+{ lib, ... }:
+let inherit (lib) mkIf;
 in {
   wayland.windowManager.hyprland.settings = {
     # layer rules
     layerrule = let
-      toRegex = list: let
-        elements = lib.concatStringsSep "|" list;
-      in "^(${elements})$";
+      toRegex = list:
+        let elements = lib.concatStringsSep "|" list;
+        in "^(${elements})$";
 
       ignorealpha = [
         # ags
@@ -18,12 +18,12 @@ in {
         "anyrun"
       ];
 
-      layers = ignorealpha ++ ["bar" "gtk-layer-shell"];
+      layers = ignorealpha ++ [ "bar" "gtk-layer-shell" ];
     in [
       "blur, ${toRegex layers}"
-      "xray 1, ${toRegex ["bar" "gtk-layer-shell"]}"
-      "ignorealpha 0.2, ${toRegex ["bar" "gtk-layer-shell"]}"
-      "ignorealpha 0.5, ${toRegex (ignorealpha ++ ["music"])}"
+      "xray 1, ${toRegex [ "bar" "gtk-layer-shell" ]}"
+      "ignorealpha 0.2, ${toRegex [ "bar" "gtk-layer-shell" ]}"
+      "ignorealpha 0.5, ${toRegex (ignorealpha ++ [ "music" ])}"
     ];
     windowrulev2 = [
       # window rules go here

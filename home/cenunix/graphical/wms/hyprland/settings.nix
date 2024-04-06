@@ -1,24 +1,20 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  osConfig,
-  ...
-}: let
+{ inputs, outputs, lib, config, pkgs, osConfig, ... }:
+let
   inherit (lib) mkIf;
   inherit (osConfig) modules;
   inherit (modules) device;
   inherit (modules.style) pointerCursor;
 in {
-  wayland.windowManager.hyprland.settings = let
-    monitorConfig = builtins.concatStringsSep "\n" (builtins.map (monitor: ''monitor=${monitor}'') device.monitors);
-  in {
+  wayland.windowManager.hyprland.extraConfig = let
+    monitorConfig = builtins.concatStringsSep "\n"
+      (builtins.map (monitor: "monitor=${monitor}") device.monitors);
+  in ''
+    ${monitorConfig}
+  '';
+  wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
     exec-once = [
       "hyprctl setcursor ${pointerCursor.name} ${toString pointerCursor.size}"
-      "${monitorConfig}"
     ];
     input = {
       follow_mouse = 1;
@@ -34,7 +30,8 @@ in {
       resize_on_border = true;
     };
     decoration = {
-      screen_shader = mkIf (device.gpu == "nvidia") "${config.xdg.configHome}/hypr/shaders/bluelight.glsl";
+      screen_shader = mkIf (device.gpu == "nvidia")
+        "${config.xdg.configHome}/hypr/shaders/bluelight.glsl";
       drop_shadow = true;
       shadow_range = 20;
       shadow_render_power = 3;
@@ -67,15 +64,14 @@ in {
     dwindle = {
       pseudotile = false; # enable pseudotiling on dwindle
     };
-    gestures = {
-      workspace_swipe = false;
-    };
+    gestures = { workspace_swipe = false; };
     misc = {
       animate_manual_resizes = true;
       disable_hyprland_logo = true;
       disable_splash_rendering = true;
       mouse_move_enables_dpms = true;
       key_press_enables_dpms = true;
+      vfr = 1;
       vrr = 1;
     };
   };

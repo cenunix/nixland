@@ -1,13 +1,6 @@
 # This is your system's configuration file.
 # Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
+{ inputs, outputs, lib, config, pkgs, ... }: {
   # You can import other NixOS modules here
   imports = [
     # If you want to use modules your own flake exports (from modules/nixos):
@@ -60,14 +53,14 @@
       #   });
       # })
       (final: prev: {
-        qrtr = prev.callPackage ../../pkgs/qrtr.nix {};
-        pd-mapper = final.callPackage ../../pkgs/pd-mapper.nix {inherit (final) qrtr;};
+        qrtr = prev.callPackage ../../pkgs/qrtr.nix { };
+        pd-mapper =
+          final.callPackage ../../pkgs/pd-mapper.nix { inherit (final) qrtr; };
         compressFirmwareXz = lib.id;
       })
     ];
     # Configure your nixpkgs instance
-    config = {
-    };
+    config = { };
   };
 
   time = {

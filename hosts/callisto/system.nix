@@ -1,29 +1,18 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}:
-with lib; let
-  device = config.modules.device;
+{ inputs, outputs, lib, config, pkgs, ... }:
+with lib;
+let device = config.modules.device;
 in {
   config = {
     modules = {
       device = {
         type = "armlaptop";
-        monitors = [
-          ",preferred,auto,1.2"
-        ];
+        monitors = [ ",preferred,auto,1.2" ];
         hasBluetooth = true;
         hasSound = true;
       };
       system = {
         username = "cenunix";
-        boot = {
-          loader = "x13s-boot";
-        };
+        boot = { loader = "x13s-boot"; };
         video.enable = true;
         sound.enable = true;
         bluetooth.enable = true;
@@ -37,7 +26,7 @@ in {
           chess.enable = false;
           steam.enable = false;
         };
-        override = {};
+        override = { };
       };
       usrEnv = {
         isWayland = true;

@@ -1,20 +1,11 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}:
-with lib; let
+{ inputs, outputs, lib, config, pkgs, ... }:
+with lib;
+let
   env = config.modules.usrEnv;
   device = config.modules.device;
-  acceptedTypes = ["desktop" "laptop"];
+  acceptedTypes = [ "desktop" "laptop" ];
 in {
-  imports = [
-    ./services.nix
-    ./xdg-portals.nix
-  ];
+  imports = [ ./services.nix ./xdg-portals.nix ];
 
   config = mkIf (env.isWayland) {
     # nixpkgs.overlays = with inputs; [nixpkgs-wayland.overlay];
@@ -59,10 +50,11 @@ in {
         {
           enable = true;
           driSupport = true;
-          extraPackages = with pkgs; [
-            # vaapiVdpau
-            libvdpau-va-gl
-          ];
+          extraPackages = with pkgs;
+            [
+              # vaapiVdpau
+              libvdpau-va-gl
+            ];
         }
         (mkIf (builtins.elem device.type acceptedTypes) {
           driSupport32Bit = true;
@@ -73,12 +65,13 @@ in {
     systemd = {
       user.services.polkit-gnome-authentication-agent-1 = {
         description = "polkit-gnome-authentication-agent-1";
-        wantedBy = ["graphical-session.target"];
-        wants = ["graphical-session.target"];
-        after = ["graphical-session.target"];
+        wantedBy = [ "graphical-session.target" ];
+        wants = [ "graphical-session.target" ];
+        after = [ "graphical-session.target" ];
         serviceConfig = {
           Type = "simple";
-          ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+          ExecStart =
+            "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
           Restart = "on-failure";
           RestartSec = 1;
           TimeoutStopSec = 10;

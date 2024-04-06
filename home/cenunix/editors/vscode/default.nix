@@ -1,16 +1,9 @@
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, osConfig
-, ...
-}:
-with lib; let
+{ inputs, outputs, lib, config, pkgs, osConfig, ... }:
+with lib;
+let
   device = osConfig.modules.device;
   acceptedTypes = [ "desktop" "laptop" "armlaptop" ];
-in
-{
+in {
   config = mkIf (builtins.elem device.type acceptedTypes) {
     programs.vscode = {
       enable = true;
@@ -30,20 +23,18 @@ in
           redhat.vscode-yaml
           irongeek.vscode-env
           github.vscode-pull-request-github
-        ]
-        ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-          {
-            name = "vscode-chromium-vector-icons";
-            publisher = "adolfdaniel";
-            version = "1.0.2";
-            sha256 = "sha256-Meo53e/3jUP6YDEXOA/40xghI77jj4iAQus3/S8RPZI=";
-          }
-        ];
+        ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [{
+          name = "vscode-chromium-vector-icons";
+          publisher = "adolfdaniel";
+          version = "1.0.2";
+          sha256 = "sha256-Meo53e/3jUP6YDEXOA/40xghI77jj4iAQus3/S8RPZI=";
+        }];
       userSettings = {
         "workbench.iconTheme" = "material-icon-theme";
         "workbench.colorTheme" = "Catppuccin Mocha";
         "catppuccin.accentColor" = "blue";
-        "editor.fontFamily" = "JetBrainsMono Nerd Font, Material Design Icons, 'monospace', monospace";
+        "editor.fontFamily" =
+          "JetBrainsMono Nerd Font, Material Design Icons, 'monospace', monospace";
         "editor.fontSize" = 16;
         "editor.fontLigatures" = true;
         "workbench.fontAliasing" = "antialiased";

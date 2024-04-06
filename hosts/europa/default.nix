@@ -1,10 +1,6 @@
 {
-  imports = [
-    ./configuration.nix
-  ];
+  imports = [ ./configuration.nix ];
 
-  networking = {
-    hostName = "europa";
-  };
+  networking = { hostName = "europa"; };
   system.stateVersion = "23.05";
 }

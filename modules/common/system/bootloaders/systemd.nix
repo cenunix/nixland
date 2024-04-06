@@ -1,11 +1,5 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: let
+{ inputs, outputs, lib, config, pkgs, ... }:
+let
   inherit (lib) mkDefault mkIf;
 
   cfg = config.modules.system;

@@ -1,12 +1,1 @@
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, ...
-}: {
-  imports = [
-    ./core
-    ./system
-  ];
-}
+{ inputs, outputs, lib, config, pkgs, ... }: { imports = [ ./core ./system ]; }

@@ -1,10 +1,4 @@
-{
-  inputs,
-  osConfig,
-  pkgs,
-  lib,
-  ...
-}: {
+{ inputs, osConfig, pkgs, lib, ... }: {
   home.packages = with pkgs; [
     mpv
     vlc

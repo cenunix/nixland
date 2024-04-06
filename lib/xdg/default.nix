@@ -1,5 +1,1 @@
-_: let
-  xdgTemplate = ./. + /template.nix;
-in {
-  inherit xdgTemplate;
-}
+_: let xdgTemplate = ./. + /template.nix; in { inherit xdgTemplate; }

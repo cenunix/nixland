@@ -1,18 +1,14 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}:
-with lib; let
+{ config, pkgs, lib, ... }:
+with lib;
+let
   # use the latest possible nvidia package
   nvStable = config.boot.kernelPackages.nvidiaPackages.stable.version;
   nvBeta = config.boot.kernelPackages.nvidiaPackages.beta.version;
 
-  nvidiaPackage =
-    if (versionOlder nvBeta nvStable)
-    then config.boot.kernelPackages.nvidiaPackages.stable
-    else config.boot.kernelPackages.nvidiaPackages.beta;
+  nvidiaPackage = if (versionOlder nvBeta nvStable) then
+    config.boot.kernelPackages.nvidiaPackages.stable
+  else
+    config.boot.kernelPackages.nvidiaPackages.beta;
 
   device = config.modules.device;
   env = config.modules.usrEnv;
@@ -23,7 +19,7 @@ in {
 
     services.xserver = mkMerge [
       {
-        videoDrivers = ["nvidia"];
+        videoDrivers = [ "nvidia" ];
       }
 
       # xorg settings
@@ -46,14 +42,12 @@ in {
     boot = {
       # blacklist nouveau module so that it does not conflict with nvidia drm stuff
       # also the nouveau performance is godawful, I'd rather run linux on a piece of paper than use nouveau
-      blacklistedKernelModules = ["nouveau"];
+      blacklistedKernelModules = [ "nouveau" ];
     };
 
     environment = {
       sessionVariables = mkMerge [
-        {
-          LIBVA_DRIVER_NAME = "nvidia";
-        }
+        { LIBVA_DRIVER_NAME = "nvidia"; }
 
         (mkIf (env.isWayland) {
           WLR_NO_HARDWARE_CURSORS = "1";
@@ -121,8 +115,8 @@ in {
 
       opengl = {
         enable = true;
-        extraPackages = with pkgs; [nvidia-vaapi-driver libvdpau-va-gl];
-        extraPackages32 = with pkgs.pkgsi686Linux; [nvidia-vaapi-driver];
+        extraPackages = with pkgs; [ nvidia-vaapi-driver libvdpau-va-gl ];
+        extraPackages32 = with pkgs.pkgsi686Linux; [ nvidia-vaapi-driver ];
       };
     };
   };

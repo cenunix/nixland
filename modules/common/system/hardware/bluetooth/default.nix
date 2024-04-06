@@ -1,14 +1,7 @@
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, ...
-}:
-with lib; let
-  sys = config.modules.system.bluetooth;
-in
-{
+{ inputs, outputs, lib, config, pkgs, ... }:
+with lib;
+let sys = config.modules.system.bluetooth;
+in {
   config = mkIf (sys.enable) {
     hardware.bluetooth = {
       enable = true;
@@ -19,7 +12,7 @@ in
       settings = {
         General = {
           JustWorksRepairing = "always";
-          Experimental = true; 
+          Experimental = true;
           MultiProfile = "multiple";
         };
       };

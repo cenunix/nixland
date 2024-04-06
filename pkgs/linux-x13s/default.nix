@@ -1,8 +1,5 @@
-{ pkgs
-, ...
-} @ args:
-pkgs.pinned.buildLinux (args
-  // rec {
+{ pkgs, ... }@args:
+pkgs.pinned.buildLinux (args // rec {
   version = "6.6.0";
   modDirVersion = "6.6.0-rc5";
 
@@ -14,5 +11,4 @@ pkgs.pinned.buildLinux (args
     sha256 = "sha256-B9WtrWg7F6Rm72rgA36W6OWKLGo4cug7Sy3WOvols2Q=";
   };
   defconfig = "laptop_defconfig";
-}
-  // (args.argsOverride or { }))
+} // (args.argsOverride or { }))

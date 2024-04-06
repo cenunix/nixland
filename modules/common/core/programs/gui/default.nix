@@ -1,12 +1,1 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
-  imports = [
-    ./gui.nix
-  ];
-}
+{ inputs, outputs, lib, config, pkgs, ... }: { imports = [ ./gui.nix ]; }

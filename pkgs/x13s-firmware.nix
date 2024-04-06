@@ -1,13 +1,11 @@
-{ fetchzip
-, stdenvNoCC
-,
-}:
+{ fetchzip, stdenvNoCC, }:
 stdenvNoCC.mkDerivation rec {
   pname = "x13s-firmware";
   version = "1.0.0";
 
   src = fetchzip {
-    url = "https://github.com/cenunix/x13s-firmware/releases/download/1.0.0/x13s-firmware.tar.gz";
+    url =
+      "https://github.com/cenunix/x13s-firmware/releases/download/1.0.0/x13s-firmware.tar.gz";
     sha256 = "sha256-cr0WMKbGeJyQl5S8E7UEB/Fal6FY0tPenEpd88KFm9Q=";
     stripRoot = false;
   };

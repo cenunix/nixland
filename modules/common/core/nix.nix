@@ -1,19 +1,13 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
+{ inputs, outputs, lib, config, pkgs, ... }: {
   nix = {
     # This will add each flake input as a registry
     # To make nix3 commands consistent with your flake
-    registry = lib.mapAttrs (_: value: {flake = value;}) inputs;
+    registry = lib.mapAttrs (_: value: { flake = value; }) inputs;
 
     # This will additionally add your inputs to the system's legacy channels
     # Making legacy nix commands consistent as well, awesome!
-    nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
+    nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}")
+      config.nix.registry;
 
     # Garbage collection, delete older than 3d
     gc = {
@@ -39,9 +33,9 @@
       # use binary cache, its not gentoo
       builders-use-substitutes = true;
       # allow sudo users to mark the following values as trusted
-      allowed-users = ["@wheel"];
+      allowed-users = [ "@wheel" ];
       # only allow sudo users to manage the nix store
-      trusted-users = ["@wheel"];
+      trusted-users = [ "@wheel" ];
       # let system decide max number of jobs
       max-jobs = "auto";
       # don't warn me that my git tree is dirty, I know

@@ -1,20 +1,11 @@
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, osConfig
-, ...
-}:
-with lib; let
+{ inputs, outputs, lib, config, pkgs, osConfig, ... }:
+with lib;
+let
   device = osConfig.modules.device;
   acceptedTypes = [ "desktop" "laptop" "armlaptop" ];
-in
-{
+in {
   config = mkIf (builtins.elem device.type acceptedTypes) {
-    programs.nheko = {
-      enable = true;
-    };
+    programs.nheko = { enable = true; };
   };
 }
 

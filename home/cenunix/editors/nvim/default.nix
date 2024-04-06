@@ -1,11 +1,5 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: let
+{ inputs, outputs, lib, config, pkgs, ... }:
+let
   neovim = pkgs.neovim.override {
     # stupid defaults
     withPython3 = false;
@@ -56,7 +50,8 @@
           noice-nvim
           nui-nvim
           catppuccin-nvim
-          (nvim-treesitter.withPlugins (p: [p.c p.cpp p.nix p.lua p.go p.python p.qmljs p.qmldir]))
+          (nvim-treesitter.withPlugins
+            (p: [ p.c p.cpp p.nix p.lua p.go p.python p.qmljs p.qmldir ]))
         ];
       };
     };
@@ -78,7 +73,8 @@ in {
       stylua
       prettierd
       eslint_d
-      alejandra
+      nixpkgs-fmt
+      nixfmt
       nodePackages.pyright
       qt6.qtdeclarative
       black

@@ -1,10 +1,8 @@
 # Shell for bootstrapping flake-enabled nix and home-manager
 # You can enter it through 'nix develop' or (legacy) 'nix-shell'
 { pkgs ? (import ./nixpkgs.nix) { } }:
-let
-  pythonEnv = pkgs.python3.withPackages (ps: [ ]);
-in
-{
+let pythonEnv = pkgs.python3.withPackages (ps: [ ]);
+in {
   default = pkgs.mkShell {
     # Enable experimental features without having to specify the argument
     NIX_CONFIG = "experimental-features = nix-command flakes";

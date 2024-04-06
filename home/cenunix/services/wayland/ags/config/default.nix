@@ -1,31 +1,11 @@
-{ inputs
-, writeShellScript
-, system
-, stdenv
-, cage
-, swww
-, esbuild
-, dart-sass
-, fd
-, fzf
-, brightnessctl
-, accountsservice
-, slurp
-, wf-recorder
-, wl-clipboard
-, wayshot
-, swappy
-, hyprpicker
-, pavucontrol
-, networkmanager
-, gtk3
-, which
-}:
+{ inputs, writeShellScript, system, stdenv, cage, swww, esbuild, dart-sass, fd
+, fzf, brightnessctl, accountsservice, slurp, wf-recorder, wl-clipboard, wayshot
+, swappy, hyprpicker, pavucontrol, networkmanager, gtk3, which }:
 let
   name = "asztal";
 
   ags = inputs.ags.packages.${system}.default.override {
-    extraPackages = [accountsservice];
+    extraPackages = [ accountsservice ];
   };
 
   dependencies = [
@@ -48,7 +28,8 @@ let
     gtk3
   ];
 
-  addBins = list: builtins.concatStringsSep ":" (builtins.map (p: "${p}/bin") list);
+  addBins = list:
+    builtins.concatStringsSep ":" (builtins.map (p: "${p}/bin") list);
 
   greeter = writeShellScript "greeter" ''
     export PATH=$PATH:${addBins dependencies}

@@ -1,10 +1,6 @@
 {
-  imports = [
-    ./configuration.nix
-  ];
+  imports = [ ./configuration.nix ];
 
-  networking = {
-    hostName = "callisto";
-  };
+  networking = { hostName = "callisto"; };
   system.stateVersion = "23.05";
 }

@@ -1,13 +1,3 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
-  imports = [
-    ./paths.nix
-    ./xdg-ninja
-  ];
+{ inputs, outputs, lib, config, pkgs, ... }: {
+  imports = [ ./paths.nix ./xdg-ninja ];
 }

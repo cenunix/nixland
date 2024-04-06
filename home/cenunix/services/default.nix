@@ -1,11 +1,1 @@
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, ...
-}: {
-  imports = [
-    ./wayland
-  ];
-}
+{ inputs, outputs, lib, config, pkgs, ... }: { imports = [ ./wayland ]; }

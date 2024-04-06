@@ -1,9 +1,4 @@
-{
-  lib,
-  stdenv,
-  fetchFromGitHub,
-  systemd,
-}:
+{ lib, stdenv, fetchFromGitHub, systemd, }:
 stdenv.mkDerivation {
   pname = "qrtr";
   version = "1.0";
@@ -15,15 +10,15 @@ stdenv.mkDerivation {
     sha256 = "sha256-KF0gCBRw3BDJdK1s+dYhHkokVTHwRFO58ho0IwHPehc=";
   };
 
-  makeFlags = ["prefix=${placeholder "out"}"];
+  makeFlags = [ "prefix=${placeholder "out"}" ];
 
-  buildInputs = [systemd];
+  buildInputs = [ systemd ];
 
   meta = with lib; {
     homepage = "https://github.com/andersson/qrtr";
     description = "qrtr";
     license = licenses.bsd3;
-    maintainers = with maintainers; [cenunix];
+    maintainers = with maintainers; [ cenunix ];
     platforms = platforms.linux;
   };
 }

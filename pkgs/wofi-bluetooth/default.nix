@@ -1,10 +1,4 @@
-{
-  lib,
-  stdenv,
-  fetchFromGitHub,
-  makeWrapper,
-  bluez,
-}:
+{ lib, stdenv, fetchFromGitHub, makeWrapper, bluez, }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "wofi-bluetooth";
   version = "unstable";
@@ -16,7 +10,7 @@ stdenv.mkDerivation (finalAttrs: {
     sha256 = "sha256-g8Zg8TCqHFDIjHU/0lJ9qLdEFHeWvohzgyBPHvG7Sng=";
   };
 
-  nativeBuildInputs = [makeWrapper];
+  nativeBuildInputs = [ makeWrapper ];
 
   installPhase = ''
     runHook preInstall
@@ -24,16 +18,17 @@ stdenv.mkDerivation (finalAttrs: {
     install -D --target-directory=$out/bin/ ./wofi-bluetooth
 
     wrapProgram $out/bin/wofi-bluetooth \
-      --prefix PATH ":" ${lib.makeBinPath [bluez]}
+      --prefix PATH ":" ${lib.makeBinPath [ bluez ]}
 
     runHook postInstall
   '';
 
   meta = with lib; {
-    description = "Wofi-based interface to connect to bluetooth devices and display status info";
+    description =
+      "Wofi-based interface to connect to bluetooth devices and display status info";
     homepage = "https://github.com/nickclyde/wofi-bluetooth";
     license = licenses.gpl3Only;
-    maintainers = with maintainers; [cenunix];
+    maintainers = with maintainers; [ cenunix ];
     mainProgram = "wofi-bluetooth";
     platforms = platforms.linux;
   };

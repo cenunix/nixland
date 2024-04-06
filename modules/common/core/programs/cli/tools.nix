@@ -1,11 +1,3 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
-  environment.systemPackages = with pkgs; [
-  ];
+{ inputs, outputs, lib, config, pkgs, ... }: {
+  environment.systemPackages = with pkgs; [ ];
 }

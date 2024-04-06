@@ -1,12 +1,1 @@
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
-  imports = [
-    ./cenunix.nix
-  ];
-}
+{ inputs, outputs, lib, config, pkgs, ... }: { imports = [ ./cenunix.nix ]; }
