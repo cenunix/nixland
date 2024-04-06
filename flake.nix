@@ -11,6 +11,7 @@
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hypridle.url = "github:hyprwm/hypridle";
     hyprlock = {
       url = "github:hyprwm/Hyprlock/";
       inputs.nixpkgs.follows = "nixpkgs";

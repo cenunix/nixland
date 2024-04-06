@@ -1,7 +1,7 @@
 { inputs, osConfig, ... }:
 let
   inherit (osConfig) modules;
-  inherit (modules.style.colorscheme) colors;
+  inherit (modules.style.colorScheme) colors;
   font_family = "Lexend";
 in {
   imports = [ inputs.hyprlock.homeManagerModules.default ];
@@ -10,7 +10,7 @@ in {
     backgrounds = [{
       monitor = "";
       path =
-        "/home/cenunix/Personal/nicks/home/cenunix/graphical/wms/hyprland/wall.png";
+        "/home/cenunix/NixLand/home/cenunix/graphical/wms/hyprland/mountain.png";
     }];
 
     input-fields = [{
@@ -23,24 +23,22 @@ in {
 
       outline_thickness = 2;
 
-      outer_color = "rgb(${colors.base03})";
-      inner_color = "rgb(${colors.base04})";
-      font_color = "rgb(${colors.base05})";
+      outer_color = "rgb(69, 71, 90)";
+      inner_color = "rgb(49, 50, 68)";
+      font_color = "rgb(205, 214, 244)";
 
       fade_on_empty = false;
-      placeholder_text = ''
-        <span font_family="${font_family}" foreground="##${colors.base05}">Password...</span>'';
-
+      # placeholder_text = ''<span font_family="${font_family}" foreground=#cdd6f4>Password...</span>'';
       dots_spacing = 0.3;
       dots_center = true;
     }];
 
     labels = [{
       monitor = "";
-      text = "$TIME";
+      text = "$TIME cmd echo ''<span foreground='##ff2222'>$(date)</span>''";
       inherit font_family;
       font_size = 50;
-      color = "rgb(${c.primary})";
+      color = "rgb(205, 214, 244)";
 
       position = {
         x = 0;
