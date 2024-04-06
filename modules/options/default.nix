@@ -19,13 +19,13 @@ in {
       package = mkOption {
         type = types.package;
         description = "The package providing the cursors";
-        default = pkgs.catppuccin-cursors.mochaDark;
+        default = pkgs.bibata-cursors;
       };
 
       name = mkOption {
         type = types.str;
         description = "The name of the cursor inside the package";
-        default = "Catppuccin-Mocha-Dark-Cursors";
+        default = "Bibata-Modern-Ice";
       };
 
       size = mkOption {

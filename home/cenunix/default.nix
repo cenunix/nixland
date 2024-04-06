@@ -9,8 +9,9 @@
   agenix,
   self,
   ...
-}: {
-  config.home.stateVersion = "23.05";
+}: let
+  inherit (lib) mkDefault;
+in {
   imports = [
     ./editors
     ./graphical
@@ -21,4 +22,20 @@
     ./theme
     ./packages.nix
   ];
+  config = {
+    home = {
+      username = "cenunix";
+      homeDirectory = "/home/cenunix";
+      extraOutputsToInstall = ["doc" "devdoc"];
+
+      #version on config init
+      stateVersion = mkDefault "23.05";
+    };
+    manual = {
+      # the docs suck, so we disable them to save space
+      html.enable = false;
+      json.enable = false;
+      manpages.enable = true;
+    };
+  };
 }

@@ -68,6 +68,7 @@ in {
       neovide
       deadnix
       statix
+      nixd
       nil
       gopls
       clang-tools

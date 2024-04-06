@@ -36,21 +36,29 @@
   };
 in {
   xdg = {
+    enable = true;
+    cacheHome = "${config.home.homeDirectory}/.cache";
+    configHome = "${config.home.homeDirectory}/.config";
+    dataHome = "${config.home.homeDirectory}/.local/share";
+    stateHome = "${config.home.homeDirectory}/.local/state";
+
     userDirs = {
       enable = true;
       createDirectories = true;
-      documents = "$HOME/Documents";
-      download = "$HOME/Downloads";
-      videos = "$HOME/Media/Videos";
-      music = "$HOME/Media/Music";
-      pictures = "$HOME/Media/Pictures";
-      desktop = "$HOME/Desktop";
-      publicShare = "$HOME/Public/Share";
-      templates = "$HOME/Public/Templates";
+
+      download = "${config.home.homeDirectory}/Downloads";
+      desktop = "${config.home.homeDirectory}/Desktop";
+      documents = "${config.home.homeDirectory}/Documents";
+
+      publicShare = "${config.home.homeDirectory}/.local/share/public";
+      templates = "${config.home.homeDirectory}/.local/share/templates";
+
+      music = "${config.home.homeDirectory}/Media/Music";
+      pictures = "${config.home.homeDirectory}/Media/Pictures";
+      videos = "${config.home.homeDirectory}/Media/Videos";
 
       extraConfig = {
         XDG_SCREENSHOTS_DIR = "${config.xdg.userDirs.pictures}/Screenshots";
-        XDG_DEV_DIR = "$HOME/Dev";
       };
     };
 

@@ -26,7 +26,7 @@ in {
     []
     ++ optionals (builtins.elem device.type ["desktop" "laptop" "armlaptop"]) [
       # Shared Packages between all systems
-      ttyper
+      #tools
       unzip
       ripgrep
       fd
@@ -38,26 +38,22 @@ in {
       lm_sensors
       dua
       unrar
-      vim
       powertop
       nh
       file
-      porsmo
       wget
       gnome.zenity
       nix-prefetch-github
-      signal-desktop
-      signal-desktop-beta
+      #actual apps
       telegram-desktop
+      ttyper
       wofi
       wofi-bluetooth
-      protonmail-desktop
     ]
     ++ optionals (builtins.elem device.type ["desktop"]) [
       nvtop
     ]
     ++ optionals (builtins.elem device.type ["desktop" "laptop"]) [
-      ungoogled-chromium
     ]
     ++ optionals (builtins.elem device.type ["armlaptop"]) [
       # additional packages for arm laptop (x13s as of now) machines that use home-manager

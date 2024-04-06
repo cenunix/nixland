@@ -12,6 +12,18 @@ require("lspconfig").nil_ls.setup({
     },
   },
 })
+-- require("lspconfig").nixd.setup({
+--   autostart = true,
+--   capabilities = capabilities,
+--   cmd = { "nixd" },
+--   settings = {
+--     ["nixd"] = {
+--       formatting = {
+--         command = { "alejandra", "--quiet" },
+--       },
+--     },
+--   },
+-- })
 require("lspconfig").clangd.setup({
   autostart = true,
   capabilities = capabilities,

@@ -6,9 +6,9 @@
   pkgs,
   osConfig,
   ...
-}:
-with lib; let
-  device = osConfig.modules.device;
+}: let
+  inherit (lib) mkIf;
+  inherit (osConfig.modules) device;
   acceptedTypes = ["desktop" "laptop" "armlaptop"];
 in {
   config = mkIf (builtins.elem device.type acceptedTypes) {
@@ -33,32 +33,28 @@ in {
         size = 13;
       };
       gtk3.extraConfig = {
+        gtk-toolbar-style = "GTK_TOOLBAR_BOTH";
+        gtk-toolbar-icon-size = "GTK_ICON_SIZE_LARGE_TOOLBAR";
+        gtk-decoration-layout = "appmenu:none";
+        gtk-button-images = 1;
+        gtk-menu-images = 1;
+        gtk-enable-event-sounds = 0;
+        gtk-enable-input-feedback-sounds = 0;
         gtk-xft-antialias = 1;
         gtk-xft-hinting = 1;
         gtk-xft-hintstyle = "hintslight";
-        gtk-xft-rgba = "rgb";
+        gtk-error-bell = 0;
+        gtk-application-prefer-dark-theme = true;
       };
-      gtk2.extraConfig = ''
-        gtk-xft-antialias=1
-        gtk-xft-hinting=1
-        gtk-xft-hintstyle="hintslight"
-        gtk-xft-rgba="rgb"
-      '';
-    };
-
-    # cursor theme
-    home.pointerCursor = {
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Ice";
-      size = 24;
-      gtk.enable = true;
-      x11.enable = true;
-    };
-
-    home.sessionVariables = {
-      # XCURSOR_SIZE = lib.mkOverride "16";
-      XCURSOR_SIZE = "16";
-      GTK_USE_PORTAL = "1";
+      gtk2 = {
+        configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
+        extraConfig = ''
+          gtk-xft-antialias=1
+          gtk-xft-hinting=1
+          gtk-xft-hintstyle="hintslight"
+          gtk-xft-rgba="rgb"
+        '';
+      };
     };
 
     # credits: bruhvko

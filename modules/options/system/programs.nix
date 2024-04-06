@@ -56,7 +56,7 @@ with lib; {
 
         fileManager = mkOption {
           type = types.enum ["thunar" "dolphin" "nemo"];
-          default = "dolphin";
+          default = "thunar";
         };
 
         browser = mkOption {
@@ -71,7 +71,7 @@ with lib; {
 
         launcher = mkOption {
           type = types.enum ["rofi" "wofi" "anyrun"];
-          default = "rofi";
+          default = "anyrun";
         };
       };
     };
