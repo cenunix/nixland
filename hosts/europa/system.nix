@@ -52,7 +52,7 @@
         desktop = "Hyprland";
         windowManager = true;
         useHomeManager = true;
-        autologin = false;
+        autologin = true;
       };
     };
   };

@@ -14,7 +14,7 @@ in {
     }];
 
     input-fields = [{
-      monitor = "DP-2";
+      monitor = "DP-1";
 
       size = {
         width = 300;
@@ -23,8 +23,8 @@ in {
 
       outline_thickness = 2;
 
-      outer_color = "rgb(69, 71, 90)";
-      inner_color = "rgb(49, 50, 68)";
+      outer_color = "rgb(108, 112, 134)";
+      inner_color = "rgb(108, 112, 134)";
       font_color = "rgb(205, 214, 244)";
 
       fade_on_empty = false;
@@ -35,7 +35,7 @@ in {
 
     labels = [{
       monitor = "";
-      text = "$TIME cmd echo ''<span foreground='##ff2222'>$(date)</span>''";
+      text = "$TIME";
       inherit font_family;
       font_size = 50;
       color = "rgb(205, 214, 244)";

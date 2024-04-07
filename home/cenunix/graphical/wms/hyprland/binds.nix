@@ -30,6 +30,7 @@ in {
       "$mod, B, movecurrentworkspacetomonitor, DP-1"
       "$mod SHIFT, B, movecurrentworkspacetomonitor, DP-2"
 
+      "$mod, I, exec, hyprlock"
       "$mod, Return, exec, ${default.terminal}"
       "$mod, E, exec, ${default.fileManager}"
       "$mod, N, exec, neovide"

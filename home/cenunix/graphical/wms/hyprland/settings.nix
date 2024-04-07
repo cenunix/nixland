@@ -15,7 +15,7 @@ in {
     "$mod" = "SUPER";
     exec-once = [
       "hyprctl setcursor ${pointerCursor.name} ${toString pointerCursor.size}"
-      "hyprlock"
+      "hyprlock && ags -b hypr"
     ];
     input = {
       follow_mouse = 1;

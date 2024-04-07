@@ -19,8 +19,8 @@ in {
     lockCmd = lib.getExe config.programs.hyprlock.package;
 
     listeners = [{
-      timeout = 330;
-      onTimeout = suspendScript.outPath;
+      timeout = 30;
+      onTimeout = "${lib.getExe config.programs.hyprlock.package}";
     }];
   };
 }
