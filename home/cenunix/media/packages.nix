@@ -11,5 +11,6 @@
     jellyfin-media-player
     jellycli
     plexamp
+    tidal-hifi
   ];
 }

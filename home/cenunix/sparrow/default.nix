@@ -4,5 +4,6 @@ let
   inherit (osConfig) modules;
   inherit (modules) device;
 in {
-  home.packages = with pkgs; mkIf (device.type != "server") [ qbittorrent ];
+  home.packages = with pkgs;
+    mkIf (device.type != "server") [ qbittorrent streamrip ];
 }
