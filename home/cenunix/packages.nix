@@ -14,8 +14,8 @@ in {
   home.packages = with pkgs;
   # exclude server device type
     [ ] ++ optionals
+    # shared packages between all systems
     (builtins.elem device.type [ "desktop" "laptop" "armlaptop" ]) [
-      # Shared Packages between all systems
       #tools
       unzip
       ripgrep

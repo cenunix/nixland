@@ -5,5 +5,5 @@ let
   inherit (modules) device;
 in {
   home.packages = with pkgs;
-    mkIf (device.type != "server") [ qbittorrent streamrip ];
+    mkIf (device.type != "server") [ qbittorrent streamrip lame ];
 }

@@ -28,15 +28,17 @@ in {
       font_color = "rgb(205, 214, 244)";
 
       fade_on_empty = false;
-      # placeholder_text = ''<span font_family="${font_family}" foreground=#cdd6f4>Password...</span>'';
+      # placeholder_text =
+      #   "<span font_family='Lexend' foreground=##cdd6f4>Password...</span>";
       dots_spacing = 0.3;
       dots_center = true;
     }];
 
     labels = [{
       monitor = "";
-      text = "$TIME";
       inherit font_family;
+      text = ''
+        cmd[update:1000] echo "<span font_family='Lexend' foreground='##cdd6f4'>$(date +%r)</span>"'';
       font_size = 50;
       color = "rgb(205, 214, 244)";
 
