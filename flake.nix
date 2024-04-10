@@ -8,7 +8,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland = {
-      url = "github:hyprwm/Hyprland";
+      url = "github:hyprwm/Hyprland?ref=v0.38.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hypridle.url = "github:hyprwm/hypridle";
@@ -33,6 +33,10 @@
     };
     sss = {
       url = "github:SergioRibera/sss";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    arrpc = {
+      url = "github:notashelf/arrpc-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
