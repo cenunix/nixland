@@ -54,8 +54,7 @@ stdenvNoCC.mkDerivation rec {
     })
   ];
 
-  buildInputs =
-    [ gnome-themes-extra (python3.withPackages (ps: [ ps.catppuccin ])) ];
+  buildInputs = [ gnome-themes-extra ../pythcatppuccin ];
 
   propagatedUserEnvPkgs = [ gtk-engine-murrine ];
 
