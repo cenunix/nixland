@@ -8,10 +8,10 @@ python3Packages.buildPythonApplication rec {
   pyproject = true;
 
   src = fetchFromGitHub {
-    owner = "nathom";
+    owner = "cenunix";
     repo = "streamrip";
-    rev = "v${version}";
-    hash = "sha256-KwMt89lOPGt6nX7ywliG/iAJ1WnG0CRPwhAVlPR85q0=";
+    rev = "f2c549b3c5422484df8c7787acb53442f20dce6c";
+    hash = "sha256-olkzYo/CiBaL5wvtyn6fYpRPT16FHPFyp3O6Uw9UBk0=";
   };
 
   patches = [ ./patches/ensure-the-default-config-file-is-writable.patch ];

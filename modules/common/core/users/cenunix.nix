@@ -18,8 +18,13 @@ in {
       #   # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
       # ];
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
-      extraGroups = [ "wheel" "networkManager" "video" ]
-        ++ ifTheyExist [ "docker" "libvirtd" "kvm" "qemu-libvirtd" ];
+      extraGroups = [ "wheel" "networkManager" "video" ] ++ ifTheyExist [
+        "docker"
+        "libvirtd"
+        "kvm"
+        "qemu-libvirtd"
+        "wireshark"
+      ];
       openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINhMaC2Hg0H3VjCiFyOlQmn8OWRuKSR05LIP1jdp5zpu cenunix@europa"
       ];

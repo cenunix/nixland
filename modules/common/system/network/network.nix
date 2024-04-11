@@ -41,10 +41,13 @@
   };
   # slows down boot time
   systemd.services.NetworkManager-wait-online.enable = false;
-  programs.ssh = {
-    startAgent = true;
-    askPassword =
-      lib.mkForce "${pkgs.gnome.seahorse}/libexec/seahorse/ssh-askpass";
+  programs = {
+    ssh = {
+      startAgent = true;
+      askPassword =
+        lib.mkForce "${pkgs.gnome.seahorse}/libexec/seahorse/ssh-askpass";
+    };
+    wireshark.enable = true;
   };
   services.openssh = {
     enable = true;

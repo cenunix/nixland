@@ -6,7 +6,8 @@
   alsa-ucm-conf-x13s = pkgs.callPackage ./alsa-ucm-conf-x13s.nix { };
   linux_x13s_pkg = pkgs.callPackage ./linux-x13s/default.nix { };
   # other various packages
-  custom-gtk = pkgs.callPackage ./custom-gtk { };
+  pythcat = pkgs.python3Packages.callPackage ./pythcatppuccin { };
+  custom-gtk = pkgs.callPackage ./custom-gtk { inherit pythcat; };
   catppuccin-cursors = pkgs.callPackage ./catppuccin-cursors.nix { };
   gg-sans = pkgs.callPackage ./gg-sans { };
   my-webcord = pkgs.callPackage ./webcord/default.nix { };

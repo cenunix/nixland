@@ -1,6 +1,7 @@
-{ lib, stdenvNoCC, fetchFromGitHub, fetchpatch, gtk3, colloid-gtk-theme
-, gnome-themes-extra, gtk-engine-murrine, python3, sassc, nix-update-script
-, accents ? [ "blue" ], size ? "standard", tweaks ? [ ], variant ? "frappe" }:
+{ lib, stdenvNoCC, pkgs, fetchFromGitHub, pythcat, fetchpatch, gtk3
+, colloid-gtk-theme, gnome-themes-extra, gtk-engine-murrine, python3, sassc
+, nix-update-script, accents ? [ "blue" ], size ? "standard", tweaks ? [ ]
+, variant ? "frappe" }:
 let
   validAccents = [
     "blue"
@@ -36,8 +37,8 @@ stdenvNoCC.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "cenunix";
     repo = "gtk";
-    rev = "21a3afb2460bed867adec283087bd4947ccf026b";
-    hash = "sha256-j9/U50WZ55eLFqKxrgVEYfzuQK8vBLci0122+yUnXe8=";
+    rev = "edef76faba00f1f8bd8311fc487f0f0b2670dd0d";
+    hash = "sha256-pGL8vaE63ss2ZT2FoNDfDkeuCxjcbl02RmwwfHC/Vxg=";
   };
   nativeBuildInputs = [ gtk3 sassc ];
 
@@ -46,15 +47,15 @@ stdenvNoCC.mkDerivation rec {
 
     # Can be removed next release
     # Adds compatibility with the 2.x.x versions of the catppuccin python package
-    (fetchpatch {
-      name = "catppuccin-python-compatibility.patch";
-      url =
-        "https://github.com/catppuccin/gtk/commit/355e12387f73b27cf4734a6a3eb431554fabb74f.patch";
-      hash = "sha256-4vgZbNeGMtsQEitIWDCVb5o4fAjhVu3iIUttUYqtHPc=";
-    })
+    # (fetchpatch {
+    #   name = "catppuccin-python-compatibility.patch";
+    #   url =
+    #     "https://github.com/catppuccin/gtk/commit/355e12387f73b27cf4734a6a3eb431554fabb74f.patch";
+    #   hash = "sha256-4vgZbNeGMtsQEitIWDCVb5o4fAjhVu3iIUttUYqtHPc=";
+    # })
   ];
 
-  buildInputs = [ gnome-themes-extra ../pythcatppuccin ];
+  buildInputs = [ gnome-themes-extra pythcat ];
 
   propagatedUserEnvPkgs = [ gtk-engine-murrine ];
 
