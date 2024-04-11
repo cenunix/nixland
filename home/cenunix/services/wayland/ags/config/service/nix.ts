@@ -43,7 +43,6 @@ class Nix extends Service {
         nixpkgs.connect("changed", this.#updateList)
     }
 
-    // eslint-disable-next-line space-before-function-paren
     query = async (filter: string) => {
         if (!dependencies("fzf", "nix") || !this.#ready)
             return [] as string[]
@@ -56,7 +55,6 @@ class Nix extends Service {
         return Utils.execAsync(`nix ${cmd} ${nixpkgs}#${bin} --impure ${args}`)
     }
 
-    // eslint-disable-next-line space-before-function-paren
     run = async (input: string) => {
         if (!dependencies("nix"))
             return
@@ -79,7 +77,6 @@ class Nix extends Service {
         }
     }
 
-    // eslint-disable-next-line space-before-function-paren
     #updateList = async () => {
         if (!dependencies("nix"))
             return
@@ -87,10 +84,20 @@ class Nix extends Service {
         this.ready = false
         this.#db = {}
 
-        const json = JSON.parse(await bash(`nix search ${nixpkgs} --json`))
-        for (const pkg of Object.keys(json)) {
+        // const search = await bash(`nix search ${nixpkgs} --json`)
+        const search = ""
+        if (!search) {
+            this.ready = true
+            return
+        }
+
+        const json = Object.entries(JSON.parse(search) as {
+            [name: string]: Nixpkg
+        })
+
+        for (const [pkg, info] of json) {
             const name = pkg.replace(PREFIX, "")
-            this.#db[name] = { ...json[pkg], name }
+            this.#db[name] = { ...info, name }
         }
 
         const list = Object.keys(this.#db).join("\n")
