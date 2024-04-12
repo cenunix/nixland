@@ -23,6 +23,17 @@
         allowBuiltinFetchGit = true;
       };
     }))
+    (mpvpaper.overrideAttrs (o: rec {
+      pname = "mpvpaper";
+      version = "master";
+      src = pkgs.fetchFromGitHub {
+        owner = "GhostNaN";
+        repo = pname;
+        rev = "f65700a3ecc9ecd8ca501e18a807ee18845f9441";
+        hash = "sha256-h+YJ4YGVGGgInVgm3NbXQIbrxkMOD/HtBnCzkTcRXH8=";
+      };
+    }))
+
     inputs.matugen.packages.${system}.default
     slurp
     fzf

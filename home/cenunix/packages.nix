@@ -42,7 +42,6 @@ in {
       wireshark
       kdePackages.qtwebengine
       kdePackages.tokodon
-      tuba
     ] ++ optionals (builtins.elem device.type [ "desktop" ]) [ nvtop ]
     ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [ ]
     ++ optionals (builtins.elem device.type [ "armlaptop" ]) [
