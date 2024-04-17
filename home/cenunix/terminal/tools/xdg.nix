@@ -61,5 +61,6 @@ in {
       associations.added = associations;
       defaultApplications = associations;
     };
+
   };
 }

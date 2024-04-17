@@ -8,7 +8,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland = {
-      url = "github:hyprwm/Hyprland?ref=v0.38.1";
+      url = "github:hyprwm/Hyprland?ref=v0.39.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hypridle.url = "github:hyprwm/hypridle";
@@ -29,10 +29,6 @@
     };
     spicetify = {
       url = "github:the-argus/spicetify-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    sss = {
-      url = "github:SergioRibera/sss";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     arrpc = {

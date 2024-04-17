@@ -4,7 +4,7 @@
     ./git
     ./lf
     ./rbw # Alternative bitwarden command line interface
-    ./sss # Screenshot tool written in rust with fancy processin*
+    # ./sss # Screenshot tool written in rust with fancy processin*
     ./xdg.nix
   ];
 }

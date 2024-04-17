@@ -16,35 +16,25 @@ in {
     [ ] ++ optionals
     # shared packages between all systems
     (builtins.elem device.type [ "desktop" "laptop" "armlaptop" ]) [
-      #tools
-      unzip
-      ripgrep
-      fd
-      xh
-      jq
-      fzf
-      p7zip
-      grex
-      lm_sensors
-      dua
-      unrar
-      powertop
-      nh
-      file
-      wget
-      gnome.zenity
-      nix-prefetch-github
+
       #actual apps
       telegram-desktop
       ttyper
-      wofi
-      wofi-bluetooth
-      wireshark
-      kdePackages.qtwebengine
       kdePackages.tokodon
     ] ++ optionals (builtins.elem device.type [ "desktop" ]) [ nvtop ]
     ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [ ]
     ++ optionals (builtins.elem device.type [ "armlaptop" ]) [
       # additional packages for arm laptop (x13s as of now) machines that use home-manager
     ];
+  xdg.desktopEntries = {
+    "org.kde.tokodon" = {
+      name = "Tokodon";
+      genericName = "Mastodon Client";
+      comment = "Client for the Mastodon";
+      exec = "env QT_QPA_PLATFORM=xcb ${pkgs.kdePackages.tokodon}/bin/tokodon";
+      icon = "org.kde.tokodon";
+      terminal = false;
+      type = "Application";
+    };
+  };
 }

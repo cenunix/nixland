@@ -2,11 +2,6 @@
 with lib;
 let env = config.modules.usrEnv;
 in {
-  services.xserver = mkIf (env.desktop == "Gnome") {
-    enable = true;
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
-  };
   services.flatpak.enable = true;
   hardware = mkIf (env.desktop == "Gnome") { pulseaudio.enable = false; };
   environment = {

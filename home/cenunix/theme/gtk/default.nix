@@ -57,33 +57,5 @@ in {
         '';
       };
     };
-
-    # credits: bruhvko
-    # catppuccin theme for qt-apps
-    home.packages = with pkgs; [
-      libsForQt5.qtstyleplugin-kvantum
-      qt6Packages.qtstyleplugin-kvantum
-      libsForQt5.qt5ct
-    ];
-
-    xdg.configFile."Kvantum/catppuccin/catppuccin.kvconfig".source =
-      builtins.fetchurl {
-        url =
-          "https://raw.githubusercontent.com/catppuccin/Kvantum/main/src/Catppuccin-Macchiato-Pink/Catppuccin-Macchiato-Pink.kvconfig";
-        sha256 = "0xwv1jynmw81m70r1wk5d9cqjw37khlmf7nf2y1h3riqrzalflh6";
-      };
-    xdg.configFile."Kvantum/catppuccin/catppuccin.svg".source =
-      builtins.fetchurl {
-        url =
-          "https://raw.githubusercontent.com/catppuccin/Kvantum/main/src/Catppuccin-Macchiato-Pink/Catppuccin-Macchiato-Pink.svg";
-        sha256 = "1pirixfhv9q59xsi2wii0r2wdapq8iii4xbwi69riblnsfgsg32m";
-      };
-    xdg.configFile."Kvantum/kvantum.kvconfig".text = ''
-      [General]
-      theme=catppuccin
-
-      [Applications]
-      catppuccin=Dolphin, dolphin, Nextcloud, nextcloud, qt5ct, org.kde.dolphin, org.kde.kalendar, kalendar, Kalendar, qbittorrent, org.qbittorrent.qBittorrent
-    '';
   };
 }
