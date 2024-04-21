@@ -9,11 +9,11 @@ in {
       libsForQt5.qtstyleplugin-kvantum
       qt6Packages.qtstyleplugin-kvantum
       libsForQt5.qt5ct
-      (pkgs.catppuccin-kde.override {
-        flavour = [ "mocha" ];
-        accents = [ "blue" ];
-        winDecStyles = [ "modern" ];
-      })
+      # (pkgs.catppuccin-kde.override {
+      #   flavour = [ "mocha" ];
+      #   accents = [ "blue" ];
+      #   winDecStyles = [ "modern" ];
+      # })
     ];
 
     xdg.configFile."Kvantum/catppuccin/catppuccin.kvconfig".source =
@@ -27,5 +27,11 @@ in {
       [Applications]
       catppuccin=Dolphin, dolphin, org.kde.tokodon, Tokodon, tokodon, Nextcloud, nextcloud, qt5ct, org.kde.dolphin, org.kde.kalendar, kalendar, Kalendar, qbittorrent, org.qbittorrent.qBittorrent
     '';
+
+    qt = {
+      enable = true;
+      platformTheme = "qtct";
+      style.name = "kvantum";
+    };
   };
 }

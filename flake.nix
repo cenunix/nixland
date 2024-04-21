@@ -11,6 +11,7 @@
       url = "github:hyprwm/Hyprland?ref=v0.39.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    xdg-portal-hyprland.url = "github:hyprwm/xdg-desktop-portal-hyprland";
     hypridle.url = "github:hyprwm/hypridle";
     hyprlock = {
       url = "github:hyprwm/Hyprlock/";

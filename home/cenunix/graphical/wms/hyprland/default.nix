@@ -28,7 +28,8 @@ in {
   config = mkIf (env.isWayland && (env.desktop == "Hyprland")) {
     xdg.configFile."hypr/shaders".source = ./shaders;
     home.packages = with pkgs;
-      [ wlr-randr ] ++ optionals (device.gpu == "nvidia") [ shadertoggle gojq ];
+      [ wlr-randr grim ]
+      ++ optionals (device.gpu == "nvidia") [ shadertoggle gojq ];
 
     services.wlsunset = {
       enable = device.gpu != "nvidia";

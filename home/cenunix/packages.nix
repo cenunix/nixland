@@ -21,8 +21,12 @@ in {
       telegram-desktop
       ttyper
       kdePackages.tokodon
-    ] ++ optionals (builtins.elem device.type [ "desktop" ]) [ nvtop ]
-    ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [ ]
+      kdePackages.zanshin
+      catppuccin-kvantum
+      dissent
+      my-vesktop
+    ] ++ optionals (builtins.elem device.type [ "desktop" ]) [ # nvtop
+    ] ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [ ]
     ++ optionals (builtins.elem device.type [ "armlaptop" ]) [
       # additional packages for arm laptop (x13s as of now) machines that use home-manager
     ];

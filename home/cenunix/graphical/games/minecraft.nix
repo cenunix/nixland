@@ -8,8 +8,8 @@ let
 
   catppuccin-mocha = pkgs.fetchzip {
     url =
-      "https://raw.githubusercontent.com/catppuccin/prismlauncher/main/themes/Mocha/Catppuccin-Mocha.zip";
-    sha256 = "sha256-8uRqCoe9iSIwNnK13d6S4XSX945g88mVyoY+LZSPBtQ=";
+      "https://github.com/PrismLauncher/Themes/releases/download/2024-04-01_1711994750/Catppuccin-Mocha-theme.zip";
+    sha256 = "sha256-BMJBJnIZZTP8l0O+8yOGSyW4S3SNOACa5ja/mqTRyzA=";
   };
 
   # java packages that are needed by various versions or modpacks
@@ -17,23 +17,21 @@ let
   # and thus I recommend testing them one by one to remove those that you do not
   # need in your configuration
   jdks = with pkgs; [
-    # Java 8
     temurin-jre-bin-8
     zulu8
-
-    # Java 11
     temurin-jre-bin-11
-
-    # Java 17
     temurin-jre-bin-17
-
-    # Latest
+    temurin-jre-bin-18
     temurin-jre-bin
     zulu
     graalvm-ce
   ];
 
-  additionalPrograms = with pkgs; [ gamemode mangohud jprofiler ];
+  additionalPrograms = with pkgs; [
+    gamemode
+    mangohud
+    # jprofiler
+  ];
 
   glfw = if env.isWayland then pkgs.glfw-wayland-minecraft else pkgs.glfw;
 in {

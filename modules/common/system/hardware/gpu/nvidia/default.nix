@@ -57,7 +57,7 @@ in {
           DXVK_STATE_CACHE = "1";
           MOZ_DISABLE_RDD_SANDBOX = "1";
           NVD_BACKEND = "direct";
-          GBM_BACKEND = "nvidia-drm"; # breaks firefox apparently
+          # GBM_BACKEND = "nvidia-drm"; # breaks firefox apparently
           VDPAU_DRIVER = "va_gl";
         })
 
@@ -80,7 +80,7 @@ in {
 
     hardware = {
       nvidia = {
-        package = mkDefault config.boot.kernelPackages.nvidiaPackages.beta;
+        # package = mkDefault config.boot.kernelPackages.nvidiaPackages.beta;
         # package = pkgs.linuxPackages_6_8.;
         # package = let
         #   rcu_patch = pkgs.fetchpatch {
@@ -89,18 +89,19 @@ in {
         #     hash = "sha256-eZiQQp2S/asE7MfGvfe6dA/kdCvek9SYa/FFGp24dVg=";
         #   };
         # in config.boot.kernelPackages.nvidiaPackages.mkDriver {
-        #   version = "535.154.05";
-        #   sha256_64bit = "sha256-fpUGXKprgt6SYRDxSCemGXLrEsIA6GOinp+0eGbqqJg=";
-        #   sha256_aarch64 =
-        #     "sha256-G0/GiObf/BZMkzzET8HQjdIcvCSqB1uhsinro2HLK9k=";
-        #   openSha256 = "sha256-wvRdHguGLxS0mR06P5Qi++pDJBCF8pJ8hr4T8O6TJIo=";
-        #   settingsSha256 =
-        #     "sha256-9wqoDEWY4I7weWW05F4igj1Gj9wjHsREFMztfEmqm10=";
-        #   persistencedSha256 =
-        #     "sha256-d0Q3Lk80JqkS1B54Mahu2yY/WocOqFFbZVBh+ToGhaE=";
-        #
-        #   patches = [ rcu_patch ];
-        # };
+        package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
+          version = "535.171.04";
+          sha256_64bit = "sha256-6PFkO0vJXYrNZaRHB4SpfazkZC8UkjZGYSDbKqlCQ3o=";
+          sha256_aarch64 =
+            "sha256-G0/GiObf/BZMkzzET8HQjdIcvCSqB1uhsinro2HLK9k=";
+          openSha256 = "sha256-wvRdHguGLxS0mR06P5Qi++pDJBCF8pJ8hr4T8O6TJIo=";
+          settingsSha256 =
+            "sha256-9wqoDEWY4I7weWW05F4igj1Gj9wjHsREFMztfEmqm10=";
+          persistencedSha256 =
+            "sha256-d0Q3Lk80JqkS1B54Mahu2yY/WocOqFFbZVBh+ToGhaE=";
+
+          # patches = [ rcu_patch ];
+        };
         modesetting.enable = mkDefault true;
         prime.offload.enableOffloadCmd = device.gpu == "hybrid-nv";
         # powerManagement = {
