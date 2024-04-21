@@ -23,8 +23,20 @@ in {
       kdePackages.tokodon
       kdePackages.zanshin
       catppuccin-kvantum
-      dissent
-      my-vesktop
+      youtube-music
+      # vencord
+      # my-vesktop
+      (vesktop.overrideAttrs (o: rec {
+        version = "master";
+        src = o.src.override {
+          rev = "ab9e8579eea046187c5cdb51e2041a0beb6e8601";
+          hash = "sha256-s3ndHHN8mqbzL40hMDXXDl+VV9pOk4XfnaVCaQvFFsg=";
+        };
+        pnpmDeps = o.pnpmDeps.overrideAttrs (o: rec {
+          outputHash = "sha256-6ezEBeYmK5va3gCh00YnJzZ77V/Ql7A3l/+csohkz68=";
+        });
+      })).override
+      { vencord = owo-vencord; }
     ] ++ optionals (builtins.elem device.type [ "desktop" ]) [ # nvtop
     ] ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [ ]
     ++ optionals (builtins.elem device.type [ "armlaptop" ]) [

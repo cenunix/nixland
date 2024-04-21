@@ -14,4 +14,5 @@
   wofi-bluetooth = pkgs.callPackage ./wofi-bluetooth/default.nix { };
   streamrip = pkgs.callPackage ./streamrip { };
   my-vesktop = pkgs.callPackage ./vesktop { };
+  owo-vencord = pkgs.callPacakge ./owo-vencord { };
 }

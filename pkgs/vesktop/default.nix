@@ -7,12 +7,12 @@
 , withSystemVencord ? true }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "vesktop";
-  version = "1.5.1";
+  version = "master";
 
   src = fetchFromGitHub {
     owner = "Vencord";
     repo = "Vesktop";
-    rev = "v${finalAttrs.version}";
+    rev = "ab9e8579eea046187c5cdb51e2041a0beb6e8601";
     hash = "sha256-s3ndHHN8mqbzL40hMDXXDl+VV9pOk4XfnaVCaQvFFsg=";
   };
 

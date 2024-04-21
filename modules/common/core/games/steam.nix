@@ -37,8 +37,7 @@ in {
           dedicatedServer.openFirewall = true;
           # Compatibility tools to install
           # this option is provided by ./gaming/steam.nix
-          extraCompatPackages =
-            [ inputs.nix-gaming.packages.${pkgs.system}.proton-ge ];
+          extraCompatPackages = [ pkgs.proton-ge-bin ];
         };
       };
     };
