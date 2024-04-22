@@ -62,7 +62,7 @@
         in import ./shell.nix { inherit pkgs; });
 
       overlays = import ./overlays {
-        inherit inputs outputs;
+        inherit inputs outputs packages;
       }; # Your custom packages and modifications, exported as overlays
       nixosModules = import
         ./modules/nixos; # Reusable nixos modules you might want to export

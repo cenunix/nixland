@@ -9,8 +9,6 @@ in {
     monitorConfig = builtins.concatStringsSep "\n"
       (builtins.map (monitor: "monitor=${monitor}") device.monitors);
   in ''
-
-    env = bitdepth,10
     ${monitorConfig}
   '';
   wayland.windowManager.hyprland.settings = {
