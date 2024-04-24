@@ -17,10 +17,9 @@ in {
           "org.freedesktop.impl.portal.Screenshot" = "hyprland";
           "org.freedesktop.impl.portal.Screencast" = "hyprland";
           "org.freedesktop.portal.Screencast" = "hyprland";
-          default = [ "gtk" ];
+          default = [ "hyprland" ];
         };
-        hyprland.default = [ "gtk" "hyprland" ];
-
+        hyprland.default = [ "hyprland" "gtk" ];
       };
     };
   };

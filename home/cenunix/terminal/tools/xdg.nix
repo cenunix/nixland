@@ -26,6 +26,7 @@ let
     "x-scheme-handler/tg" = [ "telegramdesktop.desktop" ];
     "x-scheme-handler/spotify" = [ "spotify.desktop" ];
     "x-scheme-handler/discord" = [ "WebCord.desktop" ];
+    "x-scheme-handler/appflowy-flutter" = [ "appflowy.desktop" ];
     "inode/directory" = filemanager;
   };
 in {
