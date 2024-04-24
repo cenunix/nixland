@@ -24,7 +24,6 @@ in {
       kdePackages.zanshin
       catppuccin-kvantum
       youtube-music
-      appflowy
     ] ++ optionals (builtins.elem device.type [ "desktop" ]) [ # nvtop
     ] ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [ ]
     ++ optionals (builtins.elem device.type [ "armlaptop" ]) [
@@ -40,16 +39,5 @@ in {
       terminal = false;
       type = "Application";
     };
-    "appflowy" = {
-      name = "AppFlowy";
-      genericName = "AppFlowy";
-      comment = "An open-source alternative to Notion";
-      exec = "${pkgs.appflowy}/bin/appflowy";
-      icon = "appflowy";
-      terminal = false;
-      type = "Application";
-      mimeType = [ "x-scheme-handler/appflowy-flutter" ];
-    };
-
   };
 }
