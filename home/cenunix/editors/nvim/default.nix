@@ -11,6 +11,7 @@ let
         ${builtins.readFile config/autopairs.lua}
         ${builtins.readFile config/utils/icons.lua}
         ${builtins.readFile config/theme.lua}
+        ${builtins.readFile config/bufferline.lua}
         ${builtins.readFile config/treesitter.lua}
         ${builtins.readFile config/navic.lua}
         ${builtins.readFile config/maps.lua}
@@ -33,6 +34,8 @@ let
           vim-qml
           nvim-cmp
           luasnip
+          bufferline-nvim
+          copilot-vim
           cmp_luasnip
           friendly-snippets
           cmp-nvim-lsp

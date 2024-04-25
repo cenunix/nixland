@@ -21,5 +21,21 @@ in {
         config.lib.file.mkOutOfStoreSymlink
         "/home/cenunix/NixLand/home/cenunix/graphical/apps/discord/settings.json";
     };
+    xdg.desktopEntries = {
+      "vesktop" = {
+        name = "vesktop";
+        genericName = "Discord with Vencord built-in";
+        comment = "Discord with Vencord built-in";
+        exec = "${pkgs.vesktop}/bin/vesktop --disable-gpu";
+        icon = "vesktop";
+        terminal = false;
+        type = "Application";
+        settings = {
+          StartupWMClass = "Vesktop";
+          Keywords = "discord;vencord;electron;chat";
+        };
+      };
+    };
+
   };
 }
