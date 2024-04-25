@@ -9,7 +9,7 @@ buildPythonPackage rec {
 
   src = fetchFromGitHub {
     owner = "cenunix";
-    repo = "python-catppuccin";
+    repo = "catppuccin-python";
     rev = "f6a1d2d8c04107e8fe427b4f4b3d18f067c1a9bc";
     hash = "sha256-ye/JCznxCRWUlEbDScfEYL7/W9I8yw6gkK4jlhCkFfg=";
   };
