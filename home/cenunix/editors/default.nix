@@ -1,1 +1,3 @@
-{ inputs, outputs, lib, config, pkgs, ... }: { imports = [ ./nvim ./vscode ]; }
+{ inputs, outputs, lib, config, pkgs, ... }: {
+  imports = [ ./lazyvim ./vscode ];
+}
