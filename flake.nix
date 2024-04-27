@@ -36,6 +36,7 @@
       url = "github:notashelf/arrpc-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # personal neovim flake
     nvim-flake = { url = "github:cenunix/nvim-flake"; };
   };
 

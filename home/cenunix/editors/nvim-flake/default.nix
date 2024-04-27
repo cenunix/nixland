@@ -1,4 +1,9 @@
-{ inputs, outputs, lib, config, pkgs, ... }: {
+{ inputs, pkgs, ... }:
+let
+
+  nvim-flake-pkg = inputs.nvim-flake.packages.${pkgs.system}.default;
+
+in {
   nixpkgs.overlays = [ inputs.nvim-flake.overlays.default ];
-  environment.systemPackages = with pkgs; [ nvim-pkg ];
+  home.packages = [ nvim-flake-pkg pkgs.neovide ];
 }
