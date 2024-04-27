@@ -1,3 +1,3 @@
 { inputs, outputs, lib, config, pkgs, ... }: {
-  imports = [ ./lazyvim ./vscode ];
+  imports = [ ./nvim-flake ./vscode ];
 }
