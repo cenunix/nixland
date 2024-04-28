@@ -51,7 +51,7 @@
 
         branch.autosetupmerge = "true";
         pull.ff = "only";
-
+        http.postBuffer = "524288000";
         push = {
           default = "current";
           followTags = true;
