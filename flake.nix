@@ -38,6 +38,8 @@
     };
     # personal neovim flake
     nvim-flake = { url = "github:cenunix/nvim-flake"; };
+    # zellij status-bar plugin
+    zjstatus = { url = "github:dj95/zjstatus"; };
   };
 
   outputs = { self, nixpkgs, ... }@inputs:
