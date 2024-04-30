@@ -21,7 +21,7 @@ in {
                 plugin location="file:${zjstatus}/bin/zjstatus.wasm" {
                     // plugin configuration...
                       
-                  format_left   "{mode} #[fg=#89B4FA,bold]{session}"
+                  format_left   "#[fg=#89B4FA,italic] {session}"
                   format_center "{tabs}"
                   format_right  ""
                   format_space  ""
@@ -35,7 +35,7 @@ in {
                   mode_tmux    "#[bg=#ffc387] "
 
                   tab_normal   "#[fg=#9399b2,italic] {name} "
-                  tab_active   "#[fg=#cdd6f4,bold,italic] {name} "
+                  tab_active   "#[fg=#cdd6f4,italic] {name} "
 
                   command_git_branch_command     "git rev-parse --abbrev-ref HEAD"
                   command_git_branch_format      "#[fg=blue] {stdout} "
