@@ -27,7 +27,7 @@
       enable = true;
       package = pkgs.gitAndTools.gitFull;
       userName = "cenunix";
-      userEmail = "user555596@protonmail.com";
+      userEmail = "user55596@protonmail.com";
       ignores = [
         ".cache/"
         ".idea/"
