@@ -9,30 +9,31 @@
     dart-sass
     fd
     brightnessctl
-    (swww.overrideAttrs (o: rec {
-      pname = "swww";
-      version = "master";
-      src = pkgs.fetchFromGitHub {
-        owner = "LFGae";
-        repo = pname;
-        rev = "432b7135af0bb34e4b0e55edf76ff516937bc7b0";
-        hash = "sha256-pX6fJrlNXe1W5ZO9nC9ikN1zoAcHDqErLS7EnglD33o=";
-      };
-      cargoDeps = pkgs.rustPlatform.importCargoLock {
-        lockFile = src + "/Cargo.lock";
-        allowBuiltinFetchGit = true;
-      };
-    }))
-    (mpvpaper.overrideAttrs (o: rec {
-      pname = "mpvpaper";
-      version = "master";
-      src = pkgs.fetchFromGitHub {
-        owner = "GhostNaN";
-        repo = pname;
-        rev = "f65700a3ecc9ecd8ca501e18a807ee18845f9441";
-        hash = "sha256-h+YJ4YGVGGgInVgm3NbXQIbrxkMOD/HtBnCzkTcRXH8=";
-      };
-    }))
+    # (swww.overrideAttrs (o: rec {
+    #   pname = "swww";
+    #   version = "master";
+    #   src = pkgs.fetchFromGitHub {
+    #     owner = "LFGae";
+    #     repo = pname;
+    #     rev = "432b7135af0bb34e4b0e55edf76ff516937bc7b0";
+    #     hash = "sha256-pX6fJrlNXe1W5ZO9nC9ikN1zoAcHDqErLS7EnglD33o=";
+    #   };
+    #   cargoDeps = pkgs.rustPlatform.importCargoLock {
+    #     lockFile = src + "/Cargo.lock";
+    #     allowBuiltinFetchGit = true;
+    #   };
+    # }))
+    swww
+    # (mpvpaper.overrideAttrs (o: rec {
+    #   pname = "mpvpaper";
+    #   version = "master";
+    #   src = pkgs.fetchFromGitHub {
+    #     owner = "GhostNaN";
+    #     repo = pname;
+    #     rev = "f65700a3ecc9ecd8ca501e18a807ee18845f9441";
+    #     hash = "sha256-h+YJ4YGVGGgInVgm3NbXQIbrxkMOD/HtBnCzkTcRXH8=";
+    #   };
+    #))
 
     inputs.matugen.packages.${system}.default
     slurp
