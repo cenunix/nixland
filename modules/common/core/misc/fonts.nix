@@ -17,7 +17,6 @@ in {
         maple-mono-SC-NF
         lexend
         joypixels
-        # (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
       ];
 
       enableDefaultPackages = false;
