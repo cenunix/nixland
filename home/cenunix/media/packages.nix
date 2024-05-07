@@ -8,9 +8,7 @@
     pulsemixer
     pulseaudio
     imv
-    jellyfin-media-player
-    jellycli
-    plexamp
-    tidal-hifi
+    plex-mpv-shim
+    nextcloud-client
   ];
 }

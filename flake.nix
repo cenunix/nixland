@@ -8,34 +8,23 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland = {
-      url = "github:hyprwm/Hyprland?ref=v0.39.1";
+      url = "github:hyprwm/hyprland?ref=v0.40.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     xdg-portal-hyprland.url = "github:hyprwm/xdg-desktop-portal-hyprland";
-    hypridle.url = "github:hyprwm/hypridle";
     hyprlock = {
       url = "github:hyprwm/Hyprlock/";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     ags.url = "github:Aylur/ags";
     astal.url = "github:Aylur/astal";
-    matugen.url = "github:InioX/matugen";
-    anyrun = {
-      url = "github:Kirottu/anyrun";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nix-gaming = {
-      url = "github:fufexan/nix-gaming";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    matugen.url = "github:InioX/matugen?ref=v2.2.0";
+    # anyrun = { url = "github:Kirottu/anyrun"; };
     spicetify = {
       url = "github:the-argus/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    arrpc = {
-      url = "github:notashelf/arrpc-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    arrpc = { url = "github:notashelf/arrpc-flake"; };
     # personal neovim flake
     nvim-flake = { url = "github:cenunix/nvim-flake"; };
     # zellij status-bar plugin

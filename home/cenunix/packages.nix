@@ -23,7 +23,7 @@ in {
       kdePackages.tokodon
       kdePackages.zanshin
       catppuccin-kvantum
-      youtube-music
+      ticktick
     ] ++ optionals (builtins.elem device.type [ "desktop" ]) [ # nvtop
     ] ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [ ]
     ++ optionals (builtins.elem device.type [ "armlaptop" ]) [

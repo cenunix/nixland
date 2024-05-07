@@ -423,9 +423,6 @@
         "ShowMeYourName": {
             "enabled": false
         },
-        "ShowTimeouts": {
-            "enabled": false
-        },
         "SilentMessageToggle": {
             "enabled": false
         },
@@ -523,6 +520,9 @@
         },
         "XSOverlay": {
             "enabled": false
+        },
+        "ShowHiddenThings": {
+            "enabled": false
         }
     },
     "notifications": {
@@ -535,6 +535,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1713741747980
+        "settingsSyncVersion": 1715046060025
     }
 }

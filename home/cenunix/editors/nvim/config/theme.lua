@@ -22,16 +22,16 @@ require("catppuccin").setup({
 	},
 	color_overrides = {
 		mocha = {
-			base = "#07070b",
-			mantle = "#07070b",
-			crust = "#07070b",
+			base = "#14151e",
+			mantle = "#14151e",
+			crust = "#14151e",
 		},
 	},
 	custom_highlights = {
 		-- Comment = { fg = colors.flamingo },
 		-- TabLineSel = { bg = colors.pink },
-		-- CmpBorder = { fg = "#07070b" },
-		Pmenu = { bg = "#07070b" },
+		-- CmpBorder = { fg = "#14151e" },
+		Pmenu = { bg = "#14151e" },
 	},
 	integrations = {
 		cmp = true,

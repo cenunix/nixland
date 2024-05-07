@@ -17,7 +17,7 @@ in {
       enable = true;
       theme = {
         name = "Catppuccin-Mocha-Compact-Blue-Dark";
-        package = pkgs.custom-gtk.override {
+        package = pkgs.catppuccin-gtk.override {
           accents = [ "blue" ];
           tweaks = [ "rimless" ];
           size = "compact";
