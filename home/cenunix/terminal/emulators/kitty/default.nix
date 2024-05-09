@@ -12,80 +12,79 @@
       url_style = "dotted";
       #Close the terminal =  without confirmation;
       confirm_os_window_close = 0;
-      background_opacity = "1.0";
+      background_opacity = "0.8";
       window_padding_width = 10;
     };
     extraConfig = ''
-      # Poimandres color scheme for kitty terminal emulator
-      # https://github.com/guilhermedeandrade/poimandres-kitty-theme
-      #
-      # Based on Poimandres color theme for Visual Studio Code
-      # https://github.com/drcmda/poimandres-theme
+      # The basic colors
+       foreground              #CDD6F4
+       background              #14151e
+       selection_foreground    #14151e
+       selection_background    #F5E0DC
 
-      foreground #a6accd
-      background #14151e
+       # Cursor colors
+       cursor                  #F5E0DC
+       cursor_text_color       #14151e
 
-      # Black
-      color0 #14151e
-      color8 #a6accd
+       # URL underline color when hovering with mouse
+       url_color               #F5E0DC
 
-      # Red
-      color1 #d0679d
-      color9 #d0679d
+       # Kitty window border colors
+       active_border_color     #B4BEFE
+       inactive_border_color   #6C7086
+       bell_border_color       #F9E2AF
 
-      # Green
-      color2  #5de4c7
-      color10 #5de4c7
+       # OS Window titlebar colors
+       wayland_titlebar_color system
+       macos_titlebar_color system
 
-      # Yellow
-      color3  #fffac2
-      color11 #fffac2
+       # Tab bar colors
+       active_tab_foreground   #0a0a10
+       active_tab_background   #CBA6F7
+       inactive_tab_foreground #CDD6F4
+       inactive_tab_background #181825
+       tab_bar_background      #0a0a10
 
-      # Blue
-      color4  #89ddff
-      color12 #add7ff
+       # Colors for marks (marked text in the terminal)
+       mark1_foreground #1E1E2E
+       mark1_background #B4BEFE
+       mark2_foreground #1E1E2E
+       mark2_background #CBA6F7
+       mark3_foreground #1E1E2E
+       mark3_background #74C7EC
 
-      # Magenta
-      color5  #fcc5e9
-      color13 #fae4fc
+       # The 16 terminal colors
 
-      # Cyan
-      color6  #add7ff
-      color14 #89ddff
+       # black
+       color0 #45475A
+       color8 #585B70
 
-      # White
-      color7  #ffffff
-      color15 #ffffff
+       # red
+       color1 #F38BA8
+       color9 #F38BA8
 
-      # Cursor
-      cursor #ffffff
-      cursor_text_color #14151e
+       # green
+       color2  #A6E3A1
+       color10 #A6E3A1
 
-      # Selection highlight
-      selection_foreground none
-      selection_background #28344a
+       # yellow
+       color3  #F9E2AF
+       color11 #F9E2AF
 
-      # The color for highlighting URLs on mouse-over
-      # url_color #9ece6a
-      url color #5de4c7
+       # blue
+       color4  #89B4FA
+       color12 #89B4FA
 
-      # Window borders
-      active_border_color #3d59a1
-      inactive_border_color #101014
-      bell_border_color #fffac2
+       # magenta
+       color5  #F5C2E7
+       color13 #F5C2E7
 
-      # Tab bar
-      tab_bar_style fade
-      tab_fade 1
-      active_tab_foreground   #3d59a1
-      active_tab_background   #16161e
-      active_tab_font_style   bold
-      inactive_tab_foreground #787c99
-      inactive_tab_background #16161e
-      inactive_tab_font_style bold
-      tab_bar_background #101014
+       # cyan
+       color6  #94E2D5
+       color14 #94E2D5
 
-      # Title bar
-      macos_titlebar_color #16161e    '';
+       # white
+       color7  #BAC2DE
+       color15 #A6ADC8'';
   };
 }

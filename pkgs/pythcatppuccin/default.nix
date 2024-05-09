@@ -1,5 +1,12 @@
-{ lib, buildPythonPackage, fetchFromGitHub, poetry-core
-, poetry-dynamic-versioning, pygments, rich, pytestCheckHook }:
+{ lib
+, buildPythonPackage
+, fetchFromGitHub
+, poetry-core
+, poetry-dynamic-versioning
+, pygments
+, rich
+, pytestCheckHook
+}:
 
 buildPythonPackage rec {
   pname = "catppuccin";
@@ -10,7 +17,7 @@ buildPythonPackage rec {
   src = fetchFromGitHub {
     owner = "cenunix";
     repo = "catppuccin-python";
-    rev = "f6a1d2d8c04107e8fe427b4f4b3d18f067c1a9bc";
+    rev = "93f33f58bb1a8421d89b911e3780873dae0f16a1";
     hash = "sha256-ye/JCznxCRWUlEbDScfEYL7/W9I8yw6gkK4jlhCkFfg=";
   };
 

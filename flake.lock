@@ -613,11 +613,11 @@
         "nixpkgs": "nixpkgs_7"
       },
       "locked": {
-        "lastModified": 1715059449,
-        "narHash": "sha256-lY5BOYrcuYqcJ9gfEQi6/HNJt9UucXoxo/3W0INTgaU=",
+        "lastModified": 1715222538,
+        "narHash": "sha256-6Djlr2J/ODySZvhKWqC70ddkrkyeiNis93Kzf2v1hCk=",
         "owner": "cenunix",
         "repo": "nvim-flake",
-        "rev": "d2b65ed1984bbc64cadc0b652ba1d94129685715",
+        "rev": "43dfdccc86143303fe165512e1b4b2055221afd8",
         "type": "github"
       },
       "original": {

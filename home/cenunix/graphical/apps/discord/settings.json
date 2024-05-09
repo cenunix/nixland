@@ -523,6 +523,15 @@
         },
         "ShowHiddenThings": {
             "enabled": false
+        },
+        "BetterSessions": {
+            "enabled": false
+        },
+        "ImplicitRelationships": {
+            "enabled": false
+        },
+        "StreamerModeOnStream": {
+            "enabled": false
         }
     },
     "notifications": {
@@ -535,6 +544,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1715046060025
+        "settingsSyncVersion": 1715078527827
     }
 }

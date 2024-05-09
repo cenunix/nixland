@@ -35,12 +35,12 @@ in
         "workbench.colorTheme" = "Catppuccin Mocha";
         "catppuccin.accentColor" = "blue";
         "editor.fontFamily" =
-          "JetBrainsMono Nerd Font, Material Design Icons, 'monospace', monospace";
+          "Maple Mono SC NF, Material Design Icons, 'monospace', monospace";
         "editor.fontSize" = 16;
         "editor.fontLigatures" = true;
         # "workbench.fontAliasing" = "antialiased";
         "files.trimTrailingWhitespace" = true;
-        "terminal.integrated.fontFamily" = "JetBrainsMono Nerd Font Mono";
+        "terminal.integrated.fontFamily" = "Maple Mono SC NF";
         "window.titleBarStyle" = "custom";
         # "terminal.integrated.automationShell.linux" = "nix-shell";
         # "terminal.integrated.defaultProfile.linux" = "zsh";
