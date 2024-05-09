@@ -71,14 +71,14 @@ shadowless_popup=false
 transient_groove=false
 
 [GeneralColors]
-window.color=#07070b
-base.color=#07070b
-alt.base.color=#07070b
+window.color=#14151e
+base.color=#14151e
+alt.base.color=#14151e
 button.color=#313244
 light.color=#45475A
 mid.light.color=#45475A
-dark.color=#07070b
-mid.color=#07070b
+dark.color=#14151e
+mid.color=#14151e
 highlight.color=#89B4FA
 inactive.highlight.color=#89B4FA
 text.color=#CDD6F4
@@ -86,7 +86,7 @@ window.text.color=#CDD6F4
 button.text.color=#CDD6F4
 disabled.text.color=#585B70
 tooltip.text.color=#CDD6F4
-highlight.text.color=#07070b
+highlight.text.color=#14151e
 link.color=#F5E0DC
 link.visited.color=#89B4FA
 
@@ -97,7 +97,7 @@ interior.element=itemview
 frame=true
 interior=true
 text.iconspacing=3
-text.toggle.color=#07070b
+text.toggle.color=#14151e
 
 [RadioButton]
 inherits=PanelButtonCommand
@@ -126,8 +126,8 @@ interior.element=button
 frame.element=button
 text.normal.color=#CDD6F4
 text.focus.color=#CDD6F4
-text.press.color=#07070b
-text.toggle.color=#07070b
+text.press.color=#14151e
+text.toggle.color=#14151e
 
 [PanelButtonTool]
 inherits=PanelButtonCommand
@@ -311,8 +311,8 @@ interior.element=tbutton
 indicator.element=arrow
 text.normal.color=#CDD6F4
 text.focus.color=#CDD6F4
-text.press.color=#07070b
-text.toggle.color=#07070b
+text.press.color=#14151e
+text.toggle.color=#14151e
 text.bold=false
 
 [Scrollbar]
@@ -356,8 +356,8 @@ frame.right=2
 text.margin=0
 text.normal.color=#CDD6F4
 text.focus.color=#CDD6F4
-text.press.color=#07070b
-text.toggle.color=#07070b
+text.press.color=#14151e
+text.toggle.color=#14151e
 text.bold=false
 frame.expansion=18
 
@@ -368,8 +368,8 @@ inherits=PanelButtonCommand
 frame.element=menu
 interior.element=menu
 inherits=PanelButtonCommand
-text.press.color=#07070b
-text.toggle.color=#07070b
+text.press.color=#14151e
+text.toggle.color=#14151e
 text.bold=false
 frame.top=3
 frame.bottom=3

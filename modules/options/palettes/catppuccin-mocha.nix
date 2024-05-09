@@ -4,8 +4,8 @@
     name = "Catppuccin Mocha";
     variant = "dark";
     palette = {
-      base00 = "#07070b"; # Base
-      base01 = "#07070b"; # Mantle
+      base00 = "#14151e"; # Base
+      base01 = "#14151e"; # Mantle
       base02 = "#313244"; # Surface0
       base03 = "#45475a"; # Surface1
       base04 = "#585b70"; # Surface2

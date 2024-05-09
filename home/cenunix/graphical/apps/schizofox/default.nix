@@ -5,7 +5,8 @@ let
   acceptedTypes = [ "desktop" "laptop" "armlaptop" ];
   startpage = pkgs.substituteAll { src = ./startpage.html; };
   user = osConfig.modules.system.username;
-in {
+in
+{
   config = mkIf (builtins.elem device.type acceptedTypes) {
     programs.firefox = mkDefault {
       enable = true;
@@ -14,17 +15,17 @@ in {
         userChrome = ''
           * {
             --button-bgcolor: #11111b !important;
-            --lwt-accent-color: #07070b !important;
-            --arrowpanel-background: #07070b !important;
-            --input-bgcolor: #07070b !important;
-            --toolbar-field-background-color: #07070b !important;
-            --urlbarView-separator-color: #07070b !important;
-            --toolbar-field-focus-background-color: #07070b !important;
-            --toolbar-bgcolor: #07070b !important;
+            --lwt-accent-color: #14151e !important;
+            --arrowpanel-background: #14151e !important;
+            --input-bgcolor: #14151e !important;
+            --toolbar-field-background-color: #14151e !important;
+            --urlbarView-separator-color: #14151e !important;
+            --toolbar-field-focus-background-color: #14151e !important;
+            --toolbar-bgcolor: #14151e !important;
             --button-primary-color: #cdd6f4 !important;
             --button-hover-bgcolor: #11111b !important;
-            --focus-outline-color: #07070b !important;
-            --button-active-bgcolor: #1e1e2e !important;
+            --focus-outline-color: #14151e !important;
+            --button-active-bgcolor: #14151e !important;
             --panel-separator-zap-gradient: linear-gradient(90deg, #181825 0%, #45475a 52.08%, #6c7086 100%);
             --arrowpanel-border-color: #cdd6f4 !important;
             --arrowpanel-color: #cdd6f4 !important;
@@ -51,28 +52,28 @@ in {
             color: red;
           }
           #_c607c8df-14a7-4f28-894f-29e8722976af_-BAP {
-             color: #07070b;
+             color: #14151e;
           }
           #TabsToolbar {
-            background-color: #07070b !important;
+            background-color: #14151e !important;
           }
           #nav-bar {
-            background-color: #07070b;
+            background-color: #14151e;
           }
           #tracking-protection-icon-container {
-            background-color: #07070b;
+            background-color: #14151e;
           }
           #appMenu-multiView {
-            background-color: #07070b !important;
+            background-color: #14151e !important;
           }
           .urlbar-page-action {
-            background-color: #07070b;
+            background-color: #14151e;
           }
           .identity-box-button  {
-            background-color: #07070b;
+            background-color: #14151e;
           }
           .urlbar-input-box {
-            background-color: #07070b;
+            background-color: #14151e;
           }
           .tab-icon-image {
             display: none;
@@ -137,35 +138,37 @@ in {
         wrapFirefox firefox-unwrapped {
           # see https://github.com/mozilla/policy-templates/blob/master/README.md
           extraPolicies = {
-            ExtensionSettings = let
-              mkForceInstalled = extensions:
-                builtins.mapAttrs
-                (name: cfg: { installation_mode = "force_installed"; } // cfg)
-                extensions;
-            in mkForceInstalled {
-              "addon@darkreader.org".install_url =
-                "https://addons.mozilla.org/firefox/downloads/latest/darkreader/latest.xpi";
-              "uBlock0@raymondhill.net".install_url =
-                "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
-              "{36bdf805-c6f2-4f41-94d2-9b646342c1dc}".install_url =
-                "https://addons.mozilla.org/firefox/downloads/latest/export-cookies-txt/latest.xpi";
-              "{74145f27-f039-47ce-a470-a662b129930a}".install_url =
-                "https://addons.mozilla.org/firefox/downloads/latest/clearurls/latest.xpi";
-              "{b86e4813-687a-43e6-ab65-0bde4ab75758}".install_url =
-                "https://addons.mozilla.org/firefox/downloads/latest/localcdn-fork-of-decentraleyes/latest.xpi";
-              "DontFuckWithPaste@raim.ist".install_url =
-                "https://addons.mozilla.org/firefox/downloads/latest/don-t-fuck-with-paste/latest.xpi";
-              "{c607c8df-14a7-4f28-894f-29e8722976af}".install_url =
-                "https://addons.mozilla.org/firefox/downloads/latest/temporary-containers/latest.xpi";
-              "skipredirect@sblask".install_url =
-                "https://addons.mozilla.org/firefox/downloads/latest/skip-redirect/latest.xpi";
-              "{446900e4-71c2-419f-a6a7-df9c091e268b}".install_url =
-                "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi";
-              "vimium-c@gdh1995.cn".install_url =
-                "https://addons.mozilla.org/firefox/downloads/latest/vimium-c/latest.xpi";
-              "{47bf427e-c83d-457d-9b3d-3db4118574bd}".install_url =
-                "https://addons.mozilla.org/firefox/downloads/latest/nighttab/latest.xpi";
-            };
+            ExtensionSettings =
+              let
+                mkForceInstalled = extensions:
+                  builtins.mapAttrs
+                    (name: cfg: { installation_mode = "force_installed"; } // cfg)
+                    extensions;
+              in
+              mkForceInstalled {
+                "addon@darkreader.org".install_url =
+                  "https://addons.mozilla.org/firefox/downloads/latest/darkreader/latest.xpi";
+                "uBlock0@raymondhill.net".install_url =
+                  "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
+                "{36bdf805-c6f2-4f41-94d2-9b646342c1dc}".install_url =
+                  "https://addons.mozilla.org/firefox/downloads/latest/export-cookies-txt/latest.xpi";
+                "{74145f27-f039-47ce-a470-a662b129930a}".install_url =
+                  "https://addons.mozilla.org/firefox/downloads/latest/clearurls/latest.xpi";
+                "{b86e4813-687a-43e6-ab65-0bde4ab75758}".install_url =
+                  "https://addons.mozilla.org/firefox/downloads/latest/localcdn-fork-of-decentraleyes/latest.xpi";
+                "DontFuckWithPaste@raim.ist".install_url =
+                  "https://addons.mozilla.org/firefox/downloads/latest/don-t-fuck-with-paste/latest.xpi";
+                "{c607c8df-14a7-4f28-894f-29e8722976af}".install_url =
+                  "https://addons.mozilla.org/firefox/downloads/latest/temporary-containers/latest.xpi";
+                "skipredirect@sblask".install_url =
+                  "https://addons.mozilla.org/firefox/downloads/latest/skip-redirect/latest.xpi";
+                "{446900e4-71c2-419f-a6a7-df9c091e268b}".install_url =
+                  "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi";
+                "vimium-c@gdh1995.cn".install_url =
+                  "https://addons.mozilla.org/firefox/downloads/latest/vimium-c/latest.xpi";
+                "{47bf427e-c83d-457d-9b3d-3db4118574bd}".install_url =
+                  "https://addons.mozilla.org/firefox/downloads/latest/nighttab/latest.xpi";
+              };
 
             # FirefoxHome = {
             #   Pocket = false;

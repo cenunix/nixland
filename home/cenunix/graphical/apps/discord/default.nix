@@ -9,7 +9,8 @@ let
   };
   device = osConfig.modules.device;
   acceptedTypes = [ "desktop" "laptop" ];
-in {
+in
+{
   config = mkIf (builtins.elem device.type acceptedTypes) {
     home.packages = with pkgs;
       [ (vesktop.override { withSystemVencord = false; }) ];
@@ -19,7 +20,7 @@ in {
       # share my webcord configuration across devices
       "vesktop/settings/settings.json".source =
         config.lib.file.mkOutOfStoreSymlink
-        "/home/cenunix/NixLand/home/cenunix/graphical/apps/discord/settings.json";
+          "/home/cenunix/NixLand/home/cenunix/graphical/apps/discord/settings.json";
     };
     xdg.desktopEntries = {
       "vesktop" = {

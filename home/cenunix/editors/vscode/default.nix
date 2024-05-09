@@ -3,7 +3,8 @@ with lib;
 let
   device = osConfig.modules.device;
   acceptedTypes = [ "desktop" "laptop" "armlaptop" ];
-in {
+in
+{
   config = mkIf (builtins.elem device.type acceptedTypes) {
     programs.vscode = {
       enable = true;
@@ -34,12 +35,12 @@ in {
         "workbench.colorTheme" = "Catppuccin Mocha";
         "catppuccin.accentColor" = "blue";
         "editor.fontFamily" =
-          "JetBrainsMono Nerd Font, Material Design Icons, 'monospace', monospace";
+          "Maple Mono SC NF, Material Design Icons, 'monospace', monospace";
         "editor.fontSize" = 16;
         "editor.fontLigatures" = true;
         # "workbench.fontAliasing" = "antialiased";
         "files.trimTrailingWhitespace" = true;
-        "terminal.integrated.fontFamily" = "JetBrainsMono Nerd Font Mono";
+        "terminal.integrated.fontFamily" = "Maple Mono SC NF";
         "window.titleBarStyle" = "custom";
         # "terminal.integrated.automationShell.linux" = "nix-shell";
         # "terminal.integrated.defaultProfile.linux" = "zsh";
@@ -70,16 +71,16 @@ in {
         "explorer.confirmDelete" = false;
         "breadcrumbs.enabled" = true;
         "workbench.colorCustomizations" = {
-          "editor.background" = "#07070b";
-          "editorGutter.background" = "#07070b";
-          "editorRuler.background" = "#07070b";
-          "activityBar.background" = "#07070b";
-          "sideBar.background" = "#07070b";
-          "sideBarSectionHeader.background" = "#07070b";
-          "editorGroupHeader.tabsBackground" = "#07070b";
-          "tab.activeBackground" = "#07070b";
-          "tab.inactiveBackground" = "#07070b";
-          "tab.unfocusedActiveBackground" = "#07070b";
+          "editor.background" = "#14151e";
+          "editorGutter.background" = "#14151e";
+          "editorRuler.background" = "#14151e";
+          "activityBar.background" = "#14151e";
+          "sideBar.background" = "#14151e";
+          "sideBarSectionHeader.background" = "#14151e";
+          "editorGroupHeader.tabsBackground" = "#14151e";
+          "tab.activeBackground" = "#14151e";
+          "tab.inactiveBackground" = "#14151e";
+          "tab.unfocusedActiveBackground" = "#14151e";
         };
       };
     };
