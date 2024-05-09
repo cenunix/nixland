@@ -45,8 +45,8 @@ in {
     ] ++ workspaces;
 
     bindle = [
-      ", XF86MonBrightnessUp,exec,lightctl up"
-      ", XF86MonBrightnessDown,exec,lightctl down"
+      ", XF86MonBrightnessUp,exec,brightnessctl s 5%+"
+      ", XF86MonBrightnessDown,exec,brightnessctl s 5%-"
       ", XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +5%"
       ", XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -5%"
       ", XF86AudioMute, exec, pactl set-source-mute @DEFAULT_SOURCE@ toggle"
