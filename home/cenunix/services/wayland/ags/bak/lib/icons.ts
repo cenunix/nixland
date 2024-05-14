@@ -15,13 +15,13 @@ export const substitutes = {
 export default {
     missing: "image-missing-symbolic",
     nix: {
-        nix: "nix-snowflake-symbolic",
+        nix: "nixos-symbolic",
     },
     app: {
         terminal: "terminal-symbolic",
     },
     fallback: {
-        executable: "application-x-executable",
+        executable: "application-x-executable-symbolic",
         notification: "dialog-information-symbolic",
         video: "video-x-generic-symbolic",
         audio: "audio-x-generic-symbolic",

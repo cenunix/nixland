@@ -20,14 +20,8 @@ const VolumeIndicator = (type: Type = "speaker") => Widget.Button({
 const VolumeSlider = (type: Type = "speaker") => Widget.Slider({
     hexpand: true,
     draw_value: false,
-    on_change: ({ value, dragging }) => {
-        if (dragging) {
-            audio[type].volume = value
-            audio[type].is_muted = false
-        }
-    },
+    on_change: ({ value, dragging }) => dragging && (audio[type].volume = value),
     value: audio[type].bind("volume"),
-    class_name: audio[type].bind("is_muted").as(m => m ? "muted" : ""),
 })
 
 export const Volume = () => Widget.Box({

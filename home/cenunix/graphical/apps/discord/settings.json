@@ -156,7 +156,7 @@
             "enabled": false
         },
         "FakeNitro": {
-            "enabled": false
+            "enabled": true
         },
         "FakeProfileThemes": {
             "enabled": false
@@ -388,7 +388,8 @@
             "notifyReviews": true,
             "reviewsDropdownState": true,
             "showWarning": true,
-            "hideBlockedUsers": true
+            "hideBlockedUsers": true,
+            "hideTimestamps": false
         },
         "RoleColorEverywhere": {
             "enabled": false
@@ -544,6 +545,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1715078527827
+        "settingsSyncVersion": 1715572609625
     }
 }

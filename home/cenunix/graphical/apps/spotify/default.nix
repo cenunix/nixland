@@ -5,8 +5,7 @@ let
   override = osConfig.modules.programs.override.program;
   acceptedTypes = [ "laptop" "desktop" ];
   spicePkgs = inputs.spicetify.packages.${pkgs.system}.default;
-in
-{
+in {
   imports = [ inputs.spicetify.homeManagerModule ];
   config = mkIf (builtins.elem device.type acceptedTypes) {
     programs.spicetify = {

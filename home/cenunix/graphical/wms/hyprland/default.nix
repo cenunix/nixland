@@ -5,30 +5,31 @@ let
   env = osConfig.modules.usrEnv;
 
   shadertoggle = pkgs.writeShellScriptBin "shadertoggle" ''
-    #!/bin/bash
-    set -e
+    hyprland
+        #!/bin/bash
+        set -e
 
-    cfg=~/.config/hypr/shaders
+        cfg=~/.config/hypr/shaders
 
-    blank="blank_shader.glsl"
-    alt="bluelight.glsl"
+        blank="blank_shader.glsl"
+        alt="bluelight.glsl"
 
-    current="$(hyprctl getoption decoration:screen_shader -j | ${pkgs.gojq}/bin/gojq -r '.str')"
+        current="$(hyprctl getoption decoration:screen_shader -j | ${pkgs.gojq}/bin/gojq -r '.str')"
 
-    if [[ "$current" =~ (blank|EMPTY) ]] || [[ "$current" == "" ]]; then
-        hyprctl keyword decoration:screen_shader "$cfg/$alt"
-        echo set $alt
-    else
-        hyprctl keyword decoration:screen_shader "$cfg/$blank"
-        echo set $blank
-    fi
+        if [[ "$current" =~ (blank|EMPTY) ]] || [[ "$current" == "" ]]; then
+            hyprctl keyword decoration:screen_shader "$cfg/$alt"
+            echo set $alt
+        else
+            hyprctl keyword decoration:screen_shader "$cfg/$blank"
+            echo set $blank
+        fi
   '';
 in {
   imports = [ ./binds.nix ./settings.nix ./rules.nix ];
   config = mkIf (env.isWayland && (env.desktop == "Hyprland")) {
     xdg.configFile."hypr/shaders".source = ./shaders;
     home.packages = with pkgs;
-      [ wlr-randr grim ]
+      [ wlr-randr wl-clipboard ]
       ++ optionals (device.gpu == "nvidia") [ shadertoggle gojq ];
 
     services.wlsunset = {

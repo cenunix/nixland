@@ -1,3 +1,4 @@
+import { type BarWidget } from "widget/bar/Bar";
 import { opt, mkOptions } from "lib/option";
 import { distro } from "lib/variables";
 import { icon } from "lib/utils";
@@ -6,25 +7,22 @@ import icons from "lib/icons";
 const options = mkOptions(OPTIONS, {
   autotheme: opt(false),
 
-  wallpaper: {
-    resolution: opt<import("service/wallpaper").Resolution>(1920),
-    market: opt<import("service/wallpaper").Market>("random"),
-  },
+  wallpaper: opt(`/home/${USER}/.config/background`, { persistent: true }),
 
   theme: {
     dark: {
       primary: {
-        bg: opt("#45475a"),
-        fg: opt("#a6accd"),
+        bg: opt("#585b70"),
+        fg: opt("#cdd6f4"),
       },
       error: {
-        bg: opt("#e55f86"),
-        fg: opt("#141414"),
+        bg: opt("#f38ba8"),
+        fg: opt("#cdd6f4"),
       },
       bg: opt("#14151e"),
-      fg: opt("#a6accd"),
-      widget: opt("#eeeeee"),
-      border: opt("#eeeeee"),
+      fg: opt("#cdd6f4"),
+      widget: opt("#cdd6f4"),
+      border: opt("#cdd6f4"),
     },
     light: {
       primary: {
@@ -67,15 +65,15 @@ const options = mkOptions(OPTIONS, {
     position: opt<"top" | "bottom">("top"),
     corners: opt(true),
     layout: {
-      start: opt<Array<import("widget/bar/Bar").BarWidget>>([
+      start: opt<BarWidget[]>([
         // "launcher",
         "workspaces",
         // "taskbar",
         "expander",
         "messages",
       ]),
-      center: opt<Array<import("widget/bar/Bar").BarWidget>>(["date"]),
-      end: opt<Array<import("widget/bar/Bar").BarWidget>>([
+      center: opt<BarWidget[]>(["date"]),
+      end: opt<BarWidget[]>([
         "media",
         "expander",
         "systray",
@@ -89,7 +87,7 @@ const options = mkOptions(OPTIONS, {
     launcher: {
       icon: {
         colored: opt(true),
-        icon: opt(icon(distro.logo, icons.ui.search)),
+        icon: opt(icon(distro, icons.ui.search)),
       },
       label: {
         colored: opt(false),
@@ -140,7 +138,7 @@ const options = mkOptions(OPTIONS, {
     width: opt(0),
     margin: opt(80),
     nix: {
-      pkgs: opt("nixpkgs/nixos-unstable"),
+      pkgs: opt("nixpkgs"),
       max: opt(8),
     },
     sh: {
@@ -193,18 +191,6 @@ const options = mkOptions(OPTIONS, {
 
   datemenu: {
     position: opt<"left" | "center" | "right">("center"),
-    weather: {
-      interval: opt(60_000),
-      unit: opt<"metric" | "imperial" | "standard">("metric"),
-      key: opt<string>(
-        JSON.parse(Utils.readFile(`${App.configDir}/.weather`) || "{}")?.key ||
-          "",
-      ),
-      cities: opt<Array<number>>(
-        JSON.parse(Utils.readFile(`${App.configDir}/.weather`) || "{}")
-          ?.cities || [],
-      ),
-    },
   },
 
   osd: {
