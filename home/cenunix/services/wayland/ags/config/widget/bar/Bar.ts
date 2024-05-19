@@ -6,10 +6,13 @@ import Media from "./buttons/Media";
 import PowerMenu from "./buttons/PowerMenu";
 import SysTray from "./buttons/SysTray";
 import SystemIndicators from "./buttons/SystemIndicators";
-import Taskbar from "./buttons/Taskbar";
+// import Taskbar from "./buttons/Taskbar";
 import Workspaces from "./buttons/Workspaces";
 import ScreenRecord from "./buttons/ScreenRecord";
 import Messages from "./buttons/Messages";
+// import SysInfo from "./buttons/SysInfo";
+import { TemperatureIndicator } from "widget/weather/Weather";
+import { RunCat } from "./buttons/RunCat";
 import options from "options";
 
 const { start, center, end } = options.bar.layout;
@@ -26,9 +29,11 @@ const widget = {
   powermenu: PowerMenu,
   systray: SysTray,
   system: SystemIndicators,
-  taskbar: Taskbar,
+  // taskbar: Taskbar,
+  weather: TemperatureIndicator,
   workspaces: Workspaces,
   screenrecord: ScreenRecord,
+  sysinfo: RunCat,
   messages: Messages,
   expander: () => Widget.Box({ expand: true }),
 };

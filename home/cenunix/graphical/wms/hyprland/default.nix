@@ -53,6 +53,11 @@ in {
     wayland.windowManager.hyprland = {
       enable = true;
       xwayland.enable = true;
+
+      plugins = [
+        inputs.hyprland-hyprspace.packages.${pkgs.system}.default
+        # inputs.hyprland-hyprchroma.packages.${pkgs.system}.default
+      ];
       systemd = {
         enable = true;
         variables = [ "--all" ];

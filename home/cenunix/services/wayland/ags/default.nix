@@ -46,11 +46,14 @@
     networkmanager
     rofi-bluetooth
     gtk3
+    bc
     gnome.gnome-control-center
   ];
+  xdg.configFile."ags".source = config.lib.file.mkOutOfStoreSymlink
+    "/home/cenunix/NixLand/home/cenunix/services/wayland/ags/config";
   programs.ags = {
     enable = true;
-    configDir = ./config;
+    # configDir = ./config;
     extraPackages = with pkgs; [ accountsservice ];
   };
 }

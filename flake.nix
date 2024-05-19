@@ -7,15 +7,19 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland = {
-      url = "github:hyprwm/hyprland?ref=v0.40.0";
-      inputs.nixpkgs.follows = "nixpkgs";
+    hyprland.url = "github:hyprwm/hyprland?ref=v0.40.0&submodules=1";
+    # Hyprland workspace overview plugin
+    hyprland-hyprspace = {
+      url = "github:KZDKM/Hyprspace";
+      inputs.hyprland.follows = "hyprland";
     };
+    # Hyprland transparency magic
+    # hyprland-hyprchroma = {
+    #   url = "github:alexhulbert/HyprChroma";
+    #   inputs.hyprland.follows = "hyprland";
+    # };
     xdg-portal-hyprland.url = "github:hyprwm/xdg-desktop-portal-hyprland";
-    hyprlock = {
-      url = "github:hyprwm/Hyprlock/";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # hyprlock = { url = "github:hyprwm/Hyprlock/"; };
     ags.url = "github:Aylur/ags";
     astal.url = "github:Aylur/astal";
     matugen.url = "github:InioX/matugen?ref=v2.2.0";
@@ -29,6 +33,7 @@
     nvim-flake = { url = "github:cenunix/nvim-flake"; };
     # zellij status-bar plugin
     zjstatus = { url = "github:dj95/zjstatus"; };
+
   };
 
   outputs = { self, nixpkgs, ... }@inputs:

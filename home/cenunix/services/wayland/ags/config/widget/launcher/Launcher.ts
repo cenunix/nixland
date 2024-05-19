@@ -66,8 +66,9 @@ function Launcher() {
     hexpand: true,
     primary_icon_name: icons.ui.search,
     on_accept: ({ text }) => {
-      if (text?.startsWith(":nx")) nix.run(text.substring(3));
-      else if (text?.startsWith(":sh")) sh.run(text.substring(3));
+      if (text?.startsWith(":nx")) {
+        nix.run(text.substring(3));
+      } else if (text?.startsWith(":sh")) sh.run(text.substring(3));
       else applauncher.launchFirst();
 
       App.toggleWindow("launcher");
@@ -78,8 +79,11 @@ function Launcher() {
       favs.reveal_child = text === "";
       help.reveal_child = text.split(" ").length === 1 && text?.startsWith(":");
 
-      if (text?.startsWith(":nx")) nix.filter(text.substring(3));
-      else nix.filter("");
+      if (text?.startsWith(":nx")) {
+        nix.filter(text.substring(3));
+      } else {
+        nix.filter("");
+      }
 
       if (text?.startsWith(":sh")) sh.filter(text.substring(3));
       else sh.filter("");

@@ -1,64 +1,40 @@
-import options from "options";
-
-const { interval, key, cities, unit } = options.datemenu.weather;
-
 class Weather extends Service {
-  static {
-    Service.register(
-      this,
-      {},
-      {
-        forecasts: ["jsobject"],
-      },
-    );
-  }
+    private _temperatureWeather: number | null;
+    private _tooltip: string | null;
 
-  #forecasts: Forecast[] = [];
-  get forecasts() {
-    return this.#forecasts;
-  }
+    static {
+        Service.register(this);
+    }
 
-  async #fetch(placeid: number) {
-    const url = "https://api.openweathermap.org/data/2.5/forecast";
-    const res = await Utils.fetch(url, {
-      params: {
-        id: placeid,
-        appid: key.value,
-        untis: unit.value,
-      },
-    });
-    return await res.json();
-  }
+    constructor() {
+        super();
+        this._temperatureWeather = null;
+        this._tooltip = null;
+        globalThis.weather = this;
+    }
 
-  constructor() {
-    super();
-    if (!key.value) return this;
+    get weatherData(): void {
+        console.log('weatherData')
+        Utils.execAsync(['bash', '-c', "~/.config/scripts/openweathermap.sh ags"]).catch(console.error);
+    }
 
-    Utils.interval(interval.value, () => {
-      Promise.all(cities.value.map(this.#fetch)).then((forecasts) => {
-        this.#forecasts = forecasts as Forecast[];
-        this.changed("forecasts");
-      });
-    });
-  }
+    get temperatureWeather(): number | null {
+        console.log(this._temperatureWeather)
+        return this._temperatureWeather;
+    }
+
+    setTemperatureWeather(temp: number): void {
+        this._temperatureWeather = temp;
+        this.emit('changed');
+    }
+
+    get tooltip(): string | null {
+        return this._tooltip;
+    }
+
+    setTooltip(text: string): void {
+        this._tooltip = text;
+    }
 }
 
 export default new Weather();
-
-type Forecast = {
-  city: {
-    name: string;
-  };
-  list: Array<{
-    dt: number;
-    main: {
-      temp: number;
-      feels_like: number;
-    };
-    weather: Array<{
-      main: string;
-      description: string;
-      icon: string;
-    }>;
-  }>;
-};

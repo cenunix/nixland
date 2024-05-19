@@ -17,6 +17,7 @@ in {
         maple-mono-SC-NF
         lexend
         joypixels
+        nerdfonts
       ];
 
       enableDefaultPackages = false;

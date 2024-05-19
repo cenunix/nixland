@@ -15,8 +15,7 @@ in {
     "$mod" = "SUPER";
     exec-once = [
       "hyprctl setcursor ${pointerCursor.name} ${toString pointerCursor.size}"
-      # "hyprlock"
-      "ags"
+      "ags -b hypr"
     ];
     input = {
       follow_mouse = 1;
@@ -41,9 +40,9 @@ in {
       "col.shadow_inactive" = "rgb(3c4252)";
       rounding = 4;
       blur = {
-        enabled = false;
-        ignore_opacity = true;
-        size = 6;
+        enabled = true;
+        ignore_opacity = false;
+        size = 8;
         passes = 2;
       };
     };
@@ -67,6 +66,18 @@ in {
       pseudotile = false; # enable pseudotiling on dwindle
     };
     gestures = { workspace_swipe = false; };
+    plugin = {
+      overview = {
+        centerAligned = true;
+        hideTopLayers = true;
+        hideOverlayLayers = true;
+        showNewWorkspace = true;
+        exitOnClick = true;
+        exitOnSwitch = true;
+        drawActiveWorkspace = true;
+        reverseSwipe = true;
+      };
+    };
     misc = {
       animate_manual_resizes = true;
       disable_hyprland_logo = true;

@@ -53,7 +53,7 @@ class Recorder extends Service {
   async stop() {
     if (!this.recording) return;
 
-    await bash("killall -INT wf-recorder");
+    await bash("pkill wf-recorder");
     this.recording = false;
     this.changed("recording");
     GLib.source_remove(this.#interval);

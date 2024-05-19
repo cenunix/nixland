@@ -35,6 +35,7 @@ class Nix extends Service {
   }
 
   get db() {
+    // console.log(this.#db);
     return this.#db;
   }
   get ready() {
@@ -52,19 +53,24 @@ class Nix extends Service {
     super();
     if (!this.available) return this;
     this.#updateList();
+    console.log("updating nix");
     nixpkgs.connect("changed", this.#updateList);
   }
 
   query = async (filter: string) => {
-    if (!dependencies("fzf", "nix") || !this.#ready) return [] as string[];
-
+    if (!dependencies("fzf", "nix") || !this.#ready) {
+      console.log("NOT FOUND FZF OR NIX");
+      return [] as string[];
+    }
     return bash(`cat ${CACHE} | fzf -f ${filter} -e | head -n ${MAX} `).then(
       (str) => str.split("\n").filter((i) => i),
     );
   };
 
   nix(cmd: string, bin: string, args: string) {
-    return Utils.execAsync(`nix ${cmd} ${nixpkgs}#${bin} --impure ${args}`);
+    return Utils.execAsync(
+      `kitty nix ${cmd} ${nixpkgs}#${bin} --impure ${args}`,
+    );
   }
 
   run = async (input: string) => {
@@ -90,12 +96,15 @@ class Nix extends Service {
   #updateList = async () => {
     if (!dependencies("nix")) return;
 
+    console.log("updating list function hit");
+
     this.ready = false;
     this.#db = {};
 
-    // const search = await bash(`nix search ${nixpkgs} --json`)
-    const search = "";
+    const search = await bash(`nix search ${nixpkgs} --json`);
+    // const search = "";
     if (!search) {
+      console.log("no search");
       this.ready = true;
       return;
     }
@@ -111,9 +120,12 @@ class Nix extends Service {
       this.#db[name] = { ...info, name };
     }
 
+    console.log("generating list");
     const list = Object.keys(this.#db).join("\n");
+    console.log("list writing to file");
     await Utils.writeFile(list, CACHE);
     this.ready = true;
+    Utils.notify("NixRun Ready");
   };
 }
 
