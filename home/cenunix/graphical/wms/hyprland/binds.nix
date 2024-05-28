@@ -35,7 +35,7 @@ in {
       "$mod, E, exec, ${default.fileManager}"
       "$mod, N, exec, neovide"
       "$mod, R, exec, ags -b hypr -q; ags -b hypr"
-      "$mod, Tab, exec, hyprctl dispatch overview:toggle"
+      "$mod, Tab, exec, hyprctl dispatch hyprexpo:expo toggle"
       "$mod, U, exec, ags -b hypr -r 'recorder.start()'"
       "$mod, P, exec, ags -b hypr -r 'recorder.screenshot()'"
       "$mod SHIFT, P, exec, ags -b hypr -r 'recorder.screenshot(true)'"

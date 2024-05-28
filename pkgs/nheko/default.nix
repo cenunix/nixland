@@ -1,8 +1,7 @@
 { lib, stdenv, fetchFromGitHub, fetchpatch, cmake, asciidoc, pkg-config
 , boost179, cmark, coeurl, curl, libevent, libsecret, lmdb, lmdbxx, mtxclient
-, nlohmann_json, olm, qtbase, qtgraphicaleffects, qtimageformats, qtkeychain
-, qtmacextras, qtmultimedia, qtquickcontrols2, qttools, re2, spdlog
-, wrapQtAppsHook, voipSupport ? true, gst_all_1, libnice }:
+, nlohmann_json, olm, kdePackages, kdsingleapplication, re2, spdlog
+, voipSupport ? true, gst_all_1, libnice }:
 
 stdenv.mkDerivation rec {
   pname = "nheko";
@@ -33,7 +32,14 @@ stdenv.mkDerivation rec {
   #   })
   # ];
   #
-  nativeBuildInputs = [ asciidoc cmake lmdbxx pkg-config wrapQtAppsHook ];
+  nativeBuildInputs = [
+    asciidoc
+    cmake
+    lmdbxx
+    pkg-config
+    kdsingleapplication
+    kdePackages.wrapQtAppsHook
+  ];
 
   buildInputs = [
     boost179
@@ -46,27 +52,26 @@ stdenv.mkDerivation rec {
     mtxclient
     nlohmann_json
     olm
-    qtbase
-    qtgraphicaleffects
-    qtimageformats
-    qtkeychain
-    qtmultimedia
-    qtquickcontrols2
-    qttools
+    kdePackages.full
+    # qtgraphicaleffects
+    kdePackages.qtimageformats
+    kdePackages.qtkeychain
+    kdePackages.qtmultimedia
+    # kdePackages.qtquickcontrols2
+    kdePackages.qttools
     re2
     spdlog
-  ] ++ lib.optional stdenv.isDarwin qtmacextras ++ lib.optionals voipSupport
-    (with gst_all_1; [
-      gstreamer
-      gst-plugins-base
-      (gst-plugins-good.override { qt5Support = true; })
-      gst-plugins-bad
-      libnice
-    ]);
+  ] ++ lib.optionals voipSupport (with gst_all_1; [
+    gstreamer
+    gst-plugins-base
+    (gst-plugins-good.override { qt5Support = true; })
+    gst-plugins-bad
+    libnice
+  ]);
 
-  cmakeFlags = [
-    "-DCOMPILE_QML=ON" # see https://github.com/Nheko-Reborn/nheko/issues/389
-  ];
+  # cmakeFlags = [
+  #   "-DCOMPILE_QML=ON" # see https://github.com/Nheko-Reborn/nheko/issues/389
+  # ];
 
   preFixup = lib.optionalString voipSupport ''
     # add gstreamer plugins path to the wrapper

@@ -3,8 +3,7 @@ with lib;
 let
   device = osConfig.modules.device;
   acceptedTypes = [ "desktop" "laptop" "armlaptop" ];
-in
-{
+in {
   config = mkIf (builtins.elem device.type acceptedTypes) {
     programs.vscode = {
       enable = true;

@@ -5,7 +5,7 @@ let
   acceptedTypes = [ "desktop" "laptop" "armlaptop" ];
 in {
   config = mkIf (builtins.elem device.type acceptedTypes) {
-    programs.nheko = { enable = true; };
+    home.packages = with pkgs; [ element-desktop ];
+    # programs.nheko = { enable = true; };
   };
 }
-

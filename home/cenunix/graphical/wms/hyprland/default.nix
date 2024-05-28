@@ -54,10 +54,17 @@ in {
       enable = true;
       xwayland.enable = true;
 
-      plugins = [
-        inputs.hyprland-hyprspace.packages.${pkgs.system}.default
-        # inputs.hyprland-hyprchroma.packages.${pkgs.system}.default
-      ];
+      plugins = with inputs.hyprland-plugins.packages.${pkgs.system};
+        [
+          # hyprbars
+          hyprexpo
+        ];
+      # plugins = [
+      # inputs.hyprland-hyprchroma.packages.${pkgs.system}.default
+      # (inputs.hyprland-hyprspace.packages.${pkgs.system}.default.overrideAttrs {
+      #   dontUseCmakeConfigure = true;
+      # })
+      # ];
       systemd = {
         enable = true;
         variables = [ "--all" ];

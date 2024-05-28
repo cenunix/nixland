@@ -2,12 +2,21 @@
   description = "NixLand configuration";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # nixpkgs.url = "github:diniamo/nixpkgs/nvidia-555";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs-master.url = "github:nixos/nixpkgs/master";
+    nixpkgs-nvidia.url = "github:diniamo/nixpkgs/nvidia-555";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland.url = "github:hyprwm/hyprland?ref=v0.40.0&submodules=1";
+    # hyprland.url = "github:hyprwm/hyprland?ref=v0.40.0&submodules=1";
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
     # Hyprland workspace overview plugin
     hyprland-hyprspace = {
       url = "github:KZDKM/Hyprspace";

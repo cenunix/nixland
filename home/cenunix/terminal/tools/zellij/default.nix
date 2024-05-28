@@ -1,9 +1,9 @@
 { config, osConfig, inputs, pkgs, ... }:
 let zjstatus = inputs.zjstatus.packages.${pkgs.system}.default;
 in {
-  home.packages = [ zjstatus ];
+  # home.packages = [ zjstatus ];
   programs.zellij = {
-    enable = true;
+    enable = false;
     # enableZshIntegration = true;
     settings = {
       theme = "catppuccin-mocha";

@@ -33,12 +33,12 @@ in {
         };
       };
 
-      podman = mkIf (sys.docker.enable) {
+      docker = mkIf (sys.docker.enable) {
         enable = true;
-        dockerCompat = true;
-        dockerSocket.enable = true;
+        # dockerCompat = true;
+        # dockerSocket.enable = true;
 
-        defaultNetwork.settings = { dns_enabled = true; };
+        # defaultNetwork.settings = { dns_enabled = true; };
 
         enableNvidia = builtins.any (driver: driver == "nvidia")
           config.services.xserver.videoDrivers;

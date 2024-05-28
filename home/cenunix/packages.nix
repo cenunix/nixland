@@ -26,6 +26,8 @@ in {
       ticktick
       wofi
       wofi-bluetooth
+      gnome.nautilus
+      docker
     ] ++ optionals (builtins.elem device.type [ "desktop" ]) [ # nvtop
     ] ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [ ]
     ++ optionals (builtins.elem device.type [ "armlaptop" ]) [

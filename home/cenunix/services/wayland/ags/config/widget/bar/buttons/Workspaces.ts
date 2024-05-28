@@ -45,6 +45,6 @@ export default () =>
     class_name: "workspaces",
     on_scroll_up: () => dispatch("m+1"),
     on_scroll_down: () => dispatch("m-1"),
-    on_clicked: () => Utils.execAsync("hyprctl dispatch overview:toggle"),
+    on_clicked: () => Utils.execAsync("hyprctl dispatch hyprexpo:expo toggle"),
     child: workspaces.bind().as(Workspaces),
   });

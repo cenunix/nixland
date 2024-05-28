@@ -10,6 +10,12 @@
       config.allowUnfree = true;
     };
   };
+  nvidia-packages = final: _prev: {
+    unstable = import inputs.nixpkgs-nvidia {
+      system = final.system;
+      config.allowUnfree = true;
+    };
+  };
   # When applied, the stable nixpkgs set (declared in the flake inputs) will
   # be accessible through 'pkgs.stable'
   stable-packages = final: _prev: {
