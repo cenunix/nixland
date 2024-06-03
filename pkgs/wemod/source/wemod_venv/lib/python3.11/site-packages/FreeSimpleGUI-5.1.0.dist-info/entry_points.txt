@@ -1,0 +1,6 @@
+[gui_scripts]
+fsghelp = FreeSimpleGui.FreeSimpleGui:main_sdk_help
+fsgissue = FreeSimpleGui.FreeSimpleGui:main_open_github_issue
+fsgmain = FreeSimpleGui.FreeSimpleGui:_main_entry_point
+fsgsettings = FreeSimpleGui.FreeSimpleGui:main_global_pysimplegui_settings
+fsgver = FreeSimpleGui.FreeSimpleGui:main_get_debug_data
