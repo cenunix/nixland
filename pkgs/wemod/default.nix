@@ -19,8 +19,9 @@ in python3.pkgs.buildPythonPackage rec {
   env = {
     STEAM_COMPAT_DATA_PATH = "\${HOME}/.steam/root/compatibilitytools.d";
   };
-  src = ./src;
-  wrapProgram = [ python311Packages.sh ];
+  src = ./source;
+  makeWrapperArgs =
+    [ "--prefix PATH : ${lib.makeBinPath [ python311Packages.sh ]}" ];
   propagatedBuildInputs = [
     FreeSimpleGUI
     # python3

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import os
 import stat
-import subprocess
+# import subprocess
 import sys
 import tempfile
 

@@ -17,4 +17,5 @@
   owo-vencord = pkgs.callPacakge ./owo-vencord { };
   nheko = pkgs.callPackage ./nheko { };
   wemod = pkgs.callPackage ./wemod { };
+  nexus-mods-app = pkgs.callPackage ./nexus-mods-app { };
 }
