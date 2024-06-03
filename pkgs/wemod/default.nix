@@ -15,8 +15,7 @@ let
       [ pkgs.python311Packages.tkinter ];
   };
 in python3.pkgs.buildPythonPackage rec {
-  pname = "wemod";
-  version = "unstable";
+  name = "wemod";
   env = {
     STEAM_COMPAT_DATA_PATH = "\${HOME}/.steam/root/compatibilitytools.d";
   };
