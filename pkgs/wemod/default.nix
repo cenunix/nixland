@@ -1,8 +1,7 @@
-{ lib, buildPythonPackage, fetchFromGitHub, stdenv, poetry-core
-, poetry-dynamic-versioning, pygments, rich, python3Packages, python3, tk
-, protonup-qt, pytestCheckHook }:
+{ lib, fetchFromGitHub, stdenv, python3Packages, python311Packages, python3, tk
+, protonup-qt, }:
 let
-  FreeSimpleGUI = buildPythonPackage rec {
+  FreeSimpleGUI = python3Packages.buildPythonApplication rec {
     pname = "FreeSimpleGui";
     version = "5.1.0";
 
@@ -15,25 +14,24 @@ let
     propagatedBuildInputs = with python3Packages;
       [ pkgs.python311Packages.tkinter ];
   };
-in stdenv.mkDerivation (finalAttrs: {
+in python3.pkgs.buildPythonPackage rec {
   pname = "wemod";
   version = "unstable";
-
-  src = fetchFromGitHub {
-    owner = "DaniAsh551";
-    repo = "wemod-launcher";
-    rev = "db0254b9285e0d8c4c9692b505047f580ff5e816";
-    sha256 = "sha256-zHFoJqhuPk3T9PwGIHRHdrW1Zc/MVSURsfGQuseg/8g=";
+  env = {
+    STEAM_COMPAT_DATA_PATH = "\${HOME}/.steam/root/compatibilitytools.d";
   };
-
-  nativeBuildInputs = [
+  src = ./src;
+  wrapProgram = [ python311Packages.sh ];
+  propagatedBuildInputs = [
     FreeSimpleGUI
-    python3
+    # python3
     tk
     protonup-qt
-    python3Packages.pip
-    python3Packages.virtualenv
-
+    # python3Packages.pip
+    # python3Packages.virtualenv
+    python3Packages.numpy
+    python3Packages.requests
+    python311Packages.sh
   ];
 
   meta = with lib; {
@@ -45,4 +43,4 @@ in stdenv.mkDerivation (finalAttrs: {
     mainProgram = "wemod";
     platforms = platforms.linux;
   };
-})
+}

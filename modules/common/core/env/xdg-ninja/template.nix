@@ -43,6 +43,7 @@ in {
     NODE_REPL_HISTORY = "${XDG_DATA_HOME}/node_repl_history";
     PLATFORMIO_CORE_DIR = "${XDG_DATA_HOME}/platformio";
     WINEPREFIX = "${XDG_DATA_HOME}/wine";
+    STEAM_COMPAT_DATA_PATH = "\${HOME}/.steam/root/compatibilitytools.d";
     STEAM_EXTRA_COMPAT_TOOLS_PATHS =
       [ "\${HOME}/.steam/root/compatibilitytools.d" ];
     FLAKE = "$HOME/NixLand";
