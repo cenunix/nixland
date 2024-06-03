@@ -1,6 +1,21 @@
 { inputs, outputs, lib, config, pkgs, osConfig, ... }:
 with lib;
-let device = osConfig.modules.device;
+let
+  device = osConfig.modules.device;
+  simplegui = pkgs.python3Packages.buildPythonPackage rec {
+    pname = "FreeSimpleGui";
+    version = "5.1.0";
+
+    src = pkgs.fetchFromGitHub {
+      owner = "spyoungtech";
+      repo = "FreeSimpleGUI";
+      rev = "v${version}";
+      sha256 = "sha256-kUHuC5tHEd6SUIbNrad8B2BDGHyHYIfjJqWoLM4r1Bk=";
+    };
+    propagatedBuildInputs = with python3Packages;
+      [ pkgs.python311Packages.tkinter ];
+
+  };
 in {
   nixpkgs = {
     config = {
@@ -28,6 +43,15 @@ in {
       wofi-bluetooth
       gnome.nautilus
       docker
+      protonvpn-gui
+      networkmanagerapplet
+      python311Packages.protonvpn-nm-lib
+      python3
+      tk
+      protonup-qt
+      python3Packages.pip
+      python3Packages.virtualenv
+      simplegui
     ] ++ optionals (builtins.elem device.type [ "desktop" ]) [ # nvtop
     ] ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [ ]
     ++ optionals (builtins.elem device.type [ "armlaptop" ]) [

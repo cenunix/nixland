@@ -4,6 +4,20 @@ let
   cfg = config.modules.programs;
   device = config.modules.device;
   acceptedTypes = [ "laptop" "desktop" "hybrid" "lite" "armlaptop" ];
+  simplegui = pkgs.python3Packages.buildPythonPackage rec {
+    pname = "FreeSimpleGui";
+    version = "5.1.0";
+
+    src = pkgs.fetchFromGitHub {
+      owner = "spyoungtech";
+      repo = "FreeSimpleGUI";
+      rev = "v${version}";
+      sha256 = "sha256-kUHuC5tHEd6SUIbNrad8B2BDGHyHYIfjJqWoLM4r1Bk=";
+    };
+    propagatedBuildInputs = with python3Packages;
+      [ pkgs.python311Packages.tkinter ];
+
+  };
 in {
   config = mkIf
     ((cfg.gaming.steam.enable) && (builtins.elem device.type acceptedTypes)) {
@@ -25,6 +39,13 @@ in {
               xorg.libXScrnSaver
               SDL2
               dxvk
+              #wemod?
+              python3
+              tk
+              protonup-qt
+              python3Packages.pip
+              python3Packages.virtualenv
+              simplegui
             ];
         };
       };

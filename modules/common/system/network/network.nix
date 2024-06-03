@@ -1,4 +1,5 @@
 { inputs, outputs, lib, config, pkgs, ... }: {
+  environment.systemPackages = with pkgs; [ wireguard-tools ];
   networking = {
     # dns
     networkmanager = { enable = true; };
@@ -36,11 +37,12 @@
         50112
       ];
       allowedUDPPorts =
-        [ 137 138 139 389 445 443 80 19132 23313 49160 44857 8080 50112 ];
+        [ 137 138 139 389 445 443 80 19132 23313 49160 44857 8080 50112 51820 ];
       allowPing = false;
       logReversePathDrops = true;
     };
   };
+  services.resolved.enable = true;
   # slows down boot time
   systemd.services.NetworkManager-wait-online.enable = false;
   programs = {
