@@ -12,25 +12,23 @@ in {
     };
   };
   home.packages = with pkgs;
-  # exclude server device type
+    # exclude server device type
     [ ] ++ optionals
-    # shared packages between all systems
-    (builtins.elem device.type [ "desktop" "laptop" "armlaptop" ]) [
+      # shared packages between all systems
+      (builtins.elem device.type [ "desktop" "laptop" "armlaptop" ]) [
 
       #actual apps
-      telegram-desktop
+      # telegram-desktop
       ttyper
-      kdePackages.tokodon
-      kdePackages.zanshin
-      catppuccin-kvantum
-      ticktick
+      # kdePackages.tokodon
+      # kdePackages.zanshin
+      # catppuccin-kvantum
+      # ticktick
       wofi
-      wofi-bluetooth
-      gnome.nautilus
       docker
       networkmanagerapplet
-      nexus-mods-app
-    ] ++ optionals (builtins.elem device.type [ "desktop" ]) [ # nvtop
+    ] ++ optionals (builtins.elem device.type [ "desktop" ]) [
+      # nvtop
     ] ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [ ]
     ++ optionals (builtins.elem device.type [ "armlaptop" ]) [
       # additional packages for arm laptop (x13s as of now) machines that use home-manager
