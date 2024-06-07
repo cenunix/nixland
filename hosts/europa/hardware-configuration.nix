@@ -10,7 +10,7 @@
     [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
-  boot.extraModulePackages = [ ];
+  # boot.extraModulePackages = with config.boot.kernelPackages; [ wireguard ];
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/ab5c2823-ce6e-4938-a44f-fe8799d7a67b";

@@ -19,8 +19,7 @@ in {
   };
 
   programs = {
-    # the thunar file manager
-    # we enable thunar here and add plugins instead of in systemPackages
+    # enable thunar here and add plugins
     thunar = {
       enable = true;
       plugins = with pkgs.xfce; [

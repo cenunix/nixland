@@ -50,13 +50,6 @@ in
 
           default_session =
             if (!env.autologin) then {
-              #   command = pkgs.writeShellScript "greeter" ''
-              #     export XKB_DEFAULT_LAYOUT=${config.services.xserver.xkb.layout}
-              #     export XCURSOR_THEME=Qogir
-              #     ${self}/bin/greeter
-              #   '';
-              #   # user = "greeter";
-              # }
               command = lib.concatStringsSep " " [
                 (getExe pkgs.greetd.tuigreet)
                 "--time"

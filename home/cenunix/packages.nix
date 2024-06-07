@@ -12,10 +12,10 @@ in {
     };
   };
   home.packages = with pkgs;
-    # exclude server device type
+  # exclude server device type
     [ ] ++ optionals
-      # shared packages between all systems
-      (builtins.elem device.type [ "desktop" "laptop" "armlaptop" ]) [
+    # shared packages between all systems
+    (builtins.elem device.type [ "desktop" "laptop" "armlaptop" ]) [
 
       #actual apps
       # telegram-desktop
@@ -25,8 +25,8 @@ in {
       # catppuccin-kvantum
       # ticktick
       wofi
-      docker
-      networkmanagerapplet
+      # docker
+      # networkmanagerapplet
     ] ++ optionals (builtins.elem device.type [ "desktop" ]) [
       # nvtop
     ] ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [ ]
