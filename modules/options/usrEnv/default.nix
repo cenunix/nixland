@@ -13,7 +13,7 @@ with lib; {
     # the system will use
     # TODO: make this a list
     desktop = mkOption {
-      type = types.enum [ "Hyprland" "i3" "sway" "Gnome" ];
+      type = types.enum [ "Hyprland" "i3" "sway" "Gnome" "Plasma" ];
       default = "Hyprland";
     };
 

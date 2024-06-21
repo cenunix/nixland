@@ -13,7 +13,7 @@
   my-webcord = pkgs.callPackage ./webcord/default.nix { };
   # wofi-bluetooth = pkgs.callPackage ./wofi-bluetooth/default.nix { };
   streamrip = pkgs.callPackage ./streamrip { };
-  my-vesktop = pkgs.callPackage ./vesktop { };
+  # my-vesktop = pkgs.callPackage ./vesktop { };
   owo-vencord = pkgs.callPacakge ./owo-vencord { };
   nheko = pkgs.callPackage ./nheko { };
 }

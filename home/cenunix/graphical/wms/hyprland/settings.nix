@@ -77,6 +77,11 @@ in {
         drawActiveWorkspace = true;
         reverseSwipe = true;
       };
+      csgo-vulkan-fix = {
+        res_w = 1920;
+        res_h = 1080;
+        class = "cs2";
+      };
     };
     misc = {
       animate_manual_resizes = true;

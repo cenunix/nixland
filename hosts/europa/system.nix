@@ -29,10 +29,10 @@
         gui.enable = true;
 
         gaming = {
-          enable = true;
-          steam.enable = true;
+          enable = false;
+          steam.enable = false;
           chess.enable = true;
-          minecraft.enable = true;
+          minecraft.enable = false;
           gamescope.enable = false;
         };
         default = {
@@ -50,8 +50,8 @@
       };
       usrEnv = {
         isWayland = true;
-        desktop = "Hyprland";
-        windowManager = true;
+        desktop = "Plasma";
+        windowManager = false;
         useHomeManager = true;
         autologin = false;
       };

@@ -18,8 +18,8 @@ in {
         SSH_AUTH_SOCK = "/run/user/1000/keyring/ssh";
         DISABLE_QT5_COMPAT = "0";
         GDK_BACKEND = "wayland";
-        XDG_CURRENT_DESKTOP = "Hyprland";
-        XDG_SESSION_DESKTOP = "Hyprland";
+        # XDG_CURRENT_DESKTOP = "Hyprland";
+        # XDG_SESSION_DESKTOP = "Hyprland";
         ANKI_WAYLAND = "1";
         DIRENV_LOG_FORMAT = "";
         WLR_DRM_NO_ATOMIC = "1";
@@ -38,11 +38,11 @@ in {
         BROWSER = "firefox";
         WLR_DRM_DEVICES = "/dev/dri/card1:/dev/dri/card0";
       };
-      loginShellInit = ''
-        dbus-update-activation-environment --systemd DISPLAY
-        eval $(gnome-keyring-daemon --start --components=ssh)
-        eval $(ssh-agent)
-      '';
+      # loginShellInit = ''
+      #   dbus-update-activation-environment --systemd DISPLAY
+      #   eval $(gnome-keyring-daemon --start --components=ssh)
+      #   eval $(ssh-agent)
+      # '';
     };
 
     hardware = {
@@ -63,20 +63,20 @@ in {
       pulseaudio.support32Bit = true;
     };
     systemd = {
-      user.services.polkit-gnome-authentication-agent-1 = {
-        description = "polkit-gnome-authentication-agent-1";
-        wantedBy = [ "graphical-session.target" ];
-        wants = [ "graphical-session.target" ];
-        after = [ "graphical-session.target" ];
-        serviceConfig = {
-          Type = "simple";
-          ExecStart =
-            "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-          Restart = "on-failure";
-          RestartSec = 1;
-          TimeoutStopSec = 10;
-        };
-      };
+      # user.services.polkit-gnome-authentication-agent-1 = {
+      #   description = "polkit-gnome-authentication-agent-1";
+      #   wantedBy = [ "graphical-session.target" ];
+      #   wants = [ "graphical-session.target" ];
+      #   after = [ "graphical-session.target" ];
+      #   serviceConfig = {
+      #     Type = "simple";
+      #     ExecStart =
+      #       "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+      #     Restart = "on-failure";
+      #     RestartSec = 1;
+      #     TimeoutStopSec = 10;
+      #   };
+      # };
     };
     sound = {
       enable = true;
@@ -87,8 +87,8 @@ in {
       mkIf (env.windowManager) [
         gnome3.adwaita-icon-theme
         xdg-utils
-        libsForQt5.qt5.qtwayland
-        qt6.qtwayland
+        # libsForQt5.qt5.qtwayland
+        # qt6.qtwayland
       ];
   };
 }

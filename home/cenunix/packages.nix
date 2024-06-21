@@ -33,15 +33,15 @@ in {
     ++ optionals (builtins.elem device.type [ "armlaptop" ]) [
       # additional packages for arm laptop (x13s as of now) machines that use home-manager
     ];
-  xdg.desktopEntries = {
-    "org.kde.tokodon" = {
-      name = "Tokodon";
-      genericName = "Mastodon Client";
-      comment = "Client for the Mastodon";
-      exec = "env QT_QPA_PLATFORM=xcb ${pkgs.kdePackages.tokodon}/bin/tokodon";
-      icon = "org.kde.tokodon";
-      terminal = false;
-      type = "Application";
-    };
-  };
+  # xdg.desktopEntries = {
+  #   "org.kde.tokodon" = {
+  #     name = "Tokodon";
+  #     genericName = "Mastodon Client";
+  #     comment = "Client for the Mastodon";
+  #     exec = "env QT_QPA_PLATFORM=xcb ${pkgs.kdePackages.tokodon}/bin/tokodon";
+  #     icon = "org.kde.tokodon";
+  #     terminal = false;
+  #     type = "Application";
+  #   };
+  # };
 }

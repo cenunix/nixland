@@ -18,5 +18,7 @@
     wget
     gnome.zenity
     nix-prefetch-github
+    graphviz
+    nix-du
   ];
 }

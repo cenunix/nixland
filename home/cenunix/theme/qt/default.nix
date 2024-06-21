@@ -3,19 +3,19 @@ let
   inherit (lib) mkIf;
   inherit (osConfig.modules) device;
   acceptedTypes = [ "desktop" "laptop" "armlaptop" ];
-in
-{
+in {
   config = mkIf (builtins.elem device.type acceptedTypes) {
-    home.packages = with pkgs; [
-      libsForQt5.qtstyleplugin-kvantum
-      qt6Packages.qtstyleplugin-kvantum
-      libsForQt5.qt5ct
-      (pkgs.catppuccin-kde.override {
-        flavour = [ "mocha" ];
-        accents = [ "blue" ];
-        winDecStyles = [ "modern" ];
-      })
-    ];
+    home.packages = with pkgs;
+      [
+        # libsForQt5.qtstyleplugin-kvantum
+        # qt6Packages.qtstyleplugin-kvantum
+        # libsForQt5.qt5ct
+        (pkgs.catppuccin-kde.override {
+          flavour = [ "mocha" ];
+          accents = [ "blue" ];
+          winDecStyles = [ "modern" ];
+        })
+      ];
 
     xdg.configFile = {
       "Kvantum/kvantum.kvconfig".source =
@@ -31,10 +31,10 @@ in
         ./themes/Catppuccin-Mocha-Blue.svg;
     };
 
-    qt = {
-      enable = true;
-      platformTheme = "qtct";
-      style.name = "kvantum";
-    };
+    # qt = {
+    #   enable = true;
+    #   platformTheme = "qtct";
+    #   style.name = "kvantum";
+    # };
   };
 }

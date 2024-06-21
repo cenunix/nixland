@@ -3,8 +3,9 @@ let
   inherit (lib) mkIf;
   inherit (osConfig) modules;
   inherit (modules) device;
-in
-{
+in {
   home.packages = with pkgs;
-    mkIf (device.type != "server") [ qbittorrent streamrip lame ];
+    mkIf (device.type != "server") [
+      qbittorrent # streamrip lame
+    ];
 }

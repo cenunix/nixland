@@ -12,6 +12,7 @@ in {
 
   home-manager = {
     extraSpecialArgs = { inherit inputs outputs pkgs; };
+    backupFileExtension = "backup";
     users = {
       # Import your home-manager configuration
       ${usr} = ../home/cenunix;

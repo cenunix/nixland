@@ -3,8 +3,7 @@ with lib;
 let
   device = config.modules.device;
   acceptedTypes = [ "desktop" "laptop" "armlaptop" ];
-in
-{
+in {
   config = mkIf (builtins.elem device.type acceptedTypes) {
     # enable polkit for privilege escalation
     security.polkit.enable = true;
@@ -14,7 +13,7 @@ in
       fstrim.enable = true;
       avahi.enable = true;
       gvfs.enable = true; # Mount, trash, and other functionalities
-      flatpak.enable = true;
+      # flatpak.enable = true;
       dbus = {
         packages = with pkgs; [ dconf gcr udisks2 ];
         enable = true;
