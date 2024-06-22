@@ -30,8 +30,8 @@ in {
       };
       usrEnv = {
         isWayland = true;
-        windowManager = true;
-        desktop = "Hyprland";
+        windowManager = false;
+        desktop = "Plasma";
         useHomeManager = true;
         autologin = false;
       };
