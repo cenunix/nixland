@@ -4,8 +4,7 @@
     ./programs
     ./services
     ./users
-    ./wayland/services.nix
-    ./wayland/xdg-portals.nix
+    ./wayland
     ./nix.nix
     ./bootloaders
     ./hardware

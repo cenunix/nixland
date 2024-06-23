@@ -321,9 +321,6 @@
         "OverrideForumDefaults": {
             "enabled": false
         },
-        "Party mode 🎉": {
-            "enabled": false
-        },
         "PermissionFreeWill": {
             "enabled": false
         },
@@ -404,9 +401,6 @@
             "enabled": false
         },
         "ServerListIndicators": {
-            "enabled": false
-        },
-        "ServerProfile": {
             "enabled": false
         },
         "ShikiCodeblocks": {
@@ -533,6 +527,45 @@
         },
         "StreamerModeOnStream": {
             "enabled": false
+        },
+        "PartyMode": {
+            "enabled": false
+        },
+        "ServerInfo": {
+            "enabled": false
+        },
+        "MessageUpdaterAPI": {
+            "enabled": true
+        },
+        "UserSettingsAPI": {
+            "enabled": true
+        },
+        "AppleMusicRichPresence": {
+            "enabled": false
+        },
+        "AutomodContext": {
+            "enabled": false
+        },
+        "CopyEmojiMarkdown": {
+            "enabled": false
+        },
+        "CtrlEnterSend": {
+            "enabled": false
+        },
+        "CustomIdle": {
+            "enabled": false
+        },
+        "DontRoundMyTimestamps": {
+            "enabled": false
+        },
+        "ImageLink": {
+            "enabled": false
+        },
+        "MaskedLinkPaste": {
+            "enabled": false
+        },
+        "MessageLatency": {
+            "enabled": false
         }
     },
     "notifications": {
@@ -545,6 +578,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1715572609625
+        "settingsSyncVersion": 1719012981346
     }
 }

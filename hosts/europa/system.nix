@@ -30,7 +30,7 @@
 
         gaming = {
           enable = false;
-          steam.enable = false;
+          steam.enable = true;
           chess.enable = true;
           minecraft.enable = false;
           gamescope.enable = false;
