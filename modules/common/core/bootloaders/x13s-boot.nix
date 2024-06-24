@@ -60,7 +60,7 @@ in {
     };
     hardware = {
       enableRedistributableFirmware = true;
-      # firmware = [ pkgs.linux-firmware firmware.linux-firmware-modified ];
+      firmware = [ pkgs.linux-firmware firmware.linux-firmware-modified ];
       deviceTree.enable = true;
     };
   };

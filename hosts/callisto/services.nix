@@ -3,23 +3,23 @@
 {
   systemd.services = {
     pd-mapper = {
-      unitConfig = {
-        Requires = "qrtr-ns.service";
-        After = "qrtr-ns.service";
-      };
+      # unitConfig = {
+      # Requires = "qrtr-ns.service";
+      # After = "qrtr-ns.service";
+      # };
       serviceConfig = {
         Restart = "always";
         ExecStart = "${pkgs.pd-mapper}/bin/pd-mapper";
       };
       wantedBy = [ "multi-user.target" ];
     };
-    qrtr-ns = {
-      serviceConfig = {
-        ExecStart = "${pkgs.qrtr}/bin/qrtr-ns -f 1";
-        Restart = "always";
-      };
-      wantedBy = [ "multi-user.target" ];
-    };
+    # qrtr-ns = {
+    #   serviceConfig = {
+    #     ExecStart = "${pkgs.qrtr}/bin/qrtr-ns -f 1";
+    #     Restart = "always";
+    #   };
+    #   wantedBy = [ "multi-user.target" ];
+    # };
     # bluetooth = {
     #   serviceConfig = {
     #     ExecStartPre = [

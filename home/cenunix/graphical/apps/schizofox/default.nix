@@ -178,9 +178,9 @@ in {
             #   SkipOnboarding = true;
             # };
             SanitizeOnShutdown = {
-              Cache = true;
-              History = true;
-              Cookies = true;
+              # Cache = true;
+              # History = true;
+              # Cookies = true;
               Downloads = true;
               FormData = true;
               Sessions = true;

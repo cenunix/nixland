@@ -56,7 +56,7 @@
         qrtr = prev.callPackage ../../pkgs/qrtr.nix { };
         pd-mapper =
           final.callPackage ../../pkgs/pd-mapper.nix { inherit (final) qrtr; };
-        compressFirmwareXz = lib.id;
+        compressFirmwareZstd = lib.id;
       })
     ];
     # Configure your nixpkgs instance
