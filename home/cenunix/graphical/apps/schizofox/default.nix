@@ -137,55 +137,55 @@ in {
         wrapFirefox firefox-devedition-unwrapped {
           # see https://github.com/mozilla/policy-templates/blob/master/README.md
           extraPolicies = {
-            # ExtensionSettings = let
-            #   mkForceInstalled = extensions:
-            #     builtins.mapAttrs
-            #     (name: cfg: { installation_mode = "force_installed"; } // cfg)
-            #     extensions;
-            # in mkForceInstalled {
-            #   "addon@darkreader.org".install_url =
-            #     "https://addons.mozilla.org/firefox/downloads/latest/darkreader/latest.xpi";
-            #   "uBlock0@raymondhill.net".install_url =
-            #     "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
-            #   "{36bdf805-c6f2-4f41-94d2-9b646342c1dc}".install_url =
-            #     "https://addons.mozilla.org/firefox/downloads/latest/export-cookies-txt/latest.xpi";
-            #   "{74145f27-f039-47ce-a470-a662b129930a}".install_url =
-            #     "https://addons.mozilla.org/firefox/downloads/latest/clearurls/latest.xpi";
-            #   "{b86e4813-687a-43e6-ab65-0bde4ab75758}".install_url =
-            #     "https://addons.mozilla.org/firefox/downloads/latest/localcdn-fork-of-decentraleyes/latest.xpi";
-            #   "DontFuckWithPaste@raim.ist".install_url =
-            #     "https://addons.mozilla.org/firefox/downloads/latest/don-t-fuck-with-paste/latest.xpi";
-            #   "{c607c8df-14a7-4f28-894f-29e8722976af}".install_url =
-            #     "https://addons.mozilla.org/firefox/downloads/latest/temporary-containers/latest.xpi";
-            #   "skipredirect@sblask".install_url =
-            #     "https://addons.mozilla.org/firefox/downloads/latest/skip-redirect/latest.xpi";
-            #   "{446900e4-71c2-419f-a6a7-df9c091e268b}".install_url =
-            #     "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi";
-            #   "vimium-c@gdh1995.cn".install_url =
-            #     "https://addons.mozilla.org/firefox/downloads/latest/vimium-c/latest.xpi";
-            #   "{47bf427e-c83d-457d-9b3d-3db4118574bd}".install_url =
-            #     "https://addons.mozilla.org/firefox/downloads/latest/nighttab/latest.xpi";
-            # };
+            ExtensionSettings = let
+              mkForceInstalled = extensions:
+                builtins.mapAttrs
+                (name: cfg: { installation_mode = "force_installed"; } // cfg)
+                extensions;
+            in mkForceInstalled {
+              "addon@darkreader.org".install_url =
+                "https://addons.mozilla.org/firefox/downloads/latest/darkreader/latest.xpi";
+              "uBlock0@raymondhill.net".install_url =
+                "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
+              "{36bdf805-c6f2-4f41-94d2-9b646342c1dc}".install_url =
+                "https://addons.mozilla.org/firefox/downloads/latest/export-cookies-txt/latest.xpi";
+              "{74145f27-f039-47ce-a470-a662b129930a}".install_url =
+                "https://addons.mozilla.org/firefox/downloads/latest/clearurls/latest.xpi";
+              "{b86e4813-687a-43e6-ab65-0bde4ab75758}".install_url =
+                "https://addons.mozilla.org/firefox/downloads/latest/localcdn-fork-of-decentraleyes/latest.xpi";
+              "DontFuckWithPaste@raim.ist".install_url =
+                "https://addons.mozilla.org/firefox/downloads/latest/don-t-fuck-with-paste/latest.xpi";
+              "{c607c8df-14a7-4f28-894f-29e8722976af}".install_url =
+                "https://addons.mozilla.org/firefox/downloads/latest/temporary-containers/latest.xpi";
+              "skipredirect@sblask".install_url =
+                "https://addons.mozilla.org/firefox/downloads/latest/skip-redirect/latest.xpi";
+              "{446900e4-71c2-419f-a6a7-df9c091e268b}".install_url =
+                "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi";
+              "vimium-c@gdh1995.cn".install_url =
+                "https://addons.mozilla.org/firefox/downloads/latest/vimium-c/latest.xpi";
+              "{47bf427e-c83d-457d-9b3d-3db4118574bd}".install_url =
+                "https://addons.mozilla.org/firefox/downloads/latest/nighttab/latest.xpi";
+            };
 
             FirefoxHome = {
               Pocket = false;
               Snippets = false;
             };
             PasswordManagerEnabled = false;
-            # PromptForDownloadLocation = false;
-            # UserMessaging = {
-            #   ExtensionRecommendations = true;
-            #   SkipOnboarding = true;
-            # };
-            SanitizeOnShutdown = {
-              # Cache = true;
-              # History = true;
-              # Cookies = true;
-              Downloads = true;
-              FormData = true;
-              Sessions = true;
-              OfflineApps = true;
+            PromptForDownloadLocation = true;
+            UserMessaging = {
+              ExtensionRecommendations = true;
+              SkipOnboarding = true;
             };
+            # SanitizeOnShutdown = {
+            # Cache = true;
+            # History = true;
+            # Cookies = true;
+            # Downloads = true;
+            # FormData = true;
+            # Sessions = true;
+            # OfflineApps = true;
+            # };
           };
         };
     };
