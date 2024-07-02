@@ -1,4 +1,3 @@
-{ inputs, outputs, lib, config, pkgs, self, ... }:
-{
-  # imports = [ ./ags ./hypridle ./hyprlock ];
+{ inputs, outputs, lib, config, pkgs, self, ... }: {
+  imports = [ ./ags ./hypridle ./hyprlock ];
 }

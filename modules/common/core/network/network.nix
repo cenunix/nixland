@@ -3,7 +3,7 @@
   networking = {
     # dns
     networkmanager = { enable = true; };
-    nameservers = [ "1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one" ];
+    nameservers = [ "1.1.1.1" "1.0.0.1" ];
     firewall = {
       enable = true;
       checkReversePath = false;
@@ -58,13 +58,13 @@
       logReversePathDrops = true;
     };
   };
-  services.resolved = {
-    enable = true;
-    dnssec = "true";
-    domains = [ "~." ];
-    fallbackDns = [ "1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one" ];
-    dnsovertls = "true";
-  };
+  # services.resolved = {
+  #   enable = true;
+  #   dnssec = "true";
+  #   domains = [ "~." ];
+  #   fallbackDns = [ "1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one" ];
+  #   dnsovertls = "true";
+  # };
   # slows down boot time
   systemd.services.NetworkManager-wait-online.enable = false;
   programs = {
@@ -73,7 +73,7 @@
       askPassword =
         lib.mkForce "${pkgs.gnome.seahorse}/libexec/seahorse/ssh-askpass";
     };
-    wireshark.enable = true;
+    # wireshark.enable = true;
   };
   services.openssh = {
     enable = true;

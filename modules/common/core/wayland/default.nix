@@ -17,7 +17,7 @@ in {
         # _JAVA_AWT_WM_NONEREPARENTING = "1";
         SSH_AUTH_SOCK = "/run/user/1000/keyring/ssh";
         DISABLE_QT5_COMPAT = "0";
-        GDK_BACKEND = "wayland";
+        # GDK_BACKEND = "wayland";
         # XDG_CURRENT_DESKTOP = "Hyprland";
         # XDG_SESSION_DESKTOP = "Hyprland";
         ANKI_WAYLAND = "1";
@@ -28,7 +28,7 @@ in {
         QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
         QT_QPA_PLATFORMTHEME = lib.mkForce "qt5ct";
         QT_STYLE_OVERRIDE = lib.mkForce "kvantum";
-        MOZ_ENABLE_WAYLAND = "1";
+        MOZ_ENABLE_WAYLAND = "0"; # Firefox has a bug with 555 drivers rn :()
         # WLR_BACKEND = "vulkan";
         # WLR_RENDERER = "vulkan";
         # WLR_NO_HARDWARE_CURSORS = "1";
