@@ -72,22 +72,24 @@ const options = mkOptions(OPTIONS, {
         // "launcher",
         // "taskbar",
         //
-        "workspaces",
-        "expander",
+        // "expander",
         // "weather",
       ]),
       center: opt<Array<import("widget/bar/Bar").BarWidget>>([
+        // "workspaces",
         "messages",
         "date",
+        "systray",
       ]),
       end: opt<Array<import("widget/bar/Bar").BarWidget>>([
         // "media",
         "expander",
-        "system",
-        // "sysinfo",
+
         // "colorpicker",
-        "systray",
+        //
+        "system",
         "battery",
+        // "sysinfo",
 
         // "screenrecord",
         // "powermenu",

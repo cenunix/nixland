@@ -112,7 +112,8 @@ in {
             # # "browser.startup.homepage" = "file://${startpage}";
             # # "browser.newtabpage.enabled" = false;
             # # Normal useragent
-            # # "general.useragent.override" = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36";
+            "general.useragent.override" =
+              "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:106.0) Gecko/20100101 Firefox/106.0";
             #
             # "toolkit.zoomManager.zoomValues" = ".8,.90,.95,1,1.1,1.2";
             # "browser.uidensity" = 1;

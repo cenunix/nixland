@@ -8,19 +8,16 @@ in {
   programs.hyprlock = {
     enable = true;
     settings = {
-      backgrounds = [{
+      background = [{
         monitor = "";
         path =
           "/home/cenunix/NixLand/home/cenunix/graphical/wms/hyprland/mountain.png";
       }];
 
-      input-fields = [{
+      input-field = [{
         monitor = "DP-1";
 
-        size = {
-          width = 300;
-          height = 50;
-        };
+        size = "300, 50";
 
         outline_thickness = 2;
 
@@ -35,18 +32,17 @@ in {
         dots_center = true;
       }];
 
-      labels = [{
+      label = [{
         monitor = "";
         inherit font_family;
-        text = ''
-          cmd[update:1000] echo "<span font_family='Lexend' foreground='##cdd6f4'>$(date +%r)</span>"'';
+        # font_family = "Lexend";
+        # text = ''
+        #   cmd[update:1000] echo "<span font_family='Lexend' foreground='##cdd6f4'>$(date +%r)</span>"'';
+        text = "";
         font_size = 50;
         color = "rgb(205, 214, 244)";
 
-        position = {
-          x = 0;
-          y = 80;
-        };
+        position = "0, 80";
 
         valign = "center";
         halign = "center";
