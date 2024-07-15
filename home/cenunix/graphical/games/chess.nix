@@ -11,6 +11,8 @@ in {
       gnome.gnome-chess
       stockfish
       fishnet
+      leela-zero
+      lc0
       uchess
     ];
   };
