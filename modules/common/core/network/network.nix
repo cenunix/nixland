@@ -73,7 +73,6 @@
       askPassword =
         lib.mkForce "${pkgs.gnome.seahorse}/libexec/seahorse/ssh-askpass";
     };
-    # wireshark.enable = true;
   };
   services.openssh = {
     enable = true;

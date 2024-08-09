@@ -61,6 +61,7 @@ in {
         })
       ];
       pulseaudio.support32Bit = true;
+      xone.enable = true;
     };
     systemd = {
       # user.services.polkit-gnome-authentication-agent-1 = {
@@ -78,10 +79,10 @@ in {
       #   };
       # };
     };
-    sound = {
-      enable = true;
-      mediaKeys.enable = true;
-    };
+    # sound = {
+    #   enable = true;
+    #   mediaKeys.enable = true;
+    # };
 
     environment.systemPackages = with pkgs;
       mkIf (env.windowManager) [

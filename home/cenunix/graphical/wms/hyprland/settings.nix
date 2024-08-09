@@ -8,8 +8,10 @@ in {
   wayland.windowManager.hyprland.extraConfig = let
     monitorConfig = builtins.concatStringsSep "\n"
       (builtins.map (monitor: "monitor=${monitor}") device.monitors);
+    workspacesConfig = builtins.concatStringsSep "\n" (device.workspaces);
   in ''
     ${monitorConfig}
+    ${workspacesConfig}
   '';
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
@@ -62,6 +64,7 @@ in {
         "specialWorkspace, 1, 3, md3_decel,slide"
       ];
     };
+    render = { explicit_sync_kms = 0; };
     dwindle = {
       pseudotile = false; # enable pseudotiling on dwindle
     };
@@ -77,11 +80,11 @@ in {
         drawActiveWorkspace = true;
         reverseSwipe = true;
       };
-      csgo-vulkan-fix = {
-        res_w = 1920;
-        res_h = 1080;
-        class = "cs2";
-      };
+      # csgo-vulkan-fix = {
+      #   res_w = 1920;
+      #   res_h = 1080;
+      #   class = "cs2";
+      # };
     };
     misc = {
       animate_manual_resizes = true;

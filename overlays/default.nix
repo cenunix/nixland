@@ -10,26 +10,37 @@
       config.allowUnfree = true;
     };
   };
-  nvidia-packages = final: _prev: {
-    unstable = import inputs.nixpkgs-nvidia {
+  firefox-packages = final: _prev: {
+    firefox-packages = import inputs.nixpkgs-firefox {
       system = final.system;
       config.allowUnfree = true;
     };
   };
   # When applied, the stable nixpkgs set (declared in the flake inputs) will
   # be accessible through 'pkgs.stable'
-  stable-packages = final: _prev: {
-    stable = import inputs.nixpkgs-stable {
-      system = final.system;
-      config.allowUnfree = true;
-    };
-  };
+  # stable-packages = final: _prev: {
+  #   stable = import inputs.nixpkgs-stable {
+  #     system = final.system;
+  #     config.allowUnfree = true;
+  #   };
+  # };
 
   # This one contains whatever you want to overlay
   # You can change versions, add patches, set compilation flags, anything really.
   # https://nixos.wiki/wiki/Overlays
   modifications = final: prev:
     {
+      # firefox-beta-bin-unwrapped = prev.firefox-beta-bin-unwrapped.overrideAttrs
+      #   (o: {
+      #     patches = [
+      #       (prev.fetchpatch {
+      #         url =
+      #           "https://patch-diff.githubusercontent.com/raw/NixOS/nixpkgs/pull/332853.patch";
+      #         hash = "sha256-tRWKuaEgFkPX42KDgfZpMnYSy4M9K0PF6k4XWbCiye8=";
+      #       })
+      #     ];
+      #   });
+
       # vesktop = prev.vesktop.overrideAttrs (old: rec {
       #   version = "master";
       #   src = old.src.override {

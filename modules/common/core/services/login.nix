@@ -3,7 +3,7 @@ with lib;
 let
   env = config.modules.usrEnv;
   sys = config.modules.system;
-  sessionData = config.services.xserver.displayManager.sessionData.desktops;
+  sessionData = config.services.displayManager.sessionData.desktops;
   sessionPath = concatStringsSep ":" [
     "${sessionData}/share/xsessions"
     "${sessionData}/share/wayland-sessions"

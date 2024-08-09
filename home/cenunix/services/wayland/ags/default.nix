@@ -35,7 +35,7 @@
     # }))
     swww
 
-    inputs.matugen.packages.${system}.default
+    # inputs.matugen.packages.${system}.default
     slurp
     fzf
     wf-recorder

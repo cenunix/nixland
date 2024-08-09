@@ -1,21 +1,16 @@
 { inputs, outputs, lib, config, pkgs, ... }: {
-  nix = {
-    # This will add each flake input as a registry
-    # To make nix3 commands consistent with your flake
-    registry = lib.mapAttrs (_: value: { flake = value; }) inputs;
-
-    # This will additionally add your inputs to the system's legacy channels
-    # Making legacy nix commands consistent as well, awesome!
-    nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}")
-      config.nix.registry;
-
-    # Garbage collection, delete older than 3d
+  nix = let flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
+  in {
+    # Opinionated: make flake registry and nix path match flake inputs
+    registry = lib.mapAttrs (_: flake: { inherit flake; }) flakeInputs;
+    nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
+    # Garbage collection, delete older than 7 days 
     gc = {
       automatic = true;
       dates = "daily";
-      options = "--delete-older-than 30d";
+      options = "--delete-older-than 7d";
     };
-
+    channel.enable = false;
     settings = {
       # enable new nix command and flakes
       # and also "unintended" recursion as well as content addresssed
@@ -47,9 +42,13 @@
       # execute builds inside cgroups
       use-cgroups = true;
       # for direnv GC roots
-      keep-derivations = true;
-      keep-outputs = true;
+      keep-derivations = false;
+      keep-outputs = false;
       # use binary cache, its not gentoo
+      # Opinionated: disable global registry
+      flake-registry = "";
+      # Workaround for https://github.com/NixOS/nix/issues/9574
+      nix-path = config.nix.nixPath;
       substituters = [
         "https://cache.nixos.org"
         "https://fortuneteller2k.cachix.org"
@@ -62,7 +61,6 @@
         "https://nixvim.cachix.org"
         "https://nyx.cachix.org"
       ];
-
       trusted-public-keys = [
         "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
         "fortuneteller2k.cachix.org-1:kXXNkMV5yheEQwT0I4XYh1MaCSz+qg72k8XAi2PthJI="

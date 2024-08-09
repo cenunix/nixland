@@ -4,15 +4,15 @@ let
   device = osConfig.modules.device;
   override = osConfig.modules.programs.override.program;
   acceptedTypes = [ "laptop" "desktop" ];
-  spicePkgs = inputs.spicetify.packages.${pkgs.system}.default;
+  spicePkgs = inputs.spicetify.legacyPackages.${pkgs.system};
 in {
-  imports = [ inputs.spicetify.homeManagerModule ];
+  imports = [ inputs.spicetify.homeManagerModules.default ];
   config = mkIf (builtins.elem device.type acceptedTypes) {
     programs.spicetify = {
       spotifyPackage = pkgs.spotify;
       enable = true;
       # custom Dribbblish theme
-      theme = spicePkgs.themes.Dribbblish;
+      theme = spicePkgs.themes.dribbblish;
       # specify that we want to use our custom colorscheme
       colorScheme = "custom";
 

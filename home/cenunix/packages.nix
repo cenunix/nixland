@@ -16,20 +16,12 @@ in {
     [ ] ++ optionals
     # shared packages between all systems
     (builtins.elem device.type [ "desktop" "laptop" "armlaptop" ]) [
-
       #actual apps
-      # telegram-desktop
-      ttyper
-      # kdePackages.tokodon
-      # kdePackages.zanshin
-      # catppuccin-kvantum
-      # ticktick
+      # ttyper
       wofi
-      # docker
-      # networkmanagerapplet
-    ] ++ optionals (builtins.elem device.type [ "desktop" ]) [
-      # nvtop
-    ] ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [ ]
+      wpa_supplicant_gui
+    ] ++ optionals (builtins.elem device.type [ "desktop" ]) [ ryujinx ]
+    ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [ ]
     ++ optionals (builtins.elem device.type [ "armlaptop" ]) [
       # additional packages for arm laptop (x13s as of now) machines that use home-manager
     ];

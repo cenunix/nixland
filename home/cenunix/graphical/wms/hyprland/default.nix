@@ -56,7 +56,7 @@ in {
 
       plugins = with inputs.hyprland-plugins.packages.${pkgs.system};
         [
-          csgo-vulkan-fix
+          # csgo-vulkan-fix
           # hyprbars
           # hyprexpo
         ];

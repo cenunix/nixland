@@ -80,20 +80,19 @@ in {
     boot.kernelParams = [ "nvidia-drm.fbdev=1" ];
     hardware = {
       nvidia = {
-        package = mkDefault config.boot.kernelPackages.nvidiaPackages.beta;
-        # package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
-        #   version = "535.171.04";
-        #   sha256_64bit = "sha256-6PFkO0vJXYrNZaRHB4SpfazkZC8UkjZGYSDbKqlCQ3o=";
-        #   sha256_aarch64 =
-        #     "sha256-G0/GiObf/BZMkzzET8HQjdIcvCSqB1uhsinro2HLK9k=";
-        #   openSha256 = "sha256-wvRdHguGLxS0mR06P5Qi++pDJBCF8pJ8hr4T8O6TJIo=";
-        #   settingsSha256 =
-        #     "sha256-9wqoDEWY4I7weWW05F4igj1Gj9wjHsREFMztfEmqm10=";
-        #   persistencedSha256 =
-        #     "sha256-d0Q3Lk80JqkS1B54Mahu2yY/WocOqFFbZVBh+ToGhaE=";
-        #
-        #   # patches = [ rcu_patch ];
-        # };
+        # package = mkDefault config.boot.kernelPackages.nvidiaPackages.beta;
+        package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
+          version = "560.31.02";
+          sha256_64bit = "sha256-0cwgejoFsefl2M6jdWZC+CKc58CqOXDjSi4saVPNKY0=";
+          sha256_aarch64 =
+            "sha256-m7da+/Uc2+BOYj6mGON75h03hKlIWItHORc5+UvXBQc=";
+          openSha256 = "sha256-X5UzbIkILvo0QZlsTl9PisosgPj/XRmuuMH+cDohdZQ=";
+          settingsSha256 =
+            "sha256-A3SzGAW4vR2uxT1Cv+Pn+Sbm9lLF5a/DGzlnPhxVvmE=";
+          persistencedSha256 =
+            "sha256-BDtdpH5f9/PutG3Pv9G4ekqHafPm3xgDYdTcQumyMtg=";
+          # patches = [ rcu_patch ];
+        };
         modesetting.enable = mkDefault true;
         prime.offload.enableOffloadCmd = device.gpu == "hybrid-nv";
         # powerManagement = {
@@ -103,7 +102,7 @@ in {
 
         # use open source drivers by default, hosts may override this option if their gpu is
         # not supported by the open source dexplicit sync.rivers
-        open = false;
+        open = true;
         nvidiaSettings = false; # add nvidia-settings to pkgs, useless on nixos
         # nvidiaPersistenced = true;
         # forceFullCompositionPipeline = true;

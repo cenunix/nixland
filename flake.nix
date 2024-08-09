@@ -2,26 +2,34 @@
   description = "NixLand configuration";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-firefox.url =
+      "github:nixos/nixpkgs?rev=1143313df94f840f6234554a053bce3d179bf917";
     # nixpkgs.url = "github:diniamo/nixpkgs/nvidia-555";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
-    nixpkgs-master.url = "github:nixos/nixpkgs/master";
-    nixpkgs-nvidia.url = "github:diniamo/nixpkgs/nvidia-555";
+    # nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
+    # nixpkgs-master.url = "github:nixos/nixpkgs/master";
+    # nixpkgs-nvidia.url = "github:diniamo/nixpkgs/nvidia-555";
 
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # hyprland.url = "github:hyprwm/hyprland?ref=v0.40.0&submodules=1";
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    hyprland.url =
+      "git+https://github.com/hyprwm/Hyprland?ref=refs/tags/v0.42.0&submodules=1";
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
     # Hyprland workspace overview plugin
-    hyprland-hyprspace = {
-      url = "github:KZDKM/Hyprspace";
-      inputs.hyprland.follows = "hyprland";
-    };
+    # hyprland-hyprspace = {
+    #   url = "github:KZDKM/Hyprspace";
+    #   inputs.hyprland.follows = "hyprland";
+    # };
     # Hyprland transparency magic
     # hyprland-hyprchroma = {
     #   url = "github:alexhulbert/HyprChroma";
@@ -31,18 +39,16 @@
     # hyprlock = { url = "github:hyprwm/Hyprlock/"; };
     ags.url = "github:Aylur/ags";
     astal.url = "github:Aylur/astal";
-    matugen.url = "github:InioX/matugen?ref=v2.2.0";
-    # anyrun = { url = "github:Kirottu/anyrun"; };
+    # matugen.url = "github:InioX/matugen?ref=v2.2.0";
     spicetify = {
-      url = "github:the-argus/spicetify-nix";
+      url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     arrpc = { url = "github:notashelf/arrpc-flake"; };
     # personal neovim flake
     nvim-flake = { url = "github:cenunix/nvim-flake"; };
     # zellij status-bar plugin
-    zjstatus = { url = "github:dj95/zjstatus"; };
-
+    # zjstatus = { url = "github:dj95/zjstatus"; };
   };
 
   outputs = { self, nixpkgs, ... }@inputs:
