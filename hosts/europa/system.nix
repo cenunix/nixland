@@ -33,7 +33,7 @@
         bluetooth.enable = true;
         virtualization.enable = true;
         virtualization.qemu.enable = true;
-        virtualization.docker.enable = true;
+        virtualization.docker.enable = false;
         server = {
           enable = false;
           mediaServer = false;

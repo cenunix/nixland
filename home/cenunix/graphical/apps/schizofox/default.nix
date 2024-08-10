@@ -10,8 +10,8 @@ in {
   config = mkIf (builtins.elem device.type acceptedTypes) {
     programs.firefox = mkDefault {
       enable = true;
-      # package = with pkgs;
-      # wrapFirefox firefox-packages.firefox-devedition-bin-unwrapped { };
+      package = with pkgs;
+        wrapFirefox firefox-packages.firefox-beta-bin-unwrapped { };
       profiles.cenunix.isDefault = true;
       profiles.cenunix = {
         search = {

@@ -503,17 +503,17 @@
     },
     "nixpkgs-firefox": {
       "locked": {
-        "lastModified": 1722965875,
-        "narHash": "sha256-oBSmedcUO7/mveczZcYAnW4y05mIcR9GyYiI0DtTJHg=",
+        "lastModified": 1723195047,
+        "narHash": "sha256-7ne0LMxoHWStqO+y9tsPg/O206qYSkrI6AXZD+gOUnw=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "1143313df94f840f6234554a053bce3d179bf917",
+        "rev": "c4a9c4f8d2f1196e4b08dc8477b2575ee4e3e3be",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "1143313df94f840f6234554a053bce3d179bf917",
+        "rev": "c4a9c4f8d2f1196e4b08dc8477b2575ee4e3e3be",
         "type": "github"
       }
     },

@@ -37,7 +37,7 @@ in {
     systemd.enable = true;
     settings = {
       primary = {
-        exclusive = false;
+        exclusive = true;
         passthrough = false;
         height = 40;
         margin = "6";
@@ -242,14 +242,14 @@ in {
     # x y z -> top, horizontal, bottom
     # w x y z -> top, right, bottom, left
     style = let
-      inherit (inputs.nix-colors.lib.conversions) hexToRGBString;
-      inherit (config.colorscheme) colors;
-      toRGBA = color: opacity:
-        "rgba(${hexToRGBString "," (lib.removePrefix "#" color)},${opacity})";
+      # inherit (inputs.nix-colors.lib.conversions) hexToRGBString;
+      # inherit (config.colorscheme) colors;
+      # toRGBA = color: opacity:
+      # "rgba(${hexToRGBString "," (lib.removePrefix "#" color)},${opacity})";
       # css
     in ''
       * {
-        font-family: Maple Mono SC NF;
+        font-family: Ubuntu Nerd Font, Maple Mono SC NF;
         font-size: 12pt;
         padding: 0;
         margin: 0 0.4em;
@@ -258,7 +258,7 @@ in {
       window#waybar {
         padding: 0;
         border-radius: 0.5em;
-        background-color:  rgba(49, 50, 68, 0.7) };
+        background-color: rgba(49, 50, 68, 0.7);
         color: #cdd6f4;
       }
       .modules-left {

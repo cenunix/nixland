@@ -46,7 +46,7 @@ in {
     };
 
     hardware = {
-      opengl = mkMerge [
+      graphics = mkMerge [
         {
           enable = true;
           # driSupport = true;
@@ -56,9 +56,7 @@ in {
               libvdpau-va-gl
             ];
         }
-        (mkIf (builtins.elem device.type acceptedTypes) {
-          driSupport32Bit = true;
-        })
+        (mkIf (builtins.elem device.type acceptedTypes) { enable32Bit = true; })
       ];
       pulseaudio.support32Bit = true;
       xone.enable = true;
