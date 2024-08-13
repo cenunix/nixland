@@ -20,6 +20,14 @@ in {
       # ttyper
       wofi
       wpa_supplicant_gui
+      # hyprpanel stuff
+      hyprpanel
+      # inputs.hyprpanel.packages.${pkgs.system}.default
+      # gpu-screen-recorder
+      # bluez
+      # gnome.gnome-bluetooth
+      # hyprpicker
+      # grimblast
     ] ++ optionals (builtins.elem device.type [ "desktop" ]) [ ryujinx ]
     ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [ ]
     ++ optionals (builtins.elem device.type [ "armlaptop" ]) [

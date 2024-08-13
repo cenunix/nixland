@@ -22,6 +22,7 @@
   nixpkgs = {
     # You can add overlays here
     overlays = [
+      inputs.hyprpanel.overlay.x86_64-linux
       # Add overlays your own flake exports (from overlays and pkgs dir):
       # You can also add overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default

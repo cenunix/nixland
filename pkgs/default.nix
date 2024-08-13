@@ -16,4 +16,5 @@
   # my-vesktop = pkgs.callPackage ./vesktop { };
   owo-vencord = pkgs.callPacakge ./owo-vencord { };
   nheko = pkgs.callPackage ./nheko { };
+  coloryou = pkgs.callPackage ./coloryou { };
 }

@@ -3,12 +3,23 @@
     "target": "ES2022",
     "module": "ES2022",
     "lib": ["ES2022"],
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "allowSyntheticDefaultImports": true,
     "allowJs": true,
     "checkJs": true,
     "strict": true,
     "noImplicitAny": false,
     "baseUrl": ".",
-    "typeRoots": ["./types", "./node_modules/@girs"],
-    "skipLibCheck": true
+    "paths": {
+      "fzf": ["./node_modules/fzf/dist/types"]
+    },
+    "typeRoots": [
+      "./types",
+      "./global-types.d.ts",
+      "./node_modules"
+    ],
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
   }
 }

@@ -126,8 +126,8 @@ in {
           return-type = "json";
           exec = mkScriptJson {
             # deps = lib.optional hyprlandCfg.enable hyprlandCfg.package;
-            text = "";
-            tooltip = ''$(grep PRETTY_NAME /etc/os-release | cut -d '"' -f2)'';
+            text = ''$(grep PRETTY_NAME /etc/os-release | cut -d '"' -f2)'';
+            # tooltip = ;
             class = "hyprctl activewindow -j | jq -e '.fullscreen' &>/dev/null";
           };
         };
@@ -258,7 +258,7 @@ in {
       window#waybar {
         padding: 0;
         border-radius: 0.5em;
-        background-color: rgba(49, 50, 68, 0.7);
+        background-color: rgba(17, 17, 27, 0.7);
         color: #cdd6f4;
       }
       .modules-left {

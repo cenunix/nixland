@@ -14,7 +14,7 @@ in {
         "notifications"
         "osd"
         "system-menu"
-
+        "wofi"
         "anyrun"
       ];
 
