@@ -33,7 +33,7 @@
 
     services.upower.enable = true;
 
-    home-manager.users."cenunix".imports = [
+    imports = [
       inputs.ags.homeManagerModules.default
 
       ({ config, lib, ... }:
