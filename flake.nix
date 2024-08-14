@@ -38,25 +38,6 @@
     xdg-portal-hyprland.url = "github:hyprwm/xdg-desktop-portal-hyprland";
     # hyprlock = { url = "github:hyprwm/Hyprlock/"; };
     ags.url = "github:Aylur/ags";
-    gtk-session-lock = {
-      inputs.nixpkgs.follows = "nixpkgs";
-      owner = "Cu3PO42";
-      repo = "gtk-session-lock";
-      type = "github";
-    };
-    astal-tray = {
-      inputs.nixpkgs.follows = "nixpkgs";
-      owner = "astal-sh";
-      repo = "tray";
-      type = "github";
-    };
-    ts-for-gir-src = {
-      flake = false;
-      owner = "gjsify";
-      repo = "ts-for-gir";
-      type = "github";
-    };
-    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     astal.url = "github:Aylur/astal";
     # matugen.url = "github:InioX/matugen?ref=v2.2.0";
     spicetify = {

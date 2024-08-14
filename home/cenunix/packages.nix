@@ -17,17 +17,11 @@ in {
     # shared packages between all systems
     (builtins.elem device.type [ "desktop" "laptop" "armlaptop" ]) [
       #actual apps
-      # ttyper
+      ttyper
       wofi
       wpa_supplicant_gui
-      # hyprpanel stuff
-      hyprpanel
-      # inputs.hyprpanel.packages.${pkgs.system}.default
-      # gpu-screen-recorder
-      # bluez
-      # gnome.gnome-bluetooth
-      # hyprpicker
-      # grimblast
+      wofi-bluetooth
+      satty
     ] ++ optionals (builtins.elem device.type [ "desktop" ]) [ ryujinx ]
     ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [ ]
     ++ optionals (builtins.elem device.type [ "armlaptop" ]) [

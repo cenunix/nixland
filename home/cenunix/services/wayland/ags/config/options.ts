@@ -69,30 +69,30 @@ const options = mkOptions(OPTIONS, {
     transparent: opt(false),
     layout: {
       start: opt<Array<import("widget/bar/Bar").BarWidget>>([
-        // "launcher",
+        "launcher",
+        "workspaces",
         // "taskbar",
         //
-        // "expander",
+        "expander",
         // "weather",
       ]),
       center: opt<Array<import("widget/bar/Bar").BarWidget>>([
-        // "workspaces",
         "messages",
         "date",
         "systray",
       ]),
       end: opt<Array<import("widget/bar/Bar").BarWidget>>([
-        // "media",
+        "media",
         "expander",
 
-        // "colorpicker",
+        "colorpicker",
         //
         "system",
         "battery",
-        // "sysinfo",
+        "sysinfo",
 
-        // "screenrecord",
-        // "powermenu",
+        "screenrecord",
+        "powermenu",
       ]),
     },
     launcher: {
@@ -149,7 +149,7 @@ const options = mkOptions(OPTIONS, {
     width: opt(0),
     margin: opt(80),
     nix: {
-      pkgs: opt("nixpkgs/nixos-unstable"),
+      pkgs: opt("nixpkgs"),
       max: opt(8),
     },
     sh: {

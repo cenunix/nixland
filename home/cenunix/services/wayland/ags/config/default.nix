@@ -1,6 +1,7 @@
 { inputs, writeShellScript, system, stdenv, cage, swww, esbuild, dart-sass, fd
-, fzf, brightnessctl, accountsservice, slurp, wf-recorder, wl-clipboard, wayshot
-, swappy, hyprpicker, pavucontrol, networkmanager, gtk3, which, killall, }:
+, fzf, brightnessctl, accountsservice, slurp, wf-recorder, wl-clipboard
+, grimblast, satty, hyprpicker, pavucontrol, networkmanager, gtk3, which
+, killall, }:
 let
   name = "asztal";
 
@@ -17,10 +18,12 @@ let
     swww
     # inputs.matugen.packages.${system}.default
     slurp
+    grimblast
+    satty
     wf-recorder
     wl-clipboard
-    wayshot
-    swappy
+    # wayshot
+    # swappy
     hyprpicker
     pavucontrol
     networkmanager

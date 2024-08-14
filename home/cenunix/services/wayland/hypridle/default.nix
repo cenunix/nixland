@@ -16,7 +16,7 @@ in {
       lockCmd = lib.getExe config.programs.hyprlock.package;
 
       listeners = [{
-        timeout = 300;
+        timeout = 30;
         onTimeout = "${lib.getExe config.programs.hyprlock.package}";
       }];
     };
