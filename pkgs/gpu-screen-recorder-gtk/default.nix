@@ -1,54 +1,60 @@
-{ stdenv, lib, fetchGit, pkg-config, desktop-file-utils, makeWrapper, meson
-, ninja, gtk3, libayatana-appindicator, libpulseaudio, libdrm
-, gpu-screen-recorder, libglvnd, libX11, libXrandr, wayland, wrapGAppsHook3
-, wrapperDir ? "/run/wrappers/bin" }:
+{ stdenv, lib, fetchurl, makeWrapper, meson, ninja, pkg-config, libXcomposite
+, libpulseaudio, ffmpeg, wayland, libdrm, libva, libglvnd, libXdamage, libXi
+, libXrandr, libXfixes, wrapperDir ? "/run/wrappers/bin" }:
 
 stdenv.mkDerivation {
-  pname = "gpu-screen-recorder-gtk";
+  pname = "gpu-screen-recorder";
   version = "unstable-2024-08-10";
 
   # Snapshot tarballs use the following versioning format:
   # printf "r%s.%s\n" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
-  src = fetchGit {
-    url = "https://repo.dec05eba.com/gpu-screen-recorder";
-    rev = "261d0a06602d345257c8abd4c7a67f4e81172b81";
-    sha256 = "sha256-86EdmeZ2dlffSfJOrTVGPtYyL3j6DmCQIALX2rpeS1Y=";
+  src = fetchurl {
+    url =
+      "https://dec05eba.com/snapshot/gpu-screen-recorder.git.r717.01b8cdc.tar.gz";
+    hash = "sha256-hIEK8EYIxQTTiFePPZf4V0nsxqxkfcDeOG9GK9whn+0=";
   };
   sourceRoot = ".";
 
-  nativeBuildInputs =
-    [ desktop-file-utils pkg-config makeWrapper meson ninja wrapGAppsHook3 ];
+  nativeBuildInputs = [ pkg-config makeWrapper meson ninja ];
 
   buildInputs = [
-    gtk3
-    libayatana-appindicator
+    libXcomposite
     libpulseaudio
-    libdrm
-    libX11
-    libXrandr
+    ffmpeg
     wayland
+    libdrm
+    libva
+    libXdamage
+    libXi
+    libXrandr
+    libXfixes
   ];
 
-  preFixup = let
-    gpu-screen-recorder-wrapped =
-      gpu-screen-recorder.override { inherit wrapperDir; };
-  in ''
-    gappsWrapperArgs+=(--prefix PATH : ${wrapperDir})
-    gappsWrapperArgs+=(--suffix PATH : ${
-      lib.makeBinPath [ gpu-screen-recorder-wrapped ]
-    })
-    # we also append /run/opengl-driver/lib as it otherwise fails to find libcuda.
-    gappsWrapperArgs+=(--prefix LD_LIBRARY_PATH : ${
-      lib.makeLibraryPath [ libglvnd ]
-    }:/run/opengl-driver/lib)
+  patches =
+    [ ./0001-Don-t-install-systemd-unit-files-using-absolute-path.patch ];
+
+  mesonFlags = [
+    "-Dsystemd=true"
+
+    # Capabilities are handled by security.wrappers if possible.
+    "-Dcapabilities=false"
+  ];
+
+  postInstall = ''
+    mkdir $out/bin/.wrapped
+    mv $out/bin/gpu-screen-recorder $out/bin/.wrapped/
+    makeWrapper "$out/bin/.wrapped/gpu-screen-recorder" "$out/bin/gpu-screen-recorder" \
+    --prefix LD_LIBRARY_PATH : ${libglvnd}/lib \
+    --prefix PATH : ${wrapperDir} \
+    --suffix PATH : $out/bin
   '';
 
   meta = {
-    description = "GTK frontend for gpu-screen-recorder.";
-    mainProgram = "gpu-screen-recorder-gtk";
-    homepage = "https://git.dec05eba.com/gpu-screen-recorder-gtk/about/";
+    description =
+      "Screen recorder that has minimal impact on system performance by recording a window using the GPU only";
+    homepage = "https://git.dec05eba.com/gpu-screen-recorder/about/";
     license = lib.licenses.gpl3Only;
-    maintainers = with lib.maintainers; [ babbaj ];
+    maintainers = [ lib.maintainers.babbaj ];
     platforms = [ "x86_64-linux" ];
   };
 }

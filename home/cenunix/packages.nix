@@ -22,8 +22,8 @@ in {
       wpa_supplicant_gui
       wofi-bluetooth
       satty
-      gpu-screen-recorder
-      gpu-screen-recorder-gtk
+      gpu-screen-recorder-mine
+      # gpu-screen-recorder-gtk
     ] ++ optionals (builtins.elem device.type [ "desktop" ]) [ ryujinx ]
     ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [ ]
     ++ optionals (builtins.elem device.type [ "armlaptop" ]) [
