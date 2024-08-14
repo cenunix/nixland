@@ -16,5 +16,5 @@
   # my-vesktop = pkgs.callPackage ./vesktop { };
   owo-vencord = pkgs.callPackage ./owo-vencord { };
   nheko = pkgs.callPackage ./nheko { };
-  gpu-screen-recorder-mine = pkgs.callPackage ./gpu-screen-recorder-gtk { };
+  gpu-screen-recorder-mine = pkgs.callPackage ./gpu-screen-recorder { };
 }
