@@ -89,7 +89,7 @@ const options = mkOptions(OPTIONS, {
         //
         "system",
         "battery",
-        "sysinfo",
+        // "sysinfo",
 
         "screenrecord",
         "powermenu",

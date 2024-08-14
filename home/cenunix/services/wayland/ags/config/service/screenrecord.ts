@@ -35,8 +35,7 @@ class Recorder extends Service {
     Utils.ensureDirectory(this.#recordings);
     this.#file = `${this.#recordings}/${now()}.mp4`;
     sh(
-      `wf-recorder -g "${await sh("slurp")}" -f ${
-        this.#file
+      `wf-recorder -g "${await sh("slurp")}" -f ${this.#file
       } --pixel-format yuv420p`,
     );
 
@@ -70,18 +69,19 @@ class Recorder extends Service {
   }
 
   async screenshot(full = false) {
-    if (!dependencies("slurp", "wayshot")) return;
+    if (!dependencies("grimblast", "satty")) return;
 
     const file = `${this.#screenshots}/${now()}.png`;
     Utils.ensureDirectory(this.#screenshots);
 
     if (full) {
-      await sh(`wayshot -f ${file}`);
+      await bash(`grimblast save output ${file}`);
     } else {
-      const size = await sh("slurp");
-      if (!size) return;
+      // const size = await sh("slurp");
+      // if (!size) return;
 
-      await sh(`wayshot -f ${file} -s "${size}"`);
+      await bash(`grimblast save area ${file}`);
+      console.log("GRIMBLAST FINISHED");
     }
 
     bash(`wl-copy < ${file}`);
@@ -94,7 +94,7 @@ class Recorder extends Service {
         "Show in Files": () => sh(`xdg-open ${this.#screenshots}`),
         View: () => sh(`xdg-open ${file}`),
         Edit: () => {
-          if (dependencies("swappy")) sh(`swappy -f ${file}`);
+          if (dependencies("satty")) sh(`satty -f ${file}`);
         },
       },
     });

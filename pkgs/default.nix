@@ -14,7 +14,7 @@
   wofi-bluetooth = pkgs.callPackage ./wofi-bluetooth/default.nix { };
   streamrip = pkgs.callPackage ./streamrip { };
   # my-vesktop = pkgs.callPackage ./vesktop { };
-  owo-vencord = pkgs.callPacakge ./owo-vencord { };
+  owo-vencord = pkgs.callPackage ./owo-vencord { };
   nheko = pkgs.callPackage ./nheko { };
-  coloryou = pkgs.callPackage ./coloryou { };
+  gpu-screen-recorder-gtk = pkgs.callPackage ./gpu-screen-recorder-gtk { };
 }

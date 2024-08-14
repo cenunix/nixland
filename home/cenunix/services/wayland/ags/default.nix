@@ -40,8 +40,8 @@
     fzf
     wf-recorder
     wl-clipboard
-    wayshot
-    swappy
+    grimblast
+    satty
     hyprpicker
     pavucontrol
     networkmanager

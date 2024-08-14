@@ -125,7 +125,7 @@ class Nix extends Service {
     console.log("list writing to file");
     await Utils.writeFile(list, CACHE);
     this.ready = true;
-    Utils.notify("NixRun Ready");
+    // Utils.notify("NixRun Ready");
   };
 }
 
