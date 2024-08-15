@@ -1,52 +1,48 @@
-{ stdenv, lib, fetchurl, makeWrapper, meson, ninja, pkg-config, libXcomposite
-, libpulseaudio, ffmpeg, wayland, libdrm, libva, libglvnd, libXdamage, libXi
-, libXrandr, libXfixes, wrapperDir ? "/run/wrappers/bin" }:
 
-stdenv.mkDerivation {
+
+{ lib, addOpenGLRunpath, dbus, ffmpeg, libdrm, libglvnd, libpulseaudio, libva
+, makeWrapper, meson, ninja, pipewire, pkg-config, stdenv, fetchurl, wayland
+, xorg, ... }:
+let
+  inherit (lib) makeLibraryPath;
+  inherit (builtins) fromTOML readFile;
+
+  # tag = (fromTOML
+  #   (readFile "${gpu-screen-recorder-src}/project.conf")).package.version;
+in stdenv.mkDerivation {
   pname = "gpu-screen-recorder";
-  version = "unstable-2024-08-10";
+  version = "01b8cdc";
 
-  # Snapshot tarballs use the following versioning format:
-  # printf "r%s.%s\n" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
   src = fetchurl {
     url =
       "https://dec05eba.com/snapshot/gpu-screen-recorder.git.r717.01b8cdc.tar.gz";
-    hash = "sha256-hIEK8EYIxQTTiFePPZf4V0nsxqxkfcDeOG9GK9whn+0=";
+    hash = "sha256-SNhLpXFXN36SsXDnoP8S+yj8eOhi4qRFy4ZSkt4UQSw=";
   };
   sourceRoot = ".";
-
   nativeBuildInputs = [ pkg-config makeWrapper meson ninja ];
 
   buildInputs = [
-    libXcomposite
+    dbus
     libpulseaudio
+    pipewire
     ffmpeg
     wayland
     libdrm
     libva
-    libXdamage
-    libXi
-    libXrandr
-    libXfixes
+    xorg.libXcomposite
+    xorg.libXdamage
+    xorg.libXi
+    xorg.libXrandr
   ];
 
-  patches =
-    [ ./0001-Don-t-install-systemd-unit-files-using-absolute-path.patch ];
+  mesonFlags =
+    [ "-Dcapabilities=false" "-Dnvidia_suspend_fix=false" "-Dsystemd=false" ];
 
-  mesonFlags = [
-    "-Dsystemd=true"
-
-    # Capabilities are handled by security.wrappers if possible.
-    "-Dcapabilities=false"
-  ];
-
-  postInstall = ''
-    mkdir $out/bin/.wrapped
-    mv $out/bin/gpu-screen-recorder $out/bin/.wrapped/
-    makeWrapper "$out/bin/.wrapped/gpu-screen-recorder" "$out/bin/gpu-screen-recorder" \
-    --prefix LD_LIBRARY_PATH : ${libglvnd}/lib \
-    --prefix PATH : ${wrapperDir} \
-    --suffix PATH : $out/bin
+  fixupPhase = ''
+    wrapProgram $out/bin/gpu-screen-recorder \
+      --prefix LD_LIBRARY_PATH : "${
+        makeLibraryPath [ addOpenGLRunpath.driverLink libglvnd ]
+      }"
   '';
 
   meta = {
@@ -54,7 +50,6 @@ stdenv.mkDerivation {
       "Screen recorder that has minimal impact on system performance by recording a window using the GPU only";
     homepage = "https://git.dec05eba.com/gpu-screen-recorder/about/";
     license = lib.licenses.gpl3Only;
-    maintainers = [ lib.maintainers.babbaj ];
     platforms = [ "x86_64-linux" ];
   };
 }

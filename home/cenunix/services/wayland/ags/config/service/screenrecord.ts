@@ -25,7 +25,7 @@ class Recorder extends Service {
   timer = 0;
 
   async start() {
-    if (!dependencies("slurp", "wf-recorder")) return;
+    if (!dependencies("gpu-screen-recorder")) return;
 
     if (this.recording) {
       this.stop();
@@ -34,9 +34,12 @@ class Recorder extends Service {
 
     Utils.ensureDirectory(this.#recordings);
     this.#file = `${this.#recordings}/${now()}.mp4`;
-    sh(
-      `wf-recorder -g "${await sh("slurp")}" -f ${this.#file
-      } --pixel-format yuv420p`,
+    bash(
+      // `gpu-screen-recorder -w "$(hyprctl -j monitors | jq -r '.[] | select(.focused == true) | .name')" -a "$(pactl get-default-sink).monitor|$(pactl get-default-source)" -o ${this.#file} -f 60 -c mkv -k hevc -q very_high`,
+      `gpu-screen-recorder -w "$(hyprctl -j monitors | jq -r '.[] | select(.focused == true) | .name')" -a "$(pactl get-default-sink).monitor" -o ${this.#file} -f 60 -c mkv -k hevc -q very_high`,
+      // `wf - recorder - g "${await sh("slurp")}" - f ${
+      // this.#file
+      // } --pixel-format yuv420p`,
     );
 
     this.recording = true;
@@ -52,9 +55,11 @@ class Recorder extends Service {
   async stop() {
     if (!this.recording) return;
 
-    await bash("pkill wf-recorder");
+    await bash("killall -SIGINT .gpu-screen-rec");
     this.recording = false;
+    this.timer = 0;
     this.changed("recording");
+    this.changed("timer");
     GLib.source_remove(this.#interval);
 
     Utils.notify({

@@ -20,5 +20,21 @@ in {
         wantedBy = [ "multi-user.target" ];
       };
     };
+    security.wrappers = {
+      gpu-screen-recorder = {
+        owner = "root";
+        group = "video";
+        capabilities = "cap_sys_nice+ep";
+        source = "${pkgs.gpu-screen-recorder-mine}/bin/gpu-screen-recorder";
+      };
+
+      gsr-kms-server = {
+        owner = "root";
+        group = "video";
+        capabilities = "cap_sys_admin+ep";
+        source = "${pkgs.gpu-screen-recorder-mine}/bin/gsr-kms-server";
+      };
+    };
+
   };
 }

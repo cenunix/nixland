@@ -42,6 +42,7 @@ in {
     boot = {
       # blacklist nouveau module so that it does not conflict with nvidia drm stuff
       # also the nouveau performance is godawful, I'd rather run linux on a piece of paper than use nouveau
+      kernelModules = [ "nvidia-uvm" ];
       blacklistedKernelModules = [ "nouveau" ];
     };
 
@@ -75,6 +76,7 @@ in {
         libva
         libva-utils
         xorg.libxcb
+        cudaPackages.cudatoolkit
       ];
     };
     boot.kernelParams = [ "nvidia-drm.fbdev=1" ];
