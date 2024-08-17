@@ -10,8 +10,7 @@ in {
     settings = {
       background = [{
         monitor = "";
-        path =
-          "/home/cenunix/NixLand/home/cenunix/graphical/wms/hyprland/mountain.png";
+        path = "/home/cenunix/Media/Pictures/wp6257053.jpg";
       }];
 
       input-field = [{
@@ -36,9 +35,9 @@ in {
         monitor = "";
         inherit font_family;
         # font_family = "Lexend";
-        # text = ''
-        #   cmd[update:1000] echo "<span font_family='Lexend' foreground='##cdd6f4'>$(date +%r)</span>"'';
-        text = "";
+        text = ''
+          cmd[update:1000] echo "<span font_family='Lexend' foreground='##cdd6f4'>$(date +%r)</span>"'';
+        # text = "";
         font_size = 50;
         color = "rgb(205, 214, 244)";
 

@@ -6,7 +6,8 @@ let
   startpage = pkgs.substituteAll { src = ./startpage.html; };
   user = osConfig.modules.system.username;
   addons = inputs.firefox-addons.packages.${pkgs.system};
-in {
+in
+{
   config = mkIf (builtins.elem device.type acceptedTypes) {
     programs.firefox = mkDefault {
       enable = true;
@@ -75,7 +76,8 @@ in {
               "K00ILysCaEq8+bEqV/3nuw=="
               # Twitter
               "T9nJot5PurhJSy8n038xGA=="
-            ] (_: 1);
+            ]
+              (_: 1);
             # Disable some telemetry
             "app.shield.optoutstudies.enabled" = false;
             "browser.discovery.enabled" = false;
@@ -186,17 +188,17 @@ in {
         userChrome = ''
           * {
             --button-bgcolor: #11111b !important;
-            --lwt-accent-color: #14151e !important;
-            --arrowpanel-background: #14151e !important;
-            --input-bgcolor: #14151e !important;
-            --toolbar-field-background-color: #14151e !important;
-            --urlbarView-separator-color: #14151e !important;
-            --toolbar-field-focus-background-color: #14151e !important;
-            --toolbar-bgcolor: #14151e !important;
+            --lwt-accent-color: #07070b !important;
+            --arrowpanel-background: #07070b !important;
+            --input-bgcolor: #07070b !important;
+            --toolbar-field-background-color: #07070b !important;
+            --urlbarView-separator-color: #07070b !important;
+            --toolbar-field-focus-background-color: #07070b !important;
+            --toolbar-bgcolor: #07070b !important;
             --button-primary-color: #cdd6f4 !important;
             --button-hover-bgcolor: #11111b !important;
-            --focus-outline-color: #14151e !important;
-            --button-active-bgcolor: #14151e !important;
+            --focus-outline-color: #07070b !important;
+            --button-active-bgcolor: #07070b !important;
             --panel-separator-zap-gradient: linear-gradient(90deg, #181825 0%, #45475a 52.08%, #6c7086 100%);
             --arrowpanel-border-color: #cdd6f4 !important;
             --arrowpanel-color: #cdd6f4 !important;
@@ -223,28 +225,28 @@ in {
             color: red;
           }
           #_c607c8df-14a7-4f28-894f-29e8722976af_-BAP {
-             color: #14151e;
+             color: #07070b;
           }
           #TabsToolbar {
-            background-color: #14151e !important;
+            background-color: #07070b !important;
           }
           #nav-bar {
-            background-color: #14151e;
+            background-color: #07070b;
           }
           #tracking-protection-icon-container {
-            background-color: #14151e;
+            background-color: #07070b;
           }
           #appMenu-multiView {
-            background-color: #14151e !important;
+            background-color: #07070b !important;
           }
           .urlbar-page-action {
-            background-color: #14151e;
+            background-color: #07070b;
           }
           .identity-box-button  {
-            background-color: #14151e;
+            background-color: #07070b;
           }
           .urlbar-input-box {
-            background-color: #14151e;
+            background-color: #07070b;
           }
           .tab-icon-image {
             display: none;

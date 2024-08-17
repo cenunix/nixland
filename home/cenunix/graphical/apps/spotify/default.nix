@@ -5,7 +5,8 @@ let
   override = osConfig.modules.programs.override.program;
   acceptedTypes = [ "laptop" "desktop" ];
   spicePkgs = inputs.spicetify.legacyPackages.${pkgs.system};
-in {
+in
+{
   imports = [ inputs.spicetify.homeManagerModules.default ];
   config = mkIf (builtins.elem device.type acceptedTypes) {
     programs.spicetify = {
@@ -21,8 +22,8 @@ in {
         text = "cdd6f4";
         subtext = "cdd6f4";
         sidebar-text = "cdd6f4";
-        main = "14151e";
-        sidebar = "14151e";
+        main = "07070b";
+        sidebar = "07070b";
         player = "1e1e2e";
         card = "1e1e2e";
         shadow = "1f1d2e";
@@ -30,7 +31,7 @@ in {
         button = "b4befe";
         button-active = "b4befe";
         button-disabled = "313244";
-        tab-active = "14151e";
+        tab-active = "07070b";
         notification = "a6e3a1";
         notification-error = "f38ba8";
         misc = "6c7086";

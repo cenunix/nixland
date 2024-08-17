@@ -21,8 +21,8 @@ in {
       wofi
       wpa_supplicant_gui
       wofi-bluetooth
-      satty
-      gpu-screen-recorder-mine
+      nicotine-plus
+      gnome-podcasts
       # gpu-screen-recorder-gtk
     ] ++ optionals (builtins.elem device.type [ "desktop" ]) [ ryujinx ]
     ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [ ]
@@ -31,7 +31,7 @@ in {
     ];
   # xdg.desktopEntries = {
   #   "org.kde.tokodon" = {
-  #     name = "Tokodon";
+  #     name = "Firefox-beta";
   #     genericName = "Mastodon Client";
   #     comment = "Client for the Mastodon";
   #     exec = "env QT_QPA_PLATFORM=xcb ${pkgs.kdePackages.tokodon}/bin/tokodon";

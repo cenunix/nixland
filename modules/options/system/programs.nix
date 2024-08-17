@@ -5,6 +5,10 @@ with lib; {
   options.modules = {
     programs = {
       # "override" is a simple option that sets the programs' state to the oppossite of their default
+      gpu-screen-recorder.enable = mkEnableOption "Enable gpu-screen-recorder"
+        // {
+          default = false;
+        };
       override = {
         # override basic desktop applications
         # an example override for the libreoffice program

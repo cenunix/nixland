@@ -28,38 +28,18 @@
   # This one contains whatever you want to overlay
   # You can change versions, add patches, set compilation flags, anything really.
   # https://nixos.wiki/wiki/Overlays
-  modifications = final: prev: {
+  modifications = final: prev:
+    {
 
-    egl-wayland = prev.egl-wayland.overrideAttrs (o: rec {
-      version = "1.1.15";
-
-      src = prev.fetchFromGitHub {
-        owner = "Nvidia";
-        repo = o.pname;
-        rev = version;
-        hash = "sha256-MD+D/dRem3ONWGPoZ77j2UKcOCUuQ0nrahEQkNVEUnI=";
-      };
-    });
-    # firefox-beta-bin-unwrapped = prev.firefox-beta-bin-unwrapped.overrideAttrs
-    #   (o: {
-    #     patches = [
-    #       (prev.fetchpatch {
-    #         url =
-    #           "https://patch-diff.githubusercontent.com/raw/NixOS/nixpkgs/pull/332853.patch";
-    #         hash = "sha256-tRWKuaEgFkPX42KDgfZpMnYSy4M9K0PF6k4XWbCiye8=";
-    #       })
-    #     ];
-    #   });
-
-    # vesktop = prev.vesktop.overrideAttrs (old: rec {
-    #   version = "master";
-    #   src = old.src.override {
-    #     rev = "2733727a40a4cf542277dedcf89e87e7740f962d";
-    #     hash = "sha256-EF36HbbhTuAdwBEKqYgBBu7JoP1LJneU78bROHoKqDw=";
-    #   };
-    #   pnpmDeps = old.pnpmDeps.overrideAttrs (old: rec {
-    #     outputHash = "sha256-6ezEBeYmK5va3gCh00YnJzZ77V/Ql7A3l/+csohkz68=";
-    #   });
-    # });
-  };
+      # egl-wayland = prev.egl-wayland.overrideAttrs (o: rec {
+      #   version = "1.1.15";
+      #
+      #   src = prev.fetchFromGitHub {
+      #     owner = "Nvidia";
+      #     repo = o.pname;
+      #     rev = version;
+      #     hash = "sha256-MD+D/dRem3ONWGPoZ77j2UKcOCUuQ0nrahEQkNVEUnI=";
+      #   };
+      # );
+    };
 }

@@ -18,13 +18,13 @@
     extraConfig = ''
       # The basic colors
        foreground              #CDD6F4
-       background              #14151e
-       selection_foreground    #14151e
+       background              #07070b
+       selection_foreground    #07070b
        selection_background    #F5E0DC
 
        # Cursor colors
        cursor                  #F5E0DC
-       cursor_text_color       #14151e
+       cursor_text_color       #07070b
 
        # URL underline color when hovering with mouse
        url_color               #F5E0DC

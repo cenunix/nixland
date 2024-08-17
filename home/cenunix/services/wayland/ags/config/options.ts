@@ -15,13 +15,13 @@ const options = mkOptions(OPTIONS, {
     dark: {
       primary: {
         bg: opt("#51a4e7"),
-        fg: opt("#14151e"),
+        fg: opt("#07070b"),
       },
       error: {
         bg: opt("#e55f86"),
-        fg: opt("#14151e"),
+        fg: opt("#07070b"),
       },
-      bg: opt("#14151e"),
+      bg: opt("#07070b"),
       fg: opt("#eeeeee"),
       widget: opt("#eeeeee"),
       border: opt("#eeeeee"),

@@ -42,7 +42,7 @@
       programs = {
         cli.enable = true;
         gui.enable = true;
-
+        gpu-screen-recorder.enable = true;
         gaming = {
           enable = true;
           steam.enable = true;

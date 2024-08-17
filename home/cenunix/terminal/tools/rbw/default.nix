@@ -27,9 +27,9 @@
   '';
   xdg.configFile."rofi/catppuccin-macchiato.rasi".text = ''
             * {
-        bg-col:  #14151e;
+        bg-col:  #07070b;
         bg-col-light: #24273a;
-        border-col: #14151e;
+        border-col: #07070b;
         selected-col: #24273a;
         blue: #89b4fa;
         fg-col: #cdd6f4;
