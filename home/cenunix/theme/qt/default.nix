@@ -8,7 +8,7 @@ in {
     home.packages = with pkgs;
       [
         # libsForQt5.qtstyleplugin-kvantum
-        # qt6Packages.qtstyleplugin-kvantum
+        # kdePackages.qtstyleplugin-kvantum
         # libsForQt5.qt5ct
         (pkgs.catppuccin-kde.override {
           flavour = [ "mocha" ];
@@ -16,13 +16,18 @@ in {
           winDecStyles = [ "modern" ];
         })
       ];
+    # qt = {
+    #   enable = true;
+    #   style.name = "kvantum";
+    #   platformTheme.name = "qtct";
+    # };
 
     xdg.configFile = {
       "Kvantum/kvantum.kvconfig".source =
         (pkgs.formats.ini { }).generate "kvantum.kvconfig" {
           General.theme = "catppuccin";
           Applications.catppuccin = ''
-            qt5ct, org.kde.dolphin, org.kde.kalendar, org.qbittorrent.qBittorrent, hyprland-share-picker, dolphin-emu, Nextcloud, nextcloud, cantata, org.kde.kid3-qt
+            qt6ct, qt5ct, org.kde.dolphin, org.kde.kalendar, org.qbittorrent.qBittorrent, hyprland-share-picker, dolphin-emu, Nextcloud, nextcloud, cantata, org.kde.kid3-qt
           '';
         };
       "Kvantum/catppuccin/catppuccin.kvconfig".source =

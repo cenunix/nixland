@@ -26,7 +26,7 @@ in {
         QT_AUTO_SCREEN_SCALE_FACTOR = "1";
         QT_QPA_PLATFORM = "wayland;xcb";
         QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
-        QT_QPA_PLATFORMTHEME = lib.mkForce "qt5ct";
+        # QT_QPA_PLATFORMTHEME = lib.mkForce "qt5ct";
         QT_STYLE_OVERRIDE = lib.mkForce "kvantum";
         MOZ_ENABLE_WAYLAND = "0"; # Firefox has a bug with 555 drivers rn :()
         # WLR_BACKEND = "vulkan";

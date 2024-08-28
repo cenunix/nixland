@@ -5,8 +5,9 @@
     nixpkgs-firefox.url =
       "github:nixos/nixpkgs?rev=c4a9c4f8d2f1196e4b08dc8477b2575ee4e3e3be";
     # nixpkgs.url = "github:diniamo/nixpkgs/nvidia-555";
-    # nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
-    # nixpkgs-master.url = "github:nixos/nixpkgs/master";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs-master.url =
+      "github:nixos/nixpkgs?rev=65f5cbb5f29450dc32a2835aeb8cabfca2fedc09";
     # nixpkgs-nvidia.url = "github:diniamo/nixpkgs/nvidia-555";
 
     home-manager = {

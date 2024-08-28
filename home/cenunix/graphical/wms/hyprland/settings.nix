@@ -64,7 +64,7 @@ in {
         "specialWorkspace, 1, 3, md3_decel,slide"
       ];
     };
-    render = { explicit_sync_kms = 0; };
+    # render = { explicit_sync_kms = 0; };
     dwindle = {
       pseudotile = false; # enable pseudotiling on dwindle
     };

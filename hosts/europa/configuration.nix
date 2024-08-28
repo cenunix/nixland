@@ -64,7 +64,11 @@
       # })
     ];
     # Configure your nixpkgs instance
-    config = { nvidia.acceptLicense = true; };
+    config = {
+      nvidia.acceptLicense = true;
+      allowInsecure = true;
+      permittedInsecurePackages = [ "jitsi-meet-1.0.8043" ];
+    };
   };
 
   time = {
