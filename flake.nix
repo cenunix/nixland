@@ -45,6 +45,7 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    spmp = { url = "github:toasterofbread/spmp"; };
     arrpc = { url = "github:notashelf/arrpc-flake"; };
     # personal neovim flake
     nvim-flake = { url = "github:cenunix/nvim-flake"; };

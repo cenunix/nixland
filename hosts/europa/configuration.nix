@@ -67,7 +67,6 @@
     config = {
       nvidia.acceptLicense = true;
       allowInsecure = true;
-      permittedInsecurePackages = [ "jitsi-meet-1.0.8043" ];
     };
   };
 

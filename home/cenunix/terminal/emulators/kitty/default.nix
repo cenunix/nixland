@@ -16,6 +16,7 @@
       window_padding_width = 10;
     };
     extraConfig = ''
+      mouse_hide_wait 0
       # The basic colors
        foreground              #CDD6F4
        background              #07070b
