@@ -5,6 +5,6 @@
     ./obs
     ./obsidian
     ./schizofox
-    ./spotify
+    # ./spotify
   ];
 }

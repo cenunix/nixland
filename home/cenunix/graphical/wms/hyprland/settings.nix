@@ -23,6 +23,10 @@ in {
       follow_mouse = 1;
       sensitivity = 0;
     };
+    cursor = {
+      allow_dumb_copy = true;
+      no_hardware_cursors = true;
+    };
     general = {
       gaps_in = 4;
       gaps_out = 4;
@@ -64,7 +68,10 @@ in {
         "specialWorkspace, 1, 3, md3_decel,slide"
       ];
     };
-    # render = { explicit_sync_kms = 0; };
+    render = {
+      explicit_sync = 0;
+      explicit_sync_kms = 0;
+    };
     dwindle = {
       pseudotile = false; # enable pseudotiling on dwindle
     };

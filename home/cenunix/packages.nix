@@ -32,6 +32,8 @@ in {
       docker-compose
       mediainfo
       gnome-weather
+      telegram-desktop
+      signal-desktop
       # mkvtoolnix
       mkvtoolnix
 

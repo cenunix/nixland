@@ -39,11 +39,11 @@ let
       sed -e 's/handle-horz-.*//' -e 's/handle-vert-.*//' -i ./src/gtk-2.0/assets.txt
 
       cat > /build/gtk-colors << EOF
-        BTN_BG=07070b
+        BTN_BG=1e1e2e
         BTN_FG=cdd6f4
         BG=07070b
         FG=cdd6f4
-        HDR_BTN_BG=07070b
+        HDR_BTN_BG=1e1e2e
         HDR_BTN_FG=cdd6f4
         ACCENT_BG=07070b
         ACCENT_FG=cdd6f4
@@ -69,8 +69,7 @@ let
       chmod 555 -R .
     '';
   };
-in
-rec {
+in rec {
   config = mkIf (builtins.elem device.type acceptedTypes) {
     home.pointerCursor = {
       package = pointerCursor.package;
