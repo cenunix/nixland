@@ -25,19 +25,19 @@ in {
       wofi-bluetooth
       # nicotine-plus
       gnome-podcasts
-      protonmail-desktop
-      kdePackages.tokodon
-      ffmpeg
+      # protonmail-desktop
+      # kdePackages.tokodon
+      # ffmpeg
       # mkvtoolnix-cli
-      docker-compose
-      mediainfo
-      gnome-weather
+      # docker-compose
+      # mediainfo
+      # gnome-weather
       telegram-desktop
-      signal-desktop
+      # signal-desktop
       # mkvtoolnix
-      mkvtoolnix
+      # mkvtoolnix
 
-      inputs.spmp.packages.${pkgs.system}.default
+      # inputs.spmp.packages.${pkgs.system}.default
     ] ++ optionals (builtins.elem device.type [ "desktop" ]) [ ryujinx ]
     ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [ ]
     ++ optionals (builtins.elem device.type [ "armlaptop" ]) [

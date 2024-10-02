@@ -6,13 +6,11 @@ let
   startpage = pkgs.substituteAll { src = ./startpage.html; };
   user = osConfig.modules.system.username;
   addons = inputs.firefox-addons.packages.${pkgs.system};
-in
-{
+in {
   config = mkIf (builtins.elem device.type acceptedTypes) {
     programs.firefox = mkDefault {
       enable = true;
-      package = with pkgs;
-        wrapFirefox firefox-packages.firefox-beta-bin-unwrapped { };
+      package = with pkgs; wrapFirefox firefox-packages.firefox-unwrapped { };
       profiles.cenunix.isDefault = true;
       profiles.cenunix = {
         search = {
@@ -76,8 +74,7 @@ in
               "K00ILysCaEq8+bEqV/3nuw=="
               # Twitter
               "T9nJot5PurhJSy8n038xGA=="
-            ]
-              (_: 1);
+            ] (_: 1);
             # Disable some telemetry
             "app.shield.optoutstudies.enabled" = false;
             "browser.discovery.enabled" = false;

@@ -27,7 +27,7 @@ in {
       rofi-bluetooth
       gtk3
       bc
-      gnome.gnome-control-center
+      gnome-control-center
     ] ++ optionals (programs.gpu-screen-recorder.enable)
     [ gpu-screen-recorder-mine ];
   xdg.configFile."ags".source = config.lib.file.mkOutOfStoreSymlink

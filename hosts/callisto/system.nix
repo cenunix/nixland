@@ -26,12 +26,23 @@ in {
           chess.enable = false;
           steam.enable = false;
         };
+        default = {
+          terminal = "kitty";
+          fileManager = "thunar";
+        };
         override = { };
+      };
+      style = {
+        pointerCursor = {
+          package = pkgs.bibata-cursors;
+          name = "Bibata-Modern-Ice";
+          size = 24;
+        };
       };
       usrEnv = {
         isWayland = true;
-        windowManager = false;
-        desktop = "Plasma";
+        windowManager = true;
+        desktop = "Hyprland";
         useHomeManager = true;
         autologin = false;
       };
