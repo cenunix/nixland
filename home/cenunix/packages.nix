@@ -32,13 +32,15 @@ in {
       # docker-compose
       # mediainfo
       # gnome-weather
+      cinny-desktop
       telegram-desktop
       # signal-desktop
       # mkvtoolnix
       # mkvtoolnix
+      feishin
 
       # inputs.spmp.packages.${pkgs.system}.default
-    ] ++ optionals (builtins.elem device.type [ "desktop" ]) [ ryujinx ]
+    ] ++ optionals (builtins.elem device.type [ "desktop" ]) [ ryujinx plexamp ]
     ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [ ]
     ++ optionals (builtins.elem device.type [ "armlaptop" ]) [
       # additional packages for arm laptop (x13s as of now) machines that use home-manager
