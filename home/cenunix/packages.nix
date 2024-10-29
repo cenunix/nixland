@@ -32,7 +32,7 @@ in {
       # docker-compose
       # mediainfo
       # gnome-weather
-      cinny-desktop
+      # cinny-desktop
       telegram-desktop
       # signal-desktop
       # mkvtoolnix

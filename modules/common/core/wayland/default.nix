@@ -84,7 +84,7 @@ in {
 
     environment.systemPackages = with pkgs;
       mkIf (env.windowManager) [
-        gnome3.adwaita-icon-theme
+        gnome.adwaita-icon-theme
         xdg-utils
         # libsForQt5.qt5.qtwayland
         # qt6.qtwayland

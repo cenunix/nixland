@@ -19,7 +19,7 @@
         "nix-command" # experimental nix commands
         "recursive-nix" # let nix invoke itself
         "ca-derivations" # content addressed nix
-        "repl-flake" # allow passing installables to nix repl
+        # "repl-flake" # allow passing installables to nix repl # became non experimental as of 2.20 IIRC
         "auto-allocate-uids" # allow nix to automatically pick UIDs, rather than creating nixbld* user accounts
         "cgroups" # allow nix to execute builds inside cgroups
       ];
