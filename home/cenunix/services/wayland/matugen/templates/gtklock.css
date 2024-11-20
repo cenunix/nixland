@@ -1,0 +1,54 @@
+* {
+  box-shadow: none;
+  font-family: Google Sans;
+}
+
+window {
+  background-image: url("file:///home/posaydone/.cache/current_wallpaper");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#clock-label {
+  /* background: {{colors.secondary.default.hex}}; */
+  /* padding: 0 40px; */
+  /* border-radius: 100px; */
+  text-shadow: 0px 0px 70px {{colors.on_primary_fixed.default.hex}};
+  font-size: 128px;
+  font-weight: 600;
+  color: {{colors.primary.default.hex}};
+  margin-bottom: 4em;
+}
+
+/* hide "Password:" label */
+#input-label {
+  font-size: 0;
+}
+
+#input-field {
+  padding: 10px 20px;
+  border-radius: 100px;
+  background: {{colors.primary.default.hex}};
+  color: {{colors.on_primary.default.hex}};
+  caret-color: {{colors.on_primary.default.hex}};
+}
+#input-field > image {
+  color: {{colors.on_primary.default.hex}};
+}
+
+#window-box {
+  margin-top: 10em;
+  /* margin-top: 54em; */
+}
+
+button {
+  border-radius: 100px;
+  padding: 10px 20px;
+  background: {{colors.primary_container.default.hex}};
+  color: {{colors.on_primary_container.default.hex}};
+}
+
+#error-label {
+  color: {{colors.on_error.default.hex}};
+}

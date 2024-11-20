@@ -1,0 +1,11 @@
+<* for name, value in colors *>
+${{name}}: {{value.default.hex}};
+<* endfor *>
+
+
+$theme: 'dark';
+$surface_transparent: transparentize($surface, 0.2);
+$inverse_surface_transparent: transparentize($inverse_surface, 0.92);
+$inverse_surface_transparent_variant: transparentize($inverse_surface, 0.82);
+$inverse_surface_transparent_overlay: linear-gradient(0deg, $inverse_surface_transparent, $inverse_surface_transparent);
+$inverse_surface_transparent_variant_overlay: linear-gradient(0deg, $inverse_surface_transparent_variant, $inverse_surface_transparent_variant);
