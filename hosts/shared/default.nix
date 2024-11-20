@@ -2,7 +2,8 @@
 { inputs, outputs, lib, config, pkgs, ... }: {
   nixpkgs = {
     # You can add overlays here
-    overlays = builtins.attrValues outputs.overlays;
+    overlays = builtins.attrValues outputs.overlays
+      ++ [ inputs.hyprpanel.overlay ];
     # Configure your nixpkgs instance
     config = {
       # Disable if you don't want unfree packages

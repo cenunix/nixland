@@ -67,6 +67,7 @@
     config = {
       nvidia.acceptLicense = true;
       allowInsecure = true;
+      allowUnfree = true;
     };
   };
 

@@ -14,6 +14,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -28,9 +29,17 @@
     };
     xdg-portal-hyprland.url = "github:hyprwm/xdg-desktop-portal-hyprland";
     # hyprlock = { url = "github:hyprwm/Hyprlock/"; };
-    ags.url = "github:Aylur/ags";
-    astal.url = "github:Aylur/astal";
-    # matugen.url = "github:InioX/matugen?ref=v2.2.0";
+    astal = {
+      url = "github:Aylur/astal";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    ags = {
+      url = "github:Aylur/ags";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.astal.follows = "astal";
+    };
+    matugen.url =
+      "github:InioX/Matugen?rev=0bd628f263b1d97f238849315f2ce3ab4439784e";
     spicetify = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -57,7 +66,13 @@
       packages = forAllSystems (
         # Your custom packages Acessible through 'nix build', 'nix shell', etc
         system:
-        let pkgs = nixpkgs.legacyPackages.${system};
+        let
+          pkgs = nixpkgs.legacyPackages.${system};
+          # in import ./pkgs { inherit pkgs; });
+          # in import nixpkgs {
+          #   inherit system;
+          #   config.allowUnfree = true;
+          # } import ./pkgs) { inherit pkgs; };
         in import ./pkgs { inherit pkgs; });
 
       devShells = forAllSystems (
@@ -69,6 +84,7 @@
       overlays = import ./overlays {
         inherit inputs outputs packages;
       }; # Your custom packages and modifications, exported as overlays
+
       nixosModules = import
         ./modules/nixos; # Reusable nixos modules you might want to export
       homeManagerModules = import

@@ -21,7 +21,7 @@ let
     zulu8
     temurin-jre-bin-11
     temurin-jre-bin-17
-    temurin-jre-bin-18
+    # temurin-jre-bin-18
     temurin-jre-bin
     zulu
     graalvm-ce
@@ -33,7 +33,8 @@ let
     # jprofiler
   ];
 
-  glfw = if env.isWayland then pkgs.glfw-wayland-minecraft else pkgs.glfw;
+  # glfw = if env.isWayland then pkgs.glfw3-minecraft else "false";
+  glfw = with pkgs; [ glfw3-minecraft ];
 in {
   config = mkIf prg.gaming.minecraft.enable {
     home = {
@@ -55,7 +56,7 @@ in {
           inherit additionalPrograms;
 
           # prismlauncher's glfw version to properly support wayland
-          inherit glfw;
+          # inherit glfw;
         })
       ];
     };

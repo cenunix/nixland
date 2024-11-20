@@ -24,7 +24,7 @@ in {
       sensitivity = 0;
     };
     cursor = {
-      allow_dumb_copy = true;
+      # allow_dumb_copy = true;
       no_hardware_cursors = true;
     };
     general = {
@@ -39,11 +39,13 @@ in {
     decoration = {
       screen_shader = mkIf (device.gpu == "nvidia")
         "${config.xdg.configHome}/hypr/shaders/bluelight.glsl";
-      drop_shadow = true;
-      shadow_range = 20;
-      shadow_render_power = 3;
-      "col.shadow" = "rgb(3c4252)";
-      "col.shadow_inactive" = "rgb(3c4252)";
+      shadow = {
+        enabled = true;
+        range = 20;
+        render_power = 3;
+        color = "rgb(3c4252)";
+        color_inactive = "rgb(3c4252)";
+      };
       rounding = 4;
       blur = {
         enabled = true;
@@ -69,8 +71,8 @@ in {
       ];
     };
     render = {
-      explicit_sync = 0;
-      explicit_sync_kms = 0;
+      explicit_sync = 1;
+      # explicit_sync_kms = 0;
     };
     dwindle = {
       pseudotile = false; # enable pseudotiling on dwindle

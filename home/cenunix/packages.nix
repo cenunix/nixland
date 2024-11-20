@@ -23,6 +23,7 @@ in {
       wofi
       wpa_supplicant_gui
       wofi-bluetooth
+      hyprpanel
       # nicotine-plus
       gnome-podcasts
       # protonmail-desktop

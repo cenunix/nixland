@@ -8,7 +8,7 @@
         monitors = [
           "DP-1,2560x1440@239.97,auto,1"
           "DP-2,1920x1080@240,auto,1"
-          "HDMI-A-1,3840x2160@60,auto,1"
+          # "HDMI-A-1,3840x2160@60,auto,1"
         ];
         workspaces = [
           "workspace = 1, monitor:DP-1"
@@ -20,7 +20,7 @@
           "workspace = 7, monitor:DP-2"
           "workspace = 8, monitor:DP-2"
           "workspace = 9, monitor:DP-2"
-          "workspace = 10, monitor:HDMI-A-1"
+          # "workspace = 10, monitor:HDMI-A-1"
         ];
         hasBluetooth = true;
         hasSound = true;
@@ -47,7 +47,7 @@
           enable = true;
           steam.enable = true;
           chess.enable = false;
-          minecraft.enable = false;
+          minecraft.enable = true;
           gamescope.enable = false;
         };
         default = {

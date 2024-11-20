@@ -6,8 +6,8 @@
   # be accessible through 'pkgs.unstable'
   unstable-packages = final: _prev: {
     unstable = import inputs.nixpkgs-master {
-      system = final.system;
       config.allowUnfree = true;
+      system = final.system;
     };
   };
   firefox-packages = final: _prev: {
