@@ -23,23 +23,17 @@ in {
       wofi
       wpa_supplicant_gui
       wofi-bluetooth
-      hyprpanel
+      gsettings-desktop-schemas
       # nicotine-plus
+      swww
+      inputs.hyprsettings.packages.${pkgs.system}.default
+      hyprpicker
       gnome-podcasts
       # protonmail-desktop
       # kdePackages.tokodon
-      # ffmpeg
-      # mkvtoolnix-cli
       # docker-compose
-      # mediainfo
       # gnome-weather
-      # cinny-desktop
       telegram-desktop
-      # signal-desktop
-      # mkvtoolnix
-      # mkvtoolnix
-      feishin
-
       # inputs.spmp.packages.${pkgs.system}.default
     ] ++ optionals (builtins.elem device.type [ "desktop" ]) [ ryujinx plexamp ]
     ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [ ]

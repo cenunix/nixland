@@ -21,6 +21,10 @@
     };
 
     hyprland.url = "github:hyprwm/hyprland";
+    hyprsettings = {
+      url = "github:PoSayDone/hyprsettings";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # hyprland.url =
     #   "git+https://github.com/hyprwm/Hyprland?ref=refs/tags/v0.43.0&submodules=1";
     hyprland-plugins = {

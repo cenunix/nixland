@@ -1,3 +1,3 @@
 { inputs, outputs, lib, config, pkgs, self, ... }: {
-  imports = [ ./ags ./hypridle ./hyprlock ./waybar ];
+  imports = [ ./astal ./hypridle ./hyprlock ./waybar ];
 }
