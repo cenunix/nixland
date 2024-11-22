@@ -1,17 +1,16 @@
-self: {
-  config,
-  lib,
-  ...
-}: let
+{ config, lib, ... }:
+let
   inherit (lib) hasPrefix mkIf removePrefix;
 
   # Configs
-  cfgDesktop = config.roles.desktop;
-  flakeDir = config.environment.variables.FLAKE;
+  # cfgDesktop = config.roles.desktop;
+  flakeDir = "$HOME/NixLand";
 
-  agsConfigDir = "${removePrefix "/home/${cfgDesktop.user}/" flakeDir}/nixosModules/ags/config";
+  agsConfigDir = "${
+      removePrefix "/home/cenunix/" flakeDir
+    }/home/cenunix/services/wayland/ags/config";
 
-  hmOpts = {lib, ...}: {
+  hmOpts = { lib, ... }: {
     options.programs.ags = {
       package = lib.mkOption {
         type = with lib.types; nullOr package;
@@ -35,28 +34,18 @@ self: {
     };
   };
 in {
-  config = mkIf cfgDesktop.ags.enable {
-    assertions = [
-      {
-        assertion = hasPrefix "/home/${cfgDesktop.user}/" flakeDir;
-        message = ''
-          Your $FLAKE environment variable needs to point to a directory in
-          the main users' home to use the AGS module.
-        '';
-      }
-    ];
+  imports = [ hmOpts ./packages.nix ];
+  config = {
+    assertions = [{
+      assertion = hasPrefix "/home/cenunix/" flakeDir;
+      message = ''
+        Your $FLAKE environment variable needs to point to a directory in
+        the main users' home to use the AGS module.
+      '';
+    }];
 
     # Machine config
-    security.pam.services.astal-auth = {};
-    services.upower.enable = true;
-
-    home-manager.users.${cfgDesktop.user}.imports = [
-      hmOpts
-      (import ./packages.nix self)
-      (import ./hyprland.nix self)
-    ];
+    # security.pam.services.astal-auth = { };
+    # services.upower.enable = true;
   };
-
-  # For accurate stack trace
-  _file = ./default.nix;
 }

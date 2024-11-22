@@ -7,6 +7,7 @@ let
   types = import' ./types.nix;
   themes = import' ./themes.nix;
   modules = import' ./modules.nix;
+  ags = import' ./ags.nix;
 in {
   inherit (systemd) hardenService;
   inherit (fs) mkBtrfs;

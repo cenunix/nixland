@@ -42,7 +42,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.astal.follows = "astal";
     };
-    my-shell = { url = "github:cenunix/astal"; };
+    gtk-session-lock = {
+      url = "github:Cu3PO42/gtk-session-lock";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    ts-for-gir-src = {
+      flake = false;
+      owner = "gjsify";
+      repo = "ts-for-gir";
+      type = "github";
+    };
     matugen.url =
       "github:InioX/Matugen?rev=0bd628f263b1d97f238849315f2ce3ab4439784e";
     spicetify = {
