@@ -42,6 +42,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.astal.follows = "astal";
     };
+    my-shell = { url = "github:cenunix/astal"; };
     matugen.url =
       "github:InioX/Matugen?rev=0bd628f263b1d97f238849315f2ce3ab4439784e";
     spicetify = {
@@ -53,7 +54,7 @@
     # personal neovim flake
     nvim-flake = { url = "github:cenunix/nvim-flake"; };
     # zellij status-bar plugin
-    # zjstatus = { url = "github:dj95/zjstatus"; };
+    zjstatus = { url = "github:dj95/zjstatus"; };
   };
 
   outputs = { self, nixpkgs, ... }@inputs:

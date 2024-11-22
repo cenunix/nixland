@@ -1,0 +1,32 @@
+@use 'sass:color';
+@use '../../style/colors';
+
+.powermenu {
+    font-size: 70px;
+    padding: 10px;
+
+    icon {
+        min-width: 130px;
+        min-height: 130px;
+    }
+
+    button {
+        margin: 5px 10px;
+        transition: all ease .2s;
+
+        &:hover,
+        &:active {
+            background-color: color.adjust(colors.$window_bg_color, $lightness: 3%);
+        }
+    }
+
+    .shutdown {
+        color: colors.$red_1;
+    }
+    .reboot {
+        color: colors.$purple_1;
+    }
+    .logout {
+        color: colors.$yellow_1;
+    }
+}

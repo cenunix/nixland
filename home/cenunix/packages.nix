@@ -29,6 +29,7 @@ in {
       inputs.hyprsettings.packages.${pkgs.system}.default
       hyprpicker
       gnome-podcasts
+      python39
       # protonmail-desktop
       # kdePackages.tokodon
       # docker-compose
