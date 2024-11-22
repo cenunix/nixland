@@ -5,7 +5,7 @@ let
   device = config.modules.device;
   acceptedTypes = [ "desktop" "laptop" ];
 in {
-  imports = [ ./services.nix ./xdg-portals.nix ];
+  imports = [ ./services.nix ./xdg-portals.nix ./ags ];
 
   config = mkIf (env.isWayland) {
     # nixpkgs.overlays = with inputs; [nixpkgs-wayland.overlay];
