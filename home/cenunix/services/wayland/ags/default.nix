@@ -1,38 +1,62 @@
-{ inputs, pkgs, config, ... }: {
-  imports = [ inputs.ags.homeManagerModules.default ];
+self: {
+  config,
+  lib,
+  ...
+}: let
+  inherit (lib) hasPrefix mkIf removePrefix;
 
-  home.packages = with pkgs; [
-    inputs.ags.packages.${pkgs.system}.notifd
-    inputs.ags.packages.${pkgs.system}.mpris
-    inputs.ags.packages.${pkgs.system}.auth
-    inputs.matugen.packages.${pkgs.system}.default
-    material-symbols
-    wl-screenrec
-  ];
-  xdg.configFile = {
-    "ags/".source = config.lib.file.mkOutOfStoreSymlink
-      "/home/cenunix/NixLand/home/cenunix/services/wayland/ags/config";
+  # Configs
+  cfgDesktop = config.roles.desktop;
+  flakeDir = config.environment.variables.FLAKE;
+
+  agsConfigDir = "${removePrefix "/home/${cfgDesktop.user}/" flakeDir}/nixosModules/ags/config";
+
+  hmOpts = {lib, ...}: {
+    options.programs.ags = {
+      package = lib.mkOption {
+        type = with lib.types; nullOr package;
+        default = null;
+      };
+
+      astalLibs = lib.mkOption {
+        type = with lib.types; nullOr (listOf package);
+        default = null;
+      };
+
+      lockPkg = lib.mkOption {
+        type = with lib.types; nullOr package;
+        default = null;
+      };
+
+      configDir = lib.mkOption {
+        type = lib.types.str;
+        default = agsConfigDir;
+      };
+    };
   };
+in {
+  config = mkIf cfgDesktop.ags.enable {
+    assertions = [
+      {
+        assertion = hasPrefix "/home/${cfgDesktop.user}/" flakeDir;
+        message = ''
+          Your $FLAKE environment variable needs to point to a directory in
+          the main users' home to use the AGS module.
+        '';
+      }
+    ];
 
-  programs.ags = {
-    enable = true;
-    extraPackages = [
-      pkgs.libsoup_3
-      pkgs.gtksourceview
-      pkgs.libnotify
-      pkgs.webkitgtk_4_1
-      pkgs.gst_all_1.gstreamer
-      inputs.ags.packages.${pkgs.system}.apps
-      inputs.ags.packages.${pkgs.system}.battery
-      inputs.ags.packages.${pkgs.system}.hyprland
-      inputs.ags.packages.${pkgs.system}.wireplumber
-      inputs.ags.packages.${pkgs.system}.network
-      inputs.ags.packages.${pkgs.system}.tray
-      inputs.ags.packages.${pkgs.system}.battery
-      inputs.ags.packages.${pkgs.system}.notifd
-      inputs.ags.packages.${pkgs.system}.mpris
-      inputs.ags.packages.${pkgs.system}.bluetooth
-      inputs.ags.packages.${pkgs.system}.auth
+    # Machine config
+    security.pam.services.astal-auth = {};
+    services.upower.enable = true;
+
+    home-manager.users.${cfgDesktop.user}.imports = [
+      hmOpts
+      (import ./packages.nix self)
+      (import ./hyprland.nix self)
     ];
   };
+
+  # For accurate stack trace
+  _file = ./default.nix;
 }
