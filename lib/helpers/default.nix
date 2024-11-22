@@ -16,4 +16,5 @@ in {
     intListToStringList;
   inherit (themes) serializeTheme compileSCSS;
   inherit (modules) mkModule;
+  inherit (ags) buildNodeModules buildGirTypes;
 }

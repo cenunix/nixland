@@ -4,11 +4,9 @@ let
 
   # Configs
   # cfgDesktop = config.roles.desktop;
-  flakeDir = "$HOME/NixLand";
+  flakeDir = "/home/cenunix/NixLand";
 
-  agsConfigDir = "${
-      removePrefix "/home/cenunix/" flakeDir
-    }/home/cenunix/services/wayland/ags/config";
+  agsConfigDir = "/Nixland/home/cenunix/services/wayland/ags/config";
 
   hmOpts = { lib, ... }: {
     options.programs.ags = {

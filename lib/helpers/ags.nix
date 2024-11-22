@@ -4,8 +4,6 @@ let
     concatMapStrings optionalString splitString elemAt length map toLower;
   inherit (lib) capitalise;
   inherit (builtins) readFile fromJSON;
-in {
-
   buildNodeModules = dir: npmDepsHash:
     let
       packageJSON = fromJSON (readFile (dir + /package.json));
@@ -45,4 +43,5 @@ in {
         inherit pname withGirNames;
       };
     };
-}
+
+in { inherit buildNodeModules buildGirTypes; }

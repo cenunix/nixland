@@ -1,40 +1,43 @@
 { config, lib, osConfig, pkgs, inputs, ... }:
 let
 
-  inherit (lib) attrValues boolToString optionals removeAttrs;
+  inherit (lib)
+    attrValues boolToString optionals removeAttrs buildNodeModules
+    buildGirTypes;
 
   inherit (osConfig.networking) hostName;
 
+  configDir = "/home/cenunix/Nixland/home/cenunix/services/wayland/ags/config";
   cfg = config.programs.ags;
-  cfgDesktop = osConfig.roles.desktop;
+  # cfgDesktop = osConfig.roles.desktop;
 in {
-  imports = [ inputs.ags.homeManagerModules.default ];
+  # imports = [ inputs.ags.homeManagerModules.default ];
   config = {
     # Make these accessible outside these files
     programs.ags = {
       package = inputs.ags.packages.${pkgs.system}.ags.override {
-        extraPackages = [
-          inputs.ags.inputs.astal.packages.${pkgs.system}
-          inputs.gtk-session-lock.packages.${pkgs.system}.default
-        ];
+        extraPackages = cfg.astalLibs;
+        # inputs.ags.inputs.astal.packages.${pkgs.system}
+        # inputs.gtk-session-lock.packages.${pkgs.system}.default
+
       };
-      # astalLibs = attrValues
-      #   (removeAttrs ags.inputs.astal.packages.${pkgs.system} [
-      #     "cava"
-      #     "powerprofiles"
-      #     "river"
-      #
-      #     # Not libraries
-      #     "docs"
-      #     "gjs"
-      #   ]) ++ [ gtk-session-lock.packages.${pkgs.system}.default ];
+      astalLibs = attrValues
+        (removeAttrs inputs.ags.inputs.astal.packages.${pkgs.system} [
+          "cava"
+          "powerprofiles"
+          "river"
+
+          # Not libraries
+          "docs"
+          "gjs"
+        ]) ++ [ inputs.gtk-session-lock.packages.${pkgs.system}.default ];
 
       lockPkg = pkgs.writeShellApplication {
         name = "lock";
         runtimeInputs = [ cfg.package ];
         text = ''
           if [ "$#" == 0 ]; then
-            exec ags run ~/${cfg.configDir} -a lock
+            exec ags run ~/${configDir} -a lock
           else
             exec ags "$@" -i lock
           fi
@@ -49,7 +52,7 @@ in {
           runtimeInputs = [ cfg.package ];
           text = ''
             if [ "$#" == 0 ]; then
-              exec ags run ~/${cfg.configDir} -a ${hostName}
+              exec ags run ~/${configDir} -a ${hostName}
             else
               exec ags "$@"
             fi
@@ -59,26 +62,25 @@ in {
           name = "agsConf";
           runtimeInputs = [ cfg.package ];
           text = ''
-            exec ags run ~/${cfg.configDir} -a "$1"
+            exec ags run ~/${configDir} -a "$1"
           '';
         })
       ] ++ (builtins.attrValues {
         inherit (pkgs)
           playerctl pavucontrol # TODO: replace with ags widget
           wayfreeze;
-      }) ++ (optionals cfgDesktop.isTouchscreen
-        (builtins.attrValues { inherit (pkgs) ydotool; }));
+      }) ++ (optionals false (builtins.attrValues { inherit (pkgs) ydotool; }));
 
-      file = let inherit (lib) buildNodeModules buildGirTypes;
+      file = let
       in ((buildGirTypes {
         pname = "ags";
-        configPath = "${cfg.configDir}/@girs";
+        configPath = "${configDir}/@girs";
         packages = cfg.astalLibs;
       }) // {
-        "${cfg.configDir}/node_modules".source = buildNodeModules ./config
+        "${configDir}/node_modules".source = buildNodeModules ./config
           "sha256-XNvj59XfO6f+04PatCOZ93tkkZ1K7jReZPqLGJL2Ojo=";
 
-        "${cfg.configDir}/tsconfig.json".source =
+        "${configDir}/tsconfig.json".source =
           let inherit (inputs.ags.packages.${pkgs.system}) gjs;
           in pkgs.writers.writeJSON "tsconfig.json" {
             "$schema" = "https://json.schemastore.org/tsconfig";
@@ -99,15 +101,13 @@ in {
             };
           };
 
-        "${cfg.configDir}/widgets/lockscreen/vars.ts".text =
+        "${configDir}/widgets/lockscreen/vars.ts".text =
           # javascript
           ''
             export default {
-                mainMonitor: '${cfgDesktop.mainMonitor}',
-                dupeLockscreen: ${
-                  boolToString cfgDesktop.displayManager.duplicateScreen
-                },
-                hasFprintd: ${boolToString (hostName == "wim")},
+                mainMonitor: 'DP-1',
+                dupeLockscreen: 'false,
+                hasFprintd: 'false',
             };
           '';
       });
