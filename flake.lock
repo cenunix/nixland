@@ -1200,16 +1200,15 @@
         "nixpkgs": "nixpkgs_8"
       },
       "locked": {
-        "lastModified": 1732278316,
-        "narHash": "sha256-IVdNxme2pdZSMkHQcp//x6ixNleF/Jj5bCFw25PfrmM=",
+        "lastModified": 1732343811,
+        "narHash": "sha256-prB7bqFaL6CXJpgd8g0nw/uC3bYQs7EqDK9rkD1X9Nk=",
         "owner": "abenz1267",
         "repo": "walker",
-        "rev": "47d512ad9a43ee848cace66a7954b03b468917d6",
+        "rev": "cc27f9667b2be6758c15d6ca3c2493ce288bb76c",
         "type": "github"
       },
       "original": {
         "owner": "abenz1267",
-        "ref": "refs/tags/v0.9.5",
         "repo": "walker",
         "type": "github"
       }

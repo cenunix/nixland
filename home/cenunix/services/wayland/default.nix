@@ -1,8 +1,10 @@
 { inputs, outputs, lib, config, pkgs, self, ... }: {
   imports = [
-    ./ags # ./anyrun
+    ./ags
     ./fuzzel
     ./hypridle
-    ./hyprlock # ./walker ./waybar
+    ./hyprlock
+    ./walker
+    # ./waybar
   ];
 }
