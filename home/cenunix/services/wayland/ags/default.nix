@@ -1,49 +1,40 @@
-{ config, lib, ... }:
-let
-  inherit (lib) hasPrefix mkIf removePrefix;
+{ config, pkgs, lib, inputs, ... }: {
+  imports = [ inputs.ags.homeManagerModules.default ];
 
-  # Configs
-  # cfgDesktop = config.roles.desktop;
-  flakeDir = "/home/cenunix/NixLand";
+  home.packages = with pkgs;
+    [
+      # inputs.my-shell.packages.${pkgs.system}.default
+      # inputs.ags.packages.${pkgs.system}.notifd
+      # inputs.ags.packages.${pkgs.system}.mpris
+      # inputs.ags.packages.${pkgs.system}.auth
+      # inputs.matugen.packages.${pkgs.system}.default
+      # material-symbols
+      # wl-screenrec
+      # hyprpaper
+    ];
 
-  agsConfigDir = "/Nixland/home/cenunix/services/wayland/ags/config";
-
-  hmOpts = { lib, ... }: {
-    options.programs.ags = {
-      package = lib.mkOption {
-        type = with lib.types; nullOr package;
-        default = null;
-      };
-
-      astalLibs = lib.mkOption {
-        type = with lib.types; nullOr (listOf package);
-        default = null;
-      };
-
-      lockPkg = lib.mkOption {
-        type = with lib.types; nullOr package;
-        default = null;
-      };
-
-      configDir = lib.mkOption {
-        type = lib.types.str;
-        default = agsConfigDir;
-      };
-    };
-  };
-in {
-  imports = [ hmOpts ./packages.nix ];
-  config = {
-    assertions = [{
-      assertion = hasPrefix "/home/cenunix/" flakeDir;
-      message = ''
-        Your $FLAKE environment variable needs to point to a directory in
-        the main users' home to use the AGS module.
-      '';
-    }];
-
-    # Machine config
-    # security.pam.services.astal-auth = { };
-    # services.upower.enable = true;
+  programs.ags = {
+    enable = true;
+    extraPackages = [
+      #     pkgs.libsoup_3
+      #     pkgs.gtksourceview
+      #     pkgs.libnotify
+      #     pkgs.webkitgtk_4_1
+      #     pkgs.gst_all_1.gstreamer
+      #     inputs.ags.packages.${pkgs.system}.apps
+      #     inputs.ags.packages.${pkgs.system}.io
+      #     inputs.gtk-session-lock.packages.${pkgs.system}.default
+      inputs.ags.packages.${pkgs.system}.battery
+      inputs.ags.packages.${pkgs.system}.hyprland
+      inputs.ags.packages.${pkgs.system}.wireplumber
+      inputs.ags.packages.${pkgs.system}.network
+      inputs.ags.packages.${pkgs.system}.tray
+      #     inputs.ags.packages.${pkgs.system}.greet
+      inputs.ags.packages.${pkgs.system}.battery
+      #     inputs.ags.packages.${pkgs.system}.notifd
+      inputs.ags.packages.${pkgs.system}.mpris
+      #     inputs.ags.packages.${pkgs.system}.bluetooth
+      #     inputs.ags.packages.${pkgs.system}.auth
+    ];
   };
 }

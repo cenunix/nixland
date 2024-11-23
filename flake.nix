@@ -14,17 +14,12 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     hyprland.url = "github:hyprwm/hyprland";
-    hyprsettings = {
-      url = "github:PoSayDone/hyprsettings";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     # hyprland.url =
     #   "git+https://github.com/hyprwm/Hyprland?ref=refs/tags/v0.43.0&submodules=1";
     hyprland-plugins = {
@@ -33,32 +28,9 @@
     };
     xdg-portal-hyprland.url = "github:hyprwm/xdg-desktop-portal-hyprland";
     # hyprlock = { url = "github:hyprwm/Hyprlock/"; };
-    astal = {
-      url = "github:Aylur/astal";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    ags = {
-      url = "github:Aylur/ags";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.astal.follows = "astal";
-    };
-    gtk-session-lock = {
-      url = "github:Cu3PO42/gtk-session-lock";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    ts-for-gir-src = {
-      flake = false;
-      owner = "gjsify";
-      repo = "ts-for-gir";
-      type = "github";
-    };
-    matugen.url =
-      "github:InioX/Matugen?rev=0bd628f263b1d97f238849315f2ce3ab4439784e";
-    spicetify = {
-      url = "github:Gerg-L/spicetify-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    spmp = { url = "github:toasterofbread/spmp"; };
+
+    my-shell = { url = "github:cenunix/astal"; };
+    anyrun.url = "github:fufexan/anyrun/launch-prefix";
     arrpc = { url = "github:notashelf/arrpc-flake"; };
     # personal neovim flake
     nvim-flake = { url = "github:cenunix/nvim-flake"; };
