@@ -25,37 +25,6 @@
       # Add overlays your own flake exports (from overlays and pkgs dir):
       # You can also add overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default
-      # (final: prev: {
-      #   xwayland = let
-      #     xorgproto = prev.xorg.xorgproto.overrideAttrs (oldAttrs: {
-      #       src = prev.fetchurl {
-      #         url = "https://gitlab.freedesktop.org/xorg/proto/xorgproto/-/archive/master/xorgproto-master.tar.gz";
-      #         sha256 = "sha256-9xm7NJtJ+VeNOT7E7K7G70gtKmL+AGVspsypyD7/o80=";
-      #       };
-      #     });
-      #     wayland-protocols =
-      #       prev.wayland-protocols.overrideAttrs
-      #       (oldAttrs: {
-      #         src = prev.fetchurl {
-      #           url = "https://gitlab.freedesktop.org/wayland/wayland-protocols/-/archive/main/wayland-protocols-main.tar.gz";
-      #           sha256 = "sha256-dV5LbbYHwgsgXpqc2vZ0fuFcMQ+l+/8++5axOa/Nxrk=";
-      #         };
-      #       });
-      #     xwayland' = prev.xwayland.override {inherit xorgproto wayland-protocols;};
-      #   in
-      #     xwayland'.overrideAttrs (oldAttrs: {
-      #       src = prev.fetchurl {
-      #         url = "https://gitlab.freedesktop.org/xorg/xserver/-/archive/master/xserver-master.tar.gz";
-      #         sha256 = "sha256-IbqCSKwKbkcS5aDZVTIPllsUDMrkM4L7CXB9XhkoQyo=";
-      #       };
-      #       patches = [./967.patch];
-      #       mesonFlags = lib.lists.drop 1 oldAttrs.mesonFlags;
-      #
-      #       depsBuildBuild = oldAttrs.depsBuildBuild ++ [xorgproto wayland-protocols];
-      #
-      #       buildInputs = oldAttrs.buildInputs ++ [prev.udev prev.xorg.libpciaccess];
-      #     });
-      # })
       # Or define it inline, for example:
       # (final: prev: {
       #   hi = final.hello.overrideAttrs (oldAttrs: {

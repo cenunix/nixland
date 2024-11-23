@@ -31,7 +31,7 @@
 
     my-shell = { url = "github:cenunix/astal"; };
     anyrun.url = "github:fufexan/anyrun/launch-prefix";
-    walker.url = "github:abenz1267/walker";
+    walker.url = "github:abenz1267/walker?ref=refs/tags/v0.9.5";
     arrpc = { url = "github:notashelf/arrpc-flake"; };
     # personal neovim flake
     nvim-flake = { url = "github:cenunix/nvim-flake"; };
