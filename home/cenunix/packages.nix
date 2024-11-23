@@ -26,7 +26,6 @@ in {
       gsettings-desktop-schemas
       # nicotine-plus
       swww
-      inputs.hyprsettings.packages.${pkgs.system}.default
       hyprpicker
       gnome-podcasts
       python39
