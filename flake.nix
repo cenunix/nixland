@@ -2,12 +2,12 @@
   description = "NixLand configuration";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-firefox.url =
-      "github:nixos/nixpkgs?rev=c4a9c4f8d2f1196e4b08dc8477b2575ee4e3e3be";
+    # nixpkgs-firefox.url =
+    # "github:nixos/nixpkgs?rev=c4a9c4f8d2f1196e4b08dc8477b2575ee4e3e3be";
     # nixpkgs.url = "github:diniamo/nixpkgs/nvidia-555";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
-    nixpkgs-master.url =
-      "github:nixos/nixpkgs?rev=65f5cbb5f29450dc32a2835aeb8cabfca2fedc09";
+    # nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
+    # nixpkgs-master.url =
+    # "github:nixos/nixpkgs?rev=65f5cbb5f29450dc32a2835aeb8cabfca2fedc09";
     # nixpkgs-nvidia.url = "github:diniamo/nixpkgs/nvidia-555";
 
     home-manager = {
@@ -18,6 +18,8 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    ags.url = "github:Aylur/ags";
 
     hyprland.url = "github:hyprwm/hyprland";
     # hyprland.url =
@@ -30,9 +32,8 @@
     # hyprlock = { url = "github:hyprwm/Hyprlock/"; };
 
     my-shell = { url = "github:cenunix/astal"; };
-    anyrun.url = "github:fufexan/anyrun/launch-prefix";
+    # anyrun.url = "github:fufexan/anyrun/launch-prefix";
     walker.url = "github:abenz1267/walker";
-    arrpc = { url = "github:notashelf/arrpc-flake"; };
     # personal neovim flake
     nvim-flake = { url = "github:cenunix/nvim-flake"; };
     # zellij status-bar plugin

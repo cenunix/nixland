@@ -39,21 +39,21 @@ let
       sed -e 's/handle-horz-.*//' -e 's/handle-vert-.*//' -i ./src/gtk-2.0/assets.txt
 
       cat > /build/gtk-colors << EOF
-        BTN_BG=6c7086
+        BTN_BG=313244
         BTN_FG=cdd6f4
         BG=07070b
         FG=cdd6f4
-        HDR_BTN_BG=6c7086
+        HDR_BTN_BG=313244
         HDR_BTN_FG=cdd6f4
         ACCENT_BG=07070b
         ACCENT_FG=cdd6f4
         HDR_BG=07070b
         HDR_FG=cdd6f4
-        MATERIA_SURFACE=6c7086
-        MATERIA_VIEW=6c7086
-        MENU_BG=6c7086
+        MATERIA_SURFACE=313244
+        MATERIA_VIEW=07070b
+        MENU_BG=07070b
         MENU_FG=cdd6f4
-        SEL_BG=6c7086
+        SEL_BG=313244
         SEL_FG=cdd6f4
         TXT_BG=07070b
         TXT_FG=cdd6f4

@@ -15,20 +15,17 @@ in {
       profiles.cenunix = {
         search = {
           force = true;
-          default = "DuckDuckGo";
-          privateDefault = "DuckDuckGo";
-          order = [
-            "DuckDuckGo"
-            "Google" # "Kagi"
-          ];
-          # engines = {
-          #   "Kagi" = {
-          #     urls =
-          #       [{ template = "https://kagi.com/search?q={searchTerms}"; }];
-          #     iconUpdateURL = "https://kagi.com/favicon.ico";
-          #   };
-          #   "Bing".metaData.hidden = true;
-          # };
+          default = "Kagi";
+          privateDefault = "Kagi";
+          order = [ "Kagi" "DuckDuckGo" "Google" ];
+          engines = {
+            "Kagi" = {
+              urls =
+                [{ template = "https://kagi.com/search?q={searchTerms}"; }];
+              iconUpdateURL = "https://kagi.com/favicon.ico";
+            };
+            "Bing".metaData.hidden = true;
+          };
         };
         extensions = with addons; [
           ublock-origin

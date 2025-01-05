@@ -29,11 +29,16 @@ in {
       hyprpicker
       gnome-podcasts
       python39
+      grimblast
+      cider-2
+      libreoffice
       # protonmail-desktop
       # kdePackages.tokodon
       # docker-compose
       # gnome-weather
       telegram-desktop
+      (discord-canary.override { withVencord = true; })
+      bitwarden-desktop
       # inputs.spmp.packages.${pkgs.system}.default
     ] ++ optionals (builtins.elem device.type [ "desktop" ]) [ ryujinx plexamp ]
     ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [ ]

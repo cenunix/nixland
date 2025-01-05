@@ -34,11 +34,11 @@ in {
       "$mod, Return, exec, ${default.terminal}"
       "$mod, E, exec, ${default.fileManager}"
       "$mod, V, exec, shadertoggle"
-      "$mod, R, exec, ags -b hypr -q; ags -b hypr"
+      "$mod, R, exec, killall astal; astal; killall swww-daemon; swww-daemon"
       "$mod, U, exec, ags -b hypr -r 'recorder.start()'"
       "$mod, P, exec, ags -b hypr -r 'recorder.screenshot()'"
       "$mod SHIFT, P, exec, ags -b hypr -r 'recorder.screenshot(true)'"
-      "$mod, D, exec, ags -b hypr -t launcher"
+      "$mod, SPACE, exec, walker"
       "$mod, S, exec, rofi-rbw"
       "$mod, G, exec, wofi-bluetooth"
     ] ++ workspaces;

@@ -1,40 +1,62 @@
- {
+* {
   color: #cdd6f4;
 }
 
 #window {
+
+  border-radius: 4px;
 }
 
 #box {
-  background: #07070b;
+  /* background: #07070b; */
+  background: linear-gradient(
+    to bottom,
+    rgba(30, 30, 46, 1) 0%,
+    rgba(17, 17, 27, 1) 35%,
+    rgba(7, 7, 11, 1) 100%
+  );
+
   padding: 10px;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
-#search {
-  border-radius: 0;
-  outline: none;
-  outline-width: 0px;
-  box-shadow: none;
-  border-bottom: none;
-  border: none;
-  background: #07070bff;
+#search 
+#search *:selected
+{
+  /* border-radius: 0; */
+  /* outline: none; */
+  /* outline-width: 0px; */
+  /* box-shadow: none; */
+  /* border-bottom: none; */
+  /* border: none; */
+  background: #07070b;
   padding-left: 10px;
   padding-right: 10px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  border-radius: 2px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 4px;
 }
 
 #search placeholder {
-  opacity: 0.5;
+  /* background: #07070b; */
+  /* opacity: 0.5; */
 }
 
+#password,
+#input,
+#typeahead {
+  background: #313244;
+  padding: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-radius: 4px;
+}
 #list {
 }
 
 #list *:selected {
-  background: #07070bff;
+  background: #313244;
+  opacity 0.5;
 }
 
 .item {

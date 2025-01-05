@@ -8,8 +8,8 @@ let
 
   catppuccin-mocha = pkgs.fetchzip {
     url =
-      "https://github.com/PrismLauncher/Themes/releases/download/2024-04-01_1711994750/Catppuccin-Mocha-theme.zip";
-    sha256 = "sha256-BMJBJnIZZTP8l0O+8yOGSyW4S3SNOACa5ja/mqTRyzA=";
+      "https://github.com/PrismLauncher/Themes/releases/download/2024-10-21_1729507458/Catppuccin-Mocha-theme.zip";
+    sha256 = "sha256-wJCz8NVfxwPpUM+DqeCBrych0DB/9GgDR3psBAE+/pc=";
   };
 
   # java packages that are needed by various versions or modpacks
@@ -34,12 +34,12 @@ let
   ];
 
   # glfw = if env.isWayland then pkgs.glfw3-minecraft else "false";
-  glfw = with pkgs; [ glfw3-minecraft ];
+  glfw = with pkgs; [ glfw ];
 in {
   config = mkIf prg.gaming.minecraft.enable {
     home = {
       # copy the catppuccin theme to the themes directory of PrismLauncher
-      file.".local/share/PrismLauncher/themes/mocha" = {
+      file.".local/share/PrismLauncher/themes" = {
         source = catppuccin-mocha;
         recursive = true;
       };

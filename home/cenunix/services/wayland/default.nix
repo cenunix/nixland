@@ -1,7 +1,7 @@
 { inputs, outputs, lib, config, pkgs, self, ... }: {
   imports = [
     ./ags
-    ./fuzzel
+    # ./fuzzel
     ./hypridle
     ./hyprlock
     ./walker

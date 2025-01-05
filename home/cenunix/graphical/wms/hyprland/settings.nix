@@ -17,7 +17,8 @@ in {
     "$mod" = "SUPER";
     exec-once = [
       "hyprctl setcursor ${pointerCursor.name} ${toString pointerCursor.size}"
-      "ags -b hypr"
+      "astal"
+      "swww-daemon --format xrgb"
     ];
     input = {
       follow_mouse = 1;

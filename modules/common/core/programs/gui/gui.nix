@@ -2,7 +2,12 @@
 with lib;
 let env = config.modules.usrEnv;
 in {
-  hardware = mkIf (env.desktop == "Gnome") { pulseaudio.enable = false; };
+  services = mkIf (env.desktop == "Plasma") {
+    xserver.enable = true;
+    displayManager.sddm.enable = true;
+    desktopManager.plasma6.enable = true;
+    # pulseaudio.enable = false; 
+  };
   programs.hyprland = mkIf (env.desktop == "Hyprland") { enable = true; };
   environment = {
     systemPackages = with pkgs; [
