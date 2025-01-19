@@ -32,6 +32,7 @@ in {
       grimblast
       cider-2
       libreoffice
+      libnotify
       # protonmail-desktop
       # kdePackages.tokodon
       # docker-compose
