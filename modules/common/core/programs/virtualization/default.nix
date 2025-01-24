@@ -12,7 +12,7 @@ in {
         spice-protocol
         virtio-win
         win-spice
-        gnome.adwaita-icon-theme
+        adwaita-icon-theme
       ] ++ optionals (sys.docker.enable) [
         podman-compose
         podman-desktop

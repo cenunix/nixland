@@ -30,19 +30,20 @@ in {
       gnome-podcasts
       python39
       grimblast
-      cider-2
+      # cider-2
       libreoffice
       libnotify
+      jellyfin-media-player
+      thunderbird
       # protonmail-desktop
-      # kdePackages.tokodon
       # docker-compose
       # gnome-weather
       telegram-desktop
-      (discord-canary.override { withVencord = true; })
-      bitwarden-desktop
+      # bitwarden-desktop
       # inputs.spmp.packages.${pkgs.system}.default
     ] ++ optionals (builtins.elem device.type [ "desktop" ]) [ ryujinx plexamp ]
-    ++ optionals (builtins.elem device.type [ "desktop" "laptop" ]) [ ]
+    ++ optionals (builtins.elem device.type [ "desktop" "laptop" ])
+    [ (discord-canary.override { withVencord = true; }) ]
     ++ optionals (builtins.elem device.type [ "armlaptop" ]) [
       # additional packages for arm laptop (x13s as of now) machines that use home-manager
     ];

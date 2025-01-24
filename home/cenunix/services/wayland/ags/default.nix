@@ -21,6 +21,7 @@ in {
         # inputs.matugen.packages.${pkgs.system}.default
         material-symbols
         wf-recorder # screen recorder
+        brightnessctl
       ];
 
       programs.ags = {
@@ -33,7 +34,7 @@ in {
           pkgs.webkitgtk_4_1
           pkgs.gst_all_1.gstreamer
           inputs.ags.packages.${pkgs.system}.apps
-          # inputs.ags.packages.${pkgs.system}.battery
+          inputs.ags.packages.${pkgs.system}.battery
           inputs.ags.packages.${pkgs.system}.hyprland
           inputs.ags.packages.${pkgs.system}.wireplumber
           inputs.ags.packages.${pkgs.system}.network
@@ -41,7 +42,7 @@ in {
           inputs.ags.packages.${pkgs.system}.notifd
           inputs.ags.packages.${pkgs.system}.mpris
           inputs.ags.packages.${pkgs.system}.bluetooth
-          # inputs.ags.packages.${pkgs.system}.auth
+          inputs.ags.packages.${pkgs.system}.auth
         ];
       };
 

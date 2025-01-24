@@ -50,11 +50,7 @@ in {
         {
           enable = true;
           # driSupport = true;
-          extraPackages = with pkgs;
-            [
-              # vaapiVdpau
-              libvdpau-va-gl
-            ];
+          extraPackages = with pkgs; [ vaapiVdpau libvdpau-va-gl ];
         }
         (mkIf (builtins.elem device.type acceptedTypes) { enable32Bit = true; })
       ];
@@ -84,7 +80,7 @@ in {
 
     environment.systemPackages = with pkgs;
       mkIf (env.windowManager) [
-        gnome.adwaita-icon-theme
+        adwaita-icon-theme
         xdg-utils
         # libsForQt5.qt5.qtwayland
         # qt6.qtwayland

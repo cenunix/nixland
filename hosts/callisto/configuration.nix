@@ -52,12 +52,12 @@
       #     patches = [ ./change-hello-to-hi.patch ];
       #   });
       # })
-      (final: prev: {
-        qrtr = prev.callPackage ../../pkgs/qrtr.nix { };
-        pd-mapper =
-          final.callPackage ../../pkgs/pd-mapper.nix { inherit (final) qrtr; };
-        compressFirmwareZstd = lib.id;
-      })
+      # (final: prev: {
+      #   qrtr = prev.callPackage ../../pkgs/qrtr.nix { };
+      #   pd-mapper =
+      #     final.callPackage ../../pkgs/pd-mapper.nix { inherit (final) qrtr; };
+      #   compressFirmwareZstd = lib.id;
+      # })
     ];
     # Configure your nixpkgs instance
     config = { };

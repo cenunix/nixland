@@ -8,17 +8,18 @@ in {
     nixpkgs.config.joypixels.acceptLicense = true;
 
     fonts = {
-      packages = with pkgs; [
-        iosevka-bin
-        font-awesome
-        jetbrains-mono
-        maple-mono
-        maple-mono-NF
-        maple-mono-SC-NF
-        lexend
-        # joypixels
-        nerdfonts
-      ];
+      packages = with pkgs;
+        [
+          iosevka-bin
+          font-awesome
+          jetbrains-mono
+          maple-mono
+          maple-mono-NF
+          maple-mono-SC-NF
+          lexend
+          # joypixels
+        ] ++ builtins.filter lib.attrsets.isDerivation
+        (builtins.attrValues pkgs.nerd-fonts);
 
       enableDefaultPackages = true;
 

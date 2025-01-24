@@ -8,7 +8,7 @@ let
     hash = "sha256-iUnLLAQVMXFLyoB3wgYqUTx5SafLkvtOXK6C8EHK/nI=";
   };
   device = osConfig.modules.device;
-  acceptedTypes = [ "desktop" "laptop" ];
+  acceptedTypes = [ "desktop" "laptop" "armlaptop" ];
 in {
   config = mkIf (builtins.elem device.type acceptedTypes) {
     home.packages = with pkgs;

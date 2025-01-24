@@ -4,7 +4,7 @@
     # ./fuzzel
     ./hypridle
     ./hyprlock
-    ./walker
+    # ./walker
     # ./waybar
   ];
 }

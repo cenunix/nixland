@@ -17,7 +17,8 @@ in {
     "$mod" = "SUPER";
     exec-once = [
       "hyprctl setcursor ${pointerCursor.name} ${toString pointerCursor.size}"
-      "astal"
+      "ags run"
+      "hyprsunset --temperature 5700"
       "swww-daemon --format xrgb"
     ];
     input = {

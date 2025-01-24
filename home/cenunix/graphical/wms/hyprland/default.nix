@@ -28,18 +28,9 @@ in {
   config = mkIf (env.isWayland && (env.desktop == "Hyprland")) {
     xdg.configFile."hypr/shaders".source = ./shaders;
     home.packages = with pkgs;
-      [ wlr-randr wl-clipboard ]
+      [ wlr-randr wl-clipboard hyprsunset ]
       ++ optionals (device.gpu == "nvidia") [ shadertoggle gojq ];
 
-    services.wlsunset = {
-      enable = device.gpu != "nvidia";
-      latitude = "47.0";
-      longitude = "-122.0";
-      temperature = {
-        day = 5300;
-        night = 5000;
-      };
-    };
     # fake a tray to let apps start
     # https://github.com/nix-community/home-manager/issues/2064
     systemd.user.targets.tray = {
@@ -51,7 +42,7 @@ in {
 
     wayland.windowManager.hyprland = {
       enable = true;
-      xwayland.enable = true;
+      # xwayland.enable = true;
 
       plugins = with inputs.hyprland-plugins.packages.${pkgs.system};
         [

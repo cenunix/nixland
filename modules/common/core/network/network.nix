@@ -70,8 +70,7 @@
   programs = {
     ssh = {
       startAgent = true;
-      askPassword =
-        lib.mkForce "${pkgs.gnome.seahorse}/libexec/seahorse/ssh-askpass";
+      askPassword = lib.mkForce "${pkgs.seahorse}/libexec/seahorse/ssh-askpass";
     };
   };
   services.openssh = {

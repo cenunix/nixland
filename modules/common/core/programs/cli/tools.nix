@@ -17,7 +17,7 @@
     nh
     file
     wget
-    gnome.zenity
+    zenity
     nix-prefetch-github
     graphviz
     nix-du

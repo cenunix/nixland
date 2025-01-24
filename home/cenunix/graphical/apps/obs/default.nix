@@ -3,7 +3,7 @@ with lib;
 let
   device = osConfig.modules.device;
   env = osConfig.modules.usrEnv;
-  acceptedTypes = [ "desktop" "laptop" "armlaptop" ];
+  acceptedTypes = [ "desktop" "laptop" ];
 in {
   config = mkIf (builtins.elem device.type acceptedTypes) {
     programs = {

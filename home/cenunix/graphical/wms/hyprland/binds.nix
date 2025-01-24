@@ -38,7 +38,7 @@ in {
       "$mod, U, exec, ags -b hypr -r 'recorder.start()'"
       "$mod, P, exec, ags -b hypr -r 'recorder.screenshot()'"
       "$mod SHIFT, P, exec, ags -b hypr -r 'recorder.screenshot(true)'"
-      "$mod, SPACE, exec, walker"
+      "$mod, SPACE, exec, ags request 'toggle app-launcher'"
       "$mod, S, exec, rofi-rbw"
       "$mod, G, exec, wofi-bluetooth"
     ] ++ workspaces;
