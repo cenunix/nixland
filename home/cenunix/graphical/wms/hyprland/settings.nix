@@ -29,6 +29,7 @@ in {
       # allow_dumb_copy = true;
       no_hardware_cursors = true;
     };
+    experimental = { hdr = true; };
     general = {
       gaps_in = 4;
       gaps_out = 4;

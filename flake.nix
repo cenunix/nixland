@@ -21,9 +21,9 @@
 
     ags.url = "github:Aylur/ags";
 
-    # hyprland.url = "github:hyprwm/hyprland";
-    hyprland.url =
-      "git+https://github.com/hyprwm/Hyprland?ref=refs/tags/v0.46.2&submodules=1";
+    hyprland.url = "github:hyprwm/hyprland";
+    # hyprland.url =
+    #   "git+https://github.com/hyprwm/Hyprland?ref=refs/tags/v0.46.2&submodules=1";
     xdg-portal-hyprland.url = "github:hyprwm/xdg-desktop-portal-hyprland";
     # hyprlock = { url = "github:hyprwm/Hyprlock/"; };
 

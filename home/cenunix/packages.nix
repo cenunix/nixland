@@ -39,7 +39,7 @@ in {
       # docker-compose
       # gnome-weather
       telegram-desktop
-      # bitwarden-desktop
+      bitwarden-desktop
       # inputs.spmp.packages.${pkgs.system}.default
     ] ++ optionals (builtins.elem device.type [ "desktop" ]) [ ryujinx plexamp ]
     ++ optionals (builtins.elem device.type [ "desktop" "laptop" ])
