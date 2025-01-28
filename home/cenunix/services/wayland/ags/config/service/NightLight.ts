@@ -1,5 +1,5 @@
 import { exec, execAsync, GObject } from "astal";
-// import { dependencies } from "../lib/utils";
+import { dependencies } from "../lib/utils";
 
 export enum NightlightMode {
 	Off = 0,
@@ -13,8 +13,7 @@ const nightlightBinding = {
 	2: "auto",
 };
 
-// const available = dependencies(["wlsunset"]);
-const available = true;
+const available = dependencies(["nightlight"]); // ideally it should be wlsunset, but I have it only as runtimeInputs pkgs
 
 export const profileName = (profile: NightlightMode) => {
 	const profileName = nightlightBinding[profile];
@@ -56,19 +55,6 @@ class NightlightModeService extends GObject.Object {
 
 		this.notify("profile");
 	}
-
-	// async prevProfile() {
-	// 	this.#profile--;
-	// 	if (this.#profile < 0) this.#profile = 2;
-	// 	exec(`sudo ec_probe write ${NIGHTLIGHT_MODE} ${this.#profile}`);
-	// 	this.notify("profile");
-	// }
-
-	// async setProfile(profile: NightlightMode) {
-	// 	exec(`sudo ec_probe write ${NIGHTLIGHT_MODE} ${profile}`);
-	// 	this.#profile = profile;
-	// 	this.notify("profile");
-	// }
 }
 
 const NightlightModeServiceRegister = GObject.registerClass(

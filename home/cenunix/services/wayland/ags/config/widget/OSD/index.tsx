@@ -5,6 +5,7 @@ import AstalWp from "gi://AstalWp?version=0.1";
 import icons from "../../lib/icons";
 import Brightness from "../../service/Brightness";
 
+export const namespace = "osd";
 const DELAY = 2500;
 
 function OnScreenProgress(window: Astal.Window, vertical: boolean) {
@@ -15,13 +16,6 @@ function OnScreenProgress(window: Astal.Window, vertical: boolean) {
 		valign: Gtk.Align.CENTER,
 		icon: bind(speaker, "volumeIcon"),
 	});
-
-	// const pillProgress = Progress({
-	// 	vertical,
-	// 	width: vertical ? 3.429 : 28.571,
-	// 	height: vertical ? 28.571 : 3.429,
-	// 	child: indicator,
-	// });
 
 	const progress = Progress({
 		vertical,
@@ -82,13 +76,13 @@ export default (gdkmonitor: Gdk.Monitor) => (
 	<window
 		visible={false}
 		className="OSD"
-		namespace="osd"
+		namespace={namespace}
 		gdkmonitor={gdkmonitor}
 		layer={Astal.Layer.OVERLAY}
 		// anchor={Astal.WindowAnchor.TOP | Astal.WindowAnchor.RIGHT}
 		setup={(self) => {
 			self.add(
-				<box className="osd" vertical={true}>
+				<box className={namespace} vertical={true}>
 					{OnScreenProgress(self, false)}
 				</box>,
 			);

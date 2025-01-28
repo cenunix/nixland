@@ -1,6 +1,8 @@
-import { App, Astal, Widget } from "astal/gtk3";
+import { App, Astal, Gdk, Widget } from "astal/gtk3";
 import PopupWindow from "../../common/PopupWindow";
 import { weather, TooltipItem } from "../../service/Weather";
+
+export const namespace = "weather";
 
 type TemperatureData = {
 	minTemp: number;
@@ -223,27 +225,25 @@ const WeatherBoxChildWrapper = (w: TooltipItem, temperatureDataPerDay: Record<st
 		className={"qs-weather-box-child-wrapper"}
 		hexpand={true}
 		setup={(self) => {
-			// self.hook(weather, () => {
-				let useTotalInstead = false;
+			let useTotalInstead = false;
 
-				if (totalWeatherForecastDataArray.length) {
-					useTotalInstead = true;
-		
-					totalWeatherForecastDataArray.forEach(totalEl => {
-						self.add(
-							WeatherBoxChild(totalEl),
-						)
-					})
-				}
-		
-				if (false === useTotalInstead && w && temperatureDataPerDay && temperatureDataPerDay[w.date.substring(0, 3).toUpperCase()].data.length) {
-					temperatureDataPerDay[w.date.substring(0, 3).toUpperCase()].data.forEach(el => {
-						self.add(
-							WeatherBoxChild(el),
-						)
-					})            
-				}
-			// });
+			if (totalWeatherForecastDataArray.length) {
+				useTotalInstead = true;
+	
+				totalWeatherForecastDataArray.forEach(totalEl => {
+					self.add(
+						WeatherBoxChild(totalEl),
+					)
+				})
+			}
+	
+			if (false === useTotalInstead && w && temperatureDataPerDay && temperatureDataPerDay[w.date.substring(0, 3).toUpperCase()].data.length) {
+				temperatureDataPerDay[w.date.substring(0, 3).toUpperCase()].data.forEach(el => {
+					self.add(
+						WeatherBoxChild(el),
+					)
+				})            
+			}
 		}}
 	>
 	</box>
@@ -298,7 +298,7 @@ const WeatherInfo = (weatherData: TooltipItem) => (
 );
 
 export const Tooltip = ({ total }: { total: number|null }) => (<box
-	className={"weather"}
+	className={namespace}
 	setup={(self) => {
 		self.hook(weather, () => {
 			let tooltip = weather.get();
@@ -360,12 +360,21 @@ export const Tooltip = ({ total }: { total: number|null }) => (<box
 						temperatureDataPerDay[date].data = weatherForecastDataArray;
 					}
 	
+					// Get the current month (0 = January, 11 = December)
+					const currentMonth = new Date().getMonth();
+
+					// Check if it is winter (December, January, February)
+					const isWinter = currentMonth === 11 || currentMonth === 0 || currentMonth === 1;
+
+					const startHour = 7;
+					const endHour = isWinter ? 15 : 19;
+
 					// add icon to the array in between somewhat sunny hours, used to later get most common icon for main widget days
-					if (Number(w.hour) >= 7 && Number(w.hour) <= 19) {
+					if (Number(w.hour) >= startHour && Number(w.hour) <= endHour) {
 						weatherStatusIconArray.push(w.icon);
 					}
 				});
-	
+
 				// clear for next loop
 				prevDayName = null;
 	
@@ -379,7 +388,6 @@ export const Tooltip = ({ total }: { total: number|null }) => (<box
 					if (w.indicator) {
 						continue;
 					}
-					// console.log('loop ' + w.date + ' h ' + w.hour + ' i ' + w.icon )
 	
 					// used to limit forecast to specified amount (if total variable is provided, it will display that amount of forecast widgets on a main one)
 					if (total && total >= 0) {
@@ -447,8 +455,8 @@ export default () => {
 	return (
 		<PopupWindow
 			className={"weather-popup"}
-			name={"weather"}
-			namespace="weather"
+			name={namespace}
+			namespace={namespace}
 			scrimType="transparent"
 			anchor={Astal.WindowAnchor.TOP}
 			marginTop={12}
@@ -456,8 +464,7 @@ export default () => {
 			exclusivity={Astal.Exclusivity.NORMAL}
 			keymode={Astal.Keymode.EXCLUSIVE}
 			onKeyPressEvent={(self, event) => {
-				const [keyEvent, keyCode] = event.get_keycode();
-				if (keyEvent && keyCode == 9) {
+				if (event.get_keyval()[1] === Gdk.KEY_Escape) {
 					App.toggle_window(self.name);
 				}
 			}}

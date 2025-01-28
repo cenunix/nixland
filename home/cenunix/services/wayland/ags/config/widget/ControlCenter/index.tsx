@@ -1,4 +1,4 @@
-import { App, Gtk, Astal } from "astal/gtk3";
+import { App, Gtk, Astal, Gdk } from "astal/gtk3";
 import { bind, Variable } from "astal";
 import Main from "./pages/Main";
 import Network from "./pages/Network";
@@ -11,6 +11,7 @@ import { revealScreenShot } from "./items/ScreenshotMenu";
 import { revealLightstripColor } from "./items/LightstripColor";
 import { revealScreenRecord } from "./pages/Main";
 
+export const namespace = "control-center";
 export const controlCenterPage = Variable("main");
 
 export default () => {
@@ -31,8 +32,8 @@ export default () => {
 			scrimType="transparent"
 			visible={false}
 			margin={12}
-			name="control-center"
-			namespace="control-center"
+			name={namespace}
+			namespace={namespace}
 			className="ControlCenter"
 			layer={Astal.Layer.OVERLAY}
 			exclusivity={Astal.Exclusivity.EXCLUSIVE}
@@ -40,8 +41,7 @@ export default () => {
 			anchor={Astal.WindowAnchor.TOP | Astal.WindowAnchor.RIGHT}
 			application={App}
 			onKeyPressEvent={(self, event) => {
-				const [keyEvent, keyCode] = event.get_keycode();
-				if (keyEvent && keyCode == 9) {
+				if (event.get_keyval()[1] === Gdk.KEY_Escape) {
 					let changed = false;
 
 					if (revealSinks.get()) {
@@ -75,7 +75,7 @@ export default () => {
 			}}
 		>
 			<box
-				className="control-center"
+				className={namespace}
 				vertical
 				spacing={spacing}
 				valign={Gtk.Align.START}

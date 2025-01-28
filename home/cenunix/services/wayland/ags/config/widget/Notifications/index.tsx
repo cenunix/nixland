@@ -1,10 +1,12 @@
-import { App, Gtk, Astal } from "astal/gtk3";
+import { App, Gtk, Astal, Gdk } from "astal/gtk3";
 import { bind, timeout, Variable } from "astal";
 import Notifd from "gi://AstalNotifd?version=0.1";
 import Notification from "./Notification";
 import { spacing } from "../../lib/variables";
 import PopupWindow from "../../common/PopupWindow";
 import { Subscribable } from "astal/binding";
+
+export const namespace = "notifications";
 
 class NotificationsMap implements Subscribable {
 	private map: Map<number, Gtk.Widget> = new Map();
@@ -68,6 +70,7 @@ export const NotificationsWindow = ({notifications, notifs}: {notifications: Not
 					spacing={6}
 					vexpand={true}
 					hexpand={true}
+					noImplicitDestroy
 				>
 					{bind(notifs)}
 				</box>
@@ -109,15 +112,14 @@ export default () => {
 			margin={12}
 			vexpand={true}
 			keymode={Astal.Keymode.EXCLUSIVE}
-			name="notifications"
-			namespace="notifications"
-			className="notifications"
+			name={namespace}
+			namespace={namespace}
+			className={namespace}
 			exclusivity={Astal.Exclusivity.NORMAL}
 			anchor={Astal.WindowAnchor.TOP}
 			application={App}
 			onKeyPressEvent={(self, event) => {
-				const [keyEvent, keyCode] = event.get_keycode();
-				if (keyEvent && keyCode == 9) {
+				if (event.get_keyval()[1] === Gdk.KEY_Escape) {
 					App.toggle_window(self.name);
 				}
 			}}

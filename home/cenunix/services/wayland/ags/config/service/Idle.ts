@@ -1,5 +1,5 @@
 import { exec, execAsync, GObject } from "astal";
-// import { dependencies } from "../lib/utils";
+import { dependencies } from "../lib/utils";
 
 export enum IdleMode {
 	Off = 0,
@@ -11,8 +11,7 @@ const idleBinding = {
 	1: "on",
 };
 
-// const available = dependencies(["hypridle"]);
-const available = true;
+const available = dependencies(["toggleidle"]); // ideally it should be hypridle, but I have it only as runtimeInputs pkgs
 
 export const profileName = (profile: IdleMode) => {
 	const profileName = idleBinding[profile];
@@ -47,13 +46,6 @@ class IdleModeService extends GObject.Object {
 		if (this.#profile > 1) this.#profile = 0;
 
 		execAsync("toggleidle toggle").catch((err) => {console.error(err)});
-
-		// if (this.#profile === 1) {
-		// 	execAsync("toggleidle toggle").catch((err) => {console.error(err)});
-		// }
-		// if (this.#profile === 0) {
-		// 	execAsync("toggleidle toggle").catch((err) => {console.error(err)});
-		// }
 
 		this.notify("profile");
 	}

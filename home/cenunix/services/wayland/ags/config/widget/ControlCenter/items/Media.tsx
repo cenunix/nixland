@@ -1,9 +1,8 @@
-import { Gtk, Gdk, Widget } from "astal/gtk3";
+import { Gtk, Gdk, Widget, App } from "astal/gtk3";
 import { bind, Variable } from "astal";
 import AstalMpris from "gi://AstalMpris?version=0.1";
 import icons from "../../../lib/icons";
 import { lookUpIcon } from "../../../lib/utils";
-import GdkPixbuf from 'gi://GdkPixbuf';
 
 type PlayerProps = {
 	player: AstalMpris.Player;
@@ -89,124 +88,44 @@ const Player = ({ player }: PlayerProps) => {
 	)
 
 	function lengthStr(length: number) {
-		const min = Math.floor(length / 60);
-		const sec = Math.floor(length % 60);
-		const sec0 = sec < 10 ? '0' : '';
-		return `${min}:${sec0}${sec}`;
-	}
+		const hours = Math.floor(length / 3600);
+		const minutes = Math.floor((length % 3600) / 60);
+		const seconds = Math.floor(length % 60);
 
-	// function getAverageTextColorFromImage(coverArt: string) {
-	// 	const textColor = 'white';
+		const min0 = minutes < 10 ? '0' : '';
+		const sec0 = seconds < 10 ? '0' : '';
 
-	// 	if (!coverArt) {
-	// 		return textColor;
-	// 	}
-
-	// 	// Load the image
-	// 	const pixbuf = GdkPixbuf.Pixbuf.new_from_file(coverArt);
-
-	// 	if (pixbuf) {
-	// 		const width = pixbuf.get_width();
-	// 		const height = pixbuf.get_height();
-	// 		const pixels = pixbuf.get_pixels();
-	// 		const rowstride = pixbuf.get_rowstride();
-	// 		const nChannels = pixbuf.get_n_channels();
-
-	// 		let totalR = 0, totalG = 0, totalB = 0;
-	// 		let pixelCount = 0;
-
-	// 		// Iterate over each pixel
-	// 		for (let y = 0; y < height; y++) {
-	// 			for (let x = 0; x < width; x++) {
-	// 				const offset = y * rowstride + x * nChannels;
-
-	// 				const r = pixels[offset];
-	// 				const g = pixels[offset + 1];
-	// 				const b = pixels[offset + 2];
-
-	// 				totalR += r;
-	// 				totalG += g;
-	// 				totalB += b;
-	// 				pixelCount++;
-	// 			}
-	// 		}
-
-	// 		// Calculate average color
-	// 		const avgR = totalR / pixelCount;
-	// 		const avgG = totalG / pixelCount;
-	// 		const avgB = totalB / pixelCount;
-
-	// 		// Invert the average color
-	// 		const invertedR = 255 - avgR;
-	// 		const invertedG = 255 - avgG;
-	// 		const invertedB = 255 - avgB;
-
-	// 		// Create CSS color from inverted RGB
-	// 		return `rgb(${invertedR}, ${invertedG}, ${invertedB})`;
-	// 	}
-
-	// 	return textColor;
-	// }
-
-	function getTextColorFromImage(coverArt: string) {
-		const textColor = 'white';
-
-		if (!coverArt) {
-			return textColor;
+		if (hours > 0) {
+			return `${hours}:${min0}${minutes}:${sec0}${seconds}`;
 		}
-
-		// Load the image
-		const pixbuf = GdkPixbuf.Pixbuf.new_from_file(coverArt);
-
-		if (pixbuf) {
-			const width = pixbuf.get_width();
-			const height = pixbuf.get_height();
-			const pixels = pixbuf.get_pixels();
-			const rowstride = pixbuf.get_rowstride();
-			const nChannels = pixbuf.get_n_channels();
-
-			let totalBrightness = 0;
-			let pixelCount = 0;
-
-			// Iterate over each pixel
-			for (let y = 0; y < height; y++) {
-				for (let x = 0; x < width; x++) {
-					const offset = y * rowstride + x * nChannels;
-
-					const r = pixels[offset];
-					const g = pixels[offset + 1];
-					const b = pixels[offset + 2];
-
-					// Calculate brightness
-					const brightness = (0.299 * r + 0.587 * g + 0.114 * b);
-					totalBrightness += brightness;
-					pixelCount++;
-				}
-			}
-
-			// Average brightness
-			const avgBrightness = totalBrightness / pixelCount;
-
-			// Determine text color
-			return avgBrightness > 128 ? 'black' : 'white';
-		}
-
-		return textColor;
+		return `${minutes}:${sec0}${seconds}`;
 	}
 
 	return (
 		<box
 			name={player.busName}
 			vertical
-			className={`player player-${player.busName}`}
+			className={`player ${player.identity}`}
 			vexpand
-			css={bind(player, 'coverArt').as((c) => {
-				const textColor = getTextColorFromImage(c);
+			setup={(self) => {
+				const updateColors = () => {
+					const coverArt = player.cover_art || "";
 
-				if (c)
-					return `background-image: radial-gradient(circle, rgba(0,0,0, 0.25) 10%, rgba(0,0,0, 0.25)), url("${c}"); color: ${textColor};`;
-				return `background-image: none`
-			})}
+					if (!coverArt) {
+						App.apply_css(`.${player.identity} { background-image: none; }`);
+						return;
+					}
+
+					App.apply_css(`.player.${player.identity} { background-image: radial-gradient(circle, rgba(0,0,0, 0.75) 10%, rgba(0,0,0, 0.75)), url("${coverArt}"); }`);
+					App.apply_css(`.player-icon-cover-art.${player.identity} { background-image: url("${coverArt}"); }`);
+				};
+
+				updateColors();
+
+				player.connect("notify::cover-art", () => {
+					updateColors();
+				});
+			}}
 			visible={bind(player, "playback_status").as((v) => {
 				if (v != 2) {
 					return true;
@@ -215,9 +134,6 @@ const Player = ({ player }: PlayerProps) => {
 			})}
 		>
 			<box className={"cover-box"} vertical={false}>
-				{/* <box>
-					<box className="cover-art" css={coverArt} />
-				</box> */}
 				<box vertical>
 					<box>
 						<box vertical halign={Gtk.Align.START} vexpand valign={Gtk.Align.CENTER} className="player__title-box"
@@ -262,59 +178,55 @@ const Player = ({ player }: PlayerProps) => {
 						</box>
 					</box>
 				</box>
-
-				{/* <box hexpand vexpand valign={Gtk.Align.CENTER}>
-					<box hexpand/>
-				</box> */}
 			</box>
 		</box>
 	);
 };
 
-const PlayerSwitcher = ({ mpris, selectedPlayer }: { mpris: AstalMpris.Mpris; selectedPlayer: Variable<string> }) => {
-	const players = bind(mpris, "players");
+// const PlayerSwitcher = ({ mpris, selectedPlayer }: { mpris: AstalMpris.Mpris; selectedPlayer: Variable<string> }) => {
+// 	const players = bind(mpris, "players");
 
-	const changePlayer = (direction: number) => {
-		const allPlayers = mpris.get_players();
-		const index = allPlayers.findIndex((p) => p.busName === selectedPlayer.get());
-		selectedPlayer.set(allPlayers[(index + direction + allPlayers.length) % allPlayers.length].busName);
-	};
+// 	const changePlayer = (direction: number) => {
+// 		const allPlayers = mpris.get_players();
+// 		const index = allPlayers.findIndex((p) => p.busName === selectedPlayer.get());
+// 		selectedPlayer.set(allPlayers[(index + direction + allPlayers.length) % allPlayers.length].busName);
+// 	};
 
-	return (
-		<revealer revealChild={players.as((p) => p.length > 0)} >
-			<overlay>
-				<eventbox onScroll={(self, event) => changePlayer(event.direction === Gdk.ScrollDirection.UP ? 1 : -1)}>
-					<stack
-						transitionType={Gtk.StackTransitionType.SLIDE_LEFT_RIGHT}
-						transitionDuration={300}
-						interpolateSize
-						shown={bind(selectedPlayer)}
-					>
-						{players.as((ps) => ps.map((player) => <Player player={player} />))}
-					</stack>
-				</eventbox>
-				<revealer valign={Gtk.Align.END} halign={Gtk.Align.CENTER} revealChild={players.as((p) => p.length > 1)} visible={false}>
-					<box valign={Gtk.Align.END} halign={Gtk.Align.CENTER} spacing={4}>
-						{players.as((ps) =>
-							ps.map((player, idx) => (
-								<box
-									className="player__indicator"
-									setup={(self) => {
-										if (idx === 0) selectedPlayer.set(player.busName);
-										self.toggleClassName("selected", selectedPlayer.get() === player.busName);
-										self.hook(selectedPlayer, (_, selected) => {
-											self.toggleClassName("selected", selected === player.busName);
-										});
-									}}
-								></box>
-							)),
-						)}
-					</box>
-				</revealer>
-			</overlay>
-		</revealer>
-	);
-};
+// 	return (
+// 		<revealer revealChild={players.as((p) => p.length > 0)} >
+// 			<overlay>
+// 				<eventbox onScroll={(self, event) => changePlayer(event.direction === Gdk.ScrollDirection.UP ? 1 : -1)}>
+// 					<stack
+// 						transitionType={Gtk.StackTransitionType.SLIDE_LEFT_RIGHT}
+// 						transitionDuration={300}
+// 						interpolateSize
+// 						shown={bind(selectedPlayer)}
+// 					>
+// 						{players.as((ps) => ps.map((player) => <Player player={player} />))}
+// 					</stack>
+// 				</eventbox>
+// 				<revealer valign={Gtk.Align.END} halign={Gtk.Align.CENTER} revealChild={players.as((p) => p.length > 1)} visible={false}>
+// 					<box valign={Gtk.Align.END} halign={Gtk.Align.CENTER} spacing={4}>
+// 						{players.as((ps) =>
+// 							ps.map((player, idx) => (
+// 								<box
+// 									className="player__indicator"
+// 									setup={(self) => {
+// 										if (idx === 0) selectedPlayer.set(player.busName);
+// 										self.toggleClassName("selected", selectedPlayer.get() === player.busName);
+// 										self.hook(selectedPlayer, (_, selected) => {
+// 											self.toggleClassName("selected", selected === player.busName);
+// 										});
+// 									}}
+// 								></box>
+// 							)),
+// 						)}
+// 					</box>
+// 				</revealer>
+// 			</overlay>
+// 		</revealer>
+// 	);
+// };
 
 export default () => {
 	const mpris = AstalMpris.get_default();

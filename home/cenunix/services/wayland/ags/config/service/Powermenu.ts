@@ -1,6 +1,8 @@
 import { GObject, exec } from "astal";
 import { toggleWindow } from "../lib/utils";
 import Idle from "./Idle";
+import { namespace } from "../widget/Powermenu";
+// import { namespace as verificationnamespace } from "../widget/Powermenu/Verification";
 
 export type PowerMenuAction = "lock" | "sleep" | "logout" | "reboot" | "shutdown";
 
@@ -49,14 +51,14 @@ const PowerMenuSerivce = GObject.registerClass(
 					Idle?.nextProfile();
 					setTimeout(function() {
 						//do nothing, Idle needs to wait small delay for nextProfile to run
-				   }, 500);
+				   }, 1500);
 				}
 			}
 
 			this.notify("cmd");
 			this.notify("title");
-			toggleWindow("powermenu");
-			// toggleWindow("verification");
+			toggleWindow(namespace);
+			// toggleWindow(verificationnamespace);
 			exec(this.#cmd);
 		}
 	},

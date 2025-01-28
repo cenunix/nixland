@@ -1,5 +1,5 @@
-import { bind, GLib, readFile, Variable, writeFile } from "astal";
-import { Gtk,  } from "astal/gtk3";
+import { bind, Variable } from "astal";
+import { Gdk, Gtk,  } from "astal/gtk3";
 import TodosService, { Todo } from "../../../service/LocalTodos";
 import icons from "../../../lib/icons";
 import Pango from "gi://Pango?version=1.0";
@@ -36,9 +36,8 @@ const TodoItem = ({ todo, idx }: { todo: Todo; idx: number }) => {
 					TodosService.toggle(idx);
 				}}
 				onKeyReleaseEvent={(_, event) => {
-					const [keyEvent, keyCode] = event.get_keycode();
-	
-					if (keyEvent && (keyCode === 36 || keyCode === 65 || keyCode === 104)) { //65:space, 36:return, 104:num return
+					const key = event.get_keyval()[1];
+					if (key === Gdk.KEY_Return || key === Gdk.KEY_space || key === Gdk.KEY_KP_Enter) {
 						TodosService.toggle(idx);
 					}
 				}}
@@ -70,9 +69,8 @@ const TodoItem = ({ todo, idx }: { todo: Todo; idx: number }) => {
 					TodosService.remove(idx);
 				}}
 				onKeyReleaseEvent={(_, event) => {
-					const [keyEvent, keyCode] = event.get_keycode();
-	
-					if (keyEvent && (keyCode === 36 || keyCode === 65 || keyCode === 104)) { //65:space, 36:return, 104:num return
+					const key = event.get_keyval()[1];
+					if (key === Gdk.KEY_Return || key === Gdk.KEY_space || key === Gdk.KEY_KP_Enter) {
 						TodosService.remove(idx);
 					}
 				}}
@@ -95,14 +93,10 @@ const addNewTodo = (text: string) => {
 
 export default () => {
 	const newTodoText = Variable<string>("");
+	const widgetCounter = Variable<number>(6);
 
 	return (
 		<box vertical className={"todos block"}>
-			{/* <label
-				label={"Todos"}
-				className={"todos__heading"}
-				halign={Gtk.Align.CENTER}
-			/> */}
 			<box className={"todos__input_box"} spacing={24}>
 				<icon icon={icons.todo.checkedAlt} />
 				<entry
@@ -122,13 +116,23 @@ export default () => {
 					t.length > 0 ? "todos" : "placeholder",
 				)}
 			>
-				<scrollable className={"todos__scrollable"} name={"todos"}>
+				<scrollable
+					className={"todos__scrollable"}
+					name={"todos"}
+					css={bind(widgetCounter).as((c) => {
+						const baseHeight = 3.5;
+						const maxHeight = 20;
+						const height = Math.min(c * baseHeight, maxHeight);
+						return `min-height: ${height}rem;`;
+					})}
+				>
 					<box vertical className={"todos__container"}>
-						{bind(TodosService, "todos").as((t) =>
-							t.map((item, idx) => (
+						{bind(TodosService, "todos").as((t) => {
+							widgetCounter.set(t.length)
+							return t.map((item, idx) => (
 								<TodoItem todo={item} idx={idx} />
-							)),
-						)}
+							))
+						})}
 					</box>
 				</scrollable>
 				<box name={"placeholder"}></box>

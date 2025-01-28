@@ -1,5 +1,5 @@
 import AstalWp from "gi://AstalWp?version=0.1";
-import { Gtk } from "astal/gtk3";
+import { Gtk, hook } from "astal/gtk3";
 import { bind, Variable} from "astal";
 import icons from "../../../lib/icons";
 import { spacing } from "../../../lib/variables";
@@ -60,7 +60,7 @@ export const SinkRevealer = () => Audio && (
 										return desc;
 									})} truncate={true} maxWidthChars={40} />
 									<box hexpand />
-									<icon icon={bind(speaker, 'is_default').as((def) => true === def ? icons.ui.tick : "")} />
+									<icon visible={bind(speaker, 'is_default')} icon={icons.ui.tick} />
 								</box>
 							</button>
 						);
@@ -74,6 +74,42 @@ export const SinkRevealer = () => Audio && (
 export default () => {
 	const speaker = AstalWp.get_default()?.audio.defaultSpeaker!;
 
+	// using custom VolumeSlider from https://github.com/Mabi19/desktop-shell/blob/cd442d22bb44cedcdaf23399e400808df8b2e78d/bar/audio.tsx#L8-L34
+	// only as currently <slider/> does not support onScroll (mouse scrol to change value)
+	const VolumeSlider = ({ device }: { device: AstalWp.Endpoint }) => {
+		const adjustment = new Gtk.Adjustment({
+			lower: 0,
+			upper: 1,
+			value: device.volume,
+			stepIncrement: 0.01,
+			pageIncrement: 0.01,
+		});
+		const scale = new Gtk.Scale({
+			adjustment,
+			hexpand: true,
+			visible: true,
+			draw_value: false,
+		});
+		scale.connect("change-value", (_, type, value) => {
+			value = Math.round(Math.max(0, Math.min(value * 100, 100))) / 100;
+			device.volume = value;
+		});
+		hook(scale, device, "notify::volume", () => {
+			const volume = device.volume;
+			if (Math.abs(adjustment.value - volume) > 0.001) {
+				adjustment.value = volume;
+			}
+
+			if (volume === 0) {
+				device.mute = true;
+			} else if (device.mute) {
+				device.mute = false;
+			}
+		});
+
+		return scale;
+	};
+
 	return (
 		<box
 			className={bind(speaker, "mute").as((mute) =>
@@ -83,21 +119,24 @@ export default () => {
 			<overlay
 				className={"control-center__volume-slider volume"}
 				child={
-					<slider
-						className={"volumeslider"}
-						draw_value={false}
-						hexpand={true}
-						onDragged={({ value }) => {
-							if (value === 0) {
-								speaker.volume = value;
-								speaker.mute = true;
-							} else {
-								speaker.volume = value;
-								speaker.mute = false;
-							}
-						}}
-						value={bind(speaker, "volume")}
-					/>
+					// <slider
+					// 	className={"volumeslider"}
+					// 	draw_value={false}
+					// 	hexpand={true}
+					// 	onDragged={({ value }) => {
+					// 		if (value === 0) {
+					// 			speaker.volume = value;
+					// 			speaker.mute = true;
+					// 		} else {
+					// 			speaker.volume = value;
+					// 			speaker.mute = false;
+					// 		}
+					// 	}}
+					// 	value={bind(speaker, "volume")}
+					// />
+					<box className={"volumeslider-box"}>
+						<VolumeSlider device={speaker} />
+					</box>
 				}
 				overlay={
 					<icon

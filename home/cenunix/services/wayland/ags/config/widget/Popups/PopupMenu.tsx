@@ -1,5 +1,7 @@
-import { App, Astal } from "astal/gtk3";
+import { App, Astal, Gdk } from "astal/gtk3";
 import PopupWindow from "../../common/PopupWindow";
+
+export const namespace = "popup-window";
 
 type PopupMenuProps = {
 	label: string;
@@ -17,11 +19,10 @@ export default ({ label, child }: PopupMenuProps) => {
 			scrimType="opaque"
 			className={"PopupMenu"}
 			name={name}
-			namespace={"popup-window"}
+			namespace={namespace}
 			visible={false}
 			onKeyPressEvent={(self, event) => {
-				const [keyEvent, keyCode] = event.get_keycode();
-				if (keyEvent && keyCode == 9) {
+				if (event.get_keyval()[1] === Gdk.KEY_Escape) {
 					App.toggle_window(self.name);
 				}
 			}}
@@ -40,67 +41,4 @@ export default ({ label, child }: PopupMenuProps) => {
 			</box>
 		</PopupWindow>
 	);
-
-	// return new Widget.Window({
-	// 	name,
-	// 	layer: "overlay",
-	// 	keymode: "exclusive",
-	// 	visible: false,
-	// 	// on_key_pressed(self, key, _controller) {
-	// 	// 	if (key.code == 9 && self.name) {
-	// 	// 		App.toggleWindow(self.name);
-	// 	// 	}
-	// 	// },
-	// 	child: Widget.Box({
-	// 		classNames: ["popup-menu", label.toLowerCase()],
-	// 		vertical: true,
-	// 		children: [
-	// 			Widget.Box({
-	// 				classNames: ["popup-menu__header"],
-	// 				spacing: 12,
-	// 				children: [
-	// 					Widget.Label({
-	// 						label: label,
-	// 					}),
-	// 				],
-	// 			}),
-	// 			Widget.Scrollable({
-	// 				vexpand: true,
-	// 				classNames: ["popup-menu__content"],
-	// 				child: content,
-	// 				setup: (self) => {
-	// 					self.hook(
-	// 						App,
-	// 						(_, windowName, visible) => {
-	// 							if (windowName == name && visible)
-	// 								self.grab_focus();
-	// 						},
-	// 						"window-toggled",
-	// 					);
-	// 				},
-	// 			}),
-	// 		],
-	// 	}),
-	// 	setup: (self) => {
-	// 		self.keybind("Escape", () => App.closeWindow(self.name));
-	// 		self.hook(
-	// 			App,
-	// 			(_, windowName, visible) => {
-	// 				if (windowName == self.name && visible) {
-	// 					const windows = App.windows.filter(
-	// 						(window) =>
-	// 							(window.name?.includes("popup") ||
-	// 								window.name?.includes("powermenu")) &&
-	// 							window.visible &&
-	// 							window.name != self.name,
-	// 					);
-	// 					windows.forEach((window) => {
-	// 						window.visible = false;
-	// 					});
-	// 				}
-	// 			},
-	// 			"window-toggled",
-	// 		);
-	// 	},
-	// });
 };

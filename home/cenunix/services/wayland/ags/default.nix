@@ -7,6 +7,8 @@ let
   # cfgBashrc = config.module.shell.bash.bashrc;
   # cfgBash = config.module.shell.bash;
   # cfgFish = config.module.shell.fish;
+  weather_script =
+    pkgs.writeScriptBin "openweathermap" builtins.readFile ./openweathermap.sh;
 in {
   # options = { module.bar.ags.enable = mkEnableOption "Enables AGS"; };
 
@@ -22,6 +24,8 @@ in {
         material-symbols
         wf-recorder # screen recorder
         brightnessctl
+        bc
+        weather_script
       ];
 
       programs.ags = {

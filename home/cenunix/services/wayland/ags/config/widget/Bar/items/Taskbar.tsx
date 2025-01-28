@@ -6,14 +6,10 @@ import { Astal, Gdk } from "astal/gtk3";
 import { lookUpIcon } from "../../../lib/utils";
 import BarButton from "../BarButton";
 
-type Address = {
-	address: string;
-};
-
 const Hyprland = AstalHyprland.get_default();
 const Applications = AstalApps.Apps.new();
 
-function getHyprlandClientIcon(client: AstalHyprland.Client, iconName: string) {
+export function getHyprlandClientIcon(client: AstalHyprland.Client, iconName: string) {
 	if (!client) return icons.fallback.executable;
 
 	let icon = "";
@@ -26,12 +22,6 @@ function getHyprlandClientIcon(client: AstalHyprland.Client, iconName: string) {
 	  icon = Applications.exact_query(client.initialTitle)[0]?.iconName;
 
 	icon = substitutions.icons[client.initialClass] || icon;
-
-    if (icon === 'preferences-desktop-display') {
-        if (iconName === 'Ghostty' || client.initialClass === 'com.mitchellh.ghostty') {
-            icon = client.initialClass;
-        }
-    }
 
 	return Astal.Icon.lookup_icon(icon) ? icon : icons.fallback.executable;
 };

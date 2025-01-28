@@ -1,8 +1,10 @@
 import { Gtk, Gdk, Widget, Astal } from "astal/gtk3";
 import icons from "../../lib/icons";
 import { Subscribable } from "astal/binding";
-import { controlCenterPage } from ".";
+import { controlCenterPage, namespace } from ".";
 import Network from "gi://AstalNetwork?version=0.1";
+import { namespace as applaunchernamespace, showWidgetControlCenter } from "../AppLauncher";
+import { toggleWindow } from "../../lib/utils";
 
 type ControlCenterButtonProps = {
 	icon: Widget.IconProps["icon"];
@@ -56,10 +58,14 @@ export default ({
 						break;
 			}}}
 			onKeyReleaseEvent={(_, event) => {
-				const [keyEvent, keyCode] = event.get_keycode();
-				if (keyEvent && menuName && menuName !== 'arrow' && (keyCode === 36 || keyCode === 65 || keyCode === 104)) { //65:space, 36:return, 104:num return
+				const key = event.get_keyval()[1];
+				if (menuName && menuName !== 'arrow' && (key === Gdk.KEY_Return || key === Gdk.KEY_space || key === Gdk.KEY_KP_Enter)) {
+					if (showWidgetControlCenter.get()) {
+						toggleWindow(applaunchernamespace)
+						toggleWindow(namespace)
+					}
 					controlCenterPage.set(menuName);
-				} else if (keyEvent && (keyCode === 36 || keyCode === 65 || keyCode === 104)) {
+				} else if (key === Gdk.KEY_Return || key === Gdk.KEY_space || key === Gdk.KEY_KP_Enter) {
 					if (onPrimaryClick) {
 						onPrimaryClick();
 					}

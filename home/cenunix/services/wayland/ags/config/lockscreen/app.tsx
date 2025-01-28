@@ -1,13 +1,14 @@
-import { App, Astal } from "astal";
+import { App, Astal } from "astal/gtk3";
 import style from "../style/main.scss";
 import Auth from "./items/Auth";
 import GLib from "gi://GLib?version=2.0";
 
 const WALLPAPER = `${GLib.getenv("HOME")}/.cache/current_wallpaper`;
+export const namespace = "lockscreen";
 
 const GreeterWindow = () => (
 	<window
-		namespace="lockscreen"
+		namespace={namespace}
 		application={App}
 		layer={Astal.Layer.OVERLAY}
 		name="greeter"

@@ -11,13 +11,12 @@ import {
 	reloadScss,
 } from "./lib/utils";
 import Scrim from "./widget/Scrims/Scrim";
-import SinkMenu from "./widget/Popups/menus/Sink";
-import MixerMenu from "./widget/Popups/menus/Mixer";
 // import Verification from "./widget/Powermenu/Verification";
 import Powermenu from "./widget/Powermenu";
 import ScreenRecordService from "./service/ScreenRecord";
 import Dashboard from "./widget/Dashboard";
 import Weather from "./widget/Dashboard/weather";
+import Overview from "./widget/Dashboard/Overview";
 
 function main() {
 	const bars = new Map<Gdk.Monitor, Gtk.Widget>();
@@ -29,12 +28,11 @@ function main() {
 	AppLauncher();
 	Scrim({ scrimType: "opaque", className: "scrim" });
 	Scrim({ scrimType: "transparent", className: "transparent-scrim" });
-	SinkMenu();
-	MixerMenu();
 	// Verification();
 	Powermenu();
 	Dashboard();
 	Weather();
+	Overview();
 
 	for (const gdkmonitor of App.get_monitors()) {
 		bars.set(gdkmonitor, Bar(gdkmonitor));
@@ -57,17 +55,18 @@ function main() {
 		osds.delete(gdkmonitor);
 	});
 
-	// monitorColorsChange();
 	// reloadScss('.config/ags/style/bar.scss', '/tmp/astal/style.css', '.config/ags/style/main.scss');
 	// reloadScss('.config/ags/style/controlCenter.scss', '/tmp/astal/style.css', '.config/ags/style/main.scss');
 	// reloadScss('.config/ags/style/player.scss', '/tmp/astal/style.css', '.config/ags/style/main.scss');
 	// reloadScss('.config/ags/style/dashboard.scss', '/tmp/astal/style.css', '.config/ags/style/main.scss');
+	// reloadScss('.config/ags/style/overview.scss', '/tmp/astal/style.css', '.config/ags/style/main.scss');
 	// reloadScss('.config/ags/style/appLauncher.scss', '/tmp/astal/style.css', '.config/ags/style/main.scss');
 	// reloadScss('.config/ags/style/notificationsWindow.scss', '/tmp/astal/style.css', '.config/ags/style/main.scss');
+	// reloadScss('.config/ags/style/notification.scss', '/tmp/astal/style.css', '.config/ags/style/main.scss');
 	// reloadScss('.config/ags/style/weather.scss', '/tmp/astal/style.css', '.config/ags/style/main.scss');
-	// monitorDashboard();
 }
 
+// ags config based on https://github.com/PoSayDone/.dotfiles_nix/tree/8647ff23d4522ed1210eb1656580f33f9956dacb
 App.start({
 	css: style,
 	main: main,

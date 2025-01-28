@@ -1,4 +1,4 @@
-import { Gtk } from "astal/gtk3";
+import { Gdk, Gtk } from "astal/gtk3";
 import { bind, Variable } from "astal";
 // import { spacing, uptime } from "../../../lib/variables";
 import NetworkButton from "../items/Network";
@@ -6,13 +6,14 @@ import Volume, { SinkRevealer, revealSinks } from "../items/Volume";
 import DND from "../items/DND";
 import Microphone from "../items/Microphone";
 import icons from "../../../lib/icons";
-// import Brightness from "../items/Brightness";
+import Brightness from "../items/Brightness";
 import ScreenRecord from "../items/ScreenRecord";
 // import ColorScheme from "../items/ColorScheme";
 import ScreenRecordMenu from "../items/ScreenRecordMenu";
 import ScreenRecordService from "../../../service/ScreenRecord";
 import BluetoothButton from "../items/Bluetooth";
 // import { toggleWindow } from "../../../lib/utils";
+// import { namespace } from "../../Powermenu";
 import NightLight from "../items/NightLight";
 import Idle from "../items/Idle";
 import { Tooltip } from "../../Dashboard/weather";
@@ -35,9 +36,8 @@ export const SinkButton = () => (
 			revealSinks.set(!revealSinks.get())
 		}}
 		onKeyReleaseEvent={(_, event) => {
-			const [keyEvent, keyCode] = event.get_keycode();
-
-			if (keyEvent && (keyCode === 36 || keyCode === 65 || keyCode === 104)) { //65:space, 36:return, 104:num return
+			const key = event.get_keyval()[1];
+			if (key === Gdk.KEY_Return || key === Gdk.KEY_space || key === Gdk.KEY_KP_Enter) {
 				revealScreenRecord.set(false);
 				revealScreenShot.set(false);
 				revealLightstripColor.set(false);
@@ -49,6 +49,105 @@ export const SinkButton = () => (
 			icon={bind(revealSinks).as((v) => true === v ? icons.ui.arrow.up : icons.ui.arrow.right)}
 		/>
 	</button>
+);
+
+export const FirstPage = () => (
+	<box vertical>
+		<box>
+			<BluetoothButton />
+			<box className={"control-center-space"} />
+			<NightLight />
+		</box>
+
+		<box className={"control-center-box-space"} />
+
+		<box>
+			<Microphone />
+			<box className={"control-center-space"} />
+			<DND />
+		</box>
+
+		<box className={"control-center-box-space"} />
+
+		<box>
+			<Idle />
+			<box className={"control-center-space"} />
+			<ScreenRecord
+				onClicked={() => {
+					revealSinks.set(false);
+					revealLightstripColor.set(false);
+					revealScreenShot.set(false);
+
+					if (ScreenRecordService.recording) {
+						ScreenRecordService.stop();
+					} else {
+						revealScreenRecord.set(!revealScreenRecord.get());
+					}
+				}}
+			/>
+		</box>
+
+		<ScreenRecordMenu
+			revealMenu={revealScreenRecord}
+			closeMenu={() =>
+				revealScreenRecord.set(!revealScreenRecord.get())
+			}
+		/>
+	</box>
+);
+
+export const SecondPage = () => (
+	<box vertical className={"second-page"}>
+		<box>
+			<NetworkButton />
+			<box className={"control-center-space"} />
+			<ControlCenterButton
+				className={"screenshot-button toggles"}
+				icon={icons.screenshot}
+				label={"Screenshot"}
+				onClicked={() => {
+					revealSinks.set(false);
+					revealScreenRecord.set(false);
+					revealLightstripColor.set(false);
+					revealScreenShot.set(!revealScreenShot.get())
+				}}
+				menuName="arrow"
+			/>
+		</box>
+
+		<ScreenshotMenu
+			revealMenu={revealScreenShot}
+			closeMenu={() =>
+				revealScreenShot.set(!revealScreenShot.get())
+			}
+		/>
+
+		<box className={"control-center-box-space"} />
+
+		<box>
+			<ControlCenterButton
+				className={"lightstrip-color-button toggles"}
+				icon={icons.brightness.indicator}
+				label={"Lightstrip"}
+				onClicked={() => {
+					revealSinks.set(false);
+					revealScreenRecord.set(false);
+					revealScreenShot.set(false);
+					revealLightstripColor.set(!revealLightstripColor.get())
+				}}
+				menuName="arrow"
+			/>
+			<box className={"control-center-space"} />
+			<box hexpand className={"filler-button toggles"} />
+		</box>
+
+		<LightstripColor
+			revealMenu={revealLightstripColor}
+			closeMenu={() =>
+				revealLightstripColor.set(!revealLightstripColor.get())
+			}
+		/>
+	</box>
 );
 
 export default () => {
@@ -67,48 +166,7 @@ export default () => {
 					transition_duration={300}
 					transitionType={Gtk.RevealerTransitionType.SLIDE_LEFT}
 				>
-					<box vertical>
-						<box>
-							<BluetoothButton />
-							<box className={"control-center-space"} />
-							<NightLight />
-						</box>
-
-						<box className={"control-center-box-space"} />
-
-						<box>
-							<Microphone />
-							<box className={"control-center-space"} />
-							<DND />
-						</box>
-
-						<box className={"control-center-box-space"} />
-
-						<box>
-							<Idle />
-							<box className={"control-center-space"} />
-							<ScreenRecord
-								onClicked={() => {
-									revealSinks.set(false);
-									revealLightstripColor.set(false);
-									revealScreenShot.set(false);
-
-									if (ScreenRecordService.recording) {
-										ScreenRecordService.stop();
-									} else {
-										revealScreenRecord.set(!revealScreenRecord.get());
-									}
-								}}
-							/>
-						</box>
-
-						<ScreenRecordMenu
-							revealMenu={revealScreenRecord}
-							closeMenu={() =>
-								revealScreenRecord.set(!revealScreenRecord.get())
-							}
-						/>
-					</box>
+					<FirstPage />
 				</revealer>
 
 				<revealer
@@ -118,58 +176,7 @@ export default () => {
 					transition_duration={300}
 					transitionType={Gtk.RevealerTransitionType.SLIDE_RIGHT}
 				>
-					<box vertical>
-						<box>
-							<NetworkButton />
-							<box className={"control-center-space"} />
-							<ControlCenterButton
-								className={"screenshot-button toggles"}
-								icon={icons.screenshot}
-								label={"Screenshot"}
-								onClicked={() => {
-									revealSinks.set(false);
-									revealScreenRecord.set(false);
-									revealLightstripColor.set(false);
-									revealScreenShot.set(!revealScreenShot.get())
-								}}
-								menuName="arrow"
-							/>
-						</box>
-
-						<ScreenshotMenu
-							revealMenu={revealScreenShot}
-							closeMenu={() =>
-								revealScreenShot.set(!revealScreenShot.get())
-							}
-						/>
-
-						<box className={"control-center-box-space"} />
-
-						<box>
-							{/* {Brightness()} */}
-							<ControlCenterButton
-								className={"lightstrip-color-button toggles"}
-								icon={icons.brightness.indicator}
-								label={"Lightstrip"}
-								onClicked={() => {
-									revealSinks.set(false);
-									revealScreenRecord.set(false);
-									revealScreenShot.set(false);
-									revealLightstripColor.set(!revealLightstripColor.get())
-								}}
-								menuName="arrow"
-							/>
-							<box className={"control-center-space"} />
-							<box hexpand className={"filler-button toggles"} />
-						</box>
-
-						<LightstripColor
-							revealMenu={revealLightstripColor}
-							closeMenu={() =>
-								revealLightstripColor.set(!revealLightstripColor.get())
-							}
-						/>
-					</box>
+					<SecondPage />
 				</revealer>
 			</box>
 
@@ -189,9 +196,8 @@ export default () => {
 						revealSecondPage.set(false)
 					}}
 					onKeyReleaseEvent={(_, event) => {
-						const [keyEvent, keyCode] = event.get_keycode();
-		
-						if (keyEvent && (keyCode === 36 || keyCode === 65 || keyCode === 104)) { //65:space, 36:return, 104:num return
+						const key = event.get_keyval()[1];
+						if (key === Gdk.KEY_Return || key === Gdk.KEY_space || key === Gdk.KEY_KP_Enter) {
 							revealScreenRecord.set(false);
 							revealScreenShot.set(false);
 							revealLightstripColor.set(false);
@@ -218,9 +224,8 @@ export default () => {
 						revealSecondPage.set(true)
 					}}
 					onKeyReleaseEvent={(_, event) => {
-						const [keyEvent, keyCode] = event.get_keycode();
-		
-						if (keyEvent && (keyCode === 36 || keyCode === 65 || keyCode === 104)) { //65:space, 36:return, 104:num return
+						const key = event.get_keyval()[1];
+						if (key === Gdk.KEY_Return || key === Gdk.KEY_space || key === Gdk.KEY_KP_Enter) {
 							revealScreenRecord.set(false);
 							revealScreenShot.set(false);
 							revealLightstripColor.set(false);
@@ -240,11 +245,12 @@ export default () => {
 				<SinkButton />
 			</box>
 			<SinkRevealer />
+			{Brightness()}
 
 			{/* <box spacing={16} className="control-center__footer">
 				<button
 					className="control-center__powermenu-button"
-					onClick={() => toggleWindow("powermenu")}
+					onClick={() => toggleWindow(namespace)}
 				>
 					<icon icon={icons.powermenu.shutdown} iconSize={16} />
 				</button>

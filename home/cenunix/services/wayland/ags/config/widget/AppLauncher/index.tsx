@@ -1,4 +1,4 @@
-import { App, Gtk, Astal, Widget } from "astal/gtk3";
+import { App, Gtk, Gdk, Astal, Widget } from "astal/gtk3";
 import { bind, Variable } from "astal";
 import AstalApps from "gi://AstalApps?version=0.1";
 import AppItem, { MathResult } from "./AppItem";
@@ -9,12 +9,13 @@ import Media from "../ControlCenter/items/Media";
 import Todos from "../Dashboard/items/Todos";
 import { Tooltip } from "../Dashboard/weather";
 import { PowermenuButtons } from "../Powermenu";
-// import { Sinks } from "../Popups/menus/Sink";
 import { MixerMenu } from "../Popups/menus/Mixer";
 import Volume, { SinkRevealer, revealSinks } from "../ControlCenter/items/Volume";
 import { AllNotifications } from "../Notifications";
+import { FirstPage, SecondPage } from "../ControlCenter/pages/Main";
 
 const apps = new AstalApps.Apps();
+export const namespace = "app-launcher";
 
 const query = Variable<string>("");
 const widget = Variable<string>("");
@@ -25,6 +26,7 @@ const showWidgetWeather = Variable<boolean>(false);
 const showWidgetMedia = Variable<boolean>(false);
 export const widgetNotificationsQuery = Variable<string>('');
 export const widgetTodoQuery = Variable<string>('');
+export const showWidgetControlCenter = Variable<boolean>(false);
 
 function evaluate(expr: string): string {
     const operators: { [key: string]: (a: number, b: number) => number } = {
@@ -128,7 +130,6 @@ export default () => {
 		let mathResult;
 		if (containsMathOperation(query)) {
 			try {
-				// mathResult = eval(query);
 				mathResult = evaluate(query.toString());
 			} catch (error) {
 				// do nothing
@@ -147,7 +148,7 @@ export default () => {
 		className: "app-launcher__input",
 		onActivate: () => {
 			items.get()[0]?.app.launch();
-			App.toggle_window("app-launcher");
+			App.toggle_window(namespace);
 		},
 		setup: (self) => {
 			self.hook(self, "notify::text", () => {
@@ -162,16 +163,15 @@ export default () => {
 			visible={false}
 			margin={12}
 			vexpand={true}
-			name="app-launcher"
-			namespace="app-launcher"
+			name={namespace}
+			namespace={namespace}
 			className="AppLauncher"
 			keymode={Astal.Keymode.EXCLUSIVE}
 			exclusivity={Astal.Exclusivity.NORMAL}
 			layer={Astal.Layer.OVERLAY}
 			application={App}
 			onKeyPressEvent={(self, event) => {
-				const [keyEvent, keyCode] = event.get_keycode();
-				if (keyEvent && keyCode == 9) {
+				if (event.get_keyval()[1] === Gdk.KEY_Escape) {
 					App.toggle_window(self.name);
 				}
 			}}
@@ -186,7 +186,7 @@ export default () => {
 				});
 			}}
 		>
-			<box className="app-launcher" vertical
+			<box className={namespace} vertical
 				css={bind(items).as((i) => {
 					const queryText = widget.get();
 					if (queryText === '') {
@@ -197,6 +197,7 @@ export default () => {
 						showWidgetSinks.set(false);
 						widgetTodoQuery.set('');
 						widgetNotificationsQuery.set('');
+						showWidgetControlCenter.set(false);
 					}
 
 					if (queryText !== '' && queryText.startsWith(":")) {
@@ -227,6 +228,11 @@ export default () => {
 
 						if (queryText.startsWith(":todo")) {
 							widgetTodoQuery.set(queryText);
+							return "min-height: 27.5rem;";
+						}
+
+						if (queryText.startsWith(":qs") || queryText.startsWith(":cc")) {
+							showWidgetControlCenter.set(true);
 							return "min-height: 27.5rem;";
 						}
 
@@ -293,56 +299,45 @@ export default () => {
 						<box vertical visible={bind(widget).as((w) => w === '' ? true : false)}>
 							{items}
 						</box>
-						{bind(showWidgetSinks).as((w) => {
+						<box className={"app-launcher-sinks"} vertical visible={bind(showWidgetSinks).as((w) => {
 							if (w)
 								revealSinks.set(true);
+							return w;
+							})}
+						>
+							<box className={"qsvolume-box"}>
+								<Volume valign={Gtk.Align.CENTER}/>
+							</box>
+							<MixerMenu />
+							<SinkRevealer />
+						</box>
 
-							return w ?
-							(
-								<box className={"app-launcher-sinks"} vertical>
-									<box className={"qsvolume-box"}>
-										<Volume valign={Gtk.Align.CENTER}/>
-									</box>
-									<MixerMenu />
-									<SinkRevealer />
-								</box>
-							) : ( <box />)
-						})}
-						{bind(showWidgetPowermenu).as((w) => {
-							return w ?
-							(
-								<box className={"app-launcher-powermenu"}>
-									<PowermenuButtons />
-								</box>
-							) : ( <box />)
-						})}
+						<box className={"app-launcher-powermenu"} visible={bind(showWidgetPowermenu)}>
+							<PowermenuButtons />
+						</box>
+
 						<box className={"app-launcher-weather"} visible={bind(showWidgetWeather)}>
 							<Tooltip total={7} />
 						</box>
-						{bind(showWidgetCalendar).as((w) => {
-							return w ?
-							(
-								<box className={"app-launcher-calendar"}>
-									{Calendar()}
-								</box>
-							) : ( <box />)
-						})}
-						{bind(widgetTodoQuery).as((w) => {
-							return w !== "" ?
-							(
-								<box className={"app-launcher-todo"}>
-									{Todos()}
-								</box>
-							) : ( <box />)
-						})}
-						{bind(showWidgetMedia).as((w) => {
-							return w ?
-							(
-								<box className={"app-launcher-media"}>
-									<Media />
-								</box>
-							) : ( <box />)
-						})}
+
+						<box className={"app-launcher-calendar"} visible={bind(showWidgetCalendar)}>
+							{Calendar()}
+						</box>
+
+						<box className={"app-launcher-todo"} visible={bind(widgetTodoQuery).as((w) => w !== "")}>
+							{Todos()}
+						</box>
+
+						<box vertical className={"app-launcher-controlcenter"} visible={bind(showWidgetControlCenter)}>
+							<FirstPage />
+							<box className={"control-center-box-space"} />
+							<SecondPage />
+						</box>
+
+						<box className={"app-launcher-media"} visible={bind(showWidgetMedia)}>
+							<Media />
+						</box>
+
 						<box className={"app-launcher-notifications"} visible={bind(widgetNotificationsQuery).as((w) => w !== "")}>
 							<AllNotifications />
 						</box>
