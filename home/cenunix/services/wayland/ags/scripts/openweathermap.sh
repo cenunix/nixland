@@ -3,11 +3,11 @@ defaultLocation=""
 Ags=0
 Debug=0
 output=""
-WindSpeedUnit="kph"
-DegreeCharacter="°C"
+WindSpeedUnit="mph"
+DegreeCharacter="°F"
 HumidityUnit="%"
 CloudCoverUnit="%"
-RainUnit=" mm"
+RainUnit=" in"
 
 function debug_break() {
     echo "-----"
@@ -390,7 +390,7 @@ function get_weather_forecast_data() {
 
 function call_weather_current_api() {
     # API endpoint URL Current Weather
-    URL="http://api.openweathermap.org/data/2.5/weather?id=$defaultLocation&units=metric&appid=$apiKey"
+    URL="http://api.openweathermap.org/data/2.5/weather?id=$defaultLocation&units=imperial&appid=$apiKey"
 
     # Current Weather API cache file path based on defaultLocation
     CacheFile="/tmp/weather_cache_${defaultLocation}_current.json"
@@ -404,7 +404,7 @@ function call_weather_current_api() {
 
 function call_weather_forecast_api() {
     # API endpoint URL Forecast
-    URL="http://api.openweathermap.org/data/2.5/forecast?id=$defaultLocation&units=metric&appid=$apiKey"
+    URL="http://api.openweathermap.org/data/2.5/forecast?id=$defaultLocation&units=imperial&appid=$apiKey"
 
     # Forecast API cache file path based on defaultLocation
     CacheFile="/tmp/weather_cache_${defaultLocation}_forecast.json"

@@ -15,7 +15,7 @@ export type TooltipItem = {
 
 export const weather = Variable<Array<TooltipItem> | null>(null).poll(
   600_000,
-  "~/.local/bin/openweathermap.sh",
+  "openweathermap",
   (out, prev) => {
     return JSON.parse(out);
   },
