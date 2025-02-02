@@ -5,7 +5,7 @@ import { toggleWindow } from "../../../lib/utils";
 import { namespace } from "../../Dashboard";
 
 export default () => {
-	const format = '%a %b %e   %H:%M:%S';
+	const format = '%b %e  %I:%M';
 	const time = Variable<string>("").poll(
 		1000,
 		() => GLib.DateTime.new_now_local().format(format)!,

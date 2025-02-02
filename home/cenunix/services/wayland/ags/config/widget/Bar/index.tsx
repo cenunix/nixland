@@ -174,7 +174,7 @@ const PowerMenuButton = () => (
       hexpand={true}
       vexpand={true}
     >
-      <icon icon={icons.powermenu.shutdown} iconSize={45} />
+      <icon icon={icons.powermenu.shutdown} iconSize={75} />
     </box>
   </BarButton>
 );
@@ -183,7 +183,7 @@ const Start = () => {
   return (
     <box>
       <box halign={Gtk.Align.START}>
-        <AppLauncher />
+        {/* <AppLauncher />
         {/* <ActiveApp /> */}
         {/*<Taskbar /> */}
         <Workspaces />
@@ -205,12 +205,12 @@ const Center = () => {
 
 const End = () => {
   return (
-    <box>
+    <box >
       <box halign={Gtk.Align.START}>
         <Weather />
         <Notifications />
       </box>
-      <box halign={Gtk.Align.END}>
+      <box halign={Gtk.Align.END} spacing={10}>
         <box className={"recording-box"}>
           <RecordingIndicator />
         </box>
@@ -220,9 +220,10 @@ const End = () => {
           {/* <DiskUsage /> */}
           {/*<BluetoothPowerUsage />*/}
         </box>
+        <box >
         {/*<NoteButton />*/}
-        <ScreenshotButton />
-        <ColorPickerButton />
+        {/*<ScreenshotButton />
+        {/*<ColorPickerButton />
         {/* <KeyboardLayout /> */}
         {/* <box className="bar__rounded-box" spacing={spacing / 2}> */}
         {/*<box className={"tray-box"} halign={Gtk.Align.END}> */}
@@ -232,6 +233,7 @@ const End = () => {
         {/* </box> */}
         <Battery />
         <PowerMenuButton />
+        </box>
       </box>
     </box>
   );

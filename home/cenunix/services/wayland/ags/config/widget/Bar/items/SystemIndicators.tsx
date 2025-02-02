@@ -117,16 +117,13 @@ const AudioIndicator = () => {
 
 	return (
 		<box>
-			<icon
+    {/*<icon
 				tooltipText={bind(speaker, "volume").as(
 					(v) => Math.round(v * 100).toString() + "%",
 				)}
 				icon={bind(speaker, "volumeIcon")}
-			/>
-			<label className={"volume-percentage"} label={bind(speaker, "volume").as(
-					(v) => Math.round(v * 100).toString() + "%",
-				)} />
-			<icon
+			/> */}
+						<icon
 				className={"headset-icon"}
 				visible={bind(speaker, 'icon').as((icon) => {
 					if (icon === 'audio-headset-bluetooth' || icon === 'audio-headset-analog-usb' || icon === 'audio-card-analog-usb')
@@ -139,6 +136,10 @@ const AudioIndicator = () => {
 					return icons.audio.type.card;
 				}
 			)} />
+<label className={"volume-percentage"} label={bind(speaker, "volume").as(
+					(v) => Math.round(v * 100).toString() + "%",
+				)} />
+
 		</box>
 	);
 };
@@ -176,13 +177,13 @@ export default () => {
 				}
 			}}
 		>
-			<box spacing={10}>
-				<DNDIndicator />
+			<box spacing={8}>
+      {/*<DNDIndicator />
 				<IdleIndicator />
-				<NightlightIndicator />
+				<MicMuteIndicator />
+				<NightlightIndicator /> */}
 				<BluetoothIndicator />
 				<NetworkIndicator />
-				<MicMuteIndicator />
 				<AudioIndicator />
 			</box>
 		</BarButton>
